@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AreYouSureToDelete" xml:space="preserve">
+    <value>确认要删除吗？</value>
+  </data>
+  <data name="ConfigInvalid" xml:space="preserve">
+    <value>设定档错误</value>
+  </data>
+  <data name="Day" xml:space="preserve">
+    <value>天</value>
+  </data>
+  <data name="FieldIsNotAllowEmpty" xml:space="preserve">
+    <value>{0} 不可为空值</value>
+  </data>
+  <data name="GoogleAuthenticatorExpiredWarning" xml:space="preserve">
+    <value>Google身分验证即将到期</value>
+  </data>
+  <data name="Hour" xml:space="preserve">
+    <value>小时</value>
+  </data>
+  <data name="InvalidIpAddress" xml:space="preserve">
+    <value>登录IP地址不合法</value>
+  </data>
+  <data name="IpAddressNotAllow" xml:space="preserve">
+    <value>IP {0} 不允许后台登录</value>
+  </data>
+  <data name="IsConfirmRefund" xml:space="preserve">
+    <value>确认要退款吗？退款后积分将退还到用户帐号</value>
+  </data>
+  <data name="LoginIsExpiredPleaseloginAgain" xml:space="preserve">
+    <value>登录已过期，请重新登录</value>
+  </data>
+  <data name="Minute" xml:space="preserve">
+    <value>分</value>
+  </data>
+  <data name="NewPasswordSameWithOldInNDays" xml:space="preserve">
+    <value>新密码不可与近{0}天内设置的密码相同</value>
+  </data>
+  <data name="NoDataToExport" xml:space="preserve">
+    <value>没有数据需要导出！</value>
+  </data>
+  <data name="NoEditPermission" xml:space="preserve">
+    <value>无编辑权限</value>
+  </data>
+  <data name="NoPermission" xml:space="preserve">
+    <value>无权限</value>
+  </data>
+  <data name="OldPasswordIsNotValid" xml:space="preserve">
+    <value>旧密码错误</value>
+  </data>
+  <data name="OldPasswordSameAsNewPassword" xml:space="preserve">
+    <value>新密码不能和旧密码相同</value>
+  </data>
+  <data name="OverInputLength" xml:space="preserve">
+    <value>不可输入超过 {0} 个文字</value>
+  </data>
+  <data name="Second" xml:space="preserve">
+    <value>秒</value>
+  </data>
+  <data name="SyncBakFail" xml:space="preserve">
+    <value>同步Bak失敗</value>
+  </data>
+  <data name="UpdateMoneyPwdFail" xml:space="preserve">
+    <value>资金密码更新失败</value>
+  </data>
+  <data name="UpdateMoneyPwdSuccess" xml:space="preserve">
+    <value>新的资金密码已传送至 {0}</value>
+  </data>
+  <data name="UpdateSuccessAndRefresh" xml:space="preserve">
+    <value>更新成功，请重新查询！</value>
+  </data>
+  <data name="UpdateUserPwdFail" xml:space="preserve">
+    <value>登录密码更新失败</value>
+  </data>
+  <data name="UpdateUserPwdSuccess" xml:space="preserve">
+    <value>登录密码更新成功，新密码为 {0}</value>
+  </data>
+  <data name="UserHasNotSetMoneyPwd" xml:space="preserve">
+    <value>该用户未曾设置资金密码，请该用户先进行初始化资料设置</value>
+  </data>
+  <data name="UserInfoChangedPleaseloginAgain" xml:space="preserve">
+    <value>用户资料已经变更，请重新登录</value>
+  </data>
+  <data name="UserInitializeIncomplete" xml:space="preserve">
+    <value>该用户尚未进行初始化，请用户于前台初始化设定设置邮箱</value>
+  </data>
+  <data name="UserUnboundBankCard" xml:space="preserve">
+    <value>该用户未绑定银行卡无法进行身份验证</value>
+  </data>
+  <data name="ModEmailUserDataMsg" xml:space="preserve">
+    <value>身份验证通过，请输入用户{0}新的邮箱并填写备注</value>
+  </data>
+  <data name="ModMobileUserDataMsg" xml:space="preserve">
+    <value>身份验证通过，请输入用户{0}新的手机号码并填写备注</value>
+  </data>
+  <data name="UserVaildFailed" xml:space="preserve">
+    <value>身份验证失败</value>
+  </data>
+  <data name="EmailRuleFail" xml:space="preserve">
+    <value>邮箱格式错误</value>
+  </data>
+  <data name="MobileFormatFail" xml:space="preserve">
+    <value>手机号码格式错误</value>
+  </data>
+  <data name="PlsFillMemo" xml:space="preserve">
+    <value>请填写备注信息</value>
+  </data>
+  <data name="OperationContent" xml:space="preserve">
+    <value>{0},修改{1}, 原{2}：{3}, 新{4}：{5}, 备注：{6}</value>
+  </data>
+  <data name="AuditOperationContent" xml:space="preserve">
+    <value>{0}, {1}, 备注:{2}</value>
+  </data>
+  <data name="AuditErrorMessage" xml:space="preserve">
+    <value>审核列表已存在相同的新{0}待审核，请再确认</value>
+  </data>
+  <data name="YouTransferInSuccessfully" xml:space="preserve">
+    <value>您成功转账 ¥{0}到{1}账户</value>
+  </data>
+  <data name="YouTransferOutSuccessfully" xml:space="preserve">
+    <value>您成功从{0}账户提款 ¥{1}</value>
+  </data>
+  <data name="YouTransferInFailly" xml:space="preserve">
+    <value>转账¥{0}到{1}账户失败，请联系客服</value>
+  </data>
+  <data name="YouTransferOutFailly" xml:space="preserve">
+    <value>从{0}账户提款¥{1}失败，请重试</value>
+  </data>
+  <data name="MaxSearchDaysIsArg" xml:space="preserve">
+    <value>最大搜寻天数为{0}天</value>
+  </data>
+  <data name="OldVersionSearchMemo" xml:space="preserve">
+    <value>【查询】与【旧版查询】差别仅在于程式查询的方式与速度不同，
+查询结果应该要是一样的，若有不同请协助回报开发
+试运行确认无误后会将旧版查询移除</value>
+  </data>
+  <data name="SearchLastMonthBonusMemo" xml:space="preserve">
+    <value>每月4号前要查询上月整月分红盈亏，
+可勾选【仅查询上月分红结算的盈亏】
+过滤上个月分红结算后第三方回传的盈亏
+(每月4号后此功能无作用)
+勾选后请使用【查询】【查询全线】；
+【旧版查询】与【旧版查询全线】不支援此功能</value>
+  </data>
+  <data name="MethodName" xml:space="preserve">
+    <value>方法名称</value>
+  </data>
+  <data name="AtLeastOneRule" xml:space="preserve">
+    <value>比例至少一条规则</value>
+  </data>
+  <data name="IsNotAllowNegative" xml:space="preserve">
+    <value>不可为负值</value>
+  </data>
+  <data name="IsNotTenThousandFormat" xml:space="preserve">
+    <value>只能设定万位整数</value>
+  </data>
+  <data name="PlzInputCommissionPercent" xml:space="preserve">
+    <value>请输入分红比例</value>
+  </data>
+  <data name="PlzInputMaxProfitLossRange" xml:space="preserve">
+    <value>请输入输赢上限</value>
+  </data>
+  <data name="PlzInputMinProfitLossRange" xml:space="preserve">
+    <value>请输入输赢下限</value>
+  </data>
+  <data name="AuditDataByUserIsExists" xml:space="preserve">
+    <value>审核列表已存在相同用户的待审核资料，请再确认</value>
+  </data>
+  <data name="SaveSuccess" xml:space="preserve">
+    <value>保存成功</value>
+  </data>
+  <data name="OperationSuccess" xml:space="preserve">
+    <value>操作成功</value>
+  </data>
+  <data name="SomeKindPinIsNotValid" xml:space="preserve">
+    <value>{0}动态密码错误</value>
+  </data>
+  <data name="MoneyPasswordIsNotValid" xml:space="preserve">
+    <value>资金密码错误</value>
+  </data>
+  <data name="PlzInputSomeKindPin" xml:space="preserve">
+    <value>请输入{0}动态密码</value>
+  </data>
+  <data name="PlzInputMoneyPassword" xml:space="preserve">
+    <value>请输入资金密码</value>
+  </data>
+  <data name="PlzVerifyGoogleAuthenticator" xml:space="preserve">
+    <value>请先绑定谷歌身份验证</value>
+  </data>
+  <data name="SomeKindAuthenticatorVerifyCompleted" xml:space="preserve">
+    <value>{0}身份{1}完成</value>
+  </data>
+  <data name="UserHasNotSetAuthenticator" xml:space="preserve">
+    <value>该用户未曾绑定</value>
+  </data>
+  <data name="UnverifiedAuthenticatorByBackSideWebSuccessfully" xml:space="preserve">
+    <value>清除绑定身分验证完成</value>
+  </data>
+  <data name="MoneyPasswordFormatFail" xml:space="preserve">
+    <value>10-16位字符，需包含大小写英文和数字</value>
+  </data>
+  <data name="FormatFail" xml:space="preserve">
+    <value>格式错误</value>
+  </data>
+  <data name="LoginPasswordFormatFail" xml:space="preserve">
+    <value>6-16位字符, 需包含英文和数字</value>
+  </data>
+  <data name="OperationFail" xml:space="preserve">
+    <value>操作失败</value>
+  </data>
+  <data name="SomeKindAuthenticatorExpired" xml:space="preserve">
+    <value>{0}身份验证绑定已过期，详情请联系客服</value>
+  </data>
+  <data name="SomeKindPinIsEmpty" xml:space="preserve">
+    <value>{0}动态密码不能为空</value>
+  </data>
+  <data name="dynamicPasswordFormatFail" xml:space="preserve">
+    <value>6-16位字符，可输入英文、数字与符号</value>
+  </data>
+  <data name="TransferToChildIsDisabled" xml:space="preserve">
+    <value>转账功能已被关闭，请联系客服</value>
+  </data>
+  <data name="YourParentTransferMoneyToYou" xml:space="preserve">
+    <value>您的上级为你转账 {0} 元，请注意查收</value>
+  </data>
+  <data name="GoogleAuthenticatorDescription" xml:space="preserve">
+    <value>谷歌身份验证是一全新帐户安全工具，2步骤轻松绑定身份，确保您的帐户更有保障</value>
+  </data>
+  <data name="ResetMoneyPasswordDescription" xml:space="preserve">
+    <value>为提升您的帐户安全性，请重设您的资金密码加强密码长度与复杂度</value>
+  </data>
+  <data name="IdentityIsPassAndGotoUpdateBankCardPage" xml:space="preserve">
+    <value>您已成功通过身分验证，请按确定，进入银行卡信息管理页</value>
+  </data>
+  <data name="BandCardNoIsWrong" xml:space="preserve">
+    <value>银行卡帐号不正确</value>
+  </data>
+  <data name="BandCardUserIsWrong" xml:space="preserve">
+    <value>银行卡姓名不正确</value>
+  </data>
+  <data name="PlzBindBankCard" xml:space="preserve">
+    <value>请先綁定銀行卡，方可提现</value>
+  </data>
+  <data name="BindBankCard" xml:space="preserve">
+    <value>请至个人中心&gt;银行卡管理&gt;绑定银行卡</value>
+  </data>
+  <data name="PlzLetterAndNumber" xml:space="preserve">
+    <value>请填写有效的英文跟数字组合</value>
+  </data>
+  <data name="UsdtAddressWrong" xml:space="preserve">
+    <value>您绑定的USDT收款地址错误, 请重新确认</value>
+  </data>
+  <data name="InputInformationWrong" xml:space="preserve">
+    <value>输入资料有误，无法进行验证</value>
+  </data>
+  <data name="BankCardAlreadyBind" xml:space="preserve">
+    <value>银行卡已被绑定</value>
+  </data>
+  <data name="BankCardBindFailed" xml:space="preserve">
+    <value>绑定失败，暂不支持绑定此类银行卡</value>
+  </data>
+  <data name="PlsSelectBankCardType" xml:space="preserve">
+    <value>请选择开户银行</value>
+  </data>
+  <data name="BankCardInValid" xml:space="preserve">
+    <value>银行卡卡号不正确</value>
+  </data>
+  <data name="LoginIsExpired" xml:space="preserve">
+    <value>登录已过期！</value>
+  </data>
+  <data name="OnlyBetweenNDays" xml:space="preserve">
+    <value>查询的时间区间限制为{0}天內！</value>
+  </data>
+  <data name="OnlyWithinNDays" xml:space="preserve">
+    <value>仅可查询今日起近{0}天內资料！</value>
+  </data>
+  <data name="UserNameFormatIsNotValid" xml:space="preserve">
+    <value>用户名格式错误</value>
+  </data>
+  <data name="ConfirmResetPasswordWithReason" xml:space="preserve">
+    <value>确认要重置用户{0}{1}吗？若是，请填写原因</value>
+  </data>
+  <data name="FtpDownloadFileNotSuccessfully" xml:space="preserve">
+    <value>资料从FTP Server远端下载异常</value>
+  </data>
+  <data name="ModifyData" xml:space="preserve">
+    <value>{0}：{1} -&gt; {2}</value>
+  </data>
+  <data name="YouPassedDataVerification" xml:space="preserve">
+    <value>您已成功通过资料验证</value>
+  </data>
+  <data name="NoRechargeChannel" xml:space="preserve">
+    <value>目前没有渠道支援, 请选择其它充值方式</value>
+  </data>
+  <data name="NoSupportSomeKindServiceType" xml:space="preserve">
+    <value>暂不支持{0}充值</value>
+  </data>
+  <data name="PlzBindBankCardFirst" xml:space="preserve">
+    <value>请先绑定银行卡</value>
+  </data>
+</root>

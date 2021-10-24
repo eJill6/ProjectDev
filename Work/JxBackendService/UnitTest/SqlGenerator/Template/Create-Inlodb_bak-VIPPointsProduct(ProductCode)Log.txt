@@ -1,0 +1,98 @@
+﻿USE [Inlodb_bak]
+GO
+
+CREATE TABLE [dbo].[VIPPointsProduct(ProductCode)Log](
+	[SEQID] [varchar](32) NOT NULL,
+	[UserID] [int] NOT NULL,
+	[CreateUser] [nvarchar](50) NOT NULL,
+	[CreateDate] [datetime] NOT NULL,
+	[UpdateUser] [nvarchar](50) NOT NULL,
+	[UpdateDate] [datetime] NOT NULL,
+	[ChangeType] [int] NOT NULL,
+	[OldAccumulatePoints] [decimal](18, 4) NOT NULL,
+	[NewAccumulatePoints] [decimal](18, 4) NOT NULL,
+	[ChangePoints] [decimal](18, 4) NOT NULL,
+	[MemoJson] [nvarchar](2000) NOT NULL,
+	[BetTime] [datetime] NOT NULL,
+	[ProfitLossTime] [datetime] NOT NULL,
+	[BetMoney] [decimal](18, 4) NOT NULL,
+	[AllBetMoney] [decimal](18, 4) NOT NULL,
+	[PalyID] [nvarchar](50) NOT NULL,
+	[MoveDate] [datetime] NOT NULL)
+GO
+
+CREATE CLUSTERED INDEX [CIX_VIPPointsProduct(ProductCode)Log_CreateDate] ON [dbo].[VIPPointsProduct(ProductCode)Log]
+(
+	[CreateDate] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+
+CREATE NONCLUSTERED INDEX [IX_VIPPointsProduct(ProductCode)Log_UserID] ON [dbo].[VIPPointsProduct(ProductCode)Log]
+(
+	[UserID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+
+CREATE NONCLUSTERED INDEX [IX_VIPPointsProduct(ProductCode)Log_SEQID] ON [dbo].[VIPPointsProduct(ProductCode)Log]
+(
+	[SEQID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'流水號' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'VIPPointsProduct(ProductCode)Log', @level2type=N'COLUMN',@level2name=N'SEQID'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'用戶ID' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'VIPPointsProduct(ProductCode)Log', @level2type=N'COLUMN',@level2name=N'UserID'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'建立者' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'VIPPointsProduct(ProductCode)Log', @level2type=N'COLUMN',@level2name=N'CreateUser'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'建立時間' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'VIPPointsProduct(ProductCode)Log', @level2type=N'COLUMN',@level2name=N'CreateDate'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'更新者' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'VIPPointsProduct(ProductCode)Log', @level2type=N'COLUMN',@level2name=N'UpdateUser'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'更新時間' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'VIPPointsProduct(ProductCode)Log', @level2type=N'COLUMN',@level2name=N'UpdateDate'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'異動類型' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'VIPPointsProduct(ProductCode)Log', @level2type=N'COLUMN',@level2name=N'ChangeType'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'原VIP積分' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'VIPPointsProduct(ProductCode)Log', @level2type=N'COLUMN',@level2name=N'OldAccumulatePoints'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'新VIP積分' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'VIPPointsProduct(ProductCode)Log', @level2type=N'COLUMN',@level2name=N'NewAccumulatePoints'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'異動量' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'VIPPointsProduct(ProductCode)Log', @level2type=N'COLUMN',@level2name=N'ChangePoints'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'多語系結構備註' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'VIPPointsProduct(ProductCode)Log', @level2type=N'COLUMN',@level2name=N'MemoJson'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'投注時間' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'VIPPointsProduct(ProductCode)Log', @level2type=N'COLUMN',@level2name=N'BetTime'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'結算時間' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'VIPPointsProduct(ProductCode)Log', @level2type=N'COLUMN',@level2name=N'ProfitLossTime'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'有效投注額' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'VIPPointsProduct(ProductCode)Log', @level2type=N'COLUMN',@level2name=N'BetMoney'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'總投注額' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'VIPPointsProduct(ProductCode)Log', @level2type=N'COLUMN',@level2name=N'AllBetMoney'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'注單編號' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'VIPPointsProduct(ProductCode)Log', @level2type=N'COLUMN',@level2name=N'PalyID'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'移動日期' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'VIPPointsProduct(ProductCode)Log', @level2type=N'COLUMN',@level2name=N'MoveDate'
+GO
+
+ALTER TABLE [dbo].[VIPPointsProduct(ProductCode)Log] ADD CONSTRAINT [DF_VIPPointsProduct(ProductCode)Log_MoveDate]  DEFAULT (getdate()) FOR [MoveDate]
+GO
+
+GRANT SELECT,INSERT,DELETE,UPDATE ON [dbo].[VIPPointsProduct(ProductCode)Log] TO [polyqqccwin];
+GRANT SELECT,INSERT,DELETE,UPDATE ON [dbo].[VIPPointsProduct(ProductCode)Log] TO [polyqqccwinpouch];
+GO

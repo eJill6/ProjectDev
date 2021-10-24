@@ -1,0 +1,1186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DDC02658-142D-4FD0-B812-0FB9C7B1EE90}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JxBackendService</RootNamespace>
+    <AssemblyName>JxBackendService</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <ShouldCreateLogs>True</ShouldCreateLogs>
+    <AdvancedSettingsExpanded>False</AdvancedSettingsExpanded>
+    <UpdateAssemblyVersion>False</UpdateAssemblyVersion>
+    <UpdateAssemblyFileVersion>False</UpdateAssemblyFileVersion>
+    <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
+    <UpdatePackageVersion>False</UpdatePackageVersion>
+    <AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
+    <InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\JxBackendService.xml</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <ShouldCreateLogs>True</ShouldCreateLogs>
+    <AdvancedSettingsExpanded>False</AdvancedSettingsExpanded>
+    <UpdateAssemblyVersion>False</UpdateAssemblyVersion>
+    <UpdateAssemblyFileVersion>False</UpdateAssemblyFileVersion>
+    <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
+    <AssemblyVersionSettings>YearStamp.MonthStamp.DayStamp.TimeStamp</AssemblyVersionSettings>
+    <UpdatePackageVersion>False</UpdatePackageVersion>
+    <AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
+    <InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
+    <AssemblyFileVersionSettings>YearStamp.MonthStamp.DayStamp.TimeStamp</AssemblyFileVersionSettings>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ShouldCreateLogs>True</ShouldCreateLogs>
+    <AdvancedSettingsExpanded>False</AdvancedSettingsExpanded>
+    <UpdateAssemblyVersion>True</UpdateAssemblyVersion>
+    <UpdateAssemblyFileVersion>True</UpdateAssemblyFileVersion>
+    <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
+    <AssemblyVersionSettings>YearStamp.MonthStamp.DayStamp.TimeStamp</AssemblyVersionSettings>
+    <UpdatePackageVersion>False</UpdatePackageVersion>
+    <AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
+    <InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
+    <AssemblyFileVersionSettings>YearStamp.MonthStamp.DayStamp.TimeStamp</AssemblyFileVersionSettings>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ApolloService">
+      <HintPath>..\..\ApolloService.dll</HintPath>
+    </Reference>
+    <Reference Include="ApolloServiceModel, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ApolloServiceModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac">
+      <HintPath>..\..\Autofac-2.6.1.841-NET40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="CommUtil">
+      <HintPath>..\..\CommUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="CSRedisCore, Version=3.6.6.0, Culture=neutral, PublicKeyToken=9aa6a3079358d437, processorArchitecture=MSIL">
+      <HintPath>..\packages\CSRedisCore.3.6.6\lib\net40\CSRedisCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net40\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>..\..\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentFTP, Version=35.0.2.0, Culture=neutral, PublicKeyToken=f4af092b1d8df44f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentFTP.35.0.2\lib\net40\FluentFTP.dll</HintPath>
+    </Reference>
+    <Reference Include="IPTool">
+      <HintPath>..\..\IPTool.dll</HintPath>
+    </Reference>
+    <Reference Include="IPToolModel">
+      <HintPath>..\..\IPToolModel.dll</HintPath>
+    </Reference>
+    <Reference Include="JxMsgEntities">
+      <HintPath>..\JxCustomizedLib\JxMsgEntities.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMQ.Client">
+      <HintPath>..\JxCustomizedLib\RabbitMQ.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMqUtil">
+      <HintPath>..\JxCustomizedLib\RabbitMqUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="RandomStringCreator, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RandomStringCreator.2.0.0\lib\net40\RandomStringCreator.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.SQLite, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\lib\net40\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.113.0\lib\net40\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.113.0\lib\net40\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\portable-net40+sl4+win8+wp8\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\BaseFrontSideUserAllowedLoginAttribute.cs" />
+    <Compile Include="Attributes\BaseFrontSideLogActionParamAttribute.cs" />
+    <Compile Include="Attributes\ResponseTimeLimitAttribute.cs" />
+    <Compile Include="Attributes\Web\VersionViewPathAttribute.cs" />
+    <Compile Include="Common\CaesarTool.cs" />
+    <Compile Include="Common\Exceptions\ViewNotFoundException.cs" />
+    <Compile Include="Common\Extensions\HashExtension.cs" />
+    <Compile Include="Common\AESTool.cs" />
+    <Compile Include="Common\Extensions\AESExtension.cs" />
+    <Compile Include="Common\Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Common\Extensions\URLExtensions.cs" />
+    <Compile Include="Common\MD5Tool.cs" />
+    <Compile Include="Common\TripleDESTool.cs" />
+    <Compile Include="Common\Util\AssignValueOnceUtil.cs" />
+    <Compile Include="Common\Util\Cache\CacheKey.cs" />
+    <Compile Include="Common\Util\Cache\CacheServerDataModel.cs" />
+    <Compile Include="Common\Util\Cache\CacheServerUtil.cs" />
+    <Compile Include="Common\Util\Cache\CacheServiceClient.cs" />
+    <Compile Include="Common\Util\IpUtil.cs" />
+    <Compile Include="Common\Util\FtpUtil.cs" />
+    <Compile Include="Common\Util\LoginKeyUtil.cs" />
+    <Compile Include="Common\Util\LocalizationUtil.cs" />
+    <Compile Include="Common\Util\RazorEngineUtil.cs" />
+    <Compile Include="Common\Util\Route\RouteUtil.cs" />
+    <Compile Include="Common\Util\ValidateCodeUtil.cs" />
+    <Compile Include="Common\Util\Xml\XmlUtil.cs" />
+    <Compile Include="Common\Util\RetryJobUtil.cs" />
+    <Compile Include="Common\Util\DecimalUtil.cs" />
+    <Compile Include="Common\Util\ThirdParty\GameIMUtil.cs" />
+    <Compile Include="DependencyInjection\DependencyUtil.cs" />
+    <Compile Include="Installer\BaseProjectInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Interface\Repository\Finance\ICMoneyInInfoRep.cs" />
+    <Compile Include="Interface\Repository\Finance\IBankTypeRep.cs" />
+    <Compile Include="Interface\Repository\Finance\IGivePrizeRep.cs" />
+    <Compile Include="Interface\Repository\Game\IUserDailyReportCommissionInfoRep.cs" />
+    <Compile Include="Interface\Repository\IAuditInfoRep.cs" />
+    <Compile Include="Interface\Repository\IBaseDbRepository.cs" />
+    <Compile Include="Interface\Repository\IChatRoomRep.cs" />
+    <Compile Include="Interface\Repository\ICachedLoginUserInfoRep.cs" />
+    <Compile Include="Interface\Repository\IConfigGroupRep.cs" />
+    <Compile Include="Interface\Repository\IConfigSettingsRep.cs" />
+    <Compile Include="Interface\Repository\IFrontsideMenuRep.cs" />
+    <Compile Include="Interface\Repository\Game\ILotteryInfoRep.cs" />
+    <Compile Include="Interface\Repository\IGameCommissionRuleInfoRep.cs" />
+    <Compile Include="Interface\Repository\IGiftBagRep.cs" />
+    <Compile Include="Interface\Repository\ILoginDetailBackEndRep.cs" />
+    <Compile Include="Interface\Repository\IBlockChainInfoRep.cs" />
+    <Compile Include="Interface\Repository\IIpDataRep.cs" />
+    <Compile Include="Interface\Repository\IOperationLogRep.cs" />
+    <Compile Include="Interface\Repository\IThirdPartyUserAccountRep.cs" />
+    <Compile Include="Interface\Repository\ITPGameUserInfoRep.cs" />
+    <Compile Include="Interface\Repository\IUserCommissionInfoRep.cs" />
+    <Compile Include="Interface\Repository\IUserCommissionListRep.cs" />
+    <Compile Include="Interface\Repository\IUserLevelRep.cs" />
+    <Compile Include="Interface\Repository\IUserReportProfitLossRep.cs" />
+    <Compile Include="Interface\Repository\Mail\ISendMailLogRep.cs" />
+    <Compile Include="Interface\Repository\Security\IBlackAreaListRep.cs" />
+    <Compile Include="Interface\Repository\Security\IFailureOperationCountRep.cs" />
+    <Compile Include="Interface\Repository\Security\IBlackIpRangeListRep.cs" />
+    <Compile Include="Interface\Repository\Security\IWhiteIpListRep.cs" />
+    <Compile Include="Interface\Repository\Security\IBlackIpListRep.cs" />
+    <Compile Include="Interface\Repository\User\IABEBUserInfoRep.cs" />
+    <Compile Include="Interface\Repository\User\IBTISUserInfoRep.cs" />
+    <Compile Include="Interface\Repository\User\IFailureLoginHistoryRep.cs" />
+    <Compile Include="Interface\Repository\User\IEVEBUserInfoRep.cs" />
+    <Compile Include="Interface\Repository\User\IOBSPUserInfoRep.cs" />
+    <Compile Include="Interface\Repository\User\IOBFIUserInfoRep.cs" />
+    <Compile Include="Interface\Repository\User\IPGSLUserInfoRep.cs" />
+    <Compile Include="Interface\Repository\User\IUserInfoAdditionalRep.cs" />
+    <Compile Include="Interface\Repository\User\IRGUserInfoRep.cs" />
+    <Compile Include="Interface\Repository\User\IPtUserInfoRep.cs" />
+    <Compile Include="Interface\Repository\User\IIMBGUserInfoRep.cs" />
+    <Compile Include="Interface\Repository\User\ISportUserInfoRep.cs" />
+    <Compile Include="Interface\Repository\User\IIMPPUserInfoRep.cs" />
+    <Compile Include="Interface\Repository\User\IIMPTUserInfoRep.cs" />
+    <Compile Include="Interface\Repository\User\IIMSGUserInfoRep.cs" />
+    <Compile Include="Interface\Repository\User\IIMSportUserInfoRep.cs" />
+    <Compile Include="Interface\Repository\User\IIMUserInfoRep.cs" />
+    <Compile Include="Interface\Repository\User\IIMVRUserInfoRep.cs" />
+    <Compile Include="Interface\Repository\User\IIMeBETUserInfoRep.cs" />
+    <Compile Include="Interface\Repository\User\ILCUserInfoRep.cs" />
+    <Compile Include="Interface\Repository\User\IAGUserInfoRep.cs" />
+    <Compile Include="Interface\Repository\User\IUserAccountRep.cs" />
+    <Compile Include="Interface\Repository\VIP\IVIPLevelSettingRep.cs" />
+    <Compile Include="Interface\Repository\VIP\IVIPUserBonusRep.cs" />
+    <Compile Include="Interface\Repository\VIP\IVIPUserEventDetailRep.cs" />
+    <Compile Include="Interface\Repository\VIP\IVIPUserChangeLogRep.cs" />
+    <Compile Include="Interface\Repository\VIP\IVIPAgentScoreRep.cs" />
+    <Compile Include="Interface\Repository\VIP\IVIPUserInfoRep.cs" />
+    <Compile Include="Interface\Service\Enums\IWalletTypeService.cs" />
+    <Compile Include="Interface\Service\Enums\IProfitLossTypeNameService.cs" />
+    <Compile Include="Interface\Service\IGivePrizesService.cs" />
+    <Compile Include="Interface\Service\User\IUserRegisterService.cs" />
+    <Compile Include="Interface\Service\VIP\IVIPSettingService.cs" />
+    <Compile Include="Interface\Service\VIP\IVIPUserChangeLogService.cs" />
+    <Compile Include="Interface\Service\VIP\IVIPUserBonusService.cs" />
+    <Compile Include="Interface\Service\VIP\IVIPAgentService.cs" />
+    <Compile Include="Model\db\BaseSearchParam.cs" />
+    <Compile Include="Model\Entity\User\UserLevel.cs" />
+    <Compile Include="Model\Entity\VIP\Rule\MonthlyDepositRule.cs" />
+    <Compile Include="Model\Entity\VIP\Rule\RebateRateRule.cs" />
+    <Compile Include="Model\Entity\VIP\Rule\ChangeLevelRule.cs" />
+    <Compile Include="Model\Entity\VIP\VIPUserEventDetail.cs" />
+    <Compile Include="Model\Entity\VIP\VIPAgentInfo.cs" />
+    <Compile Include="Model\Entity\VIP\VIPAgentScore.cs" />
+    <Compile Include="Model\Enums\Finance\MoneyOutDealTypes.cs" />
+    <Compile Include="Model\Enums\Finance\MoneyInDealTypes.cs" />
+    <Compile Include="Model\Enums\RefundType.cs" />
+    <Compile Include="Model\Enums\Resource\ResourceInfo.cs" />
+    <Compile Include="Model\Enums\VIP\JoinFrequencyType.cs" />
+    <Compile Include="Model\Enums\VIP\VIPEventType.cs" />
+    <Compile Include="Model\Enums\SMSActionType.cs" />
+    <Compile Include="Model\Finance\Apollo\ApolloServiceType.cs" />
+    <Compile Include="Model\Finance\Apollo\ApolloConfigParam.cs" />
+    <Compile Include="Model\Finance\Apollo\ApolloServiceTypeInfo.cs" />
+    <Compile Include="Model\Enums\WalletType.cs" />
+    <Compile Include="Model\Paging\BuildPagedSqlQueryParam.cs" />
+    <Compile Include="Model\Param\Audit\VIP\AuditVIPAgentParam.cs" />
+    <Compile Include="Model\Param\Finance\GivePrizesByCustomerTypeParam.cs" />
+    <Compile Include="Model\Param\Finance\MoneyInParam.cs" />
+    <Compile Include="Model\Param\User\UserRegisterParam.cs" />
+    <Compile Include="Model\Param\VIP\VIPAgentParam.cs" />
+    <Compile Include="Model\Param\VIP\VIPUserBonusParam.cs" />
+    <Compile Include="Model\Param\VIP\VIPUserEventParam.cs" />
+    <Compile Include="Model\StoredProcedureParam\VIP\RegisterVIPUserParam.cs" />
+    <Compile Include="Model\ViewModel\BackSideWeb\BackSidePageInitSetting.cs" />
+    <Compile Include="Model\ViewModel\BackSideWeb\VIPUserBonusInitData.cs" />
+    <Compile Include="Model\ViewModel\BackSideWeb\GivePrizeInitData.cs" />
+    <Compile Include="Model\ViewModel\BackSideWeb\GivePrizesProcessParam.cs" />
+    <Compile Include="Model\ViewModel\Merchant\MerchantSettingModel.cs" />
+    <Compile Include="Model\ViewModel\Security\SignInToken.cs" />
+    <Compile Include="Model\ViewModel\Security\TicketUserData.cs" />
+    <Compile Include="Model\ViewModel\Validation\ValidationInfo.cs" />
+    <Compile Include="Model\ViewModel\VIP\BaseVIPChangeLogModel.cs" />
+    <Compile Include="Model\ViewModel\VIP\BuildVIPChangeLogSqlParam.cs" />
+    <Compile Include="Model\ViewModel\VIP\VIPFlowChangeLogModel.cs" />
+    <Compile Include="Model\ViewModel\VIP\VIPAgentAccountLogModel.cs" />
+    <Compile Include="Model\ViewModel\VIP\VIPUserBonusModel.cs" />
+    <Compile Include="Model\ViewModel\VIP\VIPPointsChangeLogModel.cs" />
+    <Compile Include="Repository\Finance\GivePrizeRep.cs" />
+    <Compile Include="Repository\User\UserLevelRep.cs" />
+    <Compile Include="Repository\VIP\VIPLevelSettingRep.cs" />
+    <Compile Include="Repository\VIP\VIPUserEventDetailRep.cs" />
+    <Compile Include="Repository\VIP\VIPUserChangeLogRep.cs" />
+    <Compile Include="Repository\VIP\VIPAgentScoreRep.cs" />
+    <Compile Include="Repository\VIP\VIPUserInfoRep.cs" />
+    <Compile Include="Interface\Service\Cache\IRedisService.cs" />
+    <Compile Include="Interface\Service\Enums\IBaseValueModelService.cs" />
+    <Compile Include="Interface\Service\Enums\IReportInnerSettingService.cs" />
+    <Compile Include="Interface\Service\Enums\IPlatformProductService.cs" />
+    <Compile Include="Interface\Service\Enums\IReportTypeService.cs" />
+    <Compile Include="Interface\Service\Enums\Product\IPlatformProductSettingService.cs" />
+    <Compile Include="Interface\Service\Game\IUserDailyReportCommissionInfoService.cs" />
+    <Compile Include="Interface\Service\IAuditInfoService.cs" />
+    <Compile Include="Interface\Service\IColourEggService.cs" />
+    <Compile Include="Interface\Service\ISqliteTokenService.cs" />
+    <Compile Include="Interface\Service\IFrontsideMenuService.cs" />
+    <Compile Include="Interface\Service\IChatRoomService.cs" />
+    <Compile Include="Interface\Service\ICachedLoginUserInfoService.cs" />
+    <Compile Include="Interface\Service\IGameCommissionRuleInfoService.cs" />
+    <Compile Include="Interface\Service\IIpSystemApiService.cs" />
+    <Compile Include="Interface\Service\ILoginDetailBackEndService.cs" />
+    <Compile Include="Interface\Service\IOperationLogService.cs" />
+    <Compile Include="Interface\Repository\ITransferSqlLiteRepository.cs" />
+    <Compile Include="Interface\Repository\IUserInfoRep.cs" />
+    <Compile Include="Interface\Service\IAppSettingService.cs" />
+    <Compile Include="Interface\Service\IConfigService.cs" />
+    <Compile Include="Interface\Service\IThirdPartyApiWCFService.cs" />
+    <Compile Include="Interface\Service\ITPGameAccountService.cs" />
+    <Compile Include="Interface\Service\VIP\IVIPUserService.cs" />
+    <Compile Include="Interface\Service\Merchant\ICrawlBetLogService.cs" />
+    <Compile Include="Interface\Service\Merchant\IMerchantSettingService.cs" />
+    <Compile Include="Interface\Service\ITPGameApiService.cs" />
+    <Compile Include="Interface\Repository\IUserCommissionStoredProcedureRep.cs" />
+    <Compile Include="Interface\Service\ITPGameStoredProcedureService.cs" />
+    <Compile Include="Interface\Service\IUserAccountService.cs" />
+    <Compile Include="Interface\Repository\IUserAuthenticatorRep.cs" />
+    <Compile Include="Interface\Service\IUserCommissionService.cs" />
+    <Compile Include="Interface\Service\IUserSecurityService.cs" />
+    <Compile Include="Interface\Service\IUserInfoRelatedService.cs" />
+    <Compile Include="Interface\Service\IUserOnlineService.cs" />
+    <Compile Include="Interface\Service\IMessageQueueService.cs" />
+    <Compile Include="Interface\Service\IWithdrawReadService.cs" />
+    <Compile Include="Interface\Service\Mail\ISendMailLogService.cs" />
+    <Compile Include="Interface\Service\Net\IDeviceService.cs" />
+    <Compile Include="Interface\Service\Net\IIpUtilService.cs" />
+    <Compile Include="Interface\Service\Net\IOperationContextService.cs" />
+    <Compile Include="Interface\Service\Security\IBlockActionService.cs" />
+    <Compile Include="Interface\Service\Security\IValidateCodeService.cs" />
+    <Compile Include="Interface\Service\Security\IFailureOperationService.cs" />
+    <Compile Include="Interface\Service\Security\IAreaService.cs" />
+    <Compile Include="Interface\Service\Security\IWhiteIpListService.cs" />
+    <Compile Include="Interface\Service\Security\IBlackLocationService.cs" />
+    <Compile Include="Interface\Service\VIP\Activity\IVIPUserEventDetailService.cs" />
+    <Compile Include="Interface\Service\VIP\Bonus\IVIPBonusTypeService.cs" />
+    <Compile Include="Interface\Service\User\IDebugUserService.cs" />
+    <Compile Include="Model\Attributes\DapperIgnoreAttribute.cs" />
+    <Compile Include="Model\Common\FtpSharedSettings.cs" />
+    <Compile Include="Model\Common\BTISSharedAppSettings.cs" />
+    <Compile Include="Model\Common\EVEBSharedAppSettings.cs" />
+    <Compile Include="Model\Common\OBSPSharedAppSettings.cs" />
+    <Compile Include="Model\Common\OBFISharedAppSettings.cs" />
+    <Compile Include="Model\Common\OperationLogSetting.cs" />
+    <Compile Include="Model\Common\PGSharedAppSettings.cs" />
+    <Compile Include="Model\Common\ABSharedAppSettings.cs" />
+    <Compile Include="Model\Common\IMLotterySharedAppSettings.cs" />
+    <Compile Include="Model\Common\BatchAppSettings.cs" />
+    <Compile Include="Model\db\JxCrossDbQueryParam.cs" />
+    <Compile Include="Model\Entity\ActivityLog.cs" />
+    <Compile Include="Model\Entity\Finance\CMoneyInInfo.cs" />
+    <Compile Include="Model\Entity\Finance\BankType.cs" />
+    <Compile Include="Model\Entity\FrontsideMenu.cs" />
+    <Compile Include="Model\Entity\ChatRoom\LettersGroupSetting.cs" />
+    <Compile Include="Model\Entity\BlockChainInfo.cs" />
+    <Compile Include="Model\Entity\Security\BlackAreaList.cs" />
+    <Compile Include="Model\Entity\Security\BlackIpRangeList.cs" />
+    <Compile Include="Model\Entity\Security\FailureOperationCount.cs" />
+    <Compile Include="Model\Entity\Security\WhiteIpList.cs" />
+    <Compile Include="Model\Entity\Security\BlackIpList.cs" />
+    <Compile Include="Model\Entity\IpData.cs" />
+    <Compile Include="Model\Entity\User\ABEBUserInfo.cs" />
+    <Compile Include="Model\Entity\User\BTISUserInfo.cs" />
+    <Compile Include="Model\Entity\User\EVEBUserInfo.cs" />
+    <Compile Include="Model\Entity\GiftBagLog.cs" />
+    <Compile Include="Model\Entity\VIP\VIPLevelSetting.cs" />
+    <Compile Include="Model\Entity\VIP\VIPUserBonus.cs" />
+    <Compile Include="Model\Entity\VIP\VIPUserInfo.cs" />
+    <Compile Include="Model\Enums\PlatformCulture.cs" />
+    <Compile Include="Model\Enums\Route\RouteName.cs" />
+    <Compile Include="Model\Enums\Route\RouteVersion.cs" />
+    <Compile Include="Model\Enums\VIP\VIPBonusType.cs" />
+    <Compile Include="Model\Enums\DbIndexes.cs" />
+    <Compile Include="Model\Enums\BacksideResetPasswordSettingTypes.cs" />
+    <Compile Include="Model\Enums\ReceivedStatus.cs" />
+    <Compile Include="Model\Ftp\FtpParam.cs" />
+    <Compile Include="Model\Util\LocalizationParam.cs" />
+    <Compile Include="Model\StoredProcedureParam\VIP\ProVIPPrizesParam.cs" />
+    <Compile Include="Model\Enums\SelectedItemBooleanTypes.cs" />
+    <Compile Include="Model\Param\Mail\AWSSendMailSetting.cs" />
+    <Compile Include="Model\ViewModel\User\SearchUserEmailModel.cs" />
+    <Compile Include="Model\Enums\WhiteIpType.cs" />
+    <Compile Include="Model\Enums\BlackIpType.cs" />
+    <Compile Include="Model\Entity\Game\LotteryInfo.cs" />
+    <Compile Include="Model\Enums\ColourEgg\RedEnvelopeOpenTypes.cs" />
+    <Compile Include="Model\Enums\ResetPassword\ResetPasswordType.cs" />
+    <Compile Include="Model\Entity\User\IMSGUserInfo.cs" />
+    <Compile Include="Model\Entity\User\IMVRUserInfo.cs" />
+    <Compile Include="Model\Entity\User\OBFIUserInfo.cs" />
+    <Compile Include="Model\Entity\User\OBSPUserInfo.cs" />
+    <Compile Include="Model\Entity\User\PGSLUserInfo.cs" />
+    <Compile Include="Model\Entity\Mail\SendMailLog.cs" />
+    <Compile Include="Model\Entity\User\FailureLoginHistory.cs" />
+    <Compile Include="Model\Enums\GameTypeIDs.cs" />
+    <Compile Include="Model\Enums\LoginType.cs" />
+    <Compile Include="Model\Enums\MailServiceProvider.cs" />
+    <Compile Include="Model\Enums\PlatformMerchant.cs" />
+    <Compile Include="Model\Enums\SecurityStep.cs" />
+    <Compile Include="Model\Enums\ThirdParty\TransferJobTypes.cs" />
+    <Compile Include="Model\Enums\UserLevelTypes.cs" />
+    <Compile Include="Model\Enums\WebActionType.cs" />
+    <Compile Include="Model\Param\Client\ClientBehavior.cs" />
+    <Compile Include="Model\Enums\PasswordRule\PasswordRuleTypes.cs" />
+    <Compile Include="Model\Param\Mail\InternalMailApiResponse.cs" />
+    <Compile Include="Model\Param\Mail\SendGridErrorResponse.cs" />
+    <Compile Include="Model\Param\User\BlockChainInfoParam.cs" />
+    <Compile Include="Model\Param\User\TransferToChildParam.cs" />
+    <Compile Include="Model\Param\User\UpdateBankInfoParam.cs" />
+    <Compile Include="Model\ReturnModel\BaseBehaviorModel.cs" />
+    <Compile Include="Model\ServiceModel\CommonDispatchMessageInspector.cs" />
+    <Compile Include="Model\Entity\CachedLoginUserInfo.cs" />
+    <Compile Include="Model\Entity\Game\CommissionAccRuleTable.cs" />
+    <Compile Include="Model\Entity\Game\UserCommissionInfo.cs" />
+    <Compile Include="Model\Entity\Game\UserCommissionList.cs" />
+    <Compile Include="Model\Entity\Game\UserDailyReport_CommissionInfo.cs" />
+    <Compile Include="Model\Enums\ChatRoomTypes.cs" />
+    <Compile Include="Model\Entity\User\UserInfoAdditional.cs" />
+    <Compile Include="Model\Enums\ChatRoom\ChatRoomSpReturnCode.cs" />
+    <Compile Include="Model\Enums\DownloadFile\DownloadFilePathTypes.cs" />
+    <Compile Include="Model\Enums\LotteryInfoTypes.cs" />
+    <Compile Include="Model\Enums\CreateQrCodeImageParam.cs" />
+    <Compile Include="Model\Enums\JxOperationLogCategory.cs" />
+    <Compile Include="Model\Enums\PasswordType.cs" />
+    <Compile Include="Model\Enums\TransferToChildStatus.cs" />
+    <Compile Include="Model\Enums\CommissionReportDataTypes.cs" />
+    <Compile Include="Model\Enums\CommissionAuditStatus.cs" />
+    <Compile Include="Model\Enums\CommissionGroupType.cs" />
+    <Compile Include="Model\Enums\CommissionTypes.cs" />
+    <Compile Include="Model\Enums\DbConnectionTypes.cs" />
+    <Compile Include="Model\Enums\FrontsideMenuTypes.cs" />
+    <Compile Include="Model\Enums\HistoryTypes.cs" />
+    <Compile Include="Model\Enums\StoredProcedure\ProUserCommissionSelCommissionListTypes.cs" />
+    <Compile Include="Model\Enums\ThirdParty\TPGameMoneyTransferActionType.cs" />
+    <Compile Include="Model\Enums\UserAuthenticatorStatuses.cs" />
+    <Compile Include="Model\Enums\WithdrawTypes.cs" />
+    <Compile Include="Model\Exceptions\JobSuspendException.cs" />
+    <Compile Include="Model\Enums\AwardTypes.cs" />
+    <Compile Include="Model\MessageQueue\RabbitMQSetting.cs" />
+    <Compile Include="Model\Paging\MultiplePagedSqlQueryParam.cs" />
+    <Compile Include="Model\Param\Commission\CommissionSearchFrontSideParam.cs" />
+    <Compile Include="Model\Param\ThirdParty\CreateRemoteAccountParam.cs" />
+    <Compile Include="Model\Param\ThirdParty\SearchTPGameMoneyInfoParam.cs" />
+    <Compile Include="Model\Param\ThirdParty\SearchPlayBetAndProfitLossParam.cs" />
+    <Compile Include="Model\Param\ThirdParty\TPGameCreateLoginHistoryParam.cs" />
+    <Compile Include="Model\Param\ThirdParty\TPGameMoneySettingViewModel.cs" />
+    <Compile Include="Model\Param\User\InsertOperationLogParam.cs" />
+    <Compile Include="Model\Param\User\ProSaveUserTransferChildStatusParam.cs" />
+    <Compile Include="Model\Param\User\SavePasswordParam.cs" />
+    <Compile Include="Model\Param\User\VerifiedAuthenticatorParam.cs" />
+    <Compile Include="Model\ServiceModel\CommonMOperationBehavior.cs" />
+    <Compile Include="Model\StoredProcedureParam\ExistInBlackAreaListResult.cs" />
+    <Compile Include="Model\ThirdParty\AllBet\ABBaseModel.cs" />
+    <Compile Include="Model\ThirdParty\AllBet\ABEBBetLog.cs" />
+    <Compile Include="Model\ThirdParty\AllBet\ABRequestModel.cs" />
+    <Compile Include="Model\ThirdParty\AllBet\ABResponseCode.cs" />
+    <Compile Include="Model\ThirdParty\AllBet\ABResponseModel.cs" />
+    <Compile Include="Model\StoredProcedureParam\ProGetUserReportProfitlossParam.cs" />
+    <Compile Include="Model\ThirdParty\BTI\BTISBetLog.cs" />
+    <Compile Include="Model\ThirdParty\BTI\BTISDataRequestModel.cs" />
+    <Compile Include="Model\ThirdParty\BTI\BTISDataResponseModel.cs" />
+    <Compile Include="Model\ThirdParty\BTI\BTISWalletResponse.cs" />
+    <Compile Include="Model\ThirdParty\EVO\EVEBBetLog.cs" />
+    <Compile Include="Model\ThirdParty\OB\OBSP\OBSPReturnCode.cs" />
+    <Compile Include="Model\ThirdParty\OB\OBSP\OBSPResponseModel.cs" />
+    <Compile Include="Model\ThirdParty\OB\OBSP\OBSPRequestModel.cs" />
+    <Compile Include="Model\ThirdParty\OB\OBSP\OBSPBetLog.cs" />
+    <Compile Include="Model\ThirdParty\SabaSport\SabaSportPlatformTypes.cs" />
+    <Compile Include="Model\ViewModel\ChatRoom\ChatRoomModel.cs" />
+    <Compile Include="Model\ViewModel\ChatRoom\ChatRoomSqlResultModel.cs" />
+    <Compile Include="Model\ThirdParty\EVO\EVBaseModel.cs" />
+    <Compile Include="Model\ThirdParty\EVO\EVRequestModel.cs" />
+    <Compile Include="Model\ThirdParty\EVO\EVResponseCode.cs" />
+    <Compile Include="Model\ThirdParty\EVO\EVResponseModel.cs" />
+    <Compile Include="Model\ThirdParty\OB\OBFI\OBFIBaseModel.cs" />
+    <Compile Include="Model\ThirdParty\OB\OBFI\OBFIBetLog.cs" />
+    <Compile Include="Model\ThirdParty\OB\OBFI\OBFIRequestModel.cs" />
+    <Compile Include="Model\ThirdParty\OB\OBFI\OBResponseCode.cs" />
+    <Compile Include="Model\ThirdParty\OB\OBFI\OBFIResponseModel.cs" />
+    <Compile Include="Model\ViewModel\AmountLimitInfo.cs" />
+    <Compile Include="Model\ThirdParty\PG\PGRequestModel.cs" />
+    <Compile Include="Model\ThirdParty\PG\PGResponseCode.cs" />
+    <Compile Include="Model\ThirdParty\PG\PGBaseModel.cs" />
+    <Compile Include="Model\ThirdParty\PG\PGResponseModel.cs" />
+    <Compile Include="Model\ThirdParty\PG\PGSLBetLog.cs" />
+    <Compile Include="Model\ViewModel\Date\TableSearchDateRange.cs" />
+    <Compile Include="Model\ViewModel\Date\DailyReportDateRange.cs" />
+    <Compile Include="Model\Enums\ThirdParty\ThirdPartySubGameCodes.cs" />
+    <Compile Include="Model\Param\User\UserAccountScoreLogParam.cs" />
+    <Compile Include="Model\ViewModel\ConfigGroupSettings.cs" />
+    <Compile Include="Model\ViewModel\FrontsideMenuModel.cs" />
+    <Compile Include="Model\ViewModel\Game\GameCommissionRuleInfo.cs" />
+    <Compile Include="Model\ViewModel\Game\PlatformUserProfitloss.cs" />
+    <Compile Include="Model\ViewModel\Game\ReportInnerSetting.cs" />
+    <Compile Include="Model\ViewModel\Game\SpUserCommissionSelBackendResult.cs" />
+    <Compile Include="Model\ViewModel\Game\SpUserCommissionSelFrontSideResult.cs" />
+    <Compile Include="Model\ViewModel\Game\UserProductScore.cs" />
+    <Compile Include="Model\ViewModel\Game\UserReportProfitLossResult.cs" />
+    <Compile Include="Model\ViewModel\JxIpInformation.cs" />
+    <Compile Include="Model\Enums\ProfitLossTypeName.cs" />
+    <Compile Include="Model\Enums\ThirdParty\TGApiTypes.cs" />
+    <Compile Include="Model\Enums\TPGameOrderStatus.cs" />
+    <Compile Include="Model\Param\ThirdParty\SearchPlatformProfitLossParam.cs" />
+    <Compile Include="Model\ThirdParty\Base\BaseRemoteBetLog.cs" />
+    <Compile Include="Model\ThirdParty\IM\IMOneResponseCode.cs" />
+    <Compile Include="Model\ThirdParty\IM\Lottery\IMLotteryBetLog.cs" />
+    <Compile Include="Model\ThirdParty\IM\IMBaseModel.cs" />
+    <Compile Include="Model\ThirdParty\IM\IMRequestModel.cs" />
+    <Compile Include="Model\ThirdParty\IM\IMResponseModel.cs" />
+    <Compile Include="Model\Param\Cache\IntervalJobParam.cs" />
+    <Compile Include="Model\ViewModel\IpSystemApiResult.cs" />
+    <Compile Include="Model\ViewModel\Game\PlatformTotalProfitloss.cs" />
+    <Compile Include="Model\ViewModel\LotteryCenter\LotteryInfoResultModel.cs" />
+    <Compile Include="Model\ViewModel\Permission\AuthenticatorPermission.cs" />
+    <Compile Include="Model\ViewModel\Permission\UserAuthenticatorInfo.cs" />
+    <Compile Include="Model\ViewModel\Report\ManageCenterViewModel.cs" />
+    <Compile Include="Model\ViewModel\Report\ProfitLossHistoryViewModel.cs" />
+    <Compile Include="Model\ViewModel\ScoreInteralModel.cs" />
+    <Compile Include="Model\ViewModel\Security\InvalidCountViewModel.cs" />
+    <Compile Include="Model\ViewModel\ThirdParty\Old\OldTPGameOrderParam.cs" />
+    <Compile Include="Model\ViewModel\ThirdParty\PGVerifySessionModel.cs" />
+    <Compile Include="Model\ViewModel\ThirdParty\SaveBetLogFlags.cs" />
+    <Compile Include="Model\ViewModel\ThirdParty\TPGameMoneyInfoViewModel.cs" />
+    <Compile Include="Model\ViewModel\ThirdParty\TPGamePlayInfoRowModel.cs" />
+    <Compile Include="Model\ViewModel\ThirdParty\TPGameProfitLossRowModel.cs" />
+    <Compile Include="Model\ViewModel\TPGamePlayInfo.cs" />
+    <Compile Include="Model\ViewModel\ThirdParty\BaseTPGameMoneyInfo.cs" />
+    <Compile Include="Model\ViewModel\ThirdParty\RequestAndResponse.cs" />
+    <Compile Include="Model\ViewModel\ThirdParty\TPGameMoneyInInfo.cs" />
+    <Compile Include="Model\ViewModel\ThirdParty\TPGameMoneyOutInfo.cs" />
+    <Compile Include="Model\ViewModel\ThirdParty\InsertTPGameProfitlossParam.cs" />
+    <Compile Include="Model\ViewModel\ThirdParty\UserScore.cs" />
+    <Compile Include="Model\ViewModel\TPGameProfitLoss.cs" />
+    <Compile Include="Model\ViewModel\TPGameTransferInfo.cs" />
+    <Compile Include="Model\ViewModel\User\ProSelectBankResult.cs" />
+    <Compile Include="Model\ViewModel\User\SaveUserAuthInfo.cs" />
+    <Compile Include="Model\ViewModel\User\SecuritySetting.cs" />
+    <Compile Include="Model\ViewModel\User\UserScoreLog.cs" />
+    <Compile Include="Repository\Base\BaseGameCommissionRuleInfoRep.cs" />
+    <Compile Include="Repository\Base\SqlLite\BaseSqlLiteRepository.cs" />
+    <Compile Include="Repository\Base\BaseTransferSqlLiteRepository.cs" />
+    <Compile Include="Repository\Finance\CMoneyInInfoRep.cs" />
+    <Compile Include="Repository\Finance\BankTypeRep.cs" />
+    <Compile Include="Repository\FrontsideMenuRep.cs" />
+    <Compile Include="Repository\ChatRoomRep.cs" />
+    <Compile Include="Repository\Game\LotteryInfoRep.cs" />
+    <Compile Include="Repository\Game\UserDailyReportCommissionInfoRep.cs" />
+    <Compile Include="Repository\CachedLoginUserInfoRep.cs" />
+    <Compile Include="Repository\Game\UserCommissionInfoRep.cs" />
+    <Compile Include="Repository\Game\UserCommissionListRep.cs" />
+    <Compile Include="Repository\Game\UserReportProfitLossRep.cs" />
+    <Compile Include="Repository\Game\UserCommissionStoredProcedureRep.cs" />
+    <Compile Include="Repository\Game\ESportCommissionRuleInfoRep.cs" />
+    <Compile Include="Repository\Game\OtherLotteryCommissionRuleInfoRep.cs" />
+    <Compile Include="Repository\Game\SlotCommissionRuleInfoRep.cs" />
+    <Compile Include="Repository\Game\BoardGameCommissionRuleInfoRep.cs" />
+    <Compile Include="Repository\Game\LiveCommissionRuleInfoRep.cs" />
+    <Compile Include="Repository\Game\LotteryCommissionRuleInfoRep.cs" />
+    <Compile Include="Repository\GiftBagRep.cs" />
+    <Compile Include="Repository\Helper\SqliteDbHelperSQL.cs" />
+    <Compile Include="Repository\Helper\BaseDbHelperSQL.cs" />
+    <Compile Include="Repository\BlockChainInfoRep.cs" />
+    <Compile Include="Repository\Security\BlackAreaListRep.cs" />
+    <Compile Include="Repository\Security\FailureOperationCountRep.cs" />
+    <Compile Include="Repository\Security\BlackIpRangeListRep.cs" />
+    <Compile Include="Repository\Security\WhiteIpListRep.cs" />
+    <Compile Include="Repository\Security\BlackIpListRep.cs" />
+    <Compile Include="Repository\IpDataRep.cs" />
+    <Compile Include="Repository\StoredProcedure\ABEBStoredProcedureRep.cs" />
+    <Compile Include="Repository\StoredProcedure\OBSPStoredProcedureRep.cs" />
+    <Compile Include="Repository\StoredProcedure\BTISStoredProcedureRep.cs" />
+    <Compile Include="Repository\StoredProcedure\IMSGStoredProcedureRep.cs" />
+    <Compile Include="Repository\StoredProcedure\IMVRStoredProcedureRep.cs" />
+    <Compile Include="Repository\StoredProcedure\EVEBStoredProcedureRep.cs" />
+    <Compile Include="Repository\StoredProcedure\OBFIStoredProcedureRep.cs" />
+    <Compile Include="Repository\StoredProcedure\PGSLStoredProcedureRep.cs" />
+    <Compile Include="Repository\Transfer\OBSPTransferSqlLiteRep.cs" />
+    <Compile Include="Repository\Transfer\BTISTransferSqlLiteRep.cs" />
+    <Compile Include="Repository\Transfer\IMBGTransferSqlLiteRep.cs" />
+    <Compile Include="Repository\Transfer\IMSGTransferSqlLiteRep.cs" />
+    <Compile Include="Repository\Transfer\ABEBTransferSqlLiteRep.cs" />
+    <Compile Include="Repository\Transfer\IMVRTransferSqlLiteRep.cs" />
+    <Compile Include="Repository\Transfer\EVEBTransferSqlLiteRep.cs" />
+    <Compile Include="Repository\Transfer\OBFITransferSqlLiteRep.cs" />
+    <Compile Include="Repository\Transfer\PGSLTransferSqlLiteRep.cs" />
+    <Compile Include="Repository\User\BTISUserInfoRep.cs" />
+    <Compile Include="Repository\User\EVEBUserInfoRep.cs" />
+    <Compile Include="Repository\User\ABEBUserInfoRep.cs" />
+    <Compile Include="Repository\User\OBFIUserInfoRep.cs" />
+    <Compile Include="Repository\User\OBSPUserInfoRep.cs" />
+    <Compile Include="Repository\User\PGSLUserInfoRep.cs" />
+    <Compile Include="Repository\User\UserAccountRep.cs" />
+    <Compile Include="Repository\User\IMVRUserInfoRep.cs" />
+    <Compile Include="Repository\User\IMBGUserInfoRep.cs" />
+    <Compile Include="Repository\User\FailureLoginHistoryRep.cs" />
+    <Compile Include="Repository\User\SendMailLogRep.cs" />
+    <Compile Include="Repository\User\UserInfoAdditionalRep.cs" />
+    <Compile Include="Repository\VIP\VIPUserBonusRep.cs" />
+    <Compile Include="Resource\Page\AboutUs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AboutUs.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Element\GivePrizesElement.Designer.cs">
+      <DependentUpon>GivePrizesElement.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resource\Element\ChatRoomElement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChatRoomElement.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Element\CommissionElement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommissionElement.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Element\DBContentElement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBContentElement.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Page\Footer.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Footer.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Element\LotteryElement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LotteryElement.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Element\OperationLogContentElement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OperationLogContentElement.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Page\Deposit.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Deposit.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Page\Register.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Register.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Element\SecurityElement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SecurityElement.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Element\ServiceTypesElement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServiceTypesElement.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Element\ThirdPartyGameElement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThirdPartyGameElement.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Element\UserAuthElement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserAuthElement.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Element\VIPContentElement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VIPContentElement.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Page\Tutorial.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Tutorial.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Base\BaseApplicationService.cs" />
+    <Compile Include="Service\Base\BaseAppSettingService.cs" />
+    <Compile Include="Interface\Service\IJxCacheService.cs" />
+    <Compile Include="Service\CachedLoginUserInfoService.cs" />
+    <Compile Include="Service\Cache\IntervalJobUtil.cs" />
+    <Compile Include="Service\Cache\JxCacheService.cs" />
+    <Compile Include="Common\Util\Cache\MemoryCacheUtil.cs" />
+    <Compile Include="Common\Util\Cache\SearchCacheParam.cs" />
+    <Compile Include="Common\Util\DateTimeUtil.cs" />
+    <Compile Include="Common\Util\ErrorMsgUtil.cs" />
+    <Compile Include="Common\Util\HttpWebRequestUtil.cs" />
+    <Compile Include="Common\Util\JsonUtil.cs" />
+    <Compile Include="Common\Util\JxTask.cs" />
+    <Compile Include="Common\Util\LogUtil.cs" />
+    <Compile Include="Common\Util\ModelUtil.cs" />
+    <Compile Include="Common\Util\ReflectUtil.cs" />
+    <Compile Include="Common\Util\StringUtil.cs" />
+    <Compile Include="Common\Util\MaskUtil.cs" />
+    <Compile Include="Common\DESTool.cs" />
+    <Compile Include="Common\Util\TelegramUtil.cs" />
+    <Compile Include="Interface\Repository\ITPGameStoredProcedureRep.cs" />
+    <Compile Include="Interface\Service\ITPGameUserInfoService.cs" />
+    <Compile Include="Interface\Service\IMailService.cs" />
+    <Compile Include="Model\Attributes\DbColumnInfoAttribute.cs" />
+    <Compile Include="Model\Attributes\ExplicitKeyAttribute.cs" />
+    <Compile Include="Model\Attributes\IgnoreErrorHandleAttribute.cs" />
+    <Compile Include="Model\Attributes\IgnoreReadAttribute.cs" />
+    <Compile Include="Model\Attributes\CustomizedRegularExpressionAttribute.cs" />
+    <Compile Include="Model\Attributes\WriteAttribute.cs" />
+    <Compile Include="Model\Common\JxBackendSelectListItem.cs" />
+    <Compile Include="Model\Common\SharedAppSettings.cs" />
+    <Compile Include="Model\db\GetAllQuerySQLParam.cs" />
+    <Compile Include="Model\Entity\InsertSysSMS.cs" />
+    <Compile Include="Model\Entity\Config\ConfigSettings.cs" />
+    <Compile Include="Model\Entity\Config\ConfigGroup.cs" />
+    <Compile Include="Model\Entity\AuditInfo.cs" />
+    <Compile Include="Model\Entity\LoginDetail_BackEnd.cs" />
+    <Compile Include="Model\Entity\OperationLog.cs" />
+    <Compile Include="Model\Entity\User\AGUserInfo.cs" />
+    <Compile Include="Model\Entity\Base\BaseEntityModel.cs" />
+    <Compile Include="Model\Entity\Base\BaseTPGameUserInfo.cs" />
+    <Compile Include="Model\Entity\User\Authenticator\UserAuthenticator.cs" />
+    <Compile Include="Model\Entity\User\IMBGUserInfo.cs" />
+    <Compile Include="Model\Entity\User\IMeBETUserInfo.cs" />
+    <Compile Include="Model\Entity\User\IMPPUserInfo.cs" />
+    <Compile Include="Model\Entity\User\IMPTUserInfo.cs" />
+    <Compile Include="Model\Entity\User\IMSportUserInfo.cs" />
+    <Compile Include="Model\Entity\User\IMUserInfo.cs" />
+    <Compile Include="Model\Entity\User\LCUserInfo.cs" />
+    <Compile Include="Model\Entity\User\PtUserInfo.cs" />
+    <Compile Include="Model\Entity\User\RGUserInfo.cs" />
+    <Compile Include="Model\Entity\User\SportUserInfo.cs" />
+    <Compile Include="Model\Entity\ThirdPartyUserAccount.cs" />
+    <Compile Include="Model\Entity\User\UserBankInfo.cs" />
+    <Compile Include="Model\Enums\ActTypes.cs" />
+    <Compile Include="Model\Enums\AuditTypeValue.cs" />
+    <Compile Include="Model\Enums\BaseValueModel.cs" />
+    <Compile Include="Model\Enums\ConfigGroupNameEnum.cs" />
+    <Compile Include="Model\Enums\EnvironmentCode.cs" />
+    <Compile Include="Model\Enums\GlobalVariables.cs" />
+    <Compile Include="Model\Enums\InlodbTypes.cs" />
+    <Compile Include="Model\Enums\JxApplication.cs" />
+    <Compile Include="Model\Enums\ProfitlossReportDataType.cs" />
+    <Compile Include="Model\Enums\LoginResults.cs" />
+    <Compile Include="Model\Enums\MailTemplate.cs" />
+    <Compile Include="Model\Enums\ModifyUserDataTypes.cs" />
+    <Compile Include="Model\Enums\ProfitLossReportSortTypes.cs" />
+    <Compile Include="Model\Enums\ProfitLossReportTabTypes.cs" />
+    <Compile Include="Model\Enums\ReturnCodeActionType.cs" />
+    <Compile Include="Model\Enums\PlatformProduct.cs" />
+    <Compile Include="Model\Enums\ReturnCode.cs" />
+    <Compile Include="Model\Enums\SmsType.cs" />
+    <Compile Include="Model\Enums\TelegramChatGroup.cs" />
+    <Compile Include="Model\Exceptions\FlowControlException.cs" />
+    <Compile Include="Model\Exceptions\OverMaxSearchDaysException.cs" />
+    <Compile Include="Model\Exceptions\RequiredParameterException.cs" />
+    <Compile Include="Model\Exceptions\SearchUserNameIsNotValdException.cs" />
+    <Compile Include="Model\Exceptions\OverMaxSearchRowCountException.cs" />
+    <Compile Include="Model\Exceptions\OldPasswordNotValidException.cs" />
+    <Compile Include="Model\Exceptions\SameWithOldPasswordException.cs" />
+    <Compile Include="Model\Paging\BasePagedParamsModel.cs" />
+    <Compile Include="Model\Paging\BasePagingRequestParam.cs" />
+    <Compile Include="Model\Paging\PagedResultModel.cs" />
+    <Compile Include="Model\Paging\PagedSqlQueryParamsModel.cs" />
+    <Compile Include="Model\Paging\SortModel.cs" />
+    <Compile Include="Model\Param\Audit\AuditBankParam.cs" />
+    <Compile Include="Model\Param\Audit\AuditGivePrizeParam.cs" />
+    <Compile Include="Model\Param\Audit\AuditUsdtParam.cs" />
+    <Compile Include="Model\Param\Audit\AuditUserDataParam.cs" />
+    <Compile Include="Model\Param\Audit\AuditInfoParam.cs" />
+    <Compile Include="Model\Param\User\InsertLoginDetailBackendParam.cs" />
+    <Compile Include="Model\Param\Mail\MailParam.cs" />
+    <Compile Include="Model\Param\ThirdParty\TPGameProfitLossSearchParam.cs" />
+    <Compile Include="Model\Param\User\UserModifyParam.cs" />
+    <Compile Include="Model\ReturnModel\BaseReturnModel.cs" />
+    <Compile Include="Model\ErrorHandle\SendTelegramParam.cs" />
+    <Compile Include="Model\StoredProcedureParam\ProGetGameTeamUserTotalProfitLossParam.cs" />
+    <Compile Include="Model\ReturnModel\SPReturnModel.cs" />
+    <Compile Include="Model\ViewModel\BasicUserInfo.cs" />
+    <Compile Include="Model\ViewModel\EnvironmentInfo.cs" />
+    <Compile Include="Model\ViewModel\Telegram\TelegramSendMessageResponse.cs" />
+    <Compile Include="Model\ViewModel\Game\TeamUserTotalProfitloss.cs" />
+    <Compile Include="Model\ViewModel\TPGameAccountSearchResult.cs" />
+    <Compile Include="Model\ViewModel\TPGameProfitLossSearchResult.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\Base\BaseTPGameStoredProcedureRep.cs" />
+    <Compile Include="Repository\Config\ConfigSettingsRep.cs" />
+    <Compile Include="Repository\Config\ConfigGroupRep.cs" />
+    <Compile Include="Repository\Helper\DbHelperSQL.cs" />
+    <Compile Include="Repository\Base\BaseDbRepository.cs" />
+    <Compile Include="Repository\Extensions\DapperExtensions.cs" />
+    <Compile Include="Repository\Extensions\DapperSqlMapperExtensions.cs" />
+    <Compile Include="Repository\Base\BaseTPGameUserInfoRep.cs" />
+    <Compile Include="Repository\StoredProcedure\LotteryStoredProcedureRep.cs" />
+    <Compile Include="Repository\StoredProcedure\PTStoredProcedureRep.cs" />
+    <Compile Include="Repository\StoredProcedure\LCStoredProcedureRep.cs" />
+    <Compile Include="Repository\StoredProcedure\IMStoredProcedureRep.cs" />
+    <Compile Include="Repository\StoredProcedure\RGStoredProcedureRep.cs" />
+    <Compile Include="Repository\StoredProcedure\IMPTStoredProcedureRep.cs" />
+    <Compile Include="Repository\StoredProcedure\IMPPStoredProcedureRep.cs" />
+    <Compile Include="Repository\StoredProcedure\IMSportStoredProcedureRep.cs" />
+    <Compile Include="Repository\StoredProcedure\IMeBETStoredProcedureRep.cs" />
+    <Compile Include="Repository\StoredProcedure\IMBGStoredProcedureRep.cs" />
+    <Compile Include="Repository\StoredProcedure\SportStoredProcedureRep.cs" />
+    <Compile Include="Repository\StoredProcedure\AGStoredProcedureRep.cs" />
+    <Compile Include="Repository\LoginDetailBackEndRep.cs" />
+    <Compile Include="Repository\AuditInfoRep.cs" />
+    <Compile Include="Repository\OperationLogRep.cs" />
+    <Compile Include="Repository\ThirdPartyUserAccountRep.cs" />
+    <Compile Include="Model\Entity\User\UserInfo.cs" />
+    <Compile Include="Repository\User\Authenticator\UserAuthenticatorRep.cs" />
+    <Compile Include="Repository\User\UserInfoRep.cs" />
+    <Compile Include="Repository\User\IMSGUserInfoRep.cs" />
+    <Compile Include="Repository\User\IMeBETUserInfoRep.cs" />
+    <Compile Include="Repository\User\IMSportUserInfoRep.cs" />
+    <Compile Include="Repository\User\IMPPUserInfoRep.cs" />
+    <Compile Include="Repository\User\IMPTUserInfoRep.cs" />
+    <Compile Include="Repository\User\RGUserInfoRep.cs" />
+    <Compile Include="Repository\User\IMUserInfoRep.cs" />
+    <Compile Include="Repository\User\LCUserInfoRep.cs" />
+    <Compile Include="Repository\User\PtUserInfoRep.cs" />
+    <Compile Include="Repository\User\SportUserInfoRep.cs" />
+    <Compile Include="Repository\User\AGUserInfoRep.cs" />
+    <Compile Include="Resource\Element\AuditElement.Designer.cs">
+      <DependentUpon>AuditElement.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resource\Element\CommonElement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommonElement.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Element\ForgetPasswordElement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ForgetPasswordElement.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Element\MessageElement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MessageElement.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Element\PlatformProductElement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PlatformProductElement.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Element\ReturnCodeElement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReturnCodeElement.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Element\SelectItemElement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SelectItemElement.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Element\UserRelatedElement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserRelatedElement.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\AuditInfoService.cs" />
+    <Compile Include="Service\Base\BaseService.cs" />
+    <Compile Include="Service\Base\BaseTpGameUserInfoService.cs" />
+    <Compile Include="Service\Cache\RedisService.cs" />
+    <Compile Include="Service\ChatRoomService.cs" />
+    <Compile Include="Service\ColourEggService.cs" />
+    <Compile Include="Service\Config\ConfigService.cs" />
+    <Compile Include="Interface\Service\IGameUserService.cs" />
+    <Compile Include="Service\Enums\BaseValueModelService.cs" />
+    <Compile Include="Service\Enums\CTL\ProfitLossTypeNameCTLService.cs" />
+    <Compile Include="Service\Enums\CTL\WalletTypeCTLService.cs" />
+    <Compile Include="Service\Enums\CTS\ProfitLossTypeNameCTSService.cs" />
+    <Compile Include="Service\Enums\CTS\WalletTypeCTSService.cs" />
+    <Compile Include="Service\Enums\PlatformProductService.cs" />
+    <Compile Include="Service\Enums\Product\BasePlatformProductSettingService.cs" />
+    <Compile Include="Service\Enums\ReportInnerSettingService.cs" />
+    <Compile Include="Service\Enums\ReportTypeService.cs" />
+    <Compile Include="Service\FrontsideMenuService.cs" />
+    <Compile Include="Service\Game\UserCommissionService.cs" />
+    <Compile Include="Service\Game\GameUserService.cs" />
+    <Compile Include="Service\Game\UserDailyReportCommissionInfoService.cs" />
+    <Compile Include="Service\HomeGameMenu\GameMenuViewModel.cs" />
+    <Compile Include="Service\IpSystemApiService.cs" />
+    <Compile Include="Service\LoginDetailBackEndService.cs" />
+    <Compile Include="Service\Mail\AWSSendMailService.cs" />
+    <Compile Include="Service\Mail\SendGridMailService.cs" />
+    <Compile Include="Service\Mail\InternalMailService.cs" />
+    <Compile Include="Service\Mail\SendMailLogService.cs" />
+    <Compile Include="Service\Mail\SendMailManagerService.cs" />
+    <Compile Include="Service\Merchant\Base\BaseMerchantSettingService.cs" />
+    <Compile Include="Service\Finance\GivePrizesService.cs" />
+    <Compile Include="Service\User\UserRegisterService.cs" />
+    <Compile Include="Service\Merchant\CTS\ApolloCTSSetting.cs" />
+    <Compile Include="Service\Net\BackSideDeviceService.cs" />
+    <Compile Include="Service\Net\FrontSideDeviceService.cs" />
+    <Compile Include="Service\Net\IpUtilService.cs" />
+    <Compile Include="Service\Net\MobileApiDeviceService.cs" />
+    <Compile Include="Service\Net\OperationContextService.cs" />
+    <Compile Include="Service\Net\TransferDeviceService.cs" />
+    <Compile Include="Service\Merchant\CTL\MerchantSettingCTLService.cs" />
+    <Compile Include="Service\Merchant\CTS\MerchantSettingCTSService.cs" />
+    <Compile Include="Service\OperationLogService.cs" />
+    <Compile Include="Service\Security\BlockActionService.cs" />
+    <Compile Include="Service\Security\ValidateCodeService.cs" />
+    <Compile Include="Service\Security\FailureOperationService.cs" />
+    <Compile Include="Service\Security\AreaService.cs" />
+    <Compile Include="Service\Security\WhiteIpListService.cs" />
+    <Compile Include="Service\Security\BlackLocationService.cs" />
+    <Compile Include="Service\Setting\BackSideWebAppSettingService.cs" />
+    <Compile Include="Service\Setting\FrontSideWebAppSettingService.cs" />
+    <Compile Include="Service\Setting\MobileApiAppSettingService.cs" />
+    <Compile Include="Service\Setting\NewTransferServiceAppSettingService.cs" />
+    <Compile Include="Service\Setting\OldTransferServiceAppSettingService.cs" />
+    <Compile Include="Service\SmsService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\Base\BaseABTransferScheduleService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Service\ThirdPartyTransfer\Base\BaseEVTransferScheduleService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Service\ThirdPartyTransfer\Base\BaseOBTransferScheduleService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Service\ThirdPartyTransfer\Base\BasePGTransferScheduleService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Service\ThirdPartyTransfer\Base\BaseThirdPartyApiWCFService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\Base\BaseTPGameApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\Base\BaseIMLotteryTransferScheduleService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Service\ThirdPartyTransfer\Base\BaseTransferScheduleService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Service\ThirdPartyTransfer\FetchFileBetLog\TPGameABEBFileApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\FetchFileBetLog\TPGameAGFileApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\FetchFileBetLog\TPGameBTISFileApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\FetchFileBetLog\TPGameEVEBFileApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\FetchFileBetLog\TPGameIMFileApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\FetchFileBetLog\TPGameIMBGFileApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\FetchFileBetLog\TPGameIMeBETFileApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\FetchFileBetLog\TPGameIMOneFileApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\FetchFileBetLog\TPGameIMPPFileApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\FetchFileBetLog\TPGameIMPTFileApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\FetchFileBetLog\TPGameIMSGFileApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\FetchFileBetLog\TPGameIMSportFileApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\FetchFileBetLog\TPGameIMVRFileApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\FetchFileBetLog\TPGameLCFileApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\FetchFileBetLog\TPGameOBFIFileApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\FetchFileBetLog\TPGameOBSPFileApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\FetchFileBetLog\TPGamePGSLFileApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\FetchFileBetLog\TPGameRGFileApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\FetchFileBetLog\TPGameSportFileApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\Mock\TPGameBTISApiMockService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\SqliteToken\OBSPSqliteTokenService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\SqliteToken\OBFISqliteTokenService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\SqliteToken\EVEBSqliteTokenService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\SqliteToken\IMLotterySqliteTokenService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\SqliteToken\BaseFileSqliteTokenService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\SqliteToken\ABEBSqliteTokenService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\SqliteToken\PGSLSqliteTokenService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\SqliteToken\BTISSqliteTokenService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\TPGameOBSPApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\TPGameBTISApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\TPGameEVEBApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\TPGameOBFIApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\Mock\TPGameIMSGApiMockService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\Old\OldBaseTransferScheduleService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Service\ThirdPartyTransfer\Old\OldBaseTPGameApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\TPGameABEBApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\TPGameIMApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\TPGameLCApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\TPGameAGApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\TPGameIMSportApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\TPGameSportApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\TPGameRGApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\TPGameIMPTApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\TPGameIMPPApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\TPGameIMeBETApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\TPGameIMBGApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\TPGameIMOneApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\TPGameIMSGApiService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\TPGameIMVRApiService.cs" />
+    <Compile Include="Service\Game\GameCommissionRuleInfoService.cs" />
+    <Compile Include="Service\ThirdPartyTransfer\TPGamePGSLApiService.cs" />
+    <Compile Include="Service\MessageQueue\RabbitMqService.cs" />
+    <Compile Include="Service\TPGameStoredProcedureService.cs" />
+    <Compile Include="Service\TPGameAccountService.cs" />
+    <Compile Include="Service\User\ABEBUserInfoService.cs" />
+    <Compile Include="Service\VIP\Activity\BaseVIPUserEventDetailService.cs" />
+    <Compile Include="Service\VIP\Activity\VIPMonthlyDepositService.cs" />
+    <Compile Include="Service\VIP\Bonus\BaseVIPBonusTypeService.cs" />
+    <Compile Include="Service\VIP\Bonus\VIPBirthdayGiftMoneyService.cs" />
+    <Compile Include="Service\VIP\Bonus\VIPBonusMonthlyRedEnvelopeService.cs" />
+    <Compile Include="Service\User\DebugUserService.cs" />
+    <Compile Include="Service\User\OBSPUserInfoService.cs" />
+    <Compile Include="Service\User\BTISUserInfoService.cs" />
+    <Compile Include="Service\User\EVEBUserInfoService.cs" />
+    <Compile Include="Service\User\OBFIUserInfoService.cs" />
+    <Compile Include="Service\User\PGSLUserInfoService.cs" />
+    <Compile Include="Service\User\UserAccountService.cs" />
+    <Compile Include="Service\User\AGUserInfoService.cs" />
+    <Compile Include="Service\User\IMVRUserInfoService.cs" />
+    <Compile Include="Service\User\IMSGUserInfoService.cs" />
+    <Compile Include="Service\User\IMBGUserInfoService.cs" />
+    <Compile Include="Service\User\IMeBETUserInfoService.cs" />
+    <Compile Include="Service\User\IMPPUserInfoService.cs" />
+    <Compile Include="Service\User\IMPTUserInfoService.cs" />
+    <Compile Include="Service\User\IMSportUserInfoService.cs" />
+    <Compile Include="Service\User\IMUserInfoService.cs" />
+    <Compile Include="Service\User\LCUserInfoService.cs" />
+    <Compile Include="Service\User\Online\UserOnlineService.cs" />
+    <Compile Include="Service\User\PtUserInfoService.cs" />
+    <Compile Include="Service\User\RGUserInfoService.cs" />
+    <Compile Include="Service\User\UserInfoRelatedService.cs" />
+    <Compile Include="Service\User\SportUserInfoService.cs" />
+    <Compile Include="Service\User\UserSecurityService.cs" />
+    <Compile Include="Service\VIP\VIPSettingService.cs" />
+    <Compile Include="Service\VIP\VIPUserChagneLogService.cs" />
+    <Compile Include="Service\VIP\VIPUserBonusService.cs" />
+    <Compile Include="Service\VIP\VIPAgentService.cs" />
+    <Compile Include="Service\VIP\VIPUserService.cs" />
+    <Compile Include="Service\Withdraw\WithdrawNormalService.cs" />
+    <Compile Include="Service\Withdraw\WithdrawUsdtService.cs" />
+    <Compile Include="TypeHandler\JsonStringHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repository\Commission\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource\Page\AboutUs.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AboutUs.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Element\GivePrizesElement.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>GivePrizesElement.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Element\AuditElement.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AuditElement.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Element\ChatRoomElement.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ChatRoomElement.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Element\CommissionElement.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CommissionElement.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Element\CommonElement.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CommonElement.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Element\DBContentElement.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DBContentElement.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Page\Footer.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Footer.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Element\ForgetPasswordElement.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ForgetPasswordElement.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Element\LotteryElement.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LotteryElement.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Element\MessageElement.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MessageElement.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Element\OperationLogContentElement.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OperationLogContentElement.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Page\Deposit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Deposit.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Page\Register.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Register.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Element\ReturnCodeElement.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReturnCodeElement.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Element\SecurityElement.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SecurityElement.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Element\SelectItemElement.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SelectItemElement.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Element\PlatformProductElement.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PlatformProductElement.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Element\ServiceTypesElement.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ServiceTypesElement.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Element\ThirdPartyGameElement.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ThirdPartyGameElement.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Element\UserAuthElement.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>UserAuthElement.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Element\UserRelatedElement.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>UserRelatedElement.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Element\VIPContentElement.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>VIPContentElement.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Page\Tutorial.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Tutorial.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="package.nuspec" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>此專案參考這部電腦上所缺少的 NuGet 套件。請啟用 NuGet 套件還原，以下載該套件。如需詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的檔案是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net40\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net40\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net40\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net40\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+</Project>

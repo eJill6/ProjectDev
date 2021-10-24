@@ -1,0 +1,8 @@
+﻿USE [Inlodb_bak]
+GO
+
+ALTER TABLE [dbo].[VIPFlowProduct(ProductCode)Log] DROP CONSTRAINT [DF_VIPFlowProduct(ProductCode)Log_MoveDate]
+GO
+
+DROP TABLE [dbo].[VIPFlowProduct(ProductCode)Log]
+GO

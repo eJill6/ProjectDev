@@ -1,0 +1,16 @@
+﻿USE [Inlodb]
+GO
+
+CREATE SEQUENCE [dbo].[SEQ_VIPPointsProduct(ProductCode)Log_SEQID] 
+	AS INT
+	START WITH 1
+	INCREMENT BY 1
+	MINVALUE 0
+	MAXVALUE 99999999
+	CYCLE 
+	CACHE 5000
+GO
+
+GRANT UPDATE ON [dbo].[SEQ_VIPPointsProduct(ProductCode)Log_SEQID] TO [polyqqccwin];
+GRANT UPDATE ON [dbo].[SEQ_VIPPointsProduct(ProductCode)Log_SEQID] TO [polyqqccwinpouch];
+GO

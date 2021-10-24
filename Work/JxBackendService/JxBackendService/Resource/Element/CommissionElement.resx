@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AuditStatus" xml:space="preserve">
+    <value>审核状态</value>
+  </data>
+  <data name="BetMoney" xml:space="preserve">
+    <value>投注金额</value>
+  </data>
+  <data name="CannotModifyProfitLossRange" xml:space="preserve">
+    <value>已设定过的分红区间，不可再进行异动</value>
+  </data>
+  <data name="ChildUser" xml:space="preserve">
+    <value>下级</value>
+  </data>
+  <data name="CommissionAddSuccess" xml:space="preserve">
+    <value>分红条件新增成功!</value>
+  </data>
+  <data name="CommissionAmount" xml:space="preserve">
+    <value>总分红金额</value>
+  </data>
+  <data name="CommissionPercent" xml:space="preserve">
+    <value>分红比率</value>
+  </data>
+  <data name="CommissionPercentCannotBiggerThanParent" xml:space="preserve">
+    <value>{0}分红比例不可高于上级设定</value>
+  </data>
+  <data name="CommissionPercentCannotSmallerThanSetting" xml:space="preserve">
+    <value>{0}分红比例不可低于目前设定</value>
+  </data>
+  <data name="CommissionRate" xml:space="preserve">
+    <value>分紅比率</value>
+  </data>
+  <data name="CommissionRuleInfoIsNull" xml:space="preserve">
+    <value>条件输入有误，请重新输入!</value>
+  </data>
+  <data name="CommissionRuleNotChild" xml:space="preserve">
+    <value>非直属下级无法进行修改！</value>
+  </data>
+  <data name="CommissionType" xml:space="preserve">
+    <value>分红类型</value>
+  </data>
+  <data name="Contribute" xml:space="preserve">
+    <value>贡献值</value>
+  </data>
+  <data name="DepositFee" xml:space="preserve">
+    <value>充值手续费</value>
+  </data>
+  <data name="DownlineCommissionAmount" xml:space="preserve">
+    <value>下线分红</value>
+  </data>
+  <data name="DownlineWinMoney" xml:space="preserve">
+    <value>下线盈亏</value>
+  </data>
+  <data name="FieldTypeActiveCount" xml:space="preserve">
+    <value>有效人数</value>
+  </data>
+  <data name="FieldTypeCommission" xml:space="preserve">
+    <value>分红金额</value>
+  </data>
+  <data name="FieldTypeCommissionPercent" xml:space="preserve">
+    <value>分红比例</value>
+  </data>
+  <data name="FieldTypeDownlineCommission" xml:space="preserve">
+    <value>下级分红</value>
+  </data>
+  <data name="FieldTypeSelfCommission" xml:space="preserve">
+    <value>分红盈亏</value>
+  </data>
+  <data name="FieldTypeTotalContribute" xml:space="preserve">
+    <value>累计贡献</value>
+  </data>
+  <data name="FinalSelfCommissionAmount" xml:space="preserve">
+    <value>实际分红</value>
+  </data>
+  <data name="FirstRuleMinLimitEqualsZero" xml:space="preserve">
+    <value>第一笔区间要从0开始</value>
+  </data>
+  <data name="FixedCommissionPercentIsNotVaild" xml:space="preserve">
+    <value>固定分红比例设置错误</value>
+  </data>
+  <data name="MaxLimitGreaterThanMinLimit" xml:space="preserve">
+    <value>上限数值要大于下限数值</value>
+  </data>
+  <data name="NewPercentageMustBeIncreaseProgressively" xml:space="preserve">
+    <value>新的分红比例不能低于当前的分红比例</value>
+  </data>
+  <data name="NoneRule" xml:space="preserve">
+    <value>無比率</value>
+  </data>
+  <data name="OperationActive" xml:space="preserve">
+    <value>啟用:{0}</value>
+  </data>
+  <data name="OperationLog" xml:space="preserve">
+    <value>設定了分紅比率,用户：{0},原分紅比例:{1},現分紅比例:{2}</value>
+  </data>
+  <data name="ParentMustBeSettingCommissionContract" xml:space="preserve">
+    <value>{0}必须先设置分红契约，才可进行设置 {1} 分红契约</value>
+  </data>
+  <data name="ParentUser" xml:space="preserve">
+    <value>上级</value>
+  </data>
+  <data name="PercentageMustBeGreaterThanChild" xml:space="preserve">
+    <value>比例不可低于下级 {0}</value>
+  </data>
+  <data name="PercentageMustBeIncreaseProgressively" xml:space="preserve">
+    <value>分红區間和比例只能递增</value>
+  </data>
+  <data name="PercentageMustBeSmallThanParent" xml:space="preserve">
+    <value>分红比例不可高于上级 {0}</value>
+  </data>
+  <data name="PrizeMoney" xml:space="preserve">
+    <value>派彩金额</value>
+  </data>
+  <data name="ProfitLoss" xml:space="preserve">
+    <value>盈亏</value>
+  </data>
+  <data name="RangeMustBeIncreaseProgressively" xml:space="preserve">
+    <value>分红区间只能递增</value>
+  </data>
+  <data name="RuleCountOverflow" xml:space="preserve">
+    <value>最多只能{0}个区间</value>
+  </data>
+  <data name="SelfCommissionAmount" xml:space="preserve">
+    <value>本身分红</value>
+  </data>
+  <data name="SelfUser" xml:space="preserve">
+    <value>本级</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>总计</value>
+  </data>
+  <data name="TotalContribute" xml:space="preserve">
+    <value>总贡献值</value>
+  </data>
+</root>

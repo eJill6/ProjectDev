@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AuditIsAlreadyCompleted" xml:space="preserve">
+    <value>审核已完成，无需再更新</value>
+  </data>
+  <data name="AreYouSureApplyForMonthlyDesposit" xml:space="preserve">
+    <value>您确定参与活动并申请充值金额{0}元的存款礼金吗？</value>
+  </data>
+  <data name="EnoughMonthlyActivity" xml:space="preserve">
+    <value>本月可参与活动次数已满</value>
+  </data>
+  <data name="HasUnprocessedAuditActivity" xml:space="preserve">
+    <value>尚有正在审核的资料，请等待审核完成后才可再次申请活动</value>
+  </data>
+  <data name="MonthlyDepositPrize" xml:space="preserve">
+    <value>VIP月存款福利</value>
+  </data>
+  <data name="NoQualifiedForActivity" xml:space="preserve">
+    <value>不符合活动参与资格</value>
+  </data>
+  <data name="EventAuditOperationContent" xml:space="preserve">
+    <value>{0}, {1}, 备注：{2}</value>
+  </data>
+  <data name="LevelUpConditionDescription" xml:space="preserve">
+    <value>晋级条件：会员累计积分达到相应等级,次日24点前将会自动晋级至相应等级。</value>
+  </data>
+  <data name="PointsRuleDescription" xml:space="preserve">
+    <value>积分规则：每笔有效投注额都可获得相应积分，体育有效投注额对应积分1:10,其他平台有效投注额对应积分1:2。</value>
+  </data>
+  <data name="KeepLevelDescription" xml:space="preserve">
+    <value>保级要求：会员在达到某级别后,须在90天内满足保级要求,若在此期间完成晋升，保级要求会重新按照当前等级计算。</value>
+  </data>
+  <data name="DowngradeConditionDescription" xml:space="preserve">
+    <value>降级标准：如果会员在一个季度内（90天计算）没有完成相应的保级要求,系统会自动降一个等级,相应的返水及其他优惠也会随之调整至降级后的等级。</value>
+  </data>
+  <data name="LevelUpMoneyDescription" xml:space="preserve">
+    <value>晋级礼金：晋级礼金会在升级后自动派发至个人账户内,每个等级晋级礼金仅能获取一次（礼金一倍流水即可提款）。</value>
+  </data>
+  <data name="BirthdayGiftMoneyDescription" xml:space="preserve">
+    <value>生日礼金：会员在注册后,生日当天可在VIP页面自助领取当前VIP等级的生日礼金。</value>
+  </data>
+  <data name="DepositePrizeDescrition" xml:space="preserve">
+    <value>存款福利：仅计算申请前12小时内最后一笔有效存款，申请后礼金会在24小时内派发至个人账户,若礼金派发前已经提款，则自动取消礼金资格。</value>
+  </data>
+  <data name="PlatformReserveDescription" xml:space="preserve">
+    <value>为避免文字理解差异，平台保留最终解释权。每日返水发放时间：8:00~8:30</value>
+  </data>
+  <data name="ReturnRatio" xml:space="preserve">
+    <value>VIP返水比例</value>
+  </data>
+  <data name="ActivityRlue" xml:space="preserve">
+    <value>活动规则</value>
+  </data>
+  <data name="Level" xml:space="preserve">
+    <value>VIP等级</value>
+  </data>
+  <data name="LevelUpMoney" xml:space="preserve">
+    <value>晋级礼金</value>
+  </data>
+  <data name="MonthRedEnvelope" xml:space="preserve">
+    <value>月紅包</value>
+  </data>
+  <data name="KeepLevel" xml:space="preserve">
+    <value>保级条件</value>
+  </data>
+  <data name="BirthdayGiftMoney" xml:space="preserve">
+    <value>生日礼金</value>
+  </data>
+  <data name="PrizeLimit" xml:space="preserve">
+    <value>礼金上限</value>
+  </data>
+  <data name="Times" xml:space="preserve">
+    <value>次数</value>
+  </data>
+  <data name="LevelUpCondition" xml:space="preserve">
+    <value>晋级条件</value>
+  </data>
+  <data name="WithdrawalFormula" xml:space="preserve">
+    <value>提款要求：（本金＋礼金）* 12</value>
+  </data>
+  <data name="DepositToSendRatio" xml:space="preserve">
+    <value>存送比</value>
+  </data>
+  <data name="ReturnLimit" xml:space="preserve">
+    <value>返水上限/日</value>
+  </data>
+  <data name="Return" xml:space="preserve">
+    <value>返水</value>
+  </data>
+  <data name="Monthly" xml:space="preserve">
+    <value>次/月</value>
+  </data>
+  <data name="Once" xml:space="preserve">
+    <value>次</value>
+  </data>
+  <data name="FrequencyMonthly" xml:space="preserve">
+    <value>频率每月</value>
+  </data>
+  <data name="FrequencyOnlyOnce" xml:space="preserve">
+    <value>频率只有一次</value>
+  </data>
+  <data name="NoPhoneNumber" xml:space="preserve">
+    <value>未设置手机号码</value>
+  </data>
+  <data name="NoRealName" xml:space="preserve">
+    <value>未设置真实姓名</value>
+  </data>
+  <data name="Agent" xml:space="preserve">
+    <value>代理</value>
+  </data>
+  <data name="Direct" xml:space="preserve">
+    <value>直客</value>
+  </data>
+</root>

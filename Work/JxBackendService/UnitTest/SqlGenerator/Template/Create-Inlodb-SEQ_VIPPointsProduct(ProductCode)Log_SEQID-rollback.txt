@@ -1,0 +1,5 @@
+﻿USE [Inlodb]
+GO
+
+DROP SEQUENCE [dbo].[SEQ_VIPPointsProduct(ProductCode)Log_SEQID];
+GO
