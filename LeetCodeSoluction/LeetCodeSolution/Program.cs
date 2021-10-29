@@ -36,7 +36,10 @@ namespace LeetCodeSoluction
             //new LetterCombinations().Run();
             //new LongestValidParentheses().Run();
             //new DecodeWays().Run();
-            new No17_CombinationsOfAPhoneNumber().Run();
+            //new No17_CombinationsOfAPhoneNumber().Run();
+            //new No19_RemoveNthFromEnd().Run();
+            //new No11_ContainerWithMostWater().Run();
+            new No739_DailyTemperatures().Run();
         }
     }
 }

@@ -53,6 +53,8 @@
     <Compile Include="BaseSolution.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Solution\No11_ContainerWithMostWater.cs" />
+    <Compile Include="Solution\No739_DailyTemperatures.cs" />
     <Compile Include="Solution\No19_RemoveNthFromEnd.cs" />
     <Compile Include="Solution\No17_CombinationsOfAPhoneNumber.cs" />
     <Compile Include="Solution\backup\No77_Combinations.cs" />
