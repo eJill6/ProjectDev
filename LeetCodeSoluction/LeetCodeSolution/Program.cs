@@ -39,7 +39,9 @@ namespace LeetCodeSoluction
             //new No17_CombinationsOfAPhoneNumber().Run();
             //new No19_RemoveNthFromEnd().Run();
             //new No11_ContainerWithMostWater().Run();
-            new No739_DailyTemperatures().Run();
+            //new No739_DailyTemperatures().Run();
+            //new No763_PartitionLabels().Run();
+            new No22_GenerateParentheses().Run();
         }
     }
 }
