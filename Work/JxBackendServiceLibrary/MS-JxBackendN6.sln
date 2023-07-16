@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JxBackendServiceStd", "JxBackendServiceStd\JxBackendServiceStd.csproj", "{B6A96EB3-B1BF-4A73-85B9-D9339233133B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JxBackendServiceN6", "JxBackendServiceN6\JxBackendServiceN6.csproj", "{7D92BCEE-A1CE-43A9-8600-DA9D73C1D302}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6A96EB3-B1BF-4A73-85B9-D9339233133B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6A96EB3-B1BF-4A73-85B9-D9339233133B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6A96EB3-B1BF-4A73-85B9-D9339233133B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6A96EB3-B1BF-4A73-85B9-D9339233133B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D92BCEE-A1CE-43A9-8600-DA9D73C1D302}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D92BCEE-A1CE-43A9-8600-DA9D73C1D302}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D92BCEE-A1CE-43A9-8600-DA9D73C1D302}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D92BCEE-A1CE-43A9-8600-DA9D73C1D302}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {856C9C5D-CB42-41E5-80EB-CC23C04DC5B1}
+	EndGlobalSection
+EndGlobal

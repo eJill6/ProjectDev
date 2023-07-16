@@ -1,0 +1,990 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ABBetMethod0_Enter" xml:space="preserve">
+    <value>進桌</value>
+  </data>
+  <data name="ABBetMethod1_Multiple" xml:space="preserve">
+    <value>多台</value>
+  </data>
+  <data name="ABBetMethod2_Quick" xml:space="preserve">
+    <value>快速下注</value>
+  </data>
+  <data name="ABBetMethod3_VIP" xml:space="preserve">
+    <value>VIP包桌</value>
+  </data>
+  <data name="ABBetMethod3_VIP_Play" xml:space="preserve">
+    <value>VIP进座</value>
+  </data>
+  <data name="ABBetMethod3_VIP_View" xml:space="preserve">
+    <value>VIP旁观</value>
+  </data>
+  <data name="ABBetType1001" xml:space="preserve">
+    <value>庄</value>
+  </data>
+  <data name="ABBetType1002" xml:space="preserve">
+    <value>闲</value>
+  </data>
+  <data name="ABBetType1003" xml:space="preserve">
+    <value>和</value>
+  </data>
+  <data name="ABBetType1006" xml:space="preserve">
+    <value>庄对</value>
+  </data>
+  <data name="ABBetType1007" xml:space="preserve">
+    <value>闲对</value>
+  </data>
+  <data name="ABBetType1100" xml:space="preserve">
+    <value>幸运6</value>
+  </data>
+  <data name="ABBetType1211" xml:space="preserve">
+    <value>庄例牌</value>
+  </data>
+  <data name="ABBetType1212" xml:space="preserve">
+    <value>闲例牌</value>
+  </data>
+  <data name="ABBetType1223" xml:space="preserve">
+    <value>任意对子</value>
+  </data>
+  <data name="ABBetType1224" xml:space="preserve">
+    <value>完美对子</value>
+  </data>
+  <data name="ABBetType1231" xml:space="preserve">
+    <value>庄龙宝</value>
+  </data>
+  <data name="ABBetType1232" xml:space="preserve">
+    <value>闲龙宝</value>
+  </data>
+  <data name="ABGameType101" xml:space="preserve">
+    <value>普通百家乐</value>
+  </data>
+  <data name="ABGameType102" xml:space="preserve">
+    <value>VIP百家乐</value>
+  </data>
+  <data name="ABGameType103" xml:space="preserve">
+    <value>快速百家乐</value>
+  </data>
+  <data name="ABGameType104" xml:space="preserve">
+    <value>咪牌百家乐</value>
+  </data>
+  <data name="ABBetType2001" xml:space="preserve">
+    <value>龙</value>
+  </data>
+  <data name="ABBetType2002" xml:space="preserve">
+    <value>虎</value>
+  </data>
+  <data name="ABBetType2003" xml:space="preserve">
+    <value>和</value>
+  </data>
+  <data name="ABGameType201" xml:space="preserve">
+    <value>骰宝</value>
+  </data>
+  <data name="ABGameType301" xml:space="preserve">
+    <value>龙虎</value>
+  </data>
+  <data name="ABGameType401" xml:space="preserve">
+    <value>轮盘</value>
+  </data>
+  <data name="ABBetType5001" xml:space="preserve">
+    <value>闲1</value>
+  </data>
+  <data name="ABBetType5002" xml:space="preserve">
+    <value>闲2</value>
+  </data>
+  <data name="ABBetType5003" xml:space="preserve">
+    <value>闲3</value>
+  </data>
+  <data name="ABBetType5004" xml:space="preserve">
+    <value>闲4</value>
+  </data>
+  <data name="ABBetType5005" xml:space="preserve">
+    <value>闲5</value>
+  </data>
+  <data name="ABGameType501" xml:space="preserve">
+    <value>博丁</value>
+  </data>
+  <data name="ABBetType5011" xml:space="preserve">
+    <value>闲1对</value>
+  </data>
+  <data name="ABBetType5012" xml:space="preserve">
+    <value>闲2对</value>
+  </data>
+  <data name="ABBetType5013" xml:space="preserve">
+    <value>闲3对</value>
+  </data>
+  <data name="ABBetType5014" xml:space="preserve">
+    <value>闲4对</value>
+  </data>
+  <data name="ABBetType5015" xml:space="preserve">
+    <value>闲5对</value>
+  </data>
+  <data name="ABBetType8001" xml:space="preserve">
+    <value>庄1平倍</value>
+  </data>
+  <data name="ABBetType8002" xml:space="preserve">
+    <value>庄2平倍</value>
+  </data>
+  <data name="ABBetType8003" xml:space="preserve">
+    <value>庄3平倍</value>
+  </data>
+  <data name="ABGameType801" xml:space="preserve">
+    <value>牛牛</value>
+  </data>
+  <data name="ABBetType8011" xml:space="preserve">
+    <value>庄1翻倍</value>
+  </data>
+  <data name="ABBetType8012" xml:space="preserve">
+    <value>庄2翻倍</value>
+  </data>
+  <data name="ABBetType8013" xml:space="preserve">
+    <value>庄3翻倍</value>
+  </data>
+  <data name="ABBetType8021" xml:space="preserve">
+    <value>庄1超牛</value>
+  </data>
+  <data name="ABBetType8022" xml:space="preserve">
+    <value>庄2超牛</value>
+  </data>
+  <data name="ABBetType8023" xml:space="preserve">
+    <value>庄3超牛</value>
+  </data>
+  <data name="ABBetType8101" xml:space="preserve">
+    <value>闲1平倍</value>
+  </data>
+  <data name="ABBetType8102" xml:space="preserve">
+    <value>闲2平倍</value>
+  </data>
+  <data name="ABBetType8103" xml:space="preserve">
+    <value>闲3平倍</value>
+  </data>
+  <data name="ABBetType8111" xml:space="preserve">
+    <value>闲1翻倍</value>
+  </data>
+  <data name="ABBetType8112" xml:space="preserve">
+    <value>闲2翻倍</value>
+  </data>
+  <data name="ABBetType8113" xml:space="preserve">
+    <value>闲3翻倍</value>
+  </data>
+  <data name="ABBetType8121" xml:space="preserve">
+    <value>闲1超牛</value>
+  </data>
+  <data name="ABBetType8122" xml:space="preserve">
+    <value>闲2超牛</value>
+  </data>
+  <data name="ABBetType8123" xml:space="preserve">
+    <value>闲3超牛</value>
+  </data>
+  <data name="ABBetType9001" xml:space="preserve">
+    <value>龙</value>
+  </data>
+  <data name="ABBetType9002" xml:space="preserve">
+    <value>凤</value>
+  </data>
+  <data name="ABBetType9003" xml:space="preserve">
+    <value>对8以上</value>
+  </data>
+  <data name="ABBetType9004" xml:space="preserve">
+    <value>顺子</value>
+  </data>
+  <data name="ABBetType9005" xml:space="preserve">
+    <value>同花</value>
+  </data>
+  <data name="ABBetType9006" xml:space="preserve">
+    <value>同花顺</value>
+  </data>
+  <data name="ABBetType9007" xml:space="preserve">
+    <value>豹子</value>
+  </data>
+  <data name="ABGameType901" xml:space="preserve">
+    <value>炸金花</value>
+  </data>
+  <data name="ABMemoBetMethod" xml:space="preserve">
+    <value>下注方法：{0}</value>
+  </data>
+  <data name="ABMemoBetNum" xml:space="preserve">
+    <value>注单号：{0}</value>
+  </data>
+  <data name="ABMemoBetType" xml:space="preserve">
+    <value>投注类型：{0}</value>
+  </data>
+  <data name="ABMemoGameRoundId" xml:space="preserve">
+    <value>局号：{0}</value>
+  </data>
+  <data name="ABMemoGameType" xml:space="preserve">
+    <value>游戏类型：{0}</value>
+  </data>
+  <data name="ABMemoTableName" xml:space="preserve">
+    <value>桌台：{0}</value>
+  </data>
+  <data name="CreateAccountFail" xml:space="preserve">
+    <value>校验账号时系统异常</value>
+  </data>
+  <data name="GetGameUrlFail" xml:space="preserve">
+    <value>获取游戏Url失败</value>
+  </data>
+  <data name="GetUserTokenFail" xml:space="preserve">
+    <value>无法取得客户端资讯，请稍后再试</value>
+  </data>
+  <data name="IMMemoBetId" xml:space="preserve">
+    <value>下注单号:{0}</value>
+  </data>
+  <data name="IMMemoBetOn" xml:space="preserve">
+    <value>玩法:{0}</value>
+  </data>
+  <data name="IMMemoCount" xml:space="preserve">
+    <value>注数:{0}</value>
+  </data>
+  <data name="IMMemoGameName" xml:space="preserve">
+    <value>彩种:{0}</value>
+  </data>
+  <data name="IMMemoGameNo" xml:space="preserve">
+    <value>期号:{0}</value>
+  </data>
+  <data name="IMMemoMultiple" xml:space="preserve">
+    <value>倍数:{0}</value>
+  </data>
+  <data name="IMMemoNumber" xml:space="preserve">
+    <value>号码:{0}</value>
+  </data>
+  <data name="SomeOdds" xml:space="preserve">
+    <value>赔率:{0}</value>
+  </data>
+  <data name="IMMemoPosition" xml:space="preserve">
+    <value>位置:{0}</value>
+  </data>
+  <data name="IMMemoUnit" xml:space="preserve">
+    <value>单注金额:{0}</value>
+  </data>
+  <data name="TransferErrorNotEnoughMoney" xml:space="preserve">
+    <value>余额不足，当前余额：¥{0}</value>
+  </data>
+  <data name="TransferFail" xml:space="preserve">
+    <value>转账申请失败</value>
+  </data>
+  <data name="TransferMoneyMustThanAmount" xml:space="preserve">
+    <value>转账金额不可小余{0}</value>
+  </data>
+  <data name="TransferMoneyMustUnderLimitation" xml:space="preserve">
+    <value>转账金额过大</value>
+  </data>
+  <data name="PGGameIDTypes000" xml:space="preserve">
+    <value>游戏大厅</value>
+  </data>
+  <data name="PGGameIDTypes001" xml:space="preserve">
+    <value>夜戏貂蝉</value>
+  </data>
+  <data name="PGGameIDTypes002" xml:space="preserve">
+    <value>宝石侠</value>
+  </data>
+  <data name="PGGameIDTypes003" xml:space="preserve">
+    <value>橫財來啦</value>
+  </data>
+  <data name="PGGameIDTypes004" xml:space="preserve">
+    <value>国王的召唤</value>
+  </data>
+  <data name="PGGameIDTypes006" xml:space="preserve">
+    <value>美杜莎 II</value>
+  </data>
+  <data name="PGGameIDTypes007" xml:space="preserve">
+    <value>美杜莎</value>
+  </data>
+  <data name="PGGameIDTypes008" xml:space="preserve">
+    <value>豌豆精灵</value>
+  </data>
+  <data name="PGGameIDTypes017" xml:space="preserve">
+    <value>巫师之书</value>
+  </data>
+  <data name="PGGameIDTypes018" xml:space="preserve">
+    <value>逆袭的小红帽</value>
+  </data>
+  <data name="PGGameIDTypes019" xml:space="preserve">
+    <value>蒸汽朋克：命運的旋轉</value>
+  </data>
+  <data name="PGGameIDTypes021" xml:space="preserve">
+    <value>块块赢</value>
+  </data>
+  <data name="PGGameIDTypes024" xml:space="preserve">
+    <value>旺旺旺</value>
+  </data>
+  <data name="PGGameIDTypes025" xml:space="preserve">
+    <value>抓抓乐</value>
+  </data>
+  <data name="PGGameIDTypes026" xml:space="preserve">
+    <value>摇钱树</value>
+  </data>
+  <data name="PGGameIDTypes027" xml:space="preserve">
+    <value>网红餐厅</value>
+  </data>
+  <data name="PGGameIDTypes028" xml:space="preserve">
+    <value>麻辣火锅</value>
+  </data>
+  <data name="PGGameIDTypes029" xml:space="preserve">
+    <value>鱼跃龙门</value>
+  </data>
+  <data name="PGGameIDTypes033" xml:space="preserve">
+    <value>嘻哈熊猫</value>
+  </data>
+  <data name="PGGameIDTypes034" xml:space="preserve">
+    <value>后羿射日</value>
+  </data>
+  <data name="PGGameIDTypes035" xml:space="preserve">
+    <value>万胜狂欢夜</value>
+  </data>
+  <data name="PGGameIDTypes036" xml:space="preserve">
+    <value>舞狮进宝</value>
+  </data>
+  <data name="PGGameIDTypes037" xml:space="preserve">
+    <value>圣诞欢乐送</value>
+  </data>
+  <data name="PGGameIDTypes038" xml:space="preserve">
+    <value>宝石侠 - 大宝剑</value>
+  </data>
+  <data name="PGGameIDTypes039" xml:space="preserve">
+    <value>金猪报财</value>
+  </data>
+  <data name="PGGameIDTypes040" xml:space="preserve">
+    <value>水果丛林</value>
+  </data>
+  <data name="PGGameIDTypes041" xml:space="preserve">
+    <value>埃及寻宝</value>
+  </data>
+  <data name="PGGameIDTypes042" xml:space="preserve">
+    <value>象财神</value>
+  </data>
+  <data name="PGGameIDTypes043" xml:space="preserve">
+    <value>三只猴子</value>
+  </data>
+  <data name="PGGameIDTypes044" xml:space="preserve">
+    <value>皇上吉祥</value>
+  </data>
+  <data name="PGGameIDTypes045" xml:space="preserve">
+    <value>摸金校尉</value>
+  </data>
+  <data name="PGGameIDTypes048" xml:space="preserve">
+    <value>双囍临门</value>
+  </data>
+  <data name="PGGameIDTypes050" xml:space="preserve">
+    <value>嘻游记</value>
+  </data>
+  <data name="PGGameIDTypes052" xml:space="preserve">
+    <value>重金摇滚</value>
+  </data>
+  <data name="PGGameIDTypes053" xml:space="preserve">
+    <value>冰雪大冲关</value>
+  </data>
+  <data name="PGGameIDTypes054" xml:space="preserve">
+    <value>赏金船长</value>
+  </data>
+  <data name="PGGameIDTypes059" xml:space="preserve">
+    <value>忍者vs武侍</value>
+  </data>
+  <data name="PGGameIDTypes060" xml:space="preserve">
+    <value>爱尔兰精灵</value>
+  </data>
+  <data name="PGGameIDTypes061" xml:space="preserve">
+    <value>唐伯虎点秋香</value>
+  </data>
+  <data name="PGGameIDTypes064" xml:space="preserve">
+    <value>拳霸</value>
+  </data>
+  <data name="PGMemoBetEndTime" xml:space="preserve">
+    <value>当前投注的结束时间：{0}</value>
+  </data>
+  <data name="PGMemoBetId" xml:space="preserve">
+    <value>订单号：{0}</value>
+  </data>
+  <data name="PGMemoBetTime" xml:space="preserve">
+    <value>当前投注的开始时间：{0}</value>
+  </data>
+  <data name="PGMemoGameID" xml:space="preserve">
+    <value>游戏类型：{0}</value>
+  </data>
+  <data name="PGMemoTransactionType" xml:space="preserve">
+    <value>交易类别：{0}</value>
+  </data>
+  <data name="PGTransactionTypesBonus" xml:space="preserve">
+    <value>红利</value>
+  </data>
+  <data name="PGTransactionTypesCash" xml:space="preserve">
+    <value>现金</value>
+  </data>
+  <data name="PGTransactionTypesFree" xml:space="preserve">
+    <value>免费游戏</value>
+  </data>
+  <data name="PGGameIDTypes011" xml:space="preserve">
+    <value>美式二十一点</value>
+  </data>
+  <data name="PGGameIDTypes012" xml:space="preserve">
+    <value>欧式二十一点</value>
+  </data>
+  <data name="PGGameIDTypes020" xml:space="preserve">
+    <value>亲爱的</value>
+  </data>
+  <data name="PGGameIDTypes031" xml:space="preserve">
+    <value>至尊百家乐</value>
+  </data>
+  <data name="PGGameIDTypes057" xml:space="preserve">
+    <value>寻龙探宝</value>
+  </data>
+  <data name="PGGameIDTypes058" xml:space="preserve">
+    <value>德古拉女爵</value>
+  </data>
+  <data name="PGGameIDTypes062" xml:space="preserve">
+    <value>宝石侠 - 宝藏征途</value>
+  </data>
+  <data name="PGGameIDTypes063" xml:space="preserve">
+    <value>龙虎争霸</value>
+  </data>
+  <data name="PGGameIDTypes065" xml:space="preserve">
+    <value>麻将胡了</value>
+  </data>
+  <data name="PGGameIDTypes067" xml:space="preserve">
+    <value>少林足球</value>
+  </data>
+  <data name="PGGameIDTypes068" xml:space="preserve">
+    <value>鼠鼠福福</value>
+  </data>
+  <data name="PGGameIDTypes069" xml:space="preserve">
+    <value>比基尼天堂</value>
+  </data>
+  <data name="PGGameIDTypes070" xml:space="preserve">
+    <value>糖果连连爆</value>
+  </data>
+  <data name="PGGameIDTypes071" xml:space="preserve">
+    <value>赢财神</value>
+  </data>
+  <data name="PGGameIDTypes073" xml:space="preserve">
+    <value>埃及探秘宝典</value>
+  </data>
+  <data name="PGGameIDTypes074" xml:space="preserve">
+    <value>麻将胡了2</value>
+  </data>
+  <data name="PGGameIDTypes075" xml:space="preserve">
+    <value>福运象财神</value>
+  </data>
+  <data name="PGGameIDTypes076" xml:space="preserve">
+    <value>高低扑克</value>
+  </data>
+  <data name="PGGameIDTypes077" xml:space="preserve">
+    <value>高低骰宝</value>
+  </data>
+  <data name="PGGameIDTypes078" xml:space="preserve">
+    <value>高低五福</value>
+  </data>
+  <data name="PGGameIDTypes079" xml:space="preserve">
+    <value>澳门壕梦</value>
+  </data>
+  <data name="PGGameIDTypes080" xml:space="preserve">
+    <value>欢乐嘉年华</value>
+  </data>
+  <data name="PGGameIDTypes081" xml:space="preserve">
+    <value>添好运</value>
+  </data>
+  <data name="PGGameIDTypes082" xml:space="preserve">
+    <value>凤凰传奇</value>
+  </data>
+  <data name="PGGameIDTypes083" xml:space="preserve">
+    <value>火树赢花</value>
+  </data>
+  <data name="PGGameIDTypes084" xml:space="preserve">
+    <value>赏金女王</value>
+  </data>
+  <data name="PGGameIDTypes085" xml:space="preserve">
+    <value>阿拉丁神灯</value>
+  </data>
+  <data name="PGGameIDTypes086" xml:space="preserve">
+    <value>星旅淘金</value>
+  </data>
+  <data name="PGGameIDTypes087" xml:space="preserve">
+    <value>寻宝黄金城</value>
+  </data>
+  <data name="PGGameIDTypes088" xml:space="preserve">
+    <value>金玉满堂</value>
+  </data>
+  <data name="PGGameIDTypes089" xml:space="preserve">
+    <value>招财喵</value>
+  </data>
+  <data name="PGGameIDTypes090" xml:space="preserve">
+    <value> 豔后之谜</value>
+  </data>
+  <data name="PGGameIDTypes091" xml:space="preserve">
+    <value>冰火双娇</value>
+  </data>
+  <data name="PGGameIDTypes092" xml:space="preserve">
+    <value>水上泰神奇</value>
+  </data>
+  <data name="PGGameIDTypes093" xml:space="preserve">
+    <value>新国粹</value>
+  </data>
+  <data name="PGGameIDTypes094" xml:space="preserve">
+    <value>巴厘之旅</value>
+  </data>
+  <data name="PGGameIDTypes097" xml:space="preserve">
+    <value>冰锋奇侠</value>
+  </data>
+  <data name="PGGameIDTypes098" xml:space="preserve">
+    <value>十倍金牛</value>
+  </data>
+  <data name="PGGameIDTypes103" xml:space="preserve">
+    <value>比特淘金</value>
+  </data>
+  <data name="OBMemoGameName" xml:space="preserve">
+    <value>游戏名称：{0}</value>
+  </data>
+  <data name="OBMemoGameRoom" xml:space="preserve">
+    <value>游戏房间：{0}</value>
+  </data>
+  <data name="OBMemoGameTable" xml:space="preserve">
+    <value>游戏桌号：{0}</value>
+  </data>
+  <data name="OBMemoId" xml:space="preserve">
+    <value>注单号：{0}</value>
+  </data>
+  <data name="OBMemoPart" xml:space="preserve">
+    <value>局号：{0}</value>
+  </data>
+  <data name="PGGameIDTypes095" xml:space="preserve">
+    <value>宝石传奇</value>
+  </data>
+  <data name="PGGameIDTypes100" xml:space="preserve">
+    <value>糖心风暴</value>
+  </data>
+  <data name="PGGameIDTypes104" xml:space="preserve">
+    <value>亡灵大盗</value>
+  </data>
+  <data name="EVMemoBetID" xml:space="preserve">
+    <value>订单号：{0}</value>
+  </data>
+  <data name="EVMemoGameID" xml:space="preserve">
+    <value>局號：{0}</value>
+  </data>
+  <data name="EVMemoGameType" xml:space="preserve">
+    <value>游戏类型：{0}</value>
+  </data>
+  <data name="EVMemoTableID" xml:space="preserve">
+    <value>桌号：{0}</value>
+  </data>
+  <data name="EVMemoTableName" xml:space="preserve">
+    <value>桌名称：{0}</value>
+  </data>
+  <data name="OBSPBetContent" xml:space="preserve">
+    <value>下注内容:{0}</value>
+  </data>
+  <data name="BetID" xml:space="preserve">
+    <value>注单号:{0}</value>
+  </data>
+  <data name="Bet" xml:space="preserve">
+    <value>投注</value>
+  </data>
+  <data name="PurchaseID" xml:space="preserve">
+    <value>购买单号</value>
+  </data>
+  <data name="OBSPOrderStatus0" xml:space="preserve">
+    <value>待处理</value>
+  </data>
+  <data name="OBSPOrderStatus1" xml:space="preserve">
+    <value>已结算</value>
+  </data>
+  <data name="OBSPOrderStatus2" xml:space="preserve">
+    <value>取消(人工)</value>
+  </data>
+  <data name="OBSPOrderStatus3" xml:space="preserve">
+    <value>待确认</value>
+  </data>
+  <data name="OBSPOrderStatus4" xml:space="preserve">
+    <value>风控拒单</value>
+  </data>
+  <data name="OBSPOrderStatus5" xml:space="preserve">
+    <value>撤单(赛事取消)</value>
+  </data>
+  <data name="GameMaintain" xml:space="preserve">
+    <value>游戏维护中</value>
+  </data>
+  <data name="PGGameIDTypes101" xml:space="preserve">
+    <value>太阳神传说</value>
+  </data>
+  <data name="PGGameIDTypes105" xml:space="preserve">
+    <value>霹雳神偷</value>
+  </data>
+  <data name="PGGameIDTypes106" xml:space="preserve">
+    <value>麒麟送宝</value>
+  </data>
+  <data name="PGGameIDTypes109" xml:space="preserve">
+    <value>寿司之道</value>
+  </data>
+  <data name="PGGameIDTypes110" xml:space="preserve">
+    <value>恐龙帝国</value>
+  </data>
+  <data name="PGGameIDTypes102" xml:space="preserve">
+    <value>人鱼公主</value>
+  </data>
+  <data name="PGGameIDTypes111" xml:space="preserve">
+    <value>地鼠总动员</value>
+  </data>
+  <data name="PGTransactionTypesAll" xml:space="preserve">
+    <value>所有</value>
+  </data>
+  <data name="PGGameIDTypes113" xml:space="preserve">
+    <value>丽影奇兵之探秘埃及</value>
+  </data>
+  <data name="PGGameIDTypes115" xml:space="preserve">
+    <value>超市大血拼</value>
+  </data>
+  <data name="LCMemoGameName" xml:space="preserve">
+    <value>游戏：{0}</value>
+  </data>
+  <data name="LCMemoGameRoom" xml:space="preserve">
+    <value>游戏房间：{0}</value>
+  </data>
+  <data name="LCMemoGameStartTime" xml:space="preserve">
+    <value>开始时间：{0}</value>
+  </data>
+  <data name="LCMemoGameEndTime" xml:space="preserve">
+    <value>结束时间：{0}</value>
+  </data>
+  <data name="LCMemoGameAllBet" xml:space="preserve">
+    <value>总下注：{0}</value>
+  </data>
+  <data name="LCMemoGameProfit" xml:space="preserve">
+    <value>盈利：{0}</value>
+  </data>
+  <data name="LCMemoGameRevenue" xml:space="preserve">
+    <value>抽水：{0}</value>
+  </data>
+  <data name="LCMemoGameCellScore" xml:space="preserve">
+    <value>有效下注：{0}</value>
+  </data>
+  <data name="IMPPMemoBetAmount" xml:space="preserve">
+    <value>下注：{0}</value>
+  </data>
+  <data name="IMPPMemoGameDate" xml:space="preserve">
+    <value>开始时间：{0}</value>
+  </data>
+  <data name="IMPPMemoGameName" xml:space="preserve">
+    <value>游戏：{0}</value>
+  </data>
+  <data name="IMPPMemoGameType" xml:space="preserve">
+    <value>JDB/PP</value>
+  </data>
+  <data name="IMPPMemoLastUpdatedDate" xml:space="preserve">
+    <value>结算时间：{0}</value>
+  </data>
+  <data name="IMPTMemoBet" xml:space="preserve">
+    <value>下注：{0}</value>
+  </data>
+  <data name="IMPTMemoGameDate" xml:space="preserve">
+    <value>开始时间：{0}</value>
+  </data>
+  <data name="IMPTMemoGameName" xml:space="preserve">
+    <value>游戏：{0}</value>
+  </data>
+  <data name="IMPTMemoGameType" xml:space="preserve">
+    <value>IM PT</value>
+  </data>
+  <data name="IMBGMemoAllBet" xml:space="preserve">
+    <value>下注：{0}</value>
+  </data>
+  <data name="IMBGMemoBetId" xml:space="preserve">
+    <value>下注单号：{0}</value>
+  </data>
+  <data name="IMBGMemoBetTime" xml:space="preserve">
+    <value>下注时间：{0}</value>
+  </data>
+  <data name="IMBGMemoGameName" xml:space="preserve">
+    <value>游戏：{0}</value>
+  </data>
+  <data name="IMBGMemoSettleTime" xml:space="preserve">
+    <value>结算时间：{0}</value>
+  </data>
+  <data name="IMBGMemoWinLost" xml:space="preserve">
+    <value>盈利：{0}</value>
+  </data>
+  <data name="PGGameIDTypesByID" xml:space="preserve">
+    <value>游戏ID({0})</value>
+  </data>
+  <data name="CommonSportMemoContent" xml:space="preserve">
+    <value>{0},注单号:{1}</value>
+  </data>
+  <data name="SomeHandicap" xml:space="preserve">
+    <value>盘口:{0}</value>
+  </data>
+  <data name="BetPointName" xml:space="preserve">
+    <value>玩法名称：{0}</value>
+  </data>
+  <data name="GameTypeName" xml:space="preserve">
+    <value>游戏名称：{0}</value>
+  </data>
+  <data name="JudgeResult" xml:space="preserve">
+    <value>局结果：{0}</value>
+  </data>
+  <data name="OBEBBetID" xml:space="preserve">
+    <value>下注流水号：{0}</value>
+  </data>
+  <data name="Odds" xml:space="preserve">
+    <value>赔率：{0}</value>
+  </data>
+  <data name="PlatformName" xml:space="preserve">
+    <value>厅名称：{0}</value>
+  </data>
+  <data name="AllBetMoneyText" xml:space="preserve">
+    <value>投注金额</value>
+  </data>
+  <data name="BetMoneyText" xml:space="preserve">
+    <value>有效投注</value>
+  </data>
+  <data name="BetResultName" xml:space="preserve">
+    <value>输赢</value>
+  </data>
+  <data name="BetTimeText" xml:space="preserve">
+    <value>投注时间</value>
+  </data>
+  <data name="Memo" xml:space="preserve">
+    <value>摘要</value>
+  </data>
+  <data name="PlayID" xml:space="preserve">
+    <value>第三方注单号</value>
+  </data>
+  <data name="PlayInfoID" xml:space="preserve">
+    <value>平台注单号</value>
+  </data>
+  <data name="ProfitLossTimeText" xml:space="preserve">
+    <value>开奖时间</value>
+  </data>
+  <data name="TPGameAccountName" xml:space="preserve">
+    <value>第三方用户名</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>平台用户名</value>
+  </data>
+  <data name="WinMoneyText" xml:space="preserve">
+    <value>盈亏金额</value>
+  </data>
+  <data name="JUMBO_SLOT" xml:space="preserve">
+    <value>JDB电子</value>
+  </data>
+  <data name="PRAGMATIC_SLOT" xml:space="preserve">
+    <value>PP电子</value>
+  </data>
+  <data name="IMKYBetId" xml:space="preserve">
+    <value>注单号：{0}</value>
+  </data>
+  <data name="IMKYGameType" xml:space="preserve">
+    <value>游戏类型：{0}</value>
+  </data>
+  <data name="IMKYRoundId" xml:space="preserve">
+    <value>局号：{0}</value>
+  </data>
+  <data name="IMKYGameId" xml:space="preserve">
+    <value>桌台：{0}</value>
+  </data>
+  <data name="IMKYBetAmount" xml:space="preserve">
+    <value>下注金额：{0}</value>
+  </data>
+  <data name="IMKYBetDate" xml:space="preserve">
+    <value>下注時間：{0}</value>
+  </data>
+  <data name="IMKYSettlementDate" xml:space="preserve">
+    <value>结算时间：{0}</value>
+  </data>
+  <data name="IMPPProviderName" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="IMMemoBetDetail" xml:space="preserve">
+    <value>赛事：{0}</value>
+  </data>
+  <data name="IMMemoBetDetail_Competition" xml:space="preserve">
+    <value>赛事：{0}, 赔率：{1}</value>
+  </data>
+  <data name="IMMemoBetInfo" xml:space="preserve">
+    <value>下注：{0}, 盈利：{1}, 下注时间：{2}, 结算时间：{3}</value>
+  </data>
+  <data name="IMeBetMemo" xml:space="preserve">
+    <value>下注单号：{0}, 下注：{1}, 盈利：{2}, 下注时间：{3}, 结算时间：{4}</value>
+  </data>
+  <data name="IMPTBetMemo" xml:space="preserve">
+    <value>IM PT, 游戏：{0}, 下注：{1}, 开始时间：{2}</value>
+  </data>
+  <data name="LCBetMemo" xml:space="preserve">
+    <value>游戏：{0}, 游戏房间：{1}, 总下注：{2}, 有效下注：{3}, 盈利：{4}, 抽水：{5}, 开始时间：{6}, 结束时间：{7}</value>
+  </data>
+  <data name="JDBFIMemo" xml:space="preserve">
+    <value>JDB捕鱼, 机台类型：{0}, 游戏序号：{1}, 押注金额：{2}, 游戏赢分：{3}, 游戏时间：{4}, 最后修改时间：{5}</value>
+  </data>
+  <data name="WLBGMemo" xml:space="preserve">
+    <value>瓦力游戏, 机台类型：{0}, 游戏序号：{1}, 押注金额：{2}, 游戏赢分：{3}, 游戏时间：{4}, 最后修改时间：{5}</value>
+  </data>
+  <data name="SPRIBE_SLOT" xml:space="preserve">
+    <value>SE电子</value>
+  </data>
+  <data name="FYESBetType_Anchor" xml:space="preserve">
+    <value>主播订单</value>
+  </data>
+  <data name="FYESBetType_Combo" xml:space="preserve">
+    <value>电竞串关订单</value>
+  </data>
+  <data name="FYESBetType_Single" xml:space="preserve">
+    <value>电竞单关订单</value>
+  </data>
+  <data name="FYESBetType_Smart" xml:space="preserve">
+    <value>趣味游戏订单</value>
+  </data>
+  <data name="FYESBetType_VisualSport" xml:space="preserve">
+    <value>虚拟电竞订单</value>
+  </data>
+  <data name="FYESCategory" xml:space="preserve">
+    <value>游戏名称：{0}</value>
+  </data>
+  <data name="FYESCode" xml:space="preserve">
+    <value>游戏代码：{0}</value>
+  </data>
+  <data name="FYESDetailStatus" xml:space="preserve">
+    <value>子订单状态：{0}</value>
+  </data>
+  <data name="FYESTransferStatusFailed" xml:space="preserve">
+    <value>失败</value>
+  </data>
+  <data name="FYESTransferStatusFinish" xml:space="preserve">
+    <value>已完成</value>
+  </data>
+  <data name="FYESTransferStatusProcessing" xml:space="preserve">
+    <value>未完成</value>
+  </data>
+  <data name="WLBG" xml:space="preserve">
+    <value>瓦力游戏</value>
+  </data>
+  <data name="WLGameID1" xml:space="preserve">
+    <value>瓦力捕鱼</value>
+  </data>
+  <data name="HORSEBOOK" xml:space="preserve">
+    <value>赛马</value>
+  </data>
+  <data name="SV388" xml:space="preserve">
+    <value>斗鸡</value>
+  </data>
+  <data name="AWCSPMemo" xml:space="preserve">
+    <value>AWC体育, 机台类型：{0}, 游戏序号：{1}, 押注金额：{2}, 游戏赢分：{3}, 游戏时间：{4}, 最后修改时间：{5}</value>
+  </data>
+  <data name="PMBGMemo" xml:space="preserve">
+    <value>PM棋牌,游戏名称: {0},游戏桌号:{1},下注金额:{2},游戏房间:{3},局号id : {4}</value>
+  </data>
+  <data name="PMSLMemo" xml:space="preserve">
+    <value>PM电子,游戏名称: {0},游戏桌号:{1},下注金额:{2},游戏房间:{3},局号id : {4}</value>
+  </data>
+</root>

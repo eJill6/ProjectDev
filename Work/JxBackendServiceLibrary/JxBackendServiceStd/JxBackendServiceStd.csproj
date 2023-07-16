@@ -1,0 +1,266 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+	<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <OutputType>Library</OutputType>
+    <ShouldCreateLogs>True</ShouldCreateLogs>
+    <AdvancedSettingsExpanded>False</AdvancedSettingsExpanded>
+    <UpdateAssemblyVersion>False</UpdateAssemblyVersion>
+    <UpdateAssemblyFileVersion>False</UpdateAssemblyFileVersion>
+    <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
+    <UpdatePackageVersion>False</UpdatePackageVersion>
+    <AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
+    <InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWPF>true</UseWPF>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <AssemblyName>JxBackendService</AssemblyName>
+    <RootNamespace>JxBackendService</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DocumentationFile>bin\Debug\JxBackendService.xml</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <ShouldCreateLogs>True</ShouldCreateLogs>
+    <AdvancedSettingsExpanded>False</AdvancedSettingsExpanded>
+    <UpdateAssemblyVersion>False</UpdateAssemblyVersion>
+    <UpdateAssemblyFileVersion>False</UpdateAssemblyFileVersion>
+    <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
+    <AssemblyVersionSettings>YearStamp.MonthStamp.DayStamp.TimeStamp</AssemblyVersionSettings>
+    <UpdatePackageVersion>False</UpdatePackageVersion>
+    <AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
+    <InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
+    <AssemblyFileVersionSettings>YearStamp.MonthStamp.DayStamp.TimeStamp</AssemblyFileVersionSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <ShouldCreateLogs>True</ShouldCreateLogs>
+    <AdvancedSettingsExpanded>False</AdvancedSettingsExpanded>
+    <UpdateAssemblyVersion>True</UpdateAssemblyVersion>
+    <UpdateAssemblyFileVersion>True</UpdateAssemblyFileVersion>
+    <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
+    <AssemblyVersionSettings>YearStamp.MonthStamp.DayStamp.TimeStamp</AssemblyVersionSettings>
+    <UpdatePackageVersion>False</UpdatePackageVersion>
+    <AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
+    <InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
+    <AssemblyFileVersionSettings>YearStamp.MonthStamp.DayStamp.TimeStamp</AssemblyFileVersionSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Interface\Repository\Config\**" />
+    <Compile Remove="Interface\Repository\Game\Base\**" />
+    <Compile Remove="Interface\Service\Security\**" />
+    <Compile Remove="Interface\Service\ThirdPartyTransfer\AG\**" />
+    <Compile Remove="Model\Entity\Config\**" />
+    <Compile Remove="Model\Entity\Security\**" />
+    <Compile Remove="Model\Finance\**" />
+    <Compile Remove="Model\MessageQueue\Param\**" />
+    <Compile Remove="Model\Param\Config\**" />
+    <Compile Remove="Model\ViewModel\Merchant\**" />
+    <Compile Remove="Repository\Config\**" />
+    <Compile Remove="Repository\Security\**" />
+    <Compile Remove="Service\Security\**" />
+    <EmbeddedResource Remove="Interface\Repository\Config\**" />
+    <EmbeddedResource Remove="Interface\Repository\Game\Base\**" />
+    <EmbeddedResource Remove="Interface\Service\Security\**" />
+    <EmbeddedResource Remove="Interface\Service\ThirdPartyTransfer\AG\**" />
+    <EmbeddedResource Remove="Model\Entity\Config\**" />
+    <EmbeddedResource Remove="Model\Entity\Security\**" />
+    <EmbeddedResource Remove="Model\Finance\**" />
+    <EmbeddedResource Remove="Model\MessageQueue\Param\**" />
+    <EmbeddedResource Remove="Model\Param\Config\**" />
+    <EmbeddedResource Remove="Model\ViewModel\Merchant\**" />
+    <EmbeddedResource Remove="Repository\Config\**" />
+    <EmbeddedResource Remove="Repository\Security\**" />
+    <EmbeddedResource Remove="Service\Security\**" />
+    <None Remove="Interface\Repository\Config\**" />
+    <None Remove="Interface\Repository\Game\Base\**" />
+    <None Remove="Interface\Service\Security\**" />
+    <None Remove="Interface\Service\ThirdPartyTransfer\AG\**" />
+    <None Remove="Model\Entity\Config\**" />
+    <None Remove="Model\Entity\Security\**" />
+    <None Remove="Model\Finance\**" />
+    <None Remove="Model\MessageQueue\Param\**" />
+    <None Remove="Model\Param\Config\**" />
+    <None Remove="Model\ViewModel\Merchant\**" />
+    <None Remove="Repository\Config\**" />
+    <None Remove="Repository\Security\**" />
+    <None Remove="Service\Security\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="CommUtil">
+      <HintPath>..\..\CommUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>..\..\EPPlus.dll</HintPath>
+    </Reference>
+	  <Reference Include="RabbitMqUtilCore">
+		  <HintPath>..\JxCustomizedLib\RabbitMqUtilCore.dll</HintPath>
+	  </Reference>
+	  <Reference Include="JxMsgEntitiesCore">
+		  <HintPath>..\JxCustomizedLib\JxMsgEntitiesCore.dll</HintPath>
+	  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.4.0" />
+    <PackageReference Include="Autofac.Extras.DynamicProxy" Version="6.0.1" />
+    <PackageReference Include="AWSSDK.S3" Version="3.7.103.35" />
+    <PackageReference Include="CSRedisCore" Version="3.8.670" />
+    <PackageReference Include="Dapper" Version="2.0.123" />
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="FluentFTP" Version="43.0.1" />
+    <PackageReference Include="Flurl" Version="3.0.7" />
+    <PackageReference Include="GoogleAuthenticator" Version="3.1.0" />
+    <PackageReference Include="jose-jwt" Version="4.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="7.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="RabbitMQ.Client" Version="6.5.0" />
+    <PackageReference Include="RandomStringCreator" Version="2.0.0" />
+    <PackageReference Include="System.Collections.Specialized" Version="4.3.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.117.0" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.117.0" />
+    <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
+    <PackageReference Include="System.Linq" Version="4.3.0" />
+    <PackageReference Include="System.Memory" Version="4.5.5" />
+    <PackageReference Include="System.Net.Primitives" Version="4.3.1" />
+    <PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
+    <PackageReference Include="System.Runtime.Caching" Version="7.0.0" />
+    <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
+    <PackageReference Include="System.ValueTuple" Version="4.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Model\Enums\AssociationDataType.cs" />
+    <Compile Remove="Model\ViewModel\JxIpInformation.cs" />
+    <Compile Remove="Service\ThirdPartyTransfer\FtpBetLogFileService.cs" />
+    <Compile Remove="Service\ThirdPartyTransfer\Old\OldBaseTPGameApiService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Resource\Element\BWOperationLogElement.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BWOperationLogElement.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resource\Element\CommonElement.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CommonElement.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resource\Element\DBContentElement.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DBContentElement.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resource\Element\FinanceElement.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FinanceElement.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resource\Element\MessageElement.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MessageElement.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resource\Element\PermissionElement.Designer.cs">
+      <DependentUpon>PermissionElement.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Resource\Element\PlatformProductElement.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PlatformProductElement.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resource\Element\RecycleBalanceElement.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RecycleBalanceElement.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resource\Element\ReturnCodeElement.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ReturnCodeElement.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resource\Element\SelectItemElement.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SelectItemElement.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resource\Element\ThirdPartyGameElement.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ThirdPartyGameElement.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resource\Element\DisplayElement.Designer.cs">
+      <DependentUpon>DisplayElement.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Resource\Element\UserRelatedElement.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>UserRelatedElement.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Resource\Element\BWOperationLogElement.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BWOperationLogElement.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resource\Element\CommonElement.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CommonElement.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resource\Element\DBContentElement.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DBContentElement.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resource\Element\FinanceElement.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FinanceElement.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resource\Element\MessageElement.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MessageElement.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resource\Element\PermissionElement.resx">
+      <LastGenOutput>PermissionElement.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resource\Element\PlatformProductElement.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PlatformProductElement.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resource\Element\RecycleBalanceElement.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecycleBalanceElement.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resource\Element\ReturnCodeElement.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReturnCodeElement.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resource\Element\SelectItemElement.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SelectItemElement.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resource\Element\ThirdPartyGameElement.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ThirdPartyGameElement.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resource\Element\DisplayElement.resx">
+      <LastGenOutput>DisplayElement.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resource\Element\UserRelatedElement.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>UserRelatedElement.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

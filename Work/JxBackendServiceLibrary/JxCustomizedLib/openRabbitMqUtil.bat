@@ -1,0 +1,1 @@
+start ..\..\HECBET.RabbitmqManager4.0\Common\RabbitMqUtil.sln
