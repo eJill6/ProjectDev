@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace LeetCodeSoluction.Solution
+namespace LeetCodeSolution.Solution
 {
     public class No17_CombinationsOfAPhoneNumber : BaseSolution
     {
@@ -14,7 +11,7 @@ namespace LeetCodeSoluction.Solution
 
         public class Solution
         {
-            List<string> finalResult = new List<string>();
+            private List<string> finalResult = new List<string>();
 
             private readonly Dictionary<int, List<string>> keyValuePairs = new Dictionary<int, List<string>>
             {

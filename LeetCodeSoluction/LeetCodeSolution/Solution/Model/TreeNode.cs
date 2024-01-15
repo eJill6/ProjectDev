@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeetCodeSoluction.Solution.Model
+namespace LeetCodeSolution.Solution.Model
 {
     public class TreeNode
     {

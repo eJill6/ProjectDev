@@ -1,15 +1,10 @@
-﻿using LeetCodeSoluction.Solution;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LeetCodeSolution.Solution;
 
-namespace LeetCodeSoluction
+namespace LeetCodeSolution
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             //new Add_two_numbers().Run();
             //new Reverse_Integer().Run();
@@ -41,7 +36,8 @@ namespace LeetCodeSoluction
             //new No11_ContainerWithMostWater().Run();
             //new No739_DailyTemperatures().Run();
             //new No763_PartitionLabels().Run();
-            new No22_GenerateParentheses().Run();
+            //new No22_GenerateParentheses().Run();
+            new No27_RemoveElement().Run();
         }
     }
 }

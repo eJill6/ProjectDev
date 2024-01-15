@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace LeetCodeSoluction.Solution
+namespace LeetCodeSolution.Solution
 {
     public class No19_RemoveNthFromEnd : BaseSolution
     {

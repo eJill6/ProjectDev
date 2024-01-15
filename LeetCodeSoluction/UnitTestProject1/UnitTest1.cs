@@ -1,9 +1,7 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestProject1
 {
@@ -14,13 +12,13 @@ namespace UnitTestProject1
         public void TestMethod1()
         {
             System.Diagnostics.Debug.WriteLine(OrderChars("ab", "ab").ToArray());
-            Turn a ;
-
+            Turn a;
         }
 
         public enum Turn
         {
             L = 1,
+
             R
         }
 
@@ -55,9 +53,9 @@ namespace UnitTestProject1
             {
                 bool isFound = false;
 
-                foreach (int num in weights.OrderByDescending(o=>o))
+                foreach (int num in weights.OrderByDescending(o => o))
                 {
-                    if(tempNum>= num)
+                    if (tempNum >= num)
                     {
                         tempNum -= num;
                         totalCount++;
@@ -77,8 +75,6 @@ namespace UnitTestProject1
                 }
             }
         }
-
-
     }
 
     public class MaxSum

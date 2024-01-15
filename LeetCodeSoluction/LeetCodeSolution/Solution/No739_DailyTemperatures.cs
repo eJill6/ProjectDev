@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 
-namespace LeetCodeSoluction.Solution
+namespace LeetCodeSolution.Solution
 {
     public class No739_DailyTemperatures : BaseSolution
     {
@@ -28,7 +25,7 @@ namespace LeetCodeSoluction.Solution
                     first = temperatures[index];
                     int tmp = 0;
 
-                    for (int i = index+1; i < total; i++)
+                    for (int i = index + 1; i < total; i++)
                     {
                         if (temperatures[i] > first)
                         {
