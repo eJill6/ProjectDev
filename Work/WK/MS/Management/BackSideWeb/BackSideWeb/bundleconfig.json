@@ -1,0 +1,788 @@
+[
+  {
+    "outputFileName": "wwwroot/js/jquery/jquery.extensions.min.js",
+    "inputFiles": [
+      "wwwroot/js/jquery/jquery.extensions.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/dateRangeTabService.min.js",
+    "inputFiles": [
+      "wwwroot/js/dateRangeTabService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/base/searchGrid/baseSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/base/searchGrid/baseSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/base/searchGrid/baseSearchGridService.min.js",
+    "inputFiles": [
+      "wwwroot/js/base/searchGrid/baseSearchGridService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/base/searchGrid/searchGridInitService.min.js",
+    "inputFiles": [
+      "wwwroot/js/base/searchGrid/searchGridInitService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/base/searchGrid/pagerService.min.js",
+    "inputFiles": [
+      "wwwroot/js/base/searchGrid/pagerService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/base/crud/baseReturnModel.min.js",
+    "inputFiles": [
+      "wwwroot/js/base/crud/baseReturnModel.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/base/crud/baseCRUDService.min.js",
+    "inputFiles": [
+      "wwwroot/js/base/crud/baseCRUDService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/base/crud/editSingleRowService.min.js",
+    "inputFiles": [
+      "wwwroot/js/base/crud/editSingleRowService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/demo/demoSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/demo/demoSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/demo/demoCRUDService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/demo/demoCRUDService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/demo/demoSearchParam.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/demo/demoSearchParam.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/publicitySettings/advertisingContentSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/publicitySettings/advertisingContentSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/publicitySettings/optionsSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/publicitySettings/optionsSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/gameCenterManage/gameCenterManageService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/gameCenterManage/gameCenterManageService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/gameCenterManage/gameManageService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/gameCenterManage/gameManageService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/gameCenterManage/gameTypeManageService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/gameCenterManage/gameTypeManageService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/gameCenterManage/baseGameCenterManageService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/gameCenterManage/baseGameCenterManageService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/systemSetting/bwUserManagementService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/systemSetting/bwUserManagementService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/systemSetting/bwGoogleAuthenticatorService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/systemSetting/bwGoogleAuthenticatorService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/systemSetting/bwUserEditManagementService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/systemSetting/bwUserEditManagementService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/authenticator/verifyExpiredNoticeService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/authenticator/verifyExpiredNoticeService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/systemSetting/systemSettingParam.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/systemSetting/systemSettingParam.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/publicitySettings/bannerSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/publicitySettings/bannerSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/demo/demoCrudEditSingleRowService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/demo/demoCrudEditSingleRowService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/utils/formUtilService.min.js",
+    "inputFiles": [
+      "wwwroot/js/utils/formUtilService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/systemSetting/bwOperationLogSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/systemSetting/bwOperationLogSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/publicitySettings/postWeightSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/publicitySettings/postWeightSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/base/menu/menuService.min.js",
+    "inputFiles": [
+      "wwwroot/js/base/menu/menuService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/utils/layerService.min.js",
+    "inputFiles": [
+      "wwwroot/js/utils/layerService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/base/searchGrid/commonSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/base/searchGrid/commonSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/adminIncome/adminIncomeSearchParam.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/adminIncome/adminIncomeSearchParam.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/adminIncome/adminIncomeSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/adminIncome/adminIncomeSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/adminIncome/adminIncomeService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/adminIncome/adminIncomeService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/adminPostTransaction/adminPostTransactionSearchParam.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/adminPostTransaction/adminPostTransactionSearchParam.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/adminPostTransaction/adminPostTransactionSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/adminPostTransaction/adminPostTransactionSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/adminPostTransaction/adminPostTransactionService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/adminPostTransaction/adminPostTransactionService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/adminUserManager/incomeExpenseSearchParam.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/adminUserManager/incomeExpenseSearchParam.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/adminUserManager/incomeExpenseSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/adminUserManager/incomeExpenseSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/adminUserManager/userCardSearchParam.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/adminUserManager/userCardSearchParam.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/adminUserManager/userCardSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/adminUserManager/userCardSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/adminUserManager/userSearchParam.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/adminUserManager/userSearchParam.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/adminUserManager/userSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/adminUserManager/userSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/publishRecord/publishRecordSearchParam.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/publishRecord/publishRecordSearchParam.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/publishRecord/evaluateRecordSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/publishRecord/evaluateRecordSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/publishRecord/evaluateRecordSearchParam.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/publishRecord/evaluateRecordSearchParam.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/publishRecord/reportRecordSearchParam.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/publishRecord/reportRecordSearchParam.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/publishRecord/reportRecordSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/publishRecord/reportRecordSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/publishRecord/publishRecordSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/publishRecord/publishRecordSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/hotGameManage/hotGameEditSingleRowService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/hotGameManage/hotGameEditSingleRowService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/base/crud/commonCRUDService.min.js",
+    "inputFiles": [
+      "wwwroot/js/base/crud/commonCRUDService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/utils/imageFileUploadService.min.js",
+    "inputFiles": [
+      "wwwroot/js/utils/imageFileUploadService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/publicitySettings/homeAnnouncementSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/publicitySettings/homeAnnouncementSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/publicitySettings/bannerEditSingleRowService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/publicitySettings/bannerEditSingleRowService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/base/crud/readSingleRowService.min.js",
+    "inputFiles": [
+      "wwwroot/js/base/crud/readSingleRowService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/slotGameManage/slotGameEditSingleRowService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/slotGameManage/slotGameEditSingleRowService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/operationLog/operationLogSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/operationLog/operationLogSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/publicitySettings/homeAnnouncementSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/publicitySettings/homeAnnouncementSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/publicitySettings/bannerEditSingleRowService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/publicitySettings/bannerEditSingleRowService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/adminUserManager/userEditSingleRowService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/adminUserManager/userEditSingleRowService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/adminUserManager/userIdentityAuditSearchParam.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/adminUserManager/userIdentityAuditSearchParam.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/adminUserManager/userIdentityAuditSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/adminUserManager/userIdentityAuditSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/publicitySettings/homeAnnouncementSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/publicitySettings/homeAnnouncementSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/publicitySettings/bannerEditSingleRowService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/publicitySettings/bannerEditSingleRowService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/systemSetting/bwRoleManagementService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/systemSetting/bwRoleManagementService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/systemSetting/bwRoleEditPermissionService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/systemSetting/bwRoleEditPermissionService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/transferRecord/transferRecordService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/transferRecord/transferRecordService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/publishRecord/officialPublishRecordSearchParam.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/publishRecord/officialPublishRecordSearchParam.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/transferRecord/transferRecordService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/transferRecord/transferRecordService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/publishRecord/officialPublishRecordSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/publishRecord/officialPublishRecordSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/setting/refreshFrequencySettingSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/setting/refreshFrequencySettingSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/setting/refreshFrequencySettingEditService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/setting/refreshFrequencySettingEditService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/recycleBalance/recycleBalanceService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/recycleBalance/recycleBalanceService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/base/messageQueue/message-queue.min.js",
+    "inputFiles": [
+      "wwwroot/js/base/messageQueue/message-queue.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/lib/toastr/toastr.min.js",
+    "inputFiles": [
+      "wwwroot/lib/toastr/toastr.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/base/messageQueue/bwUserMessageService.min.js",
+    "inputFiles": [
+      "wwwroot/js/base/messageQueue/bwUserMessageService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/utils/decryptoService.min.js",
+    "inputFiles": [
+      "wwwroot/js/utils/decryptoService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/utils/fileDownloadService.min.js",
+    "inputFiles": [
+      "wwwroot/js/utils/fileDownloadService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/lib/cryptoJS/aes.min.js",
+    "inputFiles": [
+      "wwwroot/lib/cryptoJS/aes.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/changePassword/changePasswordEditSingleRowService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/changePassword/changePasswordEditSingleRowService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/publicitySettings/mailSettingSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/publicitySettings/mailSettingSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/adminBooking/adminBookingSearchParam.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/adminBooking/adminBookingSearchParam.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/adminBooking/adminBookingSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/adminBooking/adminBookingSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/adminBookingRefund/adminBookingRefundSearchParam.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/adminBookingRefund/adminBookingRefundSearchParam.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/adminBookingRefund/adminBookingRefundSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/adminBookingRefund/adminBookingRefundSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/publishRecord/officialEvaluateRecordSearchParam.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/publishRecord/officialEvaluateRecordSearchParam.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/publishRecord/officialEvaluateRecordSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/publishRecord/officialEvaluateRecordSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/publishRecord/officialReportRecordSearchParam.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/publishRecord/officialReportRecordSearchParam.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/publishRecord/officialReportRecordSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/publishRecord/officialReportRecordSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/operatingData/operationOverviewService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/operatingData/operationOverviewService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/dailyRevenue/dailyRevenueSearchParam.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/dailyRevenue/dailyRevenueSearchParam.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/dailyRevenue/dailyRevenueSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/dailyRevenue/dailyRevenueSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/dailyUsers/dailyUsersSearchParam.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/dailyUsers/dailyUsersSearchParam.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/dailyUsers/dailyUsersSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/dailyUsers/dailyUsersSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/monthlyRevenue/monthlyRevenueSearchParam.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/monthlyRevenue/monthlyRevenueSearchParam.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/monthlyRevenue/monthlyRevenueSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/monthlyRevenue/monthlyRevenueSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/monthlyUsers/monthlyUsersSearchParam.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/monthlyUsers/monthlyUsersSearchParam.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/monthlyUsers/monthlyUsersSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/monthlyUsers/monthlyUsersSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/postDailyRevenue/postDailyRevenueSearchParam.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/postDailyRevenue/postDailyRevenueSearchParam.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/postDailyRevenue/postDailyRevenueSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/postDailyRevenue/postDailyRevenueSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/postDailyTrend/postDailyTrendSearchParam.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/postDailyTrend/postDailyTrendSearchParam.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/postDailyTrend/postDailyTrendSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/postDailyTrend/postDailyTrendSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/postMonthlyRevenue/postMonthlyRevenueSearchParam.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/postMonthlyRevenue/postMonthlyRevenueSearchParam.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/postMonthlyRevenue/postMonthlyRevenueSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/postMonthlyRevenue/postMonthlyRevenueSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/postMonthlyTrend/postMonthlyTrendSearchParam.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/postMonthlyTrend/postMonthlyTrendSearchParam.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/postMonthlyTrend/postMonthlyTrendSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/postMonthlyTrend/postMonthlyTrendSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/operatingData/postOverviewService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/operatingData/postOverviewService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/dailyRevenue/dailyRevenueService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/dailyRevenue/dailyRevenueService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/playBetRecord/betHistorySearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/playBetRecord/betHistorySearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/playBetRecord/betHistorySearchParam.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/playBetRecord/betHistorySearchParam.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/lotteryHistory/lotteryHistorySearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/lotteryHistory/lotteryHistorySearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/lotteryHistory/lotteryHistorySearchParam.min.js",
+    "inputFiles": [
+      "wwwroot/js/lotteryHistory/lotteryHistorySearchParam.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/lotteryHistory/lotteryHistorySearchParam.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/lotteryHistory/lotteryHistorySearchParam.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/lotteryHistory/lotteryHistorySearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/lotteryHistory/lotteryHistorySearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/publishRecord/officialPublishEditSingleRowService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/publishRecord/officialPublishEditSingleRowService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/liveGameManage/liveGameEditSingleRowService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/liveGameManage/liveGameEditSingleRowService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/publicitySettings/postWeightEditSingleRowService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/publicitySettings/postWeightEditSingleRowService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/publicitySettings/homeAnnouncementEditSingleRowService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/publicitySettings/homeAnnouncementEditSingleRowService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/publishRecord/publishEditSingleRowService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/publishRecord/publishEditSingleRowService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/botBet/botParameterSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/botBet/botParameterSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/botBet/liveBotService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/botBet/liveBotService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/adminUserManager/storeEditorReviewSearchParam.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/adminUserManager/storeEditorReviewSearchParam.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/adminUserManager/storeEditorReviewSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/adminUserManager/storeEditorReviewSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/adminUserManager/userDetailService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/adminUserManager/userDetailService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/adminUserManager/storeEditorReviewEditSingleRowService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/adminUserManager/storeEditorReviewEditSingleRowService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/adminUserManager/storeManageEditSingleRowService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/adminUserManager/storeManageEditSingleRowService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/adminUserManager/storeManageSearchParam.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/adminUserManager/storeManageSearchParam.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/adminUserManager/storeManageSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/adminUserManager/storeManageSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/business/publicitySettings/pageRedirectSearchService.min.js",
+    "inputFiles": [
+      "wwwroot/js/business/publicitySettings/pageRedirectSearchService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/utils/dropDownService.min.js",
+    "inputFiles": [
+      "wwwroot/js/utils/dropDownService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/base/crud/imgConvertToAesCRUDService.min.js",
+    "inputFiles": [
+      "wwwroot/js/base/crud/imgConvertToAesCRUDService.js"
+    ]
+  }
+]

@@ -1,0 +1,160 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Attributes\**" />
+		<Compile Remove="Views\Public\**" />
+		<Content Remove="Attributes\**" />
+		<Content Remove="Views\Public\**" />
+		<EmbeddedResource Remove="Attributes\**" />
+		<EmbeddedResource Remove="Views\Public\**" />
+		<None Remove="Attributes\**" />
+		<None Remove="Views\Public\**" />
+		<TypeScriptCompile Remove="Attributes\**" />
+		<TypeScriptCompile Remove="Views\Public\**" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\js\business\setting\refreshFrequencySettingSearchService.min.js" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<TypeScriptCompile Remove="Typescripts\business\operationLog\operationLogSearchService2.ts" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<_ContentIncludedByDefault Remove="wwwroot\js\business\setting\refreshFrequencySettingSearchService.min.js" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
+		<PackageReference Include="AutoMapper" Version="12.0.1" />
+		<PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
+		<PackageReference Include="HtmlAgilityPack" Version="1.11.46" />
+		<PackageReference Include="Microsoft.TypeScript.MSBuild" Version="5.3.3">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13" />
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+		<PackageReference Include="SharpZipLib" Version="1.4.2" />
+		<PackageReference Include="SixLabors.ImageSharp" Version="3.0.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\Lib\JxBackendServiceLibrary\BackSideWebLoginToolService\BackSideWebLoginToolService.csproj" />
+		<ProjectReference Include="..\..\..\Lib\JxBackendServiceLibrary\JxBackendServiceN6\JxBackendServiceN6.csproj" />
+		<ProjectReference Include="..\..\..\Lib\JxBackendServiceLibrary\JxBackendServiceStd\JxBackendServiceStd.csproj" />
+		<ProjectReference Include="..\..\..\Lib\MS.Core\MS.Core.MMModel\MS.Core.MMModel.csproj" />
+		<ProjectReference Include="..\..\..\Lib\MS.Core\MS.Core.Models\MS.Core.Models.csproj" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.SIT.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\StoreEditorReview\Index.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+    
+  <ItemGroup>
+	<None Include="Views\AdminBookingRefund\Edit.cshtml" />
+    <None Include="Views\AdminIncome\Edit.cshtml" />
+    <None Include="Views\AdminIncome\GetGridViewResult.cshtml" />
+    <None Include="Views\AdminIncome\Index.cshtml" />
+    <None Include="Views\AdminPostTransaction\GetGridViewResult.cshtml" />
+    <None Include="Views\AdminPostTransaction\Index.cshtml" />
+    <None Include="wwwroot\js\business\setting\refreshFrequencySettingSearchService.min.js" />
+    <None Include="wwwroot\js\layui\font\iconfont.svg" />
+    <None Include="wwwroot\js\layui\font\iconfont.woff2" />
+    <None Include="wwwroot\js\layui\layui.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\ckeditor.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\ckeditor.js.map" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\af.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\ar.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\ast.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\az.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\bg.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\bn.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\bs.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\ca.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\cs.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\da.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\de-ch.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\de.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\el.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\en-au.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\en-gb.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\en.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\eo.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\es-co.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\es.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\et.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\eu.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\fa.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\fi.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\fr.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\gl.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\gu.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\he.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\hi.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\hr.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\hu.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\id.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\it.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\ja.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\jv.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\kk.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\km.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\kn.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\ko.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\ku.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\lt.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\lv.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\ms.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\nb.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\ne.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\nl.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\no.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\oc.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\pl.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\pt-br.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\pt.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\ro.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\ru.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\si.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\sk.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\sl.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\sq.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\sr-latn.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\sr.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\sv.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\th.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\tk.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\tr.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\tt.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\ug.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\uk.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\ur.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\uz.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\vi.js" />
+    <None Include="wwwroot\lib\ckeditor5\build\translations\zh-cn.js" />
+    <None Include="wwwroot\lib\ckeditor5\ckeditor5-38.0.1-o8dq5lcmwar5.zip" />
+    <None Include="wwwroot\lib\ckeditor5\LICENSE.md" />
+    <None Include="wwwroot\lib\ckeditor5\README.md" />
+    <None Include="wwwroot\lib\ckeditor5\src\ckeditor.js" />
+    <None Include="wwwroot\lib\ckeditor5\webpack.config.js" />
+    <None Include="wwwroot\lib\video-js-8.5.1\video.cjs.js" />
+    <None Include="wwwroot\lib\video-js-8.5.1\video.es.js" />
+    <None Include="wwwroot\lib\video-js-8.5.1\video.js" />
+    <None Include="wwwroot\lib\video-js-8.5.1\video.min.js" />
+  </ItemGroup>
+</Project>
