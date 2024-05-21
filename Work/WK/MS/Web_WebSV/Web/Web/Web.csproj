@@ -1,0 +1,948 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.TypeScript.MSBuild.4.9.5\build\Microsoft.TypeScript.MSBuild.props" Condition="Exists('..\packages\Microsoft.TypeScript.MSBuild.4.9.5\build\Microsoft.TypeScript.MSBuild.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A5227775-B332-4597-9B97-D88085F23B51}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Web</RootNamespace>
+    <AssemblyName>Web</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IISExpressSSLPort />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>App_Data\Web.xml</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=6.4.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.6.4.0\lib\netstandard2.0\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Extras.DynamicProxy, Version=6.0.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Extras.DynamicProxy.6.0.1\lib\netstandard2.0\Autofac.Extras.DynamicProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=6.1.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Mvc5.6.1.0\lib\net472\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=6.1.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.WebApi2.6.1.1\lib\net472\Autofac.Integration.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.4.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IPTool">
+      <HintPath>..\..\Libs\IPTool.dll</HintPath>
+    </Reference>
+    <Reference Include="IPToolModel">
+      <HintPath>..\..\Libs\IPToolModel.dll</HintPath>
+    </Reference>
+    <Reference Include="IPToolUnderlying">
+      <HintPath>..\..\Libs\IPToolUnderlying.dll</HintPath>
+    </Reference>
+    <Reference Include="jose-jwt, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\jose-jwt.4.0.1\lib\net472\jose-jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="JxLottery.Adapters, Version=1.0.1.136, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\JxLottery.Adapters.1.0.1.136\lib\net40\JxLottery.Adapters.dll</HintPath>
+    </Reference>
+    <Reference Include="JxLottery.Models, Version=1.0.1.136, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\JxLottery.Models.1.0.1.136\lib\net40\JxLottery.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="JxLottery.Services, Version=1.0.1.136, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\JxLottery.Services.1.0.1.136\lib\net40\JxLottery.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Authentication.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Authentication.Core.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authorization, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Authorization.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Authorization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authorization.Policy, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Authorization.Policy.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Authorization.Policy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Hosting.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Hosting.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Hosting.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Extensions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Extensions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Core, Version=2.2.5.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.Core.2.2.5\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Routing, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Routing.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Routing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Routing.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Routing.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Routing.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.WebUtilities, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.WebUtilities.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.WebUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.DotNet.PlatformAbstractions, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.DotNet.PlatformAbstractions.2.1.0\lib\net45\Microsoft.DotNet.PlatformAbstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.7.0.0\lib\net462\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.7.0.0\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyModel, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyModel.2.1.0\lib\net451\Microsoft.Extensions.DependencyModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Hosting.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Hosting.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Hosting.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.7.0.0\lib\net462\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.7.0.0\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.7.0.0\lib\net462\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.7.0.0\lib\net462\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.5.0.5\lib\net46\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog.Extensions.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.Extensions.Logging.5.1.0\lib\net461\NLog.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.15.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.15.0\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Swashbuckle.Core.5.6.0\lib\net40\Swashbuckle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.7.0.0\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.5.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Utility.Logging, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Utility.Logging.1.3\lib\net40\Utility.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Utility.Logging.NLog, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Utility.Logging.NLog.1.3\lib\net40\Utility.Logging.NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Utility.Logging.NLog.Autofac, Version=1.4.2.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Utility.Logging.NLog.Autofac.1.4.2.3\lib\net40\Utility.Logging.NLog.Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\SwaggerConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Connected Services\PublicApiService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SerTabService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SlotApiService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SLPolyGameService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ThirdPartyApiService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ApiExceptionFilterAttribute.cs" />
+    <Compile Include="Controllers\Api\AccountController.cs" />
+    <Compile Include="Controllers\Api\BaseApiController.cs" />
+    <Compile Include="Controllers\Api\HomeController.cs" />
+    <Compile Include="Controllers\Api\LotterySpaController.cs" />
+    <Compile Include="Controllers\Api\PublicController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\GameCenterController.cs" />
+    <Compile Include="Controllers\GameLobbyController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LotterySpaController.cs" />
+    <Compile Include="Controllers\MMController.cs" />
+    <Compile Include="Controllers\PublicController.cs" />
+    <Compile Include="Cookie\HttpCookieService.cs" />
+    <Compile Include="Cookie\IHttpCookieService.cs" />
+    <Compile Include="Extensions\ApiControllerExtension.cs" />
+    <Compile Include="Extensions\ControllerExtension.cs" />
+    <Compile Include="Extensions\DateTimeExtension.cs" />
+    <Compile Include="Extensions\DecimalExtension.cs" />
+    <Compile Include="Extensions\HttpContextExtensions.cs" />
+    <Compile Include="Extensions\ObjectExtension.cs" />
+    <Compile Include="Extensions\ScriptExtensions.cs" />
+    <Compile Include="Extensions\StringExtension.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\CacheKeyHelper.cs" />
+    <Compile Include="Infrastructure\Attributes\Api\BaseWebAuthorizeAttribute.cs" />
+    <Compile Include="Infrastructure\Attributes\Api\WebAuthorizeAttribute.cs" />
+    <Compile Include="Infrastructure\Attributes\LogonParamRequiredIfAttribute.cs" />
+    <Compile Include="Infrastructure\Attributes\MiseWebTokenAuthorizeAttribute.cs" />
+    <Compile Include="Infrastructure\Attributes\BaseWebAuthorizeAttribute.cs" />
+    <Compile Include="Infrastructure\Attributes\WebAuthorizeAttribute.cs" />
+    <Compile Include="Infrastructure\CustomJsonValueProviderFactory.cs" />
+    <Compile Include="Infrastructure\ExceptionFilterUtil.cs" />
+    <Compile Include="Infrastructure\Extensions\ActionLinkExtensions.cs" />
+    <Compile Include="Infrastructure\Extensions\HtmlExtensions.cs" />
+    <Compile Include="Infrastructure\Extensions\PartialViewExtensions.cs" />
+    <Compile Include="Infrastructure\FilterContextHelper.cs" />
+    <Compile Include="Infrastructure\Filters\ExceptionFilter.cs" />
+    <Compile Include="Infrastructure\Filters\LogDebugUserActionExecutingTimeAttribute.cs" />
+    <Compile Include="Infrastructure\Filters\LogMvcActionExecutingTimeAttribute.cs" />
+    <Compile Include="Infrastructure\Filters\LogOnRateLimitAttribute.cs" />
+    <Compile Include="Infrastructure\Filters\WebValidModelStateAttribute.cs" />
+    <Compile Include="Infrastructure\Filters\AnonymousAttribute.cs" />
+    <Compile Include="Infrastructure\PaginationSetting.cs" />
+    <Compile Include="Models\Account\LogonParam.cs" />
+    <Compile Include="Models\Base\JsonNetResult.cs" />
+    <Compile Include="Models\Base\MoneyTransferModel.cs" />
+    <Compile Include="Models\GamePlatformModel.cs" />
+    <Compile Include="Models\Common\BaseResponseData.cs" />
+    <Compile Include="Models\GameTabTypeValue.cs" />
+    <Compile Include="Models\LongResult\LongData.cs" />
+    <Compile Include="Models\LongResult\LongInfo.cs" />
+    <Compile Include="Models\LotteryPlan\LotteryPlanData.cs" />
+    <Compile Include="Models\LotteryPlan\LotteryPlanInfo.cs" />
+    <Compile Include="Models\LotteryPlayTypeInfo.cs" />
+    <Compile Include="Models\Pagination.cs" />
+    <Compile Include="Models\Results\JsonCamelCaseResult.cs" />
+    <Compile Include="Models\SpaPlayConfig\LHCPlayConfig.cs" />
+    <Compile Include="Models\SpaPlayConfig\PK10PlayConfig.cs" />
+    <Compile Include="Models\SpaPlayConfig\SSCPlayConfig.cs" />
+    <Compile Include="Models\SubGameRequest.cs" />
+    <Compile Include="Models\ThirdPartyGamesViewModel.cs" />
+    <Compile Include="Models\ViewModel\ExceptionInfoViewModel.cs" />
+    <Compile Include="Services\CacheService.cs" />
+    <Compile Include="Helpers\Cache\CachedObj.cs" />
+    <Compile Include="Helpers\Cache\DistributeMemcached.cs" />
+    <Compile Include="Helpers\Cache\ICache.cs" />
+    <Compile Include="Helpers\Cache\LocalMemoryCached.cs" />
+    <Compile Include="Helpers\CookieKeyHelper.cs" />
+    <Compile Include="Helpers\GlobalCacheHelper.cs" />
+    <Compile Include="Services\ICacheService.cs" />
+    <Compile Include="Helpers\Security\AuthenticationUtil.cs" />
+    <Compile Include="Helpers\Security\DESTool.cs" />
+    <Compile Include="Helpers\Security\EndpointBehavior.cs" />
+    <Compile Include="Helpers\Security\IP.cs" />
+    <Compile Include="Helpers\Security\JWTUtil.cs" />
+    <Compile Include="Helpers\Security\MessageInspector.cs" />
+    <Compile Include="Helpers\Security\ServiceProxy.cs" />
+    <Compile Include="Helpers\Security\TokenProvider.cs" />
+    <Compile Include="Helpers\WebResourceHelper.cs" />
+    <Compile Include="Models\Base\After.cs" />
+    <Compile Include="Models\Base\AllPlayConfigModel.cs" />
+    <Compile Include="Helpers\CommonHelper.cs" />
+    <Compile Include="Models\Base\CursorPagination.cs" />
+    <Compile Include="Models\Base\LotteryModels.cs" />
+    <Compile Include="Models\Base\PagingModel.cs" />
+    <Compile Include="Models\Base\PalyInfoViewModel.cs" />
+    <Compile Include="Models\Base\K3PushRequest.cs" />
+    <Compile Include="Models\Base\FollowBetResponse.cs" />
+    <Compile Include="Models\Base\SysSettings.cs" />
+    <Compile Include="Models\Base\UserInfo.cs" />
+    <Compile Include="Models\Base\ZhStrct.cs" />
+    <Compile Include="Models\Enums\AfterType.cs" />
+    <Compile Include="Models\Enums\AwardStatus.cs" />
+    <Compile Include="Models\SpaPlayConfig\Field.cs" />
+    <Compile Include="Models\SpaPlayConfig\ISpaPlayConfig.cs" />
+    <Compile Include="Models\SpaPlayConfig\K3PlayConfig.cs" />
+    <Compile Include="Models\SpaPlayConfig\PlayMode.cs" />
+    <Compile Include="Models\SpaPlayConfig\PlayTypeInfo.cs" />
+    <Compile Include="Models\SpaPlayConfig\PlayTypeInfoApiResult.cs" />
+    <Compile Include="Models\SpaPlayConfig\PlayTypeInfoBase.cs" />
+    <Compile Include="Models\SpaPlayConfig\PlayTypeRadioInfo.cs" />
+    <Compile Include="Models\SpaTrend\IHelperExtIssueData.cs" />
+    <Compile Include="Models\SpaTrend\ISpaTrendHelper.cs" />
+    <Compile Include="Models\SpaTrend\K3SpaTrendHelper.cs" />
+    <Compile Include="Models\SpaTrend\K3TrendDetailModel.cs" />
+    <Compile Include="Models\SpaTrend\SpaTrendHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ILotteryService.cs" />
+    <Compile Include="Services\ILotterySpaService.cs" />
+    <Compile Include="Services\IPlayInfoService.cs" />
+    <Compile Include="Services\IUserService.cs" />
+    <Compile Include="Services\LatestWinningService.cs" />
+    <Compile Include="Services\LotteryService.cs" />
+    <Compile Include="Services\LotterySpaService.cs" />
+    <Compile Include="Services\PlayInfoService.cs" />
+    <Compile Include="Services\UserService.cs" />
+    <Compile Include="Services\WebSV\Base\BaseWebSVService.cs" />
+    <Compile Include="Services\WebSV\WCF\SerTabWCFService.cs" />
+    <Compile Include="Services\WebSV\WCF\PublicApiWCFService.cs" />
+    <Compile Include="Services\WebSV\WCF\SlotApiWCFService.cs" />
+    <Compile Include="Services\WebSV\WCF\ThirdPartyApiWCFService.cs" />
+    <Compile Include="Services\WebSV\WCF\SLPolyGameWCFService.cs" />
+    <Compile Include="Services\WebSV\WebApi\SerTabWebApiService.cs" />
+    <Compile Include="Services\WebSV\WebApi\PublicApiWebApiService.cs" />
+    <Compile Include="Services\WebSV\WebApi\SlotApiWebApiService.cs" />
+    <Compile Include="Services\WebSV\WebApi\ThirdPartyApiWebApiService.cs" />
+    <Compile Include="Services\WebSV\WebApi\SLPolyGameWebApiService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="appSettings.config" />
+    <Content Include="appSettings.UAT.config" />
+    <Content Include="appSettings.SIT.config" />
+    <None Include="bundleconfig.json" />
+    <None Include="Connected Services\PublicApiService\service.wsdl" />
+    <None Include="Connected Services\PublicApiService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PublicApiService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PublicApiService\SLPolyGame.Web.Model.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SerTabService\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SerTabService\JxLottery.Models.Lottery.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SerTabService\service.wsdl" />
+    <None Include="Connected Services\SerTabService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SerTabService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SerTabService\SLPolyGame.Web.Model.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SlotApiService\JxBackendService.Model.Entity.Base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SlotApiService\JxBackendService.Model.Entity.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SlotApiService\JxBackendService.Model.ViewModel.ThirdParty.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SlotApiService\service.wsdl" />
+    <None Include="Connected Services\SlotApiService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SlotApiService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PublicApiService\configuration91.svcinfo" />
+    <None Include="Connected Services\PublicApiService\configuration.svcinfo" />
+    <None Include="Connected Services\PublicApiService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Connected Services\SlotApiService\Web.SlotApiService.GameLobbyInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\SLPolyGameService\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SLPolyGameService\JxBackendService.Model.ViewModel.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SLPolyGameService\JxLottery.Models.Lottery.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SLPolyGameService\service.wsdl" />
+    <None Include="Connected Services\SLPolyGameService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SLPolyGameService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SLPolyGameService\SLPolyGame.Web.Model.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SerTabService\configuration91.svcinfo" />
+    <None Include="Connected Services\SerTabService\configuration.svcinfo" />
+    <None Include="Connected Services\SerTabService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\SlotApiService\configuration91.svcinfo" />
+    <None Include="Connected Services\SlotApiService\configuration.svcinfo" />
+    <None Include="Connected Services\SlotApiService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Connected Services\SLPolyGameService\Web.SLPolyGameService.FrontsideMenuViewModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\SLPolyGameService\configuration91.svcinfo" />
+    <None Include="Connected Services\SLPolyGameService\configuration.svcinfo" />
+    <None Include="Connected Services\SLPolyGameService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ThirdPartyApiService\configuration91.svcinfo" />
+    <None Include="Connected Services\ThirdPartyApiService\configuration.svcinfo" />
+    <None Include="Connected Services\ThirdPartyApiService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Content\css\agent.css" />
+    <Content Include="Content\css\ball.css" />
+    <Content Include="Content\css\element.css" />
+    <Content Include="Content\css\gamelobby.css" />
+    <Content Include="Content\css\game_lottery.css" />
+    <Content Include="Content\css\game_sport.css" />
+    <Content Include="Content\css\index.css" />
+    <Content Include="Content\css\member_center.css" />
+    <Content Include="Content\css\modal.css" />
+    <Content Include="Content\css\page_customized.css" />
+    <Content Include="Content\css\public.css" />
+    <Content Include="Content\css\fullpage.css" />
+    <Content Include="Content\css\reset.css" />
+    <Content Include="Content\css\signinup.css" />
+    <Content Include="Content\css\table.css" />
+    <Content Include="Content\css\third_party.css" />
+    <Content Include="Content\css\zebra_datepicker.min.css" />
+    <Content Include="Content\CTS\2015\images\notification\ic_notification_bet.jpg" />
+    <Content Include="Content\CTS\2015\images\notification\ic_notification_close.svg" />
+    <Content Include="Content\CTS\2015\images\notification\ic_notification_news.jpg" />
+    <Content Include="Content\CTS\2015\images\notification\ic_notification_transfer.jpg" />
+    <Content Include="Content\CTS\ClientApp\dist\yinsiang-lottery\css\app.css" />
+    <Content Include="Content\CTS\ClientApp\dist\yinsiang-lottery\img\ic_amount_reload.svg" />
+    <Content Include="Content\CTS\ClientApp\dist\yinsiang-lottery\img\ic_arrow_go_bet.svg" />
+    <Content Include="Content\CTS\ClientApp\dist\yinsiang-lottery\img\ic_back.svg" />
+    <Content Include="Content\CTS\ClientApp\dist\yinsiang-lottery\img\ic_chips_arrow.svg" />
+    <Content Include="Content\CTS\ClientApp\dist\yinsiang-lottery\img\ic_close.svg" />
+    <Content Include="Content\CTS\ClientApp\dist\yinsiang-lottery\img\ic_countdown.svg" />
+    <Content Include="Content\CTS\ClientApp\dist\yinsiang-lottery\img\ic_default_no_data.png" />
+    <Content Include="Content\CTS\ClientApp\dist\yinsiang-lottery\img\ic_delet.svg" />
+    <Content Include="Content\CTS\ClientApp\dist\yinsiang-lottery\img\ic_fold.svg" />
+    <Content Include="Content\CTS\ClientApp\dist\yinsiang-lottery\img\ic_history_arrow.svg" />
+    <Content Include="Content\CTS\ClientApp\dist\yinsiang-lottery\img\sprites_chips.png" />
+    <Content Include="Content\CTS\ClientApp\dist\yinsiang-lottery\img\sprites_chips_small.png" />
+    <Content Include="Content\CTS\ClientApp\dist\yinsiang-lottery\img\sprites_kuaisan.svg" />
+    <Content Include="Content\CTS\ClientApp\dist\yinsiang-lottery\js\app.js" />
+    <Content Include="Content\CTS\ClientApp\dist\yinsiang-lottery\js\chunk-vendors.js" />
+    <Content Include="Content\CTS\dist\js\heartBeat.min.js" />
+    <Content Include="Content\images\gamelobby\bg_btn.jpg" />
+    <Content Include="Content\images\gamelobby\bg_hotgame_17.jpg" />
+    <Content Include="Content\images\gamelobby\bg_sport_3.jpg" />
+    <Content Include="Content\images\gamelobby\bg_sport_4.jpg" />
+    <Content Include="Content\images\gamelobby\icon_boardgame.png" />
+    <Content Include="Content\images\gamelobby\icon_casino.png" />
+    <Content Include="Content\images\gamelobby\icon_esports.png" />
+    <Content Include="Content\images\gamelobby\icon_fishing.png" />
+    <Content Include="Content\images\gamelobby\icon_hot.png" />
+    <Content Include="Content\images\gamelobby\icon_lottery.png" />
+    <Content Include="Content\images\gamelobby\icon_slot.png" />
+    <Content Include="Content\images\gamelobby\icon_sport.png" />
+    <Content Include="Content\images\gamelobby\logo_sport_hrb.png" />
+    <Content Include="Content\images\gamelobby\logo_sport_sv888.png" />
+    <Content Include="Content\images\gamelobby\v_sport_3.png" />
+    <Content Include="Content\images\gamelobby\v_sport_4.png" />
+    <Content Include="Content\images\gamelobby\bg_esports_ks.jpg" />
+    <Content Include="Content\js\jquery\jquery.counterup.js" />
+    <Content Include="Content\js\jquery\jquery.counterup.min.js" />
+    <Content Include="Content\CTS\dist\js\jquery\jquery.extensions.min.js">
+      <DependentUpon>jquery.extensions.js</DependentUpon>
+    </Content>
+    <Content Include="Content\CTS\dist\js\message-queue.js" />
+    <Content Include="Content\CTS\dist\js\network\sockjs-0.3.min.js" />
+    <Content Include="Content\CTS\dist\js\network\stomp.min.js" />
+    <Content Include="Content\CTS\dist\js\jquery\jquery-3.6.0.min.js" />
+    <Content Include="Content\CTS\dist\js\jquery\jquery-ui.min.js" />
+    <Content Include="Content\CTS\dist\js\jquery\jquery.extensions.js" />
+    <Content Include="Content\CTS\dist\js\jquery\jquery.tmpl.min.js" />
+    <Content Include="Content\CTS\dist\js\jquery\jquery.unobtrusive-ajax.js" />
+    <Content Include="Content\CTS\dist\js\jquery\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Content\CTS\dist\js\layer\extend\layer.ext.js" />
+    <Content Include="Content\CTS\dist\js\layer\extend\layer.ext.min.js" />
+    <Content Include="Content\CTS\dist\js\layer\layer.js" />
+    <Content Include="Content\CTS\dist\js\layer\layer.min.js" />
+    <Content Include="Content\CTS\dist\js\layer\skin\default\btn_bg.jpg" />
+    <Content Include="Content\CTS\dist\js\layer\skin\default\hssy.png" />
+    <Content Include="Content\CTS\dist\js\layer\skin\default\icon-ext.png" />
+    <Content Include="Content\CTS\dist\js\layer\skin\default\icon.png" />
+    <Content Include="Content\CTS\dist\js\layer\skin\default\icon2.png" />
+    <Content Include="Content\CTS\dist\js\layer\skin\default\loading-0.gif" />
+    <Content Include="Content\CTS\dist\js\layer\skin\default\loading-1.gif" />
+    <Content Include="Content\CTS\dist\js\layer\skin\default\loading-2.gif" />
+    <Content Include="Content\CTS\dist\js\layer\skin\layer.css" />
+    <Content Include="Content\CTS\dist\js\layer\skin\layer.ext.css" />
+    <Content Include="Content\CTS\dist\js\validator\images\loading.gif" />
+    <Content Include="Content\CTS\dist\js\validator\images\validator_default.png" />
+    <Content Include="Content\CTS\dist\js\validator\images\validator_simple.png" />
+    <Content Include="Content\CTS\dist\js\validator\jquery.validator.css" />
+    <Content Include="Content\CTS\dist\js\validator\jquery.validator.js" />
+    <Content Include="Content\CTS\dist\js\validator\jquery.validator.min.js" />
+    <Content Include="Content\CTS\dist\js\validator\local\en.js" />
+    <Content Include="Content\CTS\dist\js\validator\local\en.min.js" />
+    <Content Include="Content\CTS\dist\js\validator\local\ja.js" />
+    <Content Include="Content\CTS\dist\js\validator\local\ja.min.js" />
+    <Content Include="Content\CTS\dist\js\validator\local\zh_CN.js" />
+    <Content Include="Content\CTS\dist\js\validator\local\zh_CN.min.js" />
+    <Content Include="Content\CTS\dist\js\validator\local\zh_TW.js" />
+    <Content Include="Content\CTS\dist\js\validator\local\zh_TW.min.js" />
+    <Content Include="Content\images\element\ic_page_more.svg" />
+    <Content Include="Content\images\element\ic_page_next_dark.svg" />
+    <Content Include="Content\images\element\ic_page_next_light.svg" />
+    <Content Include="Content\images\element\ic_page_pre_dark.svg" />
+    <Content Include="Content\images\element\ic_page_pre_light.svg" />
+    <Content Include="Content\images\error\reconnect.png" />
+    <Content Include="Content\images\gamelobby\bg_boardgame_imbg.jpg" />
+    <Content Include="Content\images\gamelobby\bg_boardgame_imky.jpg" />
+    <Content Include="Content\images\gamelobby\bg_boardgame_lc.jpg" />
+    <Content Include="Content\images\gamelobby\bg_boardgame_pmbg.jpg" />
+    <Content Include="Content\images\gamelobby\bg_boardgame_wlbg.jpg" />
+    <Content Include="Content\images\gamelobby\bg_casino_abeb.jpg" />
+    <Content Include="Content\images\gamelobby\bg_casino_ag.jpg" />
+    <Content Include="Content\images\gamelobby\bg_casino_eveb.jpg" />
+    <Content Include="Content\images\gamelobby\bg_casino_imebet.jpg" />
+    <Content Include="Content\images\gamelobby\bg_casino_imptlive.jpg" />
+    <Content Include="Content\images\gamelobby\bg_casino_pmeb.jpg" />
+    <Content Include="Content\images\gamelobby\bg_esports_fyes.jpg" />
+    <Content Include="Content\images\gamelobby\bg_esports_im.jpg" />
+    <Content Include="Content\images\gamelobby\bg_fishing_agfishing.jpg" />
+    <Content Include="Content\images\gamelobby\bg_fishing_jdbfi.jpg" />
+    <Content Include="Content\images\gamelobby\bg_fishing_pmfishing.jpg" />
+    <Content Include="Content\images\gamelobby\bg_fishing_wlfishing.jpg" />
+    <Content Include="Content\images\gamelobby\bg_hotgame_1.jpg" />
+    <Content Include="Content\images\gamelobby\bg_hotgame_10.jpg" />
+    <Content Include="Content\images\gamelobby\bg_hotgame_11.jpg" />
+    <Content Include="Content\images\gamelobby\bg_hotgame_12.jpg" />
+    <Content Include="Content\images\gamelobby\bg_hotgame_13.jpg" />
+    <Content Include="Content\images\gamelobby\bg_hotgame_14.jpg" />
+    <Content Include="Content\images\gamelobby\bg_hotgame_15.jpg" />
+    <Content Include="Content\images\gamelobby\bg_hotgame_16.jpg" />
+    <Content Include="Content\images\gamelobby\bg_hotgame_2.jpg" />
+    <Content Include="Content\images\gamelobby\bg_hotgame_3.jpg" />
+    <Content Include="Content\images\gamelobby\bg_hotgame_4.jpg" />
+    <Content Include="Content\images\gamelobby\bg_hotgame_5.jpg" />
+    <Content Include="Content\images\gamelobby\bg_hotgame_6.jpg" />
+    <Content Include="Content\images\gamelobby\bg_hotgame_7.jpg" />
+    <Content Include="Content\images\gamelobby\bg_hotgame_8.jpg" />
+    <Content Include="Content\images\gamelobby\bg_hotgame_9.jpg" />
+    <Content Include="Content\images\gamelobby\bg_lottery_imsg.jpg" />
+    <Content Include="Content\images\gamelobby\bg_lottery_imvr.jpg" />
+    <Content Include="Content\images\gamelobby\bg_slot_agxin.jpg" />
+    <Content Include="Content\images\gamelobby\bg_slot_agyoplay.jpg" />
+    <Content Include="Content\images\gamelobby\bg_slot_imjdb.jpg" />
+    <Content Include="Content\images\gamelobby\bg_slot_impt.jpg" />
+    <Content Include="Content\images\gamelobby\bg_slot_imse.jpg" />
+    <Content Include="Content\images\gamelobby\bg_slot_pgsl.jpg" />
+    <Content Include="Content\images\gamelobby\bg_slot_pmsl.jpg" />
+    <Content Include="Content\images\gamelobby\bg_slot_pp.jpg" />
+    <Content Include="Content\images\gamelobby\bg_sport_awchb.jpg" />
+    <Content Include="Content\images\gamelobby\bg_sport_awcsv.jpg" />
+    <Content Include="Content\images\gamelobby\bg_sport_btis.jpg" />
+    <Content Include="Content\images\gamelobby\bg_sport_imsport.jpg" />
+    <Content Include="Content\images\gamelobby\bg_sport_pmsp.jpg" />
+    <Content Include="Content\images\gamelobby\bg_sport_sport.jpg" />
+    <Content Include="Content\images\gamelobby\ic_maintain.svg" />
+    <Content Include="Content\images\gamelobby\loading.png" />
+    <Content Include="Content\images\loading.gif" />
+    <Content Include="Content\fonts\.icomoon~imageoptim.svg" />
+    <Content Include="Content\images\third_party\banner_jdb.png" />
+    <Content Include="Content\images\third_party\banner_jdbf.png" />
+    <Content Include="Content\images\third_party\banner_pm.png" />
+    <Content Include="Content\images\third_party\banner_pp.png" />
+    <Content Include="Content\images\third_party\banner_pt.png" />
+    <Content Include="Content\images\third_party\banner_se.png" />
+    <Content Include="Content\images\third_party\bar_relay_page.jpg" />
+    <Content Include="Content\images\third_party\bg_relay_page.jpg" />
+    <Content Include="Content\images\third_party\furf.png" />
+    <Content Include="Content\images\third_party\ic_favorite.svg" />
+    <Content Include="Content\images\third_party\ic_favorite_active.svg" />
+    <Content Include="Content\images\third_party\ic_favorite_no_result.svg" />
+    <Content Include="Content\images\third_party\ic_header_back_gray.svg" />
+    <Content Include="Content\images\third_party\ic_search.svg" />
+    <Content Include="Content\images\third_party\ic_search_close.svg" />
+    <Content Include="Content\images\third_party\ic_search_hover.svg" />
+    <Content Include="Content\images\third_party\ic_search_no_result.svg" />
+    <Content Include="Content\images\third_party\ic_tab_all.svg" />
+    <Content Include="Content\images\third_party\ic_tab_all_hover.svg" />
+    <Content Include="Content\images\third_party\ic_tab_favorite.svg" />
+    <Content Include="Content\images\third_party\ic_tab_favorite_hover.svg" />
+    <Content Include="Content\images\third_party\ic_tab_recommend.svg" />
+    <Content Include="Content\images\third_party\ic_tab_recommend_hover.svg" />
+    <Content Include="Content\images\third_party\ic_wait_game.svg" />
+    <Content Include="Content\images\third_party\img_forward_game.png" />
+    <Content Include="Content\images\third_party\mobile\banner_jdbf_rwd.png" />
+    <Content Include="Content\images\third_party\mobile\banner_jdb_rwd.png" />
+    <Content Include="Content\images\third_party\mobile\banner_pm_rwd.png" />
+    <Content Include="Content\images\third_party\mobile\banner_pp_rwd.png" />
+    <Content Include="Content\images\third_party\mobile\banner_pt_rwd.png" />
+    <Content Include="Content\images\third_party\mobile\banner_se_rwd.png" />
+    <Content Include="Content\js\fullpage.js" />
+    <Content Include="Content\js\jquery\jquery.extensions.js" />
+    <Content Include="Content\js\jquery\jquery.extensions.min.js">
+      <DependentUpon>jquery.extensions.js</DependentUpon>
+    </Content>
+    <Content Include="Content\js\scrolloverflow.js" />
+    <Content Include="Content\js\third-party-game-hall.js" />
+    <Content Include="Content\js\third-party-game-hall.min.js">
+      <DependentUpon>third-party-game-hall.js</DependentUpon>
+    </Content>
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <EmbeddedResource Include="SwaggerExtensions\LogOn.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\LotterySpa\Error.cshtml" />
+    <Content Include="Views\LotterySpa\Index.cshtml" />
+    <Content Include="Views\Shared\_GlobalVariables.cshtml" />
+    <Content Include="Views\Shared\_JavaScriptJquery.cshtml" />
+    <Content Include="Views\Home\GameCenter.cshtml" />
+    <Content Include="Properties\DataSources\JxBackendService.Model.ViewModel.FrontsideMenuViewModel.datasource" />
+    <Content Include="Properties\DataSources\JxBackendService.Model.Param.ThirdParty.TPGameOpenParam.datasource" />
+    <Content Include="Properties\DataSources\JxBackendService.Model.ReturnModel.BaseReturnModel.datasource" />
+    <Content Include="Properties\DataSources\JxBackendService.Model.ViewModel.ThirdParty.UserScore.datasource" />
+    <Content Include="Views\Shared\ThirdPartyGame.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_Loading.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\GameLobby\IMJDBGameList.cshtml" />
+    <Content Include="Views\Shared\_GameLobbyLayout.cshtml" />
+    <Content Include="Views\ThirdParty\Partial\_ThirdPartyGameListPartial.cshtml" />
+    <Content Include="Views\Shared\_Pagination.cshtml" />
+    <Content Include="Views\ThirdParty\Partial\_SlotTabPartial.cshtml" />
+    <Content Include="Typescripts\tsconfig.json" />
+    <Content Include="Properties\DataSources\JxBackendService.Model.ViewModel.ThirdParty.GameLobbyInfo.datasource" />
+    <Content Include="Views\Shared\ReconnectTips.cshtml" />
+    <Content Include="Views\GameLobby\IMSEGameList.cshtml" />
+    <Content Include="Views\GameLobby\JDBFIGameList.cshtml" />
+    <Content Include="Views\GameLobby\IMPTGameList.cshtml" />
+    <Content Include="Views\GameLobby\IMPPGameList.cshtml" />
+    <Content Include="Views\Shared\EnterGameLoading.cshtml" />
+    <Content Include="Properties\DataSources\JxBackendService.Model.Entity.FrontsideMenu.datasource" />
+    <Content Include="Views\GameLobby\PMSLGameList.cshtml" />
+    <Content Include="Views\MM\Index.cshtml" />
+    <Content Include="Properties\DataSources\SLPolyGame.Web.Model.CurrentLotteryInfo.datasource" />
+    <Content Include="Properties\DataSources\SLPolyGame.Web.Model.PalyInfo.datasource" />
+    <Content Include="Properties\DataSources\SLPolyGame.Web.Model.SysSettings.datasource" />
+    <Content Include="Properties\DataSources\SLPolyGame.Web.Model.UserAuthInformation.datasource" />
+    <Content Include="Properties\DataSources\SLPolyGame.Web.Model.UserInfo.datasource" />
+    <Content Include="Properties\DataSources\SLPolyGame.Web.Model.WinningListItem.datasource" />
+    <Content Include="Properties\DataSources\SLPolyGame.Web.Model.LotteryInfo.datasource" />
+    <Content Include="Properties\DataSources\SLPolyGame.Web.Model.PlayTypeInfo.datasource" />
+    <Content Include="Properties\DataSources\SLPolyGame.Web.Model.PlayTypeRadio.datasource" />
+    <Content Include="Properties\DataSources\SLPolyGame.Web.Model.TodaySummaryInfo.datasource" />
+    <Content Include="Views\ThirdParty\Partial\_SlotGameListPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Scripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="nlog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\fonts\din_alternate_bold-webfont.woff" />
+    <Content Include="Content\fonts\din_alternate_bold-webfont.woff2" />
+    <Content Include="Content\fonts\din_condensed-webfont.woff" />
+    <Content Include="Content\fonts\din_condensed-webfont.woff2" />
+    <None Include="Connected Services\ThirdPartyApiService\JxBackendService.Model.Entity.Base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ThirdPartyApiService\JxBackendService.Model.Entity.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ThirdPartyApiService\JxBackendService.Model.Param.ThirdParty.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ThirdPartyApiService\JxBackendService.Model.ReturnModel.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ThirdPartyApiService\service.wsdl" />
+    <None Include="Connected Services\ThirdPartyApiService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ThirdPartyApiService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\ThirdPartyApiService\Web.ThirdPartyApiService.BaseReturnDataModelOfTPGameOpenParamZWylxVPn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ThirdPartyApiService\Web.ThirdPartyApiService.FrontsideMenu.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\PublicApiService\" />
+    <WCFMetadataStorage Include="Connected Services\SerTabService\" />
+    <WCFMetadataStorage Include="Connected Services\SlotApiService\" />
+    <WCFMetadataStorage Include="Connected Services\SLPolyGameService\" />
+    <WCFMetadataStorage Include="Connected Services\ThirdPartyApiService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Lib\MS.Core\MS.Core.MMClient\MS.Core.MMClient.csproj">
+      <Project>{bc809914-7709-4a46-8b93-73963f817be9}</Project>
+      <Name>MS.Core.MMClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Lib\MS.Core\MS.Core.MMModel\MS.Core.MMModel.csproj">
+      <Project>{410ee810-abfb-40f1-8f2b-0bbd635d20a3}</Project>
+      <Name>MS.Core.MMModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Lib\MS.Core\MS.Core.Models\MS.Core.Models.csproj">
+      <Project>{f0dee73a-51cd-459d-96e5-35bdbe5230ab}</Project>
+      <Name>MS.Core.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\WebShare\WebShareLib\WebShareLib.csproj">
+      <Project>{780374bb-dbf9-40f0-9646-b9072daefbde}</Project>
+      <Name>WebShareLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Typescripts\jquery\jquery.extensions.ts" />
+    <TypeScriptCompile Include="Typescripts\types\layer.d.ts" />
+    <TypeScriptCompile Include="Typescripts\third-party-game-hall.ts" />
+    <TypeScriptCompile Include="Typescripts\types\global.d.ts" />
+    <TypeScriptCompile Include="Typescripts\types\jquery.extension.d.ts" />
+    <TypeScriptCompile Include="Typescripts\types\jquery\index.d.ts" />
+    <TypeScriptCompile Include="Typescripts\types\jquery\JQuery.d.ts" />
+    <TypeScriptCompile Include="Typescripts\types\jquery\JQueryStatic.d.ts" />
+    <TypeScriptCompile Include="Typescripts\types\jquery\legacy.d.ts" />
+    <TypeScriptCompile Include="Typescripts\types\jquery\misc.d.ts" />
+    <TypeScriptCompile Include="Typescripts\types\sizzle\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Lib\JxBackendServiceLibrary\JxBackendServiceNF\JxBackendServiceNF.csproj">
+      <Project>{94711936-f1d0-43e6-900e-8c413c9a7a88}</Project>
+      <Name>JxBackendServiceNF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Lib\JxBackendServiceLibrary\JxBackendServiceStd\JxBackendServiceStd.csproj">
+      <Project>{BA22F8DE-EDFA-4565-9C09-1B59349B6ABC}</Project>
+      <Name>JxBackendServiceStd</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>5422</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:62340/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.TypeScript.MSBuild.4.9.5\build\Microsoft.TypeScript.MSBuild.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.TypeScript.MSBuild.4.9.5\build\Microsoft.TypeScript.MSBuild.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.TypeScript.MSBuild.4.9.5\build\Microsoft.TypeScript.MSBuild.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.TypeScript.MSBuild.4.9.5\build\Microsoft.TypeScript.MSBuild.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.TypeScript.MSBuild.4.9.5\build\Microsoft.TypeScript.MSBuild.targets" Condition="Exists('..\packages\Microsoft.TypeScript.MSBuild.4.9.5\build\Microsoft.TypeScript.MSBuild.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

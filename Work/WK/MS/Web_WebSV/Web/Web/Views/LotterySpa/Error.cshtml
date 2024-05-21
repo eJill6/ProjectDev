@@ -1,0 +1,33 @@
+﻿@using Web.Extensions
+@using Web.Helpers;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>投注</title>
+    @Html.ImportCss(@WebResourceHelper.Content("~/Content/CTS/ClientApp/dist/yinsiang-lottery/css/app.css"))
+</head>
+
+<body>
+    <div class="h-100 main-content rounded-main">
+        <div class="error_content">
+            <div>
+                <img src=@WebResourceHelper.Content("~/Content/CTS/ClientApp/dist/yinsiang-lottery/img/pic_error.svg"))" />
+            </div>
+            <p class="title">404</p>
+            <p class="text">连线失败请重试</p>
+            <div><button>点击重试</button></div>
+        </div>
+    </div>
+
+</body>
+
+</html>

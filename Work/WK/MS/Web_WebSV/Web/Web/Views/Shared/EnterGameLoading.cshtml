@@ -1,0 +1,55 @@
+﻿@using Web.Extensions;
+@using Web.Helpers;
+
+@{
+    Layout = null;
+
+    decimal? redirectAfterSeconds = (decimal?)ViewBag.RedirectAfterSeconds;
+
+    if (!redirectAfterSeconds.HasValue)
+    {
+        redirectAfterSeconds = 0.3m;
+    }
+}
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=9">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>秘色</title>
+    <!--CSS link-->
+    @Html.ImportCss(WebResourceHelper.Content("~/Content/css/reset.css"))
+    @Html.ImportCss(WebResourceHelper.Content("~/Content/css/gamelobby.css"))
+
+<script>
+    let timeout = @redirectAfterSeconds * 1000;
+
+    window.onload = function () {
+        let url = '@Html.Raw(ViewBag.RedirectUrl)';
+
+        if (url !== '') {
+            setTimeout(function () {
+                location.replace(url);
+            }, timeout);
+        }
+    }
+</script>
+</head>
+
+<body ontouchstart="">
+
+    <div class="loading height_100_percent loading_content loading__bg">
+        <div>
+            <img src="@WebResourceHelper.Content("~/Content/images/gamelobby/loading.png")" alt="" />
+            <p class="loading_title">正在进入中...</p>
+        </div>
+    </div>
+</body>
+</html>

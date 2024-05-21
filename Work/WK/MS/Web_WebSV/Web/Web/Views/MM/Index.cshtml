@@ -1,0 +1,78 @@
+﻿@using Web.Extensions;
+@using Web.Helpers;
+@using Newtonsoft.Json;
+@using Newtonsoft.Json.Serialization;
+
+@model object
+
+@{ Layout = null; }
+
+@{
+
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>秘觅</title>
+</head>
+<body>
+    <div id="client-app-lottery"></div>
+    <script type="text/javascript">
+         (function(){
+            window.toTokenPath = function (path) {
+                var result = $.toTokenPath(path);
+                return result;
+             };
+             window.openUrl = function (logonMode, url, win) {
+                 if (logonMode == LogonMode.Native) {
+                     location.href = url;
+                 }
+                 else if (logonMode == LogonMode.Lite) {
+                     window.top.location.href = url;
+                 }
+             };
+             window.mm = {};
+             window.mm.logonMode = '@ViewBag.logonMode';
+             window.mm.pageParamInfo = '@ViewBag.pageParamInfo';
+
+             window.mm.zeroOneSetting = {};
+             // 提現
+             window.mm.zeroOneSetting.withdrawUrl = '@ViewBag.withdrawUrl';
+             // 兌換
+             window.mm.zeroOneSetting.exchangeUrl = '@ViewBag.exchangeUrl';
+             window.mm.zeroOneSetting.depositUrl = '@ViewBag.depositUrl';
+             // 兌換紀錄
+             window.mm.zeroOneSetting.exchangerecordUrl = '@ViewBag.exchangerecordUrl';
+
+             // 充提紀錄
+             window.mm.zeroOneSetting.dwReportUrl = '@ViewBag.dwReportUrl';
+
+             // 充提紀錄
+             window.mm.zeroOneSetting.bindPhoneUrl = '@ViewBag.bindPhoneUrl';
+        })();
+        var userId = '@ViewBag.UserId';
+    </script>
+    <style>
+        @{
+            /*MQ預設的通知框，此頁面隱藏起來*/
+         }
+        .notification {
+            display:none;
+        }
+    </style>
+    @Html.Partial("~/Views/Shared/_GlobalVariables.cshtml")
+    @Html.Partial("~/Views/Shared/_JavaScriptJquery.cshtml")
+    @Html.ImportJavaScripts(
+        @WebResourceHelper.Content("~/Content/CTS/dist/js/network/sockjs-0.3.min.js"),
+        @WebResourceHelper.Content("~/Content/CTS/dist/js/network/stomp.min.js"),
+        @WebResourceHelper.Content("~/Content/CTS/ClientApp/dist/mimi-dating/js/app.js"),
+        @WebResourceHelper.Content("~/Content/CTS/ClientApp/dist/mimi-dating/js/chunk-vendors.js"))
+
+    @Html.ImportCss(@WebResourceHelper.Content("~/Content/CTS/ClientApp/dist/mimi-dating/css/app.css"))
+</body>
+</html>

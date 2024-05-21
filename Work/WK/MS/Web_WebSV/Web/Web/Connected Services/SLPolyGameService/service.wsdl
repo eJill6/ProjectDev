@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="SLPolyGameService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/SLPolyGame.Web.Model" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/JxLottery.Models.Lottery" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/JxBackendService.Model.ViewModel" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISLPolyGameService_CancelOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelOrder" />
+  </wsdl:message>
+  <wsdl:message name="ISLPolyGameService_CancelOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISLPolyGameService_GetUserInfoByUserID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfoByUserID" />
+  </wsdl:message>
+  <wsdl:message name="ISLPolyGameService_GetUserInfoByUserID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfoByUserIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISLPolyGameService_ValidateLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateLogin" />
+  </wsdl:message>
+  <wsdl:message name="ISLPolyGameService_ValidateLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISLPolyGameService_GetServerCurrentTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerCurrentTime" />
+  </wsdl:message>
+  <wsdl:message name="ISLPolyGameService_GetServerCurrentTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerCurrentTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISLPolyGameService_GetSysSettings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysSettings" />
+  </wsdl:message>
+  <wsdl:message name="ISLPolyGameService_GetSysSettings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISLPolyGameService_InsertPlayInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertPlayInfo" />
+  </wsdl:message>
+  <wsdl:message name="ISLPolyGameService_InsertPlayInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertPlayInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISLPolyGameService_GetPalyIDPalyBet_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPalyIDPalyBet" />
+  </wsdl:message>
+  <wsdl:message name="ISLPolyGameService_GetPalyIDPalyBet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPalyIDPalyBetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISLPolyGameService_GetCursorPaginationDrawResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCursorPaginationDrawResult" />
+  </wsdl:message>
+  <wsdl:message name="ISLPolyGameService_GetCursorPaginationDrawResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCursorPaginationDrawResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISLPolyGameService_GetFollowBet_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFollowBet" />
+  </wsdl:message>
+  <wsdl:message name="ISLPolyGameService_GetFollowBet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFollowBetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISLPolyGameService_GetSpecifyOrderList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpecifyOrderList" />
+  </wsdl:message>
+  <wsdl:message name="ISLPolyGameService_GetSpecifyOrderList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpecifyOrderListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISLPolyGameService_GetUserInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="ISLPolyGameService_GetUserInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISLPolyGameService_GetLatestWinningListItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLatestWinningListItems" />
+  </wsdl:message>
+  <wsdl:message name="ISLPolyGameService_GetLatestWinningListItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLatestWinningListItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISLPolyGameService_GetLatestWinningList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLatestWinningList" />
+  </wsdl:message>
+  <wsdl:message name="ISLPolyGameService_GetLatestWinningList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLatestWinningListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISLPolyGameService_GetPlayBetsByAnonymous_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlayBetsByAnonymous" />
+  </wsdl:message>
+  <wsdl:message name="ISLPolyGameService_GetPlayBetsByAnonymous_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlayBetsByAnonymousResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISLPolyGameService_GetPlayBetByAnonymous_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlayBetByAnonymous" />
+  </wsdl:message>
+  <wsdl:message name="ISLPolyGameService_GetPlayBetByAnonymous_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlayBetByAnonymousResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISLPolyGameService_GetFrontsideMenuViewModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFrontsideMenuViewModel" />
+  </wsdl:message>
+  <wsdl:message name="ISLPolyGameService_GetFrontsideMenuViewModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFrontsideMenuViewModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISLPolyGameService_IsFrontsideMenuActive_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsFrontsideMenuActive" />
+  </wsdl:message>
+  <wsdl:message name="ISLPolyGameService_IsFrontsideMenuActive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsFrontsideMenuActiveResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISLPolyGameService">
+    <wsdl:operation name="CancelOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISLPolyGameService/CancelOrder" message="tns:ISLPolyGameService_CancelOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISLPolyGameService/CancelOrderResponse" message="tns:ISLPolyGameService_CancelOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoByUserID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISLPolyGameService/GetUserInfoByUserID" message="tns:ISLPolyGameService_GetUserInfoByUserID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISLPolyGameService/GetUserInfoByUserIDResponse" message="tns:ISLPolyGameService_GetUserInfoByUserID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISLPolyGameService/ValidateLogin" message="tns:ISLPolyGameService_ValidateLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISLPolyGameService/ValidateLoginResponse" message="tns:ISLPolyGameService_ValidateLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerCurrentTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISLPolyGameService/GetServerCurrentTime" message="tns:ISLPolyGameService_GetServerCurrentTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISLPolyGameService/GetServerCurrentTimeResponse" message="tns:ISLPolyGameService_GetServerCurrentTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysSettings">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISLPolyGameService/GetSysSettings" message="tns:ISLPolyGameService_GetSysSettings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISLPolyGameService/GetSysSettingsResponse" message="tns:ISLPolyGameService_GetSysSettings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertPlayInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISLPolyGameService/InsertPlayInfo" message="tns:ISLPolyGameService_InsertPlayInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISLPolyGameService/InsertPlayInfoResponse" message="tns:ISLPolyGameService_InsertPlayInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPalyIDPalyBet">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISLPolyGameService/GetPalyIDPalyBet" message="tns:ISLPolyGameService_GetPalyIDPalyBet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISLPolyGameService/GetPalyIDPalyBetResponse" message="tns:ISLPolyGameService_GetPalyIDPalyBet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCursorPaginationDrawResult">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISLPolyGameService/GetCursorPaginationDrawResult" message="tns:ISLPolyGameService_GetCursorPaginationDrawResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISLPolyGameService/GetCursorPaginationDrawResultResponse" message="tns:ISLPolyGameService_GetCursorPaginationDrawResult_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFollowBet">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISLPolyGameService/GetFollowBet" message="tns:ISLPolyGameService_GetFollowBet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISLPolyGameService/GetFollowBetResponse" message="tns:ISLPolyGameService_GetFollowBet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecifyOrderList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISLPolyGameService/GetSpecifyOrderList" message="tns:ISLPolyGameService_GetSpecifyOrderList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISLPolyGameService/GetSpecifyOrderListResponse" message="tns:ISLPolyGameService_GetSpecifyOrderList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISLPolyGameService/GetUserInfo" message="tns:ISLPolyGameService_GetUserInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISLPolyGameService/GetUserInfoResponse" message="tns:ISLPolyGameService_GetUserInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestWinningListItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISLPolyGameService/GetLatestWinningListItems" message="tns:ISLPolyGameService_GetLatestWinningListItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISLPolyGameService/GetLatestWinningListItemsResponse" message="tns:ISLPolyGameService_GetLatestWinningListItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestWinningList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISLPolyGameService/GetLatestWinningList" message="tns:ISLPolyGameService_GetLatestWinningList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISLPolyGameService/GetLatestWinningListResponse" message="tns:ISLPolyGameService_GetLatestWinningList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayBetsByAnonymous">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISLPolyGameService/GetPlayBetsByAnonymous" message="tns:ISLPolyGameService_GetPlayBetsByAnonymous_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISLPolyGameService/GetPlayBetsByAnonymousResponse" message="tns:ISLPolyGameService_GetPlayBetsByAnonymous_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayBetByAnonymous">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISLPolyGameService/GetPlayBetByAnonymous" message="tns:ISLPolyGameService_GetPlayBetByAnonymous_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISLPolyGameService/GetPlayBetByAnonymousResponse" message="tns:ISLPolyGameService_GetPlayBetByAnonymous_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFrontsideMenuViewModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISLPolyGameService/GetFrontsideMenuViewModel" message="tns:ISLPolyGameService_GetFrontsideMenuViewModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISLPolyGameService/GetFrontsideMenuViewModelResponse" message="tns:ISLPolyGameService_GetFrontsideMenuViewModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsFrontsideMenuActive">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISLPolyGameService/IsFrontsideMenuActive" message="tns:ISLPolyGameService_IsFrontsideMenuActive_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISLPolyGameService/IsFrontsideMenuActiveResponse" message="tns:ISLPolyGameService_IsFrontsideMenuActive_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISLPolyGameService" type="tns:ISLPolyGameService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CancelOrder">
+      <soap:operation soapAction="http://tempuri.org/ISLPolyGameService/CancelOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoByUserID">
+      <soap:operation soapAction="http://tempuri.org/ISLPolyGameService/GetUserInfoByUserID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateLogin">
+      <soap:operation soapAction="http://tempuri.org/ISLPolyGameService/ValidateLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerCurrentTime">
+      <soap:operation soapAction="http://tempuri.org/ISLPolyGameService/GetServerCurrentTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSysSettings">
+      <soap:operation soapAction="http://tempuri.org/ISLPolyGameService/GetSysSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertPlayInfo">
+      <soap:operation soapAction="http://tempuri.org/ISLPolyGameService/InsertPlayInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPalyIDPalyBet">
+      <soap:operation soapAction="http://tempuri.org/ISLPolyGameService/GetPalyIDPalyBet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCursorPaginationDrawResult">
+      <soap:operation soapAction="http://tempuri.org/ISLPolyGameService/GetCursorPaginationDrawResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFollowBet">
+      <soap:operation soapAction="http://tempuri.org/ISLPolyGameService/GetFollowBet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecifyOrderList">
+      <soap:operation soapAction="http://tempuri.org/ISLPolyGameService/GetSpecifyOrderList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <soap:operation soapAction="http://tempuri.org/ISLPolyGameService/GetUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestWinningListItems">
+      <soap:operation soapAction="http://tempuri.org/ISLPolyGameService/GetLatestWinningListItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestWinningList">
+      <soap:operation soapAction="http://tempuri.org/ISLPolyGameService/GetLatestWinningList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayBetsByAnonymous">
+      <soap:operation soapAction="http://tempuri.org/ISLPolyGameService/GetPlayBetsByAnonymous" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayBetByAnonymous">
+      <soap:operation soapAction="http://tempuri.org/ISLPolyGameService/GetPlayBetByAnonymous" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFrontsideMenuViewModel">
+      <soap:operation soapAction="http://tempuri.org/ISLPolyGameService/GetFrontsideMenuViewModel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsFrontsideMenuActive">
+      <soap:operation soapAction="http://tempuri.org/ISLPolyGameService/IsFrontsideMenuActive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SLPolyGameService">
+    <wsdl:port name="BasicHttpBinding_ISLPolyGameService" binding="tns:BasicHttpBinding_ISLPolyGameService">
+      <soap:address location="http://localhost/SLPolyGame.Web/SLPolyGameService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

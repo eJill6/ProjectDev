@@ -1,0 +1,401 @@
+@charset "UTF-8";
+
+
+
+
+
+
+
+.full_cards{
+  
+}
+
+
+.full_card{
+  display: flex;
+  flex-direction: row;
+  background: rgba(255, 255, 255, 5%);
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.full_card.with_status{
+  flex-direction: column;
+}
+
+.full_card.with_status .card_content{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+}
+
+
+
+.full_card .tag{
+  position: absolute;
+  left: 7px;
+  top: 0px;
+}
+
+.full_card .location_tag{
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.full_card .location_tag > div{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: right;
+  color: #A6A6A8;
+  font-size: 10px;
+  background: #2B2424;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 3px 5px;
+}
+
+.full_card .location_tag > div img{
+  margin-right: 3px;
+}
+
+
+
+.full_card .photo{
+  width: 103px;
+  overflow: hidden;
+  position: relative;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  position: relative;
+}
+.full_card .photo img{
+  object-fit: cover;
+  width: 103px;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+}
+
+.full_card .photo > .tag_ensure{
+  position: absolute;
+  top: 3px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+}
+
+.full_card.with_status .photo{
+  border-bottom-right-radius: 0px;
+}
+
+
+.full_card .card_text{
+  width: calc(100% - 103px);
+  padding: 20px 10px 10px 5px;
+}
+
+.full_card.no_premium_tag .card_text{
+  padding: 10px 10px 10px 5px;
+}
+
+.full_card .card_text h1{
+  color: #FFF;
+  font-size: 14px;
+  line-height: 1.3;
+  padding-left: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.full_card .card_text p{
+  color: #D4D3D4;
+  font-size: 11px;
+  padding-top: 7px;
+  padding-left: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.full_card .card_text .info_co{
+  padding-top: 5px;
+}
+.full_card .card_text .info{
+  width: fit-content;
+  border-radius: 20px;
+  background: rgba(255, 136, 136, 6%);
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+.full_card .card_text .info .icon{
+  margin-right: 3px;
+}
+.full_card .card_text .info > div{
+  color: #FF6D6D;
+  margin-right: 3px;
+  font-size: 11px;
+  text-overflow: ellipsis;
+}
+.full_card .card_text .info .dot{
+  background: #FF6D6D;
+  width: 2px;
+  height: 2px;
+  margin-right: 3px;
+}
+
+.full_card .card_text .info.hobby{
+  background: none;
+  padding: 2px 5px 0 5px;
+  
+}
+.full_card .card_text .info.hobby > div{
+  color: #A6A6A8;
+}
+
+.full_card .card_text .info.hobby .dot{
+  background: #A6A6A8;
+}
+
+
+.full_card .card_text .user_view{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  padding-left: 5px;
+}
+
+
+.full_card .card_text .user_view .num_total ul{
+  display: flex;
+  align-items: center;
+}
+.full_card .card_text .user_view .num_total ul li{
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+  color: #A6A6A8;
+  padding: 0 5px;
+  border-left: 1px solid #59585C;
+}
+
+.full_card .card_text .user_view .num_total ul li:first-child{
+  padding-left: 0;
+  border-left: 0;
+}
+
+.full_card .card_text .user_view .num_total ul li img{
+  margin-right: 3px;
+}
+
+.full_card .card_text .user_view .num_time{
+  font-size: 10px;
+  color: #A6A6A8;
+  text-align: right;
+}
+
+
+
+
+.full_card .card_status{
+  width: 100%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  background: #434242;
+  padding: 0 12px;
+}
+
+.full_card .card_status.space_between{
+  justify-content: space-between;
+}
+
+.full_card .card_status.justify_center{
+  justify-content: center;
+}
+
+.full_card .card_status.btn{
+  width: 100%;
+  background: #FE901C;
+  color: #FFF;
+  font-size: 14px;
+}
+
+.full_card .card_status .title{
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #FFF;
+}
+
+.full_card .card_status .sub{
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+  color: #D4D4D4;
+}
+
+.full_card .card_status .icon{
+  margin-left: 5px;
+}
+
+/* 首頁用 */
+.scroll-x{
+overflow-x: scroll;
+}
+
+
+
+
+.match_card{
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.match_card .full_cards{
+  display: flex;
+  padding-right: 12px;
+}
+.match_card_info{
+   flex: 0 0 100%;
+   width: calc(100% - 140px);
+   padding-left: 12px;
+}
+.official_card{
+  padding-bottom: 20px;
+  position: relative;
+}
+.official_card .full_card{
+  height: 152px;
+}
+
+.official_full_card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 5%);
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 8px;
+
+ 
+ 
+}
+.official_full_card .official_title{
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  color: #FFFFFF;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 7px 8px 0px 8px;
+}
+
+.official_full_card .official_price{
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
+  color: #D4D4D4;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 0px 8px 6px 8px;
+}
+
+.official_pd{
+  padding-right: 12px;
+  width: 33.333333%;
+}
+
+
+
+.official_card_page{
+  display: flex;
+  flex: 0 0 100%;
+  width: 110px;
+
+}
+
+.official_full_card  .photo {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  height: 120px;
+}
+.official_full_card .photo img {
+  object-fit: cover;
+  width: 100%;
+    height: 100%;
+  position: absolute;
+  z-index: 0;
+}
+.official_info{
+  display: flex;
+  padding-left: 12px;
+}
+
+.official_info .full_card{
+
+  flex: 0 0 100%;
+  }
+.card_title_pd{
+    padding: 0px 12px 8px 12px;
+}
+.index_padding_basic{
+  padding: 12px 12px 0px 12px;
+}
+.official_card_page .tag{
+  position: absolute;
+  z-index: 11;
+}
+
+/* 中介頁面 */
+.full_card .photo_area .tag_ensure{
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  z-index: 2;
+  width: 20px;
+}
+
+
+.full_card .photo_area{
+  position: relative;
+}
+.post_article .level_margin {
+  width: fit-content;
+  position: relative;
+  padding: 4px 8px 4px 20px;
+  margin-top: 5px;
+  border-radius: 100px;
+  font-size: 10px;
+  color: #fff;
+  background: -moz-linear-gradient(-45deg,  #8b13f4 30%, #fb56d0 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg,  #8b13f4 30%,#fb56d0 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg,  #8b13f4 30%,#fb56d0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+.post_article .level_margin .level_margin_tag{
+  position: absolute;
+  top: 1px;
+  left: -1px;
+  width: 22px;
+  height: 22px;
+}
+
+.post_article .level_margin .level_margin_tag img{
+  width: 22px;
+  height: 22px;
+}

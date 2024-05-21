@@ -1,0 +1,30 @@
+﻿@using Web.Extensions;
+@using Web.Helpers;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.ImportCss(
+       "/Content/css/element.css",
+       "/Content/css/ball.css",
+       "/Content/css/modal.css",
+       "/Content/css/table.css",
+       "/Content/css/signinup.css",
+       "/Content/css/index.css",
+       "/Content/css/game_lottery.css",
+       "/Content/css/game_sport.css",
+       "/Content/css/member_center.css",
+       "/Content/css/third_party.css",
+       "/Content/css/page_customized.css",
+       "/Content/css/agent.css",
+       "/Content/css/fullpage.css",
+       "/Content/css/zebra_datepicker.min.css")
+
+<body ontouchstart="">
+        
+    <a class="game_back jqBackLink" onclick="layer.closeAll(); $(this).hide();" style="display:none; z-index:99999999">
+        <img src="@WebResourceHelper.Content("~/Content/images/third_party/ic_header_back_gray.svg")" />
+        <p>返回</p>
+    </a>
+    @RenderBody()
+</body>

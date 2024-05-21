@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SLPolyGame.Web.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SLPolyGame.Web.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="PalyInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BateIsChange" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ClientIP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CurrencyUnit" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CurrentLotteryNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CurrentLotteryTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsFactionAward" type="xs:int" />
+      <xs:element minOccurs="0" name="IsWin" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LotteryID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LotteryType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Multiple" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NoteMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NoteNum" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NoteTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NoticeID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Odds" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PalyCurrentNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PalyID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PalyNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlayTypeID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PlayTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlayTypeRadioID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PlayTypeRadioName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ratio" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RebatePro" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RebateProMoney" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Result" nillable="true" type="q1:ArrayOfKeyValueOfstringWinGroupModelPy0kGN_PK" />
+      <xs:element minOccurs="0" name="ResultJson" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoomId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SingleMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SourceType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StFactionAward" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserRebatePro" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UserType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WinMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="WinNum" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="WinPossMoney" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PalyInfo" nillable="true" type="tns:PalyInfo" />
+  <xs:complexType name="UserInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddedRebatePro" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Available" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RebatePro" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserInfo" nillable="true" type="tns:UserInfo" />
+  <xs:complexType name="LoginRequestParam">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:UserAuthInformation">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LoginRequestParam" nillable="true" type="tns:LoginRequestParam" />
+  <xs:complexType name="UserAuthInformation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:UserInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DepositUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GameID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LogonMode" type="xs:int" />
+          <xs:element minOccurs="0" name="RoomNo" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserAuthInformation" nillable="true" type="tns:UserAuthInformation" />
+  <xs:complexType name="MessageEntityUserAuthInformation">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="MessageEntity{0}" Namespace="http://schemas.datacontract.org/2004/07/SLPolyGame.Web.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="UserAuthInformation" Namespace="http://schemas.datacontract.org/2004/07/SLPolyGame.Web.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" type="xs:int" />
+      <xs:element minOccurs="0" name="Data" nillable="true" type="tns:UserAuthInformation" />
+      <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MessageEntityUserAuthInformation" nillable="true" type="tns:MessageEntityUserAuthInformation" />
+  <xs:complexType name="SysSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MaxBetCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MaxBonusMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MaxOneBetMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MaxUserRebatePro" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MinMoneyIn" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MinOneBetMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SettingsID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SysSettings" nillable="true" type="tns:SysSettings" />
+  <xs:complexType name="CursorPaginationOfCurrentLotteryInfoevTudv5j">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="CursorPaginationOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SLPolyGame.Web.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="CurrentLotteryInfo" Namespace="http://schemas.datacontract.org/2004/07/SLPolyGame.Web.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Data" nillable="true" type="tns:ArrayOfCurrentLotteryInfo" />
+      <xs:element minOccurs="0" name="NextCursor" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CursorPaginationOfCurrentLotteryInfoevTudv5j" nillable="true" type="tns:CursorPaginationOfCurrentLotteryInfoevTudv5j" />
+  <xs:complexType name="ArrayOfCurrentLotteryInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CurrentLotteryInfo" nillable="true" type="tns:CurrentLotteryInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCurrentLotteryInfo" nillable="true" type="tns:ArrayOfCurrentLotteryInfo" />
+  <xs:complexType name="CurrentLotteryInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CurrentLotteryID" type="xs:int" />
+      <xs:element minOccurs="0" name="CurrentLotteryNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CurrentLotteryTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CurrentTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsLottery" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IssueNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LotteryID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LotteryNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LotteryType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Lottery_result" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PreLotteryNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RemainTime" type="xs:float" />
+      <xs:element minOccurs="0" name="UpdateTime" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CurrentLotteryInfo" nillable="true" type="tns:CurrentLotteryInfo" />
+  <xs:complexType name="CursorPaginationOfPalyInfoevTudv5j">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="CursorPaginationOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SLPolyGame.Web.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PalyInfo" Namespace="http://schemas.datacontract.org/2004/07/SLPolyGame.Web.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Data" nillable="true" type="tns:ArrayOfPalyInfo" />
+      <xs:element minOccurs="0" name="NextCursor" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CursorPaginationOfPalyInfoevTudv5j" nillable="true" type="tns:CursorPaginationOfPalyInfoevTudv5j" />
+  <xs:complexType name="ArrayOfPalyInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PalyInfo" nillable="true" type="tns:PalyInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPalyInfo" nillable="true" type="tns:ArrayOfPalyInfo" />
+  <xs:complexType name="ArrayOfWinningListItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WinningListItem" nillable="true" type="tns:WinningListItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWinningListItem" nillable="true" type="tns:ArrayOfWinningListItem" />
+  <xs:complexType name="WinningListItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AmountText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LotteryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WinningListItem" nillable="true" type="tns:WinningListItem" />
+</xs:schema>

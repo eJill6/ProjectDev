@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SLPolyGame.Web.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SLPolyGame.Web.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfPlayTypeRadio">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PlayTypeRadio" nillable="true" type="tns:PlayTypeRadio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlayTypeRadio" nillable="true" type="tns:ArrayOfPlayTypeRadio" />
+  <xs:complexType name="PlayTypeRadio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PlayDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlayTypeID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PlayTypeRadioID" type="xs:int" />
+      <xs:element minOccurs="0" name="PlayTypeRadioName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Priority" type="xs:int" />
+      <xs:element minOccurs="0" name="TypeModel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserType" type="xs:int" />
+      <xs:element minOccurs="0" name="WinExample" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlayTypeRadio" nillable="true" type="tns:PlayTypeRadio" />
+  <xs:complexType name="ArrayOfPlayTypeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PlayTypeInfo" nillable="true" type="tns:PlayTypeInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlayTypeInfo" nillable="true" type="tns:ArrayOfPlayTypeInfo" />
+  <xs:complexType name="PlayTypeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LotteryID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PlayTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="PlayTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserType" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlayTypeInfo" nillable="true" type="tns:PlayTypeInfo" />
+  <xs:complexType name="ArrayOfLotteryInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LotteryInfo" nillable="true" type="tns:LotteryInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLotteryInfo" nillable="true" type="tns:ArrayOfLotteryInfo" />
+  <xs:complexType name="LotteryInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GameTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="GroupPriority" type="xs:int" />
+      <xs:element minOccurs="0" name="HotNew" type="xs:int" />
+      <xs:element minOccurs="0" name="LotteryID" type="xs:int" />
+      <xs:element minOccurs="0" name="LotteryType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaxBonusMoney" type="xs:int" />
+      <xs:element minOccurs="0" name="Notice" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberTrendUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OfficialLotteryUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Priority" type="xs:int" />
+      <xs:element minOccurs="0" name="TypeURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserType" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LotteryInfo" nillable="true" type="tns:LotteryInfo" />
+  <xs:complexType name="CurrentLotteryInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CurrentLotteryID" type="xs:int" />
+      <xs:element minOccurs="0" name="CurrentLotteryNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CurrentLotteryTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CurrentTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsLottery" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IssueNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LotteryID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LotteryNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LotteryType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Lottery_result" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PreLotteryNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RemainTime" type="xs:float" />
+      <xs:element minOccurs="0" name="UpdateTime" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CurrentLotteryInfo" nillable="true" type="tns:CurrentLotteryInfo" />
+  <xs:complexType name="CurrentLotteryQueryInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Count" type="xs:int" />
+      <xs:element minOccurs="0" name="End" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EndIssueNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LotteryId" type="xs:int" />
+      <xs:element minOccurs="0" name="SortBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Start" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StartIssueNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CurrentLotteryQueryInfo" nillable="true" type="tns:CurrentLotteryQueryInfo" />
+  <xs:complexType name="ArrayOfCurrentLotteryInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CurrentLotteryInfo" nillable="true" type="tns:CurrentLotteryInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCurrentLotteryInfo" nillable="true" type="tns:ArrayOfCurrentLotteryInfo" />
+  <xs:complexType name="TodaySummaryInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LotteryResults" nillable="true" type="tns:ArrayOfCurrentLotteryInfo" />
+      <xs:element minOccurs="0" name="Orders" nillable="true" type="tns:ArrayOfPalyInfo" />
+      <xs:element minOccurs="0" name="PlaySummaryInfoes" nillable="true" type="tns:ArrayOfPlaySummaryModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TodaySummaryInfo" nillable="true" type="tns:TodaySummaryInfo" />
+  <xs:complexType name="ArrayOfPalyInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PalyInfo" nillable="true" type="tns:PalyInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPalyInfo" nillable="true" type="tns:ArrayOfPalyInfo" />
+  <xs:complexType name="PalyInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BateIsChange" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ClientIP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CurrencyUnit" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CurrentLotteryNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CurrentLotteryTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsFactionAward" type="xs:int" />
+      <xs:element minOccurs="0" name="IsWin" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LotteryID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LotteryType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Multiple" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NoteMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NoteNum" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NoteTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NoticeID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Odds" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PalyCurrentNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PalyID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PalyNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlayTypeID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PlayTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlayTypeRadioID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PlayTypeRadioName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ratio" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RebatePro" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RebateProMoney" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Result" nillable="true" type="q1:ArrayOfKeyValueOfstringWinGroupModelPy0kGN_PK" />
+      <xs:element minOccurs="0" name="ResultJson" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoomId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SingleMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SourceType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StFactionAward" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserRebatePro" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UserType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WinMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="WinNum" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="WinPossMoney" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PalyInfo" nillable="true" type="tns:PalyInfo" />
+  <xs:complexType name="ArrayOfPlaySummaryModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PlaySummaryModel" nillable="true" type="tns:PlaySummaryModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlaySummaryModel" nillable="true" type="tns:ArrayOfPlaySummaryModel" />
+  <xs:complexType name="PlaySummaryModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Scope" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalBonus" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TotalNoteMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TotalWinMoney" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlaySummaryModel" nillable="true" type="tns:PlaySummaryModel" />
+</xs:schema>

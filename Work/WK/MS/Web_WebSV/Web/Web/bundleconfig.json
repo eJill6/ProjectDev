@@ -1,0 +1,26 @@
+[
+  {
+    "outputFileName": "Content/CTS/dist/js/jquery/jquery.extensions.min.js",
+    "inputFiles": [
+      "Content/CTS/dist/js/jquery/jquery.extensions.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/js/third-party-game-hall.min.js",
+    "inputFiles": [
+      "Content/js/third-party-game-hall.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/js/jquery.extensions.min.js",
+    "inputFiles": [
+      "Content/js/jquery.extensions.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/js/jquery/jquery.extensions.min.js",
+    "inputFiles": [
+      "Content/js/jquery/jquery.extensions.js"
+    ]
+  }
+]

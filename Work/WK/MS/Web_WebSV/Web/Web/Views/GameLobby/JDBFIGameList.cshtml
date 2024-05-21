@@ -1,0 +1,20 @@
+﻿@using Web.Extensions
+@using JxBackendService.Model.Enums
+@{
+    ViewBag.PageTitle = "JDB捕鱼";
+    Layout = "~/Views/Shared/_GameLobbyLayout.cshtml";
+}
+
+@Html.ImportJavaScripts("/Content/js/third-party-game-hall.js")
+
+<script type="text/javascript">
+    var gameHall = new ThirdPartyGameHall("@PlatformProduct.JDBFI.Value", "jdbf_bg");
+</script>
+
+@Html.Partial("~/Views/ThirdParty/Partial/_SlotGameListPartial.cshtml")
+
+
+
+
+
+

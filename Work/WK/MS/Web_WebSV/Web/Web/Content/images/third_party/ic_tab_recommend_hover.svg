@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="19px" viewBox="0 0 18 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>ic_tab_recommend</title>
+    <g id="遊戲大廳/充提-黑橘" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="16.PT大廳搜尋-無資料" transform="translate(-181.000000, -296.000000)" fill="#F68F0A">
+            <g id="Group" transform="translate(0.000000, 276.785874)">
+                <g id="Group-10" transform="translate(11.036758, 17.695570)">
+                    <g id="noun_Favorite_142235" transform="translate(169.966070, 2.170594)">
+                        <path d="M8.82940622,0 C13.7059854,0 17.6588124,3.95302327 17.6588124,8.82940622 C17.6588124,13.7059854 13.7059854,17.6588124 8.82940622,17.6588124 C3.95302327,17.6588124 0,13.7059854 0,8.82940622 C0,3.95302327 3.95302327,0 8.82940622,0 Z M7.09707672,7.01015612 L3.4581841,7.56209211 L6.13447523,10.142437 L5.5056253,13.8388189 L8.82940622,12.06764 L12.1153188,13.8388189 L11.5149192,10.142437 L14.2006283,7.53638873 L10.498164,7.0488093 L8.82940622,3.50645152" id="ic_tab_recommend"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

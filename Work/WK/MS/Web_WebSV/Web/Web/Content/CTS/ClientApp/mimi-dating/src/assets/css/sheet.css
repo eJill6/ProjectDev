@@ -1,0 +1,426 @@
+@charset "UTF-8";
+
+/* sheet */
+
+
+
+.sheet_main_title {
+    font-size: 16px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sheet_main {
+    display: flex;
+    border-bottom: 1px solid #323131;
+    min-height: 50px;
+}
+
+.sheet_main.grayline {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sheet_main:last-child {
+    border-bottom: none;
+}
+
+.sheet_main .content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.sheet_main.full_width {
+    flex-wrap: wrap;
+    padding: 13px 0;
+}
+
+.sheet_main .content.content_right {
+    justify-content: flex-end;
+}
+
+.sheet_main .content.content_left {
+    justify-content: start;
+}
+
+.sheet_main .content_full {
+    width: 100%;
+}
+
+
+
+
+.sheet_main .title {
+    min-width: 90px;
+    font-size: 14px;
+    color: #FFF;
+}
+
+.sheet_main .title.highlight {
+    font-size: 16px;
+    color: #FF8B15;
+}
+
+.sheet_main.alert .title {
+    color: #C72A29;
+}
+
+.sheet_main .title_center {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sheet_main .title_top {
+    display: flex;
+    padding-top: 2px;
+    line-height: 2;
+}
+
+
+.sheet_main .title_full_width {
+    width: 100%;
+    padding-top: 0px;
+    padding-bottom: 13px;
+}
+
+
+.sheet_main .flex_wrap {
+    display: flex;
+    align-items: center;
+}
+
+.sheet_main .flex_wrap .spacing {
+    padding-right: 4px;
+}
+
+.sheet_main .flex_full {
+    flex: 1;
+}
+
+
+
+.sheet_main .form_full {
+    width: 100%;
+}
+
+.sheet_main .form_w100 {
+    width: 60px;
+}
+
+
+.sheet_main .input_style {
+    font-size: 14px;
+    color: #FFF;
+    width: 100%;
+    line-height: 2;
+    background: transparent;
+}
+
+.sheet_main .content_right .input_style {
+    text-align: right;
+}
+
+
+
+.sheet_main .textarea_style {
+    width: 100%;
+    font-size: 14px;
+    color: #FFF;
+    line-height: 1.4;
+    min-height: 60px;
+    background: transparent;
+}
+
+
+.sheet_main .textarea_full_width_style {
+    width: 100%;
+    background: #262525;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.sheet_main .textarea_full_width_style textarea {
+    width: 100%;
+    font-size: 14px;
+    color: #FFF;
+    line-height: 1.4;
+    height: 100px;
+    background: transparent;
+
+}
+
+.sheet_main .textarea_full_width_style .notice_text {
+    width: 100%;
+    text-align: right;
+    font-size: 13px;
+    color: #A2A6AD;
+    padding-top: 10px;
+    line-height: 1;
+}
+
+.sheet_main .content_right .textarea_style {
+    text-align: right;
+}
+
+.sheet_main .input_style::placeholder,
+.sheet_main .textarea_style::placeholder,
+.sheet_main .textarea_full_width_style textarea::placeholder {
+    color: #A2A6AD;
+}
+
+
+.sheet_main.alert .input_style,
+.sheet_main.alert .textarea_style,
+.sheet_main.alert .textarea_full_width_style textarea,
+.sheet_main.alert .input_style::placeholder,
+.sheet_main.alert .textarea_style::placeholder,
+.sheet_main.alert .textarea_full_width_style textarea::placeholder {
+    color: #C72A29;
+}
+
+
+
+.sheet_main .sheet_avatar img {
+    position: relative;
+    border-radius: 100%;
+    object-fit: cover;
+    width: 30px;
+    height: 30px;
+
+}
+
+
+
+
+.sheet_main .text {
+    font-size: 14px;
+    line-height: 23px;
+}
+
+.sheet_main .text.default_text {
+    color: #A2A6AD;
+}
+
+.sheet_main .text.normal_text {
+    color: #FFF;
+}
+
+.sheet_main .text.highlight_text {
+    color: #FA8D10;
+}
+
+.sheet_main .content.content_right .text {
+    text-align: right;
+}
+.sheet_main.alert .text,
+.sheet_main.alert .text.default_text,
+.sheet_main.alert .text.normal_text {
+    color: #C72A29;
+}
+
+.sheet_main p.dash {
+    color: #FFF;
+}
+
+.sheet_main span.attention {
+    color: #C72A29;
+}
+
+
+
+
+
+
+.sheet_main .title_note {
+    font-size: 12px;
+    color: #A2A6AD;
+    padding-top: 4px;
+}
+
+input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+    z-index: -1;
+    left: 0;
+    top: 0;
+}
+
+.sheet_main .upload_image_outter {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.sheet_main .upload_image_outter>div {
+    margin-bottom: 10px;
+}
+
+.sheet_main .upload_image_outter:last-child >div {
+    margin-bottom: 0;
+}
+
+
+
+.sheet_main .upload_image_outter .box {
+    position: relative;
+}
+
+.sheet_main .upload_image_outter img.box_image  {
+    position: relative;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+
+.sheet_main .upload_btn {
+    border-radius: 5px;
+    background: #262525;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.sheet_main .upload_btn.gray {
+    background: rgba(217, 217, 217,0.05);
+}
+
+.sheet_main .upload_btn .icon {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+.sheet_main .upload_image_outter .box,
+.sheet_main .upload_image_outter img.box_image,
+.sheet_main .upload_btn {
+    width: 105px;
+    height: 105px;
+}
+
+@media screen and (min-width: 375px) {
+    .sheet_main .upload_image_outter .box,
+    .sheet_main .upload_image_outter img.box_image,
+    .sheet_main .upload_btn {
+        width: 110px;
+        height: 110px;
+    }
+}
+  
+  @media screen and (min-width: 390px) {
+    .sheet_main .upload_image_outter .box,
+    .sheet_main .upload_image_outter img.box_image,
+    .sheet_main .upload_btn {
+        width: 114px;
+        height: 114px;
+    }
+  }
+  
+  @media screen and (min-width: 410px) {
+    .sheet_main .upload_image_outter .box,
+    .sheet_main .upload_image_outter img.box_image,
+    .sheet_main .upload_btn {
+        width: 120px;
+        height: 120px;
+    }
+  }
+  
+  @media screen and (min-width: 414px) {
+    .sheet_main .upload_image_outter .box,
+    .sheet_main .upload_image_outter img.box_image,
+    .sheet_main .upload_btn {
+        width: 122px;
+        height: 122px;
+    }
+  }
+
+.sheet_main .notice {
+    padding: 10px 0;
+    color: #FF2315;
+    font-size: 12px;
+    border-bottom: 0;
+    line-height: 20px;
+}
+
+
+
+
+.sheet_main .btn_small_text {
+    font-size: 12px;
+    color: #FFF;
+    border: 1px solid #3A4A5C;
+    width: 40px;
+    border-radius: 5px;
+    line-height: 22px;
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+.sheet_main .tag {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.sheet_main .tag .tag_item {
+    font-size: 15px;
+    color: #FB8D10;
+    padding: 10px 14px;
+    border-radius: 100px;
+    border: 1px solid #FB8D10;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.sheet_main .tag .tag_item.active {
+    background: #FB8D10;
+    color: #FFF;
+}
+
+
+.sheet_main .cursor {
+    cursor: pointer;
+}
+
+
+.sheet_btn {
+    padding: 20px 15px 25px 15px ;
+}
+
+
+.sheet_main .radiobutton.complaint {
+    cursor: pointer;
+}
+
+.sheet_main .radiobutton.complaint label {
+    width: 100%;
+    padding: 5px 0;
+}
+
+.sheet_main .radiobutton.complaint li {
+    margin-bottom: 5px;
+}
+
+.sheet_main .radiobutton.complaint li:last-child {
+    margin-bottom: 0;
+}
+
+.sheet_main .radiobutton.complaint label .text{
+    flex: 1;
+    font-size: 14px;
+}
+
+

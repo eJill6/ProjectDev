@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PublicApiService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/SLPolyGame.Web.Model" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPublicApiService_GetRemoteCacheForOldService_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRemoteCacheForOldService" />
+  </wsdl:message>
+  <wsdl:message name="IPublicApiService_GetRemoteCacheForOldService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRemoteCacheForOldServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPublicApiService_RemoveRemoteCacheForOldService_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveRemoteCacheForOldService" />
+  </wsdl:message>
+  <wsdl:message name="IPublicApiService_RemoveRemoteCacheForOldService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveRemoteCacheForOldServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPublicApiService_SetRemoteCacheForOldService_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetRemoteCacheForOldService" />
+  </wsdl:message>
+  <wsdl:message name="IPublicApiService_SetRemoteCacheForOldService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetRemoteCacheForOldServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPublicApiService_IsAllowExecutingActionWithLock_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsAllowExecutingActionWithLock" />
+  </wsdl:message>
+  <wsdl:message name="IPublicApiService_IsAllowExecutingActionWithLock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsAllowExecutingActionWithLockResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPublicApiService_IsAllowExecutingAction_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsAllowExecutingAction" />
+  </wsdl:message>
+  <wsdl:message name="IPublicApiService_IsAllowExecutingAction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsAllowExecutingActionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPublicApiService">
+    <wsdl:operation name="GetRemoteCacheForOldService">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPublicApiService/GetRemoteCacheForOldService" message="tns:IPublicApiService_GetRemoteCacheForOldService_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPublicApiService/GetRemoteCacheForOldServiceResponse" message="tns:IPublicApiService_GetRemoteCacheForOldService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveRemoteCacheForOldService">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPublicApiService/RemoveRemoteCacheForOldService" message="tns:IPublicApiService_RemoveRemoteCacheForOldService_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPublicApiService/RemoveRemoteCacheForOldServiceResponse" message="tns:IPublicApiService_RemoveRemoteCacheForOldService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetRemoteCacheForOldService">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPublicApiService/SetRemoteCacheForOldService" message="tns:IPublicApiService_SetRemoteCacheForOldService_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPublicApiService/SetRemoteCacheForOldServiceResponse" message="tns:IPublicApiService_SetRemoteCacheForOldService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsAllowExecutingActionWithLock">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPublicApiService/IsAllowExecutingActionWithLock" message="tns:IPublicApiService_IsAllowExecutingActionWithLock_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPublicApiService/IsAllowExecutingActionWithLockResponse" message="tns:IPublicApiService_IsAllowExecutingActionWithLock_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsAllowExecutingAction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPublicApiService/IsAllowExecutingAction" message="tns:IPublicApiService_IsAllowExecutingAction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPublicApiService/IsAllowExecutingActionResponse" message="tns:IPublicApiService_IsAllowExecutingAction_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IPublicApiService" type="tns:IPublicApiService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRemoteCacheForOldService">
+      <soap:operation soapAction="http://tempuri.org/IPublicApiService/GetRemoteCacheForOldService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveRemoteCacheForOldService">
+      <soap:operation soapAction="http://tempuri.org/IPublicApiService/RemoveRemoteCacheForOldService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetRemoteCacheForOldService">
+      <soap:operation soapAction="http://tempuri.org/IPublicApiService/SetRemoteCacheForOldService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsAllowExecutingActionWithLock">
+      <soap:operation soapAction="http://tempuri.org/IPublicApiService/IsAllowExecutingActionWithLock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsAllowExecutingAction">
+      <soap:operation soapAction="http://tempuri.org/IPublicApiService/IsAllowExecutingAction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PublicApiService">
+    <wsdl:port name="BasicHttpBinding_IPublicApiService" binding="tns:BasicHttpBinding_IPublicApiService">
+      <soap:address location="http://localhost/SLPolyGame.Web/PublicApiService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

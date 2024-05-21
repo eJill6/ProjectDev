@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>SLPolyGame.Web</RootNamespace>
+  </PropertyGroup>  
+
+  <ItemGroup>
+    <PackageReference Include="JxLottery.Models" Version="1.0.1.147" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Lib\JxBackendServiceLibrary\JxBackendServiceStd\JxBackendServiceStd.csproj" />
+  </ItemGroup>
+
+</Project>

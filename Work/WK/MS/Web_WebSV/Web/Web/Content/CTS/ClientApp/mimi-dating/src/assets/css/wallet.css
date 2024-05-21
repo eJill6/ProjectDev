@@ -1,0 +1,249 @@
+.padding_basic.pr_0 {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* 觅钱包 */
+
+.wallet_card {
+    background: url(../images/wallet/bg_wallet_wave_line.jpg) #232127;
+    background-size: cover;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.wallet_card.main_wallet{
+    padding-bottom: 10px;
+}
+.wallet_card.mb_0 {
+    margin-bottom: 0;
+}
+
+.wallet_card > .wallet_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid;
+    border-color: rgba(255,255,255,0.1);
+    padding-bottom: 18px;
+    margin-bottom: 10px;
+}
+
+.wallet_card > .wallet_box:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.wallet_box > .wallet_content.wallet_content_flex{
+    flex: 1;
+}
+
+.wallet_box > .wallet_content .wallet_title {
+    font-size: 12px;
+    color: #D0D0D0;
+    padding-bottom: 8px;
+}
+
+.wallet_box > .wallet_content .wallet_price {
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.wallet_content > .wallet_price.wallet_text_small {
+    font-size: 13px;
+}
+
+.wallet_box > .wallet_content .btn_small {
+    font-size: 14px;
+    color: #fff;
+    background: linear-gradient(270deg, #FF8A15 12%, #F29106 90%);
+    border-radius: 100px;
+    padding: 6px 21px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.wallet_box > .wallet_content .btn_small:last-child {
+    margin-bottom: 0;
+}
+
+.wallet_list_section {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.wallet_list_section > .wallet_list_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-basis: 44px;
+    border-bottom: 0.25px solid #424242;
+}
+
+.wallet_list_item > .wallet_list_box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.wallet_list_item > .wallet_list_box img {
+    padding-right: 8px;
+}   
+
+.wallet_list_item > .wallet_list_box .wallet_list_title {
+    font-size: 13px;
+    color: #C9C9C9;
+}
+
+.wallet_list_box ~ .wallet_arrow {
+    flex: 1;
+    justify-content: flex-end;
+    display: flex;
+    cursor: pointer;
+}
+
+/* 消费记录、收益明细 */
+
+.spanishgray {
+    color: rgba(151,151,151,0.8);
+}
+
+.expenses_record_section {
+    padding: 0 12px;
+    flex-flow: column nowrap;
+    display: flex;
+    flex-basis: 45px;
+    justify-content: center;
+}
+
+.expenses_record_section > .expenses_record_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.expenses_record_box > .expenses_record_title {
+    font-size: 13px;
+    color: #C9C9C9;
+}
+
+/* .expenses_record_box > .expenses_record_options {
+    font-size: 13px;
+    color: #C9C9C9;
+    padding: 4px 6px;
+    border: 1px solid #C9C9C9;
+    border-radius: 2px;
+    cursor: pointer;
+} */
+
+.expenses_record_box > .expenses_record_date{
+    font-size: 13px;
+    color: #C9C9C9;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.expenses_record_box > .expenses_record_date p{
+    padding-right: 4px;
+}
+
+.expenses_record_list_section {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.expenses_record_list_section > .expenses_record_list_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-basis: 63px;
+    border-bottom: 0.25px solid #424242;
+}
+
+.expenses_record_list_item > .expenses_record_list_box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.expenses_record_list_item > .expenses_record_list_box img {
+    padding-right: 8px;
+}
+
+.expenses_record_list_rows > .expenses_record_list_title {
+    font-size: 14px;
+    color: #fff;
+    padding-bottom: 4px;
+}
+
+.expenses_record_list_rows > .expenses_record_list_content {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 2px;
+}
+
+.expenses_record_list_rows > .expenses_record_list_content:last-child {
+    padding-bottom: 0;
+}
+
+.expenses_record_list_content > .expenses_record_list_text {
+    color: #F88E0D;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 120px;
+}
+
+.expenses_record_list_text + span {
+    color: #F88E0D;
+}
+
+.expenses_record_list_content > .expenses_record_list_subtext {
+    padding-right: 15px;
+}
+
+.expenses_record_list_content > .expenses_record_list_subtext:last-child {
+    padding-right: 0;
+}
+
+.expenses_record_list_subtext +span {
+    color: #fff;
+}
+
+.expenses_record_list_item > .expenses_record_text {
+    font-size: 14px;
+    color: #D0D0D0;
+}
+
+.tag_section {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.tag_section > .tag_small {
+    font-size: 14px;
+    color: #fff;
+    background: rgba(255,255,255,0.05);
+    border: .5px solid rgba(255,255,255,0.07);
+    border-radius: 100px;
+    padding: 5px 16px;
+    cursor: pointer;
+    margin-right: 16px;
+}
+
+.tag_section > .tag_small:last-child {
+    margin-right: 0;
+}
+
+.tag_section > .tag_small.active {
+    background: linear-gradient(270deg, #FF8A15 12%, #F29106 90%);
+    border: .5px solid linear-gradient(270deg, #FF8A15 12%, #F29106 90%);
+}
+
+

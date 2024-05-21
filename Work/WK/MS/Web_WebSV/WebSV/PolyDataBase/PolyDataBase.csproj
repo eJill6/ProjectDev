@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>SLPolyGame.Web</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="MSSeal\Models\Param\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FreeRedis" Version="1.0.3" />
+    <PackageReference Include="JxLottery.Adapters" Version="1.0.1.147" />
+    <PackageReference Include="JxLottery.Models" Version="1.0.1.147" />
+    <PackageReference Include="JxLottery.Services" Version="1.0.1.147" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
+    <PackageReference Include="RestSharp" Version="108.0.2" />
+    <PackageReference Include="SharpZipLib" Version="1.4.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\WebShare\WebShareLib\WebShareLib.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="CommUtil">
+        <HintPath>..\..\..\Lib\CommUtil.dll</HintPath>
+    </Reference>   
+  </ItemGroup>
+
+</Project>

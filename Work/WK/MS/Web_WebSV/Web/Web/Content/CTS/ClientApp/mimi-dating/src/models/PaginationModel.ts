@@ -1,0 +1,7 @@
+import { PageParamModel } from "./PageParamModel";
+export interface PaginationModel<T> extends PageParamModel {
+  /// 總頁數
+  totalPage: number;
+  /// 分頁資料
+  data: T[];
+}

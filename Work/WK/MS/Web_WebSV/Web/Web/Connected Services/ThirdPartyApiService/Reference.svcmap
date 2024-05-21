@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="a9c6c784-8079-45ca-9628-9eb3be248212" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/SLPolyGame.Web/ThirdPartyApiService.svc/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="547dfbbf-687b-4afc-88e6-6583d355f79c" SourceId="1" SourceUrl="http://localhost/SLPolyGame.Web/ThirdPartyApiService.svc/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="1cc5e0ef-6e96-4918-851e-432b9aca5a6f" SourceId="1" SourceUrl="http://localhost/SLPolyGame.Web/ThirdPartyApiService.svc/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="10bc5de8-fead-4def-9fb2-beda8044536c" SourceId="1" SourceUrl="http://localhost/SLPolyGame.Web/ThirdPartyApiService.svc/mex" />
+    <MetadataFile FileName="JxBackendService.Model.ReturnModel.xsd" MetadataType="Schema" ID="c38edb2f-9ea5-43b9-85d3-2d1530889dc0" SourceId="1" SourceUrl="http://localhost/SLPolyGame.Web/ThirdPartyApiService.svc/mex" />
+    <MetadataFile FileName="JxBackendService.Model.Param.ThirdParty.xsd" MetadataType="Schema" ID="a17caab4-82c9-449d-a11d-18a84d54e498" SourceId="1" SourceUrl="http://localhost/SLPolyGame.Web/ThirdPartyApiService.svc/mex" />
+    <MetadataFile FileName="JxBackendService.Model.Entity.xsd" MetadataType="Schema" ID="ad45c6b4-227b-4b55-9e2d-a3bd86850477" SourceId="1" SourceUrl="http://localhost/SLPolyGame.Web/ThirdPartyApiService.svc/mex" />
+    <MetadataFile FileName="JxBackendService.Model.Entity.Base.xsd" MetadataType="Schema" ID="86d41ea7-4b07-42f0-91df-2c27236532ae" SourceId="1" SourceUrl="http://localhost/SLPolyGame.Web/ThirdPartyApiService.svc/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

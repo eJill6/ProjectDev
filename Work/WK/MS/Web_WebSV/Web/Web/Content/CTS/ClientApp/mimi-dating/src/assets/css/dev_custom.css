@@ -1,0 +1,11 @@
+@charset "UTF-8";
+.loading-image {
+    height: 100%;
+    position: relative;
+    background-image: url(../images/element/defaultCoverImage.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    &.hide {
+      display: none;
+    }
+  }

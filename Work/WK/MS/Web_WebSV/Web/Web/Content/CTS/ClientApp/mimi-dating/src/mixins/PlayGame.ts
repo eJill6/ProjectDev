@@ -1,0 +1,239 @@
+import api from "@/api";
+import global from "@/global";
+import {
+  OverviewModel,
+  ChinaCityInfo,
+  PriceLowAndHighModel,
+  LabelFilterModel,
+  SearchModel,
+} from "@/models";
+import { MutationType } from "@/store";
+import { defineComponent } from "vue";
+import {
+  IdentityType,
+  IncomeExpenseCategory,
+  IncomeExpenseStatus,
+  PostType,
+  VipType
+} from "@/enums";
+import toast from "@/toast";
+import { defaultCityArea } from "@/defaultConfig";
+
+export default defineComponent({
+  data() {
+    return {
+      integralInfo: {} as OverviewModel,
+      baseIntegral: 100,
+      VipType
+    };
+  },
+  methods: {
+    async getAdminContact() {
+      const result = await api.getAdminContact();
+      return result.contact;
+    },
+    async setUserInfo() {
+      const result = await api.getCenter();
+      this.$store.commit(MutationType.SetCenterInfo, result);
+    },
+    canPost(postType: PostType): boolean {
+      return (
+        (this.userInfo.vips.length > 0 ||
+          this.userInfo.identity === IdentityType.Agent ||
+          this.userInfo.identity === IdentityType.Boss) &&
+        this.userInfo.quantity.remainingSend > 0
+      );
+    },
+    goDepositUrl() {
+      global.openUrl(this.logonMode, this.zeroOneSetting.depositUrl, null);
+    },
+    goWithdrawUrl() {
+      global.openUrl(this.logonMode, this.zeroOneSetting.withdrawUrl, null);
+    },
+    goExchangeUrl() {
+      global.openUrl(this.logonMode, this.zeroOneSetting.exchangeUrl, null);
+    },
+    goExchangerecordUrl() {
+      global.openUrl(
+        this.logonMode,
+        this.zeroOneSetting.exchangerecordUrl,
+        null
+      );
+    },
+    goDwReportUrl() {
+      global.openUrl(this.logonMode, this.zeroOneSetting.dwReportUrl, null);
+    },
+    goBindPhoneUrl() {
+      global.openUrl(this.logonMode, this.zeroOneSetting.bindPhoneUrl, null);
+    },
+    getIncomeExpenseStatus(type: IncomeExpenseCategory) {
+      switch (type) {
+        case IncomeExpenseCategory.Square:
+        case IncomeExpenseCategory.Agency:
+        case IncomeExpenseCategory.Official:
+        case IncomeExpenseCategory.Experience:
+        case IncomeExpenseCategory.Vip:
+          return IncomeExpenseStatus.Out;
+        default:
+          return IncomeExpenseStatus.In;
+      }
+    },
+    welletDetailImage(type: IncomeExpenseCategory) {
+      const status = this.getIncomeExpenseStatus(type);
+
+      type EnumDictionary<T extends IncomeExpenseStatus, U extends any> = {
+        [K in T]: U;
+      };
+
+      const imageSort: EnumDictionary<IncomeExpenseStatus, string> = {
+        [IncomeExpenseStatus.Out]: require(`@/assets/images/wallet/ic_wallet_square.svg`),
+        [IncomeExpenseStatus.In]: require(`@/assets/images/wallet/ic_wallet_bulletin.svg`),
+      };
+      return imageSort[status];
+    },
+    convertDateTime(transactionTime: string) {
+      var m = new Date(transactionTime);
+      return `${m.getUTCFullYear()}-${("0" + (m.getUTCMonth() + 1)).slice(
+        -2
+      )}-${("0" + m.getUTCDate()).slice(-2)} ${("0" + m.getUTCHours()).slice(
+        -2
+      )}:${("0" + m.getUTCMinutes()).slice(-2)}:${(
+        "0" + m.getUTCSeconds()
+      ).slice(-2)}`;
+    },
+    copyData(content: string) {
+      const textArea = document.createElement("textarea");
+      textArea.value = content;
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      try {
+        document.execCommand("copy");
+        toast("复制成功!");
+      } catch (err) {
+        console.error("Unable to copy to clipboard", err);
+      } finally {
+        document.body.removeChild(textArea);
+      }
+    },
+    prefixInteger(num: number) {
+      return num < 10 ? `0${num}` : num.toString();
+    },
+    searchConditionModel(
+      nextPage: Number,
+      filter: LabelFilterModel,
+      ts: string
+    ): SearchModel {
+      return {
+        page: nextPage,
+        areaCode: this.localInfo?.code as string,
+        labelIds: [],
+        postType: this.$_PostType,
+        messageId: filter.messageId,
+        lockStatus: filter.lockStatus,
+        sortType: filter.sortType,
+        age: this.ageArray(),
+        height: this.heightArray(),
+        cup: this.cupArray(),
+        price: this.priceArray(),
+        serviceIds: this.serviceIdsArray(),
+        ts: ts,
+      } as SearchModel;
+    },
+    ageArray(): Number[] {
+      if (!this.postFilterInfo.age) {
+        return [];
+      }
+      let results = [] as number[];
+      const keys = Object.keys(this.postFilterInfo.age);
+
+      keys.forEach((name) => {
+        const item = this.postFilterInfo.age[name];
+        results = results.concat(item);
+      });
+      return results;
+    },
+    heightArray(): Number[] {
+      if (!this.postFilterInfo.height) {
+        return [];
+      }
+
+      let results = [] as number[];
+      const keys = Object.keys(this.postFilterInfo.height);
+      keys.forEach((name) => {
+        const item = this.postFilterInfo.height[name];
+        results = results.concat(item);
+      });
+      return results;
+    },
+    priceArray(): PriceLowAndHighModel[] {
+      if (!this.postFilterInfo.price) {
+        return [];
+      }
+
+      let results = [] as PriceLowAndHighModel[];
+      const keys = Object.keys(this.postFilterInfo.price);
+      keys.forEach((name) => {
+        const item = this.postFilterInfo.price[name];
+        results = results.concat(item);
+      });
+      return results;
+    },
+    cupArray(): Number[] {
+      if (!this.postFilterInfo.cup) {
+        return [];
+      }
+      return this.postFilterInfo.cup.map((item) => item.key);
+    },
+    serviceIdsArray(): Number[] {
+      if (!this.postFilterInfo.service) {
+        return [];
+      }
+      return this.postFilterInfo.service.map((item) => item.key);
+    },    
+    hasVipCard(vipType:VipType){
+      const vipCards = this.userInfo.vips || [];      
+      return vipCards.filter(e => e.type === vipType).length;
+    },
+    hasBestVipCard(vipType:VipType){
+      const vipCards = this.userInfo.vips || [];      
+      const maxNumber = Math.max(...vipCards.map(o => o.type));      
+      return maxNumber === vipType;
+    },
+  },
+  computed: {
+    isLoading() {
+      return this.$store.state.isLoading;
+    },
+    userInfo() {
+      return this.$store.state.centerInfo;
+    },
+    checkUserEmpty() {
+      return Object.keys(this.userInfo).length === 0;
+    },
+    userIntegral(): number {
+      return this.integralInfo.integral < 0 ? 0 : this.integralInfo.integral;
+    },
+    topIntegral(): number {
+      return (this.userIntegral / this.baseIntegral + 1) * this.baseIntegral;
+    },
+    cssWidth(): string {
+      return `${this.userIntegral % this.baseIntegral}%`;
+    },
+    logonMode() {
+      return this.$store.state.logonMode;
+    },
+    zeroOneSetting() {
+      return this.$store.state.zeroOneSetting;
+    },
+    postFilterInfo() {
+      return this.$store.state.postFilterInfo;
+    },    
+    localInfo() {
+      return this.$store.state.city || defaultCityArea[0];
+    },
+    $_PostType() {
+      return this.$store.state.postType;
+    },
+  },
+});

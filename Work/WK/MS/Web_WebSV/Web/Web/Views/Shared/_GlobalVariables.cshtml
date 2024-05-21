@@ -1,0 +1,16 @@
+﻿@using Web.Extensions;
+@using Web.Helpers;
+@{
+    string stompServiceUrl = ViewBag.StompServiceUrl ?? string.Empty;
+}
+<script>
+    globalVariables = {
+        StompServiceUrl: "@stompServiceUrl",
+        WebRoot: "/",
+        GetUrl: function (url) {
+            return this.WebRoot + url.replace(/^\//, "");
+        },
+    };
+</script>
+@Html.ImportJavaScripts(
+    @WebResourceHelper.Content("~/Content/CTS/dist/js/heartBeat.min.js"))

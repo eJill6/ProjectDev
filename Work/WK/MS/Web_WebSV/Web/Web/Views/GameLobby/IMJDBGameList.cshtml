@@ -1,0 +1,20 @@
+﻿@using JxBackendService.Model.Enums.ThirdParty
+@using Web.Extensions
+@{
+    ViewBag.PageTitle = "JDB电子";
+    Layout = "~/Views/Shared/_GameLobbyLayout.cshtml";
+}
+
+@Html.ImportJavaScripts("/Content/js/third-party-game-hall.js")
+
+<script type="text/javascript">
+        var gameHall = new ThirdPartyGameHall("@ThirdPartySubGameCodes.IMJDB.Value", "jdb_bg");
+</script>
+
+@Html.Partial("~/Views/ThirdParty/Partial/_SlotGameListPartial.cshtml")
+
+
+
+
+
+

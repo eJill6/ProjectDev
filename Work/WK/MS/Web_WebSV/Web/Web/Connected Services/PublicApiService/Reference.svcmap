@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="281ad2f6-15e2-4768-8398-d44bba593440" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/SLPolyGame.Web/PublicApiService.svc/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="dde092c6-3e6b-42d6-aee7-0fe7f04cd5a1" SourceId="1" SourceUrl="http://localhost/SLPolyGame.Web/PublicApiService.svc/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="67998143-6dfd-4bae-bbdc-a88f6144470b" SourceId="1" SourceUrl="http://localhost/SLPolyGame.Web/PublicApiService.svc/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="a9eb620c-70c2-42b9-bcbe-78c813e732a1" SourceId="1" SourceUrl="http://localhost/SLPolyGame.Web/PublicApiService.svc/mex" />
+    <MetadataFile FileName="SLPolyGame.Web.Model.xsd" MetadataType="Schema" ID="71f8be74-3fdc-4080-9228-d106de133f8a" SourceId="1" SourceUrl="http://localhost/SLPolyGame.Web/PublicApiService.svc/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

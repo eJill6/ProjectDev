@@ -1,0 +1,79 @@
+﻿@using JxBackendService.Model.Enums.ThirdParty
+@using Web.Extensions
+@{
+    ViewBag.PageTitle = "PT电游";
+    Layout = "~/Views/Shared/_GameLobbyLayout.cshtml";
+}
+
+@Html.ImportJavaScripts("/Content/js/third-party-game-hall.js")
+
+@Html.ImportJavaScripts("/Content/js/jquery/jquery.counterup.min.js")
+<script type="text/javascript">
+    var gameHall = new ThirdPartyGameHall("@ThirdPartySubGameCodes.IMPT.Value", "pt_bg");
+
+    $(function () {
+        var $numbers = $(".jqNumber");
+
+        setInterval(function () {
+            $.ajax({
+                url: $.toTokenPath(globalVariables.GetUrl("GameLobby/GetJackpotAmount")),
+                type: "POST",
+                success: function (response) {                    
+
+                    if (response.result && !isNaN(response.result)) {
+                        let formatNumber = parseFloat(response.result).toFixed(2);
+                        let numbers = formatNumber.toString().replace('.', '').padStart($numbers.length, "0");
+
+                        if (numbers.length > $numbers.length) {
+                            numbers = numbers.substr(numbers.length - $numbers.length);
+                        }
+
+                        $numbers.each(function (index, value) {
+                            var $value = $(value), number = numbers[index];
+                            if ($value.text() !== number) {
+                                $value.text(number).counterUp({ delay: 1, time: 50 });
+                            }
+                        });
+                    }
+                }
+            });
+        }, 3000);
+    });
+</script>
+
+<div class="main simple">
+    <div class="container">
+        <div class="pt_wrap">
+            <div class="pt_banner">
+                <div class="pt_bouns">
+                    <li class="jqNumber">0</li>
+                    <li class="jqNumber">0</li>
+                    <li class="jqNumber">0</li>
+                    <li class="dot">,</li>
+                    <li class="jqNumber">0</li>
+                    <li class="jqNumber">0</li>
+                    <li class="jqNumber">0</li>
+                    <li class="dot">,</li>
+                    <li class="jqNumber">0</li>
+                    <li class="jqNumber">0</li>
+                    <li class="jqNumber">0</li>
+                    <li class="dot">.</li>
+                    <li class="jqNumber">0</li>
+                    <li class="jqNumber">0</li>
+                </div>
+            </div>
+            <div class="pt_content">
+                <div class="pt_list_bg">
+                    @Html.Partial("~/Views/ThirdParty/Partial/_SlotTabPartial.cshtml")
+                    <div class="jqGameList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

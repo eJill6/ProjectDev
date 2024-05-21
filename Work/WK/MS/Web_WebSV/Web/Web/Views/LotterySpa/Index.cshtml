@@ -1,0 +1,70 @@
+﻿@using Web.Extensions;
+@using Web.Helpers;
+@using Newtonsoft.Json;
+@using Newtonsoft.Json.Serialization;
+
+@model object
+
+@{ Layout = null; }
+
+@{
+
+    var appDataJson = Html.Raw(JsonConvert.SerializeObject(
+    Model,
+    Formatting.None,
+    new JsonSerializerSettings
+    { ContractResolver = new CamelCasePropertyNamesContractResolver() }));
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>投注</title>
+</head>
+<body>
+    <div id="client-app-lottery"></div>
+    <script type="text/javascript">
+        (function(){
+            window.lotterySpa = window.lotterySpa || {};
+
+            window.lotterySpa.appData = @appDataJson;
+
+            window.lotterySpa.userId = '@ViewBag.UserId';
+
+            window.toTokenPath = function (path) {
+                var result = $.toTokenPath(path);
+                return result;
+            };
+
+          
+            window.openUrl=function(logonMode,url,win){
+                $.openUrl(logonMode,url,win);
+            }
+        })();
+
+        var userId = '@ViewBag.UserId';
+    </script>
+    <style>
+        @{
+            /*MQ預設的通知框，此頁面隱藏起來*/
+         }
+        .notification {
+            display:none;
+        }
+    </style>
+    @Html.Partial("~/Views/Shared/_GlobalVariables.cshtml")
+    @Html.Partial("~/Views/Shared/_JavaScriptJquery.cshtml")
+    @Html.ImportJavaScripts(
+        @WebResourceHelper.Content("~/Content/CTS/dist/js/network/sockjs-0.3.min.js"),
+        @WebResourceHelper.Content("~/Content/CTS/dist/js/network/stomp.min.js"),
+        @WebResourceHelper.Content("~/Content/CTS/dist/js/message-queue.js"),
+        @WebResourceHelper.Content("~/Content/CTS/ClientApp/dist/yinsiang-lottery/js/app.js"),
+        @WebResourceHelper.Content("~/Content/CTS/ClientApp/dist/yinsiang-lottery/js/chunk-vendors.js"))
+
+    @Html.ImportCss(@WebResourceHelper.Content("~/Content/CTS/ClientApp/dist/yinsiang-lottery/css/app.css"))
+</body>
+</html>

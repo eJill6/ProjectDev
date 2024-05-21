@@ -1,0 +1,73 @@
+﻿@using JxBackendService.Common.Util
+@using Web.Infrastructure
+@using Web.Models
+@using Web.Infrastructure.Extensions
+@using JxBackendService.Model.ViewModel.ThirdParty
+@using Web.Helpers;
+
+@model ThirdPartyGamesViewModel
+@{
+    string message = "没有找到符合条件的结果";
+    string img = "~/Content/images/third_party/ic_search_no_result.svg";
+
+    if (Model.GameTabType == GameTabTypeValue.Favorite && string.IsNullOrEmpty(Model.SearchGameName))
+    {
+        message = "目前没有收藏的游戏";
+        img = "~/Content/images/third_party/ic_favorite_no_result.svg";
+    }
+
+    string isSelfOpenPage = Model.IsSelfOpenPage.ToJsonString();
+}
+
+<div id="games">
+    @if (!string.IsNullOrEmpty(Model.SearchGameName))
+    {
+        <div class="pt_search_total">共搜索到<span>@Model.Data.Count</span>条关于"@Model.SearchGameName"的结果</div>
+    }
+    <div class="pt_game_list_wrap @(Model.IsSquareGameImage ? "cover_square" : string.Empty)">
+        @if (!Model.Data.Any())
+        {
+            <div class="no_result">
+                <div class="row">
+                    <img src="@WebResourceHelper.Content(img)" alt="" />
+                </div>
+                <div class="row">
+                    <p>@message</p>
+                </div>
+            </div>
+        }
+
+        <ul>
+            @foreach (GameLobbyInfo game in Model.Data)
+            {
+                <li>
+                    <div data-id="@game.No">
+                        <a href="javascript:void(0)" onclick="gameHall.gotoGame('@game.WebGameCode', @isSelfOpenPage)">
+                            <div class="game_pic">
+                                <div class="hover_cover">
+                                    <div>立即游玩</div>
+                                </div>
+                                <img src="@game.FullImageUrl" alt="">
+                            </div>
+                        </a>
+                        <div class="game_text">
+                            <p>@game.ChineseName</p>
+                            <div class="btn_favorite" onclick="gameHall.clickFavorite(@game.No)"></div>
+                        </div>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+    @Html.Pagination(new PaginationSetting
+    {
+        PageCount = Model.PageCount,
+        PageNumber = Model.PageNumber,
+        Callback = "gameHall.searchGames",
+    }, new { @class = "pagination line_style pt_pagination" })
+
+</div>
+
+<script type="text/javascript">
+    gameHall.initFavoriteButton();
+</script>

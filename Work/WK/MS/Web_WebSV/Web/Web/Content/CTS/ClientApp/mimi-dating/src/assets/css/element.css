@@ -1,0 +1,243 @@
+@charset "UTF-8";
+
+
+
+.btn_default{
+    width: 100%;
+    border-radius: 100px;
+    background: #FF8A15;
+    font-size: 16px;
+    color: #FFF;
+    padding: 14px 0;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #FF8A15;
+}
+.btn_default.in_progress{
+    background: #F1B750;
+    border: 1px solid #F1B750;
+}
+
+.btn_default.disable{
+    opacity: .3;
+    cursor: inherit;
+}
+
+.btn_outline{
+    width: 100%;
+    border-radius: 100px;
+    font-size: 16px;
+    color: #474747;
+    padding: 14px 0;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #BFBFBF;
+}
+
+/* checkbox */
+
+
+.checkbox,
+.radiobutton {
+    /* prevent accidental selection when clicking */
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    display: flex;
+}
+
+.checkbox ul,
+.radiobutton ul {
+    width: 100%;
+}
+
+
+.checkbox .text,
+.radiobutton .text {
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFF;
+}
+
+.checkbox label,
+.radiobutton label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox input,
+.radiobutton input {
+    display: none;
+    margin: 0 .1em;
+}
+
+.checkbox .icon,
+.radiobutton .icon {
+    text-align: center;
+    border: none;
+    border-radius: 100px;
+    text-align: center;
+    border: 0;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+}
+
+.checkbox .icon.ml_0 {
+    margin-left: 0;
+}
+
+.radiobutton .icon {
+    border-radius: 50%;
+}
+
+.checkbox .icon,
+.radiobutton .icon {
+    border: 1px solid #bdbdbd;
+}
+
+.radiobutton .icon i .dot {
+    width: 8px;
+    height: 8px;
+    background: #FA8D10;
+    border-radius: 100%;
+}
+.checkbox span,
+.radiobutton span {
+    color: #6A7075;
+}
+
+.checkbox .icon i,
+.radiobutton .icon i {
+    visibility: hidden;
+}
+
+.checkbox input:checked+.icon {
+    background: #FA8D10;
+    border: 1px solid #FA8D10;
+}
+
+.radiobutton input:checked+.icon {
+    background: none;
+    border: 1px solid #FA8D10;
+}
+
+
+.checkbox input:checked+.icon i,
+.radiobutton input:checked+.icon i {
+    visibility: visible;
+}
+
+
+
+
+
+
+
+/*覆蓋選日期套件css*/
+.vue-scroll-picker .vue-scroll-picker-rotator {
+    top: calc(50% - 1.8em)
+}
+.vue-scroll-picker .vue-scroll-picker-item {
+    line-height: 1.8em;
+    font-size: 1.8em;
+    color: #A5A5A5;
+}
+.vue-scroll-picker .vue-scroll-picker-item-selected {
+    color: #EE7E00;
+    font-size: 1.8em;
+}
+.vue-scroll-picker .vue-scroll-picker-layer-top {
+    border-bottom: 1px solid #E9E9E9;
+    background: none;
+    height: calc(50% - 1.8em);
+}
+.vue-scroll-picker .vue-scroll-picker-layer-selection {
+    top: calc(50% - 1.8em);
+    bottom: calc(50% - 1.8em);
+}
+.vue-scroll-picker .vue-scroll-picker-layer-bottom{
+    border-top: 1px solid #E9E9E9;
+    background: none;
+    height: calc(50% - 1.8em);
+}
+
+
+/*頭像共用設定*/
+.avatar_fit{
+    position: relative;
+    
+}
+.avatar_fit img{
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+
+
+/*switch button*/
+.switch_btn {
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 22px;
+  }
+  
+  .switch_btn input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .switch_btn   .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #57565A;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .switch_btn .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .switch_btn  input:checked + .slider {
+    background-color: #FF8A15;
+  }
+  
+  .switch_btn  input:focus + .slider {
+    box-shadow: 0 0 1px #FF8A15;
+  }
+  
+  .switch_btn  input:checked + .slider:before {
+    -webkit-transform: translateX(14px);
+    -ms-transform: translateX(14px);
+    transform: translateX(14px);
+  }
+  
+  /* Rounded sliders */
+  .switch_btn  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .switch_btn .slider.round:before {
+    border-radius: 50%;
+  }

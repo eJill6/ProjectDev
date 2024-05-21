@@ -1,0 +1,246 @@
+@charset "UTF-8";
+/* CSS Document 首頁 */
+
+body.home {
+    background: #151419;
+}
+
+/********************************* 移動端 遊戲分類主選單 *********************************/
+.m_games_wrap {
+  display: block;
+  /* padding: 16px 0 5px 0; */
+  margin: 0 auto;
+  width: 100%;
+}
+
+.m_games_wrap .container {
+    display: flex;
+}
+
+.m_games_wrap .container .col:first-child {
+    width: 20%;
+    padding-right: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.m_games_wrap .container .col:last-child {
+    width: 80%;
+    position: relative;
+    z-index: 0;
+}
+
+.m_games_wrap .m_game_sort ul {
+    
+}
+
+.m_games_wrap .m_game_sort ul li {
+    width: 100%;
+    position: relative;
+    padding: 4px 0;
+}
+
+.m_games_wrap .m_game_sort ul li .btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 3px;
+    background: #25242C;
+    padding: 6px 0 10px 0;
+    cursor: pointer;
+    height: 56px;
+}
+
+.m_games_wrap .m_game_sort ul li.active .btn {
+    background: linear-gradient(to right, #FFA93A, #FE8301);
+}
+
+.m_games_wrap .m_game_sort ul li.active::before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 50px;
+    top: calc(50% - 25px);
+    right: -10px;
+	background: url('../images_YinXiang/home/allGames/m_active_border_arrow.svg') center center no-repeat;
+}
+.m_games_wrap .m_game_sort ul li .btn div {
+    width: 100%;
+    height: 22px;
+}
+
+.m_games_wrap .m_game_sort ul li .btn .item_1 {
+    background: url('../images/home/allGames/btn_ic_lottery.svg') center center no-repeat;
+    background-size: 22px 22px;
+}
+
+.m_games_wrap .m_game_sort ul li .btn .item_2 {
+    background: url('../images/home/allGames/btn_ic_live.svg') center center no-repeat;
+    background-size: 22px 22px;
+}
+
+.m_games_wrap .m_game_sort ul li .btn .item_3 {
+    background: url('../images/home/allGames/btn_ic_sport.svg') center center no-repeat;
+    background-size: 22px 22px;
+}
+
+.m_games_wrap .m_game_sort ul li .btn .item_4 {
+    background: url('../images/home/allGames/btn_ic_fishing.svg') center center no-repeat;
+    background-size: 22px 22px;
+}
+
+.m_games_wrap .m_game_sort ul li .btn .item_5 {
+    background: url('../images/home/allGames/btn_ic_slot.svg') center center no-repeat;
+    background-size: 22px 22px;
+}
+
+.m_games_wrap .m_game_sort ul li .btn .item_6 {
+    background: url('../images/home/allGames/btn_ic_chess.svg') center center no-repeat;
+    background-size: 22px 22px;
+}
+
+.m_games_wrap .m_game_sort ul li .btn .item_7 {
+    background: url('../images/home/allGames/btn_ic_esport.svg') center center no-repeat;
+    background-size: 22px 22px;
+}
+
+.m_games_wrap .m_game_sort ul li.active .btn .item_1 {
+    background: url('../images/home/allGames/btn_ic_lottery_focus.svg') center center no-repeat;
+    background-size: 22px 22px;
+}
+
+.m_games_wrap .m_game_sort ul li.active .btn .item_2 {
+    background: url('../images/home/allGames/btn_ic_live_focus.svg') center center no-repeat;
+    background-size: 22px 22px;
+}
+
+.m_games_wrap .m_game_sort ul li.active .btn .item_3 {
+    background: url('../images/home/allGames/btn_ic_sport_focus.svg') center center no-repeat;
+    background-size: 22px 22px;
+}
+
+.m_games_wrap .m_game_sort ul li.active .btn .item_4 {
+    background: url('../images/home/allGames/btn_ic_fishing_focus.svg') center center no-repeat;
+    background-size: 22px 22px;
+}
+
+.m_games_wrap .m_game_sort ul li.active .btn .item_5 {
+    background: url('../images/home/allGames/btn_ic_slot_focus.svg') center center no-repeat;
+    background-size: 22px 22px;
+}
+
+.m_games_wrap .m_game_sort ul li.active .btn .item_6 {
+    background: url('../images/home/allGames/btn_ic_chess_focus.svg') center center no-repeat;
+    background-size: 22px 22px;
+}
+
+.m_games_wrap .m_game_sort ul li.active .btn .item_7 {
+    background: url('../images/home/allGames/btn_ic_esport_focus.svg') center center no-repeat;
+    background-size: 22px 22px;
+}
+
+.m_games_wrap .m_game_sort ul li .btn p {
+    width: 100%;
+    font-size: 13px;
+    color: #8E8D8D;
+    text-align: center;
+    line-height: 1;
+    margin-top: 4px;
+}
+
+.m_games_wrap .m_game_sort ul li.active .btn p {
+    color: #2C2B30;
+}
+
+.m_games_wrap .m_game_entrance {
+    width: 80%;
+    padding-top: 10px;
+}
+
+.m_games_wrap .m_game_entrance .m_game_visual {
+    padding-bottom: 10px;
+}
+
+.m_games_wrap .m_game_entrance .m_game_visual img {
+    width: 270px;
+    margin: 0 auto;
+}
+
+.m_games_wrap .m_game_entrance .m_game_btn {
+    width: 100%;
+}
+
+.m_games_wrap .m_game_entrance .m_game_btn ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.m_games_wrap .m_game_entrance .m_game_btn ul li {
+    width: 25%;
+    position: relative;
+    color: #1F3146;
+}
+
+.m_games_wrap .m_game_entrance .m_game_btn ul li>div {
+    font-family: 'din_alternatebold', Microsoft YaHei, Arial, sans-serif;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1;
+    margin-bottom: 12px;
+    color: #E8E8E8;
+}
+
+.m_games_wrap .m_game_entrance .m_game_btn ul li>img {
+    width: 50px;
+    height: 50px;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+    /* -webkit-box-shadow: 0 2px 16px 0 rgba(0, 151, 185, 0.3);
+    box-shadow: 0 2px 16px 0 rgba(0, 151, 185, 0.3); */
+    border-radius: 37px;
+    will-change: transform;
+    margin: 0 auto 6px auto;
+}
+
+.m_games_wrap .m_game_entrance .m_game_btn ul li:hover>img {
+    transform: scale(1.08);
+}
+
+.m_games_wrap .m_game_entrance .m_game_btn ul li.games_li_disable {
+    cursor: default;
+    color: #CCCFD6;
+}
+
+.m_games_wrap .m_game_entrance .m_game_btn ul li.games_li_disable>img {
+    opacity: 0.25;
+}
+
+.m_games_wrap .m_game_entrance .m_game_btn ul li.games_li_disable:hover>img {
+    transform: none;
+}
+
+.m_games_wrap .m_game_entrance .m_game_btn ul li.games_li_disable:after {
+    content: "维护中";
+    position: absolute;
+    top: 16px;
+    left: 0px;
+    color: #8E8D8D;
+    width: 100%;
+    text-align: center;
+}
+.m_games_wrap .m_game_entrance .m_game_btn.one_entrance .m_game_pic img{
+    width: 210px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.m_games_wrap .m_game_entrance .m_game_btn.one_entrance > div{
+    text-align: center;
+    margin: 10px auto;
+    letter-spacing: 1px;
+    color: #8E8D8D;
+}
+

@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="SerTabService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/SLPolyGame.Web.Model" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/JxLottery.Models.Lottery" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISerTabService_GetPlayTypeRadio_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlayTypeRadio" />
+  </wsdl:message>
+  <wsdl:message name="ISerTabService_GetPlayTypeRadio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlayTypeRadioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISerTabService_GetPlayTypeInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlayTypeInfo" />
+  </wsdl:message>
+  <wsdl:message name="ISerTabService_GetPlayTypeInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlayTypeInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISerTabService_GetLotteryType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLotteryType" />
+  </wsdl:message>
+  <wsdl:message name="ISerTabService_GetLotteryType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLotteryTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISerTabService_GetLotteryInfos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLotteryInfos" />
+  </wsdl:message>
+  <wsdl:message name="ISerTabService_GetLotteryInfos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLotteryInfosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISerTabService_Get_AllWebLotteryType_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_AllWebLotteryType" />
+  </wsdl:message>
+  <wsdl:message name="ISerTabService_Get_AllWebLotteryType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_AllWebLotteryTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISerTabService_QueryCurrentLotteryInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryCurrentLotteryInfo" />
+  </wsdl:message>
+  <wsdl:message name="ISerTabService_QueryCurrentLotteryInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryCurrentLotteryInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISerTabService_GetTodaySummaryInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTodaySummaryInfo" />
+  </wsdl:message>
+  <wsdl:message name="ISerTabService_GetTodaySummaryInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTodaySummaryInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISerTabService_GetPlayInfoSummaryInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlayInfoSummaryInfo" />
+  </wsdl:message>
+  <wsdl:message name="ISerTabService_GetPlayInfoSummaryInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlayInfoSummaryInfoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISerTabService">
+    <wsdl:operation name="GetPlayTypeRadio">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISerTabService/GetPlayTypeRadio" message="tns:ISerTabService_GetPlayTypeRadio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISerTabService/GetPlayTypeRadioResponse" message="tns:ISerTabService_GetPlayTypeRadio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayTypeInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISerTabService/GetPlayTypeInfo" message="tns:ISerTabService_GetPlayTypeInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISerTabService/GetPlayTypeInfoResponse" message="tns:ISerTabService_GetPlayTypeInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLotteryType">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISerTabService/GetLotteryType" message="tns:ISerTabService_GetLotteryType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISerTabService/GetLotteryTypeResponse" message="tns:ISerTabService_GetLotteryType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLotteryInfos">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISerTabService/GetLotteryInfos" message="tns:ISerTabService_GetLotteryInfos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISerTabService/GetLotteryInfosResponse" message="tns:ISerTabService_GetLotteryInfos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_AllWebLotteryType">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISerTabService/Get_AllWebLotteryType" message="tns:ISerTabService_Get_AllWebLotteryType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISerTabService/Get_AllWebLotteryTypeResponse" message="tns:ISerTabService_Get_AllWebLotteryType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryCurrentLotteryInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISerTabService/QueryCurrentLotteryInfo" message="tns:ISerTabService_QueryCurrentLotteryInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISerTabService/QueryCurrentLotteryInfoResponse" message="tns:ISerTabService_QueryCurrentLotteryInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTodaySummaryInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISerTabService/GetTodaySummaryInfo" message="tns:ISerTabService_GetTodaySummaryInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISerTabService/GetTodaySummaryInfoResponse" message="tns:ISerTabService_GetTodaySummaryInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayInfoSummaryInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISerTabService/GetPlayInfoSummaryInfo" message="tns:ISerTabService_GetPlayInfoSummaryInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISerTabService/GetPlayInfoSummaryInfoResponse" message="tns:ISerTabService_GetPlayInfoSummaryInfo_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISerTabService" type="tns:ISerTabService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPlayTypeRadio">
+      <soap:operation soapAction="http://tempuri.org/ISerTabService/GetPlayTypeRadio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayTypeInfo">
+      <soap:operation soapAction="http://tempuri.org/ISerTabService/GetPlayTypeInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLotteryType">
+      <soap:operation soapAction="http://tempuri.org/ISerTabService/GetLotteryType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLotteryInfos">
+      <soap:operation soapAction="http://tempuri.org/ISerTabService/GetLotteryInfos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_AllWebLotteryType">
+      <soap:operation soapAction="http://tempuri.org/ISerTabService/Get_AllWebLotteryType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCurrentLotteryInfo">
+      <soap:operation soapAction="http://tempuri.org/ISerTabService/QueryCurrentLotteryInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTodaySummaryInfo">
+      <soap:operation soapAction="http://tempuri.org/ISerTabService/GetTodaySummaryInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayInfoSummaryInfo">
+      <soap:operation soapAction="http://tempuri.org/ISerTabService/GetPlayInfoSummaryInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SerTabService">
+    <wsdl:port name="BasicHttpBinding_ISerTabService" binding="tns:BasicHttpBinding_ISerTabService">
+      <soap:address location="http://localhost/SLPolyGame.Web/SerTabService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,2175 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Web</name>
+    </assembly>
+    <members>
+        <member name="M:Web.Controllers.AccountController.LogOn(Web.Models.Account.LogonParam)">
+            <summary>
+            Logon view post.
+            </summary>
+        </member>
+        <member name="T:Web.Controllers.Api.AccountController">
+            <summary>
+            處理登入相關
+            </summary>
+        </member>
+        <member name="M:Web.Controllers.Api.AccountController.LogOn(System.Int32,System.String,System.String,System.String,System.String)">
+            <summary>
+            Logon view post.
+            </summary>
+            <returns>View after logon.</returns>
+        </member>
+        <member name="M:Web.Controllers.Api.HomeController.GetRefreshBalanceInfo">
+            <summary>
+            取得最新餘額json
+            </summary>
+        </member>
+        <member name="M:Web.Controllers.Api.LotterySpaController.GetRebatePro(System.Int32,System.Int32,System.Int32,System.Nullable{System.Boolean})">
+            <summary>
+            取得返點
+            </summary>
+            <returns>結果</returns>
+        </member>
+        <member name="M:Web.Controllers.Api.LotterySpaController.GetAfterDetails(System.String,Web.Models.Base.AfterDetailsSearchModel)">
+            <summary>
+            Get after details.
+            </summary>
+            <param name="id"></param>
+            <param name="search">After details search model.</param>
+            <returns>After details JSON view.</returns>
+        </member>
+        <member name="M:Web.Controllers.Api.LotterySpaController.GetExtIssueData(System.String,System.String)">
+            <summary>
+            取得該期額外資訊
+            </summary>
+            <param name="id">彩種代碼</param>
+            <param name="issueNo">期號</param>
+            <returns>該期的額外資訊</returns>
+        </member>
+        <member name="M:Web.Controllers.Api.LotterySpaController.OrderDetails(System.String)">
+            <summary>
+            Get lottery order details.
+            </summary>
+            <param name="orderId">Lottery order id.</param>
+            <returns>Lottery order details</returns>
+        </member>
+        <member name="M:Web.Controllers.Api.LotterySpaController.CancerOrder(System.String)">
+            <summary>
+            撤销订单
+            </summary>
+            <param name="orderId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.Api.LotterySpaController.GetNextIssueNo(System.Int32)">
+            <summary>
+            下期期號
+            </summary>
+            <param name="lotteryId">LotteryId</param>
+            <returns>下期期號</returns>
+        </member>
+        <member name="M:Web.Controllers.Api.LotterySpaController.GetRankList(System.Int32)">
+            <summary>
+            排行榜清單(HTML)
+            </summary>
+            <param name="days">天數</param>
+            <returns>排行榜清單</returns>
+        </member>
+        <member name="M:Web.Controllers.Api.LotterySpaController.GetRankListItems(System.Int32)">
+            <summary>
+            排行榜清單(JSON)
+            </summary>
+            <param name="days">天數</param>
+            <returns>排行榜清單</returns>
+        </member>
+        <member name="M:Web.Controllers.Api.LotterySpaController.GetTodaySummary(System.Int32)">
+            <summary>
+            今日清單
+            </summary>
+            <returns>今日清單</returns>
+        </member>
+        <member name="M:Web.Controllers.Api.LotterySpaController.IssueHistory(System.Int32,System.Int32,System.String)">
+            <summary>
+            期號開獎歷史
+            </summary>
+            <param name="lotteryId"></param>
+            <param name="count"></param>
+            <param name="nextCursor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.Api.LotterySpaController.GetAndStoreUserInfo">
+            <summary>
+            取得及暫存用戶資訊
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Web.Controllers.GameCenterController">
+            <summary>第三方遊戲controller</summary>
+        </member>
+        <member name="M:Web.Controllers.GameCenterController.#ctor(Web.Services.IUserService,Web.Services.ICacheService)">
+            <summary></summary>
+        </member>
+        <member name="M:Web.Controllers.GameCenterController.Index(JxBackendService.Model.Param.ThirdParty.GameCenterLogin)">
+            <summary>轉導第三方遊戲入口</summary>
+        </member>
+        <member name="M:Web.Controllers.GameLobbyController.#ctor(Web.Services.IUserService,Web.Services.ICacheService,SLPolyGame.Web.Interface.ISlotApiWebSVService,SLPolyGame.Web.Interface.IThirdPartyApiWebSVService)">
+            <summary></summary>
+        </member>
+        <member name="M:Web.Controllers.HomeController.GetRefreshBalanceInfo">
+            <summary>
+            取得最新餘額json
+            </summary>
+        </member>
+        <member name="M:Web.Controllers.HomeController.HomeTopMenu">
+            <summary>
+            首頁Menu
+            </summary>
+        </member>
+        <member name="F:Web.Controllers.LotterySpaController._adapters">
+            <summary>
+            User service.
+            </summary>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.Bet(System.String)">
+            <summary>
+            投注頁
+            </summary>
+            <param name="id">LotteryCode(路由名稱叫Id)</param>
+            <returns>投注頁</returns>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.Index(System.String)">
+            <summary>
+            銀像投注頁
+            </summary>
+            <returns>投注頁</returns>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.GetBetViewModel(System.String,System.String)">
+            <summary>
+            取得彩種資訊
+            </summary>
+            <param name="id">彩種編號</param>
+            <param name="orderNo">跟單編號</param>
+            <returns>彩種資訊</returns>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.SetViewBag">
+            <summary>
+            設定ViewBag
+            </summary>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.Trend(System.String,System.Nullable{System.Int32},System.Int32,System.String)">
+            <summary>
+            走勢圖
+            </summary>
+            <param name="id">LotteryCode(路由名稱叫Id)</param>
+            <returns>走勢圖</returns>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.GetRebatePro(System.Int32,System.Int32,System.Int32,System.Nullable{System.Boolean})">
+            <summary>
+            取得返點
+            </summary>
+            <returns>結果</returns>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.GetAfterDetails(System.String,Web.Models.Base.AfterDetailsSearchModel)">
+            <summary>
+            Get after details.
+            </summary>
+            <param name="search">After details search model.</param>
+            <returns>After details JSON view.</returns>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.GetExtIssueData(System.String,System.String)">
+            <summary>
+            取得該期額外資訊
+            </summary>
+            <param name="id">彩種代碼</param>
+            <param name="issueNo">期號</param>
+            <returns>該期的額外資訊</returns>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.GetViewModel(System.String)">
+            <summary>
+            取得彩種設定
+            </summary>
+            <param name="id">彩種編號</param>
+            <returns>彩種設定</returns>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.OrderDetails(System.String)">
+            <summary>
+            Get lottery order details.
+            </summary>
+            <param name="orderId">Lottery order id.</param>
+            <returns>Lottery order details</returns>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.CancerOrder(System.String)">
+            <summary>
+            撤销订单
+            </summary>
+            <param name="orderId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.GetAllLotteryInfo">
+            <summary>
+            取得遊戲玩法列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.GetNextIssueNo(System.Int32)">
+            <summary>
+            下期期號
+            </summary>
+            <param name="lotteryId">LotteryId</param>
+            <returns>下期期號</returns>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.GetRankList(System.Int32)">
+            <summary>
+            排行榜清單(HTML)
+            </summary>
+            <param name="days">天數</param>
+            <returns>排行榜清單</returns>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.GetRankListItems(System.Int32)">
+            <summary>
+            排行榜清單(JSON)
+            </summary>
+            <param name="days">天數</param>
+            <returns>排行榜清單</returns>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.GetTodaySummary(System.Int32)">
+            <summary>
+            今日清單
+            </summary>
+            <returns>今日清單</returns>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.IssueHistory(System.Int32,System.Int32,System.String)">
+            <summary>
+            期號開獎歷史
+            </summary>
+            <param name="lotteryId"></param>
+            <param name="count"></param>
+            <param name="nextCursor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.Index(System.String)">
+            <summary>
+            銀像投注頁
+            </summary>
+            <returns>投注頁</returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.GetBanner">
+            <summary>
+            取得Banner
+            </summary>
+            <returns>Banner</returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.CreateMedia(MS.Core.MMModel.Models.SaveMediaToOssParamForClient)">
+            <summary>
+            上傳媒體檔
+            </summary>
+            <returns>媒體檔資料</returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.GetHomeAnnouncement">
+            <summary>
+            取得首頁公告
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.OptionsByPostType(System.Int32)">
+            <summary>
+            取得發帖頁面的所有選項設定
+            </summary>
+            <param name="postType">發帖類型</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.PriceOptions(System.Int32)">
+            <summary>
+            取得價格設定
+            </summary>
+            <param name="postType">發帖類型</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.LabelOptions(System.Int32)">
+            <summary>
+            取得標籤設定
+            </summary>
+            <param name="postType">發帖類型</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.MessageTypeOptions(System.Int32)">
+            <summary>
+            取得訊息種類設定
+            </summary>
+            <param name="postType">發帖類型</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.ServiceOptions(System.Int32)">
+            <summary>
+            取得服務項目設定
+            </summary>
+            <param name="postType">發帖類型</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.AgeOptions">
+            <summary>
+            取得年齡項目設定
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.BodyHeightOptions">
+            <summary>
+            取得身高項目設定
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.CupOptions">
+            <summary>
+            取得cup項目設定
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.AdminContact">
+            <summary>
+            取得管理員聯繫方式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.PostFilterOptions(System.Nullable{System.Int32})">
+            <summary>
+            取得篩選條件
+            </summary>
+            <param name="postType">發帖類型</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.WhatIs(MS.Core.MMModel.Models.Post.Enums.PostType,MS.Core.MMModel.Models.Post.Enums.AdvertisingContentType)">
+            <summary>
+            發帖說明
+            </summary>
+            <param name="postType">發帖類型</param>
+            <param name="contentType">宣傳類型</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.AddPost(MS.Core.MMModel.Models.Post.PostDataForClient)">
+            <summary>
+            新增發佈帖
+            </summary>
+            <param name="param">發佈資訊</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.GetPostEditData(System.String)">
+            <summary>
+            取得編輯帖子資料
+            </summary>
+            <param name="postId">帖 Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.EditPost(System.String,MS.Core.MMModel.Models.Post.PostDataForClient)">
+            <summary>
+            編輯發佈帖子
+            </summary>
+            <param name="postId">帖 Id</param>
+            <param name="param">發佈資訊</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.Report(MS.Core.MMModel.Models.Post.ReportDataForClient)">
+            <summary>
+            舉報/投訴
+            </summary>
+            <param name="param">投訴資訊</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.AddComment(MS.Core.MMModel.Models.Post.CommentDataForClient)">
+            <summary>
+            評論帖子
+            </summary>
+            <param name="param">評論資訊</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.GetCommentEditData(System.String)">
+            <summary>
+            取得編輯評論資訊
+            </summary>
+            <param name="commentId">評論Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.EditComment(System.String,MS.Core.MMModel.Models.Post.CommentDataForClient)">
+            <summary>
+            編輯評論
+            </summary>
+            <param name="commentId">評論Id</param>
+            <param name="param">評論資訊</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.CommentList(System.String,System.Nullable{System.Int32})">
+            <summary>
+            評論清單
+            </summary>
+            <param name="postId">評論的帖子id</param>
+            <param name="page">目前頁數</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.PostSearch(MS.Core.MMModel.Models.Post.PostSearchParamForClient)">
+            <summary>
+            查找帖子。適用首頁、廣場
+            </summary>
+            <param name="param">查詢條件</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.PostDetail(System.String)">
+            <summary>
+            查找帖子。適用首頁、廣場
+            </summary>
+            <param name="postId">帖子Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.UnlockPost(MS.Core.MMModel.Models.Post.UnlockPostDataForClient)">
+            <summary>
+            解鎖帖子
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.Center">
+            <summary>
+            個人中心
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.Overview">
+            <summary>
+            總覽
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.ManagePost(MS.Core.MMModel.Models.My.MyPostQueryParamForClient)">
+            <summary>
+            發帖管理
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.UnlockPostList(MS.Core.MMModel.Models.My.MyUnlockQueryParamForClient)">
+            <summary>
+            發帖管理
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.BuyVip(MS.Core.MMModel.Models.Vip.BuyVipData)">
+            <summary>
+            購買會員卡
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.GetVips">
+            <summary>
+            會員卡列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.GetUserVipTransLogs">
+            <summary>
+            購買紀錄
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.GetWalletInfo(System.Nullable{System.TimeSpan})">
+            <summary>
+            覓錢包
+            </summary>
+            <param name="timeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.GetExpenseInfo(MS.Core.MMModel.Models.Wallet.ExpenseInfoData)">
+            <summary>
+            消費明細
+            </summary>
+            <param name="timeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.GetIncomeInfo(MS.Core.MMModel.Models.Wallet.IncomeInfoData,System.Nullable{System.TimeSpan})">
+            <summary>
+            收益明細
+            </summary>
+            <param name="timeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.CertificationInfo">
+            <summary>
+            取得認證資訊
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.AgentIdentityApply">
+            <summary>
+            覓經紀申請
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.PublicController.ReconnectTips">
+            <summary> 請退出遊戲並重新進入頁面 </summary>
+        </member>
+        <member name="M:Web.Controllers.PublicController.Error">
+            <summary> 錯誤訊息頁面 </summary>
+        </member>
+        <member name="M:Web.Controllers.PublicController.EnterGameLoading">
+            <summary> 遊戲進入中頁面 </summary>
+        </member>
+        <member name="M:Web.Extensions.ControllerExtension.GetUserId``1(System.Web.Mvc.Controller)">
+            <summary>
+            Get user Id from authentication cookie.
+            </summary>
+            <param name="controller">Current controller.</param>
+            <returns>User Id.</returns>
+        </member>
+        <member name="M:Web.Extensions.ControllerExtension.GetUserIdStr(System.Web.Mvc.Controller)">
+            <summary>
+            Get user Id from authentication cookie.
+            </summary>
+            <param name="controller">Current controller.</param>
+            <returns>User Id.</returns>
+        </member>
+        <member name="M:Web.Extensions.ControllerExtension.GetUserId(System.Web.Mvc.Controller)">
+            <summary>
+            Get user Id from authentication cookie.
+            </summary>
+            <param name="controller">Current controller.</param>
+            <returns>User Id.</returns>
+        </member>
+        <member name="M:Web.Extensions.ControllerExtension.GetUserName(System.Web.Mvc.Controller)">
+            <summary>
+            Get user name.
+            </summary>
+            <param name="controller">Current controller.</param>
+            <returns>User name.</returns>
+        </member>
+        <member name="M:Web.Extensions.DecimalExtension.ToCurrency(System.Decimal,System.Boolean)">
+            <summary>
+            轉為貨幣格式 EX: 10,000.0000
+            </summary>
+            <param name="number">數值資料</param>
+            <param name="hasThousandComma">是否加上千分位</param>
+        </member>
+        <member name="F:Web.MvcApplication._config">
+            <summary>
+            設定檔
+            </summary>
+        </member>
+        <member name="M:Web.Helpers.Security.IP.GetDoWorkIP">
+            <summary>
+            可参照资料
+            https://www.cnblogs.com/diaosir/p/6890825.html
+            https://blog.csdn.net/fengwind1/article/details/51992528
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Helpers.Security.IP.ConvertIPToIPNumber(System.String)">
+            <summary>
+            將ip 轉為ip number
+            </summary>
+            <param name="ip"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Helpers.Security.IP.IPv6Normalization(System.String)">
+            <summary>
+            正規化ipv6表示為長格式
+            </summary>
+            <param name="ip"></param>
+        </member>
+        <member name="M:Web.Helpers.Security.TokenProvider.GetToken(System.String)">
+            <summary>
+            取得Token
+            </summary>
+            <param name="value">Token值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Helpers.Security.TokenProvider.GenerateTokenString(System.String,System.String)">
+            <summary>
+            產生Token
+            </summary>
+            <param name="key">Key</param>
+            <param name="userName">userName</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Helpers.Security.TokenProvider.IsTokenExpired(System.DateTime)">
+            <summary>
+            檢查token是否過期
+            </summary>
+            <param name="expiryTime">過期時間</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Helpers.Security.TokenProvider.GenerateJWTTokenWithHS256(System.Collections.Generic.Dictionary{System.String,System.Object},System.String)">
+            <summary>
+            建立Jwt Token (sha256)
+            </summary>
+            <param name="claimList">claim list</param>
+            <param name="secretSalt">加解密鑰</param>
+            <returns>
+            jwt token
+            </returns>
+        </member>
+        <member name="M:Web.Helpers.Security.TokenProvider.DecryptJWTTokenWithHS256(System.String,System.String)">
+            <summary>
+            解 Jwt Token (sha256)
+            </summary>
+        </member>
+        <member name="T:Web.Helpers.CommonHelper">
+            <summary>
+            Lottery helper class.
+            </summary>
+        </member>
+        <member name="F:Web.Helpers.CommonHelper.SuccessFlag">
+            <summary>
+            Bet success flag.
+            </summary>
+        </member>
+        <member name="M:Web.Helpers.CommonHelper.GetLotteryResult(System.String)">
+            <summary>
+            Get lottery result arrary.
+            </summary>
+            <param name="lotteryNum">Lottery result num.</param>
+            <returns>Lottery result arrary.</returns>
+        </member>
+        <member name="M:Web.Helpers.CommonHelper.GetCountdownStartValue(System.DateTime,System.String)">
+            <summary>
+            Get countdown start value.
+            </summary>
+            <param name="futureTime">Future time</param>
+            <param name="format">Format(dd:hh:mm:ss)</param>
+            <returns>Countdown start value.</returns>
+        </member>
+        <member name="M:Web.Helpers.CommonHelper.GetMaskCardUser(System.String,System.Char)">
+            <summary>
+            Get mask card user.
+            </summary>
+            <param name="cardUser">Card user</param>
+            <param name="mask">Mask</param>
+            <returns>Mask card user.</returns>
+        </member>
+        <member name="M:Web.Helpers.CommonHelper.CalculatePageCount(System.Int32,System.Int64)">
+            <summary>
+            Calculate page count.
+            </summary>
+            <param name="pageSize">Page size.</param>
+            <param name="totalCount">Total count.</param>
+            <returns>Page count.</returns>
+        </member>
+        <member name="M:Web.Helpers.CommonHelper.Radix36(System.Int32,System.String@)">
+            <summary>
+            十进制转36进制
+            </summary>
+            <param name="number"></param>
+            <param name="result"></param>
+        </member>
+        <member name="M:Web.Helpers.CommonHelper.IsMobile(System.String@)">
+            <summary>
+            http://detectmobilebrowsers.com/
+            </summary>
+            <param name="userAgent"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Infrastructure.Attributes.Api.BaseWebAuthorizeAttribute.CheckToken(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            1.從cookie取得token, 檢查是否過期，刷新token
+            2.當user重複使用過期的token則強制登出
+            </summary>
+            <returns>IsTokenValid</returns>
+        </member>
+        <member name="M:Web.Infrastructure.Attributes.WebAuthorizeAttribute.CheckToken(System.Web.HttpContextBase)">
+            <summary>
+            1.從cookie取得token, 檢查是否過期，刷新token
+            2.當user重複使用過期的token則強制登出
+            </summary>
+            <returns>IsTokenValid</returns>
+        </member>
+        <member name="M:Web.Infrastructure.Extensions.HtmlExtensions.Pagination(System.Web.Mvc.HtmlHelper,Web.Infrastructure.PaginationSetting,System.Object)">
+            <summary>
+            分頁
+            </summary>
+            <param name="htmlHelper"></param>
+            <param name="setting">設定值</param>
+            <param name="htmlAttributes">html attributes</param>
+            <returns></returns>
+        </member>
+        <member name="T:Web.Infrastructure.Filters.LogDebugUserActionExecutingTimeAttribute">
+            <summary>
+            針對debugUser做的action耗時紀錄
+            </summary>
+        </member>
+        <member name="T:Web.Infrastructure.Filters.LogMvcActionExecutingTimeAttribute">
+            <summary>
+            繼承BaseController的Action可使用的Attribute
+            </summary>
+        </member>
+        <member name="P:Web.Infrastructure.PaginationSetting.Callback">
+            <summary>
+            執行傳入參數pageNumber的js函式名稱
+            </summary>
+        </member>
+        <member name="P:Web.Infrastructure.PaginationSetting.SettingId">
+            <summary>
+            用於在同個頁面裡有複數分頁區塊時以此ID做區分
+            </summary>
+        </member>
+        <member name="P:Web.Models.Account.LogonParam.GameID">
+            <summary>彩種資訊</summary>
+        </member>
+        <member name="P:Web.Models.Account.LogonParam.AnchorId">
+            <summary>主播ID</summary>
+        </member>
+        <member name="P:Web.Models.Account.LogonParam.PageParamInfo">
+            <summary>根據ClientWebPage傳送對應形式的參數</summary>
+        </member>
+        <member name="F:Web.Models.Base.AfterType.Profit">
+            <summary>
+            利润率追号
+            </summary>
+        </member>
+        <member name="F:Web.Models.Base.AfterType.SameMultilple">
+            <summary>
+            同倍追号
+            </summary>
+        </member>
+        <member name="F:Web.Models.Base.AfterType.DoubleMultilple">
+            <summary>
+            翻倍追号
+            </summary>
+        </member>
+        <member name="F:Web.Models.Base.After.KIND.SD_ELE">
+            <summary>
+            山东十一选五87期
+            </summary>
+        </member>
+        <member name="M:Web.Models.Base.After.CreatePeriodsWithDateTimeFormat(System.Int32,System.String,System.Int32,System.String)">
+            <summary>
+            產生與時間關聯的追號的期號
+            </summary>
+            <param name="totalIssueCount">要追的期數</param>
+            <param name="currentIssueNo">當前期號</param>
+            <param name="diffMinute">间隔分钟</param>
+            <param name="issueFormat">期号格式</param>
+            <returns>
+            追号清单
+            </returns>
+        </member>
+        <member name="M:Web.Models.Base.After.CreatePeriodsWithDateTimeFormatAndSNO(System.Int32,System.Int32,System.Int64,System.String,System.Int32,System.String,System.DateTime)">
+            <summary>
+            產生與時間關聯的追號 + 连续号
+            </summary>
+            <param name="totalIssueCount">要追的期數</param>
+            <param name="maxPeriods">最大期数</param>
+            <param name="currentIssueNo">當前期號</param>
+            <param name="issueFormat">期号格式</param>
+            <param name="snoLen">流水号长度</param>
+            <param name="startIssueNumber">第一期数字(取尾数一码)。例：001 = 1 or 000 = 0</param>
+            <param name="currentTime">目前追号的时间</param>
+            <returns>
+            追号清单
+            </returns>
+        </member>
+        <member name="M:Web.Models.Base.After.CreatePeriods(System.Int32,Web.Models.Base.After.KIND,System.String,System.DateTime,System.Int32)">
+            <summary>
+            生产期号
+            </summary>
+            <param name="num">要生产的期数</param>
+            <param name="k">彩种种类</param>
+            <param name="currentIssueNo">当前期</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Models.Base.After.ProfitRate(System.Int32,System.Double,System.Double,System.Double,System.Double,System.Int32)">
+            <summary>
+            盈利率追号
+            </summary>
+            <param name="num">要追的期数</param>
+            <param name="Pro">盈利率</param>
+            <param name="betmoney">单次投注金额，比如是1元或者0.1元</param>
+            <param name="singBetMoney">单笔投注金额，是这单的总金额</param>
+            <param name="prize">单笔中奖奖金</param>
+            <param name="m">初始倍数</param>
+            <returns>返回符合盈利率的投注金额和倍数集合</returns>
+        </member>
+        <member name="M:Web.Models.Base.After.ProfitRate(System.Int32,System.Double,System.Int32)">
+            <summary>
+            同倍追号
+            </summary>
+            <param name="num">要追的期数</param>
+            <param name="singBetMoney">本单金额</param>
+            <param name="m">起始倍数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Models.Base.After.ProfitRate(System.Int32,System.Int32,System.Double,System.Int32)">
+            <summary>
+            翻倍追号
+            </summary>
+            <param name="num">要追的期数</param>
+            <param name="singBetMoney">本单金额</param>
+            <param name="m">倍数</param>
+            <param name="Pre">间隔期数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Models.Base.After.GetChaseNumberCount(System.Int32,System.Int32)">
+            <summary>
+            取得可追號期數
+            </summary>
+            <param name="lotteryId">彩種代碼</param>
+            <param name="num">追號數量</param>
+            <returns>
+            回傳期數
+            </returns>
+        </member>
+        <member name="P:Web.Models.Base.PlayConfig.NumberSeprator">
+            <summary>
+            号码分隔符
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.PlayConfig.ShowRenXuanPosition">
+            <summary>
+            是否显示任选的位置
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.PlayConfig.MinPositions">
+            <summary>
+            最少必选的位置数
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.PlayConfig.Type">
+            <summary>
+            玩法（新旧）
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.SummaryModel.OrderList">
+            <summary>
+            今日投注
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.SummaryModel.LotteryList">
+            <summary>
+            今日开奖
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.TodaySummaryModel.SummaryList">
+            <summary>
+            盈亏总览
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.PK10SummaryModel.LongQueueList">
+            <summary>
+            盈亏总览
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.LongQueue.TypeName">
+            <summary>
+            车号
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.LongQueue.Panel">
+            <summary>
+            面
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.LongQueue.Queue">
+            <summary>
+            连续期数
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.SelectFiveLotteryModel.OddEven">
+            <summary>
+            单双
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.SportsLotteryModel.SumValue">
+            <summary>
+            和值
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.SportsLotteryModel.ThreeStarConfiguration">
+            <summary>
+            三星组态
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.RealtimeLotteryModel.ThreeGroupBefore">
+            <summary>
+            前三组
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.RealtimeLotteryModel.ThreeGroupAfter">
+            <summary>
+            后三组
+            </summary>
+        </member>
+        <member name="T:Web.Models.Base.PlayInfoModel">
+            <summary>
+            Play info model.
+            </summary>
+        </member>
+        <member name="T:Web.Models.Base.PlayOddsModel">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:Web.Models.Base.PlayTypeRadioModel">
+            <summary>
+            Play type radio model.
+            </summary>
+        </member>
+        <member name="T:Web.Models.Base.PlayInfoPrizeModel">
+            <summary>
+            Calculate prize model.
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.PlayInfoPrizeModel.PlayTypeName">
+            <summary>
+            Play type name.
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.PlayInfoPrizeModel.PlayTypeRadioName">
+            <summary>
+            Play type radio name(sub item).
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.PlayInfoPrizeModel.RebatePro">
+            <summary>
+            User RebatePro
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.PlayInfoPrizeModel.HabitRebatePro">
+            <summary>
+            0 or RebatePro
+            </summary>
+        </member>
+        <member name="T:Web.Models.Base.PlayInfoPostModel">
+            <summary>
+            Play info post model.
+            </summary>
+        </member>
+        <member name="T:Web.Models.Base.AfterDetailsSearchModel">
+            <summary>
+            After details search model.
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.AfterDetailsSearchModel.CurrentIssueNo">
+            <summary>
+            当期期号
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.AfterDetailsSearchModel.ProfitRate">
+            <summary>
+            盈利率
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.AfterDetailsSearchModel.BetMoney">
+            <summary>
+            单次投注金额，比如是1元或者0.1元
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.AfterDetailsSearchModel.SingleMoney">
+            <summary>
+            单笔投注金额，是这单的总金额
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.AfterDetailsSearchModel.Periods">
+            <summary>
+            要追的期数
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.AfterDetailsSearchModel.Multiple">
+            <summary>
+            倍数
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.AfterDetailsSearchModel.Interval">
+            <summary>
+            间隔期数
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.AfterDetailsSearchModel.PrizeMoney">
+            <summary>
+            奖金金额
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.AfterDetailsSearchModel.AfterType">
+            <summary>
+            追号类型0-利润率追号,1-同倍追号,2-翻倍追号
+            </summary>
+        </member>
+        <member name="T:Web.Models.Base.AfterDetailsModel">
+            <summary>
+            After details model.
+            </summary>
+        </member>
+        <member name="T:Web.Models.Base.AfterDetailModel">
+            <summary>
+            After detail model.
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.AfterDetailModel.Num">
+            <summary>
+            序号
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.AfterDetailModel.IssueNo">
+            <summary>
+            期号
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.AfterDetailModel.Money">
+            <summary>
+            金额
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.AfterDetailModel.Multiple">
+            <summary>
+            倍数
+            </summary>
+        </member>
+        <member name="T:Web.Models.Base.AfterInfoModel">
+            <summary>
+            After info model.
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.AfterInfoModel.PlayNum">
+            <summary>
+            下单号码
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.AfterInfoModel.PlayTypeId">
+            <summary>
+            玩法ID
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.AfterInfoModel.PlayTypeRadioId">
+            <summary>
+            单选玩法ID
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.AfterInfoModel.NoteNum">
+            <summary>
+            注数
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.AfterInfoModel.OrderMoney">
+            <summary>
+            单注金额
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.AfterInfoModel.IsWinStop">
+            <summary>
+            是否中奖停止追号
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.AfterInfoModel.TotalPeriods">
+            <summary>
+            总期数
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.AfterInfoModel.RebatePro">
+            <summary>
+            返点值
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.AfterInfoModel.RebateProMoney">
+            <summary>
+            奖金
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.AfterInfoModel.DetailsStr">
+            <summary>
+            拼接字符串
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.AfterInfoModel.CurrencyUnit">
+            <summary>
+            Currency Unit (1:元, 0.1:分 以此類推)
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.AfterInfoModel.Ratio">
+            <summary>
+            Ratio (倍數)
+            </summary>
+        </member>
+        <member name="T:Web.Models.Base.PagingModel">
+            <summary>
+            Paging model.
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.PalyInfoViewModel.LotteryId">
+            <summary>
+            彩种类型
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.PalyInfoViewModel.LotteryType">
+            <summary>
+            彩种
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.PalyInfoViewModel.IssueNo">
+            <summary>
+            期號
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.PalyInfoViewModel.PlayTypeName">
+            <summary>
+            玩法（四星，五星）
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.PalyInfoViewModel.PlayTypeRadioName">
+            <summary>
+            单选玩法
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.PalyInfoViewModel.Odds">
+            <summary>
+            賠率
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.PalyInfoViewModel.NoteTime">
+            <summary>
+            投注时间
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.PalyInfoViewModel.NoteMoneyText">
+            <summary>
+            投注总额
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.PalyInfoViewModel.PrizeMoney">
+            <summary>
+            亏赢
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.PalyInfoViewModel.Status">
+            <summary>
+            狀態
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.PalyInfoViewModel.StatusText">
+            <summary>
+            狀態顯示文字
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.PalyInfoViewModel.PalyNum">
+            <summary>
+            购买号码
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.PalyInfoViewModel.NoteNum">
+            <summary>
+            投注注数
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.PalyInfoViewModel.WinMoney">
+            <summary>
+            中奖额
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.PalyInfoViewModel.PlayModeId">
+            <summary>
+            一般/專家
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.FollowBetResponse.TotalBetCount">
+            <summary>
+            投注數量
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.FollowBetResponse.TotalWinMoney">
+            <summary>
+            總盈虧
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.FollowBetResponse.TotalPrizeMoney">
+            <summary>
+            派彩總金額
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.FollowBetResponse.NextCursor">
+            <summary>
+            下一頁指標
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.FollowBetResponse.DataDetail">
+            <summary>
+            注單詳細資料
+            </summary>
+        </member>
+        <member name="T:Web.Models.Base.SysSettings">
+            <summary>
+            SysSettings:实体类(属性说明自动提取数据库字段的描述信息)
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.SysSettings.SettingsID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.SysSettings.MaxBetCount">
+            <summary>
+            每次下单最大注数
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.SysSettings.MaxOneBetMoney">
+            <summary>
+            单注下单分数最大值
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.SysSettings.MinOneBetMoney">
+            <summary>
+            单注下单分数最小值
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.SysSettings.MaxBonusMoney">
+            <summary>
+            最大中奖金额
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.SysSettings.MinMoneyOut">
+            <summary>
+            最小提现金额
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.SysSettings.MaxMoneyOutCount">
+            <summary>
+            每天最多提现次数
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.SysSettings.MaxMoneyOut">
+            <summary>
+            最大提现金额
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.SysSettings.MinMoneyIn">
+            <summary>
+            最小充值金额
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.SysSettings.MaxUserRebatePro">
+            <summary>
+            最高配额值，总号使用
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.SysSettings.MinUsdtMoneyOut">
+            <summary>
+            最小提现金额
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.SysSettings.MaxUsdtMoneyOut">
+            <summary>
+            最大提现金额
+            </summary>
+        </member>
+        <member name="F:Web.Models.Base.ZhStrct.multiple">
+            <summary>
+            倍数
+            </summary>
+        </member>
+        <member name="F:Web.Models.Base.ZhStrct.money">
+            <summary>
+            下注金额
+            </summary>
+        </member>
+        <member name="F:Web.Models.Base.ZhStrct.num">
+            <summary>
+            序号
+            </summary>
+        </member>
+        <member name="T:Web.Models.GamePlatformModel">
+            <summary>
+            游戏平台
+            </summary>
+        </member>
+        <member name="P:Web.Models.GamePlatformModel.Id">
+            <summary>
+            游戏平台ID
+            </summary>
+        </member>
+        <member name="P:Web.Models.GamePlatformModel.PlatformName">
+            <summary>
+            平台名称
+            </summary>
+        </member>
+        <member name="P:Web.Models.GamePlatformModel.GameId">
+            <summary>
+            游戏ID
+            </summary>
+        </member>
+        <member name="P:Web.Models.GamePlatformModel.GameName">
+            <summary>
+            游戏名称
+            </summary>
+        </member>
+        <member name="P:Web.Models.GamePlatformModel.GameType">
+            <summary>
+            游戏类型
+            </summary>
+        </member>
+        <member name="P:Web.Models.GamePlatformModel.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:Web.Models.GamePlatformModel.Satus">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:Web.Models.GamePlatformModel.MenuImg">
+            <summary>
+            菜单logo
+            </summary>
+        </member>
+        <member name="P:Web.Models.GamePlatformModel.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Web.Models.GamePlatformModel.CreateUser">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:Web.Models.GamePlatformModel.UpdateDate">
+            <summary>
+            修改人
+            </summary>
+        </member>
+        <member name="P:Web.Models.GamePlatformModel.UpdateUser">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="T:Web.Models.GameType">
+            <summary>
+            游戏类型
+            </summary>
+        </member>
+        <member name="F:Web.Models.GameType.Trueman">
+            <summary>
+            1真人
+            </summary>
+        </member>
+        <member name="F:Web.Models.GameType.Lottery">
+            <summary>
+            2彩票
+            </summary>
+        </member>
+        <member name="F:Web.Models.GameType.Sport">
+            <summary>
+            3体育
+            </summary>
+        </member>
+        <member name="F:Web.Models.GameType.Electron">
+            <summary>
+            4电子
+            </summary>
+        </member>
+        <member name="T:Web.Models.LongResult.LongData">
+            <summary>
+            长龙資料
+            </summary>
+        </member>
+        <member name="P:Web.Models.LongResult.LongData.CurrentIssueNo">
+            <summary>
+            當期期號
+            </summary>
+        </member>
+        <member name="P:Web.Models.LongResult.LongData.LotteryID">
+            <summary>
+            彩种ID
+            </summary>
+        </member>
+        <member name="P:Web.Models.LongResult.LongData.LongInfo">
+            <summary>
+            長龍數據
+            </summary>
+        </member>
+        <member name="P:Web.Models.LongResult.LongData.LotteryTime">
+            <summary>
+            開獎時間 (拿來比對資料新舊用)
+            </summary>
+        </member>
+        <member name="T:Web.Models.LongResult.LongInfo">
+            <summary>
+            長龍數據
+            </summary>
+        </member>
+        <member name="P:Web.Models.LongResult.LongInfo.Type">
+            <summary>
+            長龍類型
+            </summary>
+        </member>
+        <member name="P:Web.Models.LongResult.LongInfo.Content">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:Web.Models.LongResult.LongInfo.Count">
+            <summary>
+            次数
+            </summary>
+        </member>
+        <member name="T:Web.Models.LotteryPlan.LotteryPlanData">
+            <summary>
+            計畫數據
+            </summary>
+        </member>
+        <member name="P:Web.Models.LotteryPlan.LotteryPlanData.CurrentIssueNo">
+            <summary>
+            當期期號
+            </summary>
+        </member>
+        <member name="P:Web.Models.LotteryPlan.LotteryPlanData.LotteryID">
+            <summary>
+            彩种ID
+            </summary>
+        </member>
+        <member name="P:Web.Models.LotteryPlan.LotteryPlanData.CurrentLotteryPlan">
+            <summary>
+            當前跟單計畫
+            </summary>
+        </member>
+        <member name="P:Web.Models.LotteryPlan.LotteryPlanData.LotteryPlayInfos">
+            <summary>
+            跟單數據
+            </summary>
+        </member>
+        <member name="P:Web.Models.LotteryPlan.LotteryPlanData.LotteryTime">
+            <summary>
+            開獎時間 (拿來比對資料新舊用)
+            </summary>
+        </member>
+        <member name="T:Web.Models.LotteryPlan.LotteryPlanInfo">
+            <summary>
+            計畫數據
+            </summary>
+        </member>
+        <member name="P:Web.Models.LotteryPlan.LotteryPlanInfo.TypePlan">
+            <summary>
+            玩法
+            </summary>
+        </member>
+        <member name="P:Web.Models.LotteryPlan.LotteryPlanInfo.LotteryBet">
+            <summary>
+            投注項
+            </summary>
+        </member>
+        <member name="P:Web.Models.LotteryPlan.LotteryPlanInfo.IssueNo">
+            <summary>
+            目前期號
+            </summary>
+        </member>
+        <member name="P:Web.Models.LotteryPlan.LotteryPlanInfo.IssueNos">
+            <summary>
+            計畫期號(規格書設定兩期)
+            </summary>
+        </member>
+        <member name="P:Web.Models.LotteryPlan.LotteryPlanInfo.BetResult">
+            <summary>
+            結果
+            </summary>
+        </member>
+        <member name="P:Web.Models.LotteryPlan.LotteryPlanInfo.Multi">
+            <summary>
+            計畫的倍數
+            </summary>
+        </member>
+        <member name="P:Web.Models.LotteryPlayTypeInfo.IsSuccess">
+            <summary>
+            結果
+            </summary>
+        </member>
+        <member name="P:Web.Models.LotteryPlayTypeInfo.ErrorMessage">
+            <summary>
+            錯誤訊息
+            </summary>
+        </member>
+        <member name="P:Web.Models.LotteryPlayTypeInfo.Data">
+            <summary>
+            資料
+            </summary>
+        </member>
+        <member name="T:Web.Models.PlayConfigData">
+            <summary>
+            設定資料
+            </summary>
+        </member>
+        <member name="M:Web.Models.PlayConfigData.#ctor(System.String,System.Collections.Generic.IList{Web.Models.SpaPlayConfig.PlayMode{Web.Models.SpaPlayConfig.PlayTypeInfoApiResult}},JxLottery.Services.BonusService.IBonusService,JxBackendService.Interface.Model.User.ILotteryUserData)">
+            <summary>
+            建構子
+            </summary>
+            <param name="depositUrl">存款Url</param>
+            <param name="infos">玩法資訊</param>
+            <param name="service">彩票服務</param>
+            <param name="lotteryUserData">userInfo</param>
+        </member>
+        <member name="P:Web.Models.PlayConfigData.DepositUrl">
+            <summary>
+            存款網址
+            </summary>
+        </member>
+        <member name="P:Web.Models.PlayConfigData.PlayConfigs">
+            <summary>
+            玩法資訊
+            </summary>
+        </member>
+        <member name="T:Web.Models.PlayConfig">
+            <summary>
+            玩法資訊
+            </summary>
+        </member>
+        <member name="P:Web.Models.PlayConfig.PlayModeId">
+            <summary>
+            型態(專家，經典)
+            </summary>
+        </member>
+        <member name="P:Web.Models.PlayConfig.PlayTypeList">
+            <summary>
+            玩法大類
+            </summary>
+        </member>
+        <member name="T:Web.Models.PlayTypeList">
+            <summary>
+            玩法大類
+            </summary>
+        </member>
+        <member name="P:Web.Models.PlayTypeList.PlayType">
+            <summary>
+            玩法大類編號
+            </summary>
+        </member>
+        <member name="P:Web.Models.PlayTypeList.PlayTypeName">
+            <summary>
+            玩法大類名稱
+            </summary>
+        </member>
+        <member name="P:Web.Models.PlayTypeList.PlayTypeRadioList">
+            <summary>
+            玩法子類
+            </summary>
+        </member>
+        <member name="T:Web.Models.PlayTypeRadioList">
+            <summary>
+            玩法子類
+            </summary>
+        </member>
+        <member name="P:Web.Models.PlayTypeRadioList.PlayTypeRadio">
+            <summary>
+            玩法子類編號
+            </summary>
+        </member>
+        <member name="P:Web.Models.PlayTypeRadioList.PlayTypeRadioName">
+            <summary>
+            玩法子類名稱
+            </summary>
+        </member>
+        <member name="P:Web.Models.PlayTypeRadioList.PlayTypeRadioViewType">
+            <summary>
+            玩法畫面顯示
+            </summary>
+        </member>
+        <member name="P:Web.Models.PlayTypeRadioList.SelectionList">
+            <summary>
+            頭注項列表
+            </summary>
+        </member>
+        <member name="T:Web.Models.SelectionList">
+            <summary>
+            投注項內容
+            </summary>
+        </member>
+        <member name="P:Web.Models.SelectionList.Selection">
+            <summary>
+            投注項
+            </summary>
+        </member>
+        <member name="P:Web.Models.SelectionList.Odds">
+            <summary>
+            賠率
+            </summary>
+        </member>
+        <member name="T:Web.Models.LHCPlayConfig">
+            <summary>
+            設定六合彩玩法
+            </summary>
+        </member>
+        <member name="P:Web.Models.LHCPlayConfig.GameTypeId">
+            <inheritdoc cref="P:Web.Models.SpaPlayConfig.ISpaPlayConfig.GameTypeId"/>
+        </member>
+        <member name="M:Web.Models.LHCPlayConfig.Get(System.Nullable{System.DateTime})">
+            <summary>
+            
+            </summary>
+            <param name="closeDateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Web.Models.PK10PlayConfig">
+            <summary>
+            PK10玩法設定
+            </summary>
+        </member>
+        <member name="P:Web.Models.PK10PlayConfig.GameTypeId">
+            <inheritdoc cref="P:Web.Models.SpaPlayConfig.ISpaPlayConfig.GameTypeId"/>
+        </member>
+        <member name="T:Web.Models.SSCPlayConfig">
+            <summary>
+            設定時時彩玩法
+            </summary>
+        </member>
+        <member name="P:Web.Models.SSCPlayConfig.GameTypeId">
+            <summary>
+            設定gameTypeID
+            </summary>
+        </member>
+        <member name="M:Web.Models.SSCPlayConfig.Get(System.Nullable{System.DateTime})">
+            <summary>
+            取得
+            </summary>
+            <param name="closeDateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Web.Models.Enums.AfterType.Profit">
+            <summary>
+            利润率追号
+            </summary>
+        </member>
+        <member name="F:Web.Models.Enums.AfterType.SameMultilple">
+            <summary>
+            同倍追号
+            </summary>
+        </member>
+        <member name="F:Web.Models.Enums.AfterType.DoubleMultilple">
+            <summary>
+            翻倍追号
+            </summary>
+        </member>
+        <member name="T:Web.Models.Enums.AwardStatus">
+            <summary>
+            AwardStatus
+            </summary>
+        </member>
+        <member name="F:Web.Models.Enums.AwardStatus.Confirming">
+            <summary>
+            待确认
+            </summary>
+        </member>
+        <member name="F:Web.Models.Enums.AwardStatus.Unawarded">
+            <summary>
+            待开奖
+            </summary>
+        </member>
+        <member name="F:Web.Models.Enums.AwardStatus.IsDone">
+            <summary>
+            已開奖(where db使用)
+            </summary>
+        </member>
+        <member name="F:Web.Models.Enums.AwardStatus.OpenFail">
+            <summary>
+            开奖失败
+            </summary>
+        </member>
+        <member name="F:Web.Models.Enums.AwardStatus.Canceled">
+            <summary>
+            撤单
+            </summary>
+        </member>
+        <member name="F:Web.Models.Enums.AwardStatus.Opening">
+            <summary>
+            正在开奖
+            </summary>
+        </member>
+        <member name="F:Web.Models.Enums.AwardStatus.Abandoned">
+            <summary>
+            废单
+            </summary>
+        </member>
+        <member name="F:Web.Models.Enums.AwardStatus.SystemCancel">
+            <summary>
+            开奖后撤单
+            </summary>
+        </member>
+        <member name="F:Web.Models.Enums.AwardStatus.Tie">
+            <summary>
+            和局
+            </summary>
+        </member>
+        <member name="F:Web.Models.Enums.AwardStatus.Won">
+            <summary>
+            已中奖
+            </summary>
+        </member>
+        <member name="F:Web.Models.Enums.AwardStatus.Lost">
+            <summary>
+            未中獎
+            </summary>
+        </member>
+        <member name="T:Web.Models.SpaPlayConfig.Field">
+            <summary>
+            單排按鈕區塊
+            </summary>
+        </member>
+        <member name="P:Web.Models.SpaPlayConfig.Field.Prompt">
+            <summary>
+            標籤
+            </summary>
+        </member>
+        <member name="P:Web.Models.SpaPlayConfig.Field.Numbers">
+            <summary>
+            按鈕
+            </summary>
+        </member>
+        <member name="T:Web.Models.SpaPlayConfig.ISpaPlayConfig">
+            <summary>
+            Spa Play Config interface
+            </summary>
+        </member>
+        <member name="P:Web.Models.SpaPlayConfig.ISpaPlayConfig.GameTypeId">
+            <summary>
+            玩法大類
+            </summary>
+        </member>
+        <member name="M:Web.Models.SpaPlayConfig.ISpaPlayConfig.Get(System.Nullable{System.DateTime})">
+            <summary>
+            所有的玩法大類
+            </summary>
+            <param name="closeDateTime">封單時間</param>
+            <returns>玩法陣列</returns>
+        </member>
+        <member name="T:Web.Models.SpaPlayConfig.PlayMode`1">
+            <summary>
+            玩法大類
+            </summary>
+        </member>
+        <member name="P:Web.Models.SpaPlayConfig.PlayMode`1.PlayModeId">
+            <summary>
+            玩法大類Id
+            </summary>
+        </member>
+        <member name="P:Web.Models.SpaPlayConfig.PlayMode`1.PlayModeName">
+            <summary>
+            顯示名稱
+            </summary>
+        </member>
+        <member name="P:Web.Models.SpaPlayConfig.PlayMode`1.PlayTypeInfos">
+            <summary>
+            所有的玩法
+            </summary>
+        </member>
+        <member name="T:Web.Models.SpaPlayConfig.PlayTypeInfo">
+            <summary>
+            玩法類別
+            </summary>
+        </member>
+        <member name="T:Web.Models.SpaPlayConfig.PlayTypeInfoApiResult">
+            <summary>
+            玩法類別
+            </summary>
+        </member>
+        <member name="T:Web.Models.SpaPlayConfig.PlayTypeInfoBase`1">
+            <summary>
+            玩法類別
+            </summary>
+        </member>
+        <member name="P:Web.Models.SpaPlayConfig.PlayTypeInfoBase`1.Info">
+            <summary>
+            PlayTypeInfo 資料庫資料
+            </summary>
+        </member>
+        <member name="P:Web.Models.SpaPlayConfig.PlayTypeInfoBase`1.PlayTypeEnum">
+            <summary>
+            玩法Enum名稱
+            </summary>
+        </member>
+        <member name="P:Web.Models.SpaPlayConfig.PlayTypeInfoBase`1.BasePlayTypeId">
+            <summary>
+            玩法的基礎Id
+            </summary>
+        </member>
+        <member name="P:Web.Models.SpaPlayConfig.PlayTypeInfoBase`1.PlayTypeRadioInfos">
+            <summary>
+            玩法子類的陣列
+            </summary>
+        </member>
+        <member name="T:Web.Models.SpaPlayConfig.PlayTypeRadioInfo">
+            <summary>
+            玩法子類
+            </summary>
+        </member>
+        <member name="P:Web.Models.SpaPlayConfig.PlayTypeRadioInfo.ViewType">
+            <summary>
+            App用畫面呈現
+            </summary>
+        </member>
+        <member name="P:Web.Models.SpaPlayConfig.PlayTypeRadioInfo.Fields">
+            <summary>
+             所有的按鈕
+            </summary>
+        </member>
+        <member name="P:Web.Models.SpaPlayConfig.PlayTypeRadioInfo.Info">
+            <summary>
+            PlayTypeInfo 資料庫資料
+            </summary>
+        </member>
+        <member name="P:Web.Models.SpaPlayConfig.PlayTypeRadioInfo.PlayTypeRadioEnum">
+            <summary>
+            玩法Enum名稱
+            </summary>
+        </member>
+        <member name="P:Web.Models.SpaPlayConfig.PlayTypeRadioInfo.BasePlayTypeRadioId">
+            <summary>
+            子玩法基礎Id
+            </summary>
+        </member>
+        <member name="P:Web.Models.SpaPlayConfig.PlayTypeRadioInfo.CanPlayAfter">
+            <summary>
+            是否可以下追號單
+            </summary>
+        </member>
+        <member name="P:Web.Models.K3PlayConfig.GameTypeId">
+            <inheritdoc cref="P:Web.Models.SpaPlayConfig.ISpaPlayConfig.GameTypeId"/>
+        </member>
+        <member name="P:Web.Models.SpaTrend.K3TrendDetailModel.KuaWei">
+            <summary>
+            跨位
+            </summary>
+        </member>
+        <member name="P:Web.Models.SpaTrend.K3TrendDetailModel.Bai">
+            <summary>
+            百位
+            </summary>
+        </member>
+        <member name="P:Web.Models.SpaTrend.K3TrendDetailModel.Shi">
+            <summary>
+            十位
+            </summary>
+        </member>
+        <member name="P:Web.Models.SpaTrend.K3TrendDetailModel.Ge">
+            <summary>
+            各位
+            </summary>
+        </member>
+        <member name="P:Web.Models.SpaTrend.K3TrendDetailModel.HeZhiFenBu">
+            <summary>
+            和值分布
+            </summary>
+        </member>
+        <member name="P:Web.Models.SpaTrend.K3TrendDetailModel.DaXiao">
+            <summary>
+            大小
+            </summary>
+        </member>
+        <member name="P:Web.Models.SpaTrend.K3TrendDetailModel.IsDa">
+            <summary>
+            大?
+            </summary>
+        </member>
+        <member name="P:Web.Models.SpaTrend.K3TrendDetailModel.DanShuang">
+            <summary>
+            单双
+            </summary>
+        </member>
+        <member name="P:Web.Models.SpaTrend.K3TrendDetailModel.IsDan">
+            <summary>
+            单?
+            </summary>
+        </member>
+        <member name="M:Web.Services.CacheService.GetOrSetByRedis``1(System.String,System.Func{``0},System.DateTime)">
+            <summary>
+            如果 Redis 沒有就重取
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="getData"></param>
+            <param name="expiredTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.CacheService.GetByRedis``1(System.String)">
+            <summary>
+            如果直接從Redis取
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.CacheService.GetByRedisRawData``1(System.String)">
+            <summary>
+            如果直接從Redis取
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.ILotterySpaService.GetLongData(System.Int32)">
+            <summary>
+            取得長龍資訊
+            </summary>
+            <param name="lotteryId">彩種編號</param>
+            <returns>長龍資訊</returns>
+        </member>
+        <member name="M:Web.Services.ILotterySpaService.GetLotteryPlanData(System.Int32,System.Int32)">
+            <summary>
+            取得跟單計畫資訊
+            </summary>
+            <param name="lotteryId">彩種編號</param>
+            <param name="planType">計畫類別</param>
+            <returns>跟單計畫資訊</returns>
+        </member>
+        <member name="M:Web.Services.IPlayInfoService.InsertPlayInfo(SLPolyGame.Web.Model.PalyInfo)">
+            <summary>
+            时时彩下单请求
+            </summary>
+            <param name="playInfo">PalyInfo实体</param>
+            <returns>返回信息是一个palyinfo实体，可通过实体参数UserName判断下单情况</returns>
+        </member>
+        <member name="M:Web.Services.IPlayInfoService.GetPlayBet(System.String)">
+            <summary>
+            获取单个时时彩单的信息
+            </summary>
+            <param name="playId">单编号</param>
+            <returns>PalyInfo实体，里边包含单个单的信息</returns>
+        </member>
+        <member name="M:Web.Services.IUserService.GetUserInfo">
+            <summary>
+            根据用户名获取用户信息
+            </summary>
+        </member>
+        <member name="M:Web.Services.IUserService.GetUserInfo(System.Int32)">
+            <summary>
+            根据用户名获取用户信息
+            </summary>
+        </member>
+        <member name="M:Web.Services.IUserService.GetSysSettings">
+            <summary>
+            系统配置信息获取
+            </summary>
+        </member>
+        <member name="T:Web.Services.FakeWinningListItem">
+            <summary>
+            假資料用
+            </summary>
+        </member>
+        <member name="P:Web.Services.FakeWinningListItem.UserName">
+            <summary>
+            使用者
+            </summary>
+        </member>
+        <member name="P:Web.Services.FakeWinningListItem.LotteryName">
+            <summary>
+            彩種名
+            </summary>
+        </member>
+        <member name="P:Web.Services.FakeWinningListItem.AmountText">
+            <summary>
+            中獎金額
+            </summary>
+        </member>
+        <member name="P:Web.Services.FakeWinningListItem.NoteTime">
+            <summary>
+            下注時間
+            </summary>
+        </member>
+        <member name="M:Web.Services.FakeWinningListItem.Convert">
+            <summary>
+            轉換成WinningListItem格式
+            </summary>
+            <returns>WinningListItem格式</returns>
+        </member>
+        <member name="T:Web.Services.WinningLotterySetting">
+            <summary>
+            彩票大獎設定
+            </summary>
+        </member>
+        <member name="P:Web.Services.WinningLotterySetting.LotteryType">
+            <summary>
+            彩種名稱
+            </summary>
+        </member>
+        <member name="P:Web.Services.WinningLotterySetting.Odds">
+            <summary>
+            彩種賠率
+            </summary>
+        </member>
+        <member name="P:Web.Services.WinningLotterySetting.Rate">
+            <summary>
+            彩種出現比率
+            </summary>
+        </member>
+        <member name="P:Web.Services.LatestWinningSetting.LotteryInfoSettings">
+            <summary>
+            彩種設定
+            </summary>
+        </member>
+        <member name="P:Web.Services.LatestWinningSetting.UserNames">
+            <summary>
+            使用者名稱
+            </summary>
+        </member>
+        <member name="P:Web.Services.LatestWinningSetting.BetRange">
+            <summary>
+            注金的區間
+            </summary>
+        </member>
+        <member name="P:Web.Services.LatestWinningSetting.UserCounts">
+            <summary>
+            使用者數量
+            </summary>
+        </member>
+        <member name="P:Web.Services.LatestWinningSetting.UserCountMax">
+            <summary>
+            使用者數量的最大值
+            </summary>
+        </member>
+        <member name="P:Web.Services.LatestWinningSetting.LotteryInfoMax">
+            <summary>
+            彩種設定的最大值
+            </summary>
+        </member>
+        <member name="P:Web.Services.LatestWinningSetting.MaxCount">
+            <summary>
+            假資料最多多少筆
+            </summary>
+        </member>
+        <member name="T:Web.Services.LatestWinningService">
+            <summary>
+            大獎的服務
+            </summary>
+        </member>
+        <member name="F:Web.Services.LatestWinningService._polyGameServiceClient">
+            <summary>
+            取大獎資訊的wcf
+            </summary>
+        </member>
+        <member name="P:Web.Services.LatestWinningService.LatestWinnningTextFormat">
+            <summary>
+            大獎公告的字樣
+            </summary>
+        </member>
+        <member name="P:Web.Services.LatestWinningService.Settings">
+            <summary>
+            大獎相關設定
+            </summary>
+        </member>
+        <member name="P:Web.Services.LatestWinningService.RefreshMilliseconds">
+            <summary>
+            刷新的毫秒
+            </summary>
+        </member>
+        <member name="P:Web.Services.LatestWinningService.TimerForSetCache">
+            <summary>
+            計時器
+            </summary>
+        </member>
+        <member name="P:Web.Services.LatestWinningService._rand">
+            <summary>
+            亂數產生器
+            </summary>
+        </member>
+        <member name="M:Web.Services.LatestWinningService.Init">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="M:Web.Services.LatestWinningService.End">
+            <summary>
+            結束
+            </summary>
+        </member>
+        <member name="M:Web.Services.LatestWinningService.ChangeService(SLPolyGame.Web.Interface.ISLPolyGameWebSVService)">
+            <summary>
+            wcf服務變更，主備交換
+            </summary>
+            <param name="polyGameServiceClient">是否用主要服務</param>
+        </member>
+        <member name="M:Web.Services.LatestWinningService.RefreshLatestWinnings">
+            <summary>
+            刷新大獎資訊
+            </summary>
+        </member>
+        <member name="M:Web.Services.LatestWinningService.CreateFake(System.Int32)">
+            <summary>
+            產生假資料
+            </summary>
+            <param name="needCount">需要的數量</param>
+            <returns>假資料的內容</returns>
+        </member>
+        <member name="M:Web.Services.LatestWinningService.ConvertName(System.String)">
+            <summary>
+            混淆使用者名稱
+            </summary>
+            <param name="userName">輸入的使用者名稱</param>
+            <returns>混淆後的使用者名稱</returns>
+        </member>
+        <member name="M:Web.Services.LotteryService.GetTodaySummaryInfo(System.Int32,System.Int32,System.Nullable{System.Boolean})">
+            <summary>
+            GetTodaySummaryInfo
+            </summary>
+            <param name="lotteryID"></param>
+            <param name="count"></param>
+            <param name="LoadType">true，从主库读取，false，从备库读取</param>
+            <returns></returns>
+        </member>
+        <member name="T:Web.Services.LotterySpaService">
+            <summary>
+            彩票相關服務抽共用
+            </summary>
+        </member>
+        <member name="M:Web.Services.LotterySpaService.LongResultRedisCacheName(System.Int32)">
+            <summary>
+            長龍Redis快取的名稱
+            </summary>
+        </member>
+        <member name="M:Web.Services.LotterySpaService.LotteryPlanRedisCacheName(System.Int32,System.Int32)">
+            <summary>
+            跟單計畫Redis快取的名稱
+            </summary>
+        </member>
+        <member name="F:Web.Services.LotterySpaService._playInfoService">
+            <summary>
+            User service.
+            </summary>
+        </member>
+        <member name="M:Web.Services.LotterySpaService.GetNextIssueNo(System.Int32,System.Int32)">
+            <summary>
+            下期期號
+            </summary>
+            <returns>下期期號</returns>
+        </member>
+        <member name="M:Web.Services.LotterySpaService.GeneratePlayInfo(Web.Models.Base.PlayInfoPostModel,SLPolyGame.Web.Model.UserInfo)">
+            <summary>
+            Generate play info instance of interface.
+            </summary>
+            <param name="model">Post play info model.</param>
+            <param name="userInfo">userInfo</param>
+            <returns>Play info instance</returns>
+        </member>
+        <member name="M:Web.Services.LotterySpaService.GetMultiOdds(JxLottery.Services.BonusService.IBonusService,JxLottery.Models.Lottery.Bet.PlayInfo)">
+            <summary>
+            舊彩種取的多重賠率的方法
+            </summary>
+            <param name="service">獎金服務</param>
+            <param name="playInfo">注單資訊</param>
+            <returns>多重賠率</returns>
+        </member>
+        <member name="M:Web.Services.LotterySpaService.GetRebateOdds(JxLottery.Services.BonusService.IBonusService,JxLottery.Models.Lottery.Bet.PlayInfo)">
+            <summary>
+            舊彩種取得單一賠率的方法
+            </summary>
+            <param name="service">獎金服務</param>
+            <param name="playInfo">注單資訊</param>
+            <returns>賠率</returns>
+        </member>
+        <member name="M:Web.Services.LotterySpaService.GetLongData(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Web.Services.LotterySpaService.GetLotteryPlanData(System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="F:Web.Services.PlayInfoService._cacheService">
+            <summary>
+            CacheService
+            </summary>
+        </member>
+        <member name="F:Web.Services.PlayInfoService._slPolyGameWebSVService">
+            <summary>
+            SLPolyGameService client.
+            </summary>
+        </member>
+        <member name="M:Web.Services.PlayInfoService.#ctor(SLPolyGame.Web.Interface.ISLPolyGameWebSVService,Web.Services.ICacheService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Web.Services.PlayInfoService" /> class.
+            </summary>
+        </member>
+    </members>
+</doc>

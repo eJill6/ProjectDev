@@ -1,0 +1,11 @@
+﻿@using Web.Extensions
+@using Web.Helpers;
+@Html.ImportJavaScripts(@WebResourceHelper.Content("~/Content/CTS/dist/js/jquery/jquery-3.6.0.min.js"),
+    @WebResourceHelper.Content("~/Content/CTS/dist/js/jquery/jquery-ui.min.js"),
+    @WebResourceHelper.Content("~/Content/CTS/dist/js/jquery/jquery.tmpl.min.js"),
+    @WebResourceHelper.Content("~/Content/CTS/dist/js/jquery/jquery.unobtrusive-ajax.js"),
+    @WebResourceHelper.Content("~/Content/CTS/dist/js/validator/jquery.validator.js"),
+    @WebResourceHelper.Content("~/Content/CTS/dist/js/jquery/jquery.extensions.js"),
+    @WebResourceHelper.Content("~/Content/CTS/dist/js/validator/local/zh_CN.js"),
+    @WebResourceHelper.Content("~/Content/CTS/dist/js/layer/layer.js"),
+    @WebResourceHelper.Content("~/Content/js/jquery/jquery.extensions.js"))
