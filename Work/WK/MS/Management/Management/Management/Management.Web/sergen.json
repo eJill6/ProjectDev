@@ -1,0 +1,37 @@
+{
+  "RootNamespace": "Management",
+  "ServerTypings": {
+    "LocalTexts": true
+  },
+  "EndOfLine": "LF",
+  "Restore": {
+    "Exclude": [
+      "/**/*"
+    ]
+  },
+  "Connections": [
+    {
+      "Key": "Inlodb",
+      "ConnectionString": "Data Source=mslottery-dev-db.ark88.net,1433;Trust Server Certificate=true;Initial Catalog=Inlodb;Persist Security Info=True;User ID=LotteryUranus;Password=LotteryUranus;",
+      "ProviderName": "System.Data.SqlClient",
+      "Tables": [
+        {
+          "Tablename": "dbo.CurrentLotteryInfo",
+          "Identifier": "LotteryNum",
+          "Module": "LotteryHistory",
+          "PermissionKey": "LotteryHistory:LotteryNum"
+        },
+        {
+          "Tablename": "dbo.FrontsideMenu",
+          "Identifier": "FrontsideMenu",
+          "Module": "ProductManagement",
+          "PermissionKey": "ProductManagement:FrontsideMenu"
+        }
+      ]
+    }
+  ],
+  "UpgradeInfo": {
+    "InitialType": "Community",
+    "InitialVersion": "6.5.1.0"
+  }
+}
