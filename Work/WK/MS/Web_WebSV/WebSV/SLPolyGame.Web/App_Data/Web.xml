@@ -1,0 +1,256 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SLPolyGame.Web</name>
+    </assembly>
+    <members>
+        <member name="T:SLPolyGame.Web.Controllers.Base.BaseApiController">
+            <summary>底層Controller</summary>
+        </member>
+        <member name="M:SLPolyGame.Web.Controllers.Base.BaseApiController.#ctor">
+            <summary>ctor</summary>
+        </member>
+        <member name="P:SLPolyGame.Web.Controllers.Base.BaseApiController.EnvLoginUser">
+            <summary>
+            登入用戶
+            </summary>
+        </member>
+        <member name="T:SLPolyGame.Web.Controllers.LivesController">
+            <summary>
+            第三方直播信息
+            </summary>
+        </member>
+        <member name="M:SLPolyGame.Web.Controllers.LivesController.#ctor">
+            <summary>ctor</summary>
+        </member>
+        <member name="M:SLPolyGame.Web.Controllers.LivesController.GetAnchors">
+            <summary>
+            获取主播列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SLPolyGame.Web.Controllers.TransferController">
+            <summary>轉帳</summary>
+        </member>
+        <member name="M:SLPolyGame.Web.Controllers.TransferController.#ctor">
+            <summary>TransferController ctor</summary>
+        </member>
+        <member name="M:SLPolyGame.Web.Controllers.TransferController.TransferOutAllTPGameBalance(System.Int32)">
+            <summary>轉回所有第三方遊戲餘額</summary>
+        </member>
+        <member name="M:SLPolyGame.Web.Controllers.TransferController.TransferOutLastTPGameBalance(System.Int32)">
+            <summary>轉回上一次進入的第三方遊戲餘額</summary>
+        </member>
+        <member name="M:SLPolyGame.Web.Controllers.TransferController.ClearLastAutoTransInfo(JxBackendService.Model.ViewModel.EnvironmentUser)">
+            <summary>清除上一家自動轉入ProductCode</summary>
+        </member>
+        <member name="T:SLPolyGame.Web.Controllers.AccountController">
+            <summary>
+            帳號功能控制器
+            </summary>
+        </member>
+        <member name="M:SLPolyGame.Web.Controllers.AccountController.#ctor(SLPolyGame.Web.BLL.PalyInfo,SLPolyGame.Web.BLL.CurrentLotteryInfo)">
+            <summary>ctor</summary>
+        </member>
+        <member name="M:SLPolyGame.Web.Controllers.AccountController.GetOrder(System.String)">
+            <summary>
+            取得訂單
+            </summary>
+            <param name="serialNumber">訂單編號</param>
+            <returns>訂單資訊</returns>
+        </member>
+        <member name="M:SLPolyGame.Web.Controllers.AccountController.GetOrders(System.String,System.String,System.String)">
+            <summary>
+            取得自營彩票訂單
+            </summary>
+            <param name="startTime">起始時間</param>
+            <param name="endTime">結束時間</param>
+            <param name="gameId">彩票玩法編號</param>
+            <returns>訂單資訊</returns>
+        </member>
+        <member name="M:SLPolyGame.Web.Controllers.AccountController.GetTPGameOrders(System.String,System.String,System.String)">
+            <summary>
+            取得第三方遊戲訂單
+            </summary>
+            <param name="startTime">起始時間</param>
+            <param name="endTime">結束時間</param>
+            <param name="gameId">第三方產品代碼</param>
+            <returns>訂單資訊</returns>
+        </member>
+        <member name="M:SLPolyGame.Web.Controllers.AccountController.GetTPGameBalances(System.Int32)">
+            <summary>取得各家第三方餘額</summary>
+        </member>
+        <member name="M:SLPolyGame.Web.Controllers.AccountController.GetLotteryBettingOrders(System.String,System.String,System.String)">
+            <summary> 彩票投注紀錄 </summary>
+        </member>
+        <member name="M:SLPolyGame.Web.Controllers.AccountController.GetAllGamePlayInfoHistory(System.DateTime,System.DateTime,JxBackendService.Model.Enums.MiseOrder.MiseOrderGameId)">
+            <summary> 所有投注紀錄 </summary>
+        </member>
+        <member name="M:SLPolyGame.Web.Controllers.OrderController.GetGameIdList">
+            <summary>
+            gameId與訂單類型關聯
+            </summary>
+        </member>
+        <member name="T:SLPolyGame.Web.Filters.ApiLogRequestAttribute">
+            <summary>
+            ApiLogRequestAttribute
+            </summary>
+        </member>
+        <member name="M:SLPolyGame.Web.Filters.ApiLogRequestAttribute.OnActionExecuting(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            OnActionExecuting
+            </summary>
+        </member>
+        <member name="M:SLPolyGame.Web.Filters.ApiLogRequestAttribute.OnActionExecuted(System.Web.Http.Filters.HttpActionExecutedContext)">
+            <summary>
+            記錄response
+            </summary>
+        </member>
+        <member name="T:SLPolyGame.Web.Filters.ApiExceptionFilterAttribute">
+            <summary>
+            ApiExceptionFilter
+            </summary>
+        </member>
+        <member name="M:SLPolyGame.Web.Filters.ApiExceptionFilterAttribute.ExecuteExceptionFilterAsync(System.Web.Http.Filters.HttpActionExecutedContext,System.Threading.CancellationToken)">
+            <summary>
+            ExecuteExceptionFilterAsync
+            </summary>
+        </member>
+        <member name="T:SLPolyGame.Web.Filters.Base.BaseApiFilterAttribute">
+            <summary>
+            BaseApiFilterAttribute
+            </summary>
+        </member>
+        <member name="F:SLPolyGame.Web.Filters.Base.BaseApiFilterAttribute._environmentUser">
+            <summary>
+            配合當參數用
+            </summary>
+        </member>
+        <member name="P:SLPolyGame.Web.Filters.Base.BaseApiFilterAttribute.EnvironmentUser">
+            <summary>EnvironmentUser</summary>
+        </member>
+        <member name="M:SLPolyGame.Web.Helpers.RestRequestParameterHelper.AddParameter(System.String,System.Object)">
+            <summary>
+            key,value設定參數
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SLPolyGame.Web.Helpers.RestRequestParameterHelper.AddTextPlainBody(System.String)">
+            <summary>
+            TextPlain
+            </summary>
+            <param name="body"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SLPolyGame.Web.Helpers.RestRequestParameterHelper.AddParameter(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            key,value設定參數
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SLPolyGame.Web.Helpers.RestRequestHelper.#ctor(System.String,RestSharp.Authenticators.IAuthenticator)">
+            <summary>
+            
+            </summary>
+            <param name="url"></param>
+            <param name="authenticator">HttpBasicAuthenticator</param>
+        </member>
+        <member name="M:SLPolyGame.Web.Helpers.RestRequestHelper.Request(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="baseUrl"></param>
+            <param name="apiUrl"></param>
+            <param name="authenticator">HttpBasicAuthenticator</param>
+            <returns></returns>
+        </member>
+        <member name="M:SLPolyGame.Web.Helpers.RestRequestHelper.Get(System.Action{SLPolyGame.Web.Helpers.RestRequestParameterHelper},System.Nullable{System.TimeSpan})">
+            <summary>
+            Get方法
+            </summary>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SLPolyGame.Web.Helpers.RestRequestHelper.Put(System.Action{SLPolyGame.Web.Helpers.RestRequestParameterHelper},System.Nullable{System.TimeSpan})">
+            <summary>
+            Put方法
+            </summary>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SLPolyGame.Web.Helpers.RestRequestHelper.ResponseAsync``1">
+            <summary>
+            自訂回傳類型
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:SLPolyGame.Web.Models.MMModels.ApiResponse`1">
+            <inheritdoc/>
+            <typeparam name="TData">資料</typeparam>
+        </member>
+        <member name="P:SLPolyGame.Web.Models.MMModels.ApiResponse`1.Data">
+            <summary>
+            資料
+            </summary>
+        </member>
+        <member name="P:SLPolyGame.Web.Models.MMModels.ApiResponse.IsSuccess">
+            <summary>
+            是否成功
+            </summary>
+        </member>
+        <member name="P:SLPolyGame.Web.Models.MMModels.ApiResponse.Message">
+            <summary>
+            訊息
+            </summary>
+        </member>
+        <member name="P:SLPolyGame.Web.Models.MMModels.ApiResponse.Code">
+            <summary>
+            錯誤碼
+            </summary>
+        </member>
+        <member name="T:SLPolyGame.Web.Models.MMModels.SignInData">
+            <summary>
+            登入參數
+            </summary>
+        </member>
+        <member name="P:SLPolyGame.Web.Models.MMModels.SignInData.UserId">
+            <summary>
+            帳號
+            </summary>
+        </member>
+        <member name="P:SLPolyGame.Web.Models.MMModels.SignInData.Nickname">
+            <summary>
+            帳號
+            </summary>
+        </member>
+        <member name="T:SLPolyGame.Web.Models.MMModels.SignInResponse">
+            <summary>
+            登入回應
+            </summary>
+        </member>
+        <member name="P:SLPolyGame.Web.Models.MMModels.SignInResponse.AccessToken">
+            <summary>
+            Access token
+            </summary>
+        </member>
+        <member name="M:SLPolyGame.Web.ISerTabService.GetPlayTypeRadio">
+            <summary>
+            获取各彩种购买单选方式
+            </summary>
+        </member>
+        <member name="M:SLPolyGame.Web.SerTabService.GetUserInfoToken">
+            <summary>获取缓存用户信息</summary>
+        </member>
+        <member name="M:SLPolyGame.Web.SLPolyGameService.GetUserInfoToken">
+            <summary>获取缓存用户信息</summary>
+        </member>
+        <member name="M:SLPolyGame.Web.ThirdPartyApiService.GetUserInfoToken">
+            <summary>获取缓存用户信息</summary>
+        </member>
+    </members>
+</doc>
