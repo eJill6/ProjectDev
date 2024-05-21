@@ -1,0 +1,982 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="All" xml:space="preserve">
+    <value>全部</value>
+  </data>
+  <data name="AuditStatus_Availabled" xml:space="preserve">
+    <value>可领取</value>
+  </data>
+  <data name="AuditStatus_Debt" xml:space="preserve">
+    <value>欠款</value>
+  </data>
+  <data name="AuditStatus_NoDebt" xml:space="preserve">
+    <value>欠款结清</value>
+  </data>
+  <data name="AuditStatus_Processing" xml:space="preserve">
+    <value>处理中</value>
+  </data>
+  <data name="AuditStatus_Received" xml:space="preserve">
+    <value>已领取</value>
+  </data>
+  <data name="AuditStatus_Verifing" xml:space="preserve">
+    <value>审核中</value>
+  </data>
+  <data name="BetResultType_Draw" xml:space="preserve">
+    <value>平</value>
+  </data>
+  <data name="BetResultType_Lose" xml:space="preserve">
+    <value>输</value>
+  </data>
+  <data name="BetResultType_Win" xml:space="preserve">
+    <value>赢</value>
+  </data>
+  <data name="BlackIpType_DepositByCardToCard" xml:space="preserve">
+    <value>卡对卡充值限制</value>
+  </data>
+  <data name="BlackIpType_DepositByThirdParty" xml:space="preserve">
+    <value>第三方充值限制</value>
+  </data>
+  <data name="BlackIpType_DepositByTransferToCard" xml:space="preserve">
+    <value>充值宝&amp;微信转卡充值限制</value>
+  </data>
+  <data name="BlackIpType_Login" xml:space="preserve">
+    <value>登陆限制</value>
+  </data>
+  <data name="CommissionGroupType_BoardGame" xml:space="preserve">
+    <value>棋牌</value>
+  </data>
+  <data name="CommissionGroupType_ESport" xml:space="preserve">
+    <value>体育电竞</value>
+  </data>
+  <data name="CommissionGroupType_Live" xml:space="preserve">
+    <value>真人</value>
+  </data>
+  <data name="CommissionGroupType_Live_Backend" xml:space="preserve">
+    <value>真人娱乐</value>
+  </data>
+  <data name="CommissionGroupType_OtherLottery" xml:space="preserve">
+    <value>其它彩票</value>
+  </data>
+  <data name="CommissionGroupType_PlatformLottery" xml:space="preserve">
+    <value>AMD彩票</value>
+  </data>
+  <data name="CommissionGroupType_Slot" xml:space="preserve">
+    <value>电子</value>
+  </data>
+  <data name="DownloadFileStatusOverMaxRowCount" xml:space="preserve">
+    <value>超过资料笔数最大数量</value>
+  </data>
+  <data name="GameAccount" xml:space="preserve">
+    <value>游戏帐号</value>
+  </data>
+  <data name="InnerMenu_BuyHistory" xml:space="preserve">
+    <value>购买记录</value>
+  </data>
+  <data name="IsMinus_HasDebt" xml:space="preserve">
+    <value>欠款</value>
+  </data>
+  <data name="IsMinus_NoDebt" xml:space="preserve">
+    <value>未欠款</value>
+  </data>
+  <data name="IsMinus_NoDebtByManual" xml:space="preserve">
+    <value>未欠款</value>
+  </data>
+  <data name="LoginType_Email" xml:space="preserve">
+    <value>邮箱</value>
+  </data>
+  <data name="LoginType_UserName" xml:space="preserve">
+    <value>帐号</value>
+  </data>
+  <data name="LotteryInnerMenu_AfterHistory" xml:space="preserve">
+    <value>彩票追号</value>
+  </data>
+  <data name="LotteryInnerMenu_PlayInfoHistory" xml:space="preserve">
+    <value>购彩记录</value>
+  </data>
+  <data name="MoneyInActionName" xml:space="preserve">
+    <value>充值</value>
+  </data>
+  <data name="MoneyOutActionName" xml:space="preserve">
+    <value>提款</value>
+  </data>
+  <data name="PasswordTypeRecommend_Login" xml:space="preserve">
+    <value>*密码建议包含英文字母和数字、特殊字符增加密码强度</value>
+  </data>
+  <data name="PasswordTypeRecommend_Money" xml:space="preserve">
+    <value>*密码建议包含特殊字符，长度越长越安全</value>
+  </data>
+  <data name="PasswordTypeShortName_Login" xml:space="preserve">
+    <value>登录</value>
+  </data>
+  <data name="PasswordTypeShortName_Money" xml:space="preserve">
+    <value>资金</value>
+  </data>
+  <data name="PasswordType_Login" xml:space="preserve">
+    <value>登录密码</value>
+  </data>
+  <data name="PasswordType_Money" xml:space="preserve">
+    <value>资金密码</value>
+  </data>
+  <data name="PlzChoice" xml:space="preserve">
+    <value>请选择</value>
+  </data>
+  <data name="ProductType_BoardGame" xml:space="preserve">
+    <value>棋牌</value>
+  </data>
+  <data name="ProductType_ESports" xml:space="preserve">
+    <value>电竞</value>
+  </data>
+  <data name="ProductType_LiveCasino" xml:space="preserve">
+    <value>真人</value>
+  </data>
+  <data name="ProductType_Lottery" xml:space="preserve">
+    <value>顶盛彩票</value>
+  </data>
+  <data name="ProductType_OtherLottery" xml:space="preserve">
+    <value>其他彩票</value>
+  </data>
+  <data name="ProductType_Slots" xml:space="preserve">
+    <value>电子</value>
+  </data>
+  <data name="ProductType_Sports" xml:space="preserve">
+    <value>体育</value>
+  </data>
+  <data name="ProfitLoss" xml:space="preserve">
+    <value>盈亏</value>
+  </data>
+  <data name="ProfitLossReportTabType_MenuPrefix_BoardGame" xml:space="preserve">
+    <value>棋牌</value>
+  </data>
+  <data name="ProfitLossReportTabType_MenuPrefix_ESport" xml:space="preserve">
+    <value>电竞</value>
+  </data>
+  <data name="ProfitLossReportTabType_MenuPrefix_Live" xml:space="preserve">
+    <value>真人</value>
+  </data>
+  <data name="ProfitLossReportTabType_MenuPrefix_Lottery" xml:space="preserve">
+    <value>彩票</value>
+  </data>
+  <data name="ProfitLossReportTabType_MenuPrefix_SlotGame" xml:space="preserve">
+    <value>电子</value>
+  </data>
+  <data name="ProfitLossReportTabType_MenuPrefix_Sport" xml:space="preserve">
+    <value>体育</value>
+  </data>
+  <data name="ProfitLossReportTabType_Tab_BoardGame" xml:space="preserve">
+    <value>棋牌</value>
+  </data>
+  <data name="ProfitLossReportTabType_Tab_ESport" xml:space="preserve">
+    <value>电竞</value>
+  </data>
+  <data name="ProfitLossReportTabType_Tab_Live" xml:space="preserve">
+    <value>真人娱乐</value>
+  </data>
+  <data name="ProfitLossReportTabType_Tab_Lottery" xml:space="preserve">
+    <value>彩票</value>
+  </data>
+  <data name="ProfitLossReportTabType_Tab_SlotGame" xml:space="preserve">
+    <value>电子游戏</value>
+  </data>
+  <data name="ProfitLossReportTabType_Tab_Sport" xml:space="preserve">
+    <value>体育</value>
+  </data>
+  <data name="ProfitLossTypeName_Commission" xml:space="preserve">
+    <value>契约分红</value>
+  </data>
+  <data name="ProfitLossTypeName_CZ" xml:space="preserve">
+    <value>充值</value>
+  </data>
+  <data name="ProfitLossTypeName_FD" xml:space="preserve">
+    <value>抽水</value>
+  </data>
+  <data name="ProfitLossTypeName_HB" xml:space="preserve">
+    <value>红包</value>
+  </data>
+  <data name="ProfitLossTypeName_KY" xml:space="preserve">
+    <value>亏盈</value>
+  </data>
+  <data name="ProfitLossTypeName_TX" xml:space="preserve">
+    <value>提现</value>
+  </data>
+  <data name="ProfitLossTypeName_YJ" xml:space="preserve">
+    <value>佣金</value>
+  </data>
+  <data name="ProfitLossTypeName_ZZ" xml:space="preserve">
+    <value>转账</value>
+  </data>
+  <data name="Report" xml:space="preserve">
+    <value>报表</value>
+  </data>
+  <data name="SearchTransferType_In" xml:space="preserve">
+    <value>转入</value>
+  </data>
+  <data name="SearchTransferType_Out" xml:space="preserve">
+    <value>转出</value>
+  </data>
+  <data name="SubActionType_MoneyPasswordWrong" xml:space="preserve">
+    <value>资金密码验证失败</value>
+  </data>
+  <data name="TPGameMoneyInOrderStatus_Refund" xml:space="preserve">
+    <value>退款</value>
+  </data>
+  <data name="TPGameMoneyInOrderStatus_Success" xml:space="preserve">
+    <value>转入成功</value>
+  </data>
+  <data name="TPGameMoneyOrderStatus_Processing" xml:space="preserve">
+    <value>正在处理</value>
+  </data>
+  <data name="TPGameMoneyOrderStatus_Unprocessed" xml:space="preserve">
+    <value>未处理</value>
+  </data>
+  <data name="TPGameMoneyOutOrderStatus_Fail" xml:space="preserve">
+    <value>转出失败</value>
+  </data>
+  <data name="TPGameMoneyOutOrderStatus_Success" xml:space="preserve">
+    <value>转出成功</value>
+  </data>
+  <data name="Verify_False" xml:space="preserve">
+    <value>解绑</value>
+  </data>
+  <data name="Verify_True" xml:space="preserve">
+    <value>绑定</value>
+  </data>
+  <data name="WebActionType_BindGoogleAuthenticator" xml:space="preserve">
+    <value>谷歌身份绑定</value>
+  </data>
+  <data name="WebActionType_BindUSDTAccount" xml:space="preserve">
+    <value>绑定USDT帐户</value>
+  </data>
+  <data name="WebActionType_LoginFail" xml:space="preserve">
+    <value>登入失败</value>
+  </data>
+  <data name="WebActionType_ModifyBankCard" xml:space="preserve">
+    <value>修改银行卡</value>
+  </data>
+  <data name="WebActionType_ModifyLoginPassword" xml:space="preserve">
+    <value>修改登录密码</value>
+  </data>
+  <data name="WebActionType_ModifyMoneyPassword" xml:space="preserve">
+    <value>修改资金密码</value>
+  </data>
+  <data name="WebActionType_TransferToChild" xml:space="preserve">
+    <value>下线转帐</value>
+  </data>
+  <data name="WebActionType_Withdraw" xml:space="preserve">
+    <value>提现</value>
+  </data>
+  <data name="WebActionType_RegisterNewAccount" xml:space="preserve">
+    <value>注册新帐号</value>
+  </data>
+  <data name="WhiteIpType_BackSide" xml:space="preserve">
+    <value>后台登录白名单</value>
+  </data>
+  <data name="WhiteIpType_FrontSide" xml:space="preserve">
+    <value>前台登陆白名单</value>
+  </data>
+  <data name="InputType_Email" xml:space="preserve">
+    <value>邮箱</value>
+  </data>
+  <data name="InputType_Google" xml:space="preserve">
+    <value>谷歌</value>
+  </data>
+  <data name="InputType_Phone" xml:space="preserve">
+    <value>手机</value>
+  </data>
+  <data name="WebActionType_AddBankCard" xml:space="preserve">
+    <value>新增银行卡</value>
+  </data>
+  <data name="WebActionType_DeleteBankCard" xml:space="preserve">
+    <value>删除银行卡</value>
+  </data>
+  <data name="InputType_MoneyPassword" xml:space="preserve">
+    <value>资金密码</value>
+  </data>
+  <data name="WebActionType_BindEmail" xml:space="preserve">
+    <value>邮箱绑定</value>
+  </data>
+  <data name="WebActionType_BindPhone" xml:space="preserve">
+    <value>手机绑定</value>
+  </data>
+  <data name="WebActionType_UnbindEmail" xml:space="preserve">
+    <value>邮箱解绑</value>
+  </data>
+  <data name="WebActionType_UnbindPhone" xml:space="preserve">
+    <value>手机解绑</value>
+  </data>
+  <data name="WebActionType_AccountSecuritySettingMenu" xml:space="preserve">
+    <value>帐户安全设置选单</value>
+  </data>
+  <data name="WebActionType_RetrieveLoginPasswordMenu" xml:space="preserve">
+    <value>找回登入密码选单</value>
+  </data>
+  <data name="WebActionType_RetrieveMoneyPasswordMenu" xml:space="preserve">
+    <value>找回资金密码选单</value>
+  </data>
+  <data name="WebActionType_UnbindGoogleAuthenticator" xml:space="preserve">
+    <value>谷歌身份解绑</value>
+  </data>
+  <data name="WebAppPage_Email" xml:space="preserve">
+    <value>邮箱设置</value>
+  </data>
+  <data name="WebAppPage_Phone" xml:space="preserve">
+    <value>手机设置</value>
+  </data>
+  <data name="ReceivedStatus_NotReceive" xml:space="preserve">
+    <value>未领取</value>
+  </data>
+  <data name="ReceivedStatus_Received" xml:space="preserve">
+    <value>已领取</value>
+  </data>
+  <data name="VIPBonusType_BirthdayGiftMoney" xml:space="preserve">
+    <value>生日礼金</value>
+  </data>
+  <data name="VIPBonusType_LevelUpMoney" xml:space="preserve">
+    <value>晋级礼金</value>
+  </data>
+  <data name="VIPBonusType_MonthlyRedEnvelope" xml:space="preserve">
+    <value>月红包</value>
+  </data>
+  <data name="WalletType_AgentWallet" xml:space="preserve">
+    <value>代理账户</value>
+  </data>
+  <data name="WalletType_CenterWallet" xml:space="preserve">
+    <value>中心账户</value>
+  </data>
+  <data name="ProfitLossTypeName_Activity" xml:space="preserve">
+    <value>活动</value>
+  </data>
+  <data name="ProfitLossTypeName_Adjustments" xml:space="preserve">
+    <value>调账</value>
+  </data>
+  <data name="ProfitLossTypeName_Prizes" xml:space="preserve">
+    <value>派奖</value>
+  </data>
+  <data name="ApolloServiceType_WebATM" xml:space="preserve">
+    <value>网银汇款</value>
+    <comment>网银在线</comment>
+  </data>
+  <data name="ApolloServiceType_WeiXinAll" xml:space="preserve">
+    <value>微信</value>
+  </data>
+  <data name="ApolloServiceType_Alipay" xml:space="preserve">
+    <value>支付宝</value>
+  </data>
+  <data name="ApolloServiceType_SpeedyPay" xml:space="preserve">
+    <value>快捷支付</value>
+  </data>
+  <data name="ApolloServiceType_UnionPayScan" xml:space="preserve">
+    <value>银联支付</value>
+    <comment>银联支付 (扫码)</comment>
+  </data>
+  <data name="ApolloServiceType_UnionPayH5" xml:space="preserve">
+    <value>一键银联</value>
+    <comment>银联支付 (H5)</comment>
+  </data>
+  <data name="ApolloServiceType_UnionPayFlash" xml:space="preserve">
+    <value>云闪付</value>
+  </data>
+  <data name="ApolloServiceType_Usdt" xml:space="preserve">
+    <value>USDT充值</value>
+  </data>
+  <data name="ApolloServiceType_AutoTransfer" xml:space="preserve">
+    <value>一般提现</value>
+    <comment>法币提款申请</comment>
+  </data>
+  <data name="ApolloServiceType_UsdtTransfer" xml:space="preserve">
+    <value>USDT提现</value>
+  </data>
+  <data name="RefundType_Activity" xml:space="preserve">
+    <value>活动</value>
+  </data>
+  <data name="RefundType_Adjustments" xml:space="preserve">
+    <value>调帐</value>
+  </data>
+  <data name="RefundType_HB" xml:space="preserve">
+    <value>红包</value>
+  </data>
+  <data name="RefundType_HBBySystem" xml:space="preserve">
+    <value>系统赠送红包</value>
+  </data>
+  <data name="RefundType_PrizeBySystem" xml:space="preserve">
+    <value>系统补发奖金</value>
+  </data>
+  <data name="RefundType_RechargeBySystem" xml:space="preserve">
+    <value>系统充值</value>
+  </data>
+  <data name="RefundType_ReduceAvailableScore" xml:space="preserve">
+    <value>扣减可用分</value>
+  </data>
+  <data name="RefundType_YJBySystem" xml:space="preserve">
+    <value>系统发送佣金</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>全部</value>
+  </data>
+  <data name="SMSActionType_AddBankCard" xml:space="preserve">
+    <value>新增银行卡</value>
+  </data>
+  <data name="SMSActionType_BindPhone" xml:space="preserve">
+    <value>手机绑定</value>
+  </data>
+  <data name="SMSActionType_FindLoginPassword" xml:space="preserve">
+    <value>找回密码</value>
+  </data>
+  <data name="SMSActionType_UnBindPhone" xml:space="preserve">
+    <value>手机解绑</value>
+  </data>
+  <data name="VIPPointChangeType_LevelDown" xml:space="preserve">
+    <value>降级扣积分</value>
+  </data>
+  <data name="VIPPointChangeType_Bet" xml:space="preserve">
+    <value>投注</value>
+  </data>
+  <data name="ProfitLossReportTabType_MenuPrefix_OtherLottery" xml:space="preserve">
+    <value>其它彩票</value>
+  </data>
+  <data name="LotteryLogType_FD" xml:space="preserve">
+    <value>返点</value>
+  </data>
+  <data name="LotteryLogType_KJ" xml:space="preserve">
+    <value>开奖</value>
+  </data>
+  <data name="AccountChangeLogType_All" xml:space="preserve">
+    <value>全部</value>
+  </data>
+  <data name="AccountChangeLogType_Bet" xml:space="preserve">
+    <value>投注</value>
+  </data>
+  <data name="AccountChangeLogType_Bonus" xml:space="preserve">
+    <value>红利</value>
+  </data>
+  <data name="AccountChangeLogType_Cancel" xml:space="preserve">
+    <value>退款</value>
+  </data>
+  <data name="AccountChangeLogType_Commission" xml:space="preserve">
+    <value>佣金</value>
+  </data>
+  <data name="AccountChangeLogType_Deposit" xml:space="preserve">
+    <value>充值</value>
+  </data>
+  <data name="AccountChangeLogType_Other" xml:space="preserve">
+    <value>其他</value>
+  </data>
+  <data name="AccountChangeLogType_Prize" xml:space="preserve">
+    <value>派彩</value>
+  </data>
+  <data name="AccountChangeLogType_Rebate" xml:space="preserve">
+    <value>抽水</value>
+  </data>
+  <data name="AccountChangeLogType_TranferIn" xml:space="preserve">
+    <value>上级转入</value>
+  </data>
+  <data name="AccountChangeLogType_TransferOut" xml:space="preserve">
+    <value>下级转出</value>
+  </data>
+  <data name="AccountChangeLogType_Withdraw" xml:space="preserve">
+    <value>提现</value>
+  </data>
+  <data name="ApolloServiceType_SpeedRecharge" xml:space="preserve">
+    <value>极速充值</value>
+  </data>
+  <data name="ApolloServiceType_SpeedWithdrawal" xml:space="preserve">
+    <value>极速提现</value>
+  </data>
+  <data name="ProARefundReturnCode_FreezeScoresNotEnough" xml:space="preserve">
+    <value>用户冻结积分小于提现金额</value>
+  </data>
+  <data name="ProARefundReturnCode_OrderAlreadyDone" xml:space="preserve">
+    <value>此单已经提款成功了，不能退款</value>
+  </data>
+  <data name="ProARefundReturnCode_OrderProcessing" xml:space="preserve">
+    <value>订单正在处理中，不能退款</value>
+  </data>
+  <data name="BackSideRechargeOrderStatusDone" xml:space="preserve">
+    <value>已到帐</value>
+  </data>
+  <data name="BackSideRechargeOrderStatusProcessing" xml:space="preserve">
+    <value>未到帐</value>
+  </data>
+  <data name="BackSideRechargeOrderStatusRefund" xml:space="preserve">
+    <value>已取消</value>
+  </data>
+  <data name="BackSideWithdrawOrderStatusDone" xml:space="preserve">
+    <value>已处理</value>
+  </data>
+  <data name="BackSideWithdrawOrderStatusProcessing" xml:space="preserve">
+    <value>正在处理</value>
+  </data>
+  <data name="BackSideWithdrawOrderStatusRefund" xml:space="preserve">
+    <value>已退款</value>
+  </data>
+  <data name="BackSideWithdrawOrderStatusUnprocessed" xml:space="preserve">
+    <value>未处理</value>
+  </data>
+  <data name="BackSideWithdrawOrderStatusVerifying" xml:space="preserve">
+    <value>待确认</value>
+  </data>
+  <data name="FrontSideRechargeOrderStatusDone" xml:space="preserve">
+    <value>已完成</value>
+  </data>
+  <data name="FrontSideRechargeOrderStatusProcessing" xml:space="preserve">
+    <value>处理中</value>
+  </data>
+  <data name="FrontSideRechargeOrderStatusRefund" xml:space="preserve">
+    <value>已取消</value>
+  </data>
+  <data name="FrontSideWithdrawOrderStatusDone" xml:space="preserve">
+    <value>已完成</value>
+  </data>
+  <data name="FrontSideWithdrawOrderStatusProcessing" xml:space="preserve">
+    <value>处理中</value>
+  </data>
+  <data name="FrontSideWithdrawOrderStatusRefund" xml:space="preserve">
+    <value>已退款</value>
+  </data>
+  <data name="FrontSideWithdrawOrderStatusVerifying" xml:space="preserve">
+    <value>待核对</value>
+  </data>
+  <data name="ApolloOrderStatus_Withdraw_Unprocessed" xml:space="preserve">
+    <value>匹配中</value>
+  </data>
+  <data name="ApolloOrderStatus_Withdraw_Done" xml:space="preserve">
+    <value>交易完成</value>
+  </data>
+  <data name="ApolloOrderStatus_Withdraw_Processing" xml:space="preserve">
+    <value>出款中</value>
+  </data>
+  <data name="ApolloOrderStatus_Withdraw_Refunded" xml:space="preserve">
+    <value>订单取消</value>
+  </data>
+  <data name="ApolloOrderStatus_Withdraw_ToBeConfirmed" xml:space="preserve">
+    <value>出款确认中</value>
+  </data>
+  <data name="ApolloOrderStatus_Withdraw_Verifying" xml:space="preserve">
+    <value>订单审核中</value>
+  </data>
+  <data name="ApolloServiceType_TOGWalletRecharge" xml:space="preserve">
+    <value>TOPAY充值</value>
+  </data>
+  <data name="ApolloServiceType_TOGWalletWithdrawal" xml:space="preserve">
+    <value>TOPAY提现</value>
+  </data>
+  <data name="WebActionType_BindTOPayAccount" xml:space="preserve">
+    <value>绑定TOPAY帐户</value>
+  </data>
+  <data name="WebActionType_VIPAgentRegister" xml:space="preserve">
+    <value>合营计画注册页</value>
+  </data>
+  <data name="LoginType_Phone" xml:space="preserve">
+    <value>手机号</value>
+  </data>
+  <data name="WebActionType_PhoneRegister" xml:space="preserve">
+    <value>手机注册</value>
+  </data>
+  <data name="LCOrderStatus_Fail" xml:space="preserve">
+    <value>订单处理失败</value>
+  </data>
+  <data name="LCOrderStatus_NotExists" xml:space="preserve">
+    <value>订单不存在</value>
+  </data>
+  <data name="LCOrderStatus_Processing" xml:space="preserve">
+    <value>订单处理中</value>
+  </data>
+  <data name="LCOrderStatus_Success" xml:space="preserve">
+    <value>订单处理成功</value>
+  </data>
+  <data name="VIPPointChangeType_Manual" xml:space="preserve">
+    <value>人工调整</value>
+  </data>
+  <data name="ProfitLossTypeName_ChangeAccumulateFlowAmount" xml:space="preserve">
+    <value>调整流水</value>
+  </data>
+  <data name="ProfitLossDailyReceiveStatus_NotReceived" xml:space="preserve">
+    <value>未发放</value>
+  </data>
+  <data name="ProfitLossDailyReceiveStatus_Received" xml:space="preserve">
+    <value>已发放</value>
+  </data>
+  <data name="DownlineMemberActiveType_Active" xml:space="preserve">
+    <value>活跃</value>
+  </data>
+  <data name="DownlineMemberActiveType_Inactive" xml:space="preserve">
+    <value>非活跃</value>
+  </data>
+  <data name="BudgetType_BonusContractTransfer" xml:space="preserve">
+    <value>契约分红/转账（转出,转入）</value>
+  </data>
+  <data name="BudgetType_Recharge" xml:space="preserve">
+    <value>充值</value>
+  </data>
+  <data name="BudgetType_Transfer" xml:space="preserve">
+    <value>转账（转出,转入）</value>
+  </data>
+  <data name="BudgetType_WithdrawConfirm" xml:space="preserve">
+    <value>提现确认</value>
+  </data>
+  <data name="BudgetType_WithdrawApply" xml:space="preserve">
+    <value>提现申请</value>
+  </data>
+  <data name="BudgetType_WithdrawRefund" xml:space="preserve">
+    <value>提现退款</value>
+  </data>
+  <data name="BudgetType_SubMerchantWithdraw" xml:space="preserve">
+    <value>子商户提款</value>
+  </data>
+  <data name="PasswordType_VIPAgentLogin" xml:space="preserve">
+    <value>代理后台登录密码</value>
+  </data>
+  <data name="WebActionType_ModifyVIPAgentLoginPassword" xml:space="preserve">
+    <value>修改代理后台登入密码</value>
+  </data>
+  <data name="WebActionType_RetrieveVIPAgentLoginPasswordMenu" xml:space="preserve">
+    <value>找回代理后台登入密码选单</value>
+  </data>
+  <data name="WebActionType_VIPAgentLogin" xml:space="preserve">
+    <value>代理后台登入</value>
+  </data>
+  <data name="WebActionType_VIPAgentLoginFail" xml:space="preserve">
+    <value>代理后台登入失败</value>
+  </data>
+  <data name="BetResultType_ExchangeCash" xml:space="preserve">
+    <value>兑现</value>
+  </data>
+  <data name="BetResultType_HalfLose" xml:space="preserve">
+    <value>半输</value>
+  </data>
+  <data name="BetResultType_HalfWin" xml:space="preserve">
+    <value>半赢</value>
+  </data>
+  <data name="PlatformHandicap_America" xml:space="preserve">
+    <value>美国盘</value>
+  </data>
+  <data name="PlatformHandicap_China" xml:space="preserve">
+    <value>中国盘</value>
+  </data>
+  <data name="PlatformHandicap_Europe" xml:space="preserve">
+    <value>欧洲盘</value>
+  </data>
+  <data name="PlatformHandicap_HongKong" xml:space="preserve">
+    <value>香港盘</value>
+  </data>
+  <data name="PlatformHandicap_Indonesia" xml:space="preserve">
+    <value>印尼盘</value>
+  </data>
+  <data name="PlatformHandicap_Malaysia" xml:space="preserve">
+    <value>马来盘</value>
+  </data>
+  <data name="WebActionType_AccountSafety" xml:space="preserve">
+    <value>帐号安全</value>
+  </data>
+  <data name="WebActionType_WalletManagement" xml:space="preserve">
+    <value>钱包管理</value>
+  </data>
+  <data name="AssociationDataType_CardNo" xml:space="preserve">
+    <value>银行卡号相同</value>
+  </data>
+  <data name="AssociationDataType_CardUser" xml:space="preserve">
+    <value>银行户名相同</value>
+  </data>
+  <data name="AssociationDataType_DeviceCode" xml:space="preserve">
+    <value>设备码相同</value>
+  </data>
+  <data name="AssociationDataType_LoginIP" xml:space="preserve">
+    <value>IP相同</value>
+  </data>
+  <data name="ProfitLossTypeName_ManualPrizes" xml:space="preserve">
+    <value>手动派彩</value>
+  </data>
+  <data name="WebActionType_TransferToCenterWallet" xml:space="preserve">
+    <value>代理后台提现</value>
+  </data>
+  <data name="ProfitLossTypeName_VIPAgentDepositForChild" xml:space="preserve">
+    <value>代理代存</value>
+  </data>
+  <data name="ProductTypeSetting_BoardGame" xml:space="preserve">
+    <value>棋牌</value>
+  </data>
+  <data name="ProductTypeSetting_ESports" xml:space="preserve">
+    <value>电竞</value>
+  </data>
+  <data name="ProductTypeSetting_LiveCasino" xml:space="preserve">
+    <value>真人</value>
+  </data>
+  <data name="ProductTypeSetting_Lottery" xml:space="preserve">
+    <value>自营平台彩票</value>
+  </data>
+  <data name="ProductTypeSetting_OtherLottery" xml:space="preserve">
+    <value>其他彩票</value>
+  </data>
+  <data name="ProductTypeSetting_Slots" xml:space="preserve">
+    <value>电子</value>
+  </data>
+  <data name="ProductTypeSetting_Sports" xml:space="preserve">
+    <value>体育</value>
+  </data>
+  <data name="RiskLevelGroupType_AbnormalPlayer" xml:space="preserve">
+    <value>非正常玩家</value>
+  </data>
+  <data name="RiskLevelGroupType_LimitedAndMonitoredPlayer" xml:space="preserve">
+    <value>限额观察玩家</value>
+  </data>
+  <data name="RiskLevelGroupType_LoserBigBetPlayer" xml:space="preserve">
+    <value>大额输钱玩家</value>
+  </data>
+  <data name="RiskLevelGroupType_MonitoredPlayer" xml:space="preserve">
+    <value>特别观察玩家</value>
+  </data>
+  <data name="RiskLevelGroupType_NewMonitoredWinningPlayer" xml:space="preserve">
+    <value>新观察盈利玩家</value>
+  </data>
+  <data name="RiskLevelGroupType_NormalBigBetPlayer" xml:space="preserve">
+    <value>正常/单注下大额玩家</value>
+  </data>
+  <data name="RiskLevelGroupType_NormalPlayer" xml:space="preserve">
+    <value>一般玩家</value>
+  </data>
+  <data name="RiskLevelGroupType_RiskyMonitoredPlayer" xml:space="preserve">
+    <value>风险观察用户</value>
+  </data>
+  <data name="RiskLevelGroupType_SuspiciousPlayer" xml:space="preserve">
+    <value>嫌疑套利玩家</value>
+  </data>
+  <data name="RiskLevelGroupType_SwitchToBeMonitoredPlayer" xml:space="preserve">
+    <value>变动观察玩家</value>
+  </data>
+  <data name="WebActionType_VIPAgentDepositForChild" xml:space="preserve">
+    <value>代理代存</value>
+  </data>
+  <data name="ApolloServiceType_ManualRecharge" xml:space="preserve">
+    <value>人工充值</value>
+  </data>
+  <data name="BlackIpType_SpeedRecharge" xml:space="preserve">
+    <value>极速充值限制</value>
+  </data>
+  <data name="ApolloServiceType_GOWalletRecharge" xml:space="preserve">
+    <value>GOPAY充值</value>
+  </data>
+  <data name="ApolloServiceType_GOWalletWithdrawal" xml:space="preserve">
+    <value>GOPAY提现</value>
+  </data>
+  <data name="ApolloServiceType_OKWalletRecharge" xml:space="preserve">
+    <value>OKPAY充值</value>
+  </data>
+  <data name="ApolloServiceType_OKWalletWithdrawal" xml:space="preserve">
+    <value>OKPAY提现</value>
+  </data>
+  <data name="WebActionType_BindGOPayAccount" xml:space="preserve">
+    <value>绑定GOPAY帐户</value>
+  </data>
+  <data name="WebActionType_BindOKPayAccount" xml:space="preserve">
+    <value>绑定OKPAY帐户</value>
+  </data>
+  <data name="ApolloServiceType_QQAll" xml:space="preserve">
+    <value>QQ充值</value>
+  </data>
+  <data name="ApolloServiceType_UnionPayAll" xml:space="preserve">
+    <value>银联支付</value>
+  </data>
+  <data name="ApolloServiceType_UnionPayAppAll" xml:space="preserve">
+    <value>云闪付</value>
+  </data>
+  <data name="NormalCoinWithdraw" xml:space="preserve">
+    <value>钱包提现处理</value>
+  </data>
+  <data name="NormalWithdraw" xml:space="preserve">
+    <value>提现处理</value>
+  </data>
+  <data name="CommonDateRange_Custom" xml:space="preserve">
+    <value>自定义</value>
+  </data>
+  <data name="CommonDateRange_Last7Days" xml:space="preserve">
+    <value>近7日</value>
+  </data>
+  <data name="CommonDateRange_Last30Days" xml:space="preserve">
+    <value>近30日</value>
+  </data>
+  <data name="CommonDateRange_Today" xml:space="preserve">
+    <value>今日</value>
+  </data>
+  <data name="CommonDateRange_Yesterday" xml:space="preserve">
+    <value>昨日</value>
+  </data>
+  <data name="ActivityType_LiveCasino" xml:space="preserve">
+    <value>真人</value>
+  </data>
+  <data name="ActivityType_Lottery" xml:space="preserve">
+    <value>彩票</value>
+  </data>
+  <data name="ActivityType_Rookie" xml:space="preserve">
+    <value>新人</value>
+  </data>
+  <data name="ActivityType_Other" xml:space="preserve">
+    <value>其他</value>
+  </data>
+  <data name="ActivityType_Sports" xml:space="preserve">
+    <value>体育</value>
+  </data>
+  <data name="InputContentType_Html" xml:space="preserve">
+    <value>HTML</value>
+  </data>
+  <data name="InputContentType_Normal" xml:space="preserve">
+    <value>一般文字</value>
+  </data>
+  <data name="AllPlatform" xml:space="preserve">
+    <value>全平台</value>
+  </data>
+  <data name="Center" xml:space="preserve">
+    <value>中心</value>
+  </data>
+  <data name="VIPAgent" xml:space="preserve">
+    <value>代理后台</value>
+  </data>
+  <data name="ReceivedStatus_Receive" xml:space="preserve">
+    <value>领取</value>
+  </data>
+  <data name="VIPBonusType_WeeklyRedEnvelope" xml:space="preserve">
+    <value>周红包</value>
+  </data>
+  <data name="ApolloServiceType_ECNYRecharge" xml:space="preserve">
+    <value>数字人民币</value>
+  </data>
+  <data name="MiseOrderType_MiseLottery" xml:space="preserve">
+    <value>祕色彩票</value>
+  </data>
+  <data name="MiseOrderType_TPBoardGame" xml:space="preserve">
+    <value>棋牌</value>
+  </data>
+  <data name="MiseOrderType_TPFish" xml:space="preserve">
+    <value>捕鱼</value>
+  </data>
+  <data name="MiseOrderType_TPLive" xml:space="preserve">
+    <value>真人</value>
+  </data>
+  <data name="MiseOrderType_TPLottery" xml:space="preserve">
+    <value>第三方彩票</value>
+  </data>
+  <data name="MiseOrderType_TPSlots" xml:space="preserve">
+    <value>电子</value>
+  </data>
+  <data name="MiseOrderType_TPSport" xml:space="preserve">
+    <value>体育</value>
+  </data>
+  <data name="MiseOrderType_TPESport" xml:space="preserve">
+    <value>电竞</value>
+  </data>
+</root>
