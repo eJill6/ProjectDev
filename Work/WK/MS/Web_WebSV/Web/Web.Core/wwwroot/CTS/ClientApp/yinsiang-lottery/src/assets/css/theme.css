@@ -1,0 +1,230 @@
+
+.bg-black{
+    background: rgba(0, 0, 0, 1);
+}
+
+.bg-darkbg{
+    background: rgba(0, 0, 0, 0.1);
+}
+.bg-black-opacity-0 {
+    background: rgba(0, 0, 0, calc(var(--bg-alpha) / 2.5));
+}
+.bg-black-opacity-1 {
+    background: rgba(0, 0, 0, calc(var(--bg-alpha) * 1));
+}
+.bg-black-opacity-2 {
+    background: rgba(0, 0, 0, calc(var(--bg-alpha) * 2));
+}
+
+.bg-white {
+    background: rgba(255, 255, 255, 1);
+}
+.bg-green {
+    background: #22AC00;
+}
+
+.bg-orange {
+    background: #FF8A15;
+}
+
+.bg-cyan {
+    background: #34b9f1;
+}
+
+.bg-deep-purple {
+    background: #302D57;
+}
+.bg-gary {
+    background: #F3F3F3;
+}
+.bg-red {
+    background: #F04646;
+}
+.bg-blue {
+    background: #4966FF;
+}
+
+
+
+.second-gradient{ 
+    background-image: linear-gradient(90deg, #FFD14E 0%, #FF7917 100%);
+}
+
+
+.text-purple {
+    color: #4e3f88;
+}
+
+.text-yellow {
+    color: #f9f3a1;
+}
+
+.text-black {
+    color: #2A2A2A;
+}
+.text-medium-gary{
+    color: #777777;
+}
+
+.text-orange-default {
+    color: #EE7E00;
+}
+
+.text-white {
+    color:  white;
+}
+
+.text-light-gray {
+    color:  #CCCCCC;
+}
+
+.text-blue {
+    color: #79C9DF;
+}
+
+.text-red {
+    color: #FE4869;
+}
+
+.text-light-purple{
+    color: #E9E5F1;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-indent-10 {
+    text-indent: 10px
+}
+
+
+.fw-bold {
+    font-weight: bold;
+}
+
+.font_number{}
+
+
+
+.border {
+    border: solid 1px;
+}
+
+.border-top {
+    border-top: solid 1px;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #E9E9E9;
+}
+
+
+.border-white-opacity-5 {
+    border-color: rgba(255, 255, 255, .5);
+}
+.border-white-opacity-2 {
+    border-color: rgba(255, 255, 255, .2);
+}
+
+.border-gray{
+    border-color: #E9E9E9
+}
+
+
+
+
+
+.cusror-pointer {
+    cursor: pointer;
+}
+
+.visibility-hidden {
+    visibility: hidden;
+}
+
+.text-break {
+    word-break: break-word;
+}
+
+
+.overflow-scroll-y{
+    overflow-y: scroll;
+}
+
+
+
+
+.position-relative{
+    position: relative;
+}
+
+.position-absolute{
+    position: absolute;
+}
+
+.position-fixed{
+    position: fixed;
+}
+
+.translate-middle{
+    transform: translate(-50%,-50%);
+}
+
+.translate-middle-x{
+    transform: translateX(-50%);
+}
+
+.translate-middle-y{
+    transform: translateY(-50%);
+}
+
+.top-50{
+    top: 50%;
+}
+
+.top-0{
+    top: 0;
+}
+
+.start-50{
+     left: 50%;
+}
+
+.start-0{
+     left: 0;
+}
+
+.end-50{
+     right: 50%;
+}
+
+.end-0{
+     right: 0;
+}
+
+.bottom-50{
+     bottom: 50%;
+}
+
+.bottom-0{
+    bottom: 0;
+}
+
+
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+

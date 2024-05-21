@@ -1,0 +1,569 @@
+@charset "UTF-8";
+
+/* amfe-flexible套件：根據設備寬度，修改根元素HTML大小， */
+/* amfe-flexible呈現結果會是物件等比例放大縮小，而非RWD */
+/* 使用amfe-flexible會需要以一個設備寬度作為根據，通常是設計的畫布寬度，若為手機通常為375px */
+/* 文字大小換算成rem來寫 */
+/* 寬度高度換算成rem來寫 */
+/* 1rem = 設備寬度的10分之1 = 10% */
+
+/* 文字在device寬度375px時，16級字是多少rem?
+1rem=37.5px
+16除以37.5=0.426rem */
+
+/* 色塊在device寬度375px時，寬度100px的色塊是多少rem
+1rem=37.5px
+100除以37.5=2.666666rem */
+
+
+/* 首頁畫布寬度基準 1rem = 150px */
+
+/* placeholder */
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #8e8e8e;
+    opacity: 1;
+    /* Firefox */
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #8e8e8e;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #8e8e8e;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/**************** Overflow ******************/
+
+.overflow {
+    overflow-y: auto;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* 當使用flex-flow，自動填滿剩餘高度 */
+.flex_height {
+    flex: 1;
+    height: 1.333rem; /* 隨意給一個高度，解決flex:1 + overflow 的 bug */
+}
+
+.main_container {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+}
+
+.bg_main {
+    background: #1b1f24 url("../images/public/bg_main.jpg") top center no-repeat;
+    background-size: 100% auto;
+}
+.bg_second {
+    background: #1b1f24 url("../images/public/bg_second.jpg") top center no-repeat;
+    background-size: 100% auto;
+}
+
+.main_container_flex {
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+}
+
+/**************** Header ******************/
+
+/* 備註：為了避開瀏海，以下class高度增加50px撐開容器，用來避開頂部瀏海
+header 增加 padding-top=50px=1.333rem
+/* header.header_height  flex-basis 原數字 176px/150px=1.173rem。1.173rem+1.333rem=2.506rem */
+
+header {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-top: 1.2rem;
+    /* padding-top: 0.3rem; */
+}
+
+header.header_height {
+    /* flex-basis: 2.506rem; */
+}
+
+header .header_index {
+    display: flex;
+    width: 100%;
+    padding: 0 0.467rem;
+}
+
+.header_index .header_game {
+    display: flex;
+    align-items: center;
+}
+
+.header_game .header_gameimg {
+    width: 0.8rem;
+    height: 0.8rem;
+    margin-right: 0.167rem;
+}
+
+.header_game .header_gameimg img {
+    width: 0.8rem;
+    height: 0.8rem;
+}
+
+.header_game .header_gameimg.pk10_car {
+    width: 1.48rem;
+}
+
+.header_game .header_gameimg.pk10_car img {
+    width: 1.48rem;
+}
+
+.header_game .header_gameimg.omssc {
+    width: 0.886rem;
+}
+
+.header_game .header_gameimg.omssc img {
+    width: 0.886rem;
+}
+
+.header_game .header_gameimg.omlhc {
+    width: 0.833rem;
+}
+
+.header_game .header_gameimg.omlhc img {
+    width: 0.833rem;
+}
+
+.header_game .header_gameimg.nuinui {
+    width: 0.993rem;
+}
+
+.header_game .header_gameimg.nuinui img {
+    width: 0.993rem;
+}
+
+.header_game .header_gameimg.baccarat {
+    width: 0.9rem;
+}
+
+.header_game .header_gameimg.baccarat img {
+    width: 0.9rem;
+}
+
+.header_game .header_gameimg.jslp,.header_game .header_gameimg.jslp img {
+    width: 0.9rem;
+}
+
+.header_game .header_gameimg.jsyxx,.header_game .header_gameimg.jsyxx img {
+    width: 0.887rem;
+}
+
+.header_game .header_gameimg.jssg,.header_game .header_gameimg.jssg img {
+    width: 0.9rem;
+}
+
+.header_game .header_gameimg.jslh,.header_game .header_gameimg.jslh img {
+    width: 1.153rem;
+}
+
+.header_game .header_game_item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* .header_game .header_game_item .header_game_title {
+    font-family: FZZhengHeiS;
+    font-size: 0.56rem;
+    font-style:italic;
+    color: transparent;
+    background: linear-gradient(to bottom,  #ffedbd 0%,#ffa800 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+} */
+
+.header_game .header_game_item .header_game_title {
+    width: 2.18rem;
+    height: auto;
+    margin-right: 0.16rem;
+}
+
+.header_game .header_game_item .header_game_title img {
+    width: 2.18rem;
+    height: auto;
+}
+
+.header_game .header_game_item .header_game_title.omssc {
+    width: 2.76rem;
+    height: auto;
+    margin-right: 0.16rem;
+}
+
+.header_game .header_game_item .header_game_title.omssc img {
+    width: 2.76rem;
+    height: auto;
+}
+
+.header_game .header_game_item .header_game_title.omlhc,.header_game .header_game_item .header_game_title.baccarat {
+    width: 2.76rem;
+    height: auto;
+    margin-right: 0.16rem;
+}
+
+.header_game .header_game_item .header_game_title.omlhc img,.header_game .header_game_item .header_game_title.baccarat img {
+    width: 2.76rem;
+    height: auto;
+}
+
+.header_game .header_game_item .header_game_title.nuinui {
+    width: 2.16rem;
+    height: auto;
+    margin-right: 0.16rem;
+}
+
+.header_game .header_game_item .header_game_title.nuinui img {
+    width: 2.16rem;
+    height: auto;
+}
+
+.header_game .header_game_item .header_game_title.jslp {
+    width: 2.22rem;
+    height: auto;
+    margin-right: 0.16rem;
+}
+
+.header_game .header_game_item .header_game_title.jslp img {
+    width: 2.22rem;
+    height: auto;
+}
+
+.header_game .header_game_item .header_game_title.jsyxx {
+    width: 2.787rem;
+    height: auto;
+    margin-right: 0.16rem;
+}
+
+.header_game .header_game_item .header_game_title.jsyxx img {
+    width: 2.787rem;
+    height: auto;
+}
+
+.header_game .header_game_item .header_game_title.jssg {
+    width: 2.2067rem;
+    height: auto;
+    margin-right: 0.16rem;
+}
+
+.header_game .header_game_item .header_game_title.jssg img {
+    width: 2.2067rem;
+    height: auto;
+}
+
+.header_game .header_game_item .header_game_title.jslh {
+    width: 2.227rem;
+    height: auto;
+    margin-right: 0.16rem;
+}
+
+.header_game .header_game_item .header_game_title.jslh img {
+    width: 2.227rem;
+    height: auto;
+}
+
+.header_game .header_game_item .header_game_arrow {
+    width: 0.22rem;
+    height: auto;
+}
+
+.header_game .header_game_item .header_game_arrow img {
+    width: 0.22rem;
+    height: auto;
+}
+
+/**************** Header 次選單 ******************/
+header.header_second_bg {
+    background: url(../images/public/second_header.png) no-repeat;
+    background-size: 100% auto;
+    justify-content: center;
+    display: flex;
+    background-position: center bottom;
+}
+ 
+
+/* header.header_second_height {
+    padding-top: 0rem;
+
+}  */
+.header_second_title{
+    font-family: FZZhengHeiS;
+    font-size: 0.48rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #fffdde 49%,#ffdd68 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-top: 0.1rem;
+}
+.header_middle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.17rem;
+    width: 100%;
+}
+.flex_second_height{
+    flex: 1;
+    height: 50px;
+    position: relative;
+}
+
+.flex_second_height.bg_gamerule_kuaisan {
+    background: url(../images/public/bg_gamerule_kuaisan.png) no-repeat;
+    background-size: 100% auto;
+}
+
+.flex_second_height.bg_gamerule_pk10 {
+    background: url(../images/public/bg_gamerule_pk10.png) no-repeat;
+    background-size: 100% auto;
+}
+
+.flex_second_height.bg_gamerule_omssc {
+    background: url(../images/public/bg_gamerule_omssc.png) no-repeat;
+    background-size: 100% auto;
+}
+
+.flex_second_height.bg_gamerule_omlhc {
+    background: url(../images/public/bg_gamerule_omlhc.png) no-repeat;
+    background-size: 100% auto;
+}
+
+.flex_second_height.bg_gamerule_nuinui {
+    background: url(../images/public/bg_gamerule_nuinui.png) no-repeat;
+    background-size: 100% auto;
+}
+
+.flex_second_height.bg_gamerule_baccarat {
+    background: url(../images/public/bg_gamerule_baccarat.png) no-repeat;
+    background-size: 100% auto;
+}
+
+.flex_second_height.bg_gamerule_jslp {
+    background: url(../images/public/bg_gamerule_jslp.png) no-repeat;
+    background-size: 100% auto;
+}
+
+.flex_second_height.bg_gamerule_jsyxx {
+    background: url(../images/public/bg_gamerule_jsyxx.png) no-repeat;
+    background-size: 100% auto;
+}
+
+.flex_second_height.bg_gamerule_jssg {
+    background: url(../images/public/bg_gamerule_jssg.png) no-repeat;
+    background-size: 100% auto;
+}
+
+.flex_second_height.bg_gamerule_jslh {
+    background: url(../images/public/bg_gamerule_jslh.png) no-repeat;
+    background-size: 100% auto;
+}
+
+.second_adding_basic{
+    padding: 0rem 0.4rem;
+    height: 100%;
+}
+
+.second_adding_basic.pd_0{
+    padding: 0;
+}
+
+
+/**************** Footer ******************/
+
+footer {
+    background: linear-gradient(180deg, #21252C 0%, #13161B 100%);
+    flex-basis: 2rem;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    backdrop-filter: blur(25px);
+}
+
+footer.android {
+    flex-basis: 1rem;
+}
+
+.footer_nav {
+    display: flex;
+    align-items: center;
+    height: 1.3333rem;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.footer_nav .footer_item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100%;
+    cursor: pointer;
+}
+
+.footer_nav .footer_item > .ic_ft {
+    position: relative;
+    width: 0.533rem;
+    height: 0.533rem;
+    margin-bottom: 0.08rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer_nav .footer_item > .ic_ft img {
+    width: 100%;
+    height: 100%;
+}
+
+.footer_nav .footer_item > p {
+    font-size: 0.267rem;
+    color: #C8C8C8;
+}
+
+.footer_nav .footer_item.focus > p {
+    color: #FF8A15;
+}
+
+
+
+/****************LOADING ******************/
+
+.loading_row {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 111;
+}
+.loading_cell {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loading_cell .circle {
+  display: inline-block;
+  width: 1.6rem;
+  height: 1.6rem;
+  background: url(../images/public/loading.png) no-repeat;
+  background-size: 100% auto;
+  position: absolute;
+
+}
+.loading_cell .loading_light{
+    display: inline-block;
+  width: 3.3rem;
+  height:3.3rem;
+  background: url(../images/public/loading_light.png) no-repeat;
+  background-size: 100% auto;
+}
+
+
+.loading_cell .flip {
+	backface-visibility: visible !important;
+	animation: flip 1.8s ease infinite;
+}
+@keyframes flip {
+	0% {
+		transform: rotateY(0deg);
+		animation-timing-function: linear;
+	}
+	
+	50% {
+		transform: rotateY(360deg);
+		animation-timing-function: linear;
+	}
+	
+	100% {
+		transform: rotateY(0deg);
+		animation-timing-function: linear;
+	}
+}
+
+
+.loading_cell .spin {
+    animation: spin 0.5s infinite linear;
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+
+/* 網路錯誤 */
+
+.interneterror {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.interneterror .error {
+    width: 4.333rem;
+    height: 3.613rem;
+    margin-bottom: 0.493rem;
+}
+
+.interneterror .error img {
+    width: 4.333rem;
+    height: 3.613rem;
+}
+
+.interneterror .errortext {
+    width: 5.567rem;
+    height: 0.687rem;
+    margin-bottom: 0.4467rem;
+}
+
+.interneterror .errortext img {
+    width: 5.567rem;
+    height: 0.687rem;
+}
+
+.interneterror .text {
+    font-size: 0.4267rem;
+    color: #fff;
+    text-align: center;
+}

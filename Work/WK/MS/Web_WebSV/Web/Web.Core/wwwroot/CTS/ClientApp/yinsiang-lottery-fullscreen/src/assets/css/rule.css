@@ -1,0 +1,291 @@
+@charset "UTF-8";
+
+/* 玩法說明 */
+
+.header_gamerule {
+    display: flex;
+    align-items: center;
+    padding: 0.3rem 0 0.18rem;
+}
+
+.header_gamerule .header_gamerule_img {
+    width: 1.04rem;
+    height: 1.04rem;
+    margin-right: 0.167rem;
+    display: flex;
+    align-items: center;
+}
+
+.header_gamerule .header_gamerule_img img{
+    width: 1.04rem;
+    height: 1.04rem;
+}
+
+.header_gamerule .header_gamerule_img.pk10_car {
+    width: 1.773rem;
+    height: auto;
+}
+
+.header_gamerule .header_gamerule_img.pk10_car img {
+    width: 1.773rem;
+    height: auto;
+}
+
+.header_gamerule .header_gamerule_img.omssc {
+    width: 1.113rem;
+    height: auto;
+}
+
+.header_gamerule .header_gamerule_img.omssc img {
+    width: 1.113rem;
+    height: auto;
+}
+
+.header_gamerule .header_gamerule_img.omlhc,.header_gamerule .header_gamerule_img.omlhc img {
+    width: 1.04rem;
+    height: auto;
+}
+
+.header_gamerule .header_gamerule_img.nuinui,.header_gamerule .header_gamerule_img.nuinui img {
+    width: 1.24rem;
+    height: auto;
+}
+
+.header_gamerule .header_gamerule_img.baccarat,.header_gamerule .header_gamerule_img.baccarat img {
+    width: 1.12rem;
+    height: auto;
+}
+
+.header_gamerule .header_gamerule_img.jslp,.header_gamerule .header_gamerule_img.jslp img {
+    width: 1.047rem;
+    height: auto;
+}
+
+.header_gamerule .header_gamerule_img.jsyxx,.header_gamerule .header_gamerule_img.jsyxx img {
+    width: 1.033rem;
+    height: auto;
+}
+
+.header_gamerule .header_gamerule_img.jssg,.header_gamerule .header_gamerule_img.jssg img {
+    width: 1.1267rem;
+    height: auto;
+}
+
+.header_gamerule .header_gamerule_img.jslh,.header_gamerule .header_gamerule_img.jslh img {
+    width: 1.44rem;
+    height: auto;
+}
+
+.header_gamerule .header_gamerule_item {
+    display: flex;
+    align-items: center;
+    gap: 0.16rem;
+}
+
+.header_gamerule .header_gamerule_item .header_gamerule_title {
+    font-family: FZZhengHeiS;
+    font-size: 0.48rem;
+    font-style:italic;
+    color: transparent;
+    background: linear-gradient(to bottom,  #FFFFFF 0%, #ffdb3c 50%,#ffa800 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.header_gamerule .header_gamerule_item .header_gamerule_arrow {
+    width: 0.22rem;
+    height: auto;
+}
+
+.gamerule_outter {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0.5rem;
+}
+
+.gamerule_outter .gamerule_inner {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.507rem;
+}
+
+.gamerule_outter .gamerule_inner .gamerule_name {
+    font-size: 0.373rem;
+    font-weight: 500;
+    color: #ebe8ce;
+    margin-bottom: 0.2rem;
+}
+
+.gamerule_outter .gamerule_inner .gamerule_text {
+    font-size: 0.347rem;
+    color: #dcdcdc;
+    text-shadow: 0 0.027rem 0.02rem rgba(0,0,0,0.3);
+    line-height: 1.6;
+}
+
+.gamerule_outter .gamerule_inner .gamerule_text.spacing_left {
+    padding-left: 0.28rem;
+}
+
+.gamerule_outter .gamerule_inner .gamerule_text.spacing_bottom {
+    padding-bottom: 0.28rem;
+}
+
+.gamerule_outter .gamerule_inner .gamerule_list_inner {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.2rem;
+}
+
+.gamerule_outter .gamerule_inner .gamerule_list_inner:last-child {
+    margin-bottom: 0;
+}
+
+.gamerule_outter .gamerule_inner .gamerule_list_inner .gamerule_list_name {
+    font-size: 0.373rem;
+    font-weight: 500;
+    color: #ebe8ce;
+    margin-bottom: 0.2rem;
+}
+
+.gamerule_outter .gamerule_inner .gamerule_list_inner ul {
+    padding-left: 0.6rem;
+}
+
+.gamerule_outter .gamerule_inner .gamerule_list_inner ul li {
+    font-size: 0.347rem;
+    color: #dcdcdc;
+    text-shadow: 0 0.027rem 0.02rem rgba(0,0,0,0.3);
+    line-height: 1.6;
+    list-style-type: disc;
+}
+
+.list_header_type {
+    background: linear-gradient(to top, #1b1f24 0%,#2e2e2e 92%,#646464 100%);
+    border-radius: 0.267rem 0.267rem 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 0.773rem;
+}
+
+.list_header_type .list_header_title {
+    font-size: 0.32rem;
+    font-weight: 500;
+    color: #9a9a9a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.list_header_type .list_header_title.style2 {
+    flex: none;
+    width: 60%;
+    justify-content: flex-start;
+    padding: 0 0.3rem;
+}
+
+.list_header_type .list_header_title.style3 {
+    flex: none;
+    width: 60%;
+    text-align: center;
+    padding: 0 0.3rem;
+}
+
+.type_list_inner {
+    height: 4.433rem;
+    margin-bottom: 0.5rem;
+}
+
+.type_list_inner:last-child {
+    margin-bottom: 0;
+}
+
+.type_list_inner.fit_height {
+    height: fit-content;
+    border-radius: 0 0 0.2667rem 0.2667rem;
+    overflow: hidden;
+}
+
+.type_list_inner .type_row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 0.8rem;
+}
+
+.type_list_inner .type_row.fit_height {
+    height: fit-content;
+    padding: 0.24rem 0;
+}
+
+.type_list_inner .type_row:nth-child(odd) {
+    background: linear-gradient(to right, rgba(68,68,68,0.2) 15%,#594c34 50%,rgba(68,68,68,0.2) 85%);
+}
+
+.type_list_inner .type_row:nth-child(even) {
+    background: linear-gradient(to right, rgba(49,48,48,0) 0%,rgba(49,48,48,0.84) 50%,rgba(49,48,48,0) 100%);
+}
+
+.type_list_inner .type_row .type_item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: 0 0.138rem;
+}
+
+.type_list_inner .type_row .type_item .type_text {
+    font-size: 0.346rem;
+    color: #fff;
+}
+
+.type_list_inner .type_row .type_item .type_text.gray {
+    color: #dcdcdc;
+    text-shadow: 0 0.03rem 0.02rem rgba(0,0,0,0.5);
+    line-height: 1.6;
+}
+
+.type_list_inner .type_row .type_item.style2 {
+    flex: none;
+    width: 60%;
+    justify-content: flex-start;
+    padding: 0 0.3rem;
+}
+
+.type_list_inner .type_row .type_item.style3 {
+    flex: none;
+    width: 60%;
+    text-align: center;
+    padding: 0 0.3rem;
+}
+
+.type_list_inner .type_row .type_item.col {
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.type_list_inner .type_row .type_item .type_dice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.2rem;
+}
+
+.type_list_inner .type_row .type_item .type_dice .jsyxx_dice_sm {
+    width: 0.5864rem;
+    height: 0.624rem;
+    margin-right: 0.1rem;
+}
+
+.type_list_inner .type_row .type_item .type_dice .jsyxx_text {
+    font-size: 0.317rem;
+    color: #dcdcdc;
+    text-shadow: 0 0.03rem 0.02rem rgba(0,0,0,0.5);
+    line-height: 1.6;
+}
+
+.jslp_table {
+    padding-bottom: 0.5rem;
+}

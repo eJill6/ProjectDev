@@ -1,0 +1,486 @@
+/* 会员中心-未开通 */
+.vip_card{
+   
+    border-radius: 7px;
+    height: 150px;
+    position: relative;
+    flex-basis: 90%;
+    flex-shrink: 0;
+    flex-grow: 1;
+}
+/* .vip_top_area li:nth-child(n + 2){
+margin-left: 12px;
+
+} */
+
+.vip_card.silver{
+    background: url(../images/vip/bg_vip_card_silver.jpg) #232127;
+    background-size: cover;
+}
+
+.vip_card.gold{
+    background: url(../images/vip/bg_vip_card_gold.jpg) #232127;
+    background-size: cover;       
+}
+
+
+
+
+.vip_card .vip_tag
+{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+
+.vip_card .vip_tag img {
+    border-top-left-radius: 7px;
+}
+
+.vip_card .vip_state
+ {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: absolute;
+    top: 8px;
+    right: 0px;
+}
+
+.vip_card_content {
+    padding: 13px;
+    display: flex;
+}
+
+.vip_top_area {
+    position: relative;
+    overflow: hidden;
+    background: #15141B;
+    width: 100%;
+    display: flex;
+    list-style: none;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 10px;
+    padding: 12px 12px 0px 12px;
+}
+
+.vip_top_area .vip_wrappers {
+    display: flex;
+    flex: 1;
+    gap: 16px;
+}
+
+.vip_card_content .vip_title {
+    padding-top: 6px;
+}
+
+.vip_card_content .vip_title_opened {
+    padding-top: 20px;
+}
+
+@media only screen and (max-width: 360px) {
+    
+    .vip_card_content .vip_title_opened {
+        padding-top: 10px;
+    }
+
+}
+
+
+.vip_card_content .vip_price_col {
+    display: flex;
+    align-items: flex-end;
+}
+
+.vip_card_content .vip_price{
+    padding-top: 5px;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 1;
+}
+
+.vip_card_content .vip_price_detail {
+    display: flex;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 1;
+    padding-left: 5px;
+    padding-bottom: 3px;
+}
+
+.vip_card_content  .vip_price_expired {
+    font-size: 10px;
+    line-height: 1.2;
+    width: fit-content;
+    padding: 2px 12px;
+    border-radius: 2px;
+    margin-top: 5px;
+}
+
+.vip_card.silver .vip_card_content .vip_price {
+    background: linear-gradient(66.7deg, #C49890 9.17%, #F9ECCC 91.91%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.vip_card.silver .vip_card_content .vip_price_detail {
+    color: #FFFFFF;
+}
+
+.vip_card.silver .vip_card_content .vip_price_expired {
+    color: #FFFFFF;
+    border: 0.5px solid #F9ECEC;
+    background: rgba(255, 255, 255, .2);
+   
+}
+
+
+.vip_card.gold .vip_card_content  .vip_price { 
+    background: #8B3C25;   
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.vip_card.gold .vip_card_content  .vip_price_detail {
+    color: #701700;
+}
+
+.vip_card.gold .vip_card_content  .vip_price_expired {
+    background: #FFEED9;
+    border: 0.5px solid #DE966F;
+    background: rgba(255, 255, 255, .2);
+    color: #DE966F;
+}
+
+.card_bg {
+    background: #15141B;
+    border-top: 0.5px #444348 solid;
+}
+
+.vip_price_detail .delete_line {
+    text-decoration-line: line-through;
+}
+
+.vip_price_detail .text {
+    padding-left: 5px;
+}
+
+.vip_card_content .vip_img {
+    position: absolute;
+    top: 30px;
+    right: 12px;
+}
+
+.vip_card_content .vip_img img {
+    width: 86px;
+    padding-top: 6px;
+}
+
+.vip_content_list {
+    width: 100%;
+    background: #1D1C1C;
+    padding: 0px 12px 12px 12px;
+    position: relative;
+}
+
+
+.vip_content_list .vip_list_title {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    color: #FF8A15;
+    padding: 12px 0px 12px 0px;
+}
+
+.vip_content_list .vip_list_menu_frame {
+    padding: 20px 22px 0px;
+    background: #282727;
+    border-radius: 10px;
+
+
+}
+
+.vip_list_menu_frame .vip_list_menu {
+
+    display: flex;
+    padding-bottom: 20px;
+}
+
+@media only screen and (max-width: 360px) {
+    .vip_content_list .vip_list_menu_frame {
+        padding: 15px 12px 0px;
+
+    }
+
+    .vip_list_menu_frame .vip_list_menu {
+        display: flex;
+        padding-bottom: 15px;
+    }
+
+    .vip_list_menu .vip_list_btn img {
+        width: 40px;
+        height: 40px;
+    }
+
+
+}
+
+
+
+.vip_list_menu .vip_list_btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    width: 33.3%;
+}
+
+.vip_list_menu .vip_list_btn img {
+    width: 50px;
+    height: 50px;
+}
+
+.vip_list_menu .vip_list_btn div {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #FF8A15;
+    padding-top: 5px;
+}
+
+.vip_menu_detail {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+    color: #D2CBC0;
+    padding: 20px 8px;
+}
+
+@media only screen and (max-width: 360px) {
+    .vip_menu_detail {
+        padding: 15px 8px;
+    }
+
+}
+
+
+.vip_main_btn {
+    padding: 13px 16px 30px 16px;
+    bottom: 0;
+    position: relative;
+    width: 100%;
+    background: #1D1C1C;
+
+}
+
+.bg_vip_content_frame {
+    position: absolute;
+    width: 100%;
+    right: 0;
+    left: 0;
+    top: -13px;
+}
+
+.bg_vip_content_frame img {
+    width: 100%;
+    height: 14px;
+}
+
+
+.vip_price_opened {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 18px;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    
+}
+
+.vip_card.silver .vip_card_content.open .text {
+    color: #EFDBC0;
+    padding: 4px;
+}
+
+.vip_card.silver .vip_card_content.open .opened_text {
+    color: #EFDBC0;
+    padding: 2px;
+    background: #2D2444;
+}
+
+
+
+.vip_card.gold .vip_card_content.open .text {
+    color: #701700;
+    padding: 4px;
+}
+
+.vip_card.gold .vip_card_content.open .opened_text {
+    color: #701700;
+    padding: 2px;
+    background: #FFEED9;
+}
+
+.vip_card_content.open .opened_btn{
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 18px;
+    margin-left: 10px;
+    cursor: pointer;
+    padding: 0px 8px 0px 8px;
+}
+.vip_card.silver .vip_card_content.open .opened_btn {
+    background: linear-gradient(321.24deg, #C49890 -4.54%, #F9ECCC 90.21%);
+    color: #2D2444;
+}
+.vip_card.gold .vip_card_content.open .opened_btn {
+
+    background: linear-gradient(321.24deg, #FFBC61 -4.54%, #FFFCC3 90.21%);
+    color: #701700;
+
+}
+
+
+
+
+/* 会员中心-購買記錄 */
+.vip_history_list {
+    background: #343333;
+    border-radius: 10px;
+    margin: 8px 8px 8px 8px;
+
+}
+
+.vip_history_list .list_nunber {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px 15px 20px;
+    border-bottom: 1px #3E3D3D solid;
+}
+
+.vip_history_list .list_nunber .nunber {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #FFFFFF;
+}
+
+.vip_history_list .list_nunber .text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #DB6372;
+}
+
+.vip_history_list .vip_list_content {
+
+    padding: 13px 20px 20px 20px;
+}
+
+.vip_list_content .list_title {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+}
+
+.vip_history_list .vip_list_content .list_title .text {
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: #FFFFFF;
+
+}
+
+.vip_history_list .vip_list_content .list_detail {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+}
+
+.vip_history_list .vip_list_content .list_detail .text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+    color: #A1A1A1;
+}
+
+
+.vip_history_list .vip_list_content .list_time {
+    display: flex;
+    justify-content: space-between;
+}
+
+.vip_history_list .vip_list_content .list_time .text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+    color: #FFFFFF;
+    display: flex;
+
+}
+
+.vip_history_list .vip_list_content .list_time .text_highlight {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+    color: #FF8B15;
+    cursor: pointer;
+}
+
+.vip_history_list .vip_list_content .list_time .text :nth-child(2) {
+    padding-left: 10px;
+
+}
+
+
+
+.vip_member_center {
+    padding-top: 64px;
+}
+
+.vip_finish_page {
+    display: flex;
+    flex-direction: column;
+}
+
+.vip_finish_page .content {
+    flex: 1;
+}
+
+.vip_finish_page .content .icon {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0 48px 0;
+}
+
+.vip_finish_page .content p {
+    text-align: center;
+    font-size: 17px;
+    color: #FFF;
+}
+
+.vip_finish_page .bottom_btn {
+    padding: 20px 0 52px 0;
+    cursor: pointer;
+}
+
+.vip_popup_pay .bottom_btn {
+    padding: 20px 16px 65px 16px;
+    cursor: pointer;
+}
+
+.bg_vip_content_frame .bottom_btn {
+    padding: 20px 16px 65px 16px;
+    cursor: pointer;
+}

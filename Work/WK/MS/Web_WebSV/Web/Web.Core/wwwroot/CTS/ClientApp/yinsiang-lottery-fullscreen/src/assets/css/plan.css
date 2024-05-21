@@ -1,0 +1,566 @@
+@charset "UTF-8";
+
+.plan_up {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.3rem 0.4rem 0.18rem;
+    width: 100%;
+}
+
+.plan_up.pk10_car{
+    padding-top: 0.238rem;
+}
+
+.plan_up.omssc,.plan_up.omlhc {
+    padding-top: 0.268rem;
+}
+
+.plan_up.omssc,.plan_up.nuinui {
+    padding-top: 0.268rem;
+}
+
+.plan_up.omssc,.plan_up.jslp,.plan_up.jsyxx {
+    padding-top: 0.25rem;
+}
+
+.plan_up .plan_infos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plan_up .plan_infos .plan_gameimg {
+    width: 1.04rem;
+    height: 1.04rem;
+    margin-right: 0.167rem;
+    display: flex;
+    align-items: center;
+}
+
+.plan_up .plan_infos .plan_gameimg img {
+    width: 1.04rem;
+    height: 1.04rem;
+}
+
+.plan_up .plan_infos .plan_gameimg.pk10_car {
+    width: 1.773rem;
+    height: auto;
+}
+
+.plan_up .plan_infos .plan_gameimg.pk10_car img {
+    width: 1.773rem;
+    height: auto;
+}
+
+.plan_up .plan_infos .plan_gameimg.omssc {
+    width: 1.113rem;
+    height: auto;
+}
+
+.plan_up .plan_infos .plan_gameimg.omssc img {
+    width: 1.113rem;
+    height: auto;
+}
+
+.plan_up .plan_infos .plan_gameimg.omlhc {
+    width: 1.04rem;
+    height: auto;
+}
+
+.plan_up .plan_infos .plan_gameimg.omlhc img {
+    width: 1.04rem;
+    height: auto;
+}
+
+.plan_up .plan_infos .plan_gameimg.nuinui,.plan_up .plan_infos .plan_gameimg.nuinui img {
+    width: 1.24rem;
+    height: auto;
+}
+
+.plan_up .plan_infos .plan_gameimg.baccarat,.plan_up .plan_infos .plan_gameimg.baccarat img {
+    width: 1.12rem;
+    height: auto;
+}
+
+.plan_up .plan_infos .plan_gameimg.jslp,.plan_up .plan_infos .plan_gameimg.jslp img {
+    width: 1.047rem;
+    height: auto;
+}
+
+.plan_up .plan_infos .plan_gameimg.jsyxx,.plan_up .plan_infos .plan_gameimg.jsyxx img {
+    width: 1.033rem;
+    height: auto;
+}
+
+.plan_up .plan_infos .plan_gameimg.jssg,.plan_up .plan_infos .plan_gameimg.jssg img {
+    width: 1.1267rem;
+    height: auto;
+}
+
+.plan_up .plan_infos .plan_gameimg.jslh,.plan_up .plan_infos .plan_gameimg.jslh img {
+    width: 1.44rem;
+    height: auto;
+}
+
+.plan_up .plan_infos .plan_info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.plan_up .plan_infos .plan_info .plan_first {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.18rem;
+}
+
+.plan_up .plan_infos .plan_info .plan_first .plan_title {
+    font-family: FZZhengHeiS;
+    font-size: 0.48rem;
+    font-style: italic;
+    color: transparent;
+    background: linear-gradient(to bottom, #FFFFFF 0%, #ffdb3c 50%,#ffa800 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    line-height: 1.1;
+}
+
+.plan_up .plan_infos .plan_info .plan_first .plan_arrow,.plan_up .plan_infos .plan_info .plan_first .plan_arrow img {
+    width: 0.22rem;
+    height: auto;
+}
+
+.plan_up .plan_infos .plan_info .plan_text {
+    font-size: 0.32rem;
+    color: #cbcbcb;
+}
+
+.plan_up .plan_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plan_up .plan_content .plan_digits {
+    background: url(../images/plan/img_plan_digits.png) no-repeat;
+    background-size: 100% auto;
+    width: 0.767rem;
+    height: 1.027rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    margin-right: 0.067rem;
+}
+
+.plan_up .plan_content .plan_digits:last-child {
+    margin-right: 0;
+}
+
+.plan_up .plan_content .plan_digits .plan_digits_text {
+    font-family: 'din_alternatebold';
+    font-size: 0.76rem;
+    color: rgba(0,0,0,0.01);
+    background: linear-gradient(to bottom, #ffffff 25%,#ffe5b7 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-bottom: 0.08rem;
+}
+
+.plan_up .plan_content .plan_digits .plan_digits_text::before {
+    /* content: attr(text); */
+    position: absolute;
+    z-index: -1;
+    text-shadow: 0 0 0.18rem rgba(0,0,0,1);
+}
+
+.plan_num_board {
+    background: url(../images/plan/bg_plan_board.png) no-repeat;
+    background-size: 100% auto;
+    width: 9.2rem;
+    height: 2.187rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.44rem;
+}
+
+.plan_num_board .plan_circle {
+    background: url(../images/plan/img_plan_circle.png) no-repeat;
+    background-size: 100% auto;
+    width: 1.32rem;
+    height: 1.32rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    margin-right: 0.2rem;
+}
+
+.plan_num_board .plan_circle:last-child {
+    margin-right: 0;
+}
+
+.plan_num_board .plan_circle .plan_num {
+    font-family: 'din_alternatebold';
+    font-size: 0.8rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #ffffff 25%, #ffe5b7 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.plan_num_board .plan_circle .plan_num:before {
+    content: attr(text);
+    position: absolute;
+    z-index: -1;
+    text-shadow: 0 0.0266rem 0.02rem rgba(0,0,0,0.3);
+}
+
+.plan_num_board .kuaisan_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.2rem;
+}
+
+.plan_num_board .kuaisan_content .jsyxx_dice_lg,.plan_num_board .kuaisan_content .jsyxx_dice_lg img {
+    width: 1.733rem;
+    height: 1.813rem;
+}
+
+/* 一分快車 */
+
+.pk10_inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pk10_inner .pk10_content {
+    background: url(../images/game/bg_car_container.png) no-repeat;
+    background-size: 100% 100%;
+    width: 9.193rem;
+    height: 1.667rem;
+    position: relative;
+    z-index: -1;
+}
+
+.pk10_inner .pk10_content .pk10_corner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url(../images/game/bg_car_corner.png) no-repeat;
+    background-size: 100% 100%;
+    width: 9.193rem;
+    height: 1.667rem;
+    z-index: 1;
+}
+
+.pk10_inner .pk10_content .pk10_section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.pk10_inner .pk10_content .pk10_section .pk10_item {
+    width: 0.82rem;
+    height: 1.367rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.06rem;
+}
+
+.pk10_inner .pk10_content .pk10_section .pk10_item:last-child {
+    margin-right: 0;
+}
+
+.pk10_inner .pk10_content .pk10_section .pk10_item img {
+    width: 0.82rem;
+    height: 1.367rem;
+}
+
+/* 一分時時彩 */
+
+.omssc_inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.omssc_inner .omssc_content {
+    background: url(../images/game/bg_omssc_light_container.png) no-repeat;
+    background-size: 100% 100%;
+    width: 9.193rem;
+    height: 1.667rem;
+    position: relative;
+}
+
+.omssc_inner .omssc_content .omssc_section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.omssc_inner .omssc_content .omssc_section .omssc_item {
+    width: 1.2rem;
+    height: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.2rem;
+}
+
+.omssc_inner .omssc_content .omssc_section .omssc_item:last-child {
+    margin-right: 0;
+}
+
+/* 一分六合彩 */
+
+.omlhc_inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.omlhc_inner .omlhc_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.omlhc_inner .omlhc_content .omlhc_item {
+    background: url(../images/game/omlhc_ball_lg_frame.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 1.22rem;
+    height: 1.42rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.0067rem;
+}
+
+.omlhc_inner .omlhc_content .omlhc_item:last-child {
+    margin-right: 0;
+}
+
+.omlhc_inner .omlhc_content .omlhc_item .omlhc_lg_ball {
+    width: 0.947rem;
+    height: 0.947rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.omlhc_inner .omlhc_content .omlhc_item .omlhc_lg_ball.green {
+    background: url(../images/game/omlhc_ball_lg_green.png);
+    background-size: 100% 100%;
+}
+
+.omlhc_inner .omlhc_content .omlhc_item .omlhc_lg_ball.blue {
+    background: url(../images/game/omlhc_ball_lg_blue.png);
+    background-size: 100% 100%;
+}
+
+.omlhc_inner .omlhc_content .omlhc_item .omlhc_lg_ball.red {
+    background: url(../images/game/omlhc_ball_lg_red.png);
+    background-size: 100% 100%;
+}
+
+.omlhc_inner .omlhc_content .omlhc_item .omlhc_lg_ball .num {
+    font-family: Impact;
+    font-size: 0.487rem;
+    color: #010101;
+}
+
+.omlhc_inner .omlhc_content .omlhc_lg_plus {
+    width: 0.604rem;
+    height: 1.1907rem;
+    margin-right: 0.0067rem;
+}
+
+.omlhc_inner .omlhc_content .omlhc_lg_plus img {
+    width: 0.604rem;
+    height: 1.1907rem;
+}
+
+
+.plan_bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0.2rem 0.44rem;
+}
+
+.plan_bottom .plan_infos_group {
+    display: flex;
+    flex-direction: column;
+}
+
+.plan_bottom .plan_infos_group .info_group {
+    display: flex;
+    align-items: center;
+}
+
+.plan_bottom .plan_infos_group .info_img {
+    width: 0.153rem;
+    height: 0.26rem;
+    margin-right: 0.173rem;
+}
+
+.plan_bottom .plan_infos_group .info_text {
+    font-size: 0.32rem;
+    color: #cbcbcb;
+    margin-right: 0.173rem;
+}
+
+.plan_bottom .plan_infos_group .info_text:last-child {
+    margin-right: 0;
+}
+
+.plan_bottom .plan_infos_group .info_text.white {
+    color: #fff;
+}
+
+.plan_bottom .plan_infos_group .info_text.yellow {
+    color: #ffde00;
+}
+
+.plan_bottom .plan_type_filter {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.plan_bottom .plan_type_filter .type_filter_img {
+    width: 0.347rem;
+    height: 0.38rem;
+    margin-right: 0.16rem;
+}
+
+.plan_bottom .plan_type_filter .type_filter_img img {
+    width: 0.347rem;
+    height: 0.38rem;
+}
+
+.plan_bottom .plan_type_filter .type_filter_text {
+    font-size: 0.373rem;
+    color: #ebe8ce;
+}
+
+.plan_list_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 0.44rem;
+    height: 0.887rem;
+    background: linear-gradient(to top, #1b1f24 0%,#2e2e2e 100%);
+    border-radius: 0.187rem 0.187rem 0 0;
+    max-width: 9.193rem;
+    width: 9.193rem;
+}
+
+.plan_list_header .plan_list_header_text {
+    font-size: 0.32rem;
+    font-weight: 500;
+    color: #9a9a9a;
+    text-align: center;
+    width: 1rem;
+}
+
+.plan_list_header .plan_list_header_text.column_1 {
+    width: 2.2rem;
+}
+
+.plan_list_header .plan_list_header_text.column_2 {
+    width: 2.3rem;
+}
+
+.plan_list_rows {
+    padding-bottom: 1rem;
+    max-width: 9.193rem;
+    width: 9.193rem;
+    margin: 0 0.44rem;
+}
+
+.plan_list_rows .plan_list_row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 0.867rem;
+}
+
+.plan_list_rows .plan_list_row:nth-child(odd) {
+    background: rgba(97,69,39,0.4);
+}
+
+.plan_list_rows .plan_list_row:nth-child(even) {
+    background: rgba(38,30,22,0.4);
+}
+
+.plan_list_rows .plan_list_row .plan_list_row_text {
+    font-size: 0.32rem;
+    color: #ebe8ce;
+    text-align: center;
+    width: 1rem;
+}
+
+.plan_list_rows .plan_list_row .plan_list_row_text .win_type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 0.467rem;
+    height: 0.467rem;
+    font-weight: 500;
+    border-radius: 0.053rem;
+    margin: 0 auto;
+}
+
+.plan_list_rows .plan_list_row .plan_list_row_text .win_type.blue {
+    background: linear-gradient(to bottom, #0064b1 0%,#188ee7 100%);
+}
+
+.plan_list_rows .plan_list_row .plan_list_row_text .win_type.orange {
+    background: linear-gradient(to bottom, #d43800 0%,#e46018 100%);
+}
+
+.plan_list_rows .plan_list_row .plan_list_row_text .win_type.red {
+    background: linear-gradient(to bottom, #da1a10 0%,#ff553a 100%);
+}
+
+.plan_list_rows .plan_list_row .plan_list_row_text .win_type.green {
+    background: linear-gradient(to bottom,  #2f790b 0%,#5ca72b 100%);
+}
+
+.plan_list_rows .plan_list_row .plan_list_row_text .win_type.black {
+    background: linear-gradient(to bottom, #232323 0%,#535353 100%);
+}
+
+
+.plan_list_rows .plan_list_row .plan_list_row_text.column_1 {
+    width: 2.2rem;
+}
+
+.plan_list_rows .plan_list_row .plan_list_row_text.white {
+    color: #fff;
+}
+
+.plan_list_rows .plan_list_row .plan_list_row_text.white.column_1 {
+    width: 2rem;
+}
+
+.plan_list_rows .plan_list_row .plan_list_row_text.white.column_2 {
+    width: 2.3rem;
+}

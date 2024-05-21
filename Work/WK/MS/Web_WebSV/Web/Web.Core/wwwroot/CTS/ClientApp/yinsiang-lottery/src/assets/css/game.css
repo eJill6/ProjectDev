@@ -1,0 +1,2453 @@
+@charset "UTF-8";
+
+.top_line {
+    width: 100%;
+    height: 0.0267rem;
+    background: linear-gradient(90deg, rgba(255,253,222,0) 10%,#cead73 50%,rgba(255,253,222,0) 90%);
+}
+
+/* tabs */
+
+.game_up {
+    height: 1.393rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: linear-gradient(90deg, rgba(0,0,0,0) 10%,rgba(0,0,0,0.6) 50%,rgba(0,0,0,0) 90%);
+}
+
+.game_up.end {
+    align-items: flex-end;
+}
+
+.game_up .tabs {
+    display: flex;
+    align-items: center;
+}
+
+.game_up .tabs.right {
+    margin-right: 0.5rem;
+}
+
+.game_up .tabs.left {
+    margin-left: 0.5rem;
+}
+
+.game_up .tabs .tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    padding: 0 0.233rem;
+    cursor: pointer;
+}
+
+.game_up .tabs .line_wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.game_up .tabs .line_wrapper .line {
+    width: 0.0267rem;
+    height: 1.393rem;
+}
+
+.game_up .tabs .line_wrapper .line.champagne {
+    background: linear-gradient(to top,  rgba(251,224,160,.5) 0%,rgba(236,162,21,0) 80%);
+}
+
+.game_up .tabs .line_wrapper .line.black {
+    background: linear-gradient(to top,  rgba(0,0,0,.5) 0%,rgba(0,0,0,0) 80%);
+}
+
+.game_up .tabs .tab .tab_icon {
+    width: 0.547rem;
+    height: 0.547rem;
+    margin-bottom: 0.1rem;
+}
+
+.game_up .tabs .tab .tab_icon img {
+    width: 0.547rem;
+    height: 0.547rem;
+}
+
+.game_up .tabs .tab .tab_text {
+    font-family: 'FZLanTingHei';
+    font-size: 0.253rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #fffedf 0%,#d7a749 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.game_up .tabs .tab .tab_text::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.03rem #4c3520;
+    z-index: -1;
+}
+
+/* 莊、閒 start */
+
+.game_middle {
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.game_middle.height {
+    height: 1.6rem;
+}
+
+.game_middle.mb {
+    margin-bottom: 0.2667rem;
+}
+
+.game_middle .logo {
+    width: 1.753rem;
+    height: 1.8467rem;
+    position: absolute;
+    top: -1.28rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.game_middle .logo img {
+    width: 1.753rem;
+    height: 1.8467rem;
+}
+
+.game_middle .logo_roulette {
+    width: 1.82rem;
+    height: 1.5333rem;
+    position: absolute;
+    top: -1.28rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.game_middle .logo_roulette img {
+    width: 1.82rem;
+    height: 1.5333rem;
+}
+
+.game_middle .logo_yusiasieh {
+    width: 2.493rem;
+    height: 1.84rem;
+    position: absolute;
+    top: -1.45rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.game_middle .logo_yusiasieh img {
+    width: 2.493rem;
+    height: 1.84rem;
+}
+
+.game_middle .board {
+    width: 2.86rem;
+    height: 1.1933rem;
+    position: absolute;
+    top: -1.15rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+.game_middle .board img {
+    width: 2.86rem;
+    height: 1.1933rem;
+}
+
+.reciprocal {
+    position: absolute;
+    bottom: 0.033rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reciprocal.unset {
+    position: unset;
+    transform: unset;
+}
+
+.reciprocal .text {
+    font-size: 0.267rem;
+    font-weight: bold;
+    color: transparent;
+    background: linear-gradient(to bottom, #fffedf 0%,#d7a749 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.reciprocal .text::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.03rem #4c3520;
+    z-index: -1;
+}
+
+.reciprocal .text.sm {
+    font-size: 0.24rem;
+}
+
+.reciprocal .digit_container {
+    background: url(../images/game/bg_reciprocal_container.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 1.4067rem;
+    height: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reciprocal .digit_container.sm {
+    width: 1.055rem;
+    height: 0.75rem;
+}
+
+.reciprocal .digit_container .digit {
+    background: url(../images/game/digit.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 0.6rem;
+    height: 0.793rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reciprocal .digit_container .digit.sm {
+    width: 0.45rem;
+    height: 0.59475rem;
+}
+
+.reciprocal .digit_container .digit .units {
+    font-family: 'din_alternatebold';
+    font-size: 0.7333rem;
+    color: rgba(0,0,0,0.01);
+    background: linear-gradient(to bottom, #d86017 0%, #9c3b00 50%,#4d0e0e 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.reciprocal .digit_container .digit .units.sm {
+    font-size: 0.567rem;;
+}
+
+.reciprocal_roulette {
+    position: absolute;
+    top: 0.173rem;
+    right: 0.267rem;
+    z-index: 8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reciprocal_roulette.unset {
+    position: unset;
+    transform: unset;
+}
+
+.reciprocal_roulette .text {
+    font-size: 0.267rem;
+    font-weight: bold;
+    color: transparent;
+    background: linear-gradient(to bottom, #fffedf 0%,#ffc341 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.reciprocal_roulette .text::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.03rem #2d1d0e;
+    z-index: -1;
+}
+
+.reciprocal_roulette .text.sm {
+    font-size: 0.24rem;
+}
+
+.reciprocal_roulette .digit_container {
+    background: url(../images/game/bg_reciprocal_roulette_container.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 1.3267rem;
+    height: 0.9467rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.reciprocal_roulette .digit_container.sm {
+    width: 1.133rem;
+    height: 0.773rem;
+}
+
+.reciprocal_roulette .digit_container .digit {
+    width: 0.6rem;
+    height: 0.8467rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reciprocal_roulette .digit_container .digit.sm {
+    width: 0.513rem;
+    height: 0.693rem;
+}
+
+.reciprocal_roulette .digit_container .digit .units {
+    font-family: 'din_alternatebold';
+    font-size: 0.64rem;
+    color: rgba(0,0,0,0.01);
+    background: linear-gradient(to bottom, #fffedf 0%, #ffbe38 50%, #a06a05 51%,#ffd75d 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.reciprocal_roulette .digit_container .digit .units::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.04rem #2d1d0e;
+    z-index: -1;
+}
+
+.reciprocal_roulette .digit_container .digit .units.sm {
+    font-size: 0.56rem;
+}
+
+.reciprocal_yusiasieh {
+    position: absolute;
+    top: 0.56rem;
+    right: 0.4rem;
+    z-index: 8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reciprocal_yusiasieh.unset {
+    position: relative;
+    top: 0.1rem;
+    right: 0;
+}
+
+.reciprocal_yusiasieh .text {
+    font-size: 0.293rem;
+    font-weight: bold;
+    color: transparent;
+    background: linear-gradient(to bottom, #fffedf 0%,#ffe63b 64%,#ffae00 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    position: absolute;
+    top: -0.26rem;
+    right: 0.3rem;
+}
+
+.reciprocal_yusiasieh .text::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.03rem #2d1d0e;
+    z-index: -1;
+}
+
+.reciprocal_yusiasieh .text.sm {
+    font-size: 0.24rem;
+    top: -0.21rem;
+    right: 0.25rem;
+}
+
+.reciprocal_yusiasieh .digit_container {
+    background: url(../images/game/bg_reciprocal_yusiasieh_container.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 2.293rem;
+    height: 1.16rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.reciprocal_yusiasieh .digit_container.sm {
+    width: 1.8rem;
+    height: 0.893rem;
+}
+
+.reciprocal_yusiasieh .digit_container .digit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
+    top: 0.22rem;
+    left: 1.01rem;
+}
+
+.reciprocal_yusiasieh .digit_container.sm .digit {
+    top: 0.16rem;
+    left: 0.8rem;
+}
+
+/* 主界面使用以下倒數 */
+
+.reciprocal_yusiasieh .digit_container .digit .decimal_sprite {
+    background-image: url("../images/game/digit_yusiasieh_sprite.png");
+    background-repeat: no-repeat;
+    background-size: 100% 1000%;
+    position: relative;
+    left: 0;
+    width: 0.48rem;
+    height: 0.667rem;
+}
+
+.reciprocal_yusiasieh .digit_container .digit .decimal_sprite:first-child {
+    left: 0.06rem;
+}
+
+.reciprocal_yusiasieh .digit_container .digit .decimal_sprite.yusiasieh_n0 {
+    background-position-y: 0rem;
+}
+
+.reciprocal_yusiasieh .digit_container .digit .decimal_sprite.yusiasieh_n1 {
+    background-position-y: -0.667rem;
+}
+
+.reciprocal_yusiasieh .digit_container .digit .decimal_sprite.yusiasieh_n2 {
+    background-position-y: -1.334rem;
+}
+
+.reciprocal_yusiasieh .digit_container .digit .decimal_sprite.yusiasieh_n3 {
+    background-position-y: -2.001rem;
+}
+
+.reciprocal_yusiasieh .digit_container .digit .decimal_sprite.yusiasieh_n4 {
+    background-position-y: -2.668rem;
+}
+
+.reciprocal_yusiasieh .digit_container .digit .decimal_sprite.yusiasieh_n5 {
+    background-position-y: -3.335rem;
+}
+
+.reciprocal_yusiasieh .digit_container .digit .decimal_sprite.yusiasieh_n6 {
+    background-position-y: -4.0002rem;
+}
+
+.reciprocal_yusiasieh .digit_container .digit .decimal_sprite.yusiasieh_n7 {
+    background-position-y: -4.669rem;
+}
+
+.reciprocal_yusiasieh .digit_container .digit .decimal_sprite.yusiasieh_n8 {
+    background-position-y: -5.336rem;
+}
+
+.reciprocal_yusiasieh .digit_container .digit .decimal_sprite.yusiasieh_n9 {
+    background-position-y: -6.003rem;
+}
+
+/* 開獎紀錄使用以下倒數 */
+
+.reciprocal_yusiasieh .digit_container .digit .decimal_sprite.sm {
+    width: 0.3888rem;
+    height: 0.54027rem;
+}
+
+.reciprocal_yusiasieh .digit_container .digit .decimal_sprite.sm.yusiasieh_n0 {
+    background-position-y: 0rem;
+}
+
+.reciprocal_yusiasieh .digit_container .digit .decimal_sprite.sm.yusiasieh_n1 {
+    background-position-y: -0.54027rem;
+}
+
+.reciprocal_yusiasieh .digit_container .digit .decimal_sprite.sm.yusiasieh_n2 {
+    background-position-y: -1.08054rem;
+}
+
+.reciprocal_yusiasieh .digit_container .digit .decimal_sprite.sm.yusiasieh_n3 {
+    background-position-y: -1.62081rem;
+}
+
+.reciprocal_yusiasieh .digit_container .digit .decimal_sprite.sm.yusiasieh_n4 {
+    background-position-y: -2.16108rem;
+}
+
+.reciprocal_yusiasieh .digit_container .digit .decimal_sprite.sm.yusiasieh_n5 {
+    background-position-y: -2.70135rem;
+}
+
+.reciprocal_yusiasieh .digit_container .digit .decimal_sprite.sm.yusiasieh_n6 {
+    background-position-y: -3.24162rem;
+}
+
+.reciprocal_yusiasieh .digit_container .digit .decimal_sprite.sm.yusiasieh_n7 {
+    background-position-y: -3.78189rem;
+}
+
+.reciprocal_yusiasieh .digit_container .digit .decimal_sprite.sm.yusiasieh_n8 {
+    background-position-y: -4.32216rem;
+}
+
+.reciprocal_yusiasieh .digit_container .digit .decimal_sprite.sm.yusiasieh_n9 {
+    background-position-y: -4.86243rem;
+}
+
+.alarmclock {
+    position: absolute;
+    top: -0.02rem;
+    left: -0.5rem;
+    width: 1.047rem;
+    height: 1.067rem;
+}
+
+.type_roulette {
+    position: absolute;
+    top: 0.267rem;
+    left: 0.267rem;
+    z-index: 8;
+}
+
+.type_roulette .type_container {
+    background: url(../images/game/bg_roulette_type_container.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 1.687rem;
+    height: 0.667rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.type_yusiasieh .type_container {
+    background: url(../images/game/bg_yusiasieh_type_container.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 1.913rem;
+    height: 0.667rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.type_yusiasieh {
+    position: absolute;
+    top: 0.35rem;
+    left: 0.5rem;
+    z-index: 8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.fullrange_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.05rem;
+}
+
+.fullrange_container .fullrange {
+    background: url(../images/game/img_fullrange_default.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 1.267rem;
+    height: 0.58rem;
+}
+
+.fullrange_container .fullrange.active {
+    background: url(../images/game/img_fullrange_active.png);
+    background-size: 100% 100%;
+}
+
+.fullrange_container .arrow {
+    width: 0.2133rem;
+    height: 0.2333rem;
+}
+
+.fullrange_container .arrow:first-child {
+    margin-right: 0.167rem;
+}
+
+.fullrange_container .arrow:last-child {
+    margin-left: 0.167rem;
+}
+
+
+.type_roulette .type_container .type_outer,.type_yusiasieh .type_container .type_outer {
+    width: 1.58rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 0.03rem;
+}
+
+.type_roulette .type_container .type_outer .type,.type_yusiasieh .type_container .type_outer .type {
+    width: 0.48rem;
+    height: 0.48rem;
+    margin: 0 0.0133rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.type_roulette .type_container .type_outer .type.zero,.type_yusiasieh .type_container .type_outer .type.zero {
+    background: url(../images/game/type_green.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.type_roulette .type_container .type_outer .type.red,.type_yusiasieh .type_container .type_outer .type.red {
+    background: url(../images/game/type_red.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.type_roulette .type_container .type_outer .type.blue,.type_yusiasieh .type_container .type_outer .type.blue {
+    background: url(../images/game/type_blue.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.type_roulette .type_container .type_outer .type.orange,.type_yusiasieh .type_container .type_outer .type.orange {
+    background: url(../images/game/type_orange.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.type_roulette .type_container .type_outer .type.black,.type_yusiasieh .type_container .type_outer .type.black {
+    background: url(../images/game/type_black.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.type_roulette .type_container .type_outer .type .type_text,.type_yusiasieh .type_container .type_outer .type .type_text {
+    font-size: 0.2933rem;
+    font-weight: bold;
+    color: transparent;
+    background: #ffffff;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.type_roulette .type_container .type_outer .type .type_text::before,.type_yusiasieh .type_container .type_outer .type .type_text::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.03rem #2d1d0e;
+    z-index: -1;
+}
+
+
+
+.game_middle .player {
+    background: url(../images/game/bg_player.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 5rem;
+    height: 2rem;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.game_middle .player .inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    margin-right: 0.4rem;
+    position: relative;
+    width: 5rem;
+    height: 2rem;
+}
+
+.game_middle .player .inner .result {
+    background: url(../images/game/bg_play_porker.png);
+    background-size: 100% 100%;
+    width: 3.8rem;
+    height: 0.6rem;
+    position: absolute;
+    bottom: 0.16rem;;
+    right: 50%;
+    transform: translateX(50%);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game_middle .player .inner .result .win {
+    font-size: 0.346rem;
+    font-weight: bold;
+    color: rgba(0,0,0,0.01);
+    background: linear-gradient(to bottom, #fffe8b 0%,#ffa900 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-right: 0.15rem;
+}
+
+.game_middle .player .inner .result .win::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.03rem #4c3520;
+    z-index: -1;
+}
+
+.game_middle .player .inner .result .win:last-child {
+    padding-right: 0;
+}
+
+.game_middle .player .inner .result .lose {
+    font-size: 0.346rem;
+    font-weight: bold;
+    color: rgba(0,0,0,0.01);
+    background: linear-gradient(to bottom, #fefefe 0%,#acacac 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.game_middle .player .inner .result .lose::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.03rem #2b2b2b;
+    z-index: -1;
+}
+
+.game_middle .player .inner .title {
+    font-family: 'FZZhengHeiS';
+    font-size: 0.3467rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #cce3ff 0%,#4196ff 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-bottom: 0.1rem;
+}
+
+.game_middle .player .inner .title::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.06rem #121a39;
+    z-index: -1;
+}
+
+.game_middle .player .inner .title.left {
+    position: absolute;
+    top: 0.18rem;
+    right: 1rem;
+}
+
+.game_middle .player .inner .poker {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.game_middle .player .inner .poker.left {
+    position: absolute;
+    right: 1rem;
+    top: 0.68rem;
+}
+
+.game_middle .player .inner .poker .vertical {
+    width: 0.8133rem;
+    height: 1.1467rem;
+    margin-right: 0.12rem;
+}
+
+.game_middle .player .inner .poker .vertical.turnleft {
+    transform: rotate(90deg);
+    margin-right: 0.29rem;
+    margin-top: 0.168rem;
+}
+
+.game_middle .player .inner .poker .vertical:last-child {
+    margin-right: 0;
+}
+
+.game_middle .player .inner .poker .vertical img {
+    width: 0.8133rem;
+    height: 1.1467rem;
+}
+
+.game_middle .bank {
+    background: url(../images/game/bg_bank.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 5rem;
+    height: 2rem;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.game_middle .bank .inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-left: 0.4rem;
+    position: relative;
+    width: 5rem;
+    height: 2rem;
+}
+
+.game_middle .bank .inner .result {
+    background: url(../images/game/bg_play_porker.png);
+    background-size: 100% 100%;
+    width: 3.8rem;
+    height: 0.6rem;
+    position: absolute;
+    bottom: 0.16rem;
+    right: 50%;
+    transform: translateX(50%);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game_middle .bank .inner .result .win {
+    font-size: 0.346rem;
+    font-weight: bold;
+    color: rgba(0,0,0,0.01);
+    background: linear-gradient(to bottom, #fffe8b 0%,#ffa900 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-right: 0.15rem;
+}
+
+.game_middle .bank .inner .result .win::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.03rem #4c3520;
+    z-index: -1;
+}
+
+.game_middle .bank .inner .result .win:last-child {
+    padding-right: 0;
+}
+
+.game_middle .bank .inner .result .lose {
+    font-size: 0.346rem;
+    font-weight: bold;
+    color: rgba(0,0,0,0.01);
+    background: linear-gradient(to bottom, #fefefe 0%,#acacac 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.game_middle .bank .inner .result .lose::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.03rem #2b2b2b;
+    z-index: -1;
+}
+
+.game_middle .bank .inner .title {
+    font-family: 'FZZhengHeiS';
+    font-size: 0.3467rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #ffc8c8 0%,#ff6868 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-bottom: 0.1rem;
+}
+
+.game_middle .bank .inner .title::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.06rem #3a0f0f;
+    z-index: -1;
+}
+
+.game_middle .bank .inner .title.right {
+    position: absolute;
+    top: 0.18rem;
+    left: 1rem;
+}
+
+.game_middle .bank .inner .poker {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.game_middle .bank .inner .poker.right {
+    position: absolute;
+    left: 1rem;
+    top: 0.68rem;
+}
+
+.game_middle .bank .inner .poker .vertical {
+    width: 0.8133rem;
+    height: 1.1467rem;
+    margin-left: 0.12rem;
+}
+
+.game_middle .bank .inner .poker .vertical.turnright {
+    transform: rotate(-90deg);
+    margin-left: 0.29rem;
+    margin-top: 0.168rem;
+}
+
+.game_middle .bank .inner .poker .vertical:first-child {
+    margin-left: 0;
+}
+
+.game_middle .bank .inner .poker .vertical img {
+    width: 0.8133rem;
+    height: 1.1467rem;
+}
+
+/* 莊、閒 end */
+
+/* 莊閒、對子 start */
+.game_down {
+    flex: 1;
+    height: 50px;
+}
+
+.betting_tabs {
+    height: 0.8333rem;
+    display: flex;
+    align-items: center;
+    margin: 0.2rem 0.267rem;
+}
+
+.betting_tabs .outer {
+    background: url(../images/game/bg_tab_full.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.betting_tabs .outer .tab {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    cursor: pointer;
+}
+
+.betting_tabs .outer .tab.left {
+    background: url(../images/game/tab_left_active.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.betting_tabs .outer .tab.left_sm {
+    background: url(../images/game/tab_left_sm_active.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.betting_tabs .outer .tab.center {
+    background: url(../images/game/tab_center_active.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.betting_tabs .outer .tab.right {
+    background: url(../images/game/tab_right_active.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.betting_tabs .outer .tab.right_sm {
+    background: url(../images/game/tab_right_sm_active.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.betting_tabs .outer .tab .inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.betting_tabs .outer .tab .inner .text {
+    font-family: 'FZLanTingHei';
+    font-size: 0.3733rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #ffe295 0%,#dca650 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.betting_tabs .outer .tab .inner .text::before {
+    content: attr(data-text);
+    position: absolute;
+    text-shadow: 0 0.0267rem 0 rgba(0, 0, 0, .7);
+    z-index: -1;
+}
+
+.betting_tabs .outer .tab.left .inner .text, .betting_tabs .outer .tab.center .inner .text, .betting_tabs .outer .tab.right .inner .text,.betting_tabs .outer .tab.left_sm .inner .text,.betting_tabs .outer .tab.right_sm .inner .text {
+    font-family: 'FZLanTingHei';
+    font-size: 0.3733rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #ffffff 0%,#ffd086 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.betting_tabs .outer .tab_line {
+    width: 0.0267rem;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(182,145,74,0.2) 0%,#ffe65e 50%,rgba(182,145,74,0.2)  100%);
+    opacity: 0.5;
+}
+
+.betting_table {
+    height: 3.767rem;
+    margin: 0 0.267rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.1333rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.betting_table .table {
+    width: 100%;
+    height: 3.79rem;
+    position: absolute;
+    top: -0.01rem;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.betting_table .table img {
+    width: 100%;
+    height: 3.79rem;
+}
+
+.betting_table.thirtyseven {
+    height: 13.336rem;
+}
+
+.betting_table .table.thirtyseven {
+    height: 13.336rem;
+}
+
+.betting_table .table.thirtyseven img {
+    width: 100%;
+    height: 13.336rem;
+}
+
+.betting_table.fourteen {
+    height: 5.1067rem;
+}
+
+.betting_table .table.fourteen {
+    height: 5.1067rem;
+}
+
+.betting_table .table.fourteen img {
+    width: 100%;
+    height:5.1067rem;
+}
+
+/* 下注區 */
+
+.betting_table .block {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.betting_table .block.row {
+    flex-direction: row;
+}
+
+.betting_table .block.f_5 {
+    flex-basis: 5.3%;
+}
+
+.betting_table .block.active .focus {
+    border: 0.067rem solid #fffee0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.betting_table .block .v_alignment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 閒 */
+
+.betting_table .block.player {
+    background: linear-gradient(to top, rgba(24,31,55,0.85) 0%,rgba(58,74,136,0.85) 100%);
+    border-radius: 0.1333rem 0 0 0.1333rem;
+}
+
+.betting_table .player.corner {
+    border-radius: 0.1333rem 0 0;
+}
+
+.betting_table .block.active.player .focus.lg {
+    box-shadow: inset 0px 0px 0.2rem rgba(255, 246, 0, 1), 0px 0px 0.2rem #faff00, 0px 0px 0.2rem #faff00, 0px 0px 0.2rem #faff00;
+    border-radius: 0.1333rem 0 0 0.1333rem;
+}
+
+.betting_table .block.active.player .focus.sm {
+    box-shadow: inset 0px 0px 0.2rem rgba(255, 246, 0, 1), 0px 0px 0.2rem #faff00, 0px 0px 0.2rem #faff00, 0px 0px 0.2rem #faff00;
+    border-radius: 0.1333rem 0 0 0;
+}
+
+.betting_table .block.active.black .focus.lg {
+    box-shadow: inset 0px 0px 0.2rem rgba(255, 246, 0, 1), 0px 0px 0.2rem #faff00, 0px 0px 0.2rem #faff00, 0px 0px 0.2rem #faff00;
+    border-radius: 0 0.1333rem 0.1333rem 0;
+}
+
+.betting_table .middle {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+/* 和 */
+
+.betting_table .block.tie {
+    background: linear-gradient(to top, rgba(37,109,27,0.85) 0%,rgba(46,150,63,0.85) 100%);
+}
+
+.betting_table .block.active.tie .focus.sm {
+    box-shadow: inset 0px 0px 0.2rem rgba(255, 246, 0, 1), 0px 0px 0.2rem #faff00, 0px 0px 0.2rem #faff00, 0px 0px 0.2rem #faff00;
+}
+
+.betting_table .tie.corner_left.active .focus {
+    border-radius: 0 0 0 0.1333rem;
+}
+
+/* 庄幸运6 */
+
+.betting_table .block.lucky {
+    background: linear-gradient(to top, rgba(29,29,38,0.85) 0%,rgba(63,63,69,0.85) 100%);
+}
+
+.betting_table .lucky.corner_right {
+    border-radius: 0 0 0 0.1333rem;
+}
+
+.betting_table .lucky.corner_left {
+    border-radius: 0 0 0.1333rem 0;
+}
+
+.betting_table .block.active.lucky .focus.sm {
+    box-shadow: inset 0px 0px 0.2rem rgba(255, 246, 0, 1), 0px 0px 0.2rem #faff00, 0px 0px 0.2rem #faff00, 0px 0px 0.2rem #faff00;
+}
+
+.betting_table .block.lucky.corner_right.active .focus {
+    border-radius: 0 0 0 0.1333rem;
+}
+
+.betting_table .block.lucky.corner_left.active .focus {
+    border-radius: 0 0 0.1333rem 0;
+}
+
+/* 庄 */
+
+.betting_table .block.bank {
+    background: linear-gradient(to top, rgba(91,27,31,0.85) 0%,rgba(153,50,54,0.85) 100%);
+    border-radius: 0 0.1333rem 0.1333rem 0;
+}
+
+.betting_table .bank.corner {
+    border-radius: 0 0.1333rem 0 0;
+}
+
+.betting_table .block.active.bank .focus.lg {
+    box-shadow: inset 0px 0px 0.2rem rgba(255, 246, 0, 1), 0px 0px 0.2rem #faff00, 0px 0px 0.2rem #faff00, 0px 0px 0.2rem #faff00;
+    border-radius: 0 0.1333rem 0.1333rem 0;
+}
+
+.betting_table .bank.corner.active .focus {
+    border-radius: 0 0.1333rem 0 0;
+}
+
+.betting_table .block.active.bank .focus.sm {
+    box-shadow: inset 0px 0px 0.2rem rgba(255, 246, 0, 1), 0px 0px 0.2rem #faff00, 0px 0px 0.2rem #faff00, 0px 0px 0.2rem #faff00;
+    border-radius: 0 0.1333rem 0 0;
+}
+
+/* 魚蝦蟹 藍 */
+
+.betting_table .block.ceruleanblue {
+    background: linear-gradient(to bottom, rgba(9,77,166,0.85) 0%,rgba(0,60,135,0.85) 100%);
+}
+
+.betting_table .block.ceruleanblue.active {
+    background: linear-gradient(to bottom, #0c66dc 0%,#0055bd 100%);
+}
+
+.betting_table .ceruleanblue.corner_tl {
+    border-top-left-radius: 0.1333rem;
+}
+
+.betting_table .ceruleanblue.corner_bl {
+    border-bottom-left-radius: 0.1333rem;
+}
+
+.betting_table .ceruleanblue.corner_br {
+    border-bottom-right-radius: 0.1333rem;
+}
+
+.betting_table .ceruleanblue.corner_tr {
+    border-top-right-radius: 0.1333rem;
+}
+
+.betting_table .ceruleanblue.corner_none {
+    border-radius: 0;
+}
+
+.betting_table .block.active.ceruleanblue.corner_tl .focus.sm {
+    box-shadow: inset 0px 0px 0.2rem rgba(255, 246, 0, 1),0 0 0.2rem #faff00;
+    border-radius: 0.1333rem 0 0 0;
+}
+
+.betting_table .block.active.ceruleanblue.corner_bl .focus.sm {
+    box-shadow: inset 0px 0px 0.2rem rgba(255, 246, 0, 1),0 0 0.2rem #faff00;
+    border-radius: 0 0 0 0.1333rem;
+}
+
+.betting_table .block.active.ceruleanblue.corner_none .focus.sm {
+    box-shadow: inset 0px 0px 0.2rem rgba(255, 246, 0, 1),0 0 0.2rem #faff00;
+    border-radius: 0;
+}
+
+.betting_table .block.active.ceruleanblue.corner_tr .focus.sm {
+    box-shadow: 0 0 0.2rem #faff00;
+    border-top-right-radius: 0.1333rem;
+}
+
+
+/* 魚蝦蟹 紅 */
+
+.betting_table .block.winered {
+    background: linear-gradient(to bottom, rgba(197,36,47,0.85) 0%,rgba(162,15,29,0.85) 100%);
+}
+
+.betting_table .block.winered.active {
+    background: linear-gradient(to bottom, #f83543 0%,#d41d2e 100%);
+}
+
+.betting_table .winered.corner_tr {
+    border-top-right-radius: 0.1333rem;
+}
+
+.betting_table .winered.corner_tl {
+    border-top-left-radius: 0.1333rem;
+}
+
+.betting_table .winered.corner_br {
+    border-bottom-right-radius: 0.1333rem;
+}
+
+.betting_table .winered.corner_none {
+    border-radius: 0;
+}
+
+.betting_table .block.active.winered.corner_tl .focus.sm {
+    box-shadow: inset 0px 0px 0.2rem rgba(255, 246, 0, 1),0 0 0.2rem #faff00;
+    border-top-left-radius: 0.1333rem;
+}
+
+.betting_table .block.active.winered.corner_tr .focus.sm {
+    box-shadow: inset 0px 0px 0.2rem rgba(255, 246, 0, 1),0 0 0.2rem #faff00;
+    border-radius: 0 0.1333rem 0 0;
+}
+
+.betting_table .block.active.winered.corner_br .focus.sm {
+    box-shadow: inset 0px 0px 0.2rem rgba(255, 246, 0, 1),0 0 0.2rem #faff00;
+    border-radius: 0 0 0.1333rem 0;
+}
+
+.betting_table .block.active.winered.corner_none .focus.sm {
+    box-shadow: inset 0px 0px 0.2rem rgba(255, 246, 0, 1),0 0 0.2rem #faff00;
+    border-radius: 0;
+}
+
+/* 魚蝦蟹 綠 */
+
+.betting_table .block.versegreen {
+    background: linear-gradient(to bottom, rgba(13,142,33,0.85) 0%,rgba(29,110,19,0.85) 100%);
+}
+
+.betting_table .block.versegreen.active {
+    background: linear-gradient(to bottom, #11b32a 0%,#2a961c 100%);
+}
+
+
+.betting_table .versegreen.corner_none {
+    border-radius: 0;
+}
+
+.betting_table .versegreen.corner_tr {
+    border-top-right-radius: 0.1333rem;
+}
+
+.betting_table .block.active.versegreen.corner_none .focus.sm {
+    box-shadow: inset 0px 0px 0.2rem rgba(255, 246, 0, 1),0 0 0.2rem #faff00;
+    border-radius: 0;
+}
+
+.betting_table .block.active.versegreen.corner_tr .focus.sm {
+    box-shadow: inset 0px 0px 0.2rem rgba(255, 246, 0, 1),0 0 0.2rem #faff00;
+    border-top-right-radius: 0.1333rem;
+}
+
+/* 魚蝦蟹 黑 */
+
+.betting_table .block.chineseblack {
+    background: linear-gradient(to bottom, rgba(53,53,53,0.85) 0%,rgba(31,31,31,0.85) 100%);
+}
+
+.betting_table .block.chineseblack.active {
+    background: linear-gradient(to bottom, rgba(84,84,84,0.85) 0%,rgba(55,55,55,0.85) 100%);
+}
+
+.betting_table .chineseblack.corner {
+    border-top-left-radius: 0.1333rem;
+    border-bottom-left-radius: 0.1333rem;
+}
+
+.betting_table .chineseblack.corner_br {
+    border-bottom-right-radius: 0.1333rem;
+}
+
+.betting_table .block.active.chineseblack.corner .focus.sm {
+    box-shadow: inset 0px 0px 0.2rem rgba(255, 246, 0, 1),0 0 0.2rem #faff00;
+    border-top-left-radius: 0.1333rem;
+    border-bottom-left-radius: 0.1333rem;
+}
+
+.betting_table .block.active.chineseblack.corner_br .focus.sm {
+    box-shadow: inset 0px 0px 0.2rem rgba(255, 246, 0, 1),0 0 0.2rem #faff00;
+    border-bottom-right-radius: 0.1333rem;
+}
+
+.betting_table .ceruleanblue .text.yellow,.betting_table .winered .text.yellow,.betting_table .versegreen .text.yellow {
+    font-size: 0.587rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #fff498 0%,#ffd270 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.betting_table .ceruleanblue.active .text.yellow,.betting_table .winered.active .text.yellow,.betting_table .versegreen.active .text.yellow {
+    font-size: 0.733rem;
+}
+
+.betting_table .ceruleanblue .text.yellow.sm,.betting_table .winered .text.yellow.sm,.betting_table .versegreen .text.yellow.sm {
+    font-size: 0.493rem;
+}
+
+.betting_table .ceruleanblue.active .text.yellow.sm,.betting_table .winered.active .text.yellow.sm,.betting_table .versegreen.active .text.yellow.sm {
+    font-size: 0.613rem;
+}
+
+.betting_table .ceruleanblue .text.yellow::before,.betting_table .winered .text.yellow::before,.betting_table .versegreen .text.yellow::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.08rem #13171e;
+    z-index: -1;
+}
+
+.betting_table .ceruleanblue .single_icon,
+.betting_table .winered .single_icon,
+.betting_table .versegreen .single_icon {
+    width: 1.133rem;
+    height: 1.167rem;
+    margin-right: 0.333rem;
+}
+
+.betting_table .ceruleanblue .single_icon img,
+.betting_table .winered .single_icon img,
+.betting_table .versegreen .single_icon img {
+    width: 1.133rem;
+    height: 1.167rem;
+}
+
+.betting_table .ceruleanblue .icon,
+.betting_table .winered .icon,
+.betting_table .versegreen .icon {
+    width: 1.073rem;
+    height: 1.04rem;
+    margin-bottom: 0.12rem;
+}
+
+.betting_table .ceruleanblue .icon img,
+.betting_table .winered .icon img,
+.betting_table .versegreen .icon img {
+    width: 1.073rem;
+    height: 1.04rem;
+}
+
+.betting_table .ceruleanblue.active .icon,
+.betting_table .winered.active .icon,
+.betting_table .versegreen.active .icon {
+    scale: 1.1;
+}
+
+.betting_table .ceruleanblue .square,
+.betting_table .chineseblack .square,
+.betting_table .winered .square,
+.betting_table .versegreen .square {
+    width: 1.013rem;
+    height: 0.947rem;
+    margin-bottom: 0.1rem;
+}
+
+.betting_table .ceruleanblue .square img,
+.betting_table .chineseblack .square img,
+.betting_table .winered .square img,
+.betting_table .versegreen .square img {
+    width: 1.013rem;
+    height: 0.947rem;
+}
+
+.betting_table .ceruleanblue.active .square,
+.betting_table .chineseblack.active .square,
+.betting_table .winered.active .square,
+.betting_table .versegreen.active .square {
+    scale: 1.1;
+}
+
+.betting_table .block.player.active,
+.betting_table .block.tie.active,
+.betting_table .block.lucky.active,
+.betting_table .block.bank.active,
+.betting_table .block.ceruleanblue.active,
+.betting_table .block.winered.active,
+.betting_table .block.versegreen.active,
+.betting_table .block.chineseblack.active {
+    z-index: 2;
+}
+
+.betting_table .player .text,
+.betting_table .tie .text,
+.betting_table .lucky .text,
+.betting_table .bank .text,
+.betting_table .ceruleanblue .text,
+.betting_table .winered .text,
+.betting_table .chineseblack .text,
+.betting_table .versegreen .text  {
+    font-family: 'FZZhengHeiS';
+    padding-bottom: 0.1rem;
+}
+
+.betting_table .ceruleanblue .text.spacing,
+.betting_table .winered .text.spacing,
+.betting_table .chineseblack .text.spacing,
+.betting_table .versegreen .text.spacing  {
+    padding-bottom: 0.42rem;
+}
+
+.betting_table .chineseblack .text.spacing {
+    padding-bottom: 0.5rem;
+}
+
+.betting_table .player .text.blue {
+    font-size: 0.733rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #a6ceff 0%,#2687ff 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.betting_table .player .text.sm {
+    font-size: 0.467rem;
+}
+
+.betting_table .player .text.blue::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.08rem #121a39;
+    z-index: -1;
+}
+
+.betting_table .tie .text.green {
+    font-size: 0.64rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #94f997 0%,#52a22b 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.betting_table .tie .text.green::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.08rem #021e02;
+    z-index: -1;
+}
+
+.betting_table .lucky .text.yellow {
+    font-size: 0.467rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #fff498 0%,#ffd270 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.betting_table .lucky .text.yellow::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.08rem #13171e;
+    z-index: -1;
+}
+
+.betting_table .bank .text.carmine {
+    font-size: 0.733rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #ffa195 0%,#eb4040 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.betting_table .bank .text.sm {
+    font-size: 0.467rem;
+}
+
+.betting_table .bank .text.carmine::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.08rem #3a0f0f;
+    z-index: -1;
+}
+
+.betting_table .chineseblack .text.yellow {
+    font-size: 0.56rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #fff498 0%,#ffd270 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.betting_table .chineseblack.active .text.yellow {
+    font-size: 0.64rem;
+}
+
+.betting_table .chineseblack .text.yellow::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.08rem #13171e;
+    z-index: -1;
+}
+
+/* 紅 */
+
+.betting_table .block.red {
+    background: linear-gradient(to top, rgba(165,41,35,0.85) 0%,rgba(210,62,54,0.85) 100%);
+    border-radius: 0.1333rem 0 0 0.1333rem;
+}
+
+.betting_table .block.active.red .focus.lg {
+    box-shadow: inset 0px 0px 0.2rem rgba(255, 246, 0, 1), 0px 0px 0.2rem #faff00, 0px 0px 0.2rem #faff00, 0px 0px 0.2rem #faff00;
+    border-radius: 0.1333rem 0 0 0.1333rem;
+}
+
+/* 大小單雙 */
+
+.betting_table .block.sort {
+    background: linear-gradient(to top, rgba(5,94,45,0.85) 0%,rgba(24,117,61,0.85) 100%);
+}
+
+.betting_table .block.active.sort .focus.sm {
+    box-shadow: inset 0px 0px 0.2rem rgba(255, 246, 0, 1), 0px 0px 0.2rem #faff00, 0px 0px 0.2rem #faff00, 0px 0px 0.2rem #faff00;
+}
+
+/* 黑 */
+
+.betting_table .block.black {
+    background: linear-gradient(to top, rgba(9,9,9,0.85) 0%,rgba(32,32,32,0.85) 100%);
+    border-radius: 0 0.1333rem 0.1333rem 0;
+}
+
+.betting_table .block.red.active,
+.betting_table .block.sort.active,
+.betting_table .block.black.active {
+    z-index: 2;
+}
+
+.betting_table .red .text,
+.betting_table .sort .text,
+.betting_table .black .text {
+    font-family: 'FZZhengHeiS';
+    padding-bottom: 0.1rem;
+}
+
+.betting_table .red .text.red {
+    font-size: 0.733rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #ffdfdb 0%,#ff7171 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.betting_table .red .text.red::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.08rem #3a0f0f;
+    z-index: -1;
+}
+
+.betting_table .sort .text.yellow {
+    font-size: 0.533rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #fff498 0%,#ffd270 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.betting_table .sort .text.yellow::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.08rem #13171e;
+    z-index: -1;
+}
+
+.betting_table .black .text.black {
+    font-size: 0.733rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #dfdfdf 0%,#7b7b7b 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.betting_table .black .text.black::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.08rem #000000;
+    z-index: -1;
+}
+
+.betting_table .player .num,
+.betting_table .tie .num,
+.betting_table .lucky .num,
+.betting_table .bank .num,
+.betting_table .red .num,
+.betting_table .sort .num,
+.betting_table .black .num,
+.betting_table .britishgreen .num,
+.betting_table .item .num,
+.betting_table .ceruleanblue .num,
+.betting_table .winered .num,
+.betting_table .versegreen .num,
+.betting_table .chineseblack .num {
+    font-family: 'FZZhengHeiS';
+    font-size: 0.32rem;
+    color: #e1bb74;
+}
+
+.betting_table .ceruleanblue .num.sm,
+.betting_table .winered .num.sm,
+.betting_table .versegreen .num.sm,
+.betting_table .chineseblack .num.sm {
+    font-size: 0.267rem;
+}
+
+.betting_table .ceruleanblue .num.fixed,
+.betting_table .winered .num.fixed,
+.betting_table .versegreen .num.fixed,
+.betting_table .chineseblack .num.fixed {
+    position: absolute;
+    bottom: 0.35rem;
+}
+
+.betting_table .chineseblack .num.fixed1 {
+    position: absolute;
+    bottom: 1.245rem;
+}
+
+.betting_table .ceruleanblue .num.fixed3,
+.betting_table .winered .num.fixed3 {
+    position: absolute;
+    bottom: 0.25rem;
+}
+
+.betting_table .block .diamond {
+    width: 1.0467rem;
+    height: 0.5867rem;
+    margin-bottom: 0.15rem;
+}
+
+/* 1~12、13~24、25~36 組合*/
+
+.betting_table .block.britishgreen {
+    background: linear-gradient(to top, rgba(8,78,43,0.85) 0%,rgba(17,133,72,0.85) 100%);
+}
+
+.betting_table .block.britishgreen.left {
+    border-radius: 0.1333rem 0 0 0.1333rem;
+}
+
+.betting_table .block.britishgreen.center {
+    border-radius: 0;
+}
+
+.betting_table .block.britishgreen.right {
+    border-radius: 0 0.1333rem 0.1333rem 0;
+}
+
+.betting_table .block.britishgreen.active .focus.lg {
+    box-shadow: inset 0px 0px 0.2rem rgba(255, 246, 0, 1), 0px 0px 0.2rem #faff00, 0px 0px 0.2rem #faff00, 0px 0px 0.2rem #faff00;
+}
+
+.betting_table .block.britishgreen.active.left .focus.lg {
+    border-radius: 0.1333rem 0 0 0.1333rem;
+}
+
+.betting_table .block.britishgreen.active.center .focus.lg {
+    border-radius: 0;
+}
+
+.betting_table .block.britishgreen.active.right .focus.lg {
+    border-radius: 0 0.1333rem 0.1333rem 0;
+}
+
+.betting_table .block.britishgreen.active {
+    z-index: 2;
+}
+
+.betting_table .britishgreen .text.white {
+    font-family: 'YesevaOne';
+    font-size: 0.667rem;
+    color: transparent;
+    background: #fff;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.betting_table .britishgreen .text.white::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.08rem #13171e;
+    z-index: -1;
+}
+
+/* 0~37 直注 */
+
+.thirtyseven_outer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+}
+
+.fourteen_outer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+}
+
+.betting_table .block.item {
+    width: 1.89rem;
+    height: 1.667rem;
+    flex: unset;
+}
+
+.betting_table .block.item:nth-child(even) {
+    background: linear-gradient(to top, rgba(165,41,35,0.85) 0%,rgba(220,45,35,0.85) 100%);
+}
+
+.betting_table .block.item:nth-child(odd) {
+    background: linear-gradient(to top, rgba(12,12,12,0.85) 0%,rgba(32,32,32,0.85) 100%);
+}
+
+.betting_table .block.item:first-child {
+    border-radius: 0.1333rem 0 0 0;
+    background: linear-gradient(to top, rgba(7,116,56,0.85) 0%,rgba(16,168,85,0.85) 100%);
+}
+
+.betting_table .block.item:nth-child(12),
+.betting_table .block.item:nth-child(14),
+.betting_table .block.item:nth-child(16),
+.betting_table .block.item:nth-child(18),
+.betting_table .block.item:nth-child(30),
+.betting_table .block.item:nth-child(32),
+.betting_table .block.item:nth-child(34),
+.betting_table .block.item:nth-child(36) {
+    background: linear-gradient(to top, rgba(12,12,12,0.85) 0%,rgba(32,32,32,0.85) 100%);
+}
+
+.betting_table .block.item:nth-child(13),
+.betting_table .block.item:nth-child(15),
+.betting_table .block.item:nth-child(17),
+.betting_table .block.item:nth-child(19),
+.betting_table .block.item:nth-child(31),
+.betting_table .block.item:nth-child(33),
+.betting_table .block.item:nth-child(35),
+.betting_table .block.item:nth-child(37) {
+    background: linear-gradient(to top, rgba(165,41,35,0.85) 0%,rgba(220,45,35,0.85) 100%);
+}
+
+.betting_table .block.item.ceruleanblue {
+    height: 1.7rem;
+    background: linear-gradient(to bottom, rgba(9,77,166,0.85) 0%,rgba(0,60,135,0.85) 100%);
+}
+
+.betting_table .block.item.winered {
+    height: 1.7rem;
+    background: linear-gradient(to bottom, rgba(197,36,47,0.85) 0%,rgba(162,15,29,0.85) 100%);
+}
+
+.betting_table .block.item.ceruleanblue.active {
+    background: linear-gradient(to bottom, #0c66dc 0%,#0055bd 100%);
+}
+
+.betting_table .block.item.winered.active {
+    background: linear-gradient(to bottom, #f83543 0%,#d41d2e 100%);
+}
+
+.betting_table .block.item:nth-child(5) {
+    border-radius: 0 0.1333rem 0 0;
+}
+
+.betting_table .block.item:nth-child(35) {
+    border-radius: 0 0 0.1333rem 0;
+}
+
+.betting_table .block.item:nth-child(36) {
+    border-radius: 0 0 0 0.1333rem;
+}
+
+.betting_table .block.item:nth-child(37) {
+    border-radius: 0 0 0.1333rem 0;
+}
+
+.betting_table .block.item.active .focus {
+    box-shadow: inset 0px 0px 0.2rem rgba(255, 246, 0, 1), 0px 0px 0.2rem #faff00, 0px 0px 0.2rem #faff00, 0px 0px 0.2rem #faff00;
+}
+
+.betting_table .block.item.active:first-child .focus {
+    border-radius: 0.1333rem 0 0 0;
+}
+
+.betting_table .block.item.active:nth-child(5) .focus {
+    border-radius: 0 0.1333rem 0 0;
+}
+
+.betting_table .block.item.active:nth-child(35) .focus {
+    border-radius: 0 0 0.1333rem 0;
+}
+
+.betting_table .block.item.active:nth-child(36) .focus{
+    border-radius: 0 0 0 0.1333rem;
+}
+
+.betting_table .block.item.active:nth-child(37) .focus {
+    border-radius: 0 0 0.1333rem 0;
+}
+
+.betting_table .block.item.corner_tl {
+    border-top-left-radius: 0.1333rem;
+}
+
+.betting_table .block.item.corner_tr {
+    border-top-right-radius: 0.1333rem;
+}
+
+.betting_table .block.item.corner_bl {
+    border-bottom-left-radius: 0.1333rem;
+}
+
+.betting_table .block.item.corner_br {
+    border-bottom-right-radius: 0.1333rem;
+}
+
+.betting_table .block.item.corner_none {
+    border-radius: 0;
+}
+
+.betting_table .block.item.corner_tl.active .focus {
+    box-shadow: inset 0px 0px 0.2rem rgba(255, 246, 0, 1),0 0 0.2rem #faff00;
+    border-top-left-radius: 0.1333rem;
+}
+
+.betting_table .block.item.corner_tr.active .focus {
+    box-shadow: inset 0px 0px 0.2rem rgba(255, 246, 0, 1),0 0 0.2rem #faff00;
+    border-top-right-radius: 0.1333rem;
+}
+
+.betting_table .block.item.corner_bl.active .focus {
+    box-shadow: inset 0px 0px 0.2rem rgba(255, 246, 0, 1),0 0 0.2rem #faff00;
+    border-bottom-left-radius: 0.1333rem;
+}
+
+.betting_table .block.item.corner_br.active .focus {
+    box-shadow: inset 0px 0px 0.2rem rgba(255, 246, 0, 1),0 0 0.2rem #faff00;
+    border-bottom-right-radius: 0.1333rem;
+}
+
+.betting_table .block.item.corner_none.active .focus {
+    box-shadow: inset 0px 0px 0.2rem rgba(255, 246, 0, 1),0 0 0.2rem #faff00;
+    border-radius: 0;
+}
+
+.betting_table .block.britishgreen.active {
+    z-index: 2;
+}
+
+.betting_table .item .text.white {
+    font-family: 'YesevaOne';
+    font-size: 0.667rem;
+    color: transparent;
+    background: #fff;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.betting_table .item .text.white::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.08rem #13171e;
+    z-index: -1;
+}
+
+.betting_table .item .text.yellow {
+    font-family: 'FZZhengHeiS';
+    font-size: 0.56rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #fff498 0%,#ffd270 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.betting_table .item .text.yellow::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.08rem #13171e;
+    z-index: -1;
+}
+
+.betting_table .item.active .text.yellow {
+    font-size: 0.667rem;
+}
+
+.betting_table .block.item.active {
+    z-index: 2;
+}
+
+/* 莊閒、對子 end */
+
+/* 規則玩法說明 start */
+
+.play_rule {
+    position: absolute;
+    top: 0.1rem;
+    right: 0.02rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.play_rule .icon {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.play_rule .icon img {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.play_rule .rule {
+    background: url(../images/game/bg_play_question.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 0.8rem;
+    height: 0.393rem;
+    margin-top: -0.06rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.play_rule .rule .rule_title {
+    font-family: 'FZZhengHeiS';
+    font-size: 0.24rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #fffedf 0%,#d7a749 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.play_rule .rule .rule_title::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.03rem #4c3520;
+    z-index: -1;
+}
+
+.play_rule1 {
+    position: absolute;
+    top: 0.1rem;
+    right: 0.1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.play_rule1 .icon {
+    width: 0.607rem;
+    height: 0.86rem;
+}
+
+.play_rule1 .icon img {
+    width: 0.607rem;
+    height: 0.86rem;
+}
+
+/* 規則玩法說明 end */
+
+/* 投注按鈕 start */
+
+.betting_outter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.167rem 0.267rem;
+}
+
+.betting_outter .betting_inner {
+    display: flex;
+    align-items: center;
+}
+
+.betting_outter .betting_inner .betting_content {
+    background: linear-gradient(90deg, #b6914a 0%,#e7c791 100%);
+    border-radius: 170rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    min-width: 3rem;
+    margin-right: 0.16rem;
+    padding: 0.03rem;
+}
+
+.betting_outter .betting_inner .betting_content .betting_content_inner {
+    background: #776b5c;
+    border-radius: 170rem;
+    box-shadow: inset 0 0 0.707rem rgba(0, 0, 0, .8);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    min-width: 3rem;
+}
+
+.betting_outter .betting_inner .betting_content .betting_content_inner .betting_money {
+    width: 0.746rem;
+    height: 0.746rem;
+}
+
+.betting_outter .betting_inner .betting_content .betting_content_inner .betting_money img {
+    width: 0.746rem;
+    height: 0.746rem;
+}
+
+.betting_outter .betting_inner .betting_content .betting_content_inner .betting_item {
+    padding: 0.065rem;
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.betting_outter .betting_inner .betting_content .betting_content_inner .betting_item .betting_text {
+    font-family: Arial;
+    font-size: 0.32rem;
+    color: #fff;
+    flex: 1;
+    margin-right: 0.107rem;
+}
+
+.betting_outter .betting_inner .betting_content .betting_content_inner .betting_item .betting_recharge {
+    width: 0.58rem;
+    height: 0.58rem;
+    cursor: pointer;
+}
+
+.betting_outter .betting_inner .betting_content .betting_content_inner .betting_item .betting_recharge img {
+    width: 0.58rem;
+    height: 0.58rem;
+}
+
+.betting_outter .betting_inner .betting_refresh {
+    width: 0.533rem;
+    height: 0.533rem;
+    cursor: pointer;
+}
+
+.betting_outter .betting_inner .betting_refresh img {
+    width: 0.533rem;
+    height: 0.533rem;
+}
+
+.betting_chips {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 0.1rem;
+}
+
+.betting_chips .chip {
+    font-family: Arial;
+    font-size: 0.346rem;
+    font-weight: bold;
+    color: #fff;
+    width: 1.013rem;
+    height: 1.08rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 0.04rem;
+    margin-right: 0.12rem;
+    position: relative;
+    z-index: 1;
+}
+
+.betting_chips .chip .num {
+    color: transparent;
+    background: #fff;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.betting_chips .chip.two {
+    background: url(../images/modal/img_chip_blue.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.betting_chips .chip.five {
+    background: url(../images/modal/img_chip_yellow.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.betting_chips .chip.ten {
+    background: url(../images/modal/img_chip_pink.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.betting_chips .chip.fifty {
+    background: url(../images/modal/img_chip_red.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.betting_chips .chip.hundred {
+    background: url(../images/modal/img_chip_bluepurple.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.betting_chips .chip.two_hundred {
+    background: url(../images/modal/img_chip_green.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.betting_chips .chip.five_hundred {
+    background: url(../images/modal/img_chip_orange.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.betting_chips .chip.default {
+    background: url(../images/modal/img_chip_black.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.betting_chips .chip .num::before{
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.06rem #000;
+    z-index: -1;
+}
+
+.betting_arrow {
+    width: 0.2267rem;
+    height: 0.1467rem;
+    margin-right: 0.2rem;
+}
+
+.betting_arrow img {
+    width: 0.2267rem;
+    height: 0.1467rem;
+}
+
+.bettingbtn {
+    width: 2.373rem;
+    height: 1.04rem;
+    cursor: pointer;
+}
+
+.bettingbtn img {
+    width: 2.373rem;
+    height: 1.04rem;
+}
+
+/* 投注按鈕 end */
+
+/* 輪盤 主界面 */
+
+
+.needle {
+    position: absolute;
+    top: -0.15rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 11;
+    width: 0.8rem;
+    height: 1.1933rem;
+}
+
+.needle.top {
+    top: -0.4rem;
+}
+
+.needle img {
+    width: 0.8rem;
+    height: 1.1933rem;
+}
+
+.roulette_wrapper {
+    background: url(../images/game/bg_roulette.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 2rem;
+    z-index: 1;
+}
+
+.roulette_wrapper .outer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    height: 2rem;
+    overflow: hidden;
+}
+
+.accurate_outer {
+    position: absolute;
+    height: 2rem;
+    overflow: hidden;
+    z-index: 2;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.accurate_outer.top {
+    top: -0.35rem;
+    height: 1.95rem
+}
+
+.accurate_outer .accurate {
+    width: 1.5333rem;
+    height: 2.867rem;
+    margin-top: 0.12rem;
+}
+
+.accurate_outer .accurate.animation {
+    animation: light 1.8s linear;
+}
+
+.accurate_outer .accurate img {
+    width: 1.5333rem;
+    height: 2.867rem;
+}
+
+.roulette_wrapper .outer .frame_outer {
+    position: absolute;
+    height: 2rem;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.roulette_wrapper .outer .frame_outer .frame {
+    margin-top: 0.36rem;
+}
+
+.roulette_wrapper .outer .frame_outer .frame.mt {
+    margin-top: 0.06rem;
+}
+
+.roulette_wrapper .outer .frame_outer .frame img {
+    width: 9.64rem;
+    height: 9.64rem;
+}
+
+.roulette_wrapper .outer .roulette_outer {
+    margin-top: 0.75rem;
+}
+
+.roulette_wrapper .outer .roulette_outer.mt {
+    margin-top: 0.45rem;
+}
+
+.roulette_wrapper .outer .roulette_outer .roulette {
+    width: 8.787rem;
+    height: 8.787rem;
+    animation: rotation 10s cubic-bezier(.2,.79,.34,1.03);
+    /* 一格號碼9.7度 */
+    transform: rotate(0deg);
+}
+
+.roulette_wrapper .outer .roulette_outer .roulette.unset {
+    animation: unset;
+}
+
+.roulette_wrapper .outer .roulette_outer .roulette img {
+    width: 8.787rem;
+    height: 8.787rem;
+}
+
+.roulette_wrapper.height,
+.roulette_wrapper .outer.height,
+.roulette_wrapper .outer .frame_outer.height
+{
+    height: 1.6rem;
+}
+
+
+@keyframes rotation {
+0% {
+transform: rotate(0deg);
+}
+
+100% {
+transform: rotate(1080deg);
+}
+}
+
+@keyframes light {
+0% {
+filter: drop-shadow(0 0 0 #faff00);
+}
+
+16.67% {
+    filter: drop-shadow(0 0 0.12rem #faff00);
+}
+
+33.34% {
+    filter: drop-shadow(0 0 0 #faff00);
+}
+
+50.1% {
+    filter: drop-shadow(0 0 0.12rem #faff00);
+}
+
+66.68% {
+    filter: drop-shadow(0 0 0 #faff00);
+}
+
+83.35% {
+    filter: drop-shadow(0 0 0.12rem #faff00);
+}
+
+100% {
+    filter: drop-shadow(0 0 0 #faff00);
+}
+}
+
+/* 魚蝦蟹 主界面 */
+
+.yusiasieh_wrapper {
+    background: url(../images/game/bg_yusiasieh.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 2rem;
+    z-index: 1;
+}
+
+.yusiasieh_wrapper.height {
+    height: 1.6rem;
+    background: url(../images/game/bg_yusiasieh_sm.png);
+    background-size: 100% 100%;
+    overflow: hidden; /* 解決ios滑動螢幕時閃爍問題 */
+}
+
+.yusiasieh_wrapper .yusiasieh_dice {
+    width: 1.1533rem;
+    height: 1.2267rem;
+    margin-right: 0.2rem;
+    filter: drop-shadow(0 0.1rem 0.12rem #000);
+}
+
+.yusiasieh_wrapper .yusiasieh_dice img {
+    width: 1.1533rem;
+    height: 1.2267rem;
+}
+
+.yusiasieh_wrapper .yusiasieh_dice:last-child {
+    margin-right: 0;
+}
+
+.yusiasieh_wrapper .yusiasieh_dice.sm,.yusiasieh_wrapper .yusiasieh_dice.sm img {
+    width: 1.093rem;
+    height: 1.167rem;
+}

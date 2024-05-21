@@ -1,0 +1,361 @@
+.padding_basic.pr_0 {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* 觅钱包 */
+
+.wallet_card {
+    background: url(../images/wallet/bg_wallet_wave_line.png);
+    background-size: cover;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.wallet_card.main_wallet{
+    padding-bottom: 10px;
+}
+.wallet_card.mb_0 {
+    margin-bottom: 0;
+}
+
+.wallet_card > .wallet_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid;
+    border-color: rgba(255,255,255,0.1);
+    padding-bottom: 18px;
+    margin-bottom: 10px;
+}
+
+.wallet_card > .wallet_box:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.wallet_box > .wallet_content.wallet_content_flex{
+    flex: 1;
+}
+
+.wallet_box > .wallet_content .wallet_title {
+    font-size: 12px;
+    color: #D0D0D0;
+    padding-bottom: 8px;
+}
+
+.wallet_box > .wallet_content .wallet_price {
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.wallet_content > .wallet_price.wallet_text_small {
+    font-size: 13px;
+}
+
+.wallet_box > .wallet_content .btn_small {
+    font-size: 14px;
+    color: #fff;
+    background: #DABB7E;
+    border-radius: 100px;
+    padding: 6px 21px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.wallet_box > .wallet_content .btn_small:last-child {
+    margin-bottom: 0;
+}
+
+.wallet_list_section {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.wallet_list_section > .wallet_list_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-basis: 44px;
+    border-bottom: 0.25px solid #424242;
+}
+
+.wallet_list_item > .wallet_list_box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.wallet_list_item > .wallet_list_box img {
+    padding-right: 8px;
+}   
+
+.wallet_list_item > .wallet_list_box .wallet_list_title {
+    font-size: 13px;
+    color: #C9C9C9;
+}
+
+.wallet_list_box ~ .wallet_arrow {
+    flex: 1;
+    justify-content: flex-end;
+    display: flex;
+    cursor: pointer;
+}
+
+/* 官方支付 */
+
+.wallet_paycard {
+    background: url(../images/wallet/bg_wallet_wave_line.png);
+    background-size: cover;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    margin-right: 8px;
+    cursor: pointer;
+    position: relative;
+}
+
+.wallet_paycard .label {
+    font-size: 11px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(200deg, #FEA96B 7.21%, #FF6422 82.59%, #F17922 82.59%);
+    padding: 4px 8px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.wallet_paycard:last-child {
+    margin-right: 0;
+}
+
+.wallet_paycard.active {
+    border: .5px solid #FD8B13;
+}
+
+.wallet_paycard:hover {
+    border: .5px solid #FD8B13;
+}
+
+.wallet_paycard > .wallet_paybox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wallet_paybox > .wallet_paycontent .wallet_paytitle {
+    font-size: 12px;
+    color: #fff;
+    padding-bottom: 8px;
+}
+
+.wallet_paybox > .wallet_paycontent .wallet_payprice {
+    font-size: 17px;
+    color: #fff;
+}
+
+.wallet_paycard.active .wallet_paytitle {
+    color: #FD8B13;
+}
+
+.wallet_paycard:hover .wallet_paytitle {
+    color: #FD8B13;
+}
+
+.wallet_paycard.active .wallet_payprice {
+    color: #FD8B13;
+}
+
+.wallet_paycard:hover .wallet_payprice {
+    color: #FD8B13;
+}
+
+.combo_annotation_section {
+    padding: 15px 0;
+    margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+}
+
+.combo_annotation_section > .combo_annotation_title {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.combo_annotation_section > .combo_annotation {
+    font-size: 12px;
+    color: #D4D4D4;
+    line-height: 1.4;
+}
+
+.combo_finish_page .bottom_btn {
+    padding: 0 0 52px;
+    cursor: pointer;
+}
+
+
+/* 消费记录、收益明细 */
+
+.spanishgray {
+    color: #3C4F4F;
+}
+
+.expenses_record_section {
+    padding: 0 12px;
+    flex-flow: column nowrap;
+    display: flex;
+    flex-basis: 45px;
+    justify-content: center;
+    background: rgba(255,255,255,0.1);
+}
+
+.expenses_record_section > .expenses_record_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.expenses_record_box > .expenses_record_title {
+    font-size: 13px;
+    color: #fff;
+}
+
+/* .expenses_record_box > .expenses_record_options {
+    font-size: 13px;
+    color: #C9C9C9;
+    padding: 4px 6px;
+    border: 1px solid #C9C9C9;
+    border-radius: 2px;
+    cursor: pointer;
+} */
+
+.expenses_record_box > .expenses_record_date{
+    font-size: 13px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.expenses_record_box > .expenses_record_date p{
+    padding-right: 4px;
+}
+
+.expenses_record_list_section {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.expenses_record_list_section > .expenses_record_list_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-basis: 63px;
+    border-bottom: 0.25px solid #424242;
+}
+
+.expenses_record_list_item > .expenses_record_list_box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.expenses_record_list_item > .expenses_record_list_box img {
+    padding-right: 8px;
+}
+
+.expenses_record_list_rows > .expenses_record_list_title_box {
+    font-size: 14px;
+    display:flex;
+    align-items:center;
+    padding-bottom: 4px;
+}
+
+.expenses_record_list_title_box > .expenses_record_list_title {
+    color: #fff;
+}
+
+.expenses_record_list_title +span {
+    color: #fff;
+}
+
+/* .expenses_record_list_rows > .expenses_record_list_title {
+    font-size: 14px;
+    color: #fff;
+    padding-bottom: 4px;
+} */
+
+.expenses_record_list_rows > .expenses_record_list_content {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 2px;
+}
+
+.expenses_record_list_rows > .expenses_record_list_content:last-child {
+    padding-bottom: 0;
+}
+
+.expenses_record_list_content > .expenses_record_list_text {
+    color: #DABB7E;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 150px;
+}
+
+.expenses_record_list_text + span {
+    color: #F88E0D;
+}
+
+.expenses_record_list_content > .expenses_record_list_subtext {
+    padding-right: 15px;
+}
+
+.expenses_record_list_content > .expenses_record_list_subtext:last-child {
+    padding-right: 0;
+}
+
+.expenses_record_list_subtext +span {
+    color: #fff;
+}
+
+.expenses_record_list_item > .expenses_record_text {
+    font-size: 14px;
+    color: #D9D9D9;
+}
+
+.tag_section {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.tag_section > .tag_small {
+    font-size: 14px;
+    color: #fff;
+    background: rgba(255,255,255,0.05);
+    border: .5px solid rgba(255,255,255,0.07);
+    border-radius: 100px;
+    padding: 5px 16px;
+    cursor: pointer;
+    margin-right: 16px;
+}
+
+.tag_section > .tag_small:last-child {
+    margin-right: 0;
+}
+
+.tag_section > .tag_small.active {
+    background: linear-gradient(270deg, #FF8A15 12%, #F29106 90%);
+    border: .5px solid linear-gradient(270deg, #FF8A15 12%, #F29106 90%);
+}
+
+

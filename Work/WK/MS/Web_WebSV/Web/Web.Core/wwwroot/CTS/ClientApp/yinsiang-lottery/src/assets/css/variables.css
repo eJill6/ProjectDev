@@ -1,0 +1,31 @@
+:root {
+    --padding-base: 2px;
+    --margin-base: 2px;
+    --border-radius: 2px;
+    --bg-alpha: .40;
+    --bg-deep-purple: #302D57;
+    --font-size: 1rem;
+    --line-height: 1rem;
+    --fw-bold: bold;
+    --border-line-alpha-5: rgba(255, 255, 255, .5);
+    --border-line-alpha-2: rgba(255, 255, 255, .2);
+    --bet-bg-color: linear-gradient(to bottom, #fff, #dbceff);
+    --bet-bg-color-active: linear-gradient(to bottom, #d48eff, #8167ff);
+    --bet-text-big-color: #0075FF;
+    --bet-text-small-color: #654DFF;
+    --bet-text-color-active: #FFF; 
+    --primary-gradient: linear-gradient(to bottom, #EFCC67 , #FF8413);
+    --second-gradient: linear-gradient(90deg, #FFD14E 0%, #FF7917 100%);
+    --countdown-white:linear-gradient(180deg, #F2F2F2 0%, #DCDCDC 100%);
+    --c-white: #FFF;
+    --c-black: #2A2A2A;
+    --c-yellow: #f9f3a1;
+    --c-blue: #79C9DF;
+    --c-bet-order: #FF5959;
+    --c-bet-odds: #0080DD;
+    --c-bet-win: #FF5959;
+    --c-bet-lose: #57BE4A;
+}
+
+
+

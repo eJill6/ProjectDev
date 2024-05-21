@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+/* amfe-flexible套件：根據設備寬度，修改根元素HTML大小， */
+/* amfe-flexible呈現結果會是物件等比例放大縮小，而非RWD */
+/* 使用amfe-flexible會需要以一個設備寬度作為根據，通常是設計的畫布寬度，若為手機通常為375px */
+/* 文字大小換算成rem來寫 */
+/* 寬度高度換算成rem來寫 */
+/* 1rem = 設備寬度的10分之1 = 10% */
+
+/* 文字在device寬度375px時，16級字是多少rem?
+1rem=37.5px
+16除以37.5=0.426rem */
+
+/* 色塊在device寬度375px時，寬度100px的色塊是多少rem
+1rem=37.5px
+100除以37.5=2.666666rem */
+
+
+/* 首頁畫布寬度基準 1rem = 150px */
+
+/**************** Overflow ******************/
+
+.overflow {
+    overflow-y: auto;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.flex_second_height {
+    flex: 1;
+    height: 50px;
+    position: relative;
+}
+
+.second_adding_basic {
+    padding: 0 0.2667rem;
+    height: 100%;
+}
+
+.second_adding_basic.pd_0 {
+    padding: 0;
+}

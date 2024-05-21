@@ -1,0 +1,2250 @@
+@charset "UTF-8";
+
+.gameplay_main .game_wrapper .game_outter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: url(../images/game/bg_tab_play.png) no-repeat;
+    background-size: 100% auto;
+    height: 1rem;
+    margin: 0 0.44rem;
+    box-shadow: 0px 0.1rem 0.2rem rgb(0 0 0 / 50%);
+    position: relative;
+    z-index: 2;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner {
+    font-size: 0.367rem;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner:nth-child(0) {
+    z-index: 10;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner:nth-child(1) {
+    z-index: 9;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner:nth-child(2) {
+    z-index: 8;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner:nth-child(3) {
+    z-index: 7;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner:nth-child(4) {
+    z-index: 6;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner:nth-child(5) {
+    z-index: 5;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner .game_tab {
+    background: url(../images/game/bg_game_tab.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: -0.24rem;
+    right: -0.24rem;
+    width: 0.5867rem;
+    height: 0.5867rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner .game_tab .game_tab_text {
+    font-size: 0.293rem;
+    color: transparent;
+    background: #532D0C;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner .game_tab .game_tab_text::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.04rem #FFF7E7;
+    z-index: -1;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner.play_2 {
+    flex-basis: 1.367rem;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner.play_nuinui_2 {
+    flex-basis: 1.427rem;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner.play_jsyxx_2 {
+    flex-basis: 1.373rem;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner.play_3 {
+    flex-basis: 1.7066rem;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner.play_nuinui_3 {
+    flex-basis: 1.567rem;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner.play_baccarat_2 {
+    flex-basis: 3.027rem;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner.play_4 {
+    flex-basis: 2.1rem;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner.play_jsyxx_4 {
+    flex-basis: 2.2rem;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner.play_5 {
+    flex-basis: 2.526rem;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner.play_nuinui_5 {
+    flex-basis: 3.04rem;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner.play_6 {
+    flex-basis: 4.013rem;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner.play_2.active {
+    background: url(../images/game/btn_play.png)center center no-repeat;
+    background-size: 100% 100%;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner.play_nuinui_2.active {
+    background: url(../images/game/btn_play_nuinui_2.png)center center no-repeat;
+    background-size: 100% 100%;
+    flex-basis: 1.427rem;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner.play_baccarat_2.active {
+    background: url(../images/game/btn_play_baccarat_2.png)center center no-repeat;
+    background-size: 100% 100%;
+    flex-basis: 3.027rem;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner.play_jsyxx_2.active {
+    background: url(../images/game/btn_play_jsyxx_2.png)center center no-repeat;
+    background-size: 100% 100%;
+    flex-basis: 1.373rem;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner.play_3.active {
+    background: url(../images/game/btn_play_5.png)center center no-repeat;
+    background-size: 100% 100%;
+    flex-basis: 1.7066rem;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner.play_nuinui_3.active {
+    background: url(../images/game/btn_play_nuinui_3.png)center center no-repeat;
+    background-size: 100% 100%;
+    flex-basis: 1.567rem;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner.play_4.active {
+    background: url(../images/game/btn_play_4.png)center center no-repeat;
+    background-size: 100% 100%;
+    flex-basis: 2.1rem;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner.play_jsyxx_4.active {
+    background: url(../images/game/btn_play_jsyxx_4.png)center center no-repeat;
+    background-size: 100% 100%;
+    flex-basis: 2.2rem;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner.play_5.active {
+    background: url(../images/game/btn_play_5.png)center center no-repeat;
+    background-size: 100% 100%;
+    flex-basis: 2.526rem;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner.play_nuinui_5.active {
+    background: url(../images/game/btn_play_nuinui_5.png)center center no-repeat;
+    background-size: 100% 100%;
+    flex-basis: 3.04rem;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner.play_6.active {
+    background: url(../images/game/btn_play_6.png)center center no-repeat;
+    background-size: 100% 100%;
+    flex-basis: 4.013rem;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.06rem #7e3b00;
+    z-index: -1;
+}
+
+.gameplay_main .game_wrapper .game_outter .game_inner.active::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.06rem #7e3b00;
+    z-index: -1;
+}
+
+.gameplay_main .game_wrapper .play_outter {
+    height: 6rem;
+    padding: 0 0.3rem;
+    padding-bottom: .6rem;
+}
+
+.gameplay_main .play_outter .play_inner {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 0.28rem 0;
+}
+
+
+/* 藍色按鈕 */
+
+.gamebtn_main {
+    flex: 1;
+    height: 50px;
+    padding: 0 0.3rem;
+    padding-bottom: 0.6rem;
+}
+
+.gamebtn_main .play_inner {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 0.38rem 0;
+}
+
+.play_inner .play_betting {
+    position: relative;
+    margin-right: 0.182rem;
+}
+
+.play_inner .play_betting.sm {
+    position: relative;
+    margin-right: 0.187rem;
+    margin-bottom: 0.3rem;
+}
+
+.play_inner .play_betting.xxl,
+.play_inner .play_betting.row,
+.play_inner .play_betting.jslp {
+    position: relative;
+    margin-right: 0;
+}
+
+.play_inner .play_betting:last-child {
+    margin-right: 0;
+}
+
+.play_inner .play_item {
+    max-width: 2.213rem;
+    min-width: 2.213rem;
+    height: 2.28rem;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    flex-grow: 1;
+    padding-bottom: 0.2rem;
+    /* margin-right: 0.182rem; */
+    cursor: pointer;
+}
+
+.play_inner .play_betting .play_item.blue {
+    background: url(../images/game/btn_blue_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting.active .play_item.blue {
+    background: url(../images/game/btn_blue_active.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_item.blue .bet_option {
+    font-family: FZZhengHeiS;
+    font-size: 0.667rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #fffdf8 0%,#71edff 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-bottom: 0.1rem;
+}
+
+.play_inner .play_betting.xl .play_item.blue .bet_option.xl,
+.play_inner .play_betting.xl .play_item.red .bet_option.xl {
+    font-size: 0.733rem;
+}
+
+.play_inner .play_item.blue .bet_option.sm {
+    font-size: 0.48rem;
+    padding-bottom: 0;
+}
+
+.play_inner .play_item.blue .bet_option::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.06rem #00429d;
+    z-index: -1;
+}
+
+/* 橘色按鈕 */
+
+.play_inner .play_betting .play_item.orange {
+    background: url(../images/game/btn_orange_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting.active .play_item.orange {
+    background: url(../images/game/btn_orange_active.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting .play_item.orange.spacing {
+    padding-bottom: 0.46rem;
+}
+
+.play_inner .play_betting.active .play_item.orange.spacing {
+    padding-top: 0.2rem;
+}
+
+.play_inner .play_item.orange .bet_option {
+    font-family: FZZhengHeiS;
+    font-size: 0.667rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #fffdf8 0%,#ffffba 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-bottom: 0.1rem;
+}
+
+.play_inner .play_item.orange .bet_option::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.06rem #9d3400;
+    z-index: -1;
+}
+
+.play_inner .play_item.orange .bet_option.sm {
+    font-size: 0.48rem;
+    padding-bottom: 0;
+}
+
+.play_inner .play_betting.active .play_item.orange .bet_option.sm {
+    padding-top: 0;
+}
+
+/* 紅色按鈕 */
+
+.play_inner .play_betting .play_item.red {
+    background: url(../images/game/btn_red_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting.active .play_item.red {
+    background: url(../images/game/btn_red_active.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_item.red .bet_option {
+    font-family: FZZhengHeiS;
+    font-size: 0.667rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #fffdf8 0%,#ffcdcd 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-bottom: 0.1rem;
+}
+
+.play_inner .play_item.red .bet_option.xl {
+    font-size: 0.733rem;
+}
+
+.play_inner .play_item.red .bet_option::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.06rem #9d0000;
+    z-index: -1;
+}
+
+/* 綠色按鈕 */
+
+.play_inner .play_betting .play_item.green {
+    background: url(../images/game/btn_green_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting.active .play_item.green {
+    background: url(../images/game/btn_green_active.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting .play_item.green .bet_option {
+    font-family: FZZhengHeiS;
+    font-size: 0.667rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #fffdf8 0%,#aef587 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-bottom: 0.1rem;
+}
+
+.play_inner .play_betting .play_item.green .bet_option::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.06rem #1b5e00;
+    z-index: -1;
+}
+
+.play_inner .play_item .bet_num {
+    font-family: Arial;
+    font-size: 0.333rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.play_inner .play_betting.active .play_item.blue .bet_option,
+.play_inner .play_betting.active .play_item.orange .bet_option,
+.play_inner .play_betting.active .play_item.green .bet_option,
+.play_inner .play_betting.active .play_item.red .bet_option,
+.play_inner .play_betting.active .play_item.black .bet_option {
+    padding-top: 0.25rem;
+}
+
+.play_inner .play_betting.active .play_item.orange .bet_option.sm:first-child {
+    padding-top: 0.25rem;
+}
+
+/* 在按鈕上顯示已投注和金額 */
+
+.play_inner .play_betting .play_item .placebet {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 1.92rem;
+    min-width: 1.92rem;
+    height: 1.97rem;
+    border-radius: 0.19rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.14rem;
+}
+
+.play_inner .play_betting .play_item_jsyxx .placebet {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 2.8rem;
+    min-width: 2.8rem;
+    height: 2.06rem;
+    border-radius: 0.19rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.14rem;
+}
+
+.play_inner .play_betting.md .play_item .placebet,
+.play_inner .play_betting.sm .play_item .placebet {
+    margin-bottom: 0;
+}
+
+.play_inner .play_betting.row .play_item .placebet {
+    margin-bottom: 0.06rem;
+}
+
+.play_inner .play_betting .play_item .placebet .placebet_icon,
+.play_inner .play_betting .play_item_jsyxx .placebet .placebet_icon {
+    width: 1.214rem;
+    height: 0.5334rem;
+    margin-bottom: 0.1rem;
+}
+
+.play_inner .play_betting .play_item .placebet .placebet_icon img,
+.play_inner .play_betting .play_item_jsyxx .placebet .placebet_icon img {
+    width: 1.214rem;
+    height: 0.5334rem;
+}
+
+.play_inner .play_betting .play_item .placebet .bg_coin,
+.play_inner .play_betting .play_item_jsyxx .placebet .bg_coin {
+    width: 100%;
+    height: 0.52rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 35%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0) 100%);
+    position: relative;
+}
+
+.play_inner .play_betting .play_item .placebet .bg_coin::before,
+.play_inner .play_betting .play_item_jsyxx .placebet .bg_coin::before {
+    content: "";
+    width: 100%;
+    height: 0.02rem;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    background: linear-gradient(to right,  rgba(255,227,74,0) 30%,rgba(255,227,74,1) 75%,rgba(255,227,74,0) 100%);
+}
+
+.play_inner .play_betting .play_item .placebet .bg_coin::after,
+.play_inner .play_betting .play_item_jsyxx .placebet .bg_coin::after {
+    content: "";
+    width: 100%;
+    height: 0.02rem;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    background: linear-gradient(to right,  rgba(255,227,74,0) 0%,rgba(255,227,74,1) 25%,rgba(255,227,74,0) 70%);
+}
+
+.play_inner .play_betting .play_item .placebet .bg_coin .coin_text,
+.play_inner .play_betting .play_item_jsyxx .placebet .bg_coin .coin_text {
+    font-size: 0.4rem;
+    font-weight: 500;
+    color: transparent;
+    background: linear-gradient(180deg, #FFFE8B 0%, #FFA900 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.play_inner .play_betting .play_item .placebet .bg_coin .coin_text::before,
+.play_inner .play_betting .play_item_jsyxx .placebet .bg_coin .coin_text::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.06rem #000;
+    z-index: -1;
+}
+
+.play_inner .play_item.blue .placebet,
+.play_inner .play_item_jsyxx.blue_md_row .placebet {
+    background: linear-gradient(225deg, rgba(1, 110, 208, 0.00) 2.5%, rgba(1, 110, 208, 0.80) 34.8%, rgba(1, 110, 208, 0.80) 66.63%, rgba(1, 110, 208, 0.00) 97.5%);
+}
+
+.play_inner .play_betting.active .play_item.blue .placebet,
+.play_inner .play_betting.active .play_item_jsyxx.blue_md_row .placebet {
+    background: linear-gradient(225deg, rgba(10, 135, 226, 0.00) 2.5%, rgba(10, 135, 226, 0.80) 37.65%, rgba(10, 135, 226, 0.80) 61.4%, rgba(10, 135, 226, 0.00) 97.5%);
+    margin-bottom: -0.1rem;
+}
+
+.play_inner .play_betting.md.active .play_item.blue .placebet,
+.play_inner .play_betting.md.active .play_item.orange .placebet,
+.play_inner .play_betting.md.active .play_item.red .placebet,
+.play_inner .play_betting.md.active .play_item.green .placebet,
+.play_inner .play_betting.md.active .play_item.black .placebet {
+    margin-bottom: -0.22rem;
+}
+
+.play_inner .play_betting.jsyxx.md.active .play_item.blue .placebet,
+.play_inner .play_betting.jsyxx.md.active .play_item.red .placebet,
+.play_inner .play_betting.jsyxx.md.active .play_item.green .placebet {
+    margin-bottom: -0.09rem;
+}
+
+.play_inner .play_betting.sm.active .play_item.blue .placebet,
+.play_inner .play_betting.sm.active .play_item.orange .placebet,
+.play_inner .play_betting.sm.active .play_item.red .placebet,
+.play_inner .play_betting.sm.active .play_item.green .placebet,
+.play_inner .play_betting.sm.active .play_item.black .placebet {
+    margin-bottom: -0.18rem;
+}
+
+.play_inner .play_item.orange .placebet {
+    background: linear-gradient(225deg, rgba(232, 120, 71, 0.00) 2.5%, rgba(232, 120, 71, 0.80) 36.22%, rgba(232, 120, 71, 0.80) 61.4%, rgba(232, 120, 71, 0.00) 97.5%);
+}
+
+.play_inner .play_betting.active  .play_item.orange .placebet {
+    background: linear-gradient(225deg, rgba(255, 124, 3, 0.00) 2.5%, rgba(255, 124, 3, 0.80) 32.9%, rgba(255, 124, 3, 0.80) 61.4%, rgba(255, 124, 3, 0.00) 97.02%);
+    margin-bottom: -0.1rem;
+}
+
+.play_inner .play_item.red .placebet,
+.play_inner .play_item_jsyxx.red_md_row .placebet {
+    background: linear-gradient(225deg, rgba(228, 73, 70, 0.00) 2.5%, rgba(228, 73, 70, 0.80) 36.22%, rgba(228, 73, 70, 0.80) 61.4%, rgba(228, 73, 70, 0.00) 97.5%);
+}
+
+.play_inner .play_betting.active  .play_item.red .placebet,
+.play_inner .play_betting.active  .play_item_jsyxx.red_md_row .placebet {
+    background: linear-gradient(225deg, rgba(255, 59, 55, 0.00) 2.5%, rgba(255, 59, 55, 0.80) 36.22%, rgba(255, 59, 55, 0.80) 61.4%, rgba(255, 59, 55, 0.00) 97.5%);
+    margin-bottom: -0.1rem;
+}
+
+.play_inner .play_item.green .placebet,
+.play_inner .play_item_jsyxx.green_md_row .placebet {
+    background: linear-gradient(225deg, rgba(0, 136, 30, 0.00) 2.5%, rgba(0, 136, 30, 0.80) 36.22%, rgba(0, 136, 30, 0.80) 61.4%, rgba(0, 136, 30, 0.00) 97.5%);
+}
+
+.play_inner .play_betting.active .play_item.green .placebet,
+.play_inner .play_betting.active .play_item_jsyxx.green_md_row .placebet {
+    background: linear-gradient(225deg, rgba(0, 203, 45, 0.00) 2.5%, rgba(0, 203, 45, 0.80) 36.22%, rgba(0, 203, 45, 0.80) 61.4%, rgba(0, 203, 45, 0.00) 97.5%);
+    margin-bottom: -0.1rem;
+}
+
+.play_inner .play_item.black .placebet {
+    background: linear-gradient(225deg, rgba(98, 98, 98, 0.00) 2.5%, rgba(98, 98, 98, 0.80) 39.07%, rgba(98, 98, 98, 0.80) 63.77%, rgba(98, 98, 98, 0.00) 97.5%);
+}
+
+.play_inner .play_betting.active  .play_item.black .placebet {
+    background: linear-gradient(225deg, rgba(66, 66, 66, 0.00) 2.5%, rgba(68, 68, 68, 0.80) 37.18%, rgba(66, 66, 66, 0.80) 61.4%, rgba(66, 66, 66, 0.00) 97.5%);
+    margin-bottom: -0.1rem;
+}
+
+.play_inner .play_betting .play_item.spacing .placebet {
+    margin-bottom: -0.12rem;
+}
+
+.play_inner .play_betting.active .play_item.spacing .placebet {
+    margin-bottom: -0.12rem;
+}
+
+.play_inner .play_betting.md .play_item .placebet {
+    max-width: 1.75rem;
+    min-width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 0.19rem;
+}
+
+.play_inner .play_betting.xl .play_item .placebet {
+    max-width: 2.3rem;
+    min-width: 2.3rem;
+    height: 2.3rem;
+    border-radius: 0.23rem;
+}
+
+.play_inner .play_betting.xxl .play_item .placebet {
+    max-width: 2.67rem;
+    min-width: 2.67rem;
+    height: 3.76rem;
+    border-radius: 0.2rem;
+}
+
+.play_inner .play_betting.row .play_item .placebet {
+    max-width: 2.67rem;
+    min-width: 2.67rem;
+    height: 1.58rem;
+    border-radius: 0.2rem;
+}
+
+.play_inner .play_betting.jslp .play_item .placebet {
+    max-width: 2.26rem;
+    min-width: 2.26rem;
+    height: 3.76rem;
+    border-radius: 0.2rem;
+}
+
+.play_inner .play_betting.jslp .play_item .placebet.sm {
+    max-width: 1.6rem;
+    min-width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 0.12rem;
+}
+
+.play_inner .play_betting.jsyxx .play_item_jsyxx .placebet {
+    max-width: 2.52rem;
+    min-width: 2.52rem;
+    height: 1.65rem;
+    border-radius: 0.19rem;
+}
+
+.play_inner .play_betting.jsyxx .play_item .placebet {
+    max-width: 2rem;
+    min-width: 2rem;
+    height: 4.04rem;
+    border-radius: 0.19rem;
+}
+
+.play_inner .play_betting.jsyxx.md .play_item .placebet {
+    max-width: 1.75rem;
+    min-width: 1.75rem;
+    height: 1.7rem;
+    border-radius: 0.19rem;
+    margin-bottom: 0.15rem;
+}
+
+/* 按鈕底部光暈效果 */
+
+.play_inner .play_betting.active .shadow_bet {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    max-width: 2.213rem;
+    min-width: 2.213rem;
+    height: 2.1rem;
+    background: linear-gradient(180deg, #FFDE00 0%, rgba(255, 222, 0, 0.75) 100%);
+    box-shadow: 0px 0px 0.213rem 0px #FFE600, 0px 0px 0.133rem #FFE600;
+    border-radius: 0.3rem;
+    z-index: -1;
+}
+
+.longdragon_down .play_betting.active .shadow_bet {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    max-width: 4.467rem;
+    min-width: 4.467rem;
+    height: 1.28rem;
+    background: linear-gradient(180deg, #FFDE00 0%, rgba(255, 222, 0, 0.75) 100%);
+    box-shadow: 0px 0px 0.213rem 0px #FFE600, 0px 0px 0.133rem #FFE600;
+    border-radius: 0.3rem;
+    z-index: -1;
+}
+
+.play_inner .play_betting.sm.active .shadow_bet {
+    max-width: 1.76rem;
+    min-width: 1.73rem;
+    height: 1.56rem;
+}
+
+.play_inner .play_betting.md.active .shadow_bet {
+    max-width: 2.01rem;
+    min-width: 2.01rem;
+    height: 1.89rem;
+}
+
+.play_inner .play_betting.xl.active .shadow_bet {
+    max-width: 2.613rem;
+    min-width: 2.613rem;
+    height: 2.39rem;
+}
+
+.play_inner .play_betting.xxl.active .shadow_bet {
+    max-width: 2.947rem;
+    min-width: 2.947rem;
+    height: 3.85rem;
+}
+
+.play_inner .play_betting.row.active .shadow_bet {
+    max-width: 2.947rem;
+    min-width: 2.947rem;
+    height: 1.8rem;
+    margin-bottom: 0.2rem;
+}
+
+.play_inner .play_betting.jslp.active .shadow_bet {
+    max-width: 2.533rem;
+    min-width: 2.533rem;
+    height: 3.88rem;
+}
+
+.play_inner .play_betting.jslp.active .shadow_bet.xl {
+    max-width: 2.8rem;
+    min-width: 2.8rem;
+    height: 3.85rem;
+}
+
+.play_inner .play_betting.jslp.active .shadow_bet.sm {
+    max-width: 1.893rem;
+    min-width: 1.893rem;
+    height: 1.78rem;
+    margin-bottom: 0.2rem;
+}
+
+.play_inner .play_betting.jsyxx.active .shadow_bet.row {
+    max-width: 2.8rem;
+    min-width: 2.8rem;
+    height: 1.92rem;
+    margin-bottom: 0.26rem;
+}
+
+.play_inner .play_betting.jsyxx.active .shadow_bet {
+    max-width: 2.8rem;
+    min-width: 2.8rem;
+    height: 1.92rem;
+    margin-bottom: 0.26rem;
+}
+
+.play_inner .play_betting.jsyxx.fullrange.active .shadow_bet {
+    max-width: 2.267rem;
+    min-width: 2.267rem;
+    height: 4.22rem;
+    margin-bottom: 0;
+}
+
+.play_inner .play_betting.jsyxx.md.active .shadow_bet {
+    max-width: 2.013rem;
+    min-width: 2.013rem;
+    height: 1.88rem;
+    margin-bottom: 0;
+}
+
+.play_inner .play_betting.row.active .shadow_bet.mb_0,
+.play_inner .play_betting.jslp.active .shadow_bet.mb_0 {
+    margin-bottom: 0;
+}
+
+/* 兩面  */
+
+.gamebtn_main .play_inner.bothsides {
+    justify-content: flex-start;
+}
+
+.play_inner.bothsides .play_item {
+    max-width: 2.213rem;
+    min-width: 2.213rem;
+    height: 2.28rem;
+}
+
+/* 豹子 */
+
+.gamebtn_main .play_inner.leopard {
+    justify-content: flex-start;
+}
+
+.play_inner.leopard .play_item.md {
+    max-width: 2.01rem;
+    min-width: 2.01rem;
+    height: 2.05rem;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* flex-shrink: 0;
+    flex-grow: 1;
+    gap: 0; */
+    padding-bottom: 0.3rem;
+    margin-right: 0.45rem;
+    margin-bottom: 0.3rem;
+    cursor: pointer;
+}
+
+.play_inner.leopard .play_betting.md .play_item {
+    max-width: 2.01rem;
+    min-width: 2.01rem;
+    height: 2.05rem;
+    cursor: pointer;
+    padding-bottom: 0.3rem;
+}
+
+
+.play_inner.leopard .play_betting.md {
+    position: relative;
+    margin-right: 0.45rem;
+    margin-bottom: 0.3rem;
+}
+
+.play_inner.leopard .play_betting.md:nth-child(4n+0) {
+    margin-right: 0;
+}
+
+/* 單骰 & 對子 */
+
+.gamebtn_main .play_inner.pair {
+    justify-content:space-evenly;
+}
+
+.play_inner.pair .play_item.md{
+    max-width: 2.01rem;
+    min-width: 2.01rem;
+    height: 2.05rem;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 0.3rem;
+    margin-right: 0.46rem;
+    margin-bottom: 0.3rem;
+    cursor: pointer;
+}
+
+.play_inner.pair .play_betting.md .play_item {
+    max-width: 2.01rem;
+    min-width: 2.01rem;
+    height: 2.05rem;
+    cursor: pointer;
+    padding-bottom: 0.3rem;
+}
+
+.play_inner.pair .play_betting.md {
+    position: relative;
+    margin-right: 0.46rem;
+    margin-bottom: 0.3rem;
+}
+
+.play_inner.pair .play_betting.md:nth-child(3n){
+    margin-right: 0;
+}
+
+.play_inner.pair .play_betting.md:nth-child(1n+4){
+    margin-bottom: 0;
+}
+
+.play_inner.pair .play_betting.md .play_item.blue,
+.play_inner.leopard .play_betting.md .play_item.blue,
+.play_inner.jsyxx .play_betting.md .play_item.blue {
+    background: url(../images/game/btn_blue_md_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner.pair .play_betting.md.active .play_item.blue,
+.play_inner.leopard .play_betting.md.active .play_item.blue,
+.play_inner.jsyxx .play_betting.md.active .play_item.blue {
+    background: url(../images/game/btn_blue_md_active.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner.pair .play_betting.md .play_item.orange,
+.play_inner.leopard .play_betting.md .play_item.orange {
+    background: url(../images/game/btn_orange_md_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner.pair .play_betting.md.active .play_item.orange,
+.play_inner.leopard .play_betting.md.active .play_item.orange {
+    background: url(../images/game/btn_orange_md_active.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner.pair .play_betting.md .play_item.green,
+.play_inner.leopard .play_betting.md .play_item.green,
+.play_inner.jsyxx .play_betting.md .play_item.green {
+    background: url(../images/game/btn_green_md_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner.pair .play_betting.md.active .play_item.green,
+.play_inner.leopard .play_betting.md.active .play_item.green,
+.play_inner.jsyxx .play_betting.md.active .play_item.green {
+    background: url(../images/game/btn_green_md_active.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner.pair .play_betting.md .play_item.red,
+.play_inner.leopard .play_betting.md .play_item.red,
+.play_inner.jsyxx .play_betting.md .play_item.red {
+    background: url(../images/game/btn_red_md_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner.pair .play_betting.md.active .play_item.red,
+.play_inner.leopard .play_betting.md.active .play_item.red,
+.play_inner.jsyxx .play_betting.md.active .play_item.red {
+    background: url(../images/game/btn_red_md_active.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner.pair .play_betting.md .play_item.black,
+.play_inner.leopard .play_betting.md .play_item.black {
+    background: url(../images/game/btn_black_md_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner.pair .play_betting.md.active .play_item.black,
+.play_inner.leopard .play_betting.md.active .play_item.black {
+    background: url(../images/game/btn_black_md_active.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+/* 總和 */
+
+.gamebtn_main .play_inner.sum {
+    justify-content:flex-start;
+}
+
+.play_inner .play_item.sm {
+    max-width: 1.76rem;
+    min-width: 1.73rem;
+    height: 1.8rem;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 0.3rem;
+    margin-right: 0.187rem;
+    margin-bottom: 0.3rem;
+    cursor: pointer;
+}
+
+.play_inner .play_betting.sm .play_item {
+    max-width: 1.76rem;
+    min-width: 1.73rem;
+    height: 1.8rem;
+    cursor: pointer;
+    padding-bottom: 0.3rem;
+}
+
+.play_inner.sum .play_betting.sm:nth-child(5n+0) {
+    margin-right: 0;
+}
+
+.play_inner .play_betting.sm .play_item .placebet {
+    max-width: 1.49rem;
+    min-width: 1.49rem;
+    height: 1.48rem;
+    border-radius: 0.16rem;
+}
+
+.play_inner .play_item.sm.blue .bet_option {
+    font-size: 0.6rem;
+    padding-bottom: 0;
+}
+
+.play_inner .play_betting.sm .play_item .bet_option {
+    font-size: 0.6rem;
+    padding-bottom: 0;
+}
+
+.play_inner .play_item.sm.orange .bet_option {
+    font-size: 0.6rem;
+    padding-bottom: 0;
+}
+
+.play_inner .play_betting.sm .play_item.blue {
+    background: url(../images/game/btn_blue_sm_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting.sm.active .play_item.blue {
+    background: url(../images/game/btn_blue_sm_active.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting.sm .play_item.orange {
+    background: url(../images/game/btn_orange_sm_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting.sm.active .play_item.orange {
+    background: url(../images/game/btn_orange_sm_active.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting.sm .play_item.green {
+    background: url(../images/game/btn_green_sm_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting.sm.active .play_item.green {
+    background: url(../images/game/btn_green_sm_active.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting.sm .play_item.black {
+    background: url(../images/game/btn_black_sm_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting.sm.active .play_item.black {
+    background: url(../images/game/btn_black_sm_active.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+/* 牛牛 */
+
+
+.gamebtn_main .play_inner.nuinui {
+    justify-content: center;
+}
+
+.play_inner .play_betting.xl {
+    max-width: 2.613rem;
+    min-width: 2.613rem;
+    width: 2.613rem;
+    height: 2.653rem;
+    margin-right: 0.667rem;
+}
+
+.play_inner .play_betting.xl .play_item {
+    max-width: 2.613rem;
+    min-width: 2.613rem;
+    width: 2.613rem;
+    height: 2.653rem;
+    cursor: pointer;
+    padding-bottom: 0.2rem;
+}
+
+.play_inner .play_betting.xl:last-child {
+    margin-right: 0;
+}
+
+.play_inner .play_betting.xl .play_item.blue {
+    background: url(../images/game/btn_blue_xl_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting.xl.active .play_item.blue {
+    background: url(../images/game/btn_blue_xl_active.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting.xl .play_item.red {
+    background: url(../images/game/btn_red_xl_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting.xl.active .play_item.red {
+    background: url(../images/game/btn_red_xl_active.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_item.sm.blue .bet_option.sm,
+.play_inner .play_item.sm.red .bet_option.sm,
+.play_inner .play_item.sm.green .bet_option.sm  {
+    font-size: 0.56rem;
+    padding-bottom: 0;
+}
+
+.play_inner .play_betting.sm .play_item.blue .bet_option.xs,
+.play_inner .play_betting.sm .play_item.red .bet_option.xs {
+    font-size: 0.453rem;
+    padding-bottom: 0.09rem;
+}
+
+.play_inner .play_item.sm.red { 
+    background: url(../images/game/btn_red_sm_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_item.sm.red.active {
+    background: url(../images/game/btn_red_sm_active.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+/* 百家樂 按鈕 */
+
+.gamebtn_main .play_inner.baccarat {
+    justify-content: space-between;
+}
+
+.play_inner .play_item.xxl {
+    max-width: 2.947rem;
+    min-width: 2.947rem;
+    width: 2.947rem;
+    height: 4.053rem;
+    margin-right: 0;
+}
+
+.play_inner .play_betting.xxl .play_item {
+    max-width: 2.947rem;
+    min-width: 2.947rem;
+    width: 2.947rem;
+    height: 4.053rem;
+    margin-right: 0;
+}
+
+.play_inner .play_betting.xxl .play_item.blue {
+    background: url(../images/game/btn_blue_xxl_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting.xxl.active .play_item.blue {
+    background: url(../images/game/btn_blue_xxl_active.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting.xxl .play_item.red {
+    background: url(../images/game/btn_red_xxl_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting.xxl.active .play_item.red {
+    background: url(../images/game/btn_red_xxl_active.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting.xxl .play_item.blue .bet_option.xxl,
+.play_inner .play_betting.xxl .play_item.red .bet_option.xxl {
+    font-size: 0.733rem;
+    padding-bottom: 0.4rem;
+}
+
+.play_inner .play_middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-height: 4.053rem;
+    height: 4.053rem;
+}
+
+.play_inner .play_betting.row .play_item {
+    max-width: 2.947rem;
+    min-width: 2.947rem;
+    width: 2.947rem;
+    height: 1.92rem;
+    margin-right: 0;
+    margin-bottom: 0.21rem;
+}
+
+.play_inner .play_betting.row:last-child {
+    margin-bottom: 0;
+}
+
+.play_inner .play_betting.row .play_item.green {
+    background: url(../images/game/btn_green_row_default.png) no-repeat;
+    background-size: 100% 100%;
+    padding-bottom: 0.3rem;
+}
+
+.play_inner .play_betting.row.active .play_item.green {
+    background: url(../images/game/btn_green_row_active.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting.row .play_item.black {
+    background: url(../images/game/btn_black_row_default.png) no-repeat;
+    background-size: 100% 100%;
+    padding-bottom: 0.3rem;
+    margin-bottom: 0;
+}
+
+.play_inner .play_betting.row.active .play_item.black {
+    background: url(../images/game/btn_black_row_active.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_item.green .bet_option.sm {
+    font-size: 0.587rem;
+    padding-bottom: 0;
+}
+
+.play_inner .play_item.green.active .bet_option.sm {
+    padding-top: 0.2rem;
+}
+
+.play_inner .play_item.black .bet_option.sm {
+    font-family: FZZhengHeiS;
+    font-size: 0.587rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #fffdf8 0%,#ffffba 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-bottom: 0;
+}
+
+.play_inner .play_item.black.active .bet_option.sm {
+    padding-top: 0.2rem;
+}
+
+.play_inner .play_item.black .bet_option::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.06rem #2a2a2a;
+    z-index: -1;
+}
+
+/* 輪盤 按鈕 */
+
+.gamebtn_main .play_inner.jslp{
+    justify-content: space-between;
+}
+
+.play_inner .play_betting.jslp .play_item {
+    max-width: 2.533rem;
+    min-width: 2.533rem;
+    width: 2.533rem;
+    height: 4.053rem;
+    margin-right: 0;
+}
+
+.play_inner .play_betting.jslp .play_item.red {
+    background: url(../images/game/btn_red_jslp_xxl_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting.jslp.active .play_item.red {
+    background: url(../images/game/btn_red_jslp_xxl_active.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting.jslp .play_item.black {
+    background: url(../images/game/btn_black_jslp_xxl_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting.jslp.active .play_item.black {
+    background: url(../images/game/btn_black_jslp_xxl_active.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting.jslp .play_item.green {
+    max-width: 2.8rem;
+    min-width: 2.8rem;
+    width: 2.8rem;
+    background: url(../images/game/btn_green_jslp_xxl_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting.jslp.active .play_item.green {
+    background: url(../images/game/btn_green_jslp_xxl_active.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting.jslp .play_item.red .bet_option.xxl {
+    font-family: FZZhengHeiS;
+    font-size: 0.733rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #fffdf8 0%,#ffcdcd 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-bottom: 0.4rem;
+}
+
+.play_inner .play_betting.jslp .play_item.red .bet_option.xxl::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.06rem #9d0000;
+    z-index: -1;
+}
+
+.play_inner .play_betting.jslp .play_item.black .bet_option.xxl {
+    font-family: FZZhengHeiS;
+    font-size: 0.733rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #ffffff 0%,#c6c6c6 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-bottom: 0.4rem;
+}
+
+.play_inner .play_betting.jslp .play_item.black .bet_option.xxl::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.06rem #2a2a2a;
+    z-index: -1;
+}
+
+.play_inner .play_betting.jslp .play_item.green .bet_option.xl {
+    font-size: 0.6rem;
+    color: transparent;
+    padding-bottom: 0.4rem;
+}
+
+.play_inner .play_betting.jslp .play_item.blue {
+    background: url(../images/game/btn_blue_jslp_md_default.png) no-repeat;
+    background-size: 100% 100%;
+    max-width: 1.893rem;
+    min-width: 1.893rem;
+    width: 1.893rem;
+    height: 1.933rem;
+    margin-right: 0;
+    margin-bottom: 0.21rem;
+}
+
+.play_inner .play_betting.jslp .play_item.blue.mb_0 {
+    margin-bottom: 0;
+}
+
+.play_inner .play_betting.jslp.active .play_item.blue {
+    background: url(../images/game/btn_blue_jslp_md_active.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting.jslp .play_item.blue:last-child {
+    margin-bottom: 0;
+}
+
+.play_inner .play_betting.jslp .play_item.blue .bet_option.sm {
+    font-size: 0.587rem;
+    color: transparent;
+    padding-bottom: 0.1rem;
+}
+
+.play_inner .play_betting.sm .play_item.black .bet_option {
+    font-family: FZZhengHeiS;
+    font-size: 0.56rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #ffffff 0%,#c6c6c6 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-bottom: 0;
+}
+
+.play_inner .play_betting.sm.active .play_item.black .bet_option {
+    padding-top: 0.2rem;
+}
+
+.play_inner .play_betting.sm .play_item.black .bet_option::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.06rem #2a2a2a;
+    z-index: -1;
+}
+
+/* 魚蝦蟹 按鈕 */
+
+.gamebtn_main .play_inner.jsyxx {
+    justify-content: space-between;
+}
+
+.play_inner.jsyxx .play_item.md {
+    max-width: 2.013rem;
+    min-width: 2.013rem;
+    height: 2.053rem;
+    max-height: 2.053rem;
+    margin-right: 0;
+    margin-bottom: 0.28rem;
+    cursor: pointer;
+}
+
+.play_inner.jsyxx .play_item.md:last-child {
+    margin-bottom: 0;
+}
+
+.play_inner .play_betting.jsyxx .play_item {
+    max-width: 2.267rem;
+    min-width: 2.267rem;
+    width: 2.267rem;
+    height: 4.393rem;
+    margin-right: 0;
+}
+
+.play_inner .play_betting.jsyxx.md .play_item {
+    max-width: 2.013rem;
+    min-width: 2.013rem;
+    height: 2.053rem;
+    max-height: 2.053rem;
+    margin-right: 0;
+}
+
+.play_inner .play_betting.jsyxx.md .play_item:last-child {
+    margin-bottom: 0;
+}
+
+.play_inner .play_betting.jsyxx .play_item.black {
+    background: url(../images/game/btn_black_jsyxx_xxl_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting.jsyxx.active .play_item.black {
+    background: url(../images/game/btn_black_jsyxx_xxl_active.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting.jsyxx .play_item.black .bet_option.xxl {
+    font-family: FZZhengHeiS;
+    font-size: 0.587rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #fffdf8 0%,#ffffba 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-bottom: 0.4rem;
+}
+
+.play_inner .play_betting.jsyxx .play_item.black .bet_option.xxl::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.06rem #2a2a2a;
+    z-index: -1;
+}
+
+.play_inner .play_middle.jsyxx {
+    max-height: 4.393rem;
+    height: 4.393rem;
+    justify-content: space-between;
+}
+
+.play_inner .play_betting.md .play_item.green .bet_img_option,
+.play_inner .play_betting.md .play_item.red .bet_img_option,
+.play_inner .play_betting.md .play_item.blue .bet_img_option,
+.play_inner .play_betting.md .play_item.black .bet_img_option {
+    width: 1.2rem;
+    height: 1.133rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.play_inner .play_betting.md.active .play_item.green .bet_img_option,
+.play_inner .play_betting.md.active .play_item.red .bet_img_option,
+.play_inner .play_betting.md.active .play_item.blue .bet_img_option,
+.play_inner .play_betting.md.active .play_item.black .bet_img_option {
+    margin-top: 0.18rem;
+}
+
+.play_inner .play_betting.md .play_item.green .bet_img_option.single img,
+.play_inner .play_betting.md .play_item.red .bet_img_option.single img,
+.play_inner .play_betting.md .play_item.blue .bet_img_option.single img {
+    width: 0.747rem;
+    height: 0.747rem;
+}
+
+.play_inner .play_betting.md .play_item.green .bet_img_option.two img,
+.play_inner .play_betting.md .play_item.red .bet_img_option.two img
+.play_inner .play_betting.md .play_item.blue .bet_img_option.two img {
+    width: 1.147rem;
+    height: 0.547rem;
+}
+
+.play_inner .play_betting.md .play_item.green .bet_img_option.three img,
+.play_inner .play_betting.md .play_item.red .bet_img_option.three img,
+.play_inner .play_betting.md .play_item.blue .bet_img_option.three img {
+    width: 0.84rem;
+    height: 0.827rem;
+}
+
+.play_inner .play_betting.md .play_item.black .bet_img_option.threecolors img {
+    width: 1.2rem;
+    height: 1.133rem;
+}
+
+/* .play_inner .play_item.md.green .bet_img_option.fullrange,
+.play_inner .play_item.md.red .bet_img_option.fullrange,
+.play_inner .play_item.md.blue .bet_img_option.fullrange {
+    width: 0.84rem;
+    height: 0.827rem;
+} */
+
+.play_inner .play_betting.md .play_item.green .bet_img_option.fullrange,
+.play_inner .play_betting.md .play_item.red .bet_img_option.fullrange,
+.play_inner .play_betting.md .play_item.blue .bet_img_option.fullrange {
+    width: 1.1rem;
+    height: 1.1rem;
+    padding-bottom: 0.1rem;
+}
+
+.play_inner .play_betting .play_item_jsyxx {
+    max-width: 2.8rem;
+    min-width: 2.8rem;
+    height: 2.06rem;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    flex-grow: 1;
+    padding-bottom: 0.3rem;
+    margin-bottom: 0.286rem;
+    cursor: pointer;
+}
+
+.play_inner.jsyxx .play_betting {
+    position: relative;
+    margin-right: 0;
+}
+
+.play_inner .play_betting .play_item_jsyxx.red_md_row {
+    background: url(../images/game/btn_red_md_row_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting.active .play_item_jsyxx.red_md_row {
+    background: url(../images/game/btn_red_md_row_active.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting .play_item_jsyxx.green_md_row {
+    background: url(../images/game/btn_green_md_row_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting.active .play_item_jsyxx.green_md_row {
+    background: url(../images/game/btn_green_md_row_active.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting .play_item_jsyxx.blue_md_row {
+    background: url(../images/game/btn_blue_md_row_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting.active .play_item_jsyxx.blue_md_row {
+    background: url(../images/game/btn_blue_md_row_active.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.play_inner .play_betting .play_item_jsyxx .jsyxx_md_img {
+    width: 1.067rem;
+    height: 1.067rem;
+    margin-right: 0.14rem;
+}
+
+.play_inner .play_betting.active .play_item_jsyxx .jsyxx_md_img {
+    padding-top: 0.1rem;
+}
+
+.play_inner .play_betting .play_item_jsyxx .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.play_inner .play_betting .play_item_jsyxx .content .bet_option {
+    font-family: FZZhengHeiS;
+    font-size: 0.587rem;
+}
+
+.play_inner .play_betting.active .play_item_jsyxx .content .bet_option {
+    padding-top: 0.25rem;
+}
+
+.play_inner .play_item_jsyxx.red_md_row .content .bet_option {
+    color: transparent;
+    background: linear-gradient(to bottom, #fffdf8 0%,#ffcdcd 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-bottom: 0.1rem;
+}
+
+.play_inner .play_item_jsyxx.red_md_row .content .bet_option:before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.06rem #9d0000;
+    z-index: -1;
+}
+
+.play_inner .play_item_jsyxx.green_md_row .content .bet_option {
+    color: transparent;
+    background: linear-gradient(to bottom, #fffdf8 0%,#aef587 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-bottom: 0.1rem;
+}
+
+.play_inner .play_item_jsyxx.green_md_row .content .bet_option::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.06rem #1b5e00;
+    z-index: -1;
+}
+
+.play_inner .play_item_jsyxx.blue_md_row .content .bet_option {
+    color: transparent;
+    background: linear-gradient(to bottom, #fffdf8 0%,#71edff 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-bottom: 0.1rem;
+}
+
+.play_inner .play_item_jsyxx.blue_md_row .content .bet_option::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.06rem #00429d;
+    z-index: -1;
+}
+
+.play_inner .play_item_jsyxx .content .bet_num {
+    font-family: Arial;
+    font-size: 0.333rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* 長龍 */
+
+.gamebtn_main .consecutive_outter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../images/game/bg_consecutive.png) no-repeat;
+    background-size: 100% 100%;
+    height: .85rem;
+    margin-top: 0.2rem;
+    cursor: pointer;
+}
+
+.consecutive_outter .consecutive_inner {
+    display: flex;
+    align-items: center;
+    margin-right: 0.25rem;
+}
+
+.consecutive_outter .consecutive_inner .consecutive_title {
+    display: flex;
+    align-items: center;
+    font-size: 0.32rem;
+    font-weight: bold;
+    color: #fff5d8;
+    margin-right: 0.187rem;
+}
+
+.consecutive_outter .consecutive_inner .consecutive_title .consecutive_text {
+    color: #ffcd40;
+    font-weight: bold;
+    margin-left: 0.12rem;
+}
+
+.consecutive_outter .consecutive_inner .consecutive_arrow {
+    width: 0.4rem;
+}
+
+.consecutive_outter .consecutive_expand {
+    width: 0.22rem;
+    height: auto;
+}
+
+.longdragon_inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: url(../images/game/bg_longdragron.png) no-repeat;
+    background-size: 100% 100%;
+    gap: 0.3rem;
+}
+
+.longdragon_inner .longdragon_up {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0.44rem;
+    padding-top: 0.3rem;
+    width: 100%;
+}
+
+.longdragon_inner .longdragon_up .longdragon_infos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.longdragon_inner .longdragon_up .longdragon_infos .longdragon_gameimg {
+    width: 0.94rem;
+    height: 0.94rem;
+    margin-right: 0.22rem;
+    display: flex;
+    align-items: center;
+}
+
+.longdragon_inner .longdragon_up .longdragon_infos .longdragon_gameimg.pk10_car {
+    width: 1.48rem;
+    margin-right: 0.22rem;
+}
+
+.longdragon_inner .longdragon_up .longdragon_infos .longdragon_gameimg.omssc {
+    width: 1.006rem;
+    margin-right: 0.22rem;
+}
+
+.longdragon_inner .longdragon_up .longdragon_infos .longdragon_gameimg.omlhc {
+    width: 0.9733rem;
+    margin-right: 0.22rem;
+}
+
+.longdragon_inner .longdragon_up .longdragon_infos .longdragon_gameimg.nuinui {
+    width: 1.16rem;
+    margin-right: 0.22rem;
+}
+
+.longdragon_inner .longdragon_up .longdragon_infos .longdragon_gameimg.baccarat {
+    width: 1.053rem;
+    margin-right: 0.22rem;
+}
+
+.longdragon_inner .longdragon_up .longdragon_infos .longdragon_gameimg.jslp {
+    width: 1.053rem;
+    margin-right: 0.22rem;
+}
+
+.longdragon_inner .longdragon_up .longdragon_infos .longdragon_gameimg.jsyxx {
+    width: 0.967rem;
+    margin-right: 0.22rem;
+}
+
+.longdragon_inner .longdragon_up .longdragon_infos .longdragon_gameimg.jssg {
+    width: 1.053rem;
+    margin-right: 0.22rem;
+}
+
+.longdragon_inner .longdragon_up .longdragon_infos .longdragon_gameimg.jslh {
+    width: 1.3467rem;
+    margin-right: 0.22rem;
+}
+
+.longdragon_inner .longdragon_up .longdragon_infos .longdragon_info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.longdragon_inner .longdragon_up .longdragon_infos .longdragon_info .longdragon_first {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.longdragon_inner .longdragon_up .longdragon_infos .longdragon_info .longdragon_first .longdragon_title {
+    font-family: FZZhengHeiS;
+    font-size: 0.453rem;
+    font-style: italic;
+    color: transparent;
+    background: linear-gradient(to bottom,  rgba(255,237,189,1) 0%,rgba(255,219,60,1) 50%,rgba(255,168,0,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    margin-right: 0.18rem;
+}
+
+.longdragon_inner .longdragon_up .longdragon_infos .longdragon_info .longdragon_first .longdragon_num {
+    font-size: 0.267rem;
+    font-weight: 500;
+    color: #e6bd54;
+}
+
+.longdragon_inner .longdragon_up .longdragon_infos .longdragon_info .longdragon_second {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.longdragon_inner .longdragon_up .longdragon_infos .longdragon_info .longdragon_second .longdragon_text {
+    font-size: 0.32rem;
+    color: #fff;
+}
+
+.longdragon_inner .longdragon_up .longdragon_infos .longdragon_info .longdragon_second .longdragon_arrow {
+    width: 0.4rem;
+    margin-right: 0.147rem;
+}
+
+.longdragon_inner .longdragon_up .longdragon_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.longdragon_inner .longdragon_up .longdragon_content .longdragon_digits {
+    background: url(../images/game/img_sm_digits.png) no-repeat;
+    background-size: 100% 100%;
+    width: 0.68rem;
+    height: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    margin-right: 0.067rem;
+}
+
+.longdragon_inner .longdragon_up .longdragon_content .longdragon_digits:last-child {
+    margin-right: 0;
+}
+
+.longdragon_inner .longdragon_up .longdragon_content .longdragon_digits .digits_text {
+    font-family: 'din_alternatebold';
+    font-size: 0.76rem;
+    color: rgba(0,0,0,0.01);
+    background: linear-gradient(to bottom, #ffffff 25%,#ffe5b7 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.longdragon_inner .longdragon_up .longdragon_content .longdragon_digits .digits_text::before {
+    /* content: attr(text); */
+    position: absolute;
+    z-index: -1;
+    text-shadow: 0 0 0.18rem rgba(0,0,0,1);
+}
+
+.longdragon_inner .longdragon_down {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.4rem;
+}
+
+.longdragon_inner .longdragon_down .play_betting {
+    position: relative;
+    margin-right: 0.32rem;
+}
+
+.longdragon_inner .longdragon_down .play_betting:last-child {
+    margin-right: 0;
+}
+
+.longdragon_inner .longdragon_down .play_betting .longdragon_item {
+    max-width: 4.467rem;
+    min-width: 4.467rem;
+    height: 1.453rem;
+    padding-bottom: 0.3rem;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-shrink: 0;
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.longdragon_inner .longdragon_down .play_betting .longdragon_item:last-child {
+    margin-right: 0;
+}
+
+.longdragon_inner .longdragon_down .play_betting .longdragon_item.blue {
+    background: url(../images/game/btn_blue_row_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.longdragon_inner .longdragon_down .play_betting.active .longdragon_item.blue {
+    background: url(../images/game/btn_blue_row_active.png) no-repeat;
+    background-size: 100% 100%;
+    padding-top: 0.25rem;
+}
+
+.longdragon_inner .longdragon_down .play_betting .longdragon_item.orange {
+    background: url(../images/game/btn_orange_row_default.png) no-repeat;
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+
+.longdragon_inner .longdragon_down .play_betting.active .longdragon_item.orange {
+    background: url(../images/game/btn_orange_row_active.png) no-repeat;
+    background-size: 100% 100%;
+    padding-top: 0.25rem;
+}
+
+.longdragon_inner .longdragon_down .play_betting .longdragon_item.blue .bet_option {
+    font-family: FZZhengHeiS;
+    font-size: 0.533rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #fffdf8 0%,#71edff 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.longdragon_inner .longdragon_down .play_betting .longdragon_item.blue .bet_option::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.06rem #00429d;
+    z-index: -1;
+}
+
+.longdragon_inner .longdragon_down .play_betting .longdragon_item.orange .bet_option {
+    font-family: FZZhengHeiS;
+    font-size: 0.533rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #fffdf8 0%,#ffffba 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.longdragon_inner .longdragon_down .play_betting .longdragon_item.orange .bet_option::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.06rem #9d3400;
+    z-index: -1;
+}
+
+.longdragon_inner .longdragon_down .play_betting .longdragon_item .bet_num {
+    font-family: Arial;
+    font-size: 0.333rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* 長龍 暫無數據 */
+
+.empty_longdragon_outter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0.533rem;
+}
+
+.empty_longdragon_outter .empty_longdragon_img {
+    width: 2.273rem;
+    padding-bottom: 0.186rem;
+}
+
+.empty_longdragon_outter .empty_longdragon_text {
+    width: 6.98rem;
+}
+
+.play_block {
+    width: 100%;
+    height: 1.5rem;
+}
+
+
+/* 籌碼投注 */
+
+.betting_outter {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 2rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.betting_outter.android {
+    bottom: 1.333rem;
+}
+
+.betting_outter::after {
+    content: "";
+    background: url(../images/game/bg_light.png) no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 1.187rem;
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+}
+
+.betting_outter .betting_inner {
+    display: flex;
+    align-items: flex-end;
+}
+
+.betting_outter .betting_inner.spacing {
+    padding: 0.21rem 0 0.21rem 0.3rem;
+    align-items: center;
+}
+
+.betting_outter .betting_inner .betting_content {
+    background: #000;
+    border-radius: 170rem;
+    box-shadow: inset 0 0 0.707rem rgba(255, 255, 255, .45);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    min-width: 3rem;
+    margin-right: 0.16rem;
+}
+
+.betting_outter .betting_inner .betting_content .betting_money {
+    width: 0.76rem;
+    height: 0.76rem;
+}
+
+.betting_outter .betting_inner .betting_content .betting_money img {
+    width: 0.76rem;
+    height: 0.76rem;
+}
+
+.betting_outter .betting_inner .betting_content .betting_item {
+    padding: 0.093rem;
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.betting_outter .betting_inner .betting_content .betting_item .betting_text {
+    font-family: Arial;
+    font-size: 0.32rem;
+    color: #fff;
+    flex: 1;
+    margin-right: 0.107rem;
+}
+
+.betting_outter .betting_inner .betting_content .betting_item .betting_recharge {
+    width: 0.58rem;
+    height: 0.58rem;
+}
+
+.betting_outter .betting_inner .betting_content .betting_item .betting_recharge img {
+    width: 0.58rem;
+    height: 0.58rem;
+}
+
+.betting_outter .betting_inner .betting_refresh {
+    width: 0.533rem;
+    height: 0.533rem;
+    cursor: pointer;
+}
+
+.betting_outter .betting_inner .betting_refresh img {
+    width: 0.533rem;
+    height: 0.533rem;
+    cursor: pointer;
+}
+
+.betting_outter .betting_inner .betting_chips {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 0.1rem;
+}
+
+.betting_outter .betting_inner .betting_chips .betting_num {
+    font-family: Arial;
+    font-size: 0.333rem;
+    font-weight: bold;
+    color: #000;
+    width: 1.206rem;
+    height: 1.273rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 0.04rem;
+    margin-right: 0.12rem;
+}
+
+.betting_outter .betting_inner .betting_chips .betting_num.two {
+    background: url(../images/game/img_chip_yellow.png) no-repeat;
+    background-size: 100% auto;
+}
+
+.betting_outter .betting_inner .betting_chips .betting_num.five {
+    background: url(../images/game/img_chip_blue.png) no-repeat;
+    background-size: 100% auto;
+}
+
+.betting_outter .betting_inner .betting_chips .betting_num.ten {
+    background: url(../images/game/img_chip_pink.png) no-repeat;
+    background-size: 100% auto;
+}
+
+.betting_outter .betting_inner .betting_chips .betting_num.fifty {
+    background: url(../images/game/img_chip_red.png) no-repeat;
+    background-size: 100% auto;
+}
+
+.betting_outter .betting_inner .betting_chips .betting_num.hundred {
+    background: url(../images/game/img_chip_bluepurple.png) no-repeat;
+    background-size: 100% auto;
+}
+
+.betting_outter .betting_inner .betting_chips .betting_num.two_hundred {
+    background: url(../images/game/img_chip_green.png) no-repeat;
+    background-size: 100% auto;
+}
+
+.betting_outter .betting_inner .betting_chips .betting_num.five_hundred {
+    background: url(../images/game/img_chip_orange.png) no-repeat;
+    background-size: 100% auto;
+}
+
+.betting_outter .betting_inner .betting_chips .betting_num.default {
+    background: url(../images/game/img_chip_black.png) no-repeat;
+    background-size: 100% auto;
+}
+
+.betting_outter .betting_inner .betting_chips .betting_arrow {
+    width: 0.227rem;
+    height: auto;
+}
+
+.betting_outter .betting_inner .betting_chips .betting_arrow img {
+    width: 0.227rem;
+    height: auto;
+}
+
+.betting_outter .betting_inner .betting_betbtn {
+    background: url(../images/game/btn_bet.png) no-repeat;
+    background-size: 100% auto;
+    width: 3.373rem;
+    height: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0.6rem;
+    cursor: pointer;
+}
+
+/* 確認投注 按鈕 */
+
+.confirm_main .confirm_betting_outter {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.confirm_main .confirm_betting_outter.iphone {
+    bottom: 0.8rem;
+}
+
+.confirm_main .confirm_betting_outter::after {
+    content: "";
+    background: url(../images/game/bg_light.png) no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 1.187rem;
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+}
+
+.confirm_main .confirm_betting_outter .confirm_betting_inner {
+    display: flex;
+    align-items: center;
+    /* gap: 0.16rem; */
+}
+
+.confirm_main .confirm_betting_outter .confirm_betting_inner.spacing {
+    padding: 0 0 0.16rem 0.3rem;
+}
+
+.confirm_main .confirm_betting_outter .confirm_betting_inner .confirm_betting_content {
+    display: flex;
+    align-items: center;
+}
+
+.confirm_main .confirm_betting_outter .confirm_betting_inner .confirm_betting_content .confirm_betting_money {
+    width: 0.807rem;
+    height: auto;
+    margin-right: 0.16rem;
+}
+
+.confirm_main .confirm_betting_outter .confirm_betting_inner .confirm_betting_content .confirm_betting_money img {
+    width: 0.807rem;
+    height: auto;
+}
+
+.confirm_main .confirm_betting_outter .confirm_betting_inner .confirm_betting_content .confirm_betting_section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.confirm_main .confirm_betting_outter .confirm_betting_inner .confirm_betting_content .confirm_betting_section .confirm_betting_item {
+    display: flex;
+}
+
+.confirm_main .confirm_betting_outter .confirm_betting_inner .confirm_betting_content .confirm_betting_section .confirm_betting_item .confirm_betting_text {
+    font-size: 0.31rem;
+    color: #fff1cb;
+    line-height: 0.45rem;
+    margin-right: 0.24rem;
+}
+
+.confirm_main .confirm_betting_outter .confirm_betting_inner .confirm_betting_content .confirm_betting_section .confirm_betting_item .confirm_betting_text span {
+    font-weight: 500;
+    color: #ffaf07;
+    padding: 0 0.107rem;
+}
+
+.confirm_main .confirm_betting_outter .confirm_betting_inner .confirm_betting_betbtn {
+    background: url(../images/game/btn_confirm_bet.png) no-repeat;
+    background-size: 100% auto;
+    width: 3.6rem;
+    height: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0.6rem;
+    cursor: pointer;
+}

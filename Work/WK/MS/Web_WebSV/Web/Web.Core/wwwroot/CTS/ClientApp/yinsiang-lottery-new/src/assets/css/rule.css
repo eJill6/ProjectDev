@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+.bg_baccarat {
+    background: url(../images/rule/bg_baccarat.png);
+    background-repeat: no-repeat;
+    background-size: 7.353rem 5.953rem;
+    background-position-x: right;
+}
+
+.bg_roulette {
+    background: url(../images/rule/bg_rule_roulette.png);
+    background-repeat: no-repeat;
+    background-size: 7.0867rem 5.073rem;
+    background-position-x: right;
+}
+
+.bg_yusiasieh {
+    background: url(../images/rule/bg_rule_yusiasieh.png);
+    background-repeat: no-repeat;
+    background-size: 7.133rem 5.06rem;
+    background-position-x: right;
+}
+
+.rule_section {
+    padding: 0 0.2667rem 0.4667rem;
+    position: relative;
+    z-index: 1;
+}
+
+.rule_maintitle {
+    font-size: 0.34667rem;
+    font-weight: bold;
+    color: transparent;
+    background: linear-gradient(to bottom, #ffffff 0%, #f2deb3 50%,#d7a749 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-bottom: 0.25rem;
+}
+
+.rule_maintitle::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.04rem #222222;
+    z-index: -1;
+}
+
+.rule_subtitle {
+    font-size: 0.34667rem;
+    font-weight: bold;
+    color: transparent;
+    background: linear-gradient(to bottom, #ffffff 0%, #d1d1d1 50%,#999999 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-bottom: 0.25rem;
+}
+
+.rule_subtitle::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.04rem #222222;
+    z-index: -1;
+}
+
+.rule_section .rule_text {
+    font-size: 0.32rem;
+    color: #dcdcdc;
+    text-shadow: 0 0.03rem 0.02rem rgba(0,0,0,0.5);
+    line-height: 1.6;
+}
+
+.rule_table {
+    padding: 0 0.2667rem 0.5rem;
+}

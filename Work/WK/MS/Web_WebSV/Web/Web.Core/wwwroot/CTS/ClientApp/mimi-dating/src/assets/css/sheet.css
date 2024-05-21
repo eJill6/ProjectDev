@@ -1,0 +1,1189 @@
+@charset "UTF-8";
+
+/* sheet */
+
+
+
+.sheet_main_title {
+    font-size: 16px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sheet_main {
+    display: flex;
+    border-bottom: 1px solid rgba(217,217,217,0.05);
+    min-height: 50px;
+}
+
+.main_none {
+    border-bottom: 0px !important;
+}
+
+.main_distance_none {
+    border-bottom: 0px !important;
+    padding: 0px 0px !important;
+}
+
+.sheet_main.grayline {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sheet_main:last-child {
+    border-bottom: none;
+}
+
+.sheet_main .content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.sheet_main .content.content_grid {
+    display: grid;
+    gap: 8px;
+}
+
+.sheet_main.full_width {
+    flex-wrap: wrap;
+    padding: 13px 0;
+}
+
+/* 改版 增加設定 */
+.sheet_main.full_width2 {
+    flex-wrap: wrap;
+    padding: 0px;
+}
+
+/* 改版 增加設定 */
+.sheet_main.full_width .distance_top {
+    padding-top: 30px;
+}
+
+.sheet_main.full_pay_width {
+    flex-wrap: wrap;
+    padding: 13px 0;
+    border-bottom: 0;
+}
+
+.sheet_main .content.content_right {
+    justify-content: flex-end;
+}
+
+.sheet_main .content.content_left {
+    justify-content: start;
+}
+
+.combo_section {
+    background: linear-gradient(90deg, #F3A447 0%, #FE8B14 100%), linear-gradient(263deg, #F5815D 6.02%, #F52E2E 55.78%);
+    border-radius: 10px;
+    padding: 16px 15px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 8px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.combo_section > .combo_check {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.combo_section > .combo_bg {
+    position: absolute;
+    top: -14px;
+    left: -10px;
+    width: 132px;
+    height: 98px;
+}
+
+.combo_section > .combo_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.combo_section > .combo_text {
+    font-size: 12px;
+    color: #fff;
+}
+
+.combo_section > .combo_item .combo_text {
+    font-size: 12px;
+    color: #fff;
+}
+
+.combo_section > .combo_item .combo_text.text_lg {
+    font-size: 19px;
+}
+
+.combo_section > .combo_item .combo_text.text_md {
+    font-size: 17px;
+}
+
+.sheet_main .content_full {
+    width: 100%;
+}
+
+.sheet_main .content_full.content_grid {
+    gap: 8px;
+    display: grid;
+}
+
+.sheet_main .title {
+    min-width: 90px;
+    font-size: 14px;
+    color: #FFF;
+}
+/* 改版 增加文字顏色 設定 */
+.sheet_main .title.title_error{
+    min-width: 90px;
+    font-size: 14px;
+    color: #C72A29;
+}
+
+
+/* 改版 增加文字 設定 */
+.sheet_main .title_default {
+    min-width: 60px;
+    font-size: 14px;
+    color: #FFF;
+}
+
+.sheet_main .title.highlight {
+    font-size: 16px;
+    color: #FEEBCA;
+    line-height: 45px;
+}
+
+/* 改版 增加文字顏色 設定 */
+.sheet_main .title.highlight_error {
+    font-size: 16px;
+    color: #C72A29;
+    line-height: 45px;
+}
+
+/* 改版 增加文字顏色 設定 */
+.highlight_color {
+    color: #ffffff !important;
+}
+
+.sheet_main .title.highlight .title_red {
+    color: #C72A29;
+}
+
+/* 改版 增加註解欄位 設定 */
+.sheet_main .title.highlight .annotation_red {
+    font-size: 10px;
+    color: #C72A29;
+    line-height: 12px;
+}
+
+.annotation_con {
+    font-size: 13px;
+    color: #C72A29;
+    line-height: 20px;
+    padding-top: 16px;
+}
+
+/* .sheet_main.alert .title {
+    color: #C72A29;
+} */
+
+/* 改版 增加文字 設定 */
+.sheet_main.alert .title_default {
+    color: #FFF;
+}
+
+
+.sheet_main .title_center {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sheet_main .title_center_second {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.sheet_main .title_top {
+    display: flex;
+    padding-top: 2px;
+    line-height: 2;
+}
+
+
+.sheet_main .title_full_width {
+    width: 100%;
+    padding-top: 0px;
+    padding-bottom: 13px;
+}
+
+/* 改版 增加設定 */
+.sheet_main .title_full_width2 {
+    width: 100%;
+    padding-top: 0px;
+}
+
+.sheet_main .title_full_width.pb_8 {
+    padding-bottom: 8px;
+}
+
+.sheet_main .title_full_width.display_flex {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding-top: 13px;
+}
+
+.sheet_main .title_full_width .evaluate_item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sheet_main .title_full_width .evaluate_item ul {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sheet_main .title_full_width .evaluate_item ul .evaluate_star_icon {
+    width: 15px;
+    height: 15px;
+    background-size: 15px 15px;
+    background-image: url(../images/post/ic_evaluate_star_default.svg);
+    background-repeat: no-repeat;
+    -ms-high-contrast-adjust: none;
+}
+
+.sheet_main .title_full_width .evaluate_item ul .evaluate_star_icon.active {
+    width: 15px;
+    height: 15px;
+    background-size: 15px 15px;
+    background-image: url(../images/post/ic_evaluate_star_active.svg);
+    background-repeat: no-repeat;
+    -ms-high-contrast-adjust: none;
+}
+
+
+.sheet_main .flex_wrap {
+    display: flex;
+    align-items: center;
+}
+
+.sheet_main .flex_wrap .spacing {
+    padding-right: 4px;
+}
+
+/* 改版 增加距離 設定 */
+.sheet_main .spacing_second {
+    padding-right: 16px;
+}
+
+.sheet_main .grid_layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 8px 8px;
+    grid-template-areas: "field1 field2" "field3 field3";
+}
+
+.grid_layout .field1 {
+    grid-area: field1;
+}
+
+.grid_layout .field2 {
+    grid-area: field2;
+}
+
+.grid_layout .field3 {
+    grid-area: field3;
+}
+
+.sheet_main .flex_full {
+    flex: 1;
+}
+
+.sheet_main .form_full {
+    width: 100%;
+}
+
+.sheet_main .form_w100 {
+    width: 60px;
+}
+
+.sheet_main .form_outline {
+    border: .5px solid #A8AAB3;
+    border-radius: 2px;
+    line-height: 37px;
+    padding: 0 12px;
+}
+
+/* 改版 增加文字居中 設定 */
+.sheet_main .form_outline .input_center {
+    text-align: center;
+}
+
+.sheet_main .form_outline.field_error {
+    border: .5px solid #C72A29;
+}
+
+.sheet_main .input_style {
+    font-size: 14px;
+    color: #FFF;
+    width: 100%;
+    line-height: 2;
+    background: transparent;
+}
+
+/* 改版 增加文字 設定 */
+.sheet_main .input_style_second {
+    font-size: 14px;
+    color: #FFF;
+    width: 100%;
+    line-height: 2;
+    background: transparent;
+}
+.sheet_main .input_style_third {
+    font-size: 14px;
+    color: #E2C497;
+    width: 100%;
+    line-height: 2;
+    background: transparent;
+}
+
+/* 改版 增加input框內文字 設定 */
+.sheet_main .form_outline.field_error .input_style::placeholder {
+    color: #C72A29;
+}
+
+.sheet_main .content_right .input_style {
+    text-align: right;
+}
+
+/* 改版 增加文字 設定 */
+.sheet_main .content_right .input_style_second {
+    text-align: right;
+}
+.sheet_main .content_right .input_style_third {
+    text-align: right;
+}
+
+.sheet_main .input_style2 {
+    font-size: 14px;
+    color: #fff;
+    width: 100%;
+    line-height: 2;
+    min-height: 36px;
+    padding: 0 16px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 100px;
+}
+
+.sheet_main .textarea_style {
+    width: 100%;
+    font-size: 14px;
+    color: #FFF;
+    line-height: 1.4;
+    min-height: 60px;
+    background: transparent;
+}
+
+
+.sheet_main .textarea_full_width_style {
+    width: 100%;
+    background: rgba(217, 217, 217, 0.05);
+    border-radius: 5px;
+    padding: 10px;
+}
+/* 改版 增加留言框架 設定 */
+.sheet_main .textarea_full_width_style2 {
+    width: 100%;
+    background: rgba(217, 217, 217, 0.05);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* 改版 增加留言框架 設定 */
+.sheet_main .textarea_full_width_normal {
+    width: 100%;
+    background: #262525;
+    border-radius: 5px;
+    padding: 10px;
+}
+.sheet_main .textarea_full_width_normal2 {
+    width: 100%;
+    background: #262525;
+    border-radius: 5px;
+    padding: 10px;
+}
+/* 改版 增加留言框 外框線 設定 */
+.sheet_main .textarea_full_width_style.bg_raisinblack {
+    background: rgba(217, 217, 217, 0.05);
+    border: 1px solid #6A6A6A;
+}
+/* 改版 增加留言框 錯誤框線 設定 */
+.sheet_main .textarea_full_width_style.border_error {
+    background: rgba(217, 217, 217, 0.05);
+    border: 1px solid #C72A29;
+}
+/* 改版 增加留言框 錯誤框線內文字 設定 */
+.sheet_main .textarea_full_width_style.border_error .textarea_style::placeholder{
+    color:#C72A29;
+}
+
+/* 改版 增加留言框 背景換色 設定 */
+.sheet_main .textarea_full_width_normal.bg_describe {
+    background: rgba(217, 217, 217, 0.05);
+    /* border: 1px solid #6A6A6A; */
+}
+.sheet_main .textarea_full_width_normal2.bg_describe {
+    background: rgba(217, 217, 217, 0.05);
+    /* border: 1px solid #6A6A6A; */
+}
+
+.sheet_main .textarea_full_width_style textarea {
+    width: 100%;
+    font-size: 14px;
+    color: #FFF;
+    line-height: 1.4;
+    height: 100px;
+    background: transparent;
+}
+.sheet_main .textarea_full_width_style2 textarea {
+    width: 100%;
+    font-size: 14px;
+    color: #C72A29;
+    line-height: 1.4;
+    height: 100px;
+    background: transparent;
+}
+
+/* 改版 增加留言框 文字顏色 設定 */
+.sheet_main .textarea_full_width_normal textarea {
+    width: 100%;
+    font-size: 14px;
+    color: #FFF;
+    line-height: 1.4;
+    height: 100px;
+    background: transparent;
+}
+.sheet_main .textarea_full_width_normal2 textarea {
+    width: 100%;
+    font-size: 14px;
+    color: #E2C497;
+    line-height: 1.4;
+    height: 100px;
+    background: transparent;
+}
+.sheet_main .textarea_full_width_style .notice_text {
+    width: 100%;
+    text-align: right;
+    font-size: 13px;
+    color: #CBCED8;
+    padding-top: 10px;
+    line-height: 1;
+}
+.sheet_main .textarea_full_width_style .notice_text2 {
+    width: 100%;
+    text-align: right;
+    font-size: 13px;
+    color: #C72A29;
+    padding-top: 10px;
+    line-height: 1;
+}
+
+/* 改版 增加留言框 文字顏色 設定 */
+.sheet_main .textarea_full_width_normal .describe_text {
+    width: 100%;
+    text-align: right;
+    font-size: 13px;
+    color: #A8AAB3;
+    padding-top: 10px;
+    line-height: 1;
+}
+.sheet_main .textarea_full_width_normal2 .describe_text {
+    width: 100%;
+    text-align: right;
+    font-size: 13px;
+    color: #A8AAB3;
+    padding-top: 10px;
+    line-height: 1;
+}
+
+
+.sheet_main .content_right .textarea_style {
+    text-align: right;
+}
+
+.sheet_main .input_style::placeholder,
+.sheet_main .textarea_style::placeholder,
+.sheet_main .textarea_full_width_style textarea::placeholder {
+    color: #A8AAB3;
+}
+
+/* 改版 增加留言框內 文字顏色 設定 */
+.sheet_main .textarea_full_width_normal textarea::placeholder,
+.sheet_main .textarea_full_width_normal2 textarea::placeholder  {
+    color: #A8AAB3;
+}
+
+.sheet_main.alert .input_style,
+.sheet_main.alert .textarea_style,
+.sheet_main.alert .textarea_full_width_style textarea,
+.sheet_main.alert .input_style::placeholder,
+.sheet_main.alert .textarea_style::placeholder,
+.sheet_main.alert .textarea_full_width_style textarea::placeholder {
+    color: #C72A29;
+}
+
+.sheet_main.tatus .input_style_third::placeholder {
+    color: #E2C497;
+}
+
+
+
+.sheet_main .sheet_avatar img {
+    position: relative;
+    border-radius: 100%;
+    object-fit: cover;
+    width: 30px;
+    height: 30px;
+
+}
+
+
+
+
+
+.sheet_main .text {
+    font-size: 14px;
+    line-height: 40px;
+}
+
+/* 改版 增加項目文字 設定 */
+.sheet_main .item_text {
+    font-size: 14px;
+    color: #A8AAB3;
+    padding-right: 4px;
+    line-height: 40px;
+}
+
+.sheet_main .price_flex {
+    display: flex;
+    align-items: center;
+}
+
+.sheet_main .item_text_color {
+    font-size: 14px;
+    color: #DABB7E;
+    padding-right: 4px;
+}
+
+.sheet_main .item_text_mistake {
+    font-size: 14px;
+    color: #C72A29;
+    padding-right: 4px;
+}
+
+/* 改版 增加設定 */
+.sheet_main .border_line {
+    border-bottom: 1px solid rgba(217,217,217,0.05);
+}
+
+.sheet_main .text.default_text {
+    color: #A8AAB3;
+}
+
+.sheet_main .text.normal_text {
+    color: #FFF;
+}
+
+/* 改版 增加設定 */
+.sheet_main .text.input_text {
+    color: #E2C497;
+}
+
+.sheet_main .text.highlight_text {
+    color: #DABB7E;
+}
+
+.sheet_main .content.content_right .text {
+    text-align: right;
+}
+.sheet_main.alert .text,
+.sheet_main.alert .text.default_text,
+.sheet_main.alert .text.normal_text {
+    color: #C72A29;
+}
+
+.sheet_main p.dash {
+    color: #FFF;
+}
+
+.sheet_main span.attention {
+    color: #C72A29;
+}
+
+
+
+
+.sheet_main .title_note {
+    font-size: 12px;
+    color: #A2A6AD;
+    padding-top: 4px;
+}
+
+input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+    z-index: -1;
+    left: 0;
+    top: 0;
+}
+
+.sheet_main .upload_image_outter {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+.sheet_main .upload_image_outter>div {
+    margin-bottom: 10px;
+}
+
+.sheet_main .upload_image_outter:last-child >div {
+    margin-bottom: 0;
+}
+
+
+
+.sheet_main .upload_image_outter .box {
+    position: relative;
+}
+
+.sheet_main .upload_image_outter img.box_image  {
+    position: relative;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+
+.sheet_main .upload_btn {
+    border-radius: 5px;
+    background: rgba(217, 217, 217,0.05);
+    display: inline-block;
+    cursor: pointer;
+}
+
+.sheet_main .upload_btn.bg_raisinblack {
+    background: rgba(217, 217, 217,0.05);
+    border-radius: 5px;
+}
+
+.sheet_main .upload_btn.gray {
+    background: rgba(217, 217, 217,0.05);
+}
+
+.sheet_main .upload_btn .icon {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+/* 改版 新增發布 截圖icon 設定 */
+.sheet_main .upload_btn .icon_default {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.sheet_main .upload_image_outter .box,
+.sheet_main .upload_image_outter img.box_image,
+.sheet_main .upload_btn {
+    width: 105px;
+    height: 105px;
+}
+
+@media screen and (min-width: 375px) {
+    .sheet_main .upload_image_outter .box,
+    .sheet_main .upload_image_outter img.box_image,
+    .sheet_main .upload_btn {
+        width: 110px;
+        height: 110px;
+    }
+}
+  
+  @media screen and (min-width: 390px) {
+    .sheet_main .upload_image_outter .box,
+    .sheet_main .upload_image_outter img.box_image,
+    .sheet_main .upload_btn {
+        width: 114px;
+        height: 114px;
+    }
+  }
+  
+  @media screen and (min-width: 410px) {
+    .sheet_main .upload_image_outter .box,
+    .sheet_main .upload_image_outter img.box_image,
+    .sheet_main .upload_btn {
+        width: 120px;
+        height: 120px;
+    }
+  }
+  
+  @media screen and (min-width: 414px) {
+    .sheet_main .upload_image_outter .box,
+    .sheet_main .upload_image_outter img.box_image,
+    .sheet_main .upload_btn {
+        width: 122px;
+        height: 122px;
+    }
+  }
+
+
+  /* 改版 套用在覓老闆 */
+  @media screen and (min-width: 360px) {
+    .sheet_main .upload_image_outter .box.spacing,
+    .sheet_main .upload_image_outter img.box_image.spacing,
+    .sheet_main .upload_btn.spacing {
+        width: 95px;
+        height: 95px;
+    }
+  }
+
+
+  @media screen and (min-width: 375px) {
+    .sheet_main .upload_image_outter .box.spacing,
+    .sheet_main .upload_image_outter img.box_image.spacing,
+    .sheet_main .upload_btn.spacing {
+        width: 100px;
+        height: 100px;
+    }
+}
+  
+  @media screen and (min-width: 390px) {
+    .sheet_main .upload_image_outter .box.spacing,
+    .sheet_main .upload_image_outter img.box_image.spacing,
+    .sheet_main .upload_btn.spacing {
+        width: 106px;
+        height: 106px;
+    }
+  }
+  
+  @media screen and (min-width: 410px) {
+    .sheet_main .upload_image_outter .box.spacing,
+    .sheet_main .upload_image_outter img.box_image.spacing,
+    .sheet_main .upload_btn.spacing {
+        width: 110px;
+        height: 110px;
+    }
+  }
+  
+  @media screen and (min-width: 414px) {
+    .sheet_main .upload_image_outter .box.spacing,
+    .sheet_main .upload_image_outter img.box_image.spacing,
+    .sheet_main .upload_btn.spacing {
+        width: 112px;
+        height: 112px;
+    }
+  }
+
+.sheet_main .notice {
+    padding: 10px 0;
+    color: #FF2315;
+    font-size: 12px;
+    border-bottom: 0;
+    line-height: 20px;
+}
+
+.sheet_main .btn_small_text {
+    font-size: 12px;
+    color: #FFF;
+    border: 1px solid #3A4A5C;
+    width: 40px;
+    border-radius: 5px;
+    line-height: 22px;
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+.sheet_main .tag {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.sheet_main .tag .tag_item {
+    font-size: 15px;
+    color: #DABB7E;
+    padding: 10px 14px;
+    border-radius: 100px;
+    border: 1px solid #DABB7E;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.sheet_main .tag .tag_item.active {
+    background: #DABB7E;
+    color: #FFF;
+}
+
+
+.sheet_main .cursor {
+    cursor: pointer;
+}
+
+
+.sheet_btn {
+    padding: 20px 15px 25px 15px ;
+}
+
+.sheet_btn_second {
+    display: flex;
+    padding: 8px 12px 32px;
+    /* position: absolute; */
+    width: 100%;
+}
+
+.sheet_btn_second .btn_border_box {
+    width: 100%;
+    line-height: 46px;
+    border-radius: 50px;
+    background: linear-gradient(45deg,#DAB07E,#EBC9A0 50%,#F9DDBC);
+    padding: 1px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.sheet_btn_second .btn_border_box.delete_bg {
+    background: #C72A29;
+}
+
+.sheet_btn_second .btn_border_box .btn_read {
+    font-size: 16px;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sheet_btn_second .btn_border_box .btn_read.btn_read_bg {
+    background: linear-gradient(287deg, #014C53 39.91%, #027276 100%);
+}
+
+.sheet_btn_second .btn_border_box .btn_read.btn_delete_bg {
+    background: #C72A29;
+}
+
+.sheet_main .radiobutton.complaint {
+    cursor: pointer;
+}
+
+.sheet_main .radiobutton.complaint label {
+    width: 100%;
+    padding: 5px 0;
+}
+
+.sheet_main .radiobutton.complaint li {
+    margin-bottom: 5px;
+}
+
+.sheet_main .radiobutton.complaint li:last-child {
+    margin-bottom: 0;
+}
+
+.sheet_main .radiobutton.complaint label .text{
+    flex: 1;
+    font-size: 14px;
+}
+
+/* 官方店鋪 */
+
+.officialstore_section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 42px;
+    padding: 10px 20px;
+}
+
+.officialstore_section.spacing  {
+    padding-left: 40px;
+}
+
+.officialstore_section .officialstore_bg_title {
+    background: url(../images/card/bg_officialstore_title.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 75px;
+    height: 42px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.officialstore_section .officialstore_bg_title .officialstore_title {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: rgba(0,0,0,0.01);
+    background: linear-gradient(174deg, #FFF9EA 26.87%, #F4E2B3 44.95%, #DABB7E 96.94%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.officialstore_section .officialstore_bg_title .officialstore_title::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 5px #0F434A;
+    /* text-shadow: 0px 4px 15px #000; */
+    z-index: -1;
+}
+
+.officialstore_section .officialstore_search {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.officialstore_search .search_sheet {
+    position: relative;
+    flex: 1;
+}
+
+.officialstore_search .search_sheet .officialstore_icon {
+    position: absolute;
+    z-index: 1;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 8px;
+}
+
+.officialstore_search .search_sheet .officialstore_icon img {
+    width: 16px;
+    height: 16px;
+}
+
+.officialstore_search .search_sheet .search_form {
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    background: linear-gradient(45deg,#014C53 50%,#027276);
+    height: 38px;
+    padding: 1px;
+}
+
+.officialstore_search .search_sheet .search_form .search_input {
+    width: 100%;
+    border-radius: 50px;
+    background: #fff;
+    height: 36px;
+    padding: 0 66px 0 28px;
+    font-size: 14px;
+}
+
+.officialstore_search .search_sheet .search_form .search_finish_outer {
+    position: absolute;
+    right: 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg,#DAB07E,#EBC9A0 50%,#F9DDBC);
+    border-radius: 50px;
+    padding: 1px;
+    margin: 0 5px;
+}
+
+.officialstore_search .search_sheet .search_form .search_finish_outer .search_finish_inner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(287deg, #014C53 39.91%, #027276 100%);
+    border-radius: 50px;
+    padding: 8px 12px;
+}
+
+/* 覓老闆店鋪 */
+
+.officialstore_inner {
+    flex: 1;
+}
+
+.officialstore_inner_top {
+    padding-bottom: 8px;
+    max-width: 160px;
+}
+
+.officialstore_sheet {
+    position: relative;
+}
+
+.officialstore_sheet.type {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.officialstore_sheet.type .official_title_name {
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+    color: rgba(0,0,0,0.01);
+    background: linear-gradient(174deg, #FFF9EA 26.87%, #F4E2B3 44.95%, #DABB7E 96.94%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-right: 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 160px;
+    line-height: 1.5;
+}
+
+.officialstore_inner_top .officialstore_sheet.type .official_title_name:before {
+    content: attr(data-text);
+    position: absolute;
+    text-shadow: 0px 2px 4px #000;
+    z-index: -1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 160px;
+}
+
+.officialstore_sheet .officialstore_form {
+    display: flex;
+    align-items: center;
+}
+
+.officialstore_sheet .officialstore_form .officialstore_input {
+    font-size: 8px;
+    color: #FFF;
+    width: 100%;
+    line-height: 2;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.50);
+    padding: 0 36px 0 12px;
+    /* max-width: 158px; */
+}
+
+.officialstore_sheet .officialstore_form .officialstore_icon {
+    position: absolute;
+    right: 12px;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+}
+
+.officialstore_sheet .officialstore_form .officialstore_finish_outer {
+    position: absolute;
+    right: 2px;
+    border-radius: 50px;
+    background: linear-gradient(45deg,#DAB07E,#EBC9A0 50%,#F9DDBC);
+    height: 16px;
+    padding: 1px;
+    cursor: pointer;
+}
+
+.officialstore_sheet .officialstore_form .officialstore_finish_outer .officialstore_finish_inner {
+    font-size: 10px;
+    color: #F3C182;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.60);
+    height: 100%;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(287deg, #014C53 39.91%, #027276 100%);
+    padding: 2px 6px;
+}
+
+.londspeaker_form {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    padding-right: 5px;
+}
+
+.londspeaker_form .londspeaker_input {
+    font-size: 12px;
+    color: #FFF;
+    line-height: 2;
+    background: rgba(0, 0, 0, 0.5);
+    flex: 1;
+    padding: 0 36px 0 12px;
+}
+
+.londspeaker_form .officialstore_icon {
+    position: absolute;
+    right: 12px;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+}
+
+.londspeaker_form .officialstore_finish_outer {
+    position: absolute;
+    right: 10px;
+    border-radius: 50px;
+    background: linear-gradient(45deg,#DAB07E,#EBC9A0 50%,#F9DDBC);
+    height: 16px;
+    padding: 1px;
+    cursor: pointer;
+}
+
+.londspeaker_form .officialstore_finish_outer .officialstore_finish_inner {
+    font-size: 10px;
+    color: #F3C182;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.60);
+    height: 100%;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(287deg, #014C53 39.91%, #027276 100%);
+    padding: 2px 6px;
+}

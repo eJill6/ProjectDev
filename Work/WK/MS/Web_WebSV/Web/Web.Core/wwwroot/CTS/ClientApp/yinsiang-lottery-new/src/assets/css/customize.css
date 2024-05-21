@@ -1,0 +1,66 @@
+.pt-4 {
+  padding-top: calc(var(--padding-base) * 4);
+}
+
+.pb-10 {
+  padding-bottom: calc(var(--padding-base) * 10);
+}
+
+.pl-6 {
+  padding-left: calc(var(--padding-base) * 6);
+}
+
+.pr-6 {
+  padding-right: calc(var(--padding-base) * 6);
+}
+
+@media only screen and (max-width: 374px) {
+  .pl-4-sm {
+    padding-left: calc(var(--padding-base) * 4);
+  }
+}
+
+@media only screen and (max-width: 374px) {
+  .pr-4-sm {
+    padding-right: calc(var(--padding-base) * 4);
+  }
+}
+.vue-scroll-picker {
+  height: 3.58em !important;
+}
+/*覆蓋選日期套件css*/
+.vue-scroll-picker .vue-scroll-picker-rotator {
+  top: calc(80% - 0.427rem);
+}
+.vue-scroll-picker .vue-scroll-picker-item {
+  line-height: 1.8em;
+  font-size: 0.427rem;
+  color: #8e8e8e;
+  width: 100%;
+  height: 1.04rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.187rem;
+  cursor: pointer;
+  font-weight: 500;
+  text-align: center;
+}
+.vue-scroll-picker .vue-scroll-picker-item-selected {
+  color: #ffdd7c;
+}
+.vue-scroll-picker .vue-scroll-picker-layer-top {
+  border-top: 0px;
+  border-bottom: 0px;
+  background: none;
+  height: calc(50% - 0.427rem);
+}
+.vue-scroll-picker .vue-scroll-picker-layer-selection {
+  top: calc(50% - 0.427rem);
+  bottom: calc(50% - 0.427rem);
+}
+.vue-scroll-picker .vue-scroll-picker-layer-bottom {
+  border-top: 0px;
+  background: none;
+  height: calc(50% - 0.427rem);
+}
