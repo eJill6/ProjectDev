@@ -55,6 +55,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Solution\No11_ContainerWithMostWater.cs" />
     <Compile Include="Solution\No22_GenerateParentheses.cs" />
+    <Compile Include="Solution\No88_MergeSortedArray.cs" />
     <Compile Include="Solution\No70_ClimbingStairs.cs" />
     <Compile Include="Solution\No27_RemoveElement.cs" />
     <Compile Include="Solution\No763_PartitionLabels.cs" />

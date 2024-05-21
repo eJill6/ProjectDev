@@ -37,7 +37,8 @@ namespace LeetCodeSolution
             //new No739_DailyTemperatures().Run();
             //new No763_PartitionLabels().Run();
             //new No22_GenerateParentheses().Run();
-            new No27_RemoveElement().Run();
+            //new No27_RemoveElement().Run();
+            new No88_MergeSortedArray().Run();
         }
     }
 }

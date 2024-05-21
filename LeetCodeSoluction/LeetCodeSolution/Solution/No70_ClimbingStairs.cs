@@ -21,6 +21,8 @@ namespace LeetCodeSolution.Solution
                 foreach (int step in steps)
                 {
                 }
+
+                return result;
             }
         }
     }
