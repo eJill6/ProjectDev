@@ -1,0 +1,82 @@
+﻿@model GoldStoreInputModel
+@using BackSideWeb.Models.ViewModel
+@using JxBackendService.Model.Entity
+@using JxBackendService.Model.Enums
+@using BackSideWeb.Model.ViewModel.MM
+@using JxBackendService.Resource.Element;
+
+@{
+    var actType = (ActTypes)ViewBag.ActType;
+    var storeDatas = ViewBag.StoreDatas as List<QueryGoldStoreModel>;
+}
+<script src="~/js/business/publicitySettings/postWeightEditSingleRowService.min.js" asp-append-version="true"></script>
+@{
+    for (int i = 0; i < storeDatas?.Count; i++)
+    {
+        int index = i + 1;
+        string asfor = $"TopUserIds[{i}]";
+        <div class="label_input">
+            <label>
+                <p>
+                    NO.@Html.Raw(index)
+                </p>
+            </label>
+            <div class="form_set">
+                <input type="text" id="@asfor" name="@asfor" maxlength="20" value="@storeDatas[i].UserId">
+            </div>
+        </div>
+    }
+}
+<input type="hidden" id="Type" name="Type" value="2">
+
+@section CustomFooterButtons {
+    <div class="modal_btn_content fixed_width">
+        <a href="javascript:;" class="btn_default main_color jqCloseBtn">@CommonElement.Cancel</a>
+        <a href="javascript:;" class="btn_default brighter_color jqGoldStoreSubmitBtn ">@CommonElement.Submit</a>
+    </div>
+}
+
+
+<script>
+
+    $(document).on('click', '.jqGoldStoreSubmitBtn', async function () {
+
+        // 获取表单数据
+        var formData = {};
+        $("input[name^='TopUserIds'], input[name='Type']").each(function () {
+            formData[$(this).attr("name")] = $(this).val();
+        });
+        // 显示 loading
+        $("#loading").show();
+        var errmsg = "编辑失败，请重新编辑";
+        try {
+            await $.ajax({
+                url: "/PostWeight/DoEditGoldStore",
+                type: "POST",
+                data: formData, 
+                success: function (res) {
+                    if (res.isSuccess) {
+                        // 请求成功
+                        parent.clickVoid(2);
+                        $(".jqCloseBtn").click();
+
+                    } else {
+                        // 请求失败
+                        alert(res.message);
+                    }
+                },
+                error: function () {
+                    // 请求出错
+                    alert(errmsg);
+                },
+                complete: function () {
+                    // 无论请求成功还是失败，都隐藏 loading
+                    $("#loading").hide();
+                }
+            });
+        } catch (error) {
+            // 捕获异常
+            alert(error.message);
+        }
+    });
+</script>

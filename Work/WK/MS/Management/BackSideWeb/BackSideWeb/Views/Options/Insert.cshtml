@@ -1,0 +1,74 @@
+﻿@model OptionsInputModel
+@using BackSideWeb.Models.ViewModel
+@using JxBackendService.Model.Entity
+@using BackSideWeb.Model.Entity.MM
+@using JxBackendService.Model.Enums
+
+<div class="label_input">
+    <label for="show">帖子区域</label>
+    <div class="form_set">
+       <select id="postTypeDropdown" class="dropdown_toggle" asp-for="MMOptionsBs.PostType" asp-items="Model.PostTypeListItem"></select>
+    </div>
+</div>
+
+<div class="label_input">
+    <label for="show">填写区域</label>
+    <div class="form_set">
+       <select id="optionTypeDropdown" class="dropdown_toggle" asp-for="MMOptionsBs.OptionType" asp-items="Model.OptionTypeListItem"></select>
+    </div>
+</div>
+
+<div class="label_input">
+    <label for="content">内文</label>
+    <div class="form_set">
+        <textarea asp-for="MMOptionsBs.OptionContent" rows="10"></textarea>
+        @*<input type="text" asp-for="MMOptionsBs.OptionContent"/>*@
+    </div>
+</div>
+
+<div class="label_input">
+    <label for="show">显示</label>
+    <div class="form_set">
+       <select class="dropdown_toggle" asp-for="IsActiveSelected" asp-items="Model.IsActiveListItem"></select>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    var postTypeDropdown = document.getElementById("postTypeDropdown");
+    var optionTypeDropdown = document.getElementById("optionTypeDropdown"); // 填写区域的下拉选项
+
+    // 监听帖子区域下拉选项的变化事件
+    postTypeDropdown.addEventListener("change", function() {
+        var selectedValue = postTypeDropdown.value;
+        updateOptionTypeOptions(selectedValue);
+    });
+
+    // 初始状态，根据帖子区域的选择来隐藏填写区域的特定项
+    updateOptionTypeOptions(postTypeDropdown.value);
+
+    function updateOptionTypeOptions(selectedValue) {
+    var optionTypeOptions = optionTypeDropdown.options;
+
+    // 根据帖子区域的选择来禁用特定选项
+    if (selectedValue === "3") {
+        for (var i = 0; i < optionTypeOptions.length; i++) {
+            var option = optionTypeOptions[i];
+            
+            if (option.value === "4") {
+                option.style.display = "block";
+                option.selected = true; 
+            } else {
+                option.style.display = "none";
+            }
+        }
+    } else {
+        // 如果帖子区域选择不是 3，启用所有选项
+        for (var i = 0; i < optionTypeOptions.length; i++) {
+            var option = optionTypeOptions[i];
+            option.style.display = "block";
+        }
+    }
+}
+});
+</script>

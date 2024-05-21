@@ -1,0 +1,37 @@
+﻿@model PagedResultModel<UserManagementViewModel>
+@using JxBackendService.Model.Paging;
+@using JxBackendService.Model.ViewModel;
+@{
+    string clientServiceName = ViewBag.ClientServiceName.ToString();
+}
+<div>
+    <table>
+        <tbody class="jqBody">
+            @for (int i = 0; i < Model.ResultList.Count; i++)
+            {
+                var item = Model.ResultList[i];
+                <tr>
+                    <td>@(i + 1)</td>
+                    <td>@item.UserName</td>
+                    <td>@item.RoleName</td>
+                    @*<td>@item.CreateDateText</td>*@
+                    <td>
+                        <div class="flex_content">
+                            @await Html.PartialAsync("Partial/_OperationButton", item)
+                            @if ((bool)ViewBag.HasGooglePermission)
+                            {
+                                <a href="javascript:void(0)" data-url='@Url.Action("GoogleQRCode", "UserManagement")' class="btn_default main_color icon_style text_btn" style="padding:0px 10px"
+                                    onclick="@string.Format("{0}.openGoogleQRCode(this, '{1}')", clientServiceName, item.KeyContent)">
+                                    更新Google验证码
+                                </a>
+                            }
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="jqPagination">
+        @await Html.PartialAsync("Partial/_PaginationByPagerInfo", Model)
+    </div>
+</div>

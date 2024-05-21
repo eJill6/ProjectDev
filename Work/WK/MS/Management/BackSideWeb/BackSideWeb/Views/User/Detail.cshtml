@@ -1,0 +1,139 @@
+@using MS.Core.MMModel.Models.AdminUserManager
+@model AdminUserManagerUsersDetail
+@{
+    string clientServiceName = ViewBag.ClientServiceName.ToString();
+    ViewData["Title"] = "觅会员详情";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="~/css/user.css" rel="stylesheet" />
+<div class="wrapper">
+    <div class="img-area">
+        <div class="inner-area" id="divPhoto">
+            <img src="@Model.AvatarUrl" alt="" />
+        </div>
+    </div>
+
+    <div class="info" style="width:300px">
+        <div><span class="title">会员ID</span> @Model.UserId</div>
+        <div><span class="title">注册时间</span> @Model.RegisterTimeText</div>
+        <div><span class="title">会员身份</span> @Model.UserIdentityText</div>
+        <div><span class="title">平台拆账比</span> @Model.PlatformSharingText</div>
+        <div><span class="title">超觅老板拆账比</span> @Model.SuperBossSharing</div>
+        <div><span class="title">保证金</span> @Model.EarnestMoneyText</div>
+        <div><span class="title">QQ号码</span> @Model.Contact</div>
+        <div style="width:490px;">
+            <span class="title" >身份备注</span> <div style="width: 70%;
+        word-wrap: break-word;">
+                @Model.Memo
+            </div>
+        </div>
+        <br/>
+        <div><span class="title">昵称</span> @Model.NickName</div>
+        <div><span class="title">本月收益</span> @Model.MonthIncomeText</div>
+        <div><span class="title">暂锁收益</span> @Model.ComingIncomeText</div>
+@*        <div><span class="title">累积发帖上限</span> @Model.PostLimit</div>*@
+        <div>
+            <span class="title">会员卡1日1发</span> @Model.VipDailyOnce
+        </div>
+        <div><span class="title">可发帖次数</span> @Model.PostRemain</div>
+        <br/>
+        <div><span class="title">钻石钱包余额</span> @Model.PointText</div>
+        <div><span class="title">主账户余额</span> @Model.AmountText</div>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>区域</th>
+                <th>已发帖</th>
+                <th>发帖待审</th>
+ @*               <th>评价</th>
+                <th>评价待审</th>*@
+                <th>解锁次数</th>
+                <th>被解锁次数</th>
+                <th>预约次数</th>
+                <th>被预约次数</th>
+                <th>预约中订单</th>
+                <th>累积收益</th>
+            </tr>
+        </thead>
+        <tbody class="jqBody">
+            @foreach (var item in Model.Quantity)
+            {
+                <tr>
+                    <td>@item.PostTypeText</td>
+                    <td>@item.Post</td>
+                    <td>@item.PostReview</td>
+ @*                   <td>@item.Comment</td>
+                    <td>@item.CommentReview</td>*@
+                    <td>@item.Unlock</td>
+                    <td>@item.Unlocked</td>
+                    <td>@item.BookCount</td>
+                    <td>@item.BookedCount</td>
+                    <td>@item.BookInProgressCount</td>
+                    <td>@item.IncomeText</td>
+                </tr>
+            }
+            <tr>
+                <td>小计</td>
+                <td>@Model.Quantity.Sum(x => x.Post)</td>
+                <td>@Model.Quantity.Sum(x => x.PostReview)</td>
+@*                <td>@Model.Quantity.Sum(x => x.Comment)</td>
+                <td>@Model.Quantity.Sum(x => x.CommentReview)</td>*@
+                <td>@Model.Quantity.Sum(x => x.Unlock)</td>
+                <td>@Model.Quantity.Sum(x => x.Unlocked)</td>
+                <td>@Model.Quantity.Sum(x => x.BookCount)</td>
+                <td>@Model.Quantity.Sum(x => x.BookedCount)</td>
+                <td>@Model.Quantity.Sum(x => x.BookInProgressCount)</td>
+                <td>@Model.Quantity.Sum(x => x.Income).ToString("f2")</td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="cardDetailTitle">会员卡资讯</div>
+    <table class="table_1">
+        <thead>
+            <tr>
+                <th>会员卡</th>
+                <th>今日免费解锁次数</th>
+                <th>解锁折扣</th>
+                <th>预约折扣(仅觅老板)</th>
+            </tr>
+        </thead>
+        <tbody class="jqBody">
+            @foreach (var item in Model.CardDetails)
+            {
+                <tr>
+                    <td>@item.CardName</td>
+                    <td>@item.FreeUnlockCount</td>
+                    <td>@item.UnlockDiscount</td>
+                    <td>@item.BookingDiscount</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<!-- 引入 video.js 样式 -->
+<link href="/lib/video-js-8.5.1/video-js.min.css" rel="stylesheet" />
+<!-- 引入 video.js 库文件 -->
+<script src="/lib/video-js-8.5.1/video.min.js"></script>
+<script src="/js/layui/layui.js"></script>
+<link rel="stylesheet" href="/js/layui/css/layui.css">
+<script>
+    $(function () {
+        var layer = layui.layer;
+        // 图片层
+        layer.photos({
+            photos: '#divPhoto'
+        });
+        $("#divPhoto img").each(async function () {
+            var src = await new decryptoService().fetchSingleDownload($(this).attr("src"));
+            $(this).attr("src", src);
+            $(this).attr("layer-src", src);
+        });
+    })
+    videojs.Vhs.xhr.beforeRequest = function (options) {
+        options.headers = options.headers || {};
+        options.headers["x-token"] = 'c6e3c761d279440fb8004e9e92b88b3f01d635619e4a4a64abbd0e98af1337d5';
+        return options;
+    };
+</script>

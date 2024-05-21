@@ -1,0 +1,83 @@
+﻿
+.header {
+    background: #23272e;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    width: 100%;
+    z-index: 10;
+}
+
+    .header .logo_section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 300px;
+    }
+
+    .header .header_title p {
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .header p {
+        color: #fff;
+    }
+
+    .header .logo a img {
+        width: 84px;
+        height: 26px;
+    }
+
+    .header .btns {
+        display: flex;
+        align-items: center;
+    }
+
+        .header .btns .b1 {
+            margin-right: 20px;
+        }
+
+            .header .btns .b1 a {
+                display: flex;
+                align-items: center;
+                font-size: 14px;
+                color: #FFF;
+                padding: 5px;
+            }
+
+                .header .btns .b1 a p {
+                    margin-left: 5px;
+                }
+
+
+        .header .btns .b2 {
+            display: flex;
+            align-items: center;
+        }
+
+
+            .header .btns .b2 p {
+                margin-right: 5px;
+                font-size: 14px;
+            }
+
+            .header .btns .b2 a {
+                font-size: 14px;
+                color: #EA8711;
+                font-weight: bold;
+                padding: 0px 10px;
+                border-right: 1px solid #fff;
+                line-height: 1.1;
+            }
+
+            .header .btns .b2 a:last-child {
+                padding-right: 0px;
+                border-right: 0px;
+            }
+
+
+                .header .btns .b2 a:hover {
+                    color: #FF9B23;
+                }

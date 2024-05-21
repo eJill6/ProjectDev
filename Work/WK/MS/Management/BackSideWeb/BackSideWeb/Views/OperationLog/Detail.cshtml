@@ -1,0 +1,67 @@
+﻿@model OperationLogViewModel
+@using JxBackendService.Model.ViewModel.SystemSetting;
+@using Newtonsoft.Json;
+@using JxBackendService.Model.BackSideWeb
+@using JxBackendService.Resource.Element
+
+<div class="modal ms">
+    <div class="modal_main_content">
+        @if (Model.ContentModel is List<RecordCompareParam>)
+        {
+            DisplayRecordCompareParams(Model.ContentModel as List<RecordCompareParam>);
+        }
+        else
+        {
+            @Model.Content
+        }
+    </div>
+
+    @section CustomFooterButtons{
+        <div class="modal_btn_content fixed_width">
+            <button class="btn_default main_color jqCloseBtn">@CommonElement.Cancel</button>
+        </div>
+    }
+</div>
+
+@{
+    void DisplayRecordCompareParams(List<RecordCompareParam> logDatas)
+    {
+        <style>
+            table {
+                border-collapse: collapse;
+            }
+        </style>
+        <table style="width: 105%;">
+            @{
+                if (logDatas?.Count > 0 && (logDatas[0].Title == DisplayElement.Delete || logDatas[0].Title == DisplayElement.Insert))
+                {
+                    <tr>
+                        <td><span style="color:#D9001B;">@logDatas[0].Title</span> <span style="color:#0000FF;">@logDatas[1].Title：</span><span style="color:#B8741A;">@logDatas[1].OriginValue</span></td>
+                        <td></td>
+                    </tr>
+                }
+                else
+                {
+                    @foreach (var logdata in logDatas)
+                    {
+
+                        if (logdata.IsLogTitleValue)
+                        {
+                            <tr>
+                                <td style="width:120px;"><span style="color:#0000FF;">@logdata.Title:</span> </td>
+                                <td style="width:310px;"><span style="color:#B8741A;">@Html.Raw(@logdata.OriginValue)</span></td>
+                            </tr>
+                            continue;
+                        }
+                        <tr>
+                            <td style="width:120px;"><span style="color:#0000FF;">@logdata.Title:</span></td>
+                            <td style="width:310px;"><span style="color:#B8741A;">@Html.Raw(@logdata.OriginValue)</span><span style="color:#D9001B;">变更为</span><span style="color:#B8741A;">@Html.Raw(@logdata.NewValue)</span></td>
+                        </tr>
+                    }
+
+                }
+            }
+
+        </table>
+    }
+}

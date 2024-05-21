@@ -1,0 +1,141 @@
+﻿@using BackSideWeb.Models.ViewModel.PublishRecord;
+@model EvaluateRecordOptionViewModel
+@{
+    ViewData["Title"] = "官方评价记录";
+    EvaluateRecordOptionViewModel optionSelected = Model;
+    var startDatedefault = DateTime.Now.ToString("yyyy-MM-dd");
+    var endDatedefault = DateTime.Now.ToString("yyyy-MM-dd");
+
+}
+<div class="bg spacing gap system_filter" id="jqMemberFilter">
+    <br />
+    <div class="col">
+        <div class="item">
+            <div class="label_input column_layout">
+                <label for="">
+                    <p>帖子ID</p>
+                </label>
+                <div class="form_set">
+                    <input class="jqFilter" type="text" name="" id="postId" placeholder="" value="" maxlength="50">
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="col">
+        <div class="item">
+            <div class="label_input column_layout">
+                <label for="">
+                    <p>评价ID</p>
+                </label>
+                <div class="form_set">
+                    <input class="jqFilter" type="text" name="" id="commentId" placeholder="" value="" maxlength="50">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="item">
+            <div class="label_input column_layout">
+                <label for="">
+                    <p>会员ID</p>
+                </label>
+                <div class="form_set">
+                    <input class="jqFilter" type="text" name="" id="memberNo" placeholder="" value="" maxlength="50">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="item">
+            <div class="label_input column_layout">
+                <label for="">
+                    <p>状态</p>
+                </label>
+                @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting
+                {
+                SettingId = "jqCommentStatusSelectList",
+                Items = optionSelected.CommentStatusListItem,
+                })
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="item">
+            <div class="label_input column_layout">
+                <label for="">
+                    <p>时间</p>
+                </label>
+                @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting
+                {
+                SettingId = "jqTimeTypeSelectList",
+                Items = optionSelected.TimeTypeListItem,
+                })
+            </div>
+        </div>
+
+    </div>
+    <div class="col">
+        <div class="item">
+            <div class="col_p_1">
+                <div class="label_input column_layout">
+                    <label for="" class="m_hide">
+
+                    </label>
+                    <div class="form_set datepicker_text">
+                        @Html.TextBox("jqStartDate", startDatedefault, new { id = "jqStartDate", @class = "width_set jqFilter" })
+                        <span>至</span>
+                        @Html.TextBox("jqEndDate", endDatedefault, new { id = "jqEndDate", @class = "width_set jqFilter" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col">
+
+        <div class="item">
+            <div class="btns">
+                <a href="javascript:;" class="btn_default main_color jqSearchBtn">查询</a>
+                <a href="javascript:;" class="btn_default main_color_line jqResetBtn">清空</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="jqContentRoot" style="display:block">
+    <div class="bg gap">
+        <div class="member_center_report agent_report table_overflow_x">
+            <table>
+                <thead>
+                    <tr>
+                        <th>评价单ID</th>
+                        <th>预约单ID</th>
+                        <th>评价帖子ID</th>
+                        <th>评价会员ID</th>
+                        <th>首次送审时间</th>
+                        <th>再次送审时间</th>
+                        <th>审核时间</th>
+                        <th>服务详情</th>
+                        <th>状态</th>
+                        <th>审核</th>
+                    </tr>
+                </thead>
+                <tbody id="jqGridContent">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="footer_function_content space_between">
+        <div class="jqPagination pagination"></div>
+    </div>
+</div>
+<style>
+    .col {
+        margin-top: 10px;
+    }
+</style>

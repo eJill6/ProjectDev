@@ -1,0 +1,46 @@
+﻿@using JxBackendService.Model.Entity.PublishRecord;
+@using JxBackendService.Model.Paging;
+@using MS.Core.MMModel.Models.AdminComment;
+@model PagedResultModel<AdminOfficialCommentList>
+@{
+    string clientServiceName = ViewBag.ClientServiceName.ToString();
+}
+<div>
+    <table>
+        <tbody class="jqBody">
+            @foreach (var item in Model.ResultList)
+            {
+                <tr>
+
+                    <td>@item.CommentId</td>
+                    <td>@item.BookingId</td>
+                    <td>@item.PostId</td>
+                    <td>@item.UserId</td>
+                    <td>@item.CreateTimeText</td>
+                    <td>@item.UpdateTimeText</td>
+                    <td>@item.ExamineTimeText</td>
+                    <td>@item.Comment</td>
+                    <td>@item.StatusText</td>
+                    <td>
+                        <div class="flex_content">
+
+                            @if ((bool)ViewBag.HasEditPermission)
+                            {
+                                <a href="javascript:void(0)" data-url='@Url.Action("UpdateView", "OfficialEvaluateRecord")' class="btn_default main_color icon_style text_btn"
+                                   onclick="@string.Format("{0}.openUpdateView2(this, '{1}')", clientServiceName, item.CommentId)">
+                                    审核
+                                </a>
+                            }
+
+                           
+
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="jqPagination">
+        @await Html.PartialAsync("Partial/_PaginationByPagerInfo", Model)
+    </div>
+</div>

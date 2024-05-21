@@ -1,0 +1,32 @@
+@using JxBackendService.Resource.Element
+@using BackSideWeb.Models.Enums
+@{
+    Layout = LayoutType.Base.Value;
+}
+
+@section Header
+{
+    @if (IsSectionDefined("Header"))
+    {
+        await RenderSectionAsync("Header");
+    }
+}
+
+<form id="editSingleRowForm">
+    <div class="modal ms">
+        <div class="modal_main_content">
+            @RenderBody()
+        </div>
+        @await RenderSectionAsync("FooterButtons", required: false)
+    </div>
+</form>
+
+
+@section Scripts
+{
+    <script src="~/js/base/crud/baseReturnModel.min.js" asp-append-version="true"></script>
+    <script src="~/js/base/searchGrid/pagerService.min.js" asp-append-version="true"></script>
+    <script src="~/js/utils/formUtilService.min.js" asp-append-version="true"></script>    
+
+    @await RenderSectionAsync("PopupScripts", required: false)
+}

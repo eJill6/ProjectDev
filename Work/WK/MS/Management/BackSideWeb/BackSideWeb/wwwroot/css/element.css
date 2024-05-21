@@ -1,0 +1,1994 @@
+@charset "UTF-8";
+
+/*此文件為共用UI組件，請勿隨意修改*/
+
+/*********************** 共用 tab ***********************/
+.tab {
+    display: flex;
+}
+
+    .tab.col_3 li {
+        width: 33.333333%;
+    }
+
+    .tab.col_2 li {
+        width: 50%;
+    }
+
+    .tab li {
+        border: 1px solid #008ca1;
+        border-right: none;
+        text-align: center;
+        color: #008CA1;
+        line-height: 24px;
+        cursor: pointer;
+        font-size: 13px;
+        transition: all .2s;
+        white-space: nowrap;
+        padding: 0 10px;
+    }
+
+        /*解決安卓裝置無法垂直居中問題*/
+        .tab li::before {
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            width: 0;
+            height: 100%;
+            margin-top: 1px;
+        }
+
+
+    .tab.light li {
+        color: #008ca1;
+        background: #FFF;
+    }
+
+    .tab li:hover {
+        background: #FFF;
+    }
+
+    .tab.light li:hover {
+        background: #EDFCFF;
+    }
+
+
+    .tab li.active {
+        color: #FFF;
+        background: #008ca1;
+        pointer-events: none;
+    }
+
+    .tab.light li.active,
+    .tab.light li.active:hover {
+        color: #FFF;
+        background: #008ca1;
+    }
+
+    .tab li:first-child {
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+    }
+
+    .tab li:last-child {
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        border-right: 1px solid #008ca1;
+    }
+
+@media only screen and (max-width: 768px) {
+}
+
+
+
+
+
+/*********************** filter用 tab ***********************/
+.filter_tab {
+    border-radius: 3px;
+    display: flex;
+}
+
+    .filter_tab a {
+        color: #333;
+        font-size: 13px;
+        line-height: 33px;
+        height: 34px;
+        background: #f2f2f2;
+        flex: 1;
+        text-align: center;
+        border: 1px solid #e5e5e5;
+        display: block;
+    }
+
+        .filter_tab a:first-child {
+            border-bottom-left-radius: 3px;
+            border-top-left-radius: 3px;
+        }
+
+        .filter_tab a:last-child {
+            border-bottom-right-radius: 3px;
+            border-top-right-radius: 3px;
+        }
+
+        .filter_tab a:not(:last-child) {
+            border-right-color: transparent;
+        }
+
+        .filter_tab a:hover {
+            color: #008ca1;
+        }
+
+        .filter_tab a.active {
+            border: 1px solid #008ca1;
+            color: #008ca1;
+        }
+
+@media only screen and (max-width: 768px) {
+
+    /*.filter_content .filter_tab a{
+        width: inherit;
+        flex: 1;
+    }*/
+    .filter_tab a {
+        font-size: 14px;
+        line-height: 37px;
+        height: 38px;
+    }
+}
+
+
+
+
+/*********************** 共用checkbox ***********************/
+.checkbox,
+.radiobutton {
+    /* prevent accidental selection when clicking */
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    display: flex;
+}
+
+    .checkbox li,
+    .radiobutton li {
+        margin-right: 12px;
+    }
+
+        .checkbox li:last-child,
+        .radiobutton li:last-child {
+            margin-right: 0;
+        }
+
+    .checkbox .text,
+    .radiobutton .text {
+        font-size: 13px;
+        color: #333;
+        line-height: 1;
+    }
+
+    .checkbox label,
+    .radiobutton label {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+
+    .checkbox input,
+    .radiobutton input {
+        display: none;
+        margin: 0 .1em;
+    }
+
+    .checkbox .icon,
+    .radiobutton .icon {
+        text-align: center;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        border: 0;
+        height: 16px;
+        width: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 5px;
+    }
+
+    .radiobutton .icon {
+        border-radius: 50%;
+    }
+
+    .checkbox .icon,
+    .radiobutton .icon {
+        border: 1px solid #333;
+    }
+
+    .checkbox span,
+    .radiobutton span {
+        color: #333;
+    }
+
+    .checkbox .icon i,
+    .radiobutton .icon i {
+        visibility: hidden;
+    }
+
+    .checkbox input[type="checkbox"]:checked + .icon,
+    .checkbox input[type="checkbox"]:checked + input[type="hidden"] + .icon,
+    .radiobutton input:checked + .icon {
+        background: #dc8f00;
+        border: 1px solid #dc8f00;
+    }
+
+        .checkbox input[type="checkbox"]:checked + .icon i,
+        .checkbox input[type="checkbox"]:checked + input[type="hidden"] + .icon i,
+        .radiobutton input:checked + .icon i {
+            visibility: visible;
+        }
+
+
+    .checkbox.no_text {
+        display: block;
+    }
+
+        .checkbox.no_text label {
+            display: block;
+        }
+
+        .checkbox.no_text .icon {
+            margin: 0 auto;
+        }
+
+
+
+
+/*********************** 共用 元角分厘 ***********************/
+.currency_btn {
+    display: flex;
+}
+
+    .currency_btn li {
+        text-align: center;
+        color: #333;
+        line-height: 24px;
+        height: 24px;
+        cursor: pointer;
+        font-size: 13px;
+        border-radius: 5px;
+        padding: 0 6px;
+        margin-right: 4px;
+        transition: all .2s;
+    }
+
+        /*解決安卓裝置無法垂直居中問題*/
+        .currency_btn li::before {
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            width: 0;
+            height: 100%;
+            margin-top: 1px;
+        }
+
+
+        .currency_btn li:hover {
+            background: #FFF;
+        }
+
+
+
+
+
+        .currency_btn li.active {
+            color: #FFF;
+            background: #008ca1;
+        }
+
+
+
+/*********************** 共用 數字加減器 ***********************/
+.amount_controller {
+    display: flex;
+    align-items: center;
+}
+
+    .amount_controller .amount_controller_combo {
+        display: flex;
+        align-items: center;
+    }
+
+    .amount_controller p {
+        color: #333;
+        font-size: 13px;
+        line-height: 24px;
+        margin-right: 10px;
+    }
+
+    .amount_controller li.btn {
+        width: 24px;
+        line-height: 24px;
+        height: 24px;
+        cursor: pointer;
+        border: 1px solid #dc8f00;
+    }
+
+        .amount_controller li.btn.increase {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            background: url(../images/element/ic_amount_increase_light.svg) no-repeat center center;
+        }
+
+        .amount_controller li.btn.reduce {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            background: url(../images/element/ic_amount_reduce_light.svg) no-repeat center center;
+        }
+
+
+        .amount_controller li.btn:hover {
+            background-color: #FFF;
+        }
+
+    .amount_controller li.number {
+        /*flex: 1;*/
+        /*min-width: 60px;*/
+    }
+
+    .amount_controller li input {
+        width: 100%;
+        height: 24px;
+        font-size: 13px;
+        border-top: 1px solid #dc8f00;
+        border-bottom: 1px solid #dc8f00;
+        border-left: 0;
+        border-right: 0;
+        text-align: center;
+        background: none;
+        outline: 0;
+    }
+
+
+    .amount_controller li input {
+        color: #333;
+    }
+
+    .amount_controller input:focus {
+        color: #333;
+        background: #FFF;
+    }
+
+    .amount_controller input::-webkit-input-placeholder {
+        color: #333;
+    }
+
+    .amount_controller input::-moz-placeholder {
+        color: #333;
+    }
+
+    .amount_controller input::-ms-input-placeholder {
+        color: #333;
+    }
+
+    .amount_controller input::-moz-placeholder {
+        color: #333;
+    }
+
+
+
+
+
+/********************************* 共用 button *********************************/
+
+
+/*預設 button*/
+.btn_default {
+    color: #FFF;
+    line-height: 32px;
+    height: 32px;
+    display: block;
+    text-align: center;
+    border-radius: 3px;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+
+    /*解決安卓裝置無法垂直居中問題*/
+    .btn_default::before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        width: 0;
+        height: 100%;
+        margin-top: 1px;
+    }
+
+
+
+
+    /*主色調 button*/
+    .btn_default.main_color {
+        background: #dc8f00;
+    }
+
+
+        .btn_default.main_color:hover {
+            background: #f09d01;
+        }
+
+    /*主色調 button 外框線條樣式*/
+    .btn_default.main_color_line {
+        border: 1px solid #dc8f00;
+        color: #dc8f00;
+    }
+
+        .btn_default.main_color_line:hover {
+            border: 1px solid #f09d01;
+            color: #f09d01;
+        }
+
+
+    /*強烈色調 button*/
+    .btn_default.brighter_color {
+        background: #dc8f00;
+    }
+
+        .btn_default.brighter_color:hover {
+            background: #f09d01;
+        }
+
+
+    /*緊急色調 button*/
+    .btn_default.strong_color {
+        background: #FF2B2B;
+    }
+
+        .btn_default.strong_color:hover {
+            background: #FF4B4B;
+        }
+
+
+
+    /*深藍 button*/
+    .btn_default.darker_color {
+        background: #374e67;
+    }
+
+        .btn_default.darker_color:hover {
+            background: #283f58;
+        }
+
+
+    /*深藍 外框 button*/
+    .btn_default.darker_line {
+        border: 1px solid #2F557A;
+        height: 34px;
+        color: #2F557A;
+    }
+
+        .btn_default.darker_line:hover {
+            border: 1px solid #008ca1;
+            color: #008ca1;
+        }
+
+
+    /*淺灰 button*/
+    .btn_default.light_color {
+        background: #ECEEF0;
+        color: #333;
+    }
+
+        .btn_default.light_color:hover {
+            background: #e2e4e6;
+            color: #333;
+        }
+
+
+    /*setting button*/
+    .btn_default.setting_color {
+        background: #8E8D8D;
+        color: #333;
+    }
+
+        .btn_default.setting_color:hover {
+            background: #A3A3A3;
+            color: #333;
+        }
+
+
+    /*導圓角調 button*/
+    .btn_default.fillet_radius {
+        border-radius: 50px;
+    }
+
+
+
+    /*disable button*/
+    .btn_default.disable {
+        cursor: default;
+        pointer-events: none;
+        opacity: .3;
+    }
+
+    /*單個 icon button*/
+    .btn_default.icon_style {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn_default.icon_trash {
+        background-image: url("../images/ic_bin.svg");
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    .btn_default.icon_style.disable img {
+        opacity: .3;
+    }
+
+    .btn_default.icon_style span {
+        margin-left: 10px;
+        line-height: 1;
+    }
+
+
+    .btn_default.full_width {
+        width: 100%;
+    }
+
+
+
+    .btn_default.highest {
+        height: 46px;
+        line-height: 46px;
+    }
+
+    .btn_default.higher {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .btn_default.height_mid {
+        height: 36px;
+        line-height: 36px;
+    }
+
+@media only screen and (max-width: 768px) {
+    .btn_default {
+        font-size: 14px;
+    }
+
+        .btn_default.height_mid {
+            height: 38px;
+            line-height: 38px;
+        }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/********************************* 共用 pagination *********************************/
+.pagination {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    justify-content: flex-end;
+}
+
+    .pagination span {
+        display: flex;
+        align-items: center;
+        line-height: 1;
+        color: #333;
+    }
+
+    .pagination em {
+        color: #dc8f00;
+        font-style: normal;
+        margin: 0 4px;
+    }
+
+    .pagination img.ic_more {
+        margin-left: 8px;
+    }
+
+    .pagination .control {
+        border-radius: 5px;
+        display: flex;
+        margin-left: 8px;
+    }
+
+        .pagination .control a {
+            height: 32px;
+            min-width: 32px;
+            padding: 0 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+            .pagination .control a.disable {
+                cursor: default;
+            }
+
+                .pagination .control a.disable img {
+                    opacity: .2;
+                }
+
+
+        .pagination .control > a {
+            border-right: 1px solid #e5e5e5;
+            background: #FFF;
+        }
+
+    .pagination.line_style .control {
+        border: 1px solid #e5e5e5;
+    }
+
+        .pagination.line_style .control:last-child {
+            border: none;
+        }
+
+    .pagination .control a:hover {
+        background: #fff9f1;
+    }
+
+    .pagination .control a.disable:hover {
+        background: #FFF;
+    }
+
+
+    .pagination .control a.active,
+    .pagination .control a.active span,
+    .pagination .control a.active:hover {
+        background: #dc8f00;
+        color: #FFF;
+        cursor: default;
+    }
+
+    .pagination .control a:first-child {
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+    }
+
+    .pagination .control a:last-child {
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+
+    .pagination .control a:last-child {
+        border: 0;
+    }
+
+    .pagination input {
+        width: 50px;
+        height: 32px;
+        border-radius: 3px;
+        line-height: 24px;
+        text-align: center;
+        background: #FFF;
+        border: 1px solid #e5e5e5;
+        color: #333;
+        outline: 0;
+        margin-left: 6px;
+        margin-right: 6px;
+    }
+
+        .pagination input:focus {
+            border: 1px solid #fff9f1;
+            color: #333;
+        }
+
+    .pagination .btn {
+        margin-left: 5px;
+    }
+
+        .pagination .btn a {
+            padding: 0 8px;
+            line-height: 1;
+            background: #23272e;
+        }
+
+            .pagination .btn a:hover {
+                background: #43464c;
+                color: #FFF;
+            }
+
+@media only screen and (max-width: 768px) {
+    .pagination {
+        width: 100%;
+    }
+
+        .pagination div:nth-child(3),
+        .pagination div:nth-child(5),
+        .pagination img.ic_more {
+            display: none;
+        }
+
+        .pagination input {
+            width: 50px;
+            height: 34px;
+        }
+
+        .pagination .control a {
+            height: 34px;
+        }
+}
+
+@media only screen and (max-width: 350px) {
+    .pagination .control {
+        flex: 1;
+    }
+
+        .pagination .control a {
+            flex: 1;
+            min-width: auto;
+        }
+
+    .pagination input {
+        width: 40px;
+    }
+}
+
+
+
+
+/***************************** 欄位左右排列 *****************************/
+
+.editForm.column_double {
+    display: flex;
+}
+
+    .editForm.column_double > div {
+        flex: 1;
+    }
+
+        .editForm.column_double > div:first-child {
+            margin-right: 10px;
+        }
+
+@media only screen and (max-width: 768px) {
+    .editForm.column_double {
+        display: inherit;
+    }
+
+        .editForm.column_double > div:first-child {
+            margin-right: 0;
+        }
+}
+
+
+
+/***************************** 共用 input *****************************/
+/* 帶標題的input */
+.label_input {
+    position: relative;
+    clear: both;
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+
+
+
+    /******** 控制一組欄位的標題、標題提示小字、標題提示連結 ********/
+    .label_input label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 6px;
+        color: #333;
+        white-space: nowrap;
+        line-height: 1;
+    }
+
+        .label_input label.flex_start {
+            justify-content: flex-start;
+        }
+
+        .label_input label p {
+            color: #333;
+            font-size: 14px;
+        }
+
+
+            /* input 右上方小字 灰色 */
+            .label_input label p.sub {
+                color: #666;
+                font-size: 12px;
+            }
+
+                /* input 右上方小字 灰色內標重點 */
+                .label_input label p.sub span {
+                    color: #008ca1;
+                }
+
+        /* input 右上方小字 連結 */
+        .label_input label .link {
+            color: #008ca1;
+            text-decoration: underline;
+        }
+
+            .label_input label .link:hover {
+                color: #1d9db0;
+            }
+
+        /* input 右上方小字 連結+icon */
+        .label_input label .link_with_icon {
+            display: flex;
+            color: #DD8707;
+            align-items: center;
+            line-height: 1;
+        }
+
+            .label_input label .link_with_icon img {
+                margin-right: 3px;
+            }
+
+            .label_input label .link_with_icon:hover {
+                color: #fd9600;
+            }
+
+
+
+
+    /******** 控制一組input的外層div ********/
+    .label_input .form_set {
+        position: relative;
+    }
+
+        /* 沒有標題的input */
+        .label_input .form_set.no_title {
+            margin-top: 10px;
+        }
+
+
+
+        /* 一排2個input */
+        .label_input .form_set.column_layout {
+            display: flex;
+            justify-content: space-between;
+        }
+
+            .label_input .form_set.column_layout > div {
+                flex: 1;
+            }
+
+                .label_input .form_set.column_layout > div:first-child {
+                    margin-right: 5px;
+                }
+
+                .label_input .form_set.column_layout > div:last-child {
+                    margin-left: 5px;
+                }
+
+
+    /* input 帶icon的input 如密碼欄位、合營計畫前綴icon */
+    .label_input .icon_form_set {
+        position: relative;
+    }
+
+        /* input 前面帶icon 如合營計畫前綴icon */
+        .label_input .icon_form_set.before_icon input {
+            padding: 0 10px 0 36px;
+        }
+
+    .label_input .icon_label {
+        top: calc(50% - 10px);
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: 9px;
+        z-index: 1;
+    }
+
+    .label_input .icon_form_set.before_icon .icon_label.icon_agent_user {
+        background: url(../images/agent/promo/ic_form_user.svg) center center no-repeat;
+    }
+
+    .label_input .icon_form_set.before_icon .icon_label.icon_agent_phone {
+        background: url(../images/agent/promo/ic_form_phone.svg) center center no-repeat;
+    }
+
+    .label_input .icon_form_set.before_icon .icon_label.icon_agent_password {
+        background: url(../images/agent/promo/ic_form_password.svg) center center no-repeat;
+    }
+
+    .label_input .icon_form_set.before_icon .icon_label.icon_agent_verify {
+        background: url(../images/agent/promo/ic_form_notify.svg) center center no-repeat;
+    }
+
+
+
+/******** 控制表單提示文字 ********/
+/*form h1{
+  color: #666;
+  font-size: 13px;
+}
+form h2{
+  color: #008CA1;
+  font-size: 13px;
+  font-weight: bold;
+}
+form h1, form h2{
+  margin-bottom: 18px;
+}*/
+
+form .tips_text {
+    color: #999;
+    padding: 6px 0 0 0;
+    line-height: 1.2;
+    font-size: 12px;
+}
+
+    form .tips_text span {
+        color: #f7b63e;
+    }
+
+
+
+/******** 密碼強度 ********/
+.password_strength_check {
+    display: flex;
+    align-items: center;
+    margin-top: 4px;
+}
+
+    .password_strength_check .level {
+        flex: 1;
+        display: flex;
+        padding-right: 5px;
+    }
+
+        .password_strength_check .level li {
+            height: 5px;
+            width: 19.5%;
+            margin-right: 1px;
+            background: #DDD;
+        }
+
+            .password_strength_check .level li.check {
+                background: #008ca1;
+            }
+
+    .password_strength_check .text {
+        min-width: 50px;
+        text-align: right;
+        color: #999999;
+    }
+
+        .password_strength_check .text.check {
+            color: #008ca1;
+        }
+
+
+/******** 控制input ********/
+.label_input input {
+    border-radius: 3px;
+    height: 38px;
+    width: 100%;
+    outline: 0;
+    border: 1px solid #e5e5e5;
+    background: #f2f2f2;
+    padding: 0 10px 0 10px;
+    color: #333;
+    font-size: 14px;
+}
+
+    .label_input input:focus {
+        border: 1px solid #dc8f00;
+        color: #333;
+    }
+
+
+/* input有3種高度可使用 higher最高 height_mid適中 lower最低 */
+.label_input.highest input {
+    height: 46px;
+}
+
+.label_input.higher input {
+    height: 38px;
+}
+
+.label_input.height_mid input {
+    height: 32px;
+}
+
+.label_input.lower input {
+    height: 26px;
+}
+
+
+/* 白色 input 用於popup是灰色背景時*/
+.label_input.light input {
+    background: #FFF;
+}
+
+    .label_input.light input:focus {
+        border: 1px solid #008ca1;
+        color: #333;
+    }
+
+/* center 文字置中 無icon */
+.label_input.center input {
+    border: 1px solid #1C4062;
+    background: none;
+    padding: 0 10px;
+    text-align: center;
+}
+
+    .label_input.center input:focus {
+        border: 1px solid #0095B2;
+    }
+
+.label_input.center span {
+    color: #333;
+    padding-right: 10px;
+}
+
+
+/* disable為禁止使用的input */
+.label_input input[disabled],
+.label_input input[readonly] {
+    border: 1px solid #e5e5e5;
+}
+
+/* 當input位置放的不是input 僅文字 */
+.label_input p.plain_text {
+    color: #008ca1;
+    font-size: 15px;
+    padding-bottom: 8px;
+}
+
+
+/* input 發送驗證碼 */
+.label_input .form_set .verify_send_style {
+    display: flex;
+    align-items: center;
+}
+
+    .label_input .form_set .verify_send_style input {
+        width: auto;
+        flex: 1;
+    }
+
+    .label_input .form_set .verify_send_style a {
+        padding: 0 15px;
+        height: 34px;
+        line-height: 34px;
+        margin-left: 5px;
+        min-width: 95px;
+    }
+
+    .label_input .form_set .verify_send_style .pic_verify img {
+        width: 102px;
+        height: 34px;
+        margin-left: 5px;
+    }
+
+@media only screen and (max-width: 768px) {
+    .label_input .form_set .verify_send_style a {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .label_input .form_set .verify_send_style .pic_verify img {
+        width: 108px;
+        height: 38px;
+    }
+}
+
+
+
+/* input 6位驗證碼 */
+.label_input .form_set .verify_code {
+    display: flex;
+}
+
+    .label_input .form_set .verify_code input {
+        flex: 1;
+        text-align: center;
+        font-size: 16px;
+        margin-right: 5px;
+    }
+
+        .label_input .form_set .verify_code input:last-child {
+            margin-right: 0;
+        }
+
+
+
+
+
+/* label和選單為橫向排列時 */
+.label_input.column_layout {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    width: auto;
+}
+
+    .label_input.column_layout p {
+        margin-right: 5px;
+        margin-bottom: 0;
+    }
+
+    .label_input.column_layout label {
+        margin-bottom: 0;
+    }
+
+    /*.label_input.column_layout input {
+    width: auto;
+}*/
+
+    .label_input.column_layout span {
+        white-space: nowrap;
+        line-height: 1;
+    }
+
+    .label_input.column_layout .dropdown {
+        /*flex: 1;*/
+    }
+
+/* input共用樣式 */
+
+input::-webkit-input-placeholder {
+    color: #999;
+}
+
+input::placeholder {
+    color: #999;
+    opacity: 1;
+    /* Firefox */
+}
+
+input:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #999;
+}
+
+input::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #999;
+}
+
+
+/* 密碼眼睛 */
+.icon_input_eye_open,
+.icon_input_eye_close {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 10px;
+    top: calc(50% - 10px);
+}
+
+.label_input .icon_input_eye_open,
+.label_input .icon_input_eye_close {
+    /* 用動態計算在有error message時會被field-validation-error的span影響高度而跑版，因此這邊寫死
+       label_input的input固定height為38px，套上calc(50% - 10px)=9px。*/
+    top: 9px;
+}
+
+.icon_input_eye_open {
+    background: url(../images/form/ic_input_eye_open.svg) center center no-repeat;
+}
+
+.icon_input_eye_close {
+    background: url(../images/form/ic_input_eye_close.svg) center center no-repeat;
+}
+
+
+
+
+
+
+/* 錯誤訊息 */
+.input_error {
+    border-radius: 5px;
+    font-size: 12px;
+    line-height: 14px;
+    max-width: 100%;
+    color: #333;
+    border-radius: 0px;
+    padding: 4px 0 0 0;
+}
+
+    .input_error li {
+        width: 100%;
+        padding: 3px 10px 3px 16px;
+        position: relative;
+        line-height: 1.2;
+    }
+
+        .input_error li .icon_input_error {
+            width: 12px;
+            height: 12px;
+            position: absolute;
+            top: 50%;
+            left: 0px;
+            margin-top: -6px;
+            background: url(../images/form/ic_input_error.svg);
+        }
+
+            .input_error li .icon_input_error.check_ok {
+                background: url(../images/form/ic_input_error_check.svg);
+            }
+
+    .input_error.position_no_left li {
+        padding: 3px 10px 3px 16px;
+    }
+
+        .input_error.position_no_left li .icon_input_error {
+            left: 0;
+        }
+
+/*flag_error為旗子錯誤樣式*/
+.flag_error .input_error {
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.5);
+    background-image: linear-gradient(to bottom, #FFF, #ebebeb 88%, #e4e4e4);
+    position: absolute;
+    display: inline-table;
+    max-width: 280px;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    left: calc(100% + 15px);
+    top: 0;
+    z-index: 2;
+    padding: 9px 6px;
+    border-radius: 3px;
+}
+
+    .flag_error .input_error::before {
+        content: "";
+        position: absolute;
+        left: -8px;
+        top: 13px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 5px 8px 5px 0;
+        border-color: transparent #f2f2f2 transparent transparent;
+        filter: drop-shadow(-2px 0 2px rgba(0, 0, 0, .2));
+    }
+
+    .flag_error .input_error li {
+        padding: 3px 10px 3px 22px;
+    }
+
+        .flag_error .input_error li .icon_input_error {
+            left: 6px;
+        }
+
+@media only screen and (max-width: 1024px) {
+    .flag_error .input_error {
+        position: inherit;
+        max-width: 100%;
+        background: none;
+        border-radius: 0px;
+        padding: 6px 0 0 0;
+        left: 0;
+        top: 0;
+        box-shadow: none;
+        border: none;
+    }
+
+        .flag_error .input_error li {
+            padding: 3px 10px 3px 16px;
+        }
+
+            .flag_error .input_error li .icon_input_error {
+                left: 0;
+            }
+
+        .flag_error .input_error::before {
+            display: none;
+        }
+}
+
+
+
+
+
+
+
+
+
+/***************************** 共用 textarea *****************************/
+/* light_popup為popup使用的的input */
+.read_only {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+    .read_only textarea,
+    .read_only textarea:focus {
+        border: 1px solid #9B9B9B;
+        background: #FFF;
+        padding: 5px 10px;
+        color: #222;
+        width: 100%;
+    }
+
+
+.label_input  textarea {
+    background: #f2f2f2;
+    border: 1px solid #e5e5e5;
+    color: #333;
+    font-size: 13px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 3px;
+    height: 76px;
+}
+.label_input .light textarea {
+    background: #FFF;
+}
+    .label_input textarea:focus {
+        border: 1px solid #008ca1;
+    }
+
+@media only screen and (max-width: 768px) {
+    .label_input textarea {
+        font-size: 14px;
+    }
+}
+
+textarea::-webkit-input-placeholder {
+    color: #999;
+}
+
+textarea::placeholder {
+    color: #999;
+    opacity: 1;
+    /* Firefox */
+}
+
+textarea:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #999;
+}
+
+textarea::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #999;
+}
+
+
+
+
+
+/***************************** 共用 下拉選單 *****************************/
+.dropdown {
+    position: relative;
+    /*width: 100%;*/
+}
+
+.dropdown_toggle {
+    width: 100%;
+    white-space: nowrap;
+    text-align: left;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: 13px;
+    border-radius: 3px;
+    border: solid 1px #e5e5e5;
+    background: #F2F2F2 url(../images/form/ic_input_dropdown_down_gray.svg) no-repeat right 10px center;
+    color: #333;
+    height: 38px;
+    padding: 0 35px 0 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    .dropdown_toggle {
+        height: 38px;
+        font-size: 14px;
+    }
+}
+
+/* light為白色底 用於popup複雜型表單 如賬變明細 */
+.label_input.light .dropdown .dropdown_toggle {
+    background: #FFF url(../images/form/ic_input_dropdown_down_disable.svg) no-repeat right 10px center;
+}
+
+
+/* disable 為無法使用的下拉 */
+.label_input.disable .dropdown .dropdown_toggle {
+    color: #9B9B9B;
+    border: 1px solid #9B9B9B;
+    background: #DDDDDD url(../images/form/ic_input_dropdown_down_disable.svg) no-repeat right 10px center;
+    cursor: default;
+    pointer-events: none;
+}
+
+/* error 為錯誤訊息 */
+.label_input.error .dropdown .dropdown_toggle {
+    background: #FFF5F5 url(../images/form/ic_input_dropdown_down_gray.svg) no-repeat right 10px center;
+    border: 1px solid #E84D4D;
+}
+
+/* toggle有3種高度可使用 higher最高 height_mid適中 lower最低 */
+.label_input.higher .dropdown .dropdown_toggle {
+    height: 38px;
+}
+
+.label_input.height_mid .dropdown .dropdown_toggle {
+    height: 32px;
+}
+
+.label_input.lower .dropdown .dropdown_toggle {
+    height: 26px;
+}
+
+.dropdown_menu {
+    position: absolute;
+    left: 0;
+    z-index: 9;
+    width: 100%;
+    margin: 0;
+    text-align: left;
+    border-radius: 4px;
+    overflow-y: auto;
+    display: none;
+}
+
+.label_input.higher .dropdown_menu {
+    top: 44px;
+}
+
+.label_input.height_mid .dropdown_menu {
+    top: 38px;
+}
+
+.label_input.lower .dropdown_menu {
+    top: 30px;
+}
+
+.label_input .dropdown_menu {
+    top: calc(100% + 5px);
+    max-height: 180px;
+    padding: 6px 0;
+    font-size: 12px;
+    background-color: #FFF;
+    box-shadow: 0 0 15px #b1b1b1;
+}
+
+.dropdown_menu.show {
+    display: block;
+}
+
+.dropdown_item {
+    display: block;
+    width: 100%;
+    clear: both;
+    text-align: inherit;
+    white-space: nowrap;
+}
+
+.label_input .dropdown_item {
+    color: #333;
+    padding: 5px 10px;
+    border-bottom: 1px solid #F2F2F2;
+    /*min-height: 36px;*/
+}
+
+    .label_input .dropdown_item:hover {
+        background-color: #fff9f1;
+    }
+
+    .label_input .dropdown_item.active {
+        color: #FD9600;
+    }
+
+    .label_input .dropdown_item.active {
+        color: #DD8707;
+    }
+
+
+
+/************************ 共用 calendar ************************/
+/*白底日曆*/
+.calendar {
+    display: none;
+    background: #FFF;
+    position: absolute;
+    z-index: 300;
+    top: calc(100% + 6px);
+    left: calc(50% - 260px);
+    border-radius: 3px;
+    width: max-content;
+    width: -moz-max-content;
+    width: -webkit-max-content;
+    width: -o-max-content;
+    width: -ms-max-content;
+    box-shadow: 0 0 15px #b1b1b1;
+}
+
+    .calendar.show {
+        display: block;
+    }
+
+    .calendar.one_month {
+        top: calc(100% + 6px);
+        left: 0;
+        width: 100%;
+    }
+
+.calendar_wrapper {
+    display: flex;
+    margin: 18px 24px 18px 24px;
+}
+
+.calendar_content:first-child {
+    margin-right: 5px;
+}
+
+.calendar_content:last-child {
+    margin-left: 5px;
+}
+
+.calendar_wrapper .month {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    padding-top: 1px;
+}
+
+.calendar .calendar_control {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all .2s;
+    top: 0;
+    border: 1px solid #FFF;
+}
+
+    .calendar .calendar_control:hover {
+        background-color: #F0F5F7;
+        border: 1px solid #E2E2E2;
+    }
+
+    .calendar .calendar_control.pre {
+        left: 4px;
+        background-image: url("../images/form/ic_calendar_pre_light.svg");
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    .calendar .calendar_control.next {
+        right: 4px;
+        background-image: url("../images/form/ic_calendar_next_light.svg");
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+.calendar_wrapper table {
+    margin: 8px 0 0 0;
+    min-width: 224px;
+}
+
+.calendar_wrapper th {
+    font-weight: normal;
+    color: #9B9B9B;
+}
+
+.calendar_wrapper td {
+}
+
+    .calendar_wrapper td > div {
+        margin: 0 auto;
+    }
+
+.calendar_wrapper .date {
+    cursor: pointer;
+    transition: all .2s;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    color: #333;
+}
+
+    .calendar_wrapper .date:hover {
+        color: #FFF;
+        background: #DD8707;
+    }
+
+.calendar_wrapper .today,
+.calendar_wrapper .selected {
+    color: #333;
+    background: #eaeaea;
+    border-radius: 50%;
+}
+
+.calendar_wrapper .selected {
+    color: #FFF;
+    background: #DD8707;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+    .calendar_wrapper .selected:hover {
+        background: #DD8707;
+    }
+
+.calendar_wrapper .range {
+    background: #EFC88E;
+    color: #FFF;
+    border-radius: 0px;
+}
+
+    .calendar_wrapper .range:hover {
+        background: #efbf78;
+        color: #FFF;
+    }
+
+.calendar_wrapper .disable {
+    color: #9B9B9B;
+}
+
+.calendar_wrapper .range.first_range {
+    border-radius: 16px 0 0 16px;
+}
+
+.calendar_wrapper .range.last_range {
+    border-radius: 0 16px 16px 0;
+}
+
+.wrapper .last_range .selected {
+    margin-left: 2px;
+}
+
+.calendar_times {
+    display: flex;
+    margin: 0 24px 18px 24px;
+}
+
+    .calendar_times .label_input {
+        width: auto;
+        margin-right: 10px;
+    }
+
+        .calendar_times .label_input.column_layout input {
+            width: 100px;
+        }
+
+        .calendar_times .label_input.column_layout p {
+            color: #222;
+            font-size: 14px;
+        }
+
+.calendar_tabs {
+    padding: 8px 24px;
+    background: #F0F5F7;
+    border-top: 1px solid #E2E2E2;
+    display: flex;
+    align-items: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+    .calendar_tabs ul:first-child {
+        flex: 1;
+    }
+
+    .calendar_tabs ul {
+        display: flex;
+        white-space: nowrap;
+    }
+
+    .calendar_tabs li {
+        margin-right: 20px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: all .2s;
+    }
+
+        .calendar_tabs li:hover {
+            color: #008ca1;
+        }
+
+    .calendar_tabs a {
+        padding: 0 20px;
+    }
+
+        .calendar_tabs a:last-child {
+            margin-left: 8px;
+        }
+
+@media only screen and (max-width: 1024px) {
+
+    .calendar_wrapper td {
+        font-size: 14px;
+    }
+
+    .calendar.one_month .calendar_wrapper {
+        display: flex;
+        margin: 14px 14px;
+    }
+
+        .calendar.one_month .calendar_wrapper .calendar_content {
+            width: 100%;
+        }
+
+            .calendar.one_month .calendar_wrapper .calendar_content table {
+                width: 100%;
+            }
+}
+
+
+/************************ 共用 tooltip ************************/
+.tool_tip {
+    position: relative;
+    cursor: pointer;
+    margin-left: 5px;
+    z-index: 1;
+}
+
+    .tool_tip .tool_icon {
+        padding-right: 5px;
+    }
+
+    .tool_tip .tip_detail {
+        position: absolute;
+        background: rgba(0, 0, 0, 0.9);
+        font-size: 12px;
+        padding: 10px 14px;
+        border-radius: 5px;
+        color: #FFF;
+        width: 250px;
+        display: none;
+        top: calc(0px - 20px);
+        left: 100%;
+        text-align: left;
+        white-space: normal;
+    }
+
+        .tool_tip .tip_detail.up {
+            top: auto;
+            bottom: calc(100% - 20px);
+        }
+
+        .tool_tip .tip_detail p {
+            display: block;
+            line-height: 1.5;
+        }
+
+.tip_detail p.title {
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.tip_detail li {
+    border-bottom: 1px solid #2D2D2D;
+    padding: 0 0 8px 0;
+    margin-bottom: 8px;
+    text-align: justify;
+}
+
+    .tip_detail li.flex_content {
+        display: flex;
+        padding: 0 0 5px 0;
+    }
+
+    .tip_detail li:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+.tip_detail p.sub_title {
+    color: #DD8707;
+}
+
+.tip_detail li.flex_content p.sub_title {
+    width: 60px;
+}
+
+.tool_tip:hover .tip_detail,
+.tip_detail:hover {
+    display: block;
+}
+
+/* popup input 副標 */
+.tool_tip .sub {
+    color: #4A4A4A;
+    margin-left: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+    .tool_tip .tip_detail.up {
+        bottom: auto;
+        top: calc(100% - 20px);
+    }
+}
+
+
+
+
+
+/************************ 步驟 ************************/
+.step_number_content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+    .step_number_content li {
+        flex: 1;
+        position: relative;
+        margin-right: 1px;
+    }
+
+        .step_number_content li:last-child {
+            margin-right: 0;
+        }
+
+        .step_number_content li .line {
+            width: 100%;
+            height: 5px;
+            background: #ccc;
+            border-radius: 5px;
+            top: 8px;
+            position: absolute;
+            z-index: 0;
+        }
+
+        .step_number_content li .step_number {
+            width: 100%;
+        }
+
+            .step_number_content li .step_number .number_ball {
+                width: 20px;
+                height: 20px;
+                line-height: 19px;
+                text-align: center;
+                font-size: 12px;
+                font-weight: bold;
+                color: #FFF;
+                background: #ccc;
+                border-radius: 50%;
+                margin: 0 auto 2px auto;
+                position: relative;
+                z-index: 1;
+            }
+
+        .step_number_content li.active .step_number .number_ball {
+            background: #d5b16a;
+        }
+
+        .step_number_content li p {
+            text-align: center;
+            color: #9B9B9B;
+            font-size: 12px;
+        }
+
+        .step_number_content li.active .line {
+            background: #d5b16a;
+        }
+
+        .step_number_content li.active p {
+            color: #d5b16a;
+        }
+
+
+
+
+
+
+/********************************* 共用tips *********************************/
+.tips_style_a {
+    color: #999;
+    font-size: 12px;
+    width: 100%;
+}
+
+    .tips_style_a p.text_tip_title {
+        color: #dc8f00;
+        font-size: 13px;
+        line-height: 1;
+        margin-bottom: 5px;
+    }
+
+    .tips_style_a span {
+        color: #008ca1;
+    }
+
+        .tips_style_a span.highlight {
+            color: #f04040;
+        }
+
+    .tips_style_a a {
+        color: #008ca1;
+        text-decoration: underline;
+    }
+
+        .tips_style_a a:hover {
+            color: #1d9db0;
+        }
+
+
+.tips_style_b p {
+    color: #999;
+    line-height: 1.5;
+    font-size: 12px;
+}
+
+    .tips_style_b p span {
+        color: #f7b63e;
+    }
+
+.tips_style_b a {
+    color: #008ca1;
+    text-decoration: underline;
+}
+
+    .tips_style_b a:hover {
+        color: #1d9db0;
+    }

@@ -1,0 +1,152 @@
+﻿@using JxBackendService.Model.Param.TransferRecord
+@using JxBackendService.Resource.Element
+@using JxBackendService.Model.Common
+@model SearchTransferRecordParam
+@{
+    string clientServiceName = ViewBag.ClientServiceName.ToString();
+    string searchGridInitServiceName = clientServiceName + "_searchGridInitService";
+
+    var productSelectListItems = ViewBag.ProductSelectListItems as List<JxBackendSelectListItem>;
+    var orderStatusSelectListItems = ViewBag.OrderStatusSelectListItems as List<JxBackendSelectListItem>;
+    var transferTypeSelectListItems = ViewBag.TransferTypeSelectListItems as List<JxBackendSelectListItem>;
+
+    var startDateDefault = DateTime.Now.ToString("yyyy-MM-dd");
+    var endDateDefault = DateTime.Now.ToString("yyyy-MM-dd");
+}
+
+<form id="jqSearchFilterForm" onsubmit="event.preventDefault();">
+    <div class="bg spacing gap system_filter">
+        <br />
+        <div class="col">
+            <div class="item">
+                <div class="label_input column_layout">
+                    <label for="">
+                        <p>@DisplayElement.UserID</p>
+                    </label>
+                    <div class="form_set">
+                        <input class="jqFilter" type="text" asp-for="UserID">
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="label_input column_layout">
+                    <label for="" class="m_hide">
+                        <p>@DisplayElement.OrderTime</p>
+                    </label>
+                    <div class="form_set datepicker_text">
+                        <input type="text" asp-for="StartDate" value="@startDateDefault" class="width_set jqFilter jqStartDate" endDateId="EndDate" />
+                        <span>至</span>
+                        <input type="text" asp-for="EndDate" value="@endDateDefault" class="width_set jqFilter" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="item">
+                <div class="label_input column_layout">
+                    <label for="">
+                        <p>@DisplayElement.Product</p>
+                    </label>
+                    @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting(productSelectListItems)
+                    {
+                    SettingId = nameof(Model.ProductCode),
+                    })
+                </div>
+            </div>
+            <div class="item">
+                <div class="label_input column_layout">
+                    <label for="">
+                        <p>@DisplayElement.Status</p>
+                    </label>
+                    @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting(orderStatusSelectListItems)
+                    {
+                    SettingId = nameof(Model.OrderStatus),
+                    })
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="item">
+                <div class="label_input column_layout">
+                    <label for="">
+                        <p>@DisplayElement.TransferType</p>
+                    </label>
+                    @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting(transferTypeSelectListItems)
+                    {
+                    SettingId = nameof(Model.TransferType),
+                    })
+                </div>
+            </div>
+            <div class="item">
+                <div class="btns">
+                    <a href="javascript:;" class="btn_default main_color jqSearchBtn">查询</a>
+                    <a href="javascript:;" class="btn_default main_color_line jqResetBtn">清空</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div id="jqContentRoot" style="display:none">
+    <div class="bg gap">
+        <div class="member_center_report agent_report table_overflow_x">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="tips_in_header">
+                            @DisplayElement.TransferSource
+                            <img id="jqTips" src="~/images/question_icon.png" alt="Question" class="question-icon jqHoverTips" />
+                        </th>
+                        <th>@DisplayElement.TransferType</th>
+                        <th>@DisplayElement.TransferTarget</th>
+                        <th>@DisplayElement.OrderNo</th>
+                        <th>@DisplayElement.UserID</th>
+                        <th>@DisplayElement.Amount</th>
+                        <th>@DisplayElement.OrderTime</th>
+                        <th>@DisplayElement.Status</th>
+                        <th>@DisplayElement.HandleTime</th>
+                        <th>@DisplayElement.Remark</th>
+                    </tr>
+                </thead>
+                <tbody id="jqGridContent">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="footer_function_content space_between">
+        <div class="jqPagination pagination"></div>
+    </div>
+</div>
+
+<div id="jqTipsText" style="display: none;">
+    <p>转帐都要透过「中继平台」进行转出转入，所以会有二阶段的订单，若从秘色转帐至第三方，余额转帐方式：秘色>中继平台>第三方游戏；若从第三方转帐至秘色，余额转帐方式：第三方游戏>中继平台>秘色</p>
+    <br>
+    <p>因此每一次转出转入都会有二笔订单，第三方游戏与中继平台，查询时需要确认这两个阶段的订单是否异常。</p>
+</div>
+
+<style>
+    input.input-validation-error {
+        border: 1px solid red;
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        $('#jqTips').hoverTips({
+            position: 'bottom',
+            maxWidth: 350,
+            content: $($('#jqTipsText').html())
+        });
+
+        $(".jqResetBtn").click(function () {
+    @(searchGridInitServiceName).clearFilters();
+            $("#StartDate").val('@startDateDefault');
+            $("#EndDate").val('@endDateDefault');
+            $("input.input-validation-error").removeClass("input-validation-error");
+        });
+
+        //讓'用户ID'只能輸入數字
+        $("#UserID").onlyNumber(10);
+    });
+
+</script>

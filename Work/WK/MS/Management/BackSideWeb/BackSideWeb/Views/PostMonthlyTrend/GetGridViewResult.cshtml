@@ -1,0 +1,36 @@
+﻿@using BackSideWeb.Models.ViewModel.OperatingData;
+@using JxBackendService.Model.Paging
+@using JxBackendService.Model.ViewModel.Game
+@model PagedResultModel<PostMonthlyTrendViewModel>
+
+<div>
+    <table>
+        <tbody class="jqBody">
+            @foreach (var item in Model.ResultList)
+            {
+                <tr>
+                    <td>@item.MonthText</td>
+                    <td>@item.TotalPostsInDisplayText</td>
+                    <td>@item.SquareDisplayedText</td>
+                    <td>@item.SquareUnderReviewText</td>
+                    <td>@item.SquareNotApprovedText</td>
+                    <td>@item.SquareUnlockedCountText</td>
+
+                    <td>@item.AgencyDisplayedText</td>
+                    <td>@item.AgencyUnderReviewText</td>
+                    <td>@item.AgencyNotApprovedText</td>
+                    <td>@item.AgencyUnlockedCountText</td>
+
+                    <td>@item.OfficialDisplayedText</td>
+                    <td>@item.OfficialUnderReviewText</td>
+                    <td>@item.OfficialNotApprovedText</td>
+                    <td>@item.OfficialReserveText</td>
+                    <td>@item.OfficialReserveCancelCountText</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="jqPagination">
+        @await Html.PartialAsync("Partial/_PaginationByPagerInfo", Model)
+    </div>
+</div>

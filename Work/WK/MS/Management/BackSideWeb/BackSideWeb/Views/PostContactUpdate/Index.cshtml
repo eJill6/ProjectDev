@@ -1,0 +1,103 @@
+﻿@model AdminPostContactUpdateParam;
+@using MS.Core.MMModel.Models.AdminUserManager;
+@using JxBackendService.Resource.Element;
+@{
+    ViewData["Title"] = "批量修改联系";
+}
+<form id="contactUpdateForm">
+<div class="modal_content_container">
+        本页提供为同一会员ID的广场、寻芳阁帖子，批量修改联系方式。
+</div>
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left" style="margin-left:14%">
+        会员ID
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:30%">
+            <input type="text" asp-for="UserId" maxlength="15" style="background-color: white;" oninput="validatePositiveIntegerInput(this)" />
+    </div>
+</div>
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left" style="margin-left:14%">
+        微信号
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:30%">
+        <input type="text" asp-for="WeChat" maxlength="50" style="background-color: white;" />
+    </div>
+</div>
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left" style="margin-left:14%">
+        QQ号
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:30%">
+        <input type="text" asp-for="QQ" maxlength="50" style="background-color: white;" />
+    </div>
+</div>
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left" style="margin-left:14%">
+        手机号
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:30%">
+        <input type="text" asp-for="Phone" placeholder="" maxlength="50" style="background-color: white;" oninput="validatePositiveIntegerInput(this)" />
+    </div>
+</div>
+
+
+<div class="modal_content_container">
+    <p style="color:red;">
+        ※微信号、QQ号、手机号请择一填写，未填写以空白取代旧资讯。
+    </p>
+</div>
+
+
+<div class="modal_btn_content fixed_width centered_container" >
+        <button type="submit" class="btn_default brighter_color jqSubmitBtn" style="width:40%">@CommonElement.Submit</button>
+</div>
+</form>
+<style>
+.modal_content_container {
+    text-align: center;
+}
+
+.centered_container {
+    display: flex;
+    justify-content: center;
+}
+
+</style>
+<script>
+    function validatePositiveIntegerInput(inputElement) {
+        var inputValue = inputElement.value;
+        if (!/^(0|[1-9]\d*)$/.test(inputValue)) {
+            inputElement.value = "";
+        }
+    }
+    $(document).ready(function () {
+        $('#contactUpdateForm').submit(function (e) {
+            e.preventDefault(); 
+            var formData = $(this).serialize(); 
+
+            // Show loading
+            $("#loading").show();
+            var errmsg = "批量修改失败，请重新提交";
+
+            $.ajax({
+                url: "/PostContactUpdate/DoPostContactUpdate",
+                type: "POST",
+                data: formData,
+                success: function (res) {
+                    if (res.isSuccess) {
+                        alert("批量修改完成");
+                    } else {
+                        alert(res.message);
+                    }
+                },
+                error: function () {
+                    alert(errmsg);
+                },
+                complete: function () {
+                    $("#loading").hide(); 
+                }
+            });
+        });
+    });
+</script>

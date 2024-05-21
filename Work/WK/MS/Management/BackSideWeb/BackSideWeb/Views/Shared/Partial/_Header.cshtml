@@ -1,0 +1,43 @@
+@using JxBackendService.Model.Param.User
+@{
+    string userName = (ViewBag.BackSideWebUser as BackSideWebUser).UserName;
+    bool isShowChangePasswordButton = (ViewBag.IsShowChangePasswordButton as bool?) ?? true;
+}
+
+<header>
+    <div class="header">
+        <div class="logo_section">
+            <div class="logo">
+                <a href="javascript:void(0)" onclick="">
+                    <img src="~/images/MS_LOGO_header.png" />
+                </a>
+            </div>
+            <div class="header_title">
+                <p>
+                    秘觅与游戏产品后台管理
+                </p>
+            </div>        
+        </div>
+        <div class="btns">
+            <div class="b2">
+                <p>HI, @userName</p>
+                @if (isShowChangePasswordButton)
+                {
+                    <a onclick="openChangePasswordModal()" href="javascript:;">修改密码</a>
+                }
+                <a href="@Url.Action("Logout","Authority")">退出</a>
+            </div>
+                
+        </div>
+    </div>
+</header>
+
+<script>
+    function openChangePasswordModal() {
+        var param = {
+            url: '/ChangePassword/GetEditModalView'
+        };
+        var layerServ = new layerService();
+        layerServ.open(param);
+    };
+</script>

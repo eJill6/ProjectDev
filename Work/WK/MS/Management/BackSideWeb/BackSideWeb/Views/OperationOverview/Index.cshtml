@@ -1,0 +1,82 @@
+@using JxBackendService.Resource.Element
+@{
+}
+
+<a href="javascript:;" class="jqSearchBtn" style="display:none">查询</a>
+
+<div id="jqContentRoot" style="display:none">
+    <div class="bg gap">
+        <div class="member_center_report agent_report">
+           @*<div>*@
+            <table>
+                <thead>
+                    <tr>
+                        <th>@DisplayElement.TotalUsers</th>
+                        <th>@DisplayElement.PaidUsersCount</th>
+                        <th>@DisplayElement.PaymentRate</th>
+                        <th>@DisplayElement.TotalRevenue</th>
+                        <th>ARPU</th>
+                        <th>ARPPU</th>
+                    </tr>
+                </thead>
+                <tbody id="jqGridContent1">
+                </tbody>
+            </table>
+
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>@DisplayElement.DepositsReceivedAmount</th>
+                        <th>@DisplayElement.DepositsReceivedCount</th>
+                        <th>@DisplayElement.MerchantCount</th>
+                        <th>@DisplayElement.SquareUnlockEarnings</th>
+                        <th>@DisplayElement.SquareRefundAmount</th>
+                        <th>@DisplayElement.SquareRefundCount</th>
+                    </tr>
+                </thead>
+                <tbody id="jqGridContent2">
+                </tbody>
+            </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th>@DisplayElement.AgencyUnlockEarnings</th>
+                        <th>@DisplayElement.AgencyRefundAmount</th>
+                        <th>@DisplayElement.AgencyRefundCount</th>
+                        <th>@DisplayElement.OfficialPlatformEarnings</th>
+                        <th>@DisplayElement.OfficialRefundAmount</th>
+                        <th>@DisplayElement.OfficialRefundCount</th>
+                    </tr>
+                </thead>
+                <tbody id="jqGridContent3">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<style>
+    table {
+        font-size: 18px;
+        border-collapse: collapse;
+        margin-bottom: 50px;
+    }
+
+    .member_center_report.agent_report{
+        background-color: #ebebec;
+    }
+
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: center;
+        padding: 8px;
+        vertical-align: middle;
+        background-color: white;
+    }
+
+    th {
+        width: 150px;
+        font-weight: bold;
+    }
+</style>

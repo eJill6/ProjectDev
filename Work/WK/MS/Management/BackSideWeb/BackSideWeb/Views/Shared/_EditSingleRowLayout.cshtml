@@ -1,0 +1,52 @@
+@using JxBackendService.Resource.Element
+@using BackSideWeb.Models.Enums
+@{
+    Layout = LayoutType.Popup.Value;
+    string clientPopupWindowServiceName = ViewBag.ClientPopupWindowServiceName as string;
+    string pageTitle = ViewBag.Title as string;
+    string submitUrl = ViewBag.SubmitUrl as string;
+}
+
+@section Header
+{
+    @if (IsSectionDefined("Header"))
+    {
+        await RenderSectionAsync("Header");
+    }
+}
+
+@RenderBody()
+
+@section FooterButtons
+{
+    @if (IsSectionDefined("CustomFooterButtons"))
+    {
+        await RenderSectionAsync("CustomFooterButtons");
+    }
+    else
+    {
+        <div class="modal_btn_content fixed_width">
+            <a href="javascript:;" class="btn_default main_color jqCloseBtn">@CommonElement.Cancel</a>
+            <a href="javascript:;" class="btn_default brighter_color jqSubmitBtn ">@CommonElement.Submit</a>
+        </div>
+    }
+
+    <script>
+        let param = {
+            pageTitle: '@Html.Raw(pageTitle)',
+            jqSubmitBtnSelector: ".jqSubmitBtn",
+            jqCloseBtnSelector: '.jqCloseBtn',
+            formSelector: '#editSingleRowForm',
+            submitUrl: '@Html.Raw(submitUrl)'
+        };
+
+        @Html.Raw(String.Format("window.editSingleRowService = new {0}(param);", clientPopupWindowServiceName))
+        window.editSingleRowService.Init();
+    </script>
+}
+
+@section PopupScripts
+{
+    <script src="~/js/base/crud/readSingleRowService.min.js" asp-append-version="true"></script>
+    <script src="~/js/base/crud/editSingleRowService.min.js" asp-append-version="true"></script>
+}

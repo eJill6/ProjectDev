@@ -1,0 +1,38 @@
+﻿@model OptionsInputModel
+@using BackSideWeb.Models.ViewModel
+@using JxBackendService.Model.Entity
+@using BackSideWeb.Model.Entity.MM
+@using JxBackendService.Model.Enums
+
+<input type="hidden" asp-for="MMOptionsBs.OptionId">
+<input type="hidden" asp-for="MMOptionsBs.OptionType">
+<input type="hidden" asp-for="MMOptionsBs.PostType">
+
+<div class="label_input">
+    <label for="content">帖子区域</label>
+    <div class="form_set">
+        <input type="text" asp-for="MMOptionsBs.PostTypeText" readonly/>
+    </div>
+</div>
+
+<div class="label_input">
+    <label for="content">填写区域</label>
+    <div class="form_set">
+        <input type="text" asp-for="MMOptionsBs.OptionTypeText" readonly/>
+    </div>
+</div>
+
+<div class="label_input">
+    <label for="content">内文</label>
+    <div class="form_set">
+        <textarea asp-for="MMOptionsBs.OptionContent" rows="10"></textarea>
+        @*<input type="text" asp-for="MMOptionsBs.OptionContent"/>*@
+    </div>
+</div>
+
+<div class="label_input">
+    <label for="show">显示</label>
+    <div class="form_set">
+       <select class="dropdown_toggle" asp-for="IsActiveSelected" asp-items="Model.IsActiveListItem"></select>
+    </div>
+</div>

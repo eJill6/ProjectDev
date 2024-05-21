@@ -1,0 +1,10 @@
+﻿@using JxBackendService.Interface.Model.Paging
+@model IPagerInfo
+@{
+    string clientServiceName = ViewBag.ClientServiceName.ToString();
+}
+
+@await Html.PartialAsync("Partial/_Pagination", new PaginationSetting(Model)
+{
+    Callback = "function(pageNo,pageSize){" + clientServiceName + ".changePage(pageNo,pageSize);}",
+})

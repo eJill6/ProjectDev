@@ -1,0 +1,90 @@
+﻿@model PageRedirectUpdateViewModel
+@using BackSideWeb.Models.ViewModel
+@using JxBackendService.Model.Entity
+@using BackSideWeb.Model.Entity.MM
+@using JxBackendService.Model.Enums
+
+<input type="hidden" asp-for="MMPageRedirectBs.Id">
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        转导名称
+    </div>
+    <div class="detail_modal_col_right form_set">
+        @Model.MMPageRedirectBs.RedirectName
+    </div>
+</div>
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        标题
+    </div>
+    <div class="detail_modal_col_right form_set">
+        <input type="text" asp-for="MMPageRedirectBs.Title" maxlength="20" placeholder="上限20字" />
+    </div>
+
+</div>
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        转导页面
+    </div>
+    <div class="detail_modal_col_right form_set">
+     <select class="dropdown_toggle" asp-for="RedirectTypeSelectOption" asp-items="Model.RedirectTypeItems" ></select>
+    </div>
+
+</div>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        编号
+    </div>
+    <div class="detail_modal_col_right form_set">
+        <input type="text" asp-for="MMPageRedirectBs.RefId" maxlength="20" oninput="validatePositiveIntegerInput(this)" />
+    </div>
+
+</div>
+<p style="color: red;
+    display: flex;
+    padding: 5px 125px;">
+    ※选择店铺时请填用户的Apply ID，可至店铺管理取得。选择帖子时请填帖子ID
+</p>
+
+<script>
+
+    function validatePositiveIntegerInput(inputElement) {
+        var inputValue = inputElement.value;
+        if (inputValue !== "" && (!/^\d+$/.test(inputValue) || parseInt(inputValue) <= 0)) {
+            inputElement.value = "";
+        }
+    }
+    $(function(){
+
+        var redirectType = $("#RedirectTypeSelectOption").val();
+
+        if (redirectType === "" || redirectType === "1" || redirectType === "2" || redirectType === "3") {
+ 
+            $("#MMPageRedirectBs_RefId").val("");
+            $("#MMPageRedirectBs_RefId").prop("disabled", true);
+            $("#MMPageRedirectBs_RefId").css("background-color", "#d7d7d7");
+        } else {
+            $("#MMPageRedirectBs_RefId").css("background-color", "#f2f2f2");
+            $("#MMPageRedirectBs_RefId").prop("disabled", false);
+
+        }
+
+
+        $(".dropdown_toggle").change(function () {
+            var selectedValue = $(this).val();
+            if (selectedValue === "" ||selectedValue === "1" || selectedValue === "2" || selectedValue === "3") {
+                $("#MMPageRedirectBs_RefId").val("");
+                $("#MMPageRedirectBs_RefId").prop("disabled", true);
+                $("#MMPageRedirectBs_RefId").css("background-color", "#d7d7d7");
+
+            } else {
+                
+                $("#MMPageRedirectBs_RefId").css("background-color", "#f2f2f2");
+                $("#MMPageRedirectBs_RefId").prop("disabled", false);
+
+            }
+        })
+    })
+</script>

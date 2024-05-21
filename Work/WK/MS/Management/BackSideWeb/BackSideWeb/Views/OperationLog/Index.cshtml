@@ -1,0 +1,123 @@
+﻿@using JxBackendService.Model.Param.BackSideWeb;
+@using JxBackendService.Model.Common;
+@model QueryBWOperationLogParam
+@{
+    var operationTypeSelectListItems = ViewBag.OperationTypeSelectListItems as List<JxBackendSelectListItem>;
+    JxBackendSelectListItem? defaultSelectItem = null;
+
+    if (operationTypeSelectListItems != null)
+    {
+        defaultSelectItem = operationTypeSelectListItems.FirstOrDefault();
+    }
+
+    string? defaultSelectItemText = defaultSelectItem?.Text;
+    string? defaultSelectItemValue = defaultSelectItem?.Value;
+
+    var startDatedefault = DateTime.Now.ToString("yyyy-MM-dd");
+    var endDatedefault = DateTime.Now.ToString("yyyy-MM-dd");
+}
+
+<style>
+    input.input-validation-error {
+        border: 1px solid red;
+    }
+</style>
+
+<form id="jqSearchFilterForm" onsubmit="event.preventDefault();">
+    <div class="bg spacing gap system_filter" id="jqMemberFilter">
+        <br />
+        <div class="col">
+            <div class="item">
+                <div class="label_input column_layout">
+                    <label for="">
+                        <p>操作人</p>
+                    </label>
+                    <div class="form_set">
+                        <input class="jqFilter" type="text" asp-for="OperateUserName" maxlength="100">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="item">
+                <div class="label_input column_layout">
+                    <label for="">
+                        <p>用户ID</p>
+                    </label>
+                    <div class="form_set">
+                        <input class="jqFilter" type="text" asp-for="UserID" maxlength="10">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="item">
+                <div class="label_input column_layout">
+                    <label for="" class="m_hide">
+                        <p>操作时间</p>
+                    </label>
+                    <div class="form_set datepicker_text">
+                        <input type="text" asp-for="StartDate" value="@startDatedefault" class="width_set jqFilter jqStartDate" endDateId="EndDate" />
+                        <span>至</span>
+                        <input type="text" asp-for="EndDate" value="@endDatedefault" class="width_set jqFilter" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="item">
+                <div class="label_input column_layout">
+                    <label for="">
+                        <p>类别</p>
+                    </label>
+                    @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting(operationTypeSelectListItems)
+                    {
+                        SettingId = "OperationType",
+                    })
+                </div>
+            </div>
+        </div>  
+        <div class="col">
+            <div class="item">
+                <div class="btns">
+                    <a href="javascript:;" class="btn_default main_color jqSearchBtn">查询</a>
+                    <a href="javascript:;" class="btn_default main_color_line jqResetBtn">清空</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div id="jqContentRoot" style="display:none">
+    <div class="bg gap">
+        <div class="member_center_report agent_report table_overflow_x">
+            <table>
+                <thead>
+                    <tr>
+                        <th>类别</th>
+                        <th>操作人</th>
+                        <th>用户ID</th>
+                        <th>操作时间</th>
+                        <th>内容</th>
+                    </tr>
+                </thead>
+                <tbody id="jqGridContent">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="footer_function_content space_between">
+        <div class="jqPagination pagination"></div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+        window.services.searchGridInitService.addClearFiltersAction(function(){
+            $("input.input-validation-error").removeClass("input-validation-error");
+        });
+    });
+    
+    //讓'用户ID'只能輸入數字
+    $("#UserID").onlyNumber();    
+</script>

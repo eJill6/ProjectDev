@@ -1,0 +1,107 @@
+﻿@using BackSideWeb.Models.ViewModel
+@model UserIdentityViewModel
+@{
+	ViewData["Title"] = "身份认证";
+	var startDatedefault = DateTime.Now.ToString("yyyy-MM-dd");
+	var endDatedefault = DateTime.Now.ToString("yyyy-MM-dd");
+}
+
+<div class="pageTab max_width_limited" id="pageTab">
+	<ul><a id="3" href="javascript:void(0)">觅老板/超觅老板</a></ul>
+	<ul><a id="1" href="javascript:void(0)">觅经纪</a></ul>
+</div>
+<label id="userIdentityTypeTemp" hidden></label>
+<input type="hidden" id="type" name="type" />
+<div class="bg spacing gap system_filter" id="jqMemberFilter">
+	<br />
+	<div class="col">
+		<div class="item">
+			<div class="label_input column_layout">
+				<label for="">
+					<p>会员ID</p>
+				</label>
+				<div class="form_set">
+					<input class="jqFilter" type="text" name="" id="jqUserId" placeholder="" value="" maxlength="20">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col">
+		<div class="item jqAdvanceFilter">
+			<div class="col_p_1">
+				<div class="label_input column_layout">
+					<label for="" class="m_hide">
+						<p>申请时间</p>
+					</label>
+					<div class="form_set datepicker_text">
+						@Html.TextBox("jqStartDate", startDatedefault, new { id = "jqStartDate", @class = "width_set jqFilter" })
+						<span>至</span>
+						@Html.TextBox("jqEndDate", endDatedefault, new { id = "jqEndDate", @class = "width_set jqFilter" })
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+@*	<div class="col">
+		<div class="item jqAdvanceFilter">
+			<div class="label_input column_layout">
+				<label for="">
+					<p>当前身份</p>
+				</label>
+				@await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting
+				{
+					SettingId = "jqOriginalIdentitySelectList",
+					Items = Model.IdentityTypeItems,
+				})
+			</div>
+		</div>
+	</div>
+	<div class="col">
+		<div class="item jqAdvanceFilter">
+			<div class="label_input column_layout">
+				<label for="">
+					<p>申请身份</p>
+				</label>
+				@await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting
+				{
+					SettingId = "jqApplyIdentitySelectList",
+					Items = Model.IdentityTypeItems,
+				})
+			</div>
+		</div>
+	</div>*@
+	<div class="col">
+		<div class="item">
+			<div class="btns">
+				<a href="javascript:;" class="btn_default main_color jqSearchBtn">查询</a>
+				<a href="javascript:;" class="btn_default main_color_line jqResetBtn">清空</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="jqContentRoot" style="display:none">
+	<div class="bg gap">
+		<div class="member_center_report agent_report table_overflow_x">
+			<table>
+				<thead>
+					<tr>
+						<th>申请时间</th>
+						<th>审核时间</th>
+						<th>会员ID</th>							
+				@*		<th>当前身份</th>
+						<th>申请身份</th>
+						<th>缴交保证金</th>*@
+						<th>身份审核</th>
+						<th>检视</th>
+					</tr>
+				</thead>
+				<tbody id="jqGridContent">
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="footer_function_content space_between">
+		<div class="jqPagination pagination"></div>
+	</div>
+</div>

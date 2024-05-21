@@ -1,0 +1,49 @@
+﻿@using BackSideWeb.Models.ViewModel;
+@using JxBackendService.Model.Paging;
+@using MS.Core.MMModel.Models.AdminUserManager;
+@using MS.Core.MMModel.Models.Post.Enums;
+
+@model PagedResultModel<AdminStoreManageList>
+@{
+    string clientServiceName = ViewBag.ClientServiceName.ToString();
+}
+<div>
+    <table>
+        <tbody class="jqBody">
+            @foreach (var item in Model.ResultList)
+            {
+
+                <tr>
+                    <td>@item.UserId</td>
+                    <td>@item.ApplyId</td>
+                    <td>@item.ExamineTimeText</td>
+                    <td>@item.Nickname</td>
+                    <td>@item.ShopName</td>
+                    <td>@item.IsOpenText</td>
+                    <td>@item.TelegramGroupId</td>
+                    <td>
+                        <div class="flex_content">
+                            <a href="javascript:void(0)" data-url='@Url.Action("Detail", "StoreManage")'
+                               onclick="@string.Format("{0}.openDetail(this, '{1}')", clientServiceName, item.UserId)">
+                                详细
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="flex_content">
+                            <p>
+                                <a href="javascript:void(0)" data-url='@Url.Action("StoreEdit", "StoreManage")' class="btn_default main_color icon_style text_btn"
+                                   onclick="@string.Format("{0}.openStoreEdit(this, '{1}')", clientServiceName, item.UserId)">
+                                    编辑
+                                </a>
+                            </p>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="jqPagination">
+        @await Html.PartialAsync("Partial/_PaginationByPagerInfo", Model)
+    </div>
+</div>

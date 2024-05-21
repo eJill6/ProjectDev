@@ -1,0 +1,14 @@
+﻿@using JxBackendService.Model.BackSideWeb;
+@using JxBackendService.Common.Util;
+@using JxBackendService.Resource.Element;
+@{
+    var pageApiUrlSetting = ViewBag.PageApiUrlSetting as PageApiUrlSetting;
+}
+
+@if (pageApiUrlSetting != null && !pageApiUrlSetting.ExportApiUrl.IsNullOrEmpty())
+{
+    <a href="javascript:void(0)" class="btn_setting btn_default main_color"
+   onclick="window.services.searchGridService.export()">
+        <span>@PermissionElement.Export</span>
+    </a>
+}

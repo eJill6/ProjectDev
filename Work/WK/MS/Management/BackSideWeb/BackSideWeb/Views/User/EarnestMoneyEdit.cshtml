@@ -1,0 +1,83 @@
+﻿@model AdminUserManagerEarnestMoneyChangeParam
+@using JxBackendService.Model.Enums;
+@using MS.Core.MMModel.Models.AdminUserManager;
+@{
+    var userEarnestMoneyData = ViewBag.EarnestMoneyHis as List<UserEarnestMoneyData>;
+}
+
+<script src="~/js/business/adminUserManager/userEditSingleRowService.min.js" asp-append-version="true"></script>
+<style>
+    #title{
+        font-weight: 600;
+        margin-left: 153px;
+    }
+    table{
+        border: 1px solid black;
+        width: 60%;
+        margin: auto;
+        text-align: center;
+    }
+    th{
+        border: 1px solid black;
+        background-color: deepskyblue; 
+        color: white;
+        vertical-align: middle;
+        height: 35px;
+    }
+    td{
+        border: 1px solid black;
+        vertical-align: middle;
+        height: 35px;
+    }
+</style>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left" style="margin-left:14%">
+        会员ID
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:30%">
+        <span>@Model.UserId</span>
+        <input type="hidden" asp-for="UserId" />
+    </div>
+</div>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left" style="margin-left:14%">
+        当前保证金
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:30%">
+        <span>@Model.OriginalEarnestMoneyText</span>
+        <input type="hidden" asp-for="OriginalEarnestMoney" />
+    </div>
+</div>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left" style="margin-left:14%">
+        调整保证金
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:30%">
+        <input type="text" asp-for="EarnestMoney" placeholder="" maxlength="20" />
+    </div>
+    <span asp-validation-for="EarnestMoney"></span>
+</div>
+
+@{
+    if (userEarnestMoneyData != null && userEarnestMoneyData.Any())
+    {
+        <div id="title">调整记录</div>
+        <table>
+            <tr>
+                <th>建立时间</th>
+                <th>调整金额</th>
+            </tr>
+            @foreach (var item in userEarnestMoneyData)
+            {
+                <tr>
+                    <td>@item.ExamineTimeText</td>
+                    <td>@item.EarnestMoneyText</td>
+                </tr>
+            }
+        </table> 
+    }
+}
+

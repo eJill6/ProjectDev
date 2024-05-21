@@ -1,0 +1,59 @@
+@using JxBackendService.Model.BackSideWeb;
+@using JxBackendService.Common.Util;
+@{
+    var pageApiUrlSetting = ViewBag.PageApiUrlSetting as PageApiUrlSetting;
+    string searchApiUrl = pageApiUrlSetting.SearchApiUrl;
+    string clientServiceName = ViewBag.ClientServiceName.ToString();
+    string[] baseJavaScripts = ViewBag.BaseJavaScripts as string[];
+    string[] pageJavaScripts = ViewBag.PageJavaScripts as string[];
+    string searchBtnSelector = ViewBag.SearchButtonSelector;
+    string filterSelector = ViewBag.FilterSelector.ToString();
+    string resetButtonSelector = ViewBag.ResetButtonSelector.ToString();
+    string autoSearchAfterPageLoaded = (bool)ViewBag.IsAutoSearchAfterPageLoaded ? $"window.services.searchGridInitService.btnSearch();" : string.Empty;
+}
+
+@if (baseJavaScripts != null)
+{
+    foreach (var script in baseJavaScripts)
+    {
+        <script src="~/js/@script" asp-append-version="true"></script>
+    }
+}
+
+<script src="~/js/utils/formUtilService.min.js" asp-append-version="true"></script>
+
+@if (pageJavaScripts != null)
+{
+    foreach (var script in pageJavaScripts)
+    {
+        <script src="~/js/@script" asp-append-version="true"></script>
+    }
+}
+
+<script>
+    @Html.Raw(string.Format("window.{0} = new {0}({1});", clientServiceName, pageApiUrlSetting.ToJsonString(isCamelCaseNaming: true)))
+
+    //底層需要一個統一物件名稱集合
+    window.services = $.extend(
+        {}, 
+        window.services, 
+        {
+            searchGridService: @(clientServiceName)
+        });
+
+    window.services.searchGridInitService = new searchGridInitService(
+        '@searchBtnSelector',
+        '@filterSelector',
+        () => {
+            window.services.searchGridService.search();
+        });
+
+
+    $("@(resetButtonSelector)").click(function () {
+        window.services.searchGridInitService.clearFilters();
+    });
+
+    $(document).ready(function () {
+        @autoSearchAfterPageLoaded;
+    });
+</script>

@@ -1,0 +1,197 @@
+﻿@model AdminReportDetail
+@using BackSideWeb.Models.ViewModel.PublishRecord;
+@using JxBackendService.Common.Util;
+@using JxBackendService.Model.Entity.PublishRecord;
+
+@using JxBackendService.Model.Enums;
+@using MS.Core.MMModel.Models.AdminComment;
+@{
+    var actType = (ActTypes)ViewBag.ActType;
+}
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        投诉单ID
+    </div>
+    <div class="detail_modal_col_right">
+        @Model.ReportId
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        帖子ID
+    </div>
+    <div class="detail_modal_col_right">
+        @Model.PostId
+    </div>
+</div>
+
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        会员号
+    </div>
+    <div class="detail_modal_col_right">
+        @Model.ComplainantUserId
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        首次送审时间
+    </div>
+    <div class="detail_modal_col_right">
+        <label>@Model.CreateTimeText</label>
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        审核时间
+    </div>
+    <div class="detail_modal_col_right">
+        <label>@Model.ExamineTimeText</label>
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        投诉原因
+    </div>
+    <div class="detail_modal_col_right">
+        <label>@Model.ReportTypeText</label>
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        详情描述
+    </div>
+    <div class="detail_modal_col_right" style="width:50%;">
+        <label>@Model.Describe</label>
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        截图证明资料
+    </div>
+    <div class="detail_modal_col_right" id="divPhoto">
+        @for (int i = 0; i < Model.PhotoIds.Length; i++)
+        {
+            <img src="@Model.PhotoIds[i]" layer-src="@Model.PhotoIds[i]" layer-pid="" alt="layer" width="60px" height="60px" layer-index="@i" />
+        }
+    </div>
+</div>
+
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        审核
+    </div>
+    <div class="detail_modal_col_right" style="width: 70px;">
+        @if (Model.Status == (int)ReviewStatus.UnderReview)
+        {
+            <span style="width: 100px;">
+                <input type="radio" value="1" name="Status" id="Status_1" class="postStatus" style="-webkit-appearance: radio;" />通  过
+            </span>
+            <span style="width: 100px;">
+                <input type="radio" value="2" name="Status" id="Status_2" class="postStatus" style="-webkit-appearance: radio;" />未通过
+            </span>
+        }
+        else
+        {
+            <label>@Model.StatusText</label>
+        }
+
+
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        未通过原因
+    </div>
+    <div class="detail_modal_col_right" style="
+    width: 80%;
+   height: 100px;
+">
+        @if (Model.Status == (int)ReviewStatus.UnderReview)
+        {
+            <textarea id="Memo" name="Memo" style="border: 1px solid #ccc;
+    border-radius: 6px;width:80%;height:100%;">@Model.Memo</textarea>
+        }
+        else
+        {
+
+            @if (string.IsNullOrEmpty(Model.Memo))
+            {
+                <label>-</label>
+            }
+            else
+            {
+                <label>@Model.Memo</label>
+
+            }
+
+        }
+
+    </div>
+</div>
+<input type="hidden" value="@Model.Status.ToJsonString()" name="hiddenStatus" id="hiddenStatus" />
+<input type="hidden" value="@Model.ReportId" id="Id" name="Id" />
+<style>
+    .detail_modal_col_left {
+        text-align: left;
+    }
+
+    input:disabled {
+        border: 1px solid #DDD;
+        background-color: #F5F5F5;
+        color: #ACA899;
+    }
+
+    textarea:disabled {
+        border: 1px solid #DDD;
+        background-color: #F5F5F5;
+        color: #ACA899;
+    }
+
+    .class-photos-demo img {
+        width: 160px;
+        height: 100px;
+        cursor: pointer;
+    }
+</style>
+
+<script src="/js/layui/layui.js"></script>
+<link rel="stylesheet" href="/js/layui/css/layui.css">
+<script>
+    $(function () {
+
+        var status = $("#hiddenStatus").val();
+
+         if (status == 1) {
+            $(".jqSubmitBtn ").hide();
+            $("#Status_1").prop("checked", "checked");
+            $("#Memo").val("");
+            $("#Memo").prop("disabled", true);
+        } else if (status == 2) {
+            $(".jqSubmitBtn ").hide();
+            $("#Status_2").prop("checked", "checked");
+
+        }
+
+        $("input[name='Status']").change(function () {
+            var selectedStatus = $(this).val();
+            if (selectedStatus === "1") {
+                $("#Memo").val("");
+                $("#Memo").prop("disabled", true);
+            } else {
+                $("#Memo").prop("disabled", false);
+            }
+        });
+
+        var layer = layui.layer;
+        // 图片层
+        layer.photos({
+            photos: '#divPhoto'
+        });
+        $("#divPhoto img").each(async function () {
+            var src = await new decryptoService().fetchSingleDownload($(this).attr("src"));
+            $(this).attr("src", src);
+            $(this).attr("layer-src", src);
+        });
+    })
+</script>

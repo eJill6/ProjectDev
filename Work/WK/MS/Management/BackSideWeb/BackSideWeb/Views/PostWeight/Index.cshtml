@@ -1,0 +1,131 @@
+﻿@using MS.Core.MMModel.Models.Post.Enums
+
+<a href="javascript:;" class="jqSearchBtn" style="display:none">查询</a>
+<div class="pageTab max_width_limited" id="pageTab">
+    <ul><a id="1" href="javascript:void(0)">@PostType.Square.GetEnumDescription()</a></ul>
+    <ul><a id="2" href="javascript:void(0)">@PostType.Agency.GetEnumDescription()</a></ul>
+    <ul><a id="3" class="gold-shopRecommend" href="javascript:void(0)">官方店铺推荐</a></ul>
+    <ul><a id="4"  class="gold-shop" href="javascript:void(0)">金牌店铺</a></ul>
+</div>
+<label id="postTypeTemp" hidden></label>
+
+<div class="bg spacing gap system_filter" id="jqMemberFilter">
+    <div class="col">
+        <div class="item">
+            <div class="btns">
+                <a href="javascript:;" class="btn_default main_color_line jqFailedBtn" style="border:none;color:white;" id="jqFailedBtn" onclick="BatchReview('failed')">移除</a>
+            </div>
+        </div>
+    </div>
+ </div>
+
+<div class="bg spacing gap system_filter" id="jqGoldStoreFilter" style="display:none">
+    <div class="col">
+        <div class="item">
+            <div class="btns EditGoldStoreRecommend">
+
+                <a href="javascript:void(0)" data-url='@Url.Action("EditGoldStoreRecommend", "PostWeight")' class="btn_default main_color icon_style text_btn"
+                   onclick="@string.Format("window.services.searchGridService.openGoldStoreRecommendEdit(this)")">
+                    编辑
+                </a>
+            </div>
+            <div class="btns EditGoldStore">
+                
+                <a href="javascript:void(0)" data-url='@Url.Action("EditGoldStore", "PostWeight")' class="btn_default main_color icon_style text_btn"
+                   onclick="@string.Format("window.services.searchGridService.openGoldStoreEdit(this)")">
+                    编辑
+                </a>
+            </div>
+        
+        </div>
+    </div>
+</div>
+
+
+<div id="jqContentRoot" style="display:none">
+    <div class="bg gap">
+        <div class="member_center_report agent_report table_overflow_x">
+            <table>
+                <thead>
+                    <tr>
+                         <th><input type="checkbox" id="selectAllPostId" name="selectAllPostId" style="-webkit-appearance: radio;" onclick="toggleCheckboxes()" /></th>
+                        <th>帖子ID</th>
+                        <th>权重</th>
+                        <th>帖子状态</th>
+                        <th>新增时间</th>
+                        <th>操作人员</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="jqGridContent">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="footer_function_content space_between">
+        <div class="jqPagination pagination"></div>
+    </div>
+</div>
+
+<div id="jqGoldStoreContentRoot" style="display:none">
+    <div class="bg gap">
+        <div class="member_center_report agent_report table_overflow_x">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="GoldStore">TOP 3</th>
+                        <th>会员ID</th>
+                    </tr>
+                </thead>
+                <tbody id="jqGoldStoreGridContent">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    function BatchReview(type) {
+        window.services.searchGridService.batchReview(type);        
+    }
+    function clickVoid(type) {
+        if(type === 1){
+            $(".gold-shopRecommend").click();
+
+        }
+        if(type === 2){
+            $(".gold-shop").click();
+        }
+        alert("编辑完成");
+    
+    }
+    function toggleCheckboxes() {
+        var selectAllCheckbox = document.getElementById('selectAllPostId');
+        var checkboxes = document.querySelectorAll('input[name="selectPostId"]');
+
+        checkboxes.forEach(function (checkbox) {
+            checkbox.checked = selectAllCheckbox.checked;
+        });
+    }
+</script>
+
+<style>
+    .col {
+        margin-top: 10px;
+    }
+
+    .jqFailedBtn {
+        margin-left: 10px;
+        background-color: #ec808d
+    }
+
+    .hrefcss a {
+        color: blue; /* 使用父元素的颜色 */
+    }
+
+        .hrefcss a:hover,
+        .hrefcss a:active,
+        .hrefcss a:focus {
+            color: blue; /* 鼠标悬停、激活和焦点时保持颜色不变 */
+        }
+</style>

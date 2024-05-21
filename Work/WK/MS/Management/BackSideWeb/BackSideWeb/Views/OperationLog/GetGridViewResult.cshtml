@@ -1,0 +1,67 @@
+﻿@model PagedResultModel<OperationLogViewModel>
+@using JxBackendService.Model.ViewModel.SystemSetting;
+@using JxBackendService.Model.Paging;
+@using Newtonsoft.Json;
+@using JxBackendService.Model.BackSideWeb
+
+@{
+    string clientServiceName = ViewBag.ClientServiceName.ToString();
+}
+
+<div>
+    <table>
+        <tbody class="jqBody">
+            @foreach (var item in Model.ResultList)
+            {
+                <tr>
+                    <td>@item.OperationTypeText</td>
+                    <td>@item.OperateUserName</td>
+                    <td>@item.UserID</td>
+                    <td>@item.CreateDateText</td>
+                    <td class="article_mode text-truncate">
+                        @if (item.ContentModel is List<RecordCompareParam>)
+                        {
+                            DisplayRecordCompareParams(item.ContentModel as List<RecordCompareParam>);
+                        }
+                        else
+                        {
+                            @item.Content
+                        }
+                    </td>
+                    <td>
+                        <div class="flex_content">
+                            <a href="javascript:void(0)" data-url='@Url.Action("Detail", "OperationLog")' class="btn_default main_color icon_style text_btn"
+                           onclick="@string.Format("{0}.openOperationLogDetail(this, '{1}')", clientServiceName, item.OperationID)">
+                                详细
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="jqPagination">
+        @await Html.PartialAsync("Partial/_PaginationByPagerInfo", Model)
+    </div>
+</div>
+
+@{
+    void DisplayRecordCompareParams(List<RecordCompareParam> logDatas)
+    {
+        @foreach (RecordCompareParam logData in logDatas)
+        {
+            <span>@logData.Title:</span>
+
+            if (logData.IsLogTitleValue)
+            {
+                <span>@logData.OriginValue</span>
+            }
+            else
+            {
+                <span>@Html.Raw(@logData.OriginValue)</span>
+                <span>变更为</span>
+                <span>@Html.Raw(@logData.NewValue)</span>
+            }
+        }
+    }
+}

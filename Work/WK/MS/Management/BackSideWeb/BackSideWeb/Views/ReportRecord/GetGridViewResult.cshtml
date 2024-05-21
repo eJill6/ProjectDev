@@ -1,0 +1,62 @@
+﻿@using BackSideWeb.Models.ViewModel.PublishRecord;
+@using JxBackendService.Model.Entity.PublishRecord;
+@using JxBackendService.Model.Paging
+@using JxBackendService.Model.ViewModel.Game
+@using MS.Core.MMModel.Models.AdminReport;
+@model PagedResultModel<AdminReportList>
+@{
+    string clientServiceName = ViewBag.ClientServiceName.ToString();
+}
+<div>
+    <table>
+        <tbody class="jqBody">
+            @foreach (var item in Model.ResultList)
+            {
+                <tr>
+                    <td>@item.ReportId</td>
+                    <td class="hrefcss">
+                        <a href="/ReportRecord/Index?postid=@(item.PostId)" target="_blank">
+                            @item.PostId
+                        </a>
+                    </td>
+                    <td>@item.PostTypeText</td>
+                    <td class="hrefcss">
+                        <a href="/ReportRecord/Index?userId=@(item.ComplainantUserId)" target="_blank">
+                            @item.ComplainantUserId
+                        </a>
+                    </td>
+                    <td>@item.CreateTimeText</td>
+                    <td>@item.ExamineTimeText</td>
+                    <td>@item.ReportTypeText</td>
+                    <td>@item.Describe</td>
+                    <td>@item.StatusText</td>
+                    <td>
+                        <div class="flex_content">
+
+                            @if ((bool)ViewBag.HasEditPermission)
+                            {
+                                if (item.Status == MS.Core.MMModel.Models.Post.Enums.ReviewStatus.UnderReview)
+                                {
+                                    <a href="javascript:void(0)" data-url='@Url.Action("UpdateView", "ReportRecord")' class="btn_default main_color icon_style text_btn"
+                                       onclick="@string.Format("{0}.openUpdateView2(this, '{1}')", clientServiceName, item.ReportId)">
+                                        审核
+                                    </a>
+                                }
+                                else
+                                
+                                {
+                                    <a>已审核</a>
+                                }
+                             
+                            }
+
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="jqPagination">
+        @await Html.PartialAsync("Partial/_PaginationByPagerInfo", Model)
+    </div>
+</div>

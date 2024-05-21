@@ -1,0 +1,59 @@
+﻿@using MS.Core.MMModel.Models.AdminUserManager
+@using MS.Core.Models.Models
+@using MS.Core.MMModel.Models.User.Enums
+@model PageResultModel<AdminUserManagerUsersList>
+@{
+    string clientServiceName = ViewBag.ClientServiceName.ToString();
+}
+<div>
+    <table>
+        <tbody class="jqBody">
+            @foreach (var item in Model.Data)
+            {
+                <tr>
+                    <td>@item.UserId</td>
+                    <td>@item.RegisterTimeText</td>
+                    <td>@item.Nickname</td>
+                    <td>@item.UserIdentityText</td>
+                    <td>@item.PostQuantity</td>
+                    <td>@item.Income</td>
+                    <td>@item.EarnestMoneyText</td>
+                    <td>
+                        <div class="flex_content">
+                            <a href="javascript:void(0)" data-url='@Url.Action("Detail", "User")' class="btn_default main_color icon_style text_btn"
+                                onclick="@string.Format("{0}.openUserDetail(this, '{1}')", clientServiceName, item.UserId)">
+                                详细
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="flex_content">
+                            <a href="javascript:void(0)" data-url='@Url.Action("IdentityEdit", "User")' class="fa fa-edit"
+                               onclick="@string.Format("{0}.openIdentityEdit(this, '{1}')", clientServiceName, item.UserId)">
+                                编辑
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="flex_content">
+                            <a href="javascript:void(0)" data-url='@Url.Action("EarnestMoneyEdit", "User")' class="fa fa-edit"
+                               onclick="@string.Format("{0}.openEarnestMoneyEdit(this, '{1}')", clientServiceName, item.UserId + "|" + item.EarnestMoney)">
+                                编辑
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="jqPagination">
+        @await Html.PartialAsync("Partial/_Pagination", new PaginationSetting
+        {
+            PageNo = Model.PageNo,
+            PageSize = Model.PageSize,
+            PageCount = Model.TotalPage,
+            DataCount = Model.TotalCount,
+            Callback = "function(pageNo,pageSize){" + clientServiceName + ".changePage(pageNo,pageSize);}",
+        })
+    </div>
+</div>

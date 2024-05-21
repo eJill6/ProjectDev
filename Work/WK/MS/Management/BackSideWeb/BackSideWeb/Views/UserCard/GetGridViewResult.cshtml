@@ -1,0 +1,33 @@
+﻿@using MS.Core.Models.Models
+@using MS.Core.MMModel.Models.AdminUserManager
+@model PageResultModel<AdminUserManagerUserCardsList>
+@{
+    string clientServiceName = ViewBag.ClientServiceName.ToString();
+}
+<div>
+    <table>
+        <tbody class="jqBody">
+            @foreach (var item in Model.Data)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.UserId</td>
+                    <td>@item.VipName</td>
+                    <td>@item.AmountText</td>
+                    <td>@item.PayTypeText</td>
+                    <td>@item.CreateTimeText</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="jqPagination">
+        @await Html.PartialAsync("Partial/_Pagination", new PaginationSetting
+        {
+        PageNo = Model.PageNo,
+            PageSize = Model.PageSize,
+            PageCount = Model.TotalPage,
+            DataCount = Model.TotalCount,
+            Callback = "function(pageNo,pageSize){" + clientServiceName + ".changePage(pageNo,pageSize);}",
+        })
+    </div>
+</div>

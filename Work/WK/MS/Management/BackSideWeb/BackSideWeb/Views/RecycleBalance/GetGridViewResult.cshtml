@@ -1,0 +1,62 @@
+﻿@using JxBackendService.Model.Paging
+@using JxBackendService.Model.ViewModel
+@using JxBackendService.Model.ReturnModel
+@using JxBackendService.Common.Util
+@using JxBackendService.Model.ViewModel.RecycleBalance
+@using JxBackendService.Model.ViewModel.Game
+@model MiseAndTPGameBalance
+@{
+    string? miseLiveBalanceText = null;
+
+    if (Model.MiseLiveBalance!=null){
+        miseLiveBalanceText = Model.MiseLiveBalance.Balance.ToCurrency();
+    }
+}
+<div>
+    <table>
+        <tbody class="jqMsUserBody">
+            <tr>
+                <td class="jqUserId">@Model.UserID</td>
+                <td class="jqMiseLiveGameBalance currency">@miseLiveBalanceText</td>
+                <td>
+                    <div class="flex_content">
+                        <a href="javascript:void(0)" 
+                        style="padding: 0px 10px;" 
+                        class="btn_default main_color icon_style text_btn"                           
+                        data-url="@Url.Action("RecycleBalance")"
+                        data-userid="@Model.UserID"
+                        onclick="window.services.searchGridService.recycleAllBalance(this);">
+                            回收所有余额
+                        </a>
+                    </div>
+                </td>                
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody class="jqBody">
+            @foreach (TPGameAccountSearchResult item in Model.UserAccountSearchResult.TPGameAccountSearchResults)
+            {
+                <tr class="jqProductRow" productCode="@item.TPGameProductCode">
+                    <td>@item.TPGameProductName</td>
+                    <td>@item.TPGameAccount</td>
+                    <td class="currency jqTPGameBalance">@item.TPGameAvailableScoreText</td>
+                    <td>
+                        <div class="flex_content">
+                            <a href="javascript:void(0)"                                 
+                            class="btn_default main_color icon_style text_btn"
+                            data-url="@Url.Action("RecycleBalance")"
+                            data-productcode="@item.TPGameProductCode" 
+                            data-productname="@item.TPGameProductName"
+                            data-userid="@Model.UserID"
+                            onclick="window.services.searchGridService.recycleSingleProductBalance(this,);">
+                                回收余额
+                            </a>
+                        </div>
+                    </td>
+                    <td class="jqOperationResult"></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

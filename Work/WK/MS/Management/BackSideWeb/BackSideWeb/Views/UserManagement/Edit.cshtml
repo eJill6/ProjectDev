@@ -1,0 +1,69 @@
+﻿@model EditUserInfo;
+@using JxBackendService.Model.ViewModel;
+@using JxBackendService.Model.Common;
+@using JxBackendService.Resource.Element;
+@{
+    var roleSelectListItems = ViewBag.RoleSelectListItems as List<JxBackendSelectListItem>;
+}
+<script src="~/js/business/systemSetting/bwUserEditManagementService.min.js" asp-append-version="true"></script>
+
+<input type="hidden" asp-for="UserID" />
+<div class="label_input">
+	<label>
+		<p>@DisplayElement.UserName</p>
+	</label>
+	<input class="form-control" asp-for="UserName" readonly="@(Model.UserID != 0)" autocomplete="off" />
+	<span asp-validation-for="UserName"></span>
+</div>
+<div class="label_input">
+    <label>
+        <p>@DisplayElement.Role</p>
+    </label>
+
+    @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting(roleSelectListItems)
+    {
+        SettingId = nameof(Model.RoleID),
+    })
+</div>
+<div class="label_input">
+    <label>
+        <p>@DisplayElement.Password</p>
+    </label>
+    <div class="form_set">
+        <input type="password" asp-for="Password" value="@Model.Password" />
+        <span asp-validation-for="Password"></span>
+    </div>
+</div>
+<div class="label_input">
+    <label>
+        <p>确认密码</p>
+    </label>
+    <div class="form_set">
+        <input type="password" name="confirmPassword" id="confirmPassword" value="@Model.Password" />
+        <span class="field-validation-valid" data-valmsg-for="confirmPassword" data-valmsg-replace="true"></span>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#confirmPassword").rules(
+            "add",
+            {
+                equalTo: "#Password",
+                messages: {
+                    equalTo: "确认密码与密码不一致"
+                }
+            }
+        );
+
+        $("input[name='RoleID']").rules(
+            "add",
+            {
+                required: true,
+                messages: {
+                    required: '@Html.Raw(string.Format(MessageElement.FieldIsNotAllowEmpty, "角色"))'
+                }
+            }
+        )
+    });
+</script>

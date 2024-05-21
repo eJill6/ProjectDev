@@ -1,0 +1,89 @@
+﻿@using BackSideWeb.Models.ViewModel.PublishRecord;
+@using JxBackendService.Model.Paging
+@using JxBackendService.Model.ViewModel.Game
+@using MS.Core.MMModel.Models.AdminPost;
+@model PagedResultModel<AdminPostList>
+<div>
+    <table>
+        <tbody class="jqBody">
+            @foreach (var item in Model.ResultList)
+            {
+                <tr>
+                    <td>@item.PostId</td>
+                    <td>@item.PostTypeText</td>
+                    <td>@item.Title</td>
+                    <td class="hrefcss">
+                        <a href="/User/Detail?keyContent=@(item.UserId)" target="_blank">
+                            @item.UserId
+                        </a>
+                    </td>
+                    <td>@item.UserType</td>
+                    <td>@item.CreateTimeText</td>
+                    <td>@item.UpdateTimeText</td>
+                    <td>@item.ExamineTimeText</td>
+                    <td>@item.StatusText</td>
+                    <td>
+                        <div class="flex_content">
+
+                            @if ((bool)ViewBag.HasEditPermission)
+                            {
+                                <a href="javascript:void(0)" data-url='@Url.Action("PostEdit", "PublishRecord")'
+                                   onclick="@string.Format("window.services.searchGridService.openPostEdit(this, '{0}')", item.PostId)">
+                                    编辑
+                                </a>
+                            }
+
+                        </div>
+                    </td>
+                    <td>
+                        <div class="flex_content">
+                            @if ((bool)ViewBag.HasEditPermission)
+                            {
+
+                                <a href="javascript:void(0)" class="fa fa-edit" data-url='@Url.Action("UpdateView", "PublishRecord")'
+                                    onclick="@string.Format("window.services.searchGridService.openExamineView(this, '{0}')", item.PostId)">
+                                    审核
+                                </a>
+                           
+                            }
+
+                        </div>
+                    </td>
+                    <td><input type="checkbox" id="select_@item.PostId" name="selectPostId" value="@item.PostId" style="-webkit-appearance: radio;" /></td>
+                    <td>
+                        <div class="flex_content">
+                            <a href="javascript:void(0)" data-url='@Url.Action("Detail", "PublishRecord")'
+                               onclick="@string.Format("window.services.searchGridService.openPostDetail(this, '{0}')",item.PostId)">
+                                检视
+                            </a>
+                        </div>
+                    </td>
+              
+            
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="jqPagination">
+        @await Html.PartialAsync("Partial/_PaginationByPagerInfo", Model)
+    </div>
+</div>
+<script type="text/javascript">
+
+   $(function(){
+        // 获取全选按钮和其他复选框元素
+        var selectAllCheckbox = document.getElementById("selectAll");
+        var checkboxes = document.getElementsByClassName("selectPostId");
+
+        // 绑定全选按钮的点击事件
+        selectAllCheckbox.addEventListener("click", function () {
+            // 获取全选按钮的选中状态
+            var isChecked = selectAllCheckbox.checked;
+
+            // 设置其他复选框的选中状态与全选按钮一致
+            for (var i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].checked = isChecked;
+            }
+        });
+   })
+</script>

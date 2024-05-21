@@ -1,0 +1,23 @@
+﻿@model QrCodeViewModel
+@using JxBackendService.Model.ViewModel.Authenticator;
+
+<script src="~/js/business/systemSetting/bwGoogleAuthenticatorService.min.js" asp-append-version="true"></script>
+
+<input type="hidden" asp-for="UserID" />
+<div style='margin:0 10px;'>
+    <div style='text-align: center;max-width: 400px'>
+        <h5 class='text-red'>
+            请至Google Authenticator扫描QR Code加入帐户
+        </h5>
+        <img id="jqGoogleQRCodeImage" src="@Model.ImageUrl" style="margin:10px auto" />
+    </div>
+    <div style="text-align: center;">
+        <label>最后更新时间：</label>
+        <label id="jqUpdateDateText">@Model.UpdateDateText</label>
+        @section CustomFooterButtons {
+            <div class="modal_btn_content fixed_width modal_btn_without_border">
+                <button type='button' class='btn_default main_color jqSubmitBtn'>更新</button>
+            </div>
+        }
+    </div>
+</div>

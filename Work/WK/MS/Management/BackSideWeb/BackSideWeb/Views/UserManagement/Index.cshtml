@@ -1,0 +1,50 @@
+﻿@using JxBackendService.Model.Param.BackSideWeb;
+@model QueryBWUserInfoParam
+
+<form id="jqSearchFilterForm" onsubmit="event.preventDefault();">
+    <div class="bg spacing gap system_filter" id="jqMemberFilter">
+        <br />
+        <div class="col">
+            <div class="item">
+                <div class="label_input column_layout">
+                    <label for="">
+                        <p>用戶名</p>
+                    </label>
+                    <div class="form_set">
+                        <input class="jqFilter" type="text" asp-for="UserName">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="item">
+                <div class="btns">
+                    <a href="javascript:;" class="btn_default main_color jqSearchBtn">查询</a>
+                    <a href="javascript:;" class="btn_default main_color_line jqResetBtn">清空</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div id="jqContentRoot" style="display:none">
+    <div class="bg gap">
+        <div class="member_center_report agent_report table_overflow_x">
+            <table>
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>用戶名</th>
+                        <th>所属角色</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="jqGridContent">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="footer_function_content space_between">
+        <div class="jqPagination pagination"></div>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+﻿@using BackSideWeb.Models.ViewModel
+@model OptionsViewModel
+
+<div class="bg spacing gap system_filter" id="jqMemberFilter">
+    <br />
+    <div class="col">
+        <div class="item jqAdvanceFilter">
+            <div class="label_input column_layout">
+                <label for="">
+                    <p>帖子区域</p>
+                </label>
+                @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting
+                {
+                    SettingId = "jqPostTypeSelectList",
+                    Items = Model.PostTypeItems,
+                })
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="item jqAdvanceFilter">
+            <div class="label_input column_layout">
+                <label for="">
+                    <p>填写区域</p>
+                </label>
+                @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting
+                {
+                    SettingId = "jqOptionTypeSelectList",
+                    Items = Model.OptionTypeItems,
+                })
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="item">
+            <div class="btns">
+                <a href="javascript:;" class="btn_default main_color jqSearchBtn">查询</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="jqContentRoot" style="display:none">
+    <div class="bg gap">
+        <div class="member_center_report agent_report table_overflow_x">
+            <table>
+                <thead>
+                    <tr>
+                        <th>帖子区域</th>
+                        <th>填写区域</th>
+                        <th>内文</th>
+                        <th>创建时间</th>
+                        <th>更新时间</th>
+                        <th>创建人</th>
+                        <th>显示</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="jqGridContent">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="footer_function_content space_between">
+        <div class="jqPagination pagination"></div>
+    </div>
+</div>

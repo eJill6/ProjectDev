@@ -1,0 +1,55 @@
+﻿@using BackSideWeb.Model.Entity.MM
+@using JxBackendService.Model.Enums
+@model MMPostWeightBs
+@{
+    var actType = (ActTypes)ViewBag.ActType;
+}
+
+<input type="hidden" asp-for="Id">
+<input type="hidden" asp-for="Status">
+
+@if (actType == ActTypes.Update)
+{
+    <div class="label_input">
+        <label>
+            <p>帖子区域</p>
+        </label>
+        <div class="form_set">
+            <input asp-for="PostTypeText" type="text" readonly />
+        </div>
+    </div>
+}
+
+<div class="label_input">
+    <label>
+        <p>帖子ID</p>
+    </label>
+    <div class="form_set">
+        @if (actType == ActTypes.Insert)
+        {
+            <input type="text" asp-for="PostId"  pattern="\d+" maxlength="20">
+        }
+        else
+        {
+            <input type="text" asp-for="PostId"  pattern="\d+" maxlength="20" readonly>
+        }
+    </div>
+    @if (actType == ActTypes.Insert)
+    {
+        <div>
+            <label style="color: red;">※帖子的审核状态请于新增后确认。</label>
+        </div>
+    }
+</div>
+
+<div class="label_input">
+    <label>
+        <p>权重</p>
+    </label>
+    <div class="form_set">
+        <input asp-for="Weight" type="number" step="1" />
+    </div>
+    <div>
+        <label style="color: red;">※权重各分页独立检查，设定决定该帖子于用户端排序，请填入1~9999，值越大排序越靠前</label>
+    </div>
+</div>

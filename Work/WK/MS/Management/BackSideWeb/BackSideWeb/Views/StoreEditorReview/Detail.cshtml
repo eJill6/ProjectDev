@@ -1,0 +1,342 @@
+﻿@model AdminBossShopList
+
+@using JxBackendService.Common.Util;
+@using JxBackendService.Model.Enums;
+@using MS.Core.MMModel.Models.AdminUserManager;
+@using MS.Core.MMModel.Models.User.Enums
+
+@{
+    var resultCurrent = ViewBag.resultCurrent as AdminBossShopList;
+}
+
+<div class="storeedithead">
+    <div class="headContent ">
+        <div class="detail_modal_row label_input">
+            <div class="detail_modal_col_left title">
+                会员ID
+            </div>
+            <div class="detail_modal_col_right form_set title">
+                @resultCurrent.UserId
+            </div>
+        </div>
+
+        <div class="detail_modal_row label_input">
+            <div class="detail_modal_col_left title">
+                身份
+            </div>
+            <div class="detail_modal_col_right form_set title">
+                @resultCurrent.ApplyIdentityText
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<div class="container">
+    <div class="box">
+        <div class="detail_modal_row label_input">
+            <div class="detail_modal_col_left title">
+                当前资料
+            </div>
+
+        </div>
+        <div class="detail_modal_row label_input">
+            <div class="detail_modal_col_left">
+                店铺名称
+            </div>
+            <div class="detail_modal_col_right form_set">
+                @resultCurrent.ShopName
+            </div>
+        </div>
+        <div class="detail_modal_row label_input">
+            <div class="detail_modal_col_left">
+                店铺介绍
+            </div>
+            <div class="detail_modal_col_right form_set">
+                @resultCurrent.Introduction
+            </div>
+        </div>
+        <div class="detail_modal_row label_input">
+            <div class="detail_modal_col_left">
+                妹子数量
+            </div>
+            <div class="detail_modal_col_right form_set">
+                @resultCurrent.Girls
+            </div>
+        </div>
+
+        <div class="detail_modal_row label_input">
+            <div class="detail_modal_col_left">
+                QQ号码
+            </div>
+            <div class="detail_modal_col_right form_set">
+                @resultCurrent.ContactInfo
+            </div>
+
+        </div>
+
+        <div class="detail_modal_row label_input">
+            <div class="detail_modal_col_left">
+                成交订单
+            </div>
+            <div class="detail_modal_col_right form_set">
+                @resultCurrent.DealOrder
+            </div>
+        </div>
+        <div class="detail_modal_row label_input">
+            <div class="detail_modal_col_left">
+                自评人气
+            </div>
+            <div class="detail_modal_col_right form_set">
+                @resultCurrent.SelfPopularity
+            </div>
+        </div>
+        <div class="detail_modal_row label_input">
+            <div class="detail_modal_col_left">
+                店龄
+            </div>
+            <div class="detail_modal_col_right form_set">
+                @resultCurrent.ShopYears
+            </div>
+
+        </div>
+        <div class="detail_modal_row">
+            <div class="detail_modal_col_left">
+                店铺头像
+            </div>
+            <div class="detail_modal_col_right form_set divPhoto" id="divPhoto">
+                @if (resultCurrent.ShopAvatarSources.Count <= 0)
+                {
+                    <label>
+                        未上传
+                    </label>
+                }
+                else
+                {
+                    foreach (var item in resultCurrent.ShopAvatarSources)
+                    {
+                        <img src="@item.Value" layer-src="@item.Value" layer-pid="" alt="layer" width="80px" height="80px" layer-index="@item.Key" />
+                    }
+
+
+                }
+
+
+            </div>
+
+        </div>
+
+        <div class="detail_modal_row">
+            <div class="detail_modal_col_left">
+                商家照片
+            </div>
+            <div class="detail_modal_col_right form_set divPhoto" id="divPhoto">
+                @if (resultCurrent.BusinessPhotoSources.Count <= 0)
+                {
+                    <label>
+                        未上传
+                    </label>
+                }
+                else
+                {
+                    foreach (var item in resultCurrent.BusinessPhotoSources)
+                    {
+                        <img src="@item.Value" layer-src="@item.Value" layer-pid="" alt="layer" width="80px" height="80px" layer-index="@item.Key" />
+                    }
+
+
+                }
+
+            </div>
+        </div>
+    </div>
+    <div class="box" style="border-left: 1px solid #DDD;">
+        <div class="detail_modal_row label_input">
+            <div class="detail_modal_col_left title">
+                编辑资料待审
+            </div>
+
+        </div>
+        <div class="detail_modal_row label_input">
+            <div class="detail_modal_col_left">
+                店铺名称
+            </div>
+            <div class="detail_modal_col_right form_set">
+                @Model.ShopName
+            </div>
+        </div>
+        <div class="detail_modal_row label_input">
+            <div class="detail_modal_col_left">
+                店铺介绍
+            </div>
+            <div class="detail_modal_col_right form_set">
+                @Model.Introduction
+            </div>
+        </div>
+        <div class="detail_modal_row label_input">
+            <div class="detail_modal_col_left">
+                妹子数量
+            </div>
+            <div class="detail_modal_col_right form_set">
+                @Model.Girls
+            </div>
+        </div>
+
+        <div class="detail_modal_row label_input">
+            <div class="detail_modal_col_left">
+                QQ号码
+            </div>
+            <div class="detail_modal_col_right form_set">
+                @Model.ContactInfo
+            </div>
+
+        </div>
+
+        <div class="detail_modal_row label_input">
+            <div class="detail_modal_col_left">
+                成交订单
+            </div>
+            <div class="detail_modal_col_right form_set">
+                @Model.DealOrder
+            </div>
+        </div>
+        <div class="detail_modal_row label_input">
+            <div class="detail_modal_col_left">
+                自评人气
+            </div>
+            <div class="detail_modal_col_right form_set">
+                @Model.SelfPopularity
+            </div>
+        </div>
+        <div class="detail_modal_row label_input">
+            <div class="detail_modal_col_left">
+                店龄
+            </div>
+            <div class="detail_modal_col_right form_set">
+                @Model.ShopYears
+            </div>
+
+        </div>
+        <div class="detail_modal_row">
+            <div class="detail_modal_col_left">
+                店铺头像
+            </div>
+            <div class="detail_modal_col_right form_set divPhoto" id="divPhoto">
+                @if (Model.ShopAvatarSources.Count <= 0)
+                {
+                    <label>
+                        未上传
+                    </label>
+                }
+                else
+                {
+                    foreach (var item in Model.ShopAvatarSources)
+                    {
+                        <img src="@item.Value" layer-src="@item.Value" layer-pid="" alt="layer" width="80px" height="80px" layer-index="@item.Key" />
+                    }
+                }
+            </div>
+
+        </div>
+
+        <div class="detail_modal_row">
+            <div class="detail_modal_col_left">
+                商家照片
+            </div>
+            <div class="detail_modal_col_right form_set divPhoto" id="divPhoto">
+                @if (Model.BusinessPhotoSources.Count <= 0)
+                {
+                    <label>
+                        未上传
+                    </label>
+                }
+                else
+                {
+                    foreach (var item in Model.BusinessPhotoSources)
+                    {
+                        <img src="@item.Value" layer-src="@item.Value" layer-pid="" alt="layer" width="80px" height="80px" layer-index="@item.Key" />
+                    }
+                }
+
+            </div>
+        </div>
+        <div class="detail_modal_row ">
+            <div class="detail_modal_col_left">
+                审核
+            </div>
+            <div class="detail_modal_col_right form_set">
+                @Model.StatusText
+            </div>
+        </div>
+        <div class="detail_modal_row">
+            <div class="detail_modal_col_left">
+                备注
+            </div>
+            <div class="detail_modal_col_right form_set memo">
+                @Model.Memo
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<style>
+    .storeedithead {
+        border-bottom: 1px solid #DDD;
+    }
+
+    .headContent {
+        width: 50%;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .box {
+        margin-top: 10px;
+        width: 50%;
+        position: relative; /* 设置为相对定位，以便子元素的绝对定位参考父元素 */
+    }
+
+    .title {
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .label_input {
+        margin-bottom: 12px;
+    }
+
+        .label_input input {
+            height: 27px
+        }
+
+    .memo {
+        width: 70%;
+        word-wrap: break-word;
+    }
+</style>
+<!-- 引入 video.js 样式 -->
+<link href="/lib/video-js-8.5.1/video-js.min.css" rel="stylesheet" />
+<!-- 引入 video.js 库文件 -->
+<script src="/lib/video-js-8.5.1/video.min.js"></script>
+<script src="/js/layui/layui.js"></script>
+<link rel="stylesheet" href="/js/layui/css/layui.css">
+<script>
+    $(function () {
+        var layer = layui.layer;
+        // 图片层
+        layer.photos({
+            photos: '.divPhoto'
+        });
+    })
+    $(".divPhoto img").each(async function () {
+        var src = await new decryptoService().fetchSingleDownload($(this).attr("src"));
+        $(this).attr("src", src);
+        $(this).attr("layer-src", src);
+    });
+</script>

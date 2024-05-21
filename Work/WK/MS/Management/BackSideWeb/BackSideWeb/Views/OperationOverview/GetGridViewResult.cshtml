@@ -1,0 +1,41 @@
+﻿@using JxBackendService.Model.ViewModel.OperatingData
+@model OperationOverviewViewModel
+
+<div>
+    <table>
+        <tbody class="jqBody1">
+            <tr>
+                <td>@Model.TotalUsersText</td>
+                <td>@Model.PaidUsersCountText</td>
+                <td>@Model.PaymentRateText</td>
+                <td>@Model.TotalRevenueText</td>
+                <td>@Model.ARPUText</td>
+                <td>@Model.ARPPUText</td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody class="jqBody2">
+            <tr>
+                <td>@Model.DepositsReceivedAmountText</td>
+                <td>@Model.DepositsReceivedCountText</td>
+                <td>@Model.MerchantCountText</td>
+                <td>@Model.SquareUnlockEarningsText</td>
+                <td>@Model.SquareRefundAmountText</td>
+                <td>@Model.SquareRefundCountText</td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody class="jqBody3">
+            <tr>
+                <td>@Model.AgencyUnlockEarningsText</td>
+                <td>@Model.AgencyRefundAmountText</td>
+                <td>@Model.AgencyRefundCountText</td>
+                <td>@Model.OfficialPlatformEarningsText</td>
+                <td>@Model.OfficialRefundAmountText</td>
+                <td>@Model.OfficialRefundCountText</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

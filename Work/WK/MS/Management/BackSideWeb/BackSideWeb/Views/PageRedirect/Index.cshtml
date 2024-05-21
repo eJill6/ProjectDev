@@ -1,0 +1,28 @@
+﻿@using JxBackendService.Model.ViewModel.Game
+@model List<SelectListItem>
+
+<a href="javascript:;" class="jqSearchBtn" style="display:none">查询</a>
+
+<div id="jqContentRoot" style="display:none">
+    <div class="bg gap">
+        <div class="member_center_report agent_report table_overflow_x">
+            <table>
+                <thead>
+                    <tr>
+                        <th>转导名称</th>
+                        <th>标题</th>
+                        <th>转导页面类型</th>
+                        <th>编号</th>
+                        <th>编辑人</th>
+                        <th>编辑</th>
+                    </tr>
+                </thead>
+                <tbody id="jqGridContent">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="footer_function_content space_between">
+        <div class="jqPagination pagination"></div>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+﻿@charset "UTF-8";
+
+.field-validation-error {
+    display: block;
+    color: #ff0000
+}

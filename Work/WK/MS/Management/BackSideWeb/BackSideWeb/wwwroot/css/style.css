@@ -1,0 +1,63 @@
+﻿.text-truncate {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 464px;
+    word-wrap: break-word;
+}
+
+.break-all {
+    word-break: break-all;
+}
+
+.disable_platform_all {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.layui-layer-btn {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+    .layui-layer-btn .layui-layer-btn0 {
+        background: #dc8f00 !important; /*!important用以覆蓋套件的layer.css*/
+        color: #FFF !important;
+        border-color: transparent !important;
+        border-radius: 3px;
+        line-height: 32px;
+        height: 32px;
+    }
+
+    .layui-layer-btn .layui-layer-btn1 {
+        background: #FFF;
+        color: #dc8f00;
+        border: 1px solid #dc8f00;
+        /* border-color: transparent; */
+        border-radius: 3px;
+        line-height: 32px;
+        height: 32px;
+    }
+
+    .layui-layer-btn > .layui-layer-btn0:hover {
+        background: #f09d01;
+    }
+
+    .layui-layer-btn > .layui-layer-btn1:hover {
+        border: 1px solid #f09d01;
+        color: #f09d01;
+    }
+
+.layui-layer-msg {
+    background: #000000;
+    opacity: 0.8;
+    border-radius: 5px;
+}
+
+.side_promo_bar {
+    position: fixed;
+}
+
+nav ul:hover .sub_nav_content.lottery {
+    height: 560px;
+    /*如果彩票大廳選單高度有變動，這裡也要跟著變動*/
+}

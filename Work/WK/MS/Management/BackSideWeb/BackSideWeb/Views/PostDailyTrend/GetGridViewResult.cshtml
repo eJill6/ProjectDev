@@ -1,0 +1,39 @@
+﻿@using BackSideWeb.Models.ViewModel.OperatingData
+@using JxBackendService.Model.Paging
+@using MS.Core.MMModel.Models.OperationOverview
+@using MS.Core.Models.Models
+@model PagedResultModel<PostDailyTrendViewModel>
+@{
+    string clientServiceName = ViewBag.ClientServiceName.ToString();
+}
+<div>
+    <table>
+        <tbody class="jqBody">
+            @foreach (var item in Model.ResultList)
+            {
+                <tr>
+                    <td>@item.DateText</td>
+                    <td>@item.TotalPostsInDisplayText</td>
+                    <td>@item.SquareDisplayedText</td>
+                    <td>@item.SquareUnderReviewText</td>
+                    <td>@item.SquareNotApprovedText</td>
+                    <td>@item.SquareUnlockedCountText</td>
+
+                    <td>@item.AgencyDisplayedText</td>
+                    <td>@item.AgencyUnderReviewText</td>
+                    <td>@item.AgencyNotApprovedText</td>
+                    <td>@item.AgencyUnlockedCountText</td>
+
+                    <td>@item.OfficialDisplayedText</td>
+                    <td>@item.OfficialUnderReviewText</td>
+                    <td>@item.OfficialNotApprovedText</td>
+                    <td>@item.OfficialReservedCountText</td>
+                    <td>@item.OfficialReserveCancelCountText</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="jqPagination">
+        @await Html.PartialAsync("Partial/_PaginationByPagerInfo", Model)
+    </div>
+</div>

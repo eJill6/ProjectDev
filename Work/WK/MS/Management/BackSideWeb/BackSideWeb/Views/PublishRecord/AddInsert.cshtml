@@ -1,0 +1,734 @@
+﻿@model AdminPostDetailInputModel
+
+@using BackSideWeb.Models.ViewModel.PublishRecord;
+@using JxBackendService.Common.Util;
+@using JxBackendService.Model.Enums;
+@using JxBackendService.Resource.Element;
+
+@{
+    var actType = (ActTypes)ViewBag.ActType;
+}
+
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        所属会员ID
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:30%">
+        <input type="text" asp-for="UserId" placeholder="请填入帖子所属会员ID" />
+
+    </div>
+</div>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        帖子区域
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:30%">
+        <select class="dropdown_toggle" name="PostType" id="selectPostType" asp-for="PostType" asp-items="Model.PostTypeListItem"></select>
+
+    </div>
+</div>
+
+<div class="detail_modal_row label_input selectMessageDiv">
+    <div class="detail_modal_col_left">
+        信息类型
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:30%">
+        <select class="dropdown_toggle" id="selectMessageId" asp-for="MessageId"><option value='0'>请选择</option></select>
+
+    </div>
+</div>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left ">
+        <input type="radio" style="-webkit-appearance: radio;width:10px;" name="isApplyAdjustPriceradio" value="1" class="isApplyAdjustPriceradio" id="DefaultPricingRadio" checked /> 预设解锁价格
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:30%">
+        <div style="margin-top: 9px;" id="txtDefaultPricing">-</div>
+        <input type="hidden" id="txtDefaultPricingRadio" name="txtDefaultPricing"
+               placeholder="预设解锁价格" value="" />
+    </div>
+</div>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        <input type="radio" style="-webkit-appearance: radio; width:10px;" name="isApplyAdjustPriceradio" value="2" class="isApplyAdjustPriceradio" id="UnlockAmountRadio" /> 会员申请调价
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:30%">
+        <select class="dropdown_toggle" id="selectUnlockAmount" name="selectUnlockAmount" asp-items="Model.ApplyAmountItem"></select> @*asp-items="Model.IsActiveListItem"*@
+        @*  <span asp-validation-for="ApplyAmount"></span>*@
+    </div>
+</div>
+<p style="color: red;
+    display: flex;
+    padding: 5px 172px;">※不使用预设金额时，请选择会员申请调价</p>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        帖子标题
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:30%">
+        <input type="text" asp-for="Title" placeholder="请输入帖子标题，上限20字" maxlength="20" />
+
+    </div>
+</div>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        所在地区
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:30%">
+        <select class="dropdown_toggle" asp-items="Model.ProvinceItem" id="selectProvince" style="width:50%;float: left;"></select>
+        <select class="dropdown_toggle" id="selectCity" style="width:50%;float: left;" asp-for="AreaCode"><option value="00">请选择</option></select>
+    </div>
+</div>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        数量
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:30%">
+        <input type="text" asp-for="Quantity" placeholder="例如:3-7人,上限10字" maxlength="10" />
+
+    </div>
+</div>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        年龄
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:30%">
+        <select class="dropdown_toggle" asp-for="Age" asp-items="Model.AgeItem"></select>
+
+    </div>
+</div>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        身高(CM)
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:30%">
+        <select class="dropdown_toggle" asp-for="Height" asp-items="Model.HeightItem"></select>
+
+    </div>
+</div>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        罩杯
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:30%">
+        <select class="dropdown_toggle" asp-for="Cup" asp-items="Model.CupItem"></select>
+
+    </div>
+</div>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        营业时间
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:40%">
+        <input type="text" asp-for="BusinessHours" placeholder="必填，例如：11点~24点，上限15字" maxlength="15" />
+
+    </div>
+</div>
+
+<div class="detail_modal_row ">
+    <div class="detail_modal_col_left">
+        服务项目
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:30%" id="serviceItemCheckbox">
+
+        @if (Model.ServiceItem != null && Model.ServiceItem.Count > 0)
+        {
+            @foreach (var item in Model.ServiceItem)
+            {
+                <span><input type="checkbox" value="@item.Key" name="serviceItemCheckbox" class="serviceItemCheckbox" style="-webkit-appearance: checkbox;" /> @item.Value</span>
+            }
+        }
+
+    </div>
+</div>
+
+<p style="color: red;
+    display: flex;
+    padding: 5px 172px;">※至少选择一项</p>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        服务价格最低
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:30%">
+        <input type="text" asp-for="LowPrice" placeholder="上限5位数" maxlength="5" oninput="validatePositiveIntegerInput(this)" />
+
+    </div>
+</div>
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        服务价格最高
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:30%">
+        <input type="text" asp-for="HighPrice" placeholder="上限5位数" maxlength="5" oninput="validatePositiveIntegerInput(this)" />
+
+    </div>
+</div>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        详细地址
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:30%">
+        <input type="text" asp-for="Address" placeholder="上限20字" maxlength="20" />
+
+    </div>
+</div>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left" style="font-weight: 600">
+        联系方式
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:30%">
+    </div>
+</div>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        微信号
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:30%">
+        <input type="text" placeholder="" maxlength="50" asp-for="WeChat" />
+
+    </div>
+</div>
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        QQ号
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:30%">
+        <input type="text" placeholder="" maxlength="50" asp-for="QQ" />
+
+    </div>
+</div>
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        手机号
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:30%">
+        <input type="text" placeholder="" maxlength="50" asp-for="Phone" oninput="validatePositiveIntegerInput(this)" />
+
+    </div>
+</div>
+<p style="color: red;
+    display: flex;
+    padding: 5px 172px;">※联系方式至少填入一项,上限50字</p>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        服务描述
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:30%">
+        @*<input type="number" asp-for="ServiceDescribe" placeholder="上限100字" maxlength="100" />*@
+        <textarea asp-for="ServiceDescribe" placeholder="上限100字" maxlength="100"></textarea>
+    </div>
+</div>
+
+<div class="detail_modal_row ">
+    <div class="detail_modal_col_left">
+        照片
+    </div>
+    <div class="detail_modal_col_right form_set imageContainer" style="width:80%" id="divPhoto">
+
+        <span id="imageSpan"></span>
+        <div class="plus-icon">
+            <input type="file" class="uploadInput" accept="image/*" />
+        </div>
+        <div class="plus-icon">
+            <input type="file" class="uploadInput" accept="image/*" />
+        </div>
+        <div class="plus-icon">
+            <input type="file" class="uploadInput" accept="image/*" />
+        </div>
+        <div class="plus-icon">
+            <input type="file" class="uploadInput" accept="image/*" />
+        </div>
+        <div class="plus-icon"><input type="file" class="uploadInput" accept="image/*" /></div>
+
+        <span id="plusSpan"></span>
+
+    </div>
+</div>
+<p style="color: red;
+    display: flex;
+    padding: 5px 172px;">※请至少上传一张照片</p>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        视频
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:80%" id="divVideo">
+        <!-- 隐藏的input用于触发文件选择 -->
+        <input type="file" class="videoInput" accept="video/mp4" id="fileInput" style="display: none;" />
+        <!-- 自定义上传图标 -->
+        <label for="fileInput" class="uploadIcon fa fa-cloud-upload" style="font-size:40px;width:40px;"><span style="font-size:20px;">上传</span>&nbsp;&nbsp;&nbsp;<span id="VideoName" style="font-size:15px;"></span></label>
+        <div id="loading" style="display: none;">正在上传...</div>
+
+    </div>
+</div>
+<p style="color: red;
+    display: flex;
+    padding: 5px 172px;">※档案格式：MP4，档案大小：50 MB 以下</p>
+
+@section CustomFooterButtons {
+    <div class="modal_btn_content fixed_width">
+        <a href="javascript:;" class="btn_default main_color jqCloseBtn">@CommonElement.Cancel</a>
+        <a href="javascript:;" class="btn_default brighter_color jqUploadAndSubmitBtn ">@CommonElement.Submit</a>
+    </div>
+}
+<input type="hidden" id="hiddenServiceItem" asp-for="ServiceIdStr" />
+<input type="hidden" id="hiddenPhotoIds" asp-for="PhotoIdsStr" />
+<input type="hidden" id="hiddenVideoIds" asp-for="VideoIdsStr" />
+<input type="hidden" id="hiddenApplyAmount" asp-for="ApplyAmount" />
+<input type="hidden" id="hiddenIsApply" asp-for="IsApply" />
+<script src="/js/layui/layui.js"></script>
+<link rel="stylesheet" href="/js/layui/css/layui.css">
+<script>
+
+    var fileInput = document.getElementById("fileInput");
+    var videoNameSpan = document.getElementById("VideoName");
+    fileInput.addEventListener("change", function () {
+        if (fileInput.files.length > 0) {
+            // 有一个文件被选择
+            var selectedFile = fileInput.files[0];
+            videoNameSpan.textContent = selectedFile.name;
+        } else {
+            // 没有文件被选择
+            videoNameSpan.textContent = "";
+        }
+    });
+
+    var url = "", ts = "", sign = "";
+    // 上传视频并提交数据
+    $(document).on('click', '.jqUploadAndSubmitBtn', async function () {
+        if (fileInput.files.length <= 0) {
+            $('#editSingleRowForm').submit()
+            return;
+        }
+
+        var file = fileInput.files[0];
+        if (!file.type.includes('video/mp4') || (file.size > 50 * 1024 * 1024)) {
+            alert("视频格式或档案大小不符");
+            return;
+        }
+        // 显示 loading
+        $("#loading").show();
+
+        // 创建一个 Promise 包装 GetUploadVideoUrl 请求
+        const getUrlPromise = new Promise((resolve, reject) => {
+            $.ajax({
+                url: "/PublishRecord/GetUploadVideoUrl",
+                type: "GET",
+                success: function (res) {
+                    if (res.isSuccess) {
+                        sign = res.datas.sign;
+                        ts = res.datas.ts;
+                        url = res.datas.url;
+                        // 请求成功，将 Promise 标记为已完成
+                        resolve();
+                    } else {
+                        reject(new Error("Failed to get upload URL"));
+                        alert("视频上传失败，请重新上传");
+                    }
+                },
+                error: function () {
+                    reject(new Error("Failed to get upload URL"));
+                    alert("视频上传失败，请重新上传");
+                }
+            });
+        });
+
+        // 等待 getUrlPromise 完成
+        await getUrlPromise;
+
+        const fileResponse = await uploadFile(file);
+        if (fileResponse.isSuccess) {
+            // 隐藏 loading
+            $("#loading").hide();
+
+            var hiddenVideoIdsValue = $("#hiddenVideoIds").val();
+            var thisIdValue = fileResponse.data.id;
+            if (hiddenVideoIdsValue.indexOf(thisIdValue) < 0) {
+                hiddenVideoIdsValue = hiddenVideoIdsValue + thisIdValue + ",";
+                $("#hiddenVideoIds").val(hiddenVideoIdsValue);
+            }
+
+            $("#VideoName").text(file.name);
+            $('#editSingleRowForm').submit()
+
+        } else {
+            // 隐藏 loading
+            $("#loading").hide();
+            videoNameSpan.textContent = "";
+            alert("上传失败，请重试");
+        }
+    });
+
+    const chunkSize = 1 * 1024 * 1024;
+    let chunkTotalCount = 0;
+
+    async function uploadFile(file) {
+        chunkTotalCount = Math.ceil(file.size / chunkSize);
+        console.log(`FileSize: ${file.size} bytes`, `共 ${chunkTotalCount} 個切片`);
+
+        let start = 0;
+        let chunkCounter = 0;
+
+        const chunkUploadPath = [];
+        while (start < file.size) {
+            const chunk = slice(file, start, chunkSize);
+            console.log(`ChunkSize: ${chunk.size} bytes, Start Upload`);
+            const response = await uploadChunk(chunk);
+            const jsonData = await response.json();
+            if (jsonData['data'] !== undefined && Array.isArray(jsonData['data']) && jsonData['data'].length > 0) {
+                chunkUploadPath.push(jsonData['data'][0])
+            } else {
+                throw 'UploadChunk Fail';
+            }
+            start += chunkSize;
+        }
+
+        const response = await notifyAllChunkUploaded(chunkUploadPath);
+        const jsonData = await response.json();
+        return jsonData;
+    }
+
+    async function uploadChunk(blobChunk) {
+        const md5Chunk = await genMD5Chunk(blobChunk);
+        const formData = new FormData();
+        formData.append(md5Chunk, blobChunk, md5Chunk);
+
+        try {
+            const response = await fetch(url, {
+                method: "POST",
+                body: formData,
+                headers: {
+                    'ts': ts,
+                    'sign': sign,
+                },
+            });
+            return response;
+        } catch (e) {
+            throw e;
+        }
+    }
+
+    async function notifyAllChunkUploaded(chunksPath) {
+        return new Promise(async (resolve, reject) => {
+            const formData = new FormData();
+            formData.set('paths', chunksPath);
+            try {
+                const response = await fetch('/PublishRecord/MergeUpload', {
+                    method: "POST",
+                    body: formData,
+                });
+                resolve(response);
+            } catch (e) {
+                reject(e);
+            }
+        });
+    }
+
+    function slice(blob, start, chunkSize) {
+        const chunkEnd = Math.min(start + chunkSize, blob.size);
+        return blob.slice(start, chunkEnd);
+    }
+
+    function genMD5Chunk(blobChunk) {
+        return new Promise((resolve, reject) => {
+            let reader = new FileReader()
+            reader.addEventListener("loadend", e => {
+                const md5Chunk = CryptoJS.MD5(CryptoJS.lib.WordArray.create(e.target.result)).toString()
+                resolve(md5Chunk);
+            })
+            reader.addEventListener("error", reject)
+            reader.readAsArrayBuffer(blobChunk)
+        })
+    }
+
+    function validatePositiveIntegerInput(inputElement) {
+        var inputValue = inputElement.value;
+        if (inputValue !== "" && (!/^\d+$/.test(inputValue) || parseInt(inputValue) <= 0)) {
+            inputElement.value = "";
+        }
+    }
+
+    $(function () {
+
+        $("#hiddenApplyAmount").val($("#txtDefaultPricingRadio").val());
+        //上传图片
+        $(document).on('change', '.uploadInput', function () {
+            var file = this.files[0];
+            var _this = this;
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+
+            console.log(file.size);
+            if (file.size > 5 * 1024 * 1024) {
+                // 文件大小超过5MB的处理逻辑
+                alert("上传的图片大小不能超过5MB");
+                return;
+            }
+
+
+            //var baseStr="";
+            reader.onload = function () {
+
+                $.ajax({
+                    url: "/PublishRecord/PhotoUpload",
+                    type: "POST",
+                    data: {
+                        photoBaseStr: reader.result
+                    },
+                    success: function (res) {
+
+                        if (res.isSuccess) {
+                            var hiddenPhotoIdsValue = $("#hiddenPhotoIds").val();
+                            var thisIdValue = res.data.id;
+                            if (hiddenPhotoIdsValue.indexOf(thisIdValue) < 0) {
+                                hiddenPhotoIdsValue = hiddenPhotoIdsValue + thisIdValue + ",";
+                                $("#hiddenPhotoIds").val(hiddenPhotoIdsValue);
+                            }
+                            $("#imageSpan").before('<div  class="photoDiv" id="' + res.data.id + '"> <img src=' + reader.result + ' layer-src=' + reader.result + ' layer-pid="" alt="layer" width="80px" height="80px" ><a class="delete_a" href="javascript:void(0);"><img src="/images/form/ic_image_delete_x.jpg"></a></div>');
+                            _this.parentElement.remove();
+                        } else {
+                            alert(res.message);
+                            return;
+                        }
+                    }
+                })
+            };
+        })
+
+        //删除图片
+        $(document).on('click', '.delete_a', function () {
+            this.parentElement.remove();
+            //console.log(this.parentElement)
+
+            var thisValue = $(this.parentElement).attr("id")
+
+            var hiddenPhotoIdsValue = $("#hiddenPhotoIds").val();
+            if (hiddenPhotoIdsValue.indexOf(thisValue) >= 0) {
+                hiddenPhotoIdsValue = hiddenPhotoIdsValue.replace(thisValue + ",", "");
+            }
+
+            $("#hiddenPhotoIds").val(hiddenPhotoIdsValue);
+            console.log($("#hiddenPhotoIds").val());
+            $("#plusSpan").before('<div class="plus-icon"><input type="file" class="uploadInput" accept="image/*" /></div>');
+        })
+
+        ///省级联动
+        $("#selectProvince").change(function () {
+            $.ajax({
+                url: "/PublishRecord/GetCityInfoData",
+                type: "GET",
+                data: {
+                    provinceId: $(this).val()
+                },
+                success: function (res) {
+                    if (res.isSuccess) {
+                        if (res.data != null && res.data != undefined && res.data.length > 0) {
+
+                            var optionHtml = "";
+                            res.data.forEach(function (element) {
+                                optionHtml += '<option value="' + element.code + '">' + element.name + '</option>';
+                            })
+                            $("#selectCity").html(optionHtml);
+                        }
+                    }
+                }
+            })
+        })
+
+        ///帖子分区/信息类型/调价信息
+        $("#selectPostType").change(function () {
+
+            $.ajax({
+                url: "/PublishRecord/GetPostTypeData",
+                type: "GET",
+                data: {
+                    postType: $(this).val()
+                },
+                success: function (res) {
+                    if (res.isSuccess) {
+                        if (res.datas != null && res.datas != undefined && res.datas.length > 0) {
+                            var optionHtml = "";
+                            var serviceItemHtml = "";
+                            var priceHtml = "";
+                            res.datas.forEach(function (element) {
+                                if (element.type == "MessageType") {
+                                    optionHtml += '<option value="' + element.key + '">' + element.value + '</option>';
+                                }
+                                else if (element.type == "Services") {
+                                    serviceItemHtml += '<span><input type="checkbox" value="' + element.key + '" name="serviceItemCheckbox" class="serviceItemCheckbox" style="-webkit-appearance: checkbox;" /> ' + element.value + '</span>';
+                                }
+                                else if (element.type == "Price") {
+                                    priceHtml += '<option value="' + element.key + '">' + element.value + '</option>';
+                                }
+                                else if (element.type == "UnlockAmount") {
+                                    $("#txtDefaultPricing").html(element.value);
+                                    $("#txtDefaultPricingRadio").val(element.value);
+                                }
+                            })
+                            $("#selectMessageId").html(optionHtml);
+                            $("#serviceItemCheckbox").html(serviceItemHtml);
+                            $("#selectUnlockAmount").html(priceHtml);
+
+                        }
+                    } else {
+                        $("#selectMessageId").html("<option value='0'>请选择</option>");
+                        $("#serviceItemCheckbox").html("");
+                    }
+                }
+            })
+
+            if ($(this).val() === "2") {
+                $(".selectMessageDiv").hide();
+            }
+            if ($(this).val() === "1") {
+                $(".selectMessageDiv").show();
+            }
+        })
+        ///服务项目选中事件
+        $(document).on('change', '.serviceItemCheckbox', function () {
+
+            var changeResult = $(this).prop("checked");
+            var thisValue = $(this).val();
+            if (changeResult) {
+                var hiddenServiceItem = $("#hiddenServiceItem").val();
+                if (hiddenServiceItem.indexOf(thisValue) < 0) {
+                    hiddenServiceItem = hiddenServiceItem + thisValue + ",";
+                }
+            } else {
+                var hiddenServiceItem = $("#hiddenServiceItem").val();
+                if (hiddenServiceItem.indexOf(thisValue) >= 0) {
+                    hiddenServiceItem = hiddenServiceItem.replace(thisValue + ",", "");
+                }
+            }
+            $("#hiddenServiceItem").val(hiddenServiceItem);
+            //console.log($("#hiddenServiceItem").val());
+        })
+
+        $(".isApplyAdjustPriceradio").change(function () {
+
+            var ApplyAdjusValue = $(".isApplyAdjustPriceradio:checked").attr("value");
+            if (ApplyAdjusValue == "1") {
+                $("#hiddenIsApply").val(false);
+                $("#hiddenApplyAmount").val($("#txtDefaultPricingRadio").val());
+            } else {
+                $("#hiddenIsApply").val(true);
+                if ($("#selectUnlockAmount").find("option:selected").text() == "请选择") {
+                    $("#hiddenApplyAmount").val(0);
+                } else {
+                    $("#hiddenApplyAmount").val($("#selectUnlockAmount").find("option:selected").text());
+                }
+            }
+            //console.log("解锁价格："+$("#hiddenApplyAmount").val());
+        })
+
+        $("#selectUnlockAmount").change(function () {
+            var isApplyAdjustPriceradioValue = $(".isApplyAdjustPriceradio:checked").attr("value");
+            if (isApplyAdjustPriceradioValue == "2") {
+                $("#hiddenApplyAmount").val($("#selectUnlockAmount").find("option:selected").text());
+            }
+            //console.log("解锁价格：" + $("#hiddenApplyAmount").val());
+        })
+
+        $("#txtDefaultPricingRadio").change(function () {
+            $("#hiddenApplyAmount").val($("#txtDefaultPricingRadio").val());
+        })
+
+
+        var layer = layui.layer;
+        // 图片层
+        layer.photos({
+            photos: '#divPhoto'
+        });
+    })
+
+</script>
+<style>
+    .detail_modal_col_left {
+        text-align: left;
+    }
+
+    .photoDiv {
+        width: 80px;
+        float: left;
+    }
+
+    .imageContainer img {
+        float: left;
+    }
+
+    .delete_a {
+        position: absolute;
+        cursor: pointer;
+        display: block;
+        margin-left: 62px;
+    }
+
+    .spanDelete {
+        background: #000 url('/images/form/ic_image_delete.jpg') no-repeat;
+        height: 48px;
+        width: 48px;
+        position: relative;
+        display: inline-block;
+        margin-left: 15px;
+    }
+
+    .uploadInput {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 0;
+        height: 72.22px;
+    }
+
+    .label_input {
+        margin-bottom: 2px;
+    }
+
+    .plus-icon {
+        width: 72.22px;
+        height: 72.22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(121, 121, 121, 1);
+        font-size: 75px;
+        border-radius: 13.18px;
+        border: 2.16px solid rgba(121, 121, 121, 1);
+        box-sizing: border-box;
+        position: relative;
+        margin-bottom: 11.1px;
+        float: left;
+        margin-left: 15px;
+        margin-top: 14px;
+    }
+
+        .plus-icon::before {
+            content: '';
+            position: absolute;
+            width: 31.25px;
+            border-top: 4.16px solid;
+        }
+
+        .plus-icon::after {
+            content: '';
+            position: absolute;
+            height: 31.25px;
+            border-left: 4.16px solid;
+        }
+</style>

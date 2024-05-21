@@ -1,0 +1,64 @@
+﻿@using JxBackendService.Common.Extensions
+@model DropdownMenuSetting
+@{
+    var callback = Html.Raw(string.IsNullOrEmpty(Model.Callback) ? "undefined" : Model.Callback);
+    SelectListItem? selectedItem = Model.SelectedItem;
+
+    if (selectedItem == null)
+    {
+        selectedItem = Model.Items?.FirstOrDefault();
+    }
+}
+
+<div class="dropdown_object">
+    <button id="@Model.SettingId"
+            class="dropdown_toggle"
+            type="button"
+            onclick="dropdownMenuToggle(this);"
+            data-value="@selectedItem?.Value">
+        <span class="jqDropdownToggleSpan">@Html.Raw(selectedItem?.Text)</span>
+        <input type="text" name="@Model.SettingId" value="@selectedItem?.Value" style="width:0px; height:0px; border:0px" />
+    </button>
+    <div class="dropdown_menu jqDropDownMenu jqFilter">
+        @if (Model.Items.AnyAndNotNull())
+        {
+            foreach (SelectListItem item in Model.Items)
+            {
+                <a href="javascript:;" class="dropdown_item jqDrowDownMenuItem"
+                    data_value="@Html.Raw(item.Value)"
+                    onclick="@Html.Raw(string.Format("$.dropdownMenuSelectedEvent(this, '{0}','{1}',{2})", item.Text, item.Value, callback))">
+                    @Html.Raw(item.Text)
+                </a>
+            }
+        }
+    </div>
+    <span class="field-validation-valid" data-valmsg-for="@Model.SettingId" data-valmsg-replace="true"></span>
+
+    <script>
+        function dropdownMenuToggle(currentTarget) {
+            let $currentTarget = $(currentTarget);
+
+            if ($currentTarget.length == 0){
+                return;
+            }
+
+            var $currentMenu = $currentTarget.parent().find("button.dropdown_toggle").next('.dropdown_menu');
+            var isVisible = $currentMenu.is(":visible");
+            $(".dropdown_menu").hide();
+            $currentMenu.toggle(!isVisible);
+        }
+
+        function hideAllDropdownMenu(event) {
+            var $target = $(event.target);
+            
+            if (!$target.hasClass("dropdown_menu") && 
+                !$target.hasClass("dropdown_toggle") &&
+                !$target.hasClass("jqDropdownToggleSpan")) {
+                $(".dropdown_menu").hide();
+            }
+        }
+
+        $(document).off("click", hideAllDropdownMenu);
+        $(document).click(hideAllDropdownMenu);
+    </script>
+</div>

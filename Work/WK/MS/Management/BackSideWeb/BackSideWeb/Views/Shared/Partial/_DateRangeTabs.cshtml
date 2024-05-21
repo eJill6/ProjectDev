@@ -1,0 +1,37 @@
+﻿@using BackSideWeb.Models
+@{
+
+    string tabName = "jqDateRangeTab";//default name
+
+    var rangeMap = new Dictionary<string, DateRange>();
+
+    rangeMap.Add("今日", new DateRange()
+            {
+                StartDate = DateTime.Today,
+                EndDate = DateTime.Today
+            });
+
+    rangeMap.Add("昨日", new DateRange()
+            {
+                StartDate = DateTime.Today.AddDays(-1),
+                EndDate = DateTime.Today.AddDays(-1)
+            });
+
+    rangeMap.Add("近一周", new DateRange()
+            {
+                StartDate = DateTime.Today.AddDays(-6),
+                EndDate = DateTime.Today
+            });
+}
+
+<div class="filter_tab @tabName">
+    @foreach (KeyValuePair<string, DateRange> keyValuePair in rangeMap)
+    {
+        string startDateText = keyValuePair.Value.StartDate?.ToString("yyyy-MM-dd");
+        string endDateText = keyValuePair.Value.EndDate?.ToString("yyyy-MM-dd");
+
+        <a href="javascript:;" data-startDate="@startDateText" data-endDate="@endDateText">@(Html.Raw(keyValuePair.Key))</a>
+    }
+</div>
+
+<script src="~/js/dateRangeTabService.min.js" asp-append-version="true"></script>

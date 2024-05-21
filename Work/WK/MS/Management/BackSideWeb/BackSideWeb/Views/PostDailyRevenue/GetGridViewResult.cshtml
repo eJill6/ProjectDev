@@ -1,0 +1,28 @@
+﻿@using BackSideWeb.Models.ViewModel.OperatingData;
+@using JxBackendService.Model.Paging
+@using JxBackendService.Model.ViewModel.Game
+@model PagedResultModel<PostDailyRevenueViewModel>
+
+<div>
+    <table>
+        <tbody class="jqBody">
+            @foreach (var item in Model.ResultList)
+            {
+                <tr>
+                    <td>@item.DateText</td>
+                    <td>@item.SquareUnlockRevenueText</td>
+                    <td>@item.AgencyUnlockRevenueText</td>
+                    <td>@item.OfficialPlatformRevenueText</td>
+                    <td>@item.TotalRevenueText</td>
+                    <td>@item.SquareRefundAmountText</td>
+                    <td>@item.AgencyRefundAmountText</td>
+                    <td>@item.OfficialRefundAmountText</td>
+                    <td>@item.TotalRefundText</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="jqPagination">
+        @await Html.PartialAsync("Partial/_PaginationByPagerInfo", Model)
+    </div>
+</div>

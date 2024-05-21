@@ -1,0 +1,49 @@
+﻿@using JxBackendService.Model.ViewModel.OperatingData
+@model PostOverviewViewMdel
+
+<div>
+    <table>
+        <tbody class="jqBody1">
+            <tr>
+                <td>@Model.TotalPostText</td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody class="jqBody2">
+            <tr>
+                <td>@Model.SquareDisplayedText</td>
+                <td>@Model.SquareUnderReviewText</td>
+                <td>@Model.SquareNotApprovedText</td>
+                <td>@Model.SquareUnlockedCountText</td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody class="jqBody3">
+            <tr>
+                <td>@Model.AgencyDisplayedText</td>
+                <td>@Model.AgencyUnderReviewText</td>
+                <td>@Model.AgencyNotApprovedText</td>
+                <td>@Model.AgencyUnlockedCountText</td>
+            </tr>
+        </tbody>
+    </table>
+        <table>
+        <tbody class="jqBody4">
+            <tr>
+                <td>@Model.OfficialDisplayedText</td>
+                <td>@Model.OfficialUnderReviewText</td>
+                <td>@Model.OfficialNotApprovedText</td>
+                <td>@Model.OfficialReservedCountText</td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody class="jqBody5">
+            <tr>
+                <td>@Model.OfficialReserveCancelCountText</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

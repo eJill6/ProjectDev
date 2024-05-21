@@ -1,0 +1,81 @@
+﻿@using BackSideWeb.Models.ViewModel;
+@using JxBackendService.Model.ViewModel.Setting;
+@using JxBackendService.Resource.Element;
+@using JxBackendService.Common.Util;
+@using System.Text;
+@model RefreshFrequencySettingViewModel
+@{
+	var timeIntervalHtml = new StringBuilder();
+}
+<style>
+	.styled-table {
+		border-collapse: collapse;
+		font-size: 1.2em;
+		font-family: sans-serif;
+	}
+	.styled-table td {
+		padding: 5px;
+	}
+</style>
+
+<script src="~/js/business/setting/refreshFrequencySettingEditService.min.js" asp-append-version="true"></script>
+<input type="hidden" asp-for="IntervalSeconds" />
+<div>
+	<h3>@CommonElement.TimeInterval</h3>
+	<table class="styled-table">
+		@for (int i = 0; i < Model.TimeIntervalInfos.Count(); i++)
+		{
+			TimeIntervalInfo item = Model.TimeIntervalInfos[i];
+
+			string isChecked = string.Empty;
+			string customizedHtml = string.Empty;
+			string customizedMinutes = string.Empty;
+
+			@if (item.IsChecked)
+			{
+				isChecked = "checked";
+			}
+
+			@if (item.IsCustomized)
+			{
+				@if (item.IsChecked && Model.IntervalSeconds > 0)
+				{
+					customizedMinutes = (Model.IntervalSeconds / 60).ToNonNullString();
+				}
+
+				customizedHtml = $@"<input type='text' id='{item.RefElementId}' name='{item.RefElementId}' class='edit_cell_in_grid'
+					value='{customizedMinutes}' maxlength='2' /> ";
+			}
+
+			timeIntervalHtml.AppendLine($@"
+				<td style='text-align: right; width: 12%'>
+					<input type='radio' value='{item.IntervalSeconds}' id='rdo_{i}' name='timeInterval' 
+						class='jqTimeIntervalRadio' refElementId='{item.RefElementId}' 
+						style='-webkit-appearance: radio;' {isChecked}>
+				</td>
+				<td style='text-align: left; width: 38%'>
+					<div>
+						{customizedHtml}
+						<label for='rdo_{i}'>{item.DisplayName}</label>
+					</div>
+				</td>");
+
+			@if (i % 2 == 1)
+			{
+				<tr>
+					@Html.Raw(timeIntervalHtml.ToString())
+				</tr>
+
+				timeIntervalHtml.Length = 0;
+			}
+		}
+	</table>
+</div>
+
+<script>
+	$(document).ready(function () {
+		let refreshService = window.editSingleRowService;
+		refreshService.initControlEvent("#IntervalSeconds", ".jqTimeIntervalRadio");
+		refreshService.initCustomizedTextBox('@Html.Raw(MessageElement.IsNotAllowEmpty)');
+	});
+</script>

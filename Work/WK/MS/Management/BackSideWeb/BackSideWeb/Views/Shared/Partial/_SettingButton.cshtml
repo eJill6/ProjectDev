@@ -1,0 +1,29 @@
+﻿@{
+    bool isRefreshFrequencySetting = (bool)ViewBag.IsRefreshFrequencySetting;
+}
+
+@if (isRefreshFrequencySetting)
+{
+    <a href="javascript:void(0)" class="jqRefreshFrequencySetting btn_setting btn_default setting_color icon_style" data-url="@Url.Action("RefreshFrequencySetting")">
+        <img alt="" src="~/images/grid/ic_setting.svg">
+    </a>
+
+    <script src="~/js/business/setting/refreshFrequencySettingSearchService.min.js" asp-append-version="true"></script>
+
+    <script>
+        window.services.refreshFrequencySettingSearchService = new refreshFrequencySettingSearchService('@Url.Action("GetRefreshFrequencySetting")');
+
+        $(".jqRefreshFrequencySetting").click(function(){
+            window.services.refreshFrequencySettingSearchService.openSetting(this);
+        });
+
+        $(document).ready(function(){
+            async function loadRefreshSearchResultSetting() {
+                let refreshIntervalSeconds = await window.services.refreshFrequencySettingSearchService.getRefreshIntervalSeconds();
+                window.services.searchGridService.refreshSearchResult(refreshIntervalSeconds);
+            }
+
+            loadRefreshSearchResultSetting();            
+        });
+    </script>
+}

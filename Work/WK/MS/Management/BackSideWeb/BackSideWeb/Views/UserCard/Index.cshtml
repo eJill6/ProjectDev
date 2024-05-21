@@ -1,0 +1,109 @@
+﻿@using BackSideWeb.Models.ViewModel
+@model UserCardViewModel
+@{
+	ViewData["Title"] = "会员卡消费记录";
+	var startDatedefault = DateTime.Now.ToString("yyyy-MM-dd");
+	var endDatedefault = DateTime.Now.ToString("yyyy-MM-dd");
+}
+
+<div class="bg spacing gap system_filter" id="jqMemberFilter">
+	<br />
+	<div class="col">
+		<div class="item">
+			<div class="label_input column_layout">
+				<label for="">
+					<p>订单号</p>
+				</label>
+				<div class="form_set">
+					<input class="jqFilter" type="text" name="" id="jqId" placeholder="" maxlength="20">
+				</div>
+			</div>
+		</div>
+		<div class="item">
+			<div class="btns">
+				<a href="javascript:;" class="btn_default main_color jqSearchBtn">查询</a>
+				<a href="javascript:;" class="btn_default main_color_line jqResetBtn">清空</a>
+			</div>
+		</div>
+	</div>
+	<div class="col">
+		<div class="item">
+			<div class="label_input column_layout">
+				<label for="">
+					<p>购买会员ID</p>
+				</label>
+				<div class="form_set">
+					<input class="jqFilter" type="text" name="" id="jqUserId" placeholder="" value="" maxlength="20">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col">
+		<div class="item jqAdvanceFilter">
+			<div class="col_p_1">
+				<div class="label_input column_layout">
+					<label for="" class="m_hide">
+						<p>购买时间</p>
+					</label>
+					<div class="form_set datepicker_text">
+						@Html.TextBox("jqStartDate", startDatedefault, new { id = "jqStartDate", @class = "width_set jqFilter" })
+						<span>至</span>
+						@Html.TextBox("jqEndDate", endDatedefault, new { id = "jqEndDate", @class = "width_set jqFilter" })
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col">
+		<div class="item jqAdvanceFilter">
+			<div class="label_input column_layout">
+				<label for="">
+					<p>会员卡</p>
+				</label>
+				@await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting
+				{
+					SettingId = "jqVipIdSelectList",
+					Items = Model.CardTypeItems,
+				})
+			</div>
+		</div>
+	</div>
+	<div class="col">
+		<div class="item jqAdvanceFilter">
+			<div class="label_input column_layout">
+				<label for="">
+					<p>消费单位</p>
+				</label>
+				@await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting
+				{
+					SettingId = "jqPayTypeSelectList",
+					Items = Model.PayTypeItems,
+				})
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="jqContentRoot" style="display:none">
+	<div class="bg gap">
+		<div class="member_center_report agent_report table_overflow_x">
+			<table>
+				<thead>
+					<tr>
+						<th>订单号</th>
+						<th>购买会员ID</th>
+						<th>会员卡</th>
+						<th>消费金额</th>
+						<th>消费单位</th>
+						<th>购买时间</th>
+					</tr>
+				</thead>
+				<tbody id="jqGridContent">
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="footer_function_content space_between">
+		<div class="jqPagination pagination"></div>
+	</div>
+</div>

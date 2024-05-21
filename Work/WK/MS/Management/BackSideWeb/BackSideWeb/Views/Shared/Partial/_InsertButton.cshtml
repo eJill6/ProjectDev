@@ -1,0 +1,13 @@
+﻿@using JxBackendService.Model.BackSideWeb;
+@using JxBackendService.Common.Util;
+@{
+    var pageApiUrlSetting = ViewBag.PageApiUrlSetting as PageApiUrlSetting;
+}
+@if (pageApiUrlSetting != null && !pageApiUrlSetting.InsertViewUrl.IsNullOrEmpty())
+{
+    <a href="javascript:void(0)" class="btn_insert btn_default main_color icon_style"   
+        onclick="window.services.searchGridService.openInsertView()">
+        <img alt="" src="~/images/grid/ic_add.svg">
+        <span>新增</span>
+    </a>
+}

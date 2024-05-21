@@ -1,0 +1,47 @@
+﻿@using JxBackendService.Model.Paging
+@using JxBackendService.Model.ViewModel.Game
+@using BackSideWeb.Model.ViewModel.MM
+@model PagedResultModel<QueryOptionsModel>
+@{
+    string clientServiceName = ViewBag.ClientServiceName.ToString();
+}
+<div>
+    <table>
+        <tbody class="jqBody">
+            @foreach (var item in Model.ResultList)
+            {
+                <tr>
+                    <td>@item.PostTypeText</td>
+                    <td>@item.OptionTypeText</td>
+                    <td class="jqHoverData" title=@item.OptionContent>
+                        @{
+                            string text = @item.OptionContent;
+                            if (text.Length > 10)
+                            {
+                                text = text.Substring(0, 10) + "...";
+                            }
+                        }
+                        @text
+                    </td>
+                    <td>@item.CreateDateText</td>
+                    <td>@item.ModifyDateText</td>
+                    <td>@item.CreateUser</td>
+                    <td>@item.IsActiveText</td>
+                    <td>
+                        <div class="flex_content">
+                            <a href="javascript:void(0)" class="fa fa-edit" style="font-size: 20px; color:black;"
+                           onclick="@string.Format("{0}.openUpdateView('{1}')", clientServiceName, item.KeyContent)">
+                            </a>
+                            <a href="javascript:void(0)" class="fa fa-trash" style="font-size: 20px; color:black;"
+                           onclick="@string.Format("{0}.delete('{1}')", clientServiceName, item.KeyContent)">
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="jqPagination">
+        @await Html.PartialAsync("Partial/_PaginationByPagerInfo", Model)
+    </div>
+</div>

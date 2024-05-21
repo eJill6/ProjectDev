@@ -1,0 +1,64 @@
+﻿@using JxBackendService.Model.Paging
+@using BackSideWeb.Model.ViewModel.MM
+@model PagedResultModel<QueryPostWeightModel>
+@{
+    string clientServiceName = ViewBag.ClientServiceName.ToString();
+}
+<div>
+    <table>
+        <tbody class="jqBody">
+            @foreach (var item in Model.ResultList)
+            {
+                <tr>
+                    <td><input type="checkbox" id="select_@item.PostId" name="selectPostId" value="@item.PostId" style="-webkit-appearance: radio;" /></td>
+                    <td class="hrefcss">
+                        <a href="/PublishRecord/Index?postid=@(item.PostId)" target="_blank">
+                            @item.PostId
+                        </a>
+                    </td>
+                    <td>@item.Weight</td>
+                    @if (@item.Status == 0 || @item.Status == 2)
+                    {
+                        <td style="color:red">@item.StatusText</td>
+                    }
+                    else
+                    {
+                        <td>@item.StatusText</td>
+                    }
+                    <td>@item.CreateTimeText</td>
+                    <td>@item.Operator</td>
+                    <td>
+                        <div class="flex_content">
+                            <a href="javascript:void(0)" class="fa fa-edit" style="font-size: 20px; color:black;"
+                           onclick="@string.Format("{0}.openUpdateView('{1}')", clientServiceName, item.KeyContent)">
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="jqPagination">
+        @await Html.PartialAsync("Partial/_PaginationByPagerInfo", Model)
+    </div>
+</div>
+
+<script type="text/javascript">
+
+   $(function(){
+        // 获取全选按钮和其他复选框元素
+        var selectAllCheckbox = document.getElementById("selectAll");
+        var checkboxes = document.getElementsByClassName("selectPostId");
+
+        // 绑定全选按钮的点击事件
+        selectAllCheckbox.addEventListener("click", function () {
+            // 获取全选按钮的选中状态
+            var isChecked = selectAllCheckbox.checked;
+
+            // 设置其他复选框的选中状态与全选按钮一致
+            for (var i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].checked = isChecked;
+            }
+        });
+   })
+</script>

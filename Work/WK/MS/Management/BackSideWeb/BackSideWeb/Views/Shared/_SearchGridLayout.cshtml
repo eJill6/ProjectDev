@@ -1,0 +1,16 @@
+﻿@{
+    Layout = BackSideWeb.Models.Enums.LayoutType.Default.Value;
+}
+
+<div class="FilterForm_title">
+    <h1 class="display-4">@ViewBag.Title</h1>
+    <div class="btn_list">
+        @await Html.PartialAsync("Partial/_InsertButton")
+        @await Html.PartialAsync("Partial/_ExportButton")
+        @await Html.PartialAsync("Partial/_SettingButton")
+
+        @await RenderSectionAsync("HeaderButtons", required: false)
+    </div>
+</div>
+@RenderBody()
+<partial name="Partial/_SearchGrid.cshtml" />

@@ -1,0 +1,38 @@
+@using JxBackendService.Resource.Element
+@using BackSideWeb.Models.Enums
+@{
+    Layout = LayoutType.Popup.Value;
+    string clientPopupWindowServiceName = ViewBag.ClientPopupWindowServiceName as string;
+    string pageTitle = ViewBag.Title as string;
+}
+
+@RenderBody()
+
+@section FooterButtons
+{
+    @if (IsSectionDefined("CustomFooterButtons"))
+    {
+        await RenderSectionAsync("CustomFooterButtons");
+    }
+    else
+    {
+        <div class="modal_btn_content fixed_width">
+            <a href="javascript:;" class="btn_default main_color jqCloseBtn">@CommonElement.CloseDown</a>
+        </div>
+    }
+
+    <script>
+        let param = {
+            pageTitle: '@Html.Raw(pageTitle)',
+            jqCloseBtnSelector: '.jqCloseBtn',
+        };
+
+        @Html.Raw(String.Format("window.readSingleRowService = new {0}(param);", clientPopupWindowServiceName))
+        window.readSingleRowService.Init();
+    </script>
+}
+
+@section PopupScripts
+{
+    <script src="~/js/base/crud/readSingleRowService.min.js" asp-append-version="true"></script>
+}

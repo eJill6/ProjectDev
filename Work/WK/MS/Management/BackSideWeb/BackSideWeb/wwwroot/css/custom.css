@@ -1,0 +1,277 @@
+/*以下為RD自加的部分，請勿亂刪*/
+.pagination_info {
+    margin-left: 20px
+}
+
+a.delete_btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+a.text_btn {
+    min-width: 60px;
+    line-height: 27px;
+    height: inherit;
+    border-radius: 50px;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+    a.text_btn:last-child {
+        margin-right: 0;
+    }
+
+/********************************* 頁簽 選單 *********************************/
+.pageTab {
+    display: flex;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom: 2px solid #dc8f00;
+    margin-bottom: 20px;
+}
+
+    .pageTab ul {
+        flex: 1;
+        position: relative;
+        z-index: 1;
+    }
+
+    .pageTab.max_width_limited ul {
+        flex: inherit;
+        width: 16.666666%;
+    }
+
+    .pageTab ul > a {
+        width: 100%;
+        text-align: center;
+        line-height: 38px;
+        height: 38px;
+        color: #333;
+        font-size: 14px;
+        display: block;
+        background: #F7F7F7;
+        border-top: 1px solid #E0E0E0;
+        border-right: 1px solid #E0E0E0;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        position: relative;
+    }
+
+    .pageTab ul:hover > a {
+        background: #FFF;
+        color: #333;
+    }
+
+    .pageTab ul a.active {
+        background: #dc8f00;
+        color: #FFF;
+        border-top: 1px solid #dc8f00;
+        border-right: 1px solid #dc8f00;
+        border-left: 1px solid #dc8f00;
+    }
+
+.radiobutton_in_grid {
+    display: block;
+}
+
+    .radiobutton_in_grid input {
+        appearance: auto;
+        margin-left: 20px;
+    }
+
+        .radiobutton_in_grid input:first-child {
+            margin-left: 0px;
+        }
+
+        .radiobutton_in_grid input[type='radio']:after {
+            width: 15px;
+            height: 15px;
+            border-radius: 15px;
+            top: -2px;
+            left: -1px;
+            position: relative;
+            background-color: #FFF;
+            content: '';
+            display: inline-block;
+            visibility: visible;
+            border: 1px solid #333;
+        }
+
+        .radiobutton_in_grid input[type='radio']:checked:after {
+            width: 15px;
+            height: 15px;
+            border-radius: 15px;
+            top: -2px;
+            left: -1px;
+            position: relative;
+            background-color: NONE;
+            content: '';
+            display: inline-block;
+            visibility: visible;
+            border: 5px solid #dc8f00;
+        }
+
+.edit_cell_in_grid {
+    width: 35%;
+    height: 100%;
+    background: #F7F7F7;
+    text-align: center;
+}
+
+.cell_edited {
+    background: #fff9f1;
+}
+
+.jqBtn_submit.btn_default.main_color.icon_style {
+    position: absolute;
+    padding: 0px 15px;
+    right: 40px;
+}
+
+.FilterForm_title {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    align-items: center;
+}
+
+.btn_list {
+    display: flex;
+}
+
+.system_content .system_main .btn_insert {
+    z-index: 0;
+    margin-left: 8px;
+    padding: 0 15px;
+}
+
+.system_content .system_main .btn_setting {
+    z-index: 0;
+    margin-left: 8px;
+    padding: 0 10px;
+}
+
+.dropdown_object {
+    width: 100%;
+    position: relative;
+}
+
+.system_content .system_main .system_filter .col {
+    width: 20%;
+}
+
+.detail_modal_row {
+    display: flex;
+    padding: 5px 0px;
+}
+
+.detail_modal_col_left {
+    width: 22%;
+    text-align: right;
+    padding: 0px 5px;
+}
+
+.detail_modal_col_right {
+    padding: 0px 5px;
+}
+
+.datepicker_text {
+    display: flex;
+}
+
+.lobbyMenuTypeDiv {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.lobbyMenuText {
+    color: #333;
+    font-size: 15px;
+}
+
+.lobbyMenuIcon {
+    color: #999;
+    margin-right: 20px;
+}
+
+table thead tr th {
+    font-weight: bold
+}
+
+.image_in_grid img {
+    display: block;
+    margin: 0 auto;
+}
+
+.hot_game_image img {
+    width: 115px;
+    height: 115px;
+}
+
+.slot_game_image img {
+    width: 170px;
+    height: 109px;
+}
+
+.choose_file_button {
+    height: 38px !important;
+    width: 110px;
+    margin-inline: 10px 0px;
+    cursor: pointer;
+}
+
+    .choose_file_button p {
+        padding-right: 10px;
+        color: #FFF !important;
+    }
+
+.form_file_field {
+    display: flex;
+}
+
+.fa {
+    margin: 0px 10px;
+    color: #999;
+}
+
+label .fa {
+    color: #FFF;
+}
+
+.label_input .label_with_tips {
+    justify-content: left;
+}
+
+.question-icon {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.hide_out_screen {
+    position: absolute;
+    left: -10000px;
+    top: -10000px;
+}
+
+.tips_in_header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.modal_btn_content.fixed_width.modal_btn_without_border {
+    border-top: 0px;
+}
+
+.tips_in_header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}

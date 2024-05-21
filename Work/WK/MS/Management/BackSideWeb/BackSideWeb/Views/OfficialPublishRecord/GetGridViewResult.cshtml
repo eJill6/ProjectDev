@@ -1,0 +1,138 @@
+﻿@using BackSideWeb.Models.ViewModel.PublishRecord;
+@using JxBackendService.Model.Paging
+@using JxBackendService.Model.ViewModel.Game
+@using MS.Core.MMModel.Models.AdminPost;
+@model PagedResultModel<AdminOfficialPostList>
+@{
+    string clientServiceName = ViewBag.ClientServiceName.ToString();
+}
+<div>
+    <table>
+        <tbody class="jqBody">
+            @foreach (var item in Model.ResultList)
+            {
+                <tr>
+                    <td>@item.PostId</td>
+                    <td>@item.Title</td>
+                    <td class="hrefcss">
+                        <a href="/User/Detail?keyContent=@(item.UserId)" target="_blank">
+                            @item.UserId
+                        </a>
+                    </td>
+                    <td>@item.UserIdentityText</td>
+                    <td>@item.CreateTimeText</td>
+                    <td>@item.UpdateTimeText</td>
+                    <td>@item.ExamineTimeText</td>
+                    <td>
+                        <div class="flex_content">
+
+                            @if (item.IsDelete.HasValue && item.IsDelete.Value)
+                            {
+
+                                <a href="javascript:void(0)"
+                                   data-url="@Url.Action("ModifyDeleteStatus")"
+                                   data-postid="@item.PostId"
+                                   data-userid="@item.UserId"
+                                   data-isdelete="0"
+                                   onclick="window.services.searchGridService.ModifyDeleteStatus(this);"
+                                   style="color:red;" >
+                                    下架中
+                                </a>
+                            }
+                            else
+                            {
+                                <a href="javascript:void(0)"
+                                   data-url="@Url.Action("ModifyDeleteStatus")"
+                                   data-postid="@item.PostId"
+                                   data-userid="@item.UserId"
+                                   data-isdelete="1"
+                                   onclick="window.services.searchGridService.ModifyDeleteStatus(this);"
+                                   style="color:blue">
+                                    上架中
+                                </a>
+
+                            }
+
+                        </div>
+                    </td>
+                    <td>@item.StatusText</td>
+                    <td>
+                        <div class="flex_content">
+                            <a href="javascript:void(0)" data-url='@Url.Action("Detail", "OfficialPublishRecord")'
+                                onclick="@string.Format("{0}.openOfficialPostDetail(this, '{1}')", clientServiceName, item.PostId)">
+                                检视
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="flex_content" style="font-size: 24px;">
+
+                            @if (item.LockStatus)
+                            {
+
+                                <a href="javascript:void(0)"
+                                   class="fa fa-lock "
+                                   data-url="@Url.Action("EditLock")"
+                                   data-postid="@item.PostId"
+                                   data-status="false"
+                                   onclick="window.services.searchGridService.EditLock(this);">
+                                </a>
+                          
+                            }
+                            else
+                            {
+                                <a href="javascript:void(0)"
+                                   class="fa fa-unlock"
+                                   data-url="@Url.Action("EditLock")"
+                                   data-postid="@item.PostId"
+                                   data-status="true"
+                                   onclick="window.services.searchGridService.EditLock(this);">
+                                </a>
+                          
+                          
+                            }
+
+                        </div>
+
+                    </td>
+                    <td>
+
+                        <div class="flex_content">
+                            @if (item.LockStatus)
+                        {
+                                <a href="javascript:void(0)" class="btn_default main_color icon_style text_btn disabled" style="background-color:#d7d7d7" onclick="return false;">
+                                    编辑
+                                </a>
+
+                        }
+                        else
+                        {
+
+                                <a href="javascript:void(0)" data-url='@Url.Action("OfficialPostEdit", "OfficialPublishRecord")' class="btn_default main_color icon_style text_btn"
+                                   onclick="@string.Format("{0}.openOfficialPostEdit(this, '{1}')", clientServiceName, item.PostId)">
+                                    编辑
+                                </a>
+                          
+                        }
+                        </div>
+                    </td>
+                    <td>
+                        <div class="flex_content">
+
+                            @if ((bool)ViewBag.HasEditPermission)
+                            {
+                                <a href="javascript:void(0)" class="fa fa-edit" data-url='@Url.Action("UpdateView", "OfficialPublishRecord")'
+                                   onclick="@string.Format("{0}.openUpdateView2(this, '{1}')", clientServiceName, item.PostId)" style="font-size: 24px;">
+                                </a>
+                            }
+
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="jqPagination">
+        @await Html.PartialAsync("Partial/_PaginationByPagerInfo", Model)
+    </div>
+</div>

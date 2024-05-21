@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@Html.Raw(ViewData["Title"]) - BackSideWeb</title>
+    <link rel="stylesheet" href="~/css/header.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/reset.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/agent.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/element.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/table.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/custom.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/modal.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/public.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/banner.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/toastr/toastr.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <partial name="_GlobalVariables" />
+    <partial name="Partial/_JavaScripts" />
+    <partial name="Partial/_Loading" />
+    @await RenderSectionAsync("Scripts", required: false)
+</head>
+
+<body style="background: #F5F6FA;margin: 0px">
+    <div class="container_full_browser">
+        @if (IsSectionDefined("Header"))
+        {
+            await RenderSectionAsync("Header");
+        }
+        @RenderBody()        
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+﻿@using JxBackendService.Model.BackSideWeb
+@using JxBackendService.Common.Util
+@using JxBackendService.Resource.Element
+@model ImageFileUploadSetting
+
+<div class="form_file_field">
+    <input id="jqFullImageUrl" value="@Model.ImageFileUploadModel.AesFullImageUrl" readonly />
+    <label class="btn_default main_color icon_style choose_file_button">
+        <input type="file" asp-for="ImageFileUploadModel.ImageFile" name="ImageFile" id="jqImageFile" class="hide_out_screen" />
+        <i class="fa fa-photo"></i>
+        <p>选择档案</p>
+    </label>
+</div>
+<span asp-validation-for="ImageFileUploadModel.ImageFile" data-valmsg-for="ImageFile"></span>
+<div class="hide_out_screen">
+    <img id="jqHiddenGameImage" aes-src="@Model.ImageFileUploadModel.AesFullImageUrl" />
+</div>
+
+@{
+    IEnumerable<object> dimensionLimits = Model.DimensionLimits.Select(d => new { width = d.Width, height = d.Height });
+    string dimensionLimitJson = dimensionLimits.ToJsonString();
+    string displayImageDimensionsMessage = Model.CustomizedDimensionLimitsMessage;
+
+    if (displayImageDimensionsMessage.IsNullOrEmpty())
+    {
+        string dimensionMessageFormat = string.Join("；", Model.DimensionLimits.Select(d => $"{d.Width} × {d.Height} px"));
+        displayImageDimensionsMessage = string.Format(MessageElement.FileLimitedByArea, Model.FieldName, dimensionMessageFormat);
+    }
+
+    string allowedExtensionsJson = Model.AllowedExtensions.ToJsonString();
+    string allowedExtensionsMessageFormat = string.Join("、", Model.AllowedExtensions.Select(s => s.ToUpper()));
+}
+
+<script src="~/js/utils/imageFileUploadService.min.js" asp-append-version="true"></script>
+<script>
+    $(document).ready(function () {
+        new imageFileUploadService(
+            {
+                imageRequired: {},
+                imageExtensions: @Html.Raw(allowedExtensionsJson),
+                imageSize: {
+                    size: @Model.SizeLimit,
+                },
+                imageDimensions: @Html.Raw(dimensionLimitJson),
+                messages: {
+                    imageDimensions: "@Html.Raw(displayImageDimensionsMessage)",
+                    imageSize: "@Html.Raw(string.Format(MessageElement.FileLimitedBySize, Model.FieldName, Model.SizeLimitKB))",
+                    imageExtensions: "@Html.Raw(string.Format(MessageElement.FileLimitedByExtension, Model.FieldName, allowedExtensionsMessageFormat))",
+                    imageRequired: "@Html.Raw(string.Format(MessageElement.FieldIsNotAllowEmpty, Model.FieldName))",
+                }
+            });
+    });
+
+    var aesService = new decryptoService();
+    aesService.fetchAllAESImage();
+</script>

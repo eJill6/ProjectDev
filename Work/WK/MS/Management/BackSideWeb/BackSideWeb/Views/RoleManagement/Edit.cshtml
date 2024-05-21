@@ -1,0 +1,139 @@
+﻿@model EditRolePermission
+@using JxBackendService.Model.Enums.BackSideWeb.Permission;
+@using JxBackendService.Model.ViewModel;
+@using JxBackendService.Resource.Element;
+@using JxBackendService.Common.Util;
+@{
+
+}
+<script src="~/js/business/systemSetting/bwRoleEditPermissionService.min.js" asp-append-version="true"></script>
+<input type="hidden" asp-for="RoleID" />
+
+<div class="col_p_1 ms_bottom_pd">
+    <div class="label_input light ms_column_layout">
+        <label for="">
+            <p>@DisplayElement.RoleName</p>
+        </label>
+        <div class="ms_form_set">
+            <input class="width_set w002" asp-for="RoleName" autocomplete="off" MaxLength="50" />
+            <span asp-validation-for="RoleName"></span>	
+        </div>            
+    </div>
+</div>
+<div class="role_table">
+    @if(Model.RoleID != 0)
+	{
+        <div class="report_table auto_min_height">
+            <div class="label_input checkbox" style="justify-content: flex-end;">
+                <label>
+                    <input type='checkbox' id="jqAllPermission" onchange="window.editSingleRowService.toggleAllPermissionCheckbox(this);">
+                    <span class="icon">
+                        <i>
+                            <img src="~/images/element/ic_checkbox.svg" alt="">
+                        </i>
+                    </span>
+                    全选
+                </label>
+            </div>
+		    <table>
+                <thead>
+                    <tr>
+                        <th>@DisplayElement.Permission</th>
+				        @foreach (var item in AuthorityTypeDetail.GetAll())
+                        {
+                            <th>@item.Name</th>
+                        }
+                    </tr>
+                </thead>
+                <tbody id="jqEditPermission">
+                    @if (Model.UserRolePermissonInfos.Any())
+                    {
+                        @foreach (PermissionInfo permissionInfo in Model.UserRolePermissonInfos)
+                        {
+                            @*Node*@
+                            @if (permissionInfo.PermissionKey == null)
+                            {
+                                <tr class="dropdown_title_color" onclick="toggleMenu(this, '@permissionInfo.MenuType.Value');">
+                                    <td>
+                                        <div class="ms_dropdown_title">
+                                            <img class="jqImgVisible" data-expand='true' src="~/images/form/ic_popup_dropdown_down.svg" alt="">
+                                            <img class="jqImgVisible" data-expand='false' src="~/images/form/ic_popup_dropdown_right.svg" alt="" style='display:none'>
+                                            <div>@(permissionInfo.MenuType.Name)</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox" style="position:relative;right:60px">
+                                            <label>
+                                                <input class="jqPermissionTypeCheckbox" type='checkbox' data-menuType="@permissionInfo.MenuType.Value"
+                                                    onchange="window.editSingleRowService.togglePermissionTypeCheckbox(this, '@permissionInfo.MenuType.Value');">
+                                                <span class="icon">
+                                                    <i>
+                                                        <img src="~/images/element/ic_checkbox.svg" alt="">
+                                                    </i>
+                                                </span>
+                                                全选
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td colspan="@(AuthorityTypeDetail.GetAll().Count - 1)"></td>
+                                </tr>
+                                continue;
+                            }
+
+                            @*Leaf*@
+                            <tr menu='@permissionInfo.MenuType.Value'>
+                                <td><div class="ms_role_title">@permissionInfo.PermissionKey.Name</div></td>
+                                @*Permission Authority*@
+                                @for (int i = 0; i < permissionInfo.AuthorityInfo.Count; i++) 
+                                {
+                                    AuthorityInfo authorityInfo = permissionInfo.AuthorityInfo[i];
+
+                                    string checkedString = authorityInfo.IsChecked ? "checked" : string.Empty;
+                                    string checkboxValue = new EditPermissionKey
+                                    { 
+                                        PermissionKey = permissionInfo.PermissionKey.Value, 
+                                        AuthorityType = authorityInfo.AuthorityType 
+                                    }.ToJsonString();
+
+                                    <td>
+                                        <div class="checkbox no_text">
+                                            @if (authorityInfo.IsDisplay)
+                                            {                                            
+                                                <label>
+                                                    <input type='checkbox' authorityType='@authorityInfo.AuthorityType' value='@checkboxValue' @checkedString
+                                                        onchange="window.editSingleRowService.toggleCheckboxStatusBySubCheckbox(this, '@permissionInfo.MenuType.Value');">
+                                                    <span class="icon">
+                                                        <i>
+                                                            <img src="~/images/element/ic_checkbox.svg" alt="">
+                                                        </i>
+                                                    </span>
+                                                </label>
+                                            }
+                                        </div>
+                                    </td>
+                                }
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+	}
+</div>
+<script>
+    $(document).ready(function(){    
+        window.editSingleRowService.initFirstOfRowCheckbox();
+        window.editSingleRowService.initSelectAllCheckbox();
+    });
+
+    function toggleMenu(element, menuType){
+        let $toggleMenu = $("tr[menu='" + menuType + "']");
+
+        let $jqImgVisible = $(element).find(".jqImgVisible");
+        let isExpand = $jqImgVisible.filter(":visible").data("expand"); //get current visible flag
+        $jqImgVisible.filter(`[data-expand='${isExpand}']`).hide(); //hide current image
+        isExpand = !isExpand; //change to new flag
+        $jqImgVisible.filter(`[data-expand='${isExpand}']`).show(); //show new flag image
+        $toggleMenu.toggle(isExpand); //toggle leaf items
+    }
+</script>

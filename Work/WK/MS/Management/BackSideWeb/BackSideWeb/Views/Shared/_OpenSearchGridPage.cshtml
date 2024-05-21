@@ -1,0 +1,33 @@
+﻿@using JxBackendService.Model.Param.User
+@{
+    Layout = BackSideWeb.Models.Enums.LayoutType.Base.Value;
+
+    string userId = (ViewBag.BackSideWebUser as BackSideWebUser).UserId.ToString();
+}
+
+<script src="~/js/base/messageQueue/message-queue.min.js" asp-append-version="true"></script>
+<script src="~/js/network/sockjs-0.3.min.js" asp-append-version="true"></script>
+<script src="~/js/network/stomp.min.js" asp-append-version="true"></script>
+<script src="~/js/business/authenticator/verifyExpiredNoticeService.min.js" asp-append-version="true"></script>
+<script src="~/js/base/messageQueue/bwUserMessageService.min.js" asp-append-version="true"></script>
+<script>
+    window.services = $.extend(
+        {},
+        window.services,
+        {
+            verifyExpiredNoticeService: new verifyExpiredNoticeService(),
+            bwUserMessageService: new bwUserMessageService(),
+        });
+
+    window.services.verifyExpiredNoticeService.checkVerificationExpiring();
+    window.services.bwUserMessageService.connectMessageQueue('@userId');
+</script>
+
+<div class="system_content">
+    <div class="system_main">
+        @RenderBody()
+    </div>
+</div>
+
+<partial name="Partial/_SearchGrid.cshtml" />
+

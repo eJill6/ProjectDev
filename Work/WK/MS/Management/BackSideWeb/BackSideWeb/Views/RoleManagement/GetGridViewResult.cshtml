@@ -1,0 +1,28 @@
+﻿@model PagedResultModel<RoleManagementViewModel>
+@using JxBackendService.Model.Paging;
+@using JxBackendService.Model.ViewModel;
+@{
+    string clientServiceName = ViewBag.ClientServiceName.ToString();
+}
+<div>
+    <table>
+        <tbody class="jqBody">
+            @for (int i = 0; i < Model.ResultList.Count; i++)
+            {
+                var item = Model.ResultList[i];
+                <tr>
+                    <td>@(i+1)</td>
+                    <td>@item.RoleName</td>
+                    <td>
+                        <div class="flex_content">
+                            @await Html.PartialAsync("Partial/_OperationButton", item)
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="jqPagination">
+        @await Html.PartialAsync("Partial/_PaginationByPagerInfo", Model)        
+    </div>
+</div>

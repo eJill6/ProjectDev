@@ -1,0 +1,370 @@
+﻿@model AdminOfficialPostDetail
+
+@using JxBackendService.Common.Util;
+@using JxBackendService.Model.Enums;
+@using MS.Core.MMModel.Models.AdminPost;
+
+
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        帖子ID
+    </div>
+    <div class="detail_modal_col_right form_set">
+        @Model.PostId
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        帖子区域
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:30%">
+        @MS.Core.MMModel.Models.Post.Enums.PostType.Official.GetEnumDescription()
+    </div>
+</div>
+<div class="detail_modal_row ">
+    <div class="detail_modal_col_left">
+        信息标题
+    </div>
+    <div class="detail_modal_col_right form_set">
+        @(string.IsNullOrEmpty(Model.Title) ? "-" : Model.Title)
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        所在地区
+    </div>
+    <div class="detail_modal_col_right form_set">
+        <label>@Model.AreaCode</label>
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        年龄(岁)
+    </div>
+    <div class="detail_modal_col_right form_set">
+        <label>@Model.Age</label>
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        身高(cm)
+    </div>
+    <div class="detail_modal_col_right form_set">
+        <label>@Model.Height</label>
+    </div>
+</div>
+
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        罩杯
+    </div>
+    <div class="detail_modal_col_right form_set">
+        <label>@Model.Cup</label>
+    </div>
+</div>
+
+<div class="detail_modal_row ">
+    <div class="detail_modal_col_left">
+        营业时间
+    </div>
+    <div class="detail_modal_col_right form_set">
+        @(string.IsNullOrEmpty(Model.BusinessHours) ? "-" : Model.BusinessHours)
+    </div>
+</div>
+
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        服务项目
+    </div>
+    <div class="detail_modal_col_right form_set">
+        @foreach (var item in Model.ServiceItem)
+        {
+            <label style="background-color: #CCFF00;">@item</label>
+        }
+    </div>
+</div>
+
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        已成交单
+    </div>
+    <div class="detail_modal_col_right form_set">
+        <label>@Model.CompletedOrder</label>
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        服务价格
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:80%">
+
+        <table>
+
+            <tr style="width: 100%;">
+                <th width="10%">套餐</th>
+                <th width="25%">名称</th>
+                <th width="25%">价格</th>
+                <th width="40%">服务时间、次数或包含项目</th>
+            </tr>
+            @for (int i = 0; i < Model.Combo.Length; i++)
+            {
+                var index = i + 1;
+                var combo = Model.Combo[i];
+                <tr>
+                    <td>@index</td>
+                    <td>@combo.ComboName</td>
+                    <td>@combo.ComboPrice</td>
+                    <td>@combo.Service</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
+<div class="detail_modal_row ">
+    <div class="detail_modal_col_left">
+        服务描述
+    </div>
+    <div class="detail_modal_col_right form_set">
+         @(string.IsNullOrEmpty(Model.ServiceDescribe) ? "-" : Model.ServiceDescribe)
+   
+    </div>
+</div>
+
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        照片
+    </div>
+    <div class="detail_modal_col_right form_set" id="divPhoto">
+
+
+        @for (int i = 0; i < Model.PhotoUrls.Length; i++)
+        {
+            <img src="@Model.PhotoUrls[i]" layer-src="@Model.PhotoUrls[i]" layer-pid="" alt="layer" width="80px" height="80px" layer-index="@i" />
+        }
+
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        视频
+    </div>
+    <div class="detail_modal_col_right form_set" id="divPhoto">
+        @if (string.IsNullOrWhiteSpace(Model.VideoUrl))
+        {
+            <label>
+                未上传视频
+            </label>
+        }
+        else
+        {
+            @if (Model.VideoUrl.Contains(".m3u8"))
+            {
+                <video id="my-video"
+                       class="video-js"
+                       controls
+                       preload="auto"
+                       data-setup='{}' width="320">
+                    <source src="@Model.VideoUrl" type="application/x-mpegURL"></source>
+                </video>
+            }
+            else
+            {
+                <video id="my-video"
+                       class="video-js"
+                       controls
+                       preload="auto"
+                       data-setup='{}' width="320">
+                    <source src="@Model.VideoUrl"></source>
+                </video>
+            }
+        }
+       
+
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        会员ID
+    </div>
+    <div class="detail_modal_col_right form_set">
+        <label>@Model.UserId</label>
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        会员身份
+    </div>
+    <div class="detail_modal_col_right form_set">
+        <label>@Model.UserIdentityText</label>
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        首次送审时间
+    </div>
+    <div class="detail_modal_col_right form_set">
+        <label>@Model.CreateTimeText</label>
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        再次送审时间
+    </div>
+    <div class="detail_modal_col_right form_set">
+        <label>@Model.UpdateTimeText</label>
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        审核时间
+    </div>
+    <div class="detail_modal_col_right form_set">
+        <label>@Model.ExamineTimeText</label>
+    </div>
+</div>
+@*<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        营业状态
+    </div>
+    <div class="detail_modal_col_right form_set">
+        <label>@Model.IsOpenText</label>
+    </div>
+</div>*@
+
+<div class="detail_modal_row ">
+    <div class="detail_modal_col_left">
+        观看基础值
+    </div>
+    <div class="detail_modal_col_right form_set">
+        @Model.ViewBaseCount
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        审核
+    </div>
+    <div class="detail_modal_col_right form_set" style="width: 12%;">
+        <span style="width: 100px;">
+            <input type="radio" value="0" name="PostStatus" id="Status_0" class="postStatus" style="-webkit-appearance: radio;" disabled="disabled" />审核中
+        </span>
+        <span style="width: 100px;">
+            <input type="radio" value="1" name="PostStatus" id="Status_1" class="postStatus" style="-webkit-appearance: radio;" disabled="disabled" />展示中
+        </span>
+        <span style="width: 100px;">
+            <input type="radio" value="2" name="PostStatus" id="Status_2" class="postStatus" style="-webkit-appearance: radio;" disabled="disabled" />未通过
+        </span>
+
+    </div>
+</div>
+<div class="detail_modal_row ">
+    <div class="detail_modal_col_left">
+        未通过原因
+    </div>
+    <div class="detail_modal_col_right form_set">
+        @(string.IsNullOrEmpty(Model.Memo) ? "-" : Model.Memo)
+    </div>
+</div>
+<input type="hidden" value="@Model.Status.ToJsonString()" id="hiddenStatus" name="hiddenStatus" />
+<input type="hidden" value="@Model.IsHomePost.ToJsonString()" id="hiddenIsHomePost" name="IsHomePost" />
+<input type="hidden" value="@Model.PostId" id="PostId" name="PostId" />
+
+<style>
+    .inputcss {
+        border: 1px solid #ccc;
+        border-radius: 6px;
+    }
+
+    .detail_modal_col_left {
+        text-align: left;
+    }
+
+    input:disabled {
+        border: 1px solid #DDD;
+        background-color: #F5F5F5;
+        color: #ACA899;
+    }
+
+    textarea:disabled {
+        border: 1px solid #DDD;
+        background-color: #F5F5F5;
+        color: #ACA899;
+    }
+
+    .class-photos-demo img {
+        width: 160px;
+        height: 100px;
+        cursor: pointer;
+    }
+
+    table {
+        text-align: center;
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #797979;
+        padding: 8px;
+    }
+
+    th {
+        background-color: #555555;
+        color: white;
+    }
+
+    .detail_modal_col_right {
+        word-wrap: break-word; /* 也可以使用 overflow-wrap: break-word; */
+        width: 70%;
+    }
+</style>
+
+<!-- 引入 video.js 样式 -->
+<link href="/lib/video-js-8.5.1/video-js.min.css" rel="stylesheet" />
+<!-- 引入 video.js 库文件 -->
+<script src="/lib/video-js-8.5.1/video.min.js"></script>
+<script src="/js/layui/layui.js"></script>
+<link rel="stylesheet" href="/js/layui/css/layui.css">
+<script>
+    $(function () {
+
+        var isHomePost = $("#hiddenIsHomePost").val();
+        var status = $("#hiddenStatus").val();
+
+        if (isHomePost == true || isHomePost == "true") {
+            $("#IsHomePost").prop("checked", "checked");
+        }
+
+        if (status == 0) {
+            $("#Status_0").prop("checked", "checked");
+        } else if (status == 1) {
+            $("#Status_1").prop("checked", "checked");
+            $("#Memo").val("");
+            $("#Memo").prop("disabled", true);
+        } else if (status == 2) {
+            $("#Status_2").prop("checked", "checked");
+            $("#Memo").prop("disabled", "");
+        }
+
+
+        var layer = layui.layer;
+        // 图片层
+        layer.photos({
+            photos: '#divPhoto'
+        });
+        $("#divPhoto img").each(async function () {
+            var src = await new decryptoService().fetchSingleDownload($(this).attr("src"));
+            $(this).attr("src", src);
+            $(this).attr("layer-src", src);
+        });
+        $('input').prop('disabled', true);
+        $('textarea').prop('disabled', true);
+    })
+    videojs.Vhs.xhr.beforeRequest = function (options) {
+        options.headers = options.headers || {};
+        options.headers["x-token"] = 'c6e3c761d279440fb8004e9e92b88b3f01d635619e4a4a64abbd0e98af1337d5';
+        return options;
+    };
+
+
+</script>

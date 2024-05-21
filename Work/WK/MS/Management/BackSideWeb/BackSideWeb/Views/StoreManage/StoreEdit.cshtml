@@ -1,0 +1,565 @@
+﻿@model AdminUserBossParam
+
+@using JxBackendService.Model.Enums;
+@using MS.Core.MMModel.Models.AdminUserManager
+@using MS.Core.MMModel.Models.User.Enums;
+@using Newtonsoft.Json;
+
+@{
+    var actType = (ActTypes)ViewBag.ActType;
+
+}
+
+<script src="~/js/business/adminUserManager/userEditSingleRowService.min.js" asp-append-version="true"></script>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        会员ID
+    </div>
+    <div class="detail_modal_col_right form_set">
+        <span>@Model.UserId</span>
+        <input type="hidden" asp-for="UserId" />
+    </div>
+</div>
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        Apply ID
+    </div>
+    <div class="detail_modal_col_right form_set">
+        <span>@Model.ApplyId</span>
+    </div>
+</div>
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        身份
+    </div>
+    <div class="detail_modal_col_right form_set">
+        @Model.ApplyIdentityText
+    </div>
+</div>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        店铺名称
+    </div>
+    <div class="detail_modal_col_right form_set">
+        <input type="text" asp-for="ShopName" placeholder="输入您的店铺名称，最多7个字" maxlength="7" />
+    </div>
+</div>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        店龄
+    </div>
+    <div class="detail_modal_col_right form_set">
+        <input type="text" asp-for="ShopYears" maxlength="2" oninput="validatePositiveIntegerInput(this)" />
+    </div>
+
+</div>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        妹子数量
+    </div>
+    <div class="detail_modal_col_right form_set">
+        <input type="text" asp-for="Girls" maxlength="5" oninput="validatePositiveIntegerInput(this)" />
+    </div>
+</div>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        成交订单
+    </div>
+    <div class="detail_modal_col_right form_set">
+        <input type="text" asp-for="DealOrder" maxlength="5" oninput="validatePositiveIntegerInput(this)" />
+    </div>
+</div>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        自评人气
+    </div>
+    <div class="detail_modal_col_right form_set">
+        <input type="text" asp-for="SelfPopularity" maxlength="5" oninput="validatePositiveIntegerInput(this)" />
+    </div>
+</div>
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        介绍
+    </div>
+    <div class="detail_modal_col_right form_set">
+        <input type="text" asp-for="Introduction" maxlength="17" placeholder="一句话概述你的店铺，最多17个字" />
+    </div>
+</div>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        营业时段
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:50%">
+        <select class="dropdown_toggle" id="BusinessDateStart" asp-for="BusinessDateStart" style="width:40%;float: left;">
+            <option value="周一" selected>周一</option>
+            <option value="周二">周二</option>
+            <option value="周三">周三</option>
+            <option value="周四">周四</option>
+            <option value="周五">周五</option>
+            <option value="周六">周六</option>
+            <option value="周日">周日</option>
+        </select>
+        <span style="width:10%;float: left;">至</span>
+        <select class="dropdown_toggle" id="BusinessDateEnd" asp-for="BusinessDateEnd" style="width:40%;float: left;">
+            <option value="周一" selected>周一</option>
+            <option value="周二">周二</option>
+            <option value="周三">周三</option>
+            <option value="周四">周四</option>
+            <option value="周五">周五</option>
+            <option value="周六">周六</option>
+            <option value="周日">周日</option>
+        </select>
+
+    </div>
+</div>
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        营业时间
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:50%">
+        <select class="dropdown_toggle" id="BusinessHourStart" asp-for="BusinessHourStart" style="width:45%;float: left;">
+            <option value="01:00" selected>01:00</option>
+            <option value="02:00">02:00</option>
+            <option value="03:00">03:00</option>
+            <option value="04:00">04:00</option>
+            <option value="05:00">05:00</option>
+            <option value="06:00">06:00</option>
+            <option value="07:00">07:00</option>
+            <option value="08:00">08:00</option>
+            <option value="09:00">09:00</option>
+            <option value="10:00">10:00</option>
+            <option value="11:00">11:00</option>
+            <option value="12:00">12:00</option>
+            <option value="13:00">13:00</option>
+            <option value="14:00">14:00</option>
+            <option value="15:00">15:00</option>
+            <option value="16:00">16:00</option>
+            <option value="17:00">17:00</option>
+            <option value="18:00">18:00</option>
+            <option value="19:00">19:00</option>
+            <option value="20:00">20:00</option>
+            <option value="21:00">21:00</option>
+            <option value="22:00">22:00</option>
+            <option value="23:00">23:00</option>
+            <option value="24:00">24:00</option>
+        </select>
+        <span style="width:10%;float: left;">至</span>
+        <select class="dropdown_toggle" id="BusinessHourEnd" asp-for="BusinessHourEnd" style="width:45%;float: left;">
+            <option value="01:00" selected>01:00</option>
+            <option value="02:00">02:00</option>
+            <option value="03:00">03:00</option>
+            <option value="04:00">04:00</option>
+            <option value="05:00">05:00</option>
+            <option value="06:00">06:00</option>
+            <option value="07:00">07:00</option>
+            <option value="08:00">08:00</option>
+            <option value="09:00">09:00</option>
+            <option value="10:00">10:00</option>
+            <option value="11:00">11:00</option>
+            <option value="12:00">12:00</option>
+            <option value="13:00">13:00</option>
+            <option value="14:00">14:00</option>
+            <option value="15:00">15:00</option>
+            <option value="16:00">16:00</option>
+            <option value="17:00">17:00</option>
+            <option value="18:00">18:00</option>
+            <option value="19:00">19:00</option>
+            <option value="20:00">20:00</option>
+            <option value="21:00">21:00</option>
+            <option value="22:00">22:00</option>
+            <option value="23:00">23:00</option>
+            <option value="24:00">24:00</option>
+        </select>
+
+    </div>
+</div>
+
+<div class="detail_modal_row ">
+    <div class="detail_modal_col_left">
+        店铺头像
+    </div>
+    <div class="detail_modal_col_right form_set imageContainer divPhoto" style="width:80%" id="divPhoto">
+        <span id="imageSpanA"></span>
+        <div class="plus-icon shopAvatar">
+            <input type="file" class="uploadInput uploadInputA" accept="image/png,image/jpg,image/jpeg" />
+        </div>
+
+        <span id="plusSpanA"></span>
+    </div>
+</div>
+<p style="color: red;
+    display: flex;
+    margin-left: 20%;">※必填，档案格式允许 jpg 或 png。档案大小1MB以下</p>
+
+<div class="detail_modal_row ">
+    <div class="detail_modal_col_left">
+        商家照片
+    </div>
+    <div class="detail_modal_col_right form_set imageContainer divPhoto" style="width:80%" id="divPhotoB">
+        <span id="imageSpanB"></span>
+        <div class="plus-icon businessPhoto">
+            <input type="file" class="uploadInput uploadInputB" accept="image/png,image/jpg,image/jpeg" />
+        </div>
+        <div class="plus-icon businessPhoto">
+            <input type="file" class="uploadInput uploadInputB" accept="image/png,image/jpg,image/jpeg" />
+        </div>
+        <div class="plus-icon businessPhoto"><input type="file" class="uploadInput uploadInputB" accept="image/*" /></div>
+
+        <span id="plusSpanB"></span>
+    </div>
+</div>
+
+<p style="color: red;
+    display: flex;
+    margin-left: 20%;">※档案格式允许 jpg 或 png。档案大小1MB以下</p>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        TG_Chat ID
+    </div>
+    <div class="detail_modal_col_right form_set">
+        <input type="text" asp-for="TelegramGroupId" maxlength="50"/>
+    </div>
+</div>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        店铺状态
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:50%">
+        <select class="dropdown_toggle" id="IsOpen" asp-for="IsOpen" style="width:40%;float: left;">
+            <option value="true" selected>开启</option>
+            <option value="false">关闭</option>
+
+        </select>
+    </div>
+</div>
+
+
+<input type="hidden" asp-for="BossId" />
+<input type="hidden" asp-for="ApplyId" />
+<input type="hidden" id="hiddenPhotoIdsA" asp-for="ShopAvatar" value="@(!string.IsNullOrEmpty(string.Join(",", Model.ShopAvatarSource.Keys)) ? string.Join(",", Model.ShopAvatarSource.Keys) + "," : string.Empty)" />
+<input type="hidden" id="hiddenPhotoIdsB" asp-for="BusinessPhotoUrls" value="@(!string.IsNullOrEmpty(string.Join(",", Model.BusinessPhotoSource.Keys)) ? string.Join(",", Model.BusinessPhotoSource.Keys) + "," : string.Empty)" />
+
+<script src="/js/layui/layui.js"></script>
+<link rel="stylesheet" href="/js/layui/css/layui.css">
+
+<script>
+    function validatePositiveIntegerInput(inputElement) {
+        var inputValue = inputElement.value;
+        if (inputValue !== "" && (!/^(0|[1-9]\d*)$/.test(inputValue))) {
+            inputElement.value = "";
+        }
+    }
+    function initLayer() {
+        var layer = layui.layer;
+        // 图片层
+        layer.photos({
+            photos: '.divPhoto'
+        });
+    }
+
+    $(function () {
+
+        //上传图片A
+        $(document).on('change', '.uploadInputA', function () {
+            var file = this.files[0];
+            var _this = this;
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+
+            var allowedFormats = ['image/png', 'image/jpg', 'image/jpeg'];
+            if (!allowedFormats.includes(file.type)) {
+                alert("店铺头像仅允许上传jpg或png格式的文件");
+                return;
+            }
+
+
+            if (file.size > 1 * 1024 * 1024) {
+                // 文件大小超过1MB的处理逻辑
+                alert("店铺头像仅允许大小1MB以下");
+                return;
+            }
+
+            //var baseStr="";
+            reader.onload = function () {
+
+                $.ajax({
+                    url: "/User/PhotoUpload",
+                    type: "POST",
+                    data: {
+                        photoBaseStr: reader.result,
+                        type: 0
+                    },
+                    success: function (res) {
+
+                        if (res.isSuccess) {
+                            var hiddenPhotoIdsValue = $("#hiddenPhotoIdsA").val();
+                            var thisIdValue = res.data.id;
+                            if (hiddenPhotoIdsValue.indexOf(thisIdValue) < 0) {
+                                hiddenPhotoIdsValue = hiddenPhotoIdsValue + thisIdValue + ",";
+                                $("#hiddenPhotoIdsA").val(hiddenPhotoIdsValue);
+                            }
+                            $("#imageSpanA").before('<div class="photoDivA photoDiv" id="' + res.data.id + '"><img src="' + reader.result + '" layer-src="' + reader.result + '" layer-pid="" alt="layer" width="77px" height="80px"><a class="deleteA delete fa fa-trash" href="javascript:void(0)" ></a></div>');
+                            _this.parentElement.remove();
+                            initLayer();
+                        } else {
+                            alert(res.message);
+                            return;
+                        }
+                    }
+                })
+            };
+        })
+
+
+        //上传图片B
+        $(document).on('change', '.uploadInputB', function () {
+            var file = this.files[0];
+            var _this = this;
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+
+            var allowedFormats = ['image/png', 'image/jpg', 'image/jpeg'];
+            if (!allowedFormats.includes(file.type)) {
+                alert("商家照片仅允许上传jpg或png格式的文件");
+                return;
+            }
+
+
+            if (file.size > 1 * 1024 * 1024) {
+                // 文件大小超过1MB的处理逻辑
+                alert("商家照片仅允许大小1MB以下");
+                return;
+            }
+
+            //var baseStr="";
+            reader.onload = function () {
+
+                $.ajax({
+                    url: "/User/PhotoUpload",
+                    type: "POST",
+                    data: {
+                        photoBaseStr: reader.result,
+                        type: 1
+                    },
+                    success: function (res) {
+
+                        if (res.isSuccess) {
+                            var hiddenPhotoIdsValue = $("#hiddenPhotoIdsB").val();
+                            var thisIdValue = res.data.id;
+                            if (hiddenPhotoIdsValue.indexOf(thisIdValue) < 0) {
+                                hiddenPhotoIdsValue = hiddenPhotoIdsValue + thisIdValue + ",";
+                                $("#hiddenPhotoIdsB").val(hiddenPhotoIdsValue);
+                            }
+                            $("#imageSpanB").before('<div class="photoDivB photoDiv" id="' + res.data.id + '"><img src="' + reader.result + '" layer-src="' + reader.result + '" layer-pid="" alt="layer" width="77px" height="80px"><a class="deleteB delete fa fa-trash" href="javascript:void(0)" ></a></div>');
+                            _this.parentElement.remove();
+                            initLayer();
+                        } else {
+                            alert(res.message);
+                            return;
+                        }
+                    }
+                })
+            };
+        })
+
+        //删除图片A
+        $(document).on('click', '.deleteA', function () {
+            this.parentElement.remove();
+            //console.log(this.parentElement)
+
+            var thisValue = $(this.parentElement).attr("id")
+
+            var hiddenPhotoIdsValue = $("#hiddenPhotoIdsA").val();
+            if (hiddenPhotoIdsValue.indexOf(thisValue) >= 0) {
+                hiddenPhotoIdsValue = hiddenPhotoIdsValue.replace(thisValue + ",", "");
+            }
+
+            $("#hiddenPhotoIdsA").val(hiddenPhotoIdsValue);
+
+            $("#plusSpanA").before('<div class="plus-icon"><input type="file" class="uploadInput uploadInputA" accept="image/*" /></div>');
+        })
+
+
+        //删除图片B
+        $(document).on('click', '.deleteB', function () {
+            this.parentElement.remove();
+            //console.log(this.parentElement)
+
+            var thisValue = $(this.parentElement).attr("id")
+
+            var hiddenPhotoIdsValue = $("#hiddenPhotoIdsB").val();
+            if (hiddenPhotoIdsValue.indexOf(thisValue) >= 0) {
+                hiddenPhotoIdsValue = hiddenPhotoIdsValue.replace(thisValue + ",", "");
+            }
+
+            $("#hiddenPhotoIdsB").val(hiddenPhotoIdsValue);
+
+            $("#plusSpanB").before('<div class="plus-icon businessPhoto"><input type="file" class="uploadInput uploadInputB" accept="image/*" /></div>');
+        })
+
+
+        var jsonDataA = @Html.Raw(JsonConvert.SerializeObject(Model?.ShopAvatarSource.ToList()));
+        var jsonDataB = @Html.Raw(JsonConvert.SerializeObject(Model?.BusinessPhotoSource.ToList()));
+
+        $.each(jsonDataA, function (index, item) {
+            // 构建HTML
+            var photoDivA = $('<div class="photoDiv photoDivA divPhoto" id="' + item.Key + '">');
+            var img = $('<img>', {
+                src: item.Value,
+                'layer-src': item.Value,
+                'layer-pid': '',
+                alt: 'layer',
+                width: '80px',
+                height: '80px'
+            });
+            var deleteA = $('<a>', {
+                'class': 'delete deleteA',
+                href: 'javascript:void(0);'
+            }).append($('<i>', {
+                'class': 'fa fa-trash'
+            }));
+
+            photoDivA.append(img, deleteA);
+
+            // 插入到页面
+            $("#imageSpanA").before(photoDivA);
+
+            // 删除一个上传控件
+            $(".plus-icon:first").remove();
+        });
+        $.each(jsonDataB, function (index, item) {
+            // 构建HTML
+            var photoDivB = $('<div class="photoDiv photoDivB divPhoto" id="' + item.Key + '">');
+            var img = $('<img>', {
+                src: item.Value,
+                'layer-src': item.Value,
+                'layer-pid': '',
+                alt: 'layer',
+                width: '80px',
+                height: '80px'
+            });
+            var deleteB = $('<a>', {
+                'class': 'delete deleteB',
+                href: 'javascript:void(0);'
+            }).append($('<i>', {
+                'class': 'fa fa-trash'
+            }));
+
+            photoDivB.append(img, deleteB);
+
+            // 插入到页面
+            $("#imageSpanB").before(photoDivB);
+
+            // 删除一个上传控件
+            $(".plus-icon:first").remove();
+        });
+
+        initLayer();
+        $(".divPhoto img").each(async function () {
+            var src = await new decryptoService().fetchSingleDownload($(this).attr("src"));
+            $(this).attr("src", src);
+            $(this).attr("layer-src", src);
+        });
+    })
+</script>
+<style>
+    .label_input {
+        margin-bottom: 0px;
+    }
+
+        .label_input input {
+            width: 150%
+        }
+
+
+
+
+    .detail_modal_col_left {
+        text-align: left;
+    }
+
+    .photoDiv {
+        width: 90px;
+        float: left;
+    }
+
+    .imageContainer img {
+        float: left;
+    }
+
+    .delete {
+        position: absolute;
+        cursor: pointer;
+        display: block;
+        margin-left: 67px;
+    }
+
+    .spanDelete {
+        background: #000 url('/images/form/ic_image_delete.jpg') no-repeat;
+        height: 48px;
+        width: 48px;
+        position: relative;
+        display: inline-block;
+        margin-left: 15px;
+    }
+
+    .uploadInput {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 0;
+        height: 72.22px;
+        width: 72.22px;
+    }
+
+
+    .plus-icon {
+        width: 72.22px;
+        height: 72.22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(121, 121, 121, 1);
+        font-size: 75px;
+        border-radius: 13.18px;
+        border: 2.16px solid rgba(121, 121, 121, 1);
+        box-sizing: border-box;
+        position: relative;
+        margin-bottom: 11.1px;
+        float: left;
+        margin-left: 15px;
+        margin-top: 4px;
+    }
+
+        .plus-icon::before {
+            content: '';
+            position: absolute;
+            width: 31.25px;
+            border-top: 4.16px solid;
+        }
+
+        .plus-icon::after {
+            content: '';
+            position: absolute;
+            height: 31.25px;
+            border-left: 4.16px solid;
+        }
+
+    .photoDiv img {
+        display: block;
+        height: auto;
+        border: 0;
+        height: 80px;
+    }
+</style>

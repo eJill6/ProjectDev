@@ -1,0 +1,28 @@
+﻿@using JxBackendService.Model.Paging
+@using JxBackendService.Model.ViewModel.TransferRecord
+@model PagedResultModel<TransferRecordViewModel>
+<div>
+    <table>
+        <tbody class="jqBody">
+            @for (int i = 0; i < Model.ResultList.Count; i++)
+            {   
+                TransferRecordViewModel item = Model.ResultList[i];
+                <tr>
+                    <td>@item.TransferSource</td>
+                    <td class="@item.TransferTypeTextCss">@item.TransferTypeText</td>
+                    <td>@item.TransferTarget</td>
+                    <td>@item.OrderID</td>
+                    <td>@item.UserID</td>
+                    <td class="currency">@item.AmountText</td>
+                    <td>@item.OrderTimeText</td>
+                    <td>@item.StatusText</td>
+                    <td>@item.HandTimeText</td>
+                    <td class="jqHoverData">@item.Memo</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="jqPagination">
+        @await Html.PartialAsync("Partial/_PaginationByPagerInfo", Model)
+    </div>
+</div>

@@ -1,0 +1,1466 @@
+﻿@charset "UTF-8";
+
+
+.table_overflow_y {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.table_overflow_x {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+table {
+    width: 100%;
+}
+
+
+
+
+
+/********************** 投注追號燈箱 table內容 start **********************/
+.continuously_bet .table_overflow_y {
+    height: 296px;
+}
+
+.continuously_bet table tbody tr {
+    border-bottom: 1px solid #E6EBEC;
+    background: #FFF;
+}
+
+    .continuously_bet table tbody tr:hover {
+        background: #f3fbfb;
+    }
+
+.continuously_bet table th {
+    background: #F5F5F5;
+    color: #222;
+    height: 36px;
+}
+
+.continuously_bet table td {
+    color: #222;
+    height: 40px;
+}
+
+.continuously_bet table th,
+.continuously_bet table td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px 20px;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+    .continuously_bet table th:last-child,
+    .continuously_bet table td:last-child {
+        text-align: right;
+    }
+
+.continuously_bet table .amount_controller_combo {
+    margin: 0 auto;
+}
+
+.continuously_bet table .amount_controller li input {
+    max-width: 60px;
+}
+
+@media only screen and (max-width: 768px) {
+    .continuously_bet .table_overflow_y {
+        max-height: inherit;
+        overflow-y: visible;
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 580px) {
+    .continuously_bet table tr th:nth-child(2),
+    .continuously_bet table tr td:nth-child(2) {
+        display: none;
+    }
+
+    .continuously_bet table th,
+    .continuously_bet table td {
+        padding: 5px 5px;
+        font-size: 12px;
+    }
+
+        .continuously_bet table th:first-child,
+        .continuously_bet table td:first-child {
+            padding: 5px 5px 5px 10px;
+        }
+
+        .continuously_bet table th:last-child,
+        .continuously_bet table td:last-child {
+            padding: 5px 10px 5px 5px;
+        }
+
+    .continuously_bet .amount_controller li input {
+        border: 1px solid #666;
+        border-radius: 3px;
+        max-width: 100%;
+    }
+
+        .continuously_bet .amount_controller li input:focus {
+            border: 1px solid #0095B2;
+            color: #222;
+        }
+
+    .continuously_bet table .amount_controller li input {
+        border: 1px solid #0095b2;
+        border-radius: 3px;
+        max-width: 50px;
+    }
+
+    .continuously_bet .amount_controller_combo li.increase,
+    .continuously_bet .amount_controller_combo li.reduce {
+        display: none;
+    }
+}
+
+
+
+
+/********************** 紀錄報表類燈箱 table內容 start **********************
+report_table：多數紀錄報表類燈箱
+continuously_report：追號記錄
+**********************/
+.modal .report_table {
+    width: 100%;
+    min-height: 395px;
+    background: #FFF;
+    position: relative;
+    z-index: 0;
+}
+
+    .modal .report_table.pc_scroll_y {
+        min-height: inherit;
+        height: 395px;
+    }
+
+    .modal .report_table.auto_min_height {
+        min-height: auto;
+    }
+
+    .modal .report_table.search_no_data {
+        background: none;
+        height: calc(100% - 60px);
+    }
+
+        .modal .report_table.search_no_data table {
+            visibility: hidden;
+        }
+
+    .modal .report_table .table_overflow_x {
+        width: 100%;
+    }
+
+    .modal .report_table table tbody tr {
+        border-bottom: 1px solid #E6EBEC;
+        background: #FFF;
+        height: 38px;
+    }
+
+    .modal .report_table table th,
+    .modal .report_table table td {
+        text-align: center;
+        vertical-align: middle;
+        padding: 5px 8px 5px 8px;
+        font-size: 12px;
+        font-weight: normal;
+        white-space: nowrap;
+    }
+
+    .modal .report_table table tbody tr:hover {
+        background: #f3fbfb;
+    }
+
+    .modal .report_table table thead th {
+        color: #222;
+        background: #DFDFDF;
+    }
+
+    .modal .report_table table .flex_content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+        .modal .report_table table .flex_content.space_between {
+            justify-content: space-between;
+        }
+
+    .modal .report_table table th.currency,
+    .modal .report_table table td.currency {
+        text-align: right;
+    }
+
+        .modal .report_table table td.currency.win {
+            color: #008ca1;
+        }
+
+        .modal .report_table table td.currency.lose {
+            color: #e76868;
+        }
+
+        .modal .report_table table td.currency.balance {
+            color: #DD8707;
+        }
+
+    .modal .report_table table td.highlight {
+        color: #DD8707;
+    }
+
+    .modal .report_table table td.lowlight {
+        color: #9b9b9b;
+    }
+
+    .modal .report_table table th.article_mode,
+    .modal .report_table table td.article_mode {
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    .modal .report_table table td a {
+        line-height: 26px;
+        padding-left: 10px;
+        padding-right: 10px;
+        height: 26px;
+    }
+
+    .modal .report_table table tfoot tr {
+        background: #FFFCEB;
+        border-bottom: 1px solid #E6EBEC;
+    }
+
+@media only screen and (max-width: 768px) {
+    .modal .report_table {
+        min-height: inherit;
+    }
+
+        .modal .report_table.pc_scroll_y {
+            min-height: inherit;
+            height: auto;
+        }
+
+        .modal .report_table table tbody tr {
+            border-bottom: 1px solid #E6EBEC;
+            background: #FFF;
+            height: 40px;
+        }
+
+        .modal .report_table table th,
+        .modal .report_table table td {
+            font-size: 13px;
+        }
+
+            .modal .report_table table td.article_mode {
+                cursor: pointer;
+            }
+}
+
+
+/********************** 追號紀錄燈箱 上方內容 table start **********************/
+.modal .continuously_detail_table {
+    display: flex;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+    .modal .continuously_detail_table table {
+        width: 50%;
+        font-size: 13px;
+        line-height: 1.2;
+        text-align: left;
+    }
+
+    .modal .continuously_detail_table th,
+    .modal .continuously_detail_table td {
+        padding: 5px;
+        vertical-align: middle;
+    }
+
+    .modal .continuously_detail_table th {
+        color: #222;
+        width: 20%;
+        text-align: left;
+    }
+
+    .modal .continuously_detail_table td {
+        color: #0094B2;
+        width: 30%;
+    }
+
+@media only screen and (max-width: 768px) {
+    .modal .continuously_detail_table table {
+        width: 100%;
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    .modal .continuously_detail_table table {
+        font-size: 11px;
+    }
+
+    .modal .continuously_detail_table th,
+    .modal .continuously_detail_table td {
+        padding: 3px 3px;
+    }
+}
+
+
+
+/********************** 左右編排的table內容 ex：訂單 start **********************/
+.modal table.order {
+    width: 100%;
+    border-left: 1px solid #E6EBEC;
+    border-top: 1px solid #E6EBEC;
+    background: #FFF;
+}
+
+    .modal table.order th,
+    .modal table.order td {
+        text-align: left;
+        vertical-align: middle;
+        padding: 10px 12px;
+        font-size: 13px;
+        font-weight: normal;
+        border-right: 1px solid #E6EBEC;
+        border-bottom: 1px solid #E6EBEC;
+        word-break: break-word;
+    }
+
+    .modal table.order th {
+        background: #F5F5F5;
+        width: 30%;
+    }
+
+    .modal table.order td {
+        width: 70%;
+    }
+
+        .modal table.order td a {
+            width: 76px;
+            line-height: 26px;
+            height: 26px;
+        }
+
+            .modal table.order td a span {
+                margin-left: 5px;
+            }
+
+        .modal table.order td.currency {
+            font-size: 18px;
+            color: #0094B2;
+            line-height: 1.1;
+        }
+
+        .modal table.order td.highlight {
+            color: #dc8f00;
+        }
+
+        .modal table.order td p.tip {
+            font-size: 12px;
+            color: #777;
+            line-height: 1.2;
+            margin-top: 5px;
+            word-break: break-all;
+        }
+
+            .modal table.order td p.tip span {
+                color: #008ca1;
+            }
+
+                .modal table.order td p.tip span.highlight {
+                    color: #f16163;
+                }
+
+    .modal table.order .copy_item_content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+        .modal table.order .copy_item_content .flex_col {
+            flex: 1;
+        }
+
+        .modal table.order .copy_item_content p {
+            flex: 1;
+            padding-right: 10px;
+            word-break: break-all;
+        }
+
+        .modal table.order .copy_item_content span {
+            color: #DD8707;
+            font-size: 12px;
+        }
+
+        .modal table.order .copy_item_content a {
+            width: 50px;
+            line-height: 22px;
+            font-size: 12px;
+            height: inherit;
+        }
+
+/*使用FLEX製作訂單明細表格RWD*/
+.modal.order_detail table.order {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    .modal.order_detail table.order tbody {
+        width: 50%;
+        display: flex;
+    }
+
+    .modal.order_detail table.order tr {
+        border: 0;
+        width: 100%;
+        display: flex;
+    }
+
+    .modal.order_detail table.order td {
+        width: 70%;
+        display: flex;
+        align-items: center;
+    }
+
+    .modal.order_detail table.order th {
+        width: 30%;
+        display: flex;
+        align-items: center;
+    }
+
+    .modal.order_detail table.order tbody.full_width {
+        width: 100%;
+    }
+
+        .modal.order_detail table.order tbody.full_width th {
+            width: 15%;
+        }
+
+        .modal.order_detail table.order tbody.full_width td {
+            width: 85%;
+        }
+
+.modal.order_detail table .lottery_winning_status {
+    display: flex;
+    align-items: center;
+}
+
+    .modal.order_detail table .lottery_winning_status span {
+        margin-left: 5px;
+    }
+
+    .modal.order_detail table .lottery_winning_status.before_winning {
+        color: #FF4B4B;
+    }
+
+    .modal.order_detail table .lottery_winning_status.after_winning {
+        color: #0095B2;
+    }
+
+
+
+@media only screen and (max-width: 600px) {
+    .modal.order_detail table.order tbody {
+        width: 100%;
+    }
+
+        .modal table.order tbody th,
+        .modal.order_detail table.order tbody th,
+        .modal.order_detail table.order tbody.full_width th {
+            width: 28%;
+        }
+
+        .modal table.order tbody td,
+        .modal.order_detail table.order tbody td,
+        .modal.order_detail table.order tbody.full_width td {
+            width: 72%;
+        }
+
+    .modal table.order td a {
+        font-size: 12px;
+        line-height: 24px;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .modal table.order th,
+    .modal table.order td {
+        padding: 10px 12px;
+        line-height: 1.3;
+    }
+
+    .modal table.order tbody th {
+        width: 30%;
+    }
+
+    .modal table.order tbody td {
+        width: 70%;
+    }
+}
+
+
+.modal table.order .order_status {
+    display: flex;
+    align-items: center;
+}
+
+    .modal table.order .order_status img {
+        margin-right: 5px;
+    }
+
+    .modal table.order .order_status.btn {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+        .modal table.order .order_status.btn:hover {
+            color: #000;
+        }
+
+
+
+
+/********************** 彩色標頭 table內容：我的契約 start **********************/
+.modal.my_contract .modal_main_content {
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.modal.my_contract h1 {
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+    .modal.my_contract h1.main_color {
+        color: #0093B2;
+    }
+
+    .modal.my_contract h1.brighter_color {
+        color: #DD8707;
+    }
+
+.modal table.color_table {
+    width: 100%;
+}
+
+.modal .my_contract_table_set {
+    margin-bottom: 10px;
+}
+
+    .modal .my_contract_table_set:last-child {
+        margin-bottom: 0;
+    }
+
+.modal table.color_table thead th {
+    color: #FFF;
+    padding: 0px 10px 0px 10px;
+    height: 32px;
+}
+
+.modal table.color_table.main_color thead th {
+    background: #0094B2;
+}
+
+.modal table.color_table.brighter_color thead th {
+    background: #DD8707;
+}
+
+.modal table.color_table tbody tr {
+    border-bottom: 1px solid #E6EBEC;
+    background: #FFF;
+    height: 32px;
+}
+
+.modal table.color_table th,
+.modal table.color_table td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px 10px 5px 10px;
+    font-size: 13px;
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+@media only screen and (max-width: 768px) {
+    .modal.my_contract .modal_main_content {
+        max-height: inherit;
+    }
+}
+
+
+/********************** 個人中心 共用table ui start **********************/
+.member_center_report table {
+    color: #333;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+    .member_center_report table.full_outline {
+        border-left: 1px solid #E5EDF1;
+        border-right: 1px solid #E5EDF1;
+    }
+
+    .member_center_report table tbody tr:hover {
+        background: #fff9f1;
+    }
+
+    .member_center_report table thead tr {
+        border-top: 1px solid #E5EDF1;
+    }
+    /* 表頭樣式B */
+    .member_center_report table thead.style_b tr {
+        background: #f5f5f5;
+    }
+
+    .member_center_report table tr {
+        border-bottom: 1px solid #E5EDF1;
+    }
+
+    .member_center_report table th,
+    .member_center_report table td {
+        border-right: 1px solid #E5EDF1;
+        text-align: center;
+        vertical-align: middle;
+        height: 44px;
+    }
+
+    .member_center_report table th {
+        padding: 8px 10px 8px 10px;
+        outline: 0;
+    }
+
+    .member_center_report table td {
+        padding: 8px 10px;
+    }
+
+        .member_center_report table th:last-child,
+        .member_center_report table td:last-child {
+            border-right: 0;
+        }
+
+    .member_center_report table .flex_content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+        .member_center_report table .flex_content.space_between {
+            justify-content: space-between;
+        }
+
+        .member_center_report table .flex_content .width_limited_address {
+            width: 350px;
+            word-break: break-all;
+            white-space: normal;
+            margin: 0;
+            text-align: left;
+        }
+
+    .member_center_report table td a.link_copy {
+        padding: 0 8px;
+        margin-left: 5px;
+        line-height: 26px;
+        height: 26px;
+    }
+
+    .member_center_report table td.divider_title {
+        color: #0095B2;
+        background: #f5f5f5;
+        text-align: left;
+        font-size: 13px;
+        padding-left: 15px;
+    }
+
+    .member_center_report table .username {
+        color: #333;
+        border-radius: 3px;
+        transition: all .2s;
+        padding: 4px 8px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+        .member_center_report table .username.no_padding {
+            padding: 0;
+        }
+
+        .member_center_report table .username.btn {
+            background: #ECEEF0;
+            cursor: pointer;
+            transition: all .2s;
+            padding: 4px 8px;
+        }
+
+            .member_center_report table .username.btn:hover {
+                background: #c8eaef;
+            }
+
+        .member_center_report table .username .status_online {
+            width: 8px;
+            height: 8px;
+            display: block;
+            margin-right: 4px;
+        }
+
+        .member_center_report table .username .vip_lv {
+            width: 33px;
+            height: 17px;
+            margin: 0 5px 0 0;
+        }
+
+            .member_center_report table .username .vip_lv img {
+                width: 33px;
+                height: 17px;
+            }
+
+            .member_center_report table .username .vip_lv.large {
+                width: 40px;
+                height: 20px;
+            }
+
+                .member_center_report table .username .vip_lv.large img {
+                    width: 40px;
+                    height: 20px;
+                }
+
+    .member_center_report table a.block[disabled] {
+        opacity: .4;
+        cursor: default !important;
+        pointer-events: none;
+    }
+
+    .member_center_report table th.currency,
+    .member_center_report table td.currency {
+        text-align: right;
+    }
+
+.member_center_report .transfer_in,
+.member_center_report .win {
+    color: #008ca1;
+}
+
+.member_center_report .transfer_out,
+.member_center_report .lose {
+    color: #e76868;
+}
+
+.member_center_report .highlight {
+    color: #DC8F00;
+}
+
+.member_center_report .lowlight {
+    color: #9b9b9b;
+}
+
+.member_center_report table td.article_mode {
+    text-align: left;
+}
+
+.member_center_report table th.left,
+.member_center_report table td.left {
+    text-align: left;
+}
+
+.member_center_report table td.link a {
+    text-decoration: underline;
+    color: #333;
+}
+
+.member_center_report table td.link.win a {
+    color: #008ca1;
+}
+
+.member_center_report table td.link.lose a {
+    color: #e76868;
+}
+
+.member_center_report table tfoot tr {
+    background: #FFF7e5;
+}
+
+@media only screen and (max-width: 768px) {
+    .member_center_report table {
+        font-size: 13px;
+    }
+
+        .member_center_report table th,
+        .member_center_report table td {
+            padding: 8px 14px;
+        }
+}
+
+
+
+
+
+
+
+/***************** 代理中心文字較大 (但樣式與個人中心相同) 共用table ui start *****************/
+.member_center_report.agent_report table {
+    font-size: 13px;
+}
+
+
+
+
+
+/********************** 走勢 共用table **********************/
+.trend_table {
+    width: 100%;
+}
+
+    .trend_table table {
+        width: 100%;
+        font-size: 12px;
+        text-align: center;
+        background: #FFF;
+        min-width: 1160px;
+    }
+
+    .trend_table th,
+    .trend_table td {
+        height: 24px;
+        white-space: nowrap;
+        font-weight: normal;
+        vertical-align: middle;
+    }
+
+    .trend_table thead tr:first-child th {
+        border-right: 1px solid #DDDDDD;
+        background-color: #F5F5F5;
+        color: #333;
+    }
+
+    .trend_table thead tr:nth-child(2) th {
+        border-right: 1px solid #DDDDDD;
+    }
+
+    .trend_table thead tr:nth-child(2) {
+        background-color: #E9E9E9;
+        border-right: 1px solid #DDDDDD;
+        color: #333;
+    }
+
+    .trend_table tbody tr {
+        border-bottom: 1px solid #F0F0F0;
+    }
+
+        .trend_table tbody tr td {
+            color: #333;
+            border-left: 1px solid #F0F0F0;
+        }
+        /*.trend_table tbody tr td:nth-child(-n+2){
+    border-left: 0;
+}*/
+        .trend_table tbody tr:hover td {
+            background: #f3fbfb;
+        }
+
+            .trend_table tbody tr:hover td:not(:nth-child(-n+2)) {
+                /*border-left: 1px solid #1a304e;*/
+            }
+
+@media only screen and (max-width: 1024px) {
+    .trend_table table {
+        min-width: auto;
+    }
+
+    .trend_table th,
+    .trend_table td {
+        padding: 0 5px;
+    }
+}
+
+
+/* table footer */
+.trend_table tfoot tr td {
+    background-color: #F5F5F5;
+    border-right: 1px solid #e9e9e9;
+    color: #333;
+}
+    /* table footer 縮小數字*/
+    .trend_table tfoot tr td > div {
+        position: relative;
+        width: 100%;
+        top: 0;
+        height: 24px;
+        text-align: center;
+    }
+
+        .trend_table tfoot tr td > div p {
+            position: absolute;
+            width: 100%;
+            line-height: 24px;
+            text-align: center;
+            font-size: 8px;
+            font-style: normal;
+            top: 0;
+            overflow: hidden;
+        }
+
+@media only screen and (max-width: 1024px) {
+    .trend_table table {
+        min-width: auto;
+    }
+
+    .trend_table tfoot td {
+        padding: 0;
+    }
+}
+
+
+
+
+.trend_table thead tr:first-child th:last-child,
+.trend_table thead tr:first-child th.last_th,
+.trend_table thead tr:nth-child(2):last-child,
+.trend_table thead tr:nth-child(2) th:last-child,
+.trend_table tfoot tr td:last-child {
+    border-right: 0;
+}
+
+
+/* 控制 PK10高度 */
+.trend_table .pk10Higher td {
+    height: 36px;
+    font-size: 13px;
+}
+/* 控制 快3高度 */
+.trend_table .diceHigher td {
+    height: 26px;
+}
+/* 控制 六合彩高度 */
+.trend_table .marksixHigher td {
+    height: 46px;
+}
+
+    .trend_table .marksixHigher td p {
+        line-height: 1;
+        margin-top: 3px;
+    }
+
+
+.trend_table .tab {
+    margin: 0 6px;
+}
+
+    .trend_table .tab li {
+        padding: 0 4px;
+    }
+/* 控制th寬度 */
+.trend_table .w16 {
+    width: 16px;
+    min-width: 16px;
+}
+
+.trend_table .w17 {
+    width: 17px;
+    min-width: 17px;
+}
+
+.trend_table .w18 {
+    width: 18px;
+    min-width: 18px;
+}
+
+.trend_table .w19 {
+    width: 19px;
+    min-width: 19px;
+}
+
+.trend_table .w20 {
+    width: 20px;
+    min-width: 20px;
+}
+
+.trend_table .w22 {
+    width: 22px;
+    min-width: 22px;
+}
+
+.trend_table .w28 {
+    width: 28px;
+    min-width: 28px;
+}
+
+.trend_table .w30 {
+    width: 30px;
+    min-width: 30px;
+}
+
+.trend_table .w35 {
+    width: 35px;
+    min-width: 35px;
+}
+
+.trend_table .w40 {
+    width: 40px;
+    min-width: 40px;
+}
+
+.trend_table .w50 {
+    width: 50px;
+    min-width: 50px;
+}
+
+.trend_table .w60 {
+    width: 60px;
+    min-width: 60px;
+}
+
+.trend_table .w80 {
+    width: 80px;
+    min-width: 80px;
+}
+
+.trend_table .w90 {
+    width: 90px;
+    min-width: 90px;
+}
+
+.trend_table .w100 {
+    width: 100px;
+    min-width: 100px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .trend_table .w16 {
+        width: 26px;
+        min-width: 26px;
+    }
+
+    .trend_table .w18 {
+        width: 28px;
+        min-width: 28px;
+    }
+
+    .trend_table .w19 {
+        width: 29px;
+        min-width: 29px;
+    }
+
+    .trend_table .w22 {
+        width: 32px;
+        min-width: 32px;
+    }
+
+    .trend_table .w28 {
+        width: 38px;
+        min-width: 38px;
+    }
+
+    .trend_table .w80,
+    .trend_table .w90,
+    .trend_table .w100 {
+        width: auto;
+        min-width: 60px;
+    }
+}
+
+
+/* 控制 時時彩 五星綜合 直向分隔線  */
+.line_hour_mix tbody tr td:nth-child(1),
+.line_hour_mix tbody tr td:nth-child(2),
+.line_hour_mix tbody tr td:nth-child(12),
+.line_hour_mix tbody tr td:nth-child(22),
+.line_hour_mix tbody tr td:nth-child(28),
+.line_hour_mix tbody tr td:nth-child(34),
+.line_hour_mix tbody tr td:nth-child(40) {
+    border-right: 1px solid #DDDDDD;
+}
+
+/* 控制 時時彩 五星走勢 直向分隔線  */
+.line_hour_trend tbody tr td:nth-child(1),
+.line_hour_trend tbody tr td:nth-child(2),
+.line_hour_trend tbody tr td:nth-child(12),
+.line_hour_trend tbody tr td:nth-child(22),
+.line_hour_trend tbody tr td:nth-child(32),
+.line_hour_trend tbody tr td:nth-child(42) {
+    border-right: 1px solid #DDDDDD;
+}
+
+
+/* 控制 PK10 直向分隔線 */
+.line_pk10 tbody tr td:nth-child(1),
+.line_pk10 tbody tr td:nth-child(2),
+.line_pk10 tbody tr td:nth-child(3),
+.line_pk10 tbody tr td:nth-child(8) {
+    border-right: 1px solid #DDDDDD;
+}
+
+
+
+/* 控制 11選5 五星綜合 直向分隔線 */
+.line_11pick5_mix tbody tr td:nth-child(1),
+.line_11pick5_mix tbody tr td:nth-child(2),
+.line_11pick5_mix tbody tr td:nth-child(13),
+.line_11pick5_mix tbody tr td:nth-child(24),
+.line_11pick5_mix tbody tr td:nth-child(30),
+.line_11pick5_mix tbody tr td:nth-child(36),
+.line_11pick5_mix tbody tr td:nth-child(42) {
+    border-right: 1px solid #DDDDDD;
+}
+
+
+/* 控制 11選5 五星走勢 直向分隔線 */
+.line_11pick5_trend tbody tr td:nth-child(1),
+.line_11pick5_trend tbody tr td:nth-child(2),
+.line_11pick5_trend tbody tr td:nth-child(13),
+.line_11pick5_trend tbody tr td:nth-child(24),
+.line_11pick5_trend tbody tr td:nth-child(35),
+.line_11pick5_trend tbody tr td:nth-child(46) {
+    border-right: 1px solid #DDDDDD;
+}
+
+
+/* 控制 快3 直向分隔線 */
+.line_dice3_basic tbody tr td:nth-child(1),
+.line_dice3_basic tbody tr td:nth-child(2),
+.line_dice3_basic tbody tr td:nth-child(8),
+.line_dice3_basic tbody tr td:nth-child(14),
+.line_dice3_basic tbody tr td:nth-child(20),
+.line_dice3_basic tbody tr td:nth-child(26),
+.line_dice3_basic tbody tr td:nth-child(32),
+.line_dice3_basic tbody tr td:nth-child(48),
+.line_dice3_basic tbody tr td:nth-child(49) {
+    border-right: 1px solid #DDDDDD;
+}
+/* 控制 低頻彩 直向分隔線 */
+.line_lucky3d tbody tr td:nth-child(1),
+.line_lucky3d tbody tr td:nth-child(2),
+.line_lucky3d tbody tr td:nth-child(12),
+.line_lucky3d tbody tr td:nth-child(22),
+.line_lucky3d tbody tr td:nth-child(32),
+.line_lucky3d tbody tr td:nth-child(42),
+.line_lucky3d tbody tr td:nth-child(52) {
+    border-right: 1px solid #DDDDDD;
+}
+
+/* 控制 六合彩 直向分隔線 */
+.line_marksix tbody tr td:nth-child(1),
+.line_marksix tbody tr td:nth-child(2),
+.line_marksix tbody tr td:nth-child(9),
+.line_marksix tbody tr td:nth-child(13) {
+    border-right: 1px solid #DDDDDD;
+}
+
+.line_marksix thead tr:first-child th:nth-child(3),
+.line_marksix thead tr:first-child th:nth-child(4),
+.line_marksix thead tr:first-child th:nth-child(5),
+.line_marksix thead tr:first-child th:nth-child(6),
+.line_marksix thead tr:first-child th:nth-child(7),
+.line_marksix thead tr:first-child th:nth-child(8) {
+    border-right: 0;
+}
+
+
+/* 控制 幸運28 直向分隔線 */
+.line_lucky28 tbody tr td:nth-child(1),
+.line_lucky28 tbody tr td:nth-child(2),
+.line_lucky28 tbody tr td:nth-child(5),
+.line_lucky28 tbody tr td:nth-child(6),
+.line_lucky28 tbody tr td:nth-child(7),
+.line_lucky28 tbody tr td:nth-child(8),
+.line_lucky28 tbody tr td:nth-child(9) {
+    border-right: 1px solid #DDDDDD;
+}
+
+
+
+
+/* 控制號碼值、比數值 */
+.trend_table .ball_cyan,
+.trend_table .ball_blue,
+.trend_table .ball_orange,
+.trend_table .square_cyan,
+.trend_table .square_blue,
+.trend_table .square_cyan_ch,
+.trend_table .square_cyan_ch_short {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    text-align: center;
+    font-size: 12px;
+    line-height: 16px;
+    color: #FFF;
+}
+
+.trend_table .ball_cyan {
+    background: #008CA1;
+    border-radius: 5000px;
+}
+
+.trend_table .ball_blue {
+    background: #2F84D8;
+    border-radius: 5000px;
+}
+
+.trend_table .ball_orange {
+    background: #DC8F00;
+    border-radius: 5000px;
+}
+
+.trend_table .ball_red {
+    background: #db5f59;
+    border-radius: 5000px;
+}
+
+.trend_table .ball_green {
+    background: #5fb662;
+    border-radius: 5000px;
+}
+
+.trend_table .square_cyan {
+    background: #008CA1;
+    border-radius: 2px;
+    width: 24px;
+}
+
+.trend_table .square_blue {
+    background: #2F84D8;
+    border-radius: 2px;
+    width: 24px;
+}
+/* 橘色文字 */
+.trend_table .text_orange,
+.jqTrend td[data-content=小], .jqTrend td[data-content=单], .jqTrend td[data-content=龙] {
+    color: #DC8F00;
+}
+/* 青色文字 */
+.trend_table .text_cyan,
+.jqTrend td[data-content=大], .jqTrend td[data-content=双], .jqTrend td[data-content=虎] {
+    color: #008CA1;
+}
+/* 紅色文字 */
+.trend_table .text_red {
+    color: #FF7474;
+}
+/* 藍色文字 */
+.trend_table .text_blue {
+    color: #2f84d8;
+}
+/* 綠色文字 */
+.trend_table .text_green {
+    color: #5cb360;
+}
+/* 控制 球類開獎號碼 */
+.winBall {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    text-align: center;
+    font-size: 12px;
+    line-height: 16px;
+    border-radius: 5000px;
+    background: #008CA1;
+    color: #FFF;
+}
+
+    .winBall.large {
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+    }
+/* 控制 PK10開獎號碼 */
+.winPk10 {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    text-align: center;
+    font-size: 13px;
+    line-height: 20px;
+    border-radius: 2px;
+    margin-top: 1px;
+    margin-right: 1px;
+}
+    /*解決安卓裝置無法垂直居中問題*/
+    .winPk10::before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        width: 0;
+        height: 100%;
+        margin-top: 1px;
+    }
+
+    .winPk10.no01 {
+        background: #E6D800;
+        color: #000;
+    }
+
+    .winPk10.no02 {
+        background: #008DF2;
+        color: #FFF;
+    }
+
+    .winPk10.no03 {
+        background: #474743;
+        color: #FFF;
+    }
+
+    .winPk10.no04 {
+        background: #FF7800;
+        color: #FFF;
+    }
+
+    .winPk10.no05 {
+        background: #00EFE4;
+        color: #000;
+    }
+
+    .winPk10.no06 {
+        background: #4D2DE8;
+        color: #FFF;
+    }
+
+    .winPk10.no07 {
+        background: #C1C7CE;
+        color: #000;
+    }
+
+    .winPk10.no08 {
+        background: #F41500;
+        color: #FFF;
+    }
+
+    .winPk10.no09 {
+        background: #951315;
+        color: #FFF;
+    }
+
+    .winPk10.no10 {
+        background: #00AE00;
+        color: #FFF;
+    }
+
+    .winPk10.blue,
+    .jqTrend td .winPk10[data-content=双],
+    .jqTrend td .winPk10[data-content=大] {
+        background: #2F84D8;
+    }
+
+    .winPk10.orange,
+    .jqTrend td .winPk10[data-content=单],
+    .jqTrend td .winPk10[data-content=小] {
+        background: #DC8F00;
+    }
+
+
+
+
+
+
+
+
+/********************** table 共用 sort **********************/
+/* sort */
+th.sort {
+    cursor: pointer;
+    text-align: center;
+}
+
+th.currency {
+    text-align: right;
+}
+
+th .sort_by {
+    padding-right: 12px;
+    position: relative;
+    width: auto;
+    display: inline-block;
+    line-height: normal;
+}
+
+.sort_by:before,
+.sort_by:after {
+    content: "";
+    display: block;
+    height: 0;
+    right: 0;
+    top: 50%;
+    position: absolute;
+    width: 0;
+}
+
+.sort_by:before {
+    border-style: solid;
+    border-width: 0 3px 4px 3px;
+    border-color: transparent transparent #6E88A0 transparent;
+    margin-top: -5px;
+}
+
+.sort_by.up:before {
+    border-color: transparent transparent #0095B2 transparent;
+}
+
+.sort_by:after {
+    border-style: solid;
+    border-width: 4px 3px 0 3px;
+    border-color: #6E88A0 transparent transparent transparent;
+    margin-top: 2px;
+}
+
+.sort_by.down:after {
+    border-color: #0095B2 transparent transparent transparent;
+}
+
+.report_table th .sort_by {
+    color: #222;
+}
+
+.sort_by .tool_tip {
+    display: inline-block;
+    margin: -2px 0px;
+    cursor: pointer;
+}
+
+    .sort_by .tool_tip .tool_icon {
+        padding-right: 0px;
+    }
+
+    .sort_by .tool_tip .tip_detail {
+        width: 174px;
+        top: calc(100% - 8px);
+    }
+
+
+
+
+/********************** table 共用 hover tips **********************/
+.hover_tips {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .hover_tips a.icon {
+        margin-left: 5px;
+        width: 14px;
+        height: 14px;
+        display: block;
+    }
+
+        .hover_tips a.icon img {
+            width: 14px;
+            height: 14px;
+        }
+
+
+/********************** 角色權限管理**********************/
+
+
+.role_setting .report_table table tbody tr:hover {
+    background: #ffffff;
+}

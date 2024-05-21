@@ -1,0 +1,104 @@
+@model PaginationSetting
+@* 因為有載用圖片的關係, 如果瀏覽器使用disable cache在切換頁面會閃爍 *@
+@{
+    string pageNoControlId = $"pageNumber_{Model.SettingId}";
+}
+@if (Model.PageCount > 0)
+{
+    <div class="pagination">
+        <span class="pagination_info">
+            搜寻结果 @Model.DataCount 笔
+        </span>
+        <span class="pagination_info">
+            一页<input id="jqPageSize_@Model.SettingId" type="text" class="group_pagination_input" onchange="changePageSize();"
+                 defaultValue="@Model.PageSize" value="@Model.PageSize" maxlength="4">笔
+        </span>
+        <span class="pagination_info">
+            <span>共 <em>@Model.PageCount</em> 页</span>
+            <div class="control border">
+                <a href="javascript:void(0)"
+               class="@(Model.PageNo <= 1 ? "disable" : "")"
+               onclick="gotoPage(@Model.PageNo - 1, @Model.PageCount, @Model.Callback)">
+                    <span>
+                        <img alt="" src="~/images/pagination/ic_page_pre_light.svg">
+                    </span>
+                </a>
+                <a href="javascript:void(0)"
+               class="@(Model.PageNo >= Model.PageCount ? "disable" : "")"
+               onclick="gotoPage(@Model.PageNo + 1, @Model.PageCount, @Model.Callback)">
+                    <span>
+                        <img alt="" src="~/images/pagination/ic_page_next_light.svg">
+                    </span>
+                </a>
+            </div>
+            <div class="control border">
+                @{
+                    int startPageNumber = 1;
+                    int endPageNumber = Model.PageCount;
+                    if (Model.PageCount > 5)
+                    {
+                        endPageNumber = Model.PageNo < 4 ? 5 : Model.PageNo + 2 >= Model.PageCount ? Model.PageCount : Model.PageNo + 2;
+                        startPageNumber = endPageNumber - 4 < 1 ? 1 : endPageNumber - 4;
+                    }
+
+                    for (int i = startPageNumber; i <= endPageNumber; i++)
+                    {
+                                <a href="javascript:void(0)"
+                                    class="jqPageNoLink @(i == Model.PageNo ? "active" : "")"
+                                    onclick="gotoPage(@i, @Model.PageCount, @Model.Callback)">
+                                    <span>@i</span>
+                                </a>
+                    }
+                }
+            </div>
+            @if (Model.PageCount > 5 && Model.PageNo + 2 < Model.PageCount)
+            {
+                <img alt="" src="~/images/pagination/ic_page_more.svg" class="ic_more">
+                <div class="control border">
+                    <a href="javascript:void(0)" onclick="gotoPage(@Model.PageCount, @Model.PageCount, @Model.Callback)">
+                        <span>@Model.PageCount</span>
+                    </a>
+                </div>
+            }
+        </span>
+        <span class="pagination_info">
+            <div class="control">
+                <span>
+                    第<input id="@pageNoControlId" type="text" class="group_pagination_input jqPageNo">页
+                </span>
+                <div class="btn">
+                    <a class="btn_default main_color quots_btn jqChangePageBtn" onclick=@string.Format("gotoPage($('#pageNumber_{0}').val(),{1},{2})", Model.SettingId, Model.PageCount, Model.Callback)>
+                        GO
+                    </a>
+                </div>
+            </div>
+        </span>
+    </div>
+
+    <script src="~/js/base/searchGrid/pagerService.min.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        function gotoPage(pageNumber, pageCount, callback) {
+            let pageSizeSelector = "#jqPageSize_@(Model.SettingId)";
+            new pagerService(window.document).gotoPage(pageNumber, pageCount, pageSizeSelector, callback);
+        }
+
+        function changePageSize() {
+            new pagerService(window.document).reloadPageSizeChange();
+        }
+
+        $(".pagination input[type='text']").onlyNumber();
+    </script>
+    
+    @if(Model.PageCount> 0 && Model.PageNo > Model.PageCount)
+    {
+        <script>
+            (function () {
+                let pageNoControlId = '@pageNoControlId';
+                let pageCount = @Model.PageCount;
+                $(`#${pageNoControlId}`).val(pageCount).closest(".pagination_info").find(".jqChangePageBtn").trigger("click");
+            })();
+        </script>
+    }
+}
+
+

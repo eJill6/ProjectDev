@@ -1,0 +1,175 @@
+﻿@model AdminUserManagerIdentityApplyParam
+@using JxBackendService.Model.Enums;
+@using MS.Core.MMModel.Models.AdminUserManager
+@{
+    var actType = (ActTypes)ViewBag.ActType;
+    var IdentityItems = ViewBag.IdentityItems as IEnumerable<SelectListItem>;
+}
+
+<script src="~/js/business/adminUserManager/userEditSingleRowService.min.js" asp-append-version="true"></script>
+<style>
+    .inputbackground {
+        background: #FFF
+    }
+</style>
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left" style="margin-left:14%">
+        会员ID
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:30%">
+        <span>@Model.UserId</span>
+        <input type="hidden" asp-for="UserId" />
+    </div>
+</div>
+
+<div class="detail_modal_row label_input light">
+    <div class="detail_modal_col_left" style="margin-left:14%">
+        编辑身份
+    </div>
+    <div class="detail_modal_col_right form_set dropdown" style="width:30%">
+        <select class="dropdown_toggle" id="selectIdentityElement" onchange="selectIdentity(this)" asp-for="ApplyIdentity" asp-items="IdentityItems"></select>
+    </div>
+</div>
+<div class="detail_modal_row label_input light" id="PlatformSharingDiv">
+    <div class="detail_modal_col_left" style="margin-left:14%">
+        平台拆账比
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:30%">
+        <input type="text" asp-for="PlatformSharing"  style="width:90%;" placeholder="" id="PlatformSharingElement" disabled="disabled" maxlength="3" value="@Model.PlatformSharing" oninput="calculateSuperBossSharing(this)" /><span style="font-size:20px">%</span>
+
+        <input type="hidden" id="hiddenPlatformSharing" value="@Model.PlatformSharing" />
+    </div>
+    <span asp-validation-for="PlatformSharing"></span>
+    <div style="position:absolute;margin: 36px 0 0 284px;"><p style="color:red;">※身份为超觅老板时使用的参数，设定平台拆账比</p></div>
+</div>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left" style="margin-left:14%">
+        超觅老板拆账比
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:32%">
+        <span id="SuperBossSharing">-</span>%
+    </div>
+</div>
+
+<div class="detail_modal_row label_input light">
+    <div class="detail_modal_col_left" style="margin-left:14%">
+        保证金
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:30%">
+        <span>@Model.EarnestMoney</span>
+        <input type="hidden" asp-for="EarnestMoney" class="inputbackground" value="@Model.EarnestMoney" />
+    </div>
+</div>
+
+<div class="detail_modal_row label_input light">
+    <div class="detail_modal_col_left" style="margin-left:14%">
+        增加发帖次数
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:30%">
+        <input type="text" asp-for="ExtraPostCount" placeholder="" class="inputbackground" maxlength="20" oninput="validatePositiveIntegerInput(this)" />
+    </div>
+    <span asp-validation-for="ExtraPostCount"></span>
+    <div style="position:absolute;margin: 36px 0 0 284px;"><p style="color:red;">※此为增加次数，非取代，请小心使用</p></div>
+</div>
+
+
+ <input type="hidden" asp-for="ContactApp" maxlength="15" />
+
+
+<div class="detail_modal_row label_input light">
+    <div class="detail_modal_col_left" style="margin-left:14%">
+        QQ号码
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:30%">
+        <input type="text" asp-for="Contact" class="inputbackground" maxlength="15" />
+    </div>
+    <span asp-validation-for="Contact"></span>
+</div>
+
+<div class="detail_modal_row label_input light">
+    <div class="detail_modal_col_left" style="margin-left:14%">
+        编辑身份备注
+    </div>
+    <div class="detail_modal_col_right form_set light" style="width:30%">
+        <textarea asp-for="Memo" rows="10" class="inputbackground" maxlength="500"></textarea>
+    </div>
+    <span asp-validation-for="Memo"></span>
+</div>
+<script>
+    function validatePositiveIntegerInput(inputElement) {
+        var inputValue = inputElement.value;
+        if (inputValue !== "" && (!/^(0|[1-9]\d*)$/.test(inputValue))) {
+            inputElement.value = "";
+        }
+    }
+
+    /// 计算超觅老板的分成百分比
+    function calculateSuperBossSharing(inputElement) {
+        var inputValue = inputElement.value;
+        if (inputValue !== "" && (!/^(0|[1-9]\d*)$/.test(inputValue))) {
+            inputElement.value = "";
+        }
+
+        var SuperBossSharingElement = document.getElementById("SuperBossSharing");
+        var SuperBossSharingValue="-";
+        if ( inputValue>100) {
+            inputElement.value=100;
+            inputValue = inputElement.value;
+        }
+        if (inputValue < 0 )
+        {
+            inputElement.value = 0;
+            inputValue = inputElement.value;
+        }
+          
+        SuperBossSharingValue = parseInt(100 - inputValue);
+
+        if (SuperBossSharingValue !== "" && (!/^(0|[1-9]\d*)$/.test(SuperBossSharingValue))) {
+            SuperBossSharingValue = "-";
+        }
+        
+        SuperBossSharingElement.innerHTML = SuperBossSharingValue;
+    }
+
+    //选择超觅老板的时候分成百分比还原 归0 等操作
+    function selectIdentity(inputElement) {
+        
+        //判断是否选中超觅老板的身份
+        if (inputElement.value=="5"){
+            document.getElementById("PlatformSharingElement").removeAttribute("disabled");
+            document.getElementById("PlatformSharingDiv").className = "detail_modal_row label_input light";
+            if(document.getElementById("hiddenPlatformSharing").value =="" || document.getElementById("hiddenPlatformSharing").value ==undefined)
+            {
+                document.getElementById("PlatformSharingElement").value =15;
+            }else
+            {
+                document.getElementById("PlatformSharingElement").value = document.getElementById("hiddenPlatformSharing").value
+            }
+           
+            calculateSuperBossSharing(document.getElementById("PlatformSharingElement"));
+        }else
+        {
+            document.getElementById("PlatformSharingElement").value="-";
+            document.getElementById("SuperBossSharing").innerHTML="-";
+            document.getElementById("PlatformSharingElement").disabled=true;
+            document.getElementById("PlatformSharingDiv").className="detail_modal_row label_input";
+        }
+    }
+
+    ///页面初始化
+    document.addEventListener('DOMContentLoaded', function () {
+        var selectIdentityElement=  document.getElementById("selectIdentityElement");
+        if(selectIdentityElement.value!=5){
+            document.getElementById("PlatformSharingElement").disabled = true;
+            document.getElementById("PlatformSharingElement").value="-";
+            document.getElementById("PlatformSharingDiv").className = "detail_modal_row label_input";
+        }else{
+            document.getElementById("PlatformSharingElement").removeAttribute("disabled");
+            document.getElementById("PlatformSharingElement").value = document.getElementById("hiddenPlatformSharing").value == "" || document.getElementById("hiddenPlatformSharing").value ==undefined ? 15 : document.getElementById("hiddenPlatformSharing").value;
+
+            calculateSuperBossSharing(document.getElementById("PlatformSharingElement"));
+        }
+
+    });
+</script>

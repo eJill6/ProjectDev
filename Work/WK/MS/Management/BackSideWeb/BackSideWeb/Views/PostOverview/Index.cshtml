@@ -1,0 +1,93 @@
+@using JxBackendService.Resource.Element
+@{
+}
+
+<a href="javascript:;" class="jqSearchBtn" style="display:none">查询</a>
+
+<div id="jqContentRoot" style="display:none">
+    <div class="bg gap">
+        <div class="member_center_report agent_report">
+            <table>
+                <thead>
+                    <tr>
+                        <th>@DisplayElement.ActivePostsCount</th>
+                    </tr>
+                </thead>
+                <tbody id="jqGridContent1">
+                </tbody>
+            </table>
+
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>@DisplayElement.SquareDisplayed</th>
+                        <th>@DisplayElement.SquareUnderReview</th>
+                        <th>@DisplayElement.SquareNotApproved</th>
+                        <th>@DisplayElement.SquareUnlocksCount</th>
+                    </tr>
+                </thead>
+                <tbody id="jqGridContent2">
+                </tbody>
+            </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th>@DisplayElement.AgencyDisplayed</th>
+                        <th>@DisplayElement.AgencyUnderReview</th>
+                        <th>@DisplayElement.AgencyNotApproved</th>
+                        <th>@DisplayElement.AgencyUnlocksCount</th>
+                    </tr>
+                </thead>
+                <tbody id="jqGridContent3">
+                </tbody>
+            </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th>@DisplayElement.OfficialDisplayed</th>
+                        <th>@DisplayElement.OfficialUnderReview</th>
+                        <th>@DisplayElement.OfficialNotApproved</th>
+                        <th>@DisplayElement.OfficialReservationsCount</th>
+                    </tr>
+                </thead>
+                <tbody id="jqGridContent4">
+                </tbody>
+            </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th>@DisplayElement.OfficialReserveCancelCount</th>
+                    </tr>
+                </thead>
+                <tbody id="jqGridContent5">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<style>
+    table {
+        font-size: 18px;
+        border-collapse: collapse;
+        margin-bottom: 50px;
+    }
+
+    .member_center_report.agent_report{
+        background-color: #ebebec;
+    }
+
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: center;
+        padding: 8px;
+        vertical-align: middle;
+        background-color: white;
+    }
+
+    th {
+        width: 150px;
+        font-weight: bold;
+    }
+</style>

@@ -1,0 +1,23 @@
+﻿@using JxBackendService.Interface.Service.Web.BackSideWeb
+@using JxBackendService.Model.BackSideWeb;
+@using JxBackendService.Common.Util;
+@model IDataKey
+@{
+    string clientServiceName = ViewBag.ClientServiceName.ToString();
+    var pageApiUrlSetting = ViewBag.PageApiUrlSetting as PageApiUrlSetting;
+}
+@if (!pageApiUrlSetting.UpdateViewUrl.IsNullOrEmpty())
+{
+    <a href="javascript:void(0)" class="btn_default main_color icon_style text_btn"
+        onclick="@string.Format("{0}.openUpdateView('{1}')", clientServiceName, Model.KeyContent)">
+        编辑
+    </a>
+}
+@if (!pageApiUrlSetting.DeleteApiUrl.IsNullOrEmpty())
+{
+    <a href="javascript:void(0)" class="btn_default main_color icon_style text_btn @*delete_btn*@"
+        onclick="@string.Format("{0}.delete('{1}')", clientServiceName, Model.KeyContent)">
+        删除 
+        @*<img alt="" src="~/images/grid/ic_delete.svg">*@
+    </a>
+}

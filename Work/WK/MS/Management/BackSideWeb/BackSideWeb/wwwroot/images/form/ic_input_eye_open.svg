@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="11px" viewBox="0 0 16 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>ic_Input_eye_open</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ic_Input_eye_open" fill="#666666">
+            <path d="M8,0 C4.364,0 1.258,2.28 0,5.5 C1.258,8.72 4.364,11 8,11 C11.636,11 14.742,8.72 16,5.5 C14.742,2.28 11.636,0 8,0 Z M8,9.167 C5.993,9.167 4.364,7.524 4.364,5.5 C4.364,3.476 5.994,1.833 8,1.833 C10.007,1.833 11.636,3.476 11.636,5.5 C11.636,7.524 10.006,9.167 8,9.167 Z M8,3.3 C6.793,3.3 5.818,4.283 5.818,5.5 C5.818,6.717 6.793,7.7 8,7.7 C9.207,7.7 10.182,6.717 10.182,5.5 C10.182,4.283 9.207,3.3 8,3.3 Z" id="a"></path>
+        </g>
+    </g>
+</svg>

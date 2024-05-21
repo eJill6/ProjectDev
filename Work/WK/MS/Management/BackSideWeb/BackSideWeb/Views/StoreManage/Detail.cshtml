@@ -1,0 +1,225 @@
+﻿@model AdminUserManagerIdentityApplyList
+
+@using JxBackendService.Common.Util;
+@using JxBackendService.Model.Enums;
+@using MS.Core.MMModel.Models.AdminUserManager;
+@using MS.Core.MMModel.Models.User.Enums
+
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        会员ID
+    </div>
+    <div class="detail_modal_col_right form_set">
+        @Model.UserId
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        Apply ID
+    </div>
+    <div class="detail_modal_col_right form_set">
+        @Model.ApplyId
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        身份
+    </div>
+    <div class="detail_modal_col_right form_set">
+        @Model.ApplyIdentityText
+    </div>
+</div>
+
+<div class="detail_modal_row ">
+    <div class="detail_modal_col_left">
+        店铺名称
+    </div>
+    <div class="detail_modal_col_right form_set">
+        @Model.ShopName
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        店龄
+    </div>
+    <div class="detail_modal_col_right form_set">
+        <label>@Model.ShopYears</label>
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        妹子数量
+    </div>
+    <div class="detail_modal_col_right form_set">
+        <label>@Model.Girls</label>
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        成交订单
+    </div>
+    <div class="detail_modal_col_right form_set">
+        <label>@Model.DealOrder</label>
+    </div>
+</div>
+<div class="detail_modal_row ">
+    <div class="detail_modal_col_left">
+        自评人气
+    </div>
+    <div class="detail_modal_col_right form_set">
+        @Model.SelfPopularity
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        介绍
+    </div>
+    <div class="detail_modal_col_right form_set">
+        @Model.Introduction
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        营业时段
+    </div>
+    <div class="detail_modal_col_right form_set">
+        @Model.BusinessDate
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        营业时间
+    </div>
+    <div class="detail_modal_col_right form_set">
+        @Model.BusinessHour
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        店铺头像
+    </div>
+    <div class="detail_modal_col_right form_set divPhoto" id="divPhoto">
+        @if (Model.ShopAvatarSource.Count <= 0)
+        {
+            <label>
+                未上传
+            </label>
+        }
+        else
+        {
+            foreach (var item in Model.ShopAvatarSource)
+            {
+                <img src="@item.Value" layer-src="@item.Value" layer-pid="" alt="layer" width="80px" height="80px" layer-index="@item.Key" />
+            }
+        }
+    </div>
+</div>
+
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        商家照片
+    </div>
+    <div class="detail_modal_col_right form_set divPhoto" id="divPhoto">
+        @if (Model.BusinessPhotoSource.Count <= 0)
+        {
+            <label>
+                未上传
+            </label>
+        }
+        else
+        {
+            foreach (var item in Model.BusinessPhotoSource)
+            {
+                <img src="@item.Value" layer-src="@item.Value" layer-pid="" alt="layer" width="80px" height="80px" layer-index="@item.Key" />
+            }
+        }
+    </div>
+</div>
+
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        TG_Chat ID
+    </div>
+    <div class="detail_modal_col_right form_set">
+        @Model.TelegramGroupId
+    </div>
+</div>
+
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        店铺状态
+    </div>
+    <div class="detail_modal_col_right form_set">
+        @Model.IsOpenText
+    </div>
+</div>
+<style>
+    .inputcss {
+        border: 1px solid #ccc;
+        border-radius: 6px;
+    }
+
+    .detail_modal_col_left {
+        text-align: left;
+    }
+
+    input:disabled {
+        border: 1px solid #DDD;
+        background-color: #F5F5F5;
+        color: #ACA899;
+    }
+
+    textarea:disabled {
+        border: 1px solid #DDD;
+        background-color: #F5F5F5;
+        color: #ACA899;
+    }
+
+    .class-photos-demo img {
+        width: 160px;
+        height: 100px;
+        cursor: pointer;
+    }
+
+    table {
+        text-align: center;
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #797979;
+        padding: 8px;
+    }
+
+    th {
+        background-color: #555555;
+        color: white;
+    }
+
+    .memo {
+        width: 70%;
+        word-wrap: break-word;
+    }
+</style>
+
+<!-- 引入 video.js 样式 -->
+<link href="/lib/video-js-8.5.1/video-js.min.css" rel="stylesheet" />
+<!-- 引入 video.js 库文件 -->
+<script src="/lib/video-js-8.5.1/video.min.js"></script>
+<script src="/js/layui/layui.js"></script>
+<link rel="stylesheet" href="/js/layui/css/layui.css">
+<script>
+    $(function () {
+        var layer = layui.layer;
+        // 图片层
+        layer.photos({
+            photos: '.divPhoto'
+        });
+    })
+    $(".divPhoto img").each(async function () {
+        var src = await new decryptoService().fetchSingleDownload($(this).attr("src"));
+        $(this).attr("src", src);
+        $(this).attr("layer-src", src);
+    });
+</script>

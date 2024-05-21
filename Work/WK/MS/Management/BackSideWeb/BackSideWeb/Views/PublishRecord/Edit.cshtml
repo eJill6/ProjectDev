@@ -1,0 +1,546 @@
+﻿@model AdminPostDetail
+
+@using JxBackendService.Common.Util;
+@using JxBackendService.Model.Enums;
+@using MS.Core.MMModel.Models.AdminPost;
+@using MS.Core.MMModel.Models.Post.Enums;
+
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        帖子ID
+    </div>
+    <div class="detail_modal_col_right">
+        @Model.PostId
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        页面区域
+    </div>
+    <div class="detail_modal_col_right">
+        @Model.PostTypeText
+    </div>
+</div>
+
+@if (Model.PostType != PostType.Agency)
+{
+    <div class="detail_modal_row">
+        <div class="detail_modal_col_left">
+            信息类型
+        </div>
+        <div class="detail_modal_col_right">
+            <label style="background-color: #CCFF00;">@Model.MessageType</label>
+        </div>
+    </div>
+
+}
+
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        <input type="radio" style="-webkit-appearance: radio;" name="isApplyAdjustPriceradio" value="1" class="isApplyAdjustPriceradio" id="DefaultPricingRadio" /> 预装解锁价格
+
+    </div>
+    <div class="detail_modal_col_right">
+        @Model.DefaultPricingText
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        <input type="radio" style="-webkit-appearance: radio;" name="isApplyAdjustPriceradio" value="2" class="isApplyAdjustPriceradio" id="UnlockAmountRadio" /> 会员申请调价
+    </div>
+    <div class="detail_modal_col_right">
+        @Model.ApplyAmountText
+        <p style="color:#d9001b">※选择此帖子解鎖所需金額</p>
+    </div>
+
+</div>
+
+
+<div class="detail_modal_row label_input" id="detail_modal_row_IsCertified" style="display:none;">
+    <div class="detail_modal_col_left">
+        已认证
+    </div>
+    <div class="detail_modal_col_right form_set">
+        <input type="checkbox" style="-webkit-appearance: checkbox;" id="checkIsCertifiedBox" />
+
+    </div>
+</div>
+
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        解锁次数
+    </div>
+    <div class="detail_modal_col_right">
+        <label>@Model.UnlockCount</label>
+    </div>
+</div>
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        帖子标题
+    </div>
+    <div class="detail_modal_col_right form_set" >
+        @Model.Title
+        <input type="hidden" id="Title" name="Title" value="@Model.Title" />
+    </div>
+</div>
+
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        所在地区
+    </div>
+    <div class="detail_modal_col_right">
+        <label>@Model.AreaCode</label>
+    </div>
+</div>
+
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        数量
+    </div>
+    <div class="detail_modal_col_right">
+        <label>@Model.Quantity</label>
+    </div>
+</div>
+
+
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        年龄（岁）
+    </div>
+    <div class="detail_modal_col_right">
+        <label>@Model.AgeText</label>
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        身高(cm)
+    </div>
+    <div class="detail_modal_col_right">
+        <label>@Model.HeightText</label>
+    </div>
+</div>
+
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        罩杯
+    </div>
+    <div class="detail_modal_col_right">
+        <label>@Model.CupText</label>
+    </div>
+</div>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        营业时间
+    </div>
+    <div class="detail_modal_col_right">
+        @Model.BusinessHours
+        <input type="hidden" id="BusinessHours" name="BusinessHours" value="@Model.BusinessHours" />
+    </div>
+</div>
+
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        服务项目
+    </div>
+    <div class="detail_modal_col_right">
+        @foreach (var item in Model.ServiceItem)
+        {
+            <label style="background-color: #CCFF00;">@item</label>
+        }
+    </div>
+</div>
+
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        服务价格_最低
+    </div>
+    <div class="detail_modal_col_right">
+        <label>@Model.LowPrice</label>
+    </div>
+</div>
+
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        服务价格_最高
+    </div>
+    <div class="detail_modal_col_right">
+        <label>@Model.HighPrice</label>
+    </div>
+</div>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        详细地址
+    </div>
+    <div class="detail_modal_col_right" >
+        @Model.Address
+        <input type="hidden" id="Address" name="Address" value="@Model.Address" />
+    </div>
+</div>
+
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left" style="font-weight:bold;">
+        联系方式
+    </div>
+    <div class="detail_modal_col_right">
+    </div>
+</div>
+
+@foreach (var item in Model.UnlockInfo.ContactInfos)
+{
+    if (@item.ContactType == MS.Core.MMModel.Models.Post.Enums.ContactType.Phone)
+    {
+        <div class="detail_modal_row label_input">
+            <div class="detail_modal_col_left">
+                @item.ContactType
+            </div>
+            <div class="detail_modal_col_right">
+                @item.Contact
+                <input type="hidden" id="@item.ContactType" name="@item.ContactType" value="@item.Contact" />
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="detail_modal_row label_input">
+            <div class="detail_modal_col_left">
+                @item.ContactType
+            </div>
+            <div class="detail_modal_col_right">
+                @item.Contact
+                <input type="hidden" id="@item.ContactType" name="@item.ContactType" value="@item.Contact" />
+            </div>
+        </div>
+    }
+
+
+}
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        服务描述
+    </div>
+    <div class="detail_modal_col_right" >
+        @Model.ServiceDescribe
+        <input type="hidden" id="ServiceDescribe" name="ServiceDescribe" value="@Model.ServiceDescribe" />
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        照片
+    </div>
+    <div class="detail_modal_col_right" id="divPhoto">
+        @for (int i = 0; i < Model.PhotoUrls.Length; i++)
+        {
+            <img src="@Model.PhotoUrls[i]" layer-src="@Model.PhotoUrls[i]" layer-pid="" alt="layer" width="60px" height="60px" layer-index="@i" />
+        }
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        视频
+    </div>
+    <div class="detail_modal_col_right" id="divPhoto">
+        @if (string.IsNullOrWhiteSpace(Model.VideoUrl))
+        {
+            <label>
+                未上传视频
+            </label>
+        }
+        else
+        {
+            @if (Model.VideoUrl.Contains(".m3u8"))
+            {
+                <video id="my-video"
+                       class="video-js"
+                       controls
+                       preload="auto"
+                       data-setup='{}' width="320">
+                    <source src="@Model.VideoUrl" type="application/x-mpegURL"></source>
+                </video>
+            }
+            else
+            {
+                <video id="my-video"
+                       class="video-js"
+                       controls
+                       preload="auto"
+                       data-setup='{}' width="320">
+                    <source src="@Model.VideoUrl"></source>
+                </video>
+            }
+        }
+
+
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        会员号
+    </div>
+    <div class="detail_modal_col_right">
+        <label>@Model.UserId</label>
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        会员身份
+    </div>
+    <div class="detail_modal_col_right">
+        <label>@Model.UserType</label>
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        首次送审时间
+    </div>
+    <div class="detail_modal_col_right">
+        <label>@Model.CreateTimeText</label>
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        在送审时间
+    </div>
+    <div class="detail_modal_col_right">
+        <label>@Model.UpdateTimeText</label>
+    </div>
+</div>
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        审核时间
+    </div>
+    <div class="detail_modal_col_right">
+        <label>@Model.ExamineTimeText</label>
+    </div>
+</div>
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        首页贴
+    </div>
+    <div class="detail_modal_col_right">
+        <input type="checkbox" id="IsHomePost" style="-webkit-appearance: checkbox;" />
+    </div>
+</div>
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        权重
+    </div>
+    <div class="detail_modal_col_right">
+        <input type="text" id="Weight" name="Weight" min="0" value="@Model.Weight" maxlength="10" oninput="validatePositiveIntegerInput(this)" />
+    </div>
+</div>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        解锁基础值
+    </div>
+    <div class="detail_modal_col_right">
+        <input type="text" id="UnlockBaseCount" name="UnlockBaseCount" min="0" value="@Model.UnlockBaseCount" maxlength="6" oninput="validatePositiveIntegerInput(this)" />
+    </div>
+</div>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        观看基础值
+    </div>
+    <div class="detail_modal_col_right">
+        <input type="text" id="ViewBaseCount" name="ViewBaseCount" min="0" value="@Model.ViewBaseCount" maxlength="6" oninput="validatePositiveIntegerInput(this)" />
+    </div>
+</div>
+
+<div class="detail_modal_row">
+    <div class="detail_modal_col_left">
+        审核
+    </div>
+    <div class="detail_modal_col_right" style="width: 12%;">
+        <span style="width: 100px;">
+            <input type="radio" value="1" name="PostStatus" id="Status_1" class="postStatus" style="-webkit-appearance: radio;" />展示中
+        </span>
+        <span style="width: 100px;">
+            <input type="radio" value="2" name="PostStatus" id="Status_2" class="postStatus" style="-webkit-appearance: radio;" />未通过
+        </span>
+
+    </div>
+</div>
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        未通过原因
+    </div>
+    <div class="detail_modal_col_right" style="
+    width: 80%;
+   height: 140px;
+">
+        <textarea id="Memo" name="Memo" style="border: 1px solid #ccc;
+    border-radius: 6px;width:100%;height:100%;">@Model.Memo</textarea>
+    </div>
+</div>
+<input type="hidden" value="@Model.IsCertified.ToJsonString()" name="IsCertified" id="hiddenIsCertified" />
+<input type="hidden" value="@Model.ApplyAdjustPrice.ToJsonString()" name="IsApplyAdjustPrice" id="hiddenApplyAdjustPrice" />
+<input type="hidden" value="@Model.Status.ToJsonString()" name="hiddenStatus" id="hiddenStatus" />
+<input type="hidden" value="@Model.UnlockAmount.ToJsonString()" id="hiddenUnlockAmount" />
+<input type="hidden" value="@Model.DefaultPricing.ToJsonString()" id="hiddenDefaultPricing" />
+<input type="hidden" value="@Model.IsFeatured.ToJsonString()" id="hiddenIsFeatured" name="IsFeatured" />
+<input type="hidden" value="@Model.IsHomePost.ToJsonString()" id="hiddenIsHomePost" name="IsHomePost" />
+<input type="hidden" value="@Model.PostId" id="PostId" name="PostId" />
+<input type="hidden" value="@Model.PostType" id="PostType" name="PostType" />
+
+<style>
+    .inputcss {
+        border: 1px solid #ccc;
+        border-radius: 6px;
+    }
+
+    .detail_modal_col_left {
+        text-align: left;
+    }
+
+    input:disabled {
+        border: 1px solid #DDD;
+        background-color: #F5F5F5;
+        color: #ACA899;
+    }
+
+    textarea:disabled {
+        border: 1px solid #DDD;
+        background-color: #F5F5F5;
+        color: #ACA899;
+    }
+
+    .class-photos-demo img {
+        width: 160px;
+        height: 100px;
+        cursor: pointer;
+    }
+
+    .label_input {
+        margin-bottom: 0px;
+    }
+</style>
+
+<script src="/js/layui/layui.js"></script>
+<!-- 引入 video.js 样式 -->
+<link href="/lib/video-js-8.5.1/video-js.min.css" rel="stylesheet" />
+<!-- 引入 video.js 库文件 -->
+<script src="/lib/video-js-8.5.1/video.min.js"></script>
+<link rel="stylesheet" href="/js/layui/css/layui.css">
+<script>
+    function validatePositiveIntegerInput(inputElement) {
+        var inputValue = inputElement.value;
+        if (!/^(0|[1-9]\d*)$/.test(inputValue)) {
+            inputElement.value = "";
+        }
+    }
+
+    $(function () {
+        const weightInput = document.getElementById("Weight");
+        var weight = weightInput.value;
+        var applyAdjustPrice = $("#hiddenApplyAdjustPrice").val();
+        var status = $("#hiddenStatus").val();
+        var isFeatured = $("#hiddenIsFeatured").val();
+        var isHomePost = $("#hiddenIsHomePost").val();
+        var postType = $("#PostType").val();
+
+
+        $("#hiddenApplyAmount").val($("#txtDefaultPricingRadio").val());
+
+        if (postType == "2" || postType == "Agency") {
+            $("#detail_modal_row_IsCertified").removeAttr("style");
+            var isCertified = $("#hiddenIsCertified").val();
+            if (isCertified == true || isCertified == "true" || isCertified == "True") {
+                $("#checkIsCertifiedBox").prop("checked", "checked");
+            }
+        }
+
+        $("#checkIsCertifiedBox").change(function () {
+            $("#hiddenIsCertified").val($("#checkIsCertifiedBox").prop("checked"));
+        })
+
+        if (applyAdjustPrice == true || applyAdjustPrice == "true") {
+            $("#UnlockAmountRadio").prop("checked", "checked");
+            $("#DefaultPricingRadio").prop("checked", "");
+
+
+        } else {
+            $("#DefaultPricingRadio").prop("checked", "checked");
+            $("#UnlockAmountRadio").prop("checked", "");
+        }
+
+        if (isFeatured == true || isFeatured == "true") {
+            $("#IsFeatured").prop("checked", "checked");
+        }
+
+        if (isHomePost == true || isHomePost == "true") {
+            $("#IsHomePost").prop("checked", "checked");
+            weightInput.disabled = false;
+        }else{
+            weightInput.disabled = true;
+        }
+
+
+
+        if (status == 1) {
+            $("#Status_1").prop("checked", "checked");
+            $("#Memo").val("");
+            $("#Memo").prop("disabled", true);
+        } else if (status == 2) {
+            $("#Status_2").prop("checked", "checked");
+            $("#Memo").prop("disabled", "");
+        }
+        $("#IsFeatured").change(function () {
+            if ($(this).prop("checked")) {
+                $("#hiddenIsFeatured").val(true);
+            } else {
+                $("#hiddenIsFeatured").val(false);
+            }
+        })
+
+        $("#IsHomePost").change(function () {
+            if ($(this).prop("checked")) {
+                weightInput.disabled = false;
+                $("#hiddenIsHomePost").val(true);
+            } else {
+                weightInput.disabled = true;
+                $("#hiddenIsHomePost").val(false);
+            }
+        })
+
+        $("input[name='PostStatus']").change(function () {
+            var selectedStatus = $(this).val();
+            if (selectedStatus === "1") {
+                $("#Memo").val("");
+                $("#Memo").prop("disabled", true);
+            } else {
+                $("#Memo").prop("disabled", false);
+            }
+        });
+
+        $(".isApplyAdjustPriceradio").change(function () {
+
+            var value = $(this).val();
+            if (value == 1) {
+                $("#hiddenApplyAdjustPrice").val(false);
+            } else {
+                $("#hiddenApplyAdjustPrice").val(true);
+            }
+
+        });
+
+
+        var layer = layui.layer;
+        // 图片层
+        layer.photos({
+            photos: '#divPhoto'
+        });
+    })
+    $("#divPhoto img").each(async function () {
+        var src = await new decryptoService().fetchSingleDownload($(this).attr("src"));
+        $(this).attr("src", src);
+        $(this).attr("layer-src", src);
+    });
+    videojs.Vhs.xhr.beforeRequest = function (options) {
+        options.headers = options.headers || {};
+        options.headers["x-token"] = 'c6e3c761d279440fb8004e9e92b88b3f01d635619e4a4a64abbd0e98af1337d5';
+        return options;
+    };
+</script>

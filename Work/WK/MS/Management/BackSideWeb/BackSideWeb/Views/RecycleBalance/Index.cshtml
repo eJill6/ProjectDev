@@ -1,0 +1,86 @@
+﻿@using JxBackendService.Model.Enums.Queue;
+@using JxBackendService.Model.Param.Game
+@using JxBackendService.Resource.Element
+@using JxBackendService.Model.Common
+@using JxBackendService.Model.Param.User
+@model QueryRecycleBalance
+@{
+    var accountTypeSelectListItems = ViewBag.AccountTypeSelectListItems as List<JxBackendSelectListItem>;
+}
+
+<form id="jqSearchFilterForm" onsubmit="event.preventDefault();">
+    <div class="bg spacing gap system_filter">
+        <br />
+        <div class="col">
+            <div class="item">
+                <div class="label_input column_layout">
+                    @await Html.PartialAsync("Partial/_DropdownMenu", 
+                        new DropdownMenuSetting(accountTypeSelectListItems)
+                        {
+                            SettingId = "AccountType",
+                        })
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="item">
+                <div class="label_input column_layout">
+                    <div class="form_set">
+                        <input class="jqFilter" type="text" asp-for="AccountID" maxlength="50">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="item">
+                <div class="btns">
+                    <a href="javascript:;" class="btn_default main_color jqSearchBtn">查询</a>
+                    <a href="javascript:;" class="btn_default main_color_line jqResetBtn">清空</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div id="jqMsUserContentRoot" style="display:none">
+    <div class="bg gap">
+        <div class="member_center_report agent_report table_overflow_x">
+            <table>
+                <thead>
+                    <tr>
+                        <th>秘色用户ID</th>
+                        <th>余额</th>
+                        <th>操作</th>                        
+                    </tr>
+                </thead>
+                <tbody id="jqMsUserGridContent">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="jqContentRoot" style="display:none">
+    <div class="bg gap">
+        <div class="member_center_report agent_report table_overflow_x">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:15%">产品</th>
+                        <th style="width:15%">第三方用户ID</th>
+                        <th style="width:15%">余额</th>
+                        <th style="width:10%">操作</th>
+                        <th>操作结果</th>
+                    </tr>
+                </thead>
+                <tbody id="jqGridContent">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function(){
+        window.services.searchGridService.initRoutingKey(window.services.bwUserMessageService.getRoutingKey());
+    })    
+</script>

@@ -1,0 +1,50 @@
+﻿@using JxBackendService.Model.Enums.BackSideWeb.Permission;
+@{
+    var userMenuMap = ViewBag.UserMenuMap as Dictionary<MenuType, List<PermissionKeyDetail>>;
+    var permissionKeyDetail = ViewBag.PermissionKeyDetail as PermissionKeyDetail;
+
+    if (userMenuMap == null)
+    {
+        return;
+    }
+
+    string permission = null;
+
+    if (permissionKeyDetail != null)
+    {
+        permission = permissionKeyDetail.Value;
+    }
+}
+<script src="~/js/base/menu/menuService.min.js" asp-append-version="true"></script>
+<div class="system_sidebar">
+    @foreach (MenuType menuType in userMenuMap.Keys)
+    {
+        string menuItemStyle = "display:none";
+
+        if (permissionKeyDetail != null && userMenuMap[menuType].Any(w => w == permissionKeyDetail))
+        {
+            menuItemStyle = string.Empty;
+        }
+        <div class="jqMenuType lobbyMenuTypeDiv" menuType="@menuType.Value">
+            <span class="lobbyMenuText" >@menuType.Name</span>
+            <i class="jqMenuImgVisible lobbyMenuIcon fa fa-angle-right fa-2x" ></i>
+            <i class="jqMenuImgVisible lobbyMenuIcon fa fa-angle-down fa-2x" style="display:none;"></i>
+        </div>
+        <ul class="jqMenuNamePanel" menuType="@menuType.Value" style="@menuItemStyle">
+            @foreach (PermissionKeyDetail detail in userMenuMap[menuType])
+            {
+                <li class="jqMenuName" permission="@detail.Value">
+                    <a href="@detail.MenuPath">
+                        <div class="fa @detail.FaIconClass"></div>
+                        <p>@detail.Name</p>
+                    </a>
+                </li>
+            }
+        </ul>
+    }
+</div>
+
+<script>
+    let menuServ = new menuService();
+    menuServ.setCurrentPageIcon('@(Html.Raw(permission))');
+</script>

@@ -1,0 +1,60 @@
+﻿@using BackSideWeb.Models.ViewModel
+
+@{
+    ViewData["Title"] = "帖子月营收";
+}
+<div class="bg spacing gap system_filter" id="jqMemberFilter">
+    <br />
+    	<div class="col">
+
+		<div class="item jqAdvanceFilter">
+			<div class="col_p_1">
+				<div class="label_input column_layout">
+					<div class="form_set datepicker_text">
+						<input type="month" id="jqStartDate">
+						<span>至</span>
+						<input type="month" id="jqEndDate">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <div class="col" style="margin-left:70px;">
+		<div class="item">
+			<div class="btns">
+				<a href="javascript:;" class="btn_default main_color jqSearchBtn">查询</a>
+				<a href="javascript:;" class="btn_default main_color_line jqResetBtn">清空</a>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+<div id="jqContentRoot" style="display:none">
+    <div class="bg gap">
+        <div class="member_center_report agent_report table_overflow_x">
+            <table>
+                <thead>
+                    <tr>
+                        <th>月份</th>
+                        <th>广场解锁收益</th>
+                        <th>寻芳阁解锁收益</th>
+                        <th>官方平台收益</th>
+                        <th>总收益</th>
+                        <th>广场退款金额</th>
+                        <th>寻芳阁退款金额</th>
+                        <th>官方退款金额</th>
+                        <th>总退款</th>
+                    </tr>
+                </thead>
+                <tbody id="jqGridContent">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="footer_function_content space_between">
+        <div class="jqPagination pagination"></div>
+    </div>
+</div>

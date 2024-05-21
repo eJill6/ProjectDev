@@ -1,0 +1,177 @@
+﻿@using BackSideWeb.Models.ViewModel;
+@using BackSideWeb.Models.ViewModel.PublishRecord;
+@model PublishRecordOptionViewModel
+@{
+    ViewData["Title"] = "官方发帖记录";
+    DateTime firstDayOfMonth = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+    var startDatedefault = firstDayOfMonth.ToString("yyyy-MM-dd");
+    var endDatedefault = DateTime.Now.ToString("yyyy-MM-dd");
+
+
+}
+<div class="bg spacing gap system_filter" id="jqMemberFilter">
+    <br />
+    <div class="col">
+        <div class="item">
+            <div class="label_input column_layout">
+                <label for="">
+                    <p>帖子ID</p>
+                </label>
+                <div class="form_set">
+                    <input class="jqFilter" type="text" name="" id="postId" placeholder="" value="" maxlength="50">
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="col">
+        <div class="item">
+            <div class="label_input column_layout">
+                <label for="">
+                    <p>帖子标题</p>
+                </label>
+                <div class="form_set">
+                    <input class="jqFilter" type="text" name="" id="postTitle" placeholder="" value="" maxlength="50">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="item">
+            <div class="label_input column_layout">
+                <label for="">
+                    <p>会员ID</p>
+                </label>
+                <div class="form_set">
+                    <input class="jqFilter" type="text" name="" id="memberNo" placeholder="" value="" maxlength="50">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="item">
+            <div class="label_input column_layout">
+                <label for="">
+                    <p>状态</p>
+                </label>
+                @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting
+                {
+                    SettingId = "jqPostStatusSelectList",
+                    Items = Model.PostStatus,
+                })
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="item">
+			<div class="label_input column_layout">
+				<label for="">
+					<p>时间</p>
+				</label>
+				@await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting
+                {
+                    SettingId = "jqTimeTypeSelectList",
+                    Items = Model.TimeType,
+                })
+            </div>
+        </div>
+
+    </div>
+    <div class="col">
+        <div class="item">
+            <div class="col_p_1">
+                <div class="label_input column_layout">
+                    <label for="" class="m_hide">
+
+					</label>
+					<div class="form_set datepicker_text">
+						@Html.TextBox("jqStartDate", startDatedefault, new { id = "jqStartDate", @class = "width_set jqFilter" })
+						<span>至</span>
+						@Html.TextBox("jqEndDate", endDatedefault, new { id = "jqEndDate", @class = "width_set jqFilter" })
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div class="col" >
+        <div class="item">
+            <div class="label_input column_layout">
+                <label for="">
+                    <p>会员身份</p>
+                </label>
+                @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting
+                {
+                    SettingId = "jqUserIdentitySelectList",
+                    Items = Model.IdentityTypeItems,
+                })
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+
+        <div class="item">
+            <div class="btns">
+                <a href="javascript:;" class="btn_default main_color jqSearchBtn">查询</a>
+                <a href="javascript:;" class="btn_default main_color_line jqResetBtn">清空</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="jqContentRoot" style="display:block">
+    <div class="bg gap">
+        <div class="member_center_report agent_report table_overflow_x">
+            <table>
+                <thead>
+                    <tr>
+                        <th>帖子ID</th>
+                        <th>帖子标题</th>
+                        <th>会员ID</th>
+                        <th>会员身份</th>
+                        <th>首次送审时间</th>
+                        <th>再次送审时间</th>
+                        <th>审核时间</th>
+                        <th>上/下架</th>
+                        <th>状态</th>
+                        <th>检视</th>
+                        <th>编辑锁定</th>
+                        <th>编辑</th>
+                        <th>审核</th>
+                    </tr>
+                </thead>
+                <tbody id="jqGridContent">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="footer_function_content space_between">
+        <div class="jqPagination pagination"></div>
+    </div>
+</div>
+<style>
+    .col {
+        margin-top: 10px;
+    }
+
+    .jqDisplayBtn {
+        background-color: #02a7f0
+    }
+
+    .jqFailedBtn {
+        margin-left: 10px;
+        background-color: #ec808d
+    }
+
+    .hrefcss a {
+        color: blue; /* 使用父元素的颜色 */
+    }
+
+        .hrefcss a:hover,
+        .hrefcss a:active,
+        .hrefcss a:focus {
+            color: blue; /* 鼠标悬停、激活和焦点时保持颜色不变 */
+        }
+</style>

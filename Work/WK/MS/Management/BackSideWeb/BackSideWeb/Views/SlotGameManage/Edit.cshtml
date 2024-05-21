@@ -1,0 +1,126 @@
+﻿@using JxBackendService.Model.ViewModel.Game
+@using JxBackendService.Model.Common
+@using JxBackendService.Resource.Element
+@using JxBackendService.Common.Util
+@using JxBackendService.Model.Param.Game
+@model BaseSlotGameManageParam
+@{
+    var productSelectListItems = ViewBag.ProductSelectListItems as List<JxBackendSelectListItem>;
+    var isActiveSelectListItems = ViewBag.IsActiveSelectListItems as List<JxBackendSelectListItem>;
+}
+
+<script src="~/js/business/slotGameManage/slotGameEditSingleRowService.min.js" asp-append-version="true"></script>
+<input type="hidden" asp-for="No" />
+<div class="label_input">
+    <label>
+        <p>@DisplayElement.SlotGameName</p>
+    </label>
+    <input class="form-control" asp-for="GameName" />
+    <span asp-validation-for="GameName"></span>
+</div>
+<div class="label_input">
+    <label>
+        <p>@DisplayElement.ThirdPartyOwnership</p>
+    </label>
+    @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting(productSelectListItems)
+    {
+    SettingId = nameof(Model.ThirdPartyCode),
+    })
+</div>
+<div class="label_input">
+    <label class="label_with_tips">
+        <p>@DisplayElement.GameCode</p>
+        <img title="@MessageElement.GameCodeTips" src="~/images/question_icon.png" alt="Question" class="question-icon jqHoverTips" />
+    </label>
+    <div class="form_set">
+        <input asp-for="GameCode" value="@Model.GameCode" />
+        <span asp-validation-for="GameCode"></span>
+    </div>
+</div>
+<div class="label_input">
+    <label class="label_with_tips">
+        <p>@DisplayElement.GameImage</p>
+        <img id="jqGameImageTips" src="~/images/question_icon.png" alt="Question" class="question-icon jqHoverTips" />
+    </label>
+    <div class="form_set">
+        @await Html.PartialAsync("Partial/_ImageFileUpload", new ImageFileUploadSetting()
+        {
+            ImageFileUploadModel = Model,
+            DimensionLimits = new Dimension[] 
+            { 
+                new Dimension { Width = 690, Height = 440 },
+                new Dimension { Width = 500, Height = 500 },
+            },
+            SizeLimit = 500 * 1024,
+            AllowedExtensions = new string[] { "jpg", "png" },
+            FieldName = DisplayElement.GameImage,
+        })
+    </div>
+</div>
+<div class="label_input">
+    <label>
+        <p>@DisplayElement.Sort</p>
+    </label>
+    <div class="form_set">
+        <input type ="text" asp-for="Sort" value="@Model.Sort" />
+        <span asp-validation-for="Sort"></span>
+    </div>
+</div>
+<div class="label_input checkbox">
+    <label>
+        <input type="checkbox" asp-for="IsHot">
+        <span class="icon">
+            <i>
+                <img src="~/images/element/ic_checkbox.svg" alt="">
+            </i>
+        </span>
+        设定为推荐游戏
+    </label>
+</div>
+<div class="label_input">
+    <label>
+        <p>@DisplayElement.IsActiveStatus</p>
+    </label>
+    @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting(isActiveSelectListItems)
+    {
+    SettingId = nameof(Model.IsActive),
+    })
+</div>
+
+<div id="jqGameImageTipsText" style="display: none;">
+    <p>上传图片规格</p>
+    <p style="margin-left: 15px;">◾档案格式: JPG、PNG</p>
+    <p style="margin-left: 15px;">◾JDB电子/JDB捕鱼图片尺寸: 500 × 500 px以下等比图；其它产品图片尺寸: 690 × 440 px以下等比图</p>
+    <p style="margin-left: 15px;">◾档案大小: 不超过500kb</p>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#jqGameImageTips').hoverTips({
+            maxWidth: 300,
+            content: $($('#jqGameImageTipsText').html())
+        });
+
+        $("input[name='ThirdPartyCode']").rules(
+            "add",
+            {
+                required: true,
+                messages: {
+                    required: '@Html.Raw(string.Format(MessageElement.FieldIsNotAllowEmpty, DisplayElement.ThirdPartyOwnership))'
+                }
+            }
+        )
+
+        $("input[name='IsActive']").rules(
+            "add",
+            {
+                required: true,
+                messages: {
+                    required: '@Html.Raw(string.Format(MessageElement.FieldIsNotAllowEmpty, DisplayElement.IsActiveStatus))'
+                }
+            }
+        )
+    });
+
+    $("#Sort").onlyNumber(3);
+</script>
