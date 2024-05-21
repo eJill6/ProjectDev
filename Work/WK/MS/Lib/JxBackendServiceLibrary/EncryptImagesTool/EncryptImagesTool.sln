@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34302.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EncryptImagesTool", "EncryptImagesTool.csproj", "{D8A26D53-B214-4545-961B-8A34C51AEDEC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EncryptImagesToolConsole", "..\EncryptImagesToolConsole\EncryptImagesToolConsole.csproj", "{3426D401-4C32-4FCE-8368-D86D4F1418DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D8A26D53-B214-4545-961B-8A34C51AEDEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8A26D53-B214-4545-961B-8A34C51AEDEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8A26D53-B214-4545-961B-8A34C51AEDEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8A26D53-B214-4545-961B-8A34C51AEDEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3426D401-4C32-4FCE-8368-D86D4F1418DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3426D401-4C32-4FCE-8368-D86D4F1418DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3426D401-4C32-4FCE-8368-D86D4F1418DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3426D401-4C32-4FCE-8368-D86D4F1418DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F464E45C-293D-41C2-8539-AD9E8B027627}
+	EndGlobalSection
+EndGlobal

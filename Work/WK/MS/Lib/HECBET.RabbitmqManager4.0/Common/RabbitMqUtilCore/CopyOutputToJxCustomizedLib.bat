@@ -1,0 +1,1 @@
+copy /Y bin\Debug\netstandard2.0\RabbitMqUtilCore.dll ..\..\..\JxBackendServiceLibrary\JxCustomizedLib\RabbitMqUtilCore.dll
