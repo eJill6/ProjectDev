@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="GameCode" xml:space="preserve">
+    <value>GameCode</value>
+  </data>
+  <data name="GameImage" xml:space="preserve">
+    <value>游戏图</value>
+  </data>
+  <data name="HotGameName" xml:space="preserve">
+    <value>热门游戏名称</value>
+  </data>
+  <data name="IsActiveStatus" xml:space="preserve">
+    <value>启用状态</value>
+  </data>
+  <data name="Heat" xml:space="preserve">
+    <value>热度</value>
+  </data>
+  <data name="Memo" xml:space="preserve">
+    <value>审核原因</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>密码</value>
+  </data>
+  <data name="Permission" xml:space="preserve">
+    <value>权限</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>所属角色</value>
+  </data>
+  <data name="RoleName" xml:space="preserve">
+    <value>角色名称</value>
+  </data>
+  <data name="Sort" xml:space="preserve">
+    <value>排序</value>
+  </data>
+  <data name="UpdatePassword" xml:space="preserve">
+    <value>更新密码</value>
+  </data>
+  <data name="ThirdPartyOwnership" xml:space="preserve">
+    <value>所属第三方</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>用戶名</value>
+  </data>
+  <data name="UpdateGameImage" xml:space="preserve">
+    <value>更新游戏图</value>
+  </data>
+  <data name="AuditReason" xml:space="preserve">
+    <value>审核原因</value>
+  </data>
+  <data name="Banner" xml:space="preserve">
+    <value>Banner</value>
+  </data>
+  <data name="CancelRecommend" xml:space="preserve">
+    <value>取消推荐</value>
+  </data>
+  <data name="ComplaintID" xml:space="preserve">
+    <value>投诉ID</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="EndTime" xml:space="preserve">
+    <value>结束时间</value>
+  </data>
+  <data name="EvaluationID" xml:space="preserve">
+    <value>评价ID</value>
+  </data>
+  <data name="Featured" xml:space="preserve">
+    <value>精选</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>檔案</value>
+  </data>
+  <data name="FillInTheField" xml:space="preserve">
+    <value>填写区域</value>
+  </data>
+  <data name="HomeAnnouncementID" xml:space="preserve">
+    <value>首页公告ID</value>
+  </data>
+  <data name="IncomeSlipID" xml:space="preserve">
+    <value>收益单ID</value>
+  </data>
+  <data name="Insert" xml:space="preserve">
+    <value>新增</value>
+  </data>
+  <data name="OptioncOntent" xml:space="preserve">
+    <value>发帖项目</value>
+  </data>
+  <data name="OptionID" xml:space="preserve">
+    <value>项目ID</value>
+  </data>
+  <data name="PostId" xml:space="preserve">
+    <value>帖子ID</value>
+  </data>
+  <data name="PriceAdjustment" xml:space="preserve">
+    <value>是否同意申请调价</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>产品</value>
+  </data>
+  <data name="ReasonForFailure" xml:space="preserve">
+    <value>未通过原因</value>
+  </data>
+  <data name="Recommend" xml:space="preserve">
+    <value>推荐</value>
+  </data>
+  <data name="RecommendGame" xml:space="preserve">
+    <value>推荐游戏</value>
+  </data>
+  <data name="RedirectURL" xml:space="preserve">
+    <value>转导网址</value>
+  </data>
+  <data name="Review" xml:space="preserve">
+    <value>审核</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>显示</value>
+  </data>
+  <data name="SlotGameName" xml:space="preserve">
+    <value>电子游戏名称</value>
+  </data>
+  <data name="StartTime" xml:space="preserve">
+    <value>开始时间</value>
+  </data>
+  <data name="Switch" xml:space="preserve">
+    <value>开关</value>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>内文</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>标题</value>
+  </data>
+  <data name="UnlockPrice" xml:space="preserve">
+    <value>解锁价格</value>
+  </data>
+  <data name="Weights" xml:space="preserve">
+    <value>权重</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>金额</value>
+  </data>
+  <data name="OrderNo" xml:space="preserve">
+    <value>订单编号</value>
+  </data>
+  <data name="OrderTime" xml:space="preserve">
+    <value>订单时间</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>状态</value>
+  </data>
+  <data name="TransferType" xml:space="preserve">
+    <value>转帐类型</value>
+  </data>
+  <data name="UserID" xml:space="preserve">
+    <value>用户ID</value>
+  </data>
+  <data name="HandleTime" xml:space="preserve">
+    <value>处理时间</value>
+  </data>
+  <data name="Remark" xml:space="preserve">
+    <value>备注</value>
+  </data>
+  <data name="PublishPostRecord" xml:space="preserve">
+    <value>广场寻芳阁发帖记录</value>
+  </data>
+  <data name="RefreshFrequencySetting" xml:space="preserve">
+    <value>刷新频率设置</value>
+  </data>
+  <data name="TransferSource" xml:space="preserve">
+    <value>转帐来源</value>
+  </data>
+  <data name="TransferTarget" xml:space="preserve">
+    <value>转帐目标</value>
+  </data>
+  <data name="AccountID" xml:space="preserve">
+    <value>用户ID</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>新密码</value>
+  </data>
+  <data name="OldPassword" xml:space="preserve">
+    <value>旧密码</value>
+  </data>
+  <data name="AdminBookingAcceptTimeText" xml:space="preserve">
+    <value>接单时间</value>
+  </data>
+  <data name="AdminBookingActualPaymentMoneyText" xml:space="preserve">
+    <value>实际支付钻石</value>
+  </data>
+  <data name="AdminBookingBookingStatusText" xml:space="preserve">
+    <value>商户预约状态</value>
+  </data>
+  <data name="AdminBookingBookingTimeText" xml:space="preserve">
+    <value>下单时间</value>
+  </data>
+  <data name="AdminBookingCancelTimeText" xml:space="preserve">
+    <value>取消时间</value>
+  </data>
+  <data name="AdminBookingContact" xml:space="preserve">
+    <value>联系方式</value>
+  </data>
+  <data name="AdminBookingDiscountText" xml:space="preserve">
+    <value>折扣</value>
+  </data>
+  <data name="AdminBookingFinishTimeText" xml:space="preserve">
+    <value>确认完成时间</value>
+  </data>
+  <data name="AdminBookingId" xml:space="preserve">
+    <value>预约单ID</value>
+  </data>
+  <data name="AdminBookingOrderStatusText" xml:space="preserve">
+    <value>订单状态</value>
+  </data>
+  <data name="AdminBookingPaymentMoneyText" xml:space="preserve">
+    <value>支付钻石</value>
+  </data>
+  <data name="AdminBookingPaymentTypeText" xml:space="preserve">
+    <value>支付类型</value>
+  </data>
+  <data name="AdminBookingPostId" xml:space="preserve">
+    <value>帖子ID</value>
+  </data>
+  <data name="AdminBookingUserId" xml:space="preserve">
+    <value>预约会员ID</value>
+  </data>
+  <data name="AdminIncomeAmount" xml:space="preserve">
+    <value>實際解鎖鑽石</value>
+  </data>
+  <data name="AdminIncomeAmountText" xml:space="preserve">
+    <value>暂锁收益￥</value>
+  </data>
+  <data name="AdminIncomeApplyTimeText" xml:space="preserve">
+    <value>应入账时间</value>
+  </data>
+  <data name="AdminIncomeCategoryText" xml:space="preserve">
+    <value>帖子区域</value>
+  </data>
+  <data name="AdminIncomeCreateTimeText" xml:space="preserve">
+    <value>解锁/预约时间</value>
+  </data>
+  <data name="AdminIncomeDistributeTimeText" xml:space="preserve">
+    <value>入账时间</value>
+  </data>
+  <data name="AdminIncomeIncomeAmountText" xml:space="preserve">
+    <value>商户入账收益￥</value>
+  </data>
+  <data name="AdminIncomeIsOntimeText" xml:space="preserve">
+    <value>是否到期</value>
+  </data>
+  <data name="AdminIncomeLockTypeText" xml:space="preserve">
+    <value>锁定状态</value>
+  </data>
+  <data name="AdminIncomePayId" xml:space="preserve">
+    <value>收益单ID</value>
+  </data>
+  <data name="AdminIncomePointText" xml:space="preserve">
+    <value>实际解锁钻石</value>
+  </data>
+  <data name="AdminIncomePostId" xml:space="preserve">
+    <value>帖子ID</value>
+  </data>
+  <data name="AdminIncomeRebate" xml:space="preserve">
+    <value>收益</value>
+  </data>
+  <data name="AdminIncomeReportId" xml:space="preserve">
+    <value>投诉ID</value>
+  </data>
+  <data name="AdminIncomeSourceId" xml:space="preserve">
+    <value>來源編號(卡片解鎖編號)</value>
+  </data>
+  <data name="AdminIncomeStatusText" xml:space="preserve">
+    <value>收益单狀態</value>
+  </data>
+  <data name="AdminIncomeTargetId" xml:space="preserve">
+    <value>解锁单/预约单ID</value>
+  </data>
+  <data name="AdminIncomeUnusualMemo" xml:space="preserve">
+    <value>注解</value>
+  </data>
+  <data name="AdminIncomeUserId" xml:space="preserve">
+    <value>收益会员ID</value>
+  </data>
+  <data name="AdminPostTransactionAmount" xml:space="preserve">
+    <value>解锁钻石</value>
+  </data>
+  <data name="AdminPostTransactionCategoryText" xml:space="preserve">
+    <value>帖子区域</value>
+  </data>
+  <data name="AdminPostTransactionCreateTimeText" xml:space="preserve">
+    <value>解锁时间</value>
+  </data>
+  <data name="AdminPostTransactionDiscountType" xml:space="preserve">
+    <value>折扣方式</value>
+  </data>
+  <data name="AdminPostTransactionId" xml:space="preserve">
+    <value>解锁单ID</value>
+  </data>
+  <data name="AdminPostTransactionPostId" xml:space="preserve">
+    <value>帖子ID</value>
+  </data>
+  <data name="AdminPostTransactionRealExpenseAmount" xml:space="preserve">
+    <value>实际解锁钻石</value>
+  </data>
+  <data name="AdminPostTransactionRebate" xml:space="preserve">
+    <value>折扣</value>
+  </data>
+  <data name="AdminPostTransactionRefundMemo" xml:space="preserve">
+    <value>投诉退款</value>
+  </data>
+  <data name="AdminPostTransactionTargetId" xml:space="preserve">
+    <value>收益单ID</value>
+  </data>
+  <data name="AdminPostTransactionUnlockType" xml:space="preserve">
+    <value>解锁方式</value>
+  </data>
+  <data name="AdminPostTransactionUserId" xml:space="preserve">
+    <value>解锁会员ID</value>
+  </data>
+  <data name="IncomeExpenseAmount" xml:space="preserve">
+    <value>帳變</value>
+  </data>
+  <data name="IncomeExpenseAmountText" xml:space="preserve">
+    <value>余额账变￥</value>
+  </data>
+  <data name="IncomeExpenseCategoryText" xml:space="preserve">
+    <value>收付行為</value>
+  </data>
+  <data name="IncomeExpenseCreateTime" xml:space="preserve">
+    <value>账变时间</value>
+  </data>
+  <data name="IncomeExpenseId" xml:space="preserve">
+    <value>订单号</value>
+  </data>
+  <data name="IncomeExpenseMemo" xml:space="preserve">
+    <value>备注</value>
+  </data>
+  <data name="IncomeExpensePayTypeText" xml:space="preserve">
+    <value>支付方式</value>
+  </data>
+  <data name="IncomeExpensePointText" xml:space="preserve">
+    <value>钻石账变</value>
+  </data>
+  <data name="IncomeExpensePostType" xml:space="preserve">
+    <value>贴子区域</value>
+  </data>
+  <data name="IncomeExpenseTransactionType" xml:space="preserve">
+    <value>交易類型(收入/支出)</value>
+  </data>
+  <data name="IncomeExpenseUserId" xml:space="preserve">
+    <value>会员ID</value>
+  </data>
+  <data name="PaidUsersCount" xml:space="preserve">
+    <value>付费用户数</value>
+  </data>
+  <data name="PaymentRate" xml:space="preserve">
+    <value>付费率</value>
+  </data>
+  <data name="TotalRevenue" xml:space="preserve">
+    <value>总收益</value>
+  </data>
+  <data name="TotalUsers" xml:space="preserve">
+    <value>累计用户数</value>
+  </data>
+  <data name="ActivePostsCount" xml:space="preserve">
+    <value>展示中帖子总数</value>
+  </data>
+  <data name="AgencyDisplayed" xml:space="preserve">
+    <value>寻芳阁展示中</value>
+  </data>
+  <data name="AgencyNotApproved" xml:space="preserve">
+    <value>寻芳阁未通过</value>
+  </data>
+  <data name="AgencyRefundAmount" xml:space="preserve">
+    <value>寻芳阁退款金额</value>
+  </data>
+  <data name="AgencyRefundCount" xml:space="preserve">
+    <value>寻芳阁退款笔数</value>
+  </data>
+  <data name="AgencyUnderReview" xml:space="preserve">
+    <value>寻芳阁审核中</value>
+  </data>
+  <data name="AgencyUnlockEarnings" xml:space="preserve">
+    <value>寻芳阁解锁收益</value>
+  </data>
+  <data name="AgencyUnlocksCount" xml:space="preserve">
+    <value>寻芳阁被解锁次数</value>
+  </data>
+  <data name="DepositsReceivedAmount" xml:space="preserve">
+    <value>已收保证金金额</value>
+  </data>
+  <data name="DepositsReceivedCount" xml:space="preserve">
+    <value>已收保证金笔数</value>
+  </data>
+  <data name="MerchantCount" xml:space="preserve">
+    <value>商户数</value>
+  </data>
+  <data name="OfficialDisplayed" xml:space="preserve">
+    <value>官方展示中</value>
+  </data>
+  <data name="OfficialNotApproved" xml:space="preserve">
+    <value>官方未通过</value>
+  </data>
+  <data name="OfficialPlatformEarnings" xml:space="preserve">
+    <value>官方区平台收益</value>
+  </data>
+  <data name="OfficialRefundAmount" xml:space="preserve">
+    <value>官方区退款金额</value>
+  </data>
+  <data name="OfficialRefundCount" xml:space="preserve">
+    <value>官方区退款笔数</value>
+  </data>
+  <data name="OfficialReservationsCount" xml:space="preserve">
+    <value>官方被预约次数</value>
+  </data>
+  <data name="OfficialUnderReview" xml:space="preserve">
+    <value>官方审核中</value>
+  </data>
+  <data name="SquareDisplayed" xml:space="preserve">
+    <value>广场展示中</value>
+  </data>
+  <data name="SquareNotApproved" xml:space="preserve">
+    <value>广场未通过</value>
+  </data>
+  <data name="SquareRefundAmount" xml:space="preserve">
+    <value>广场区退款金额</value>
+  </data>
+  <data name="SquareRefundCount" xml:space="preserve">
+    <value>广场区退款笔数</value>
+  </data>
+  <data name="SquareUnderReview" xml:space="preserve">
+    <value>广场审核中</value>
+  </data>
+  <data name="SquareUnlockEarnings" xml:space="preserve">
+    <value>广场区解锁收益</value>
+  </data>
+  <data name="SquareUnlocksCount" xml:space="preserve">
+    <value>广场被解锁次数</value>
+  </data>
+  <data name="ARPPU" xml:space="preserve">
+    <value>ARPPU</value>
+  </data>
+  <data name="ARPU" xml:space="preserve">
+    <value>ARPU</value>
+  </data>
+  <data name="OperatingDataACU" xml:space="preserve">
+    <value>ACU</value>
+  </data>
+  <data name="OperatingDataARPPU" xml:space="preserve">
+    <value>ARPPU</value>
+  </data>
+  <data name="OperatingDataARPU" xml:space="preserve">
+    <value>ARPU</value>
+  </data>
+  <data name="OperatingDataDAU" xml:space="preserve">
+    <value>DAU</value>
+  </data>
+  <data name="OperatingDataDUN" xml:space="preserve">
+    <value>DUN</value>
+  </data>
+  <data name="OperatingDataEarnestMoney" xml:space="preserve">
+    <value>保证金金额</value>
+  </data>
+  <data name="OperatingDataEarnestMoneyCount" xml:space="preserve">
+    <value>保证金笔数</value>
+  </data>
+  <data name="OperatingDataEarnings" xml:space="preserve">
+    <value>收益</value>
+  </data>
+  <data name="OperatingDataMAU" xml:space="preserve">
+    <value>MAU</value>
+  </data>
+  <data name="OperatingDataPayoutRate" xml:space="preserve">
+    <value>付费率</value>
+  </data>
+  <data name="OperatingDataPayUser" xml:space="preserve">
+    <value>付费用户</value>
+  </data>
+  <data name="OperatingDataPCU" xml:space="preserve">
+    <value>PCU</value>
+  </data>
+  <data name="OperatingDataPU" xml:space="preserve">
+    <value>PU</value>
+  </data>
+  <data name="OperatingDataPV" xml:space="preserve">
+    <value>PV</value>
+  </data>
+  <data name="OperatingDataTimeText" xml:space="preserve">
+    <value>日期</value>
+  </data>
+  <data name="OperatingDataTotalEarnings" xml:space="preserve">
+    <value>总收益</value>
+  </data>
+  <data name="OperatingDataGuaranteeAudit" xml:space="preserve">
+    <value>寻芳阁审核中</value>
+  </data>
+  <data name="OperatingDataGuaranteeNotPass" xml:space="preserve">
+    <value>寻芳阁未通过</value>
+  </data>
+  <data name="OperatingDataGuaranteeRefund" xml:space="preserve">
+    <value>寻芳阁退款金额</value>
+  </data>
+  <data name="OperatingDataGuaranteeShow" xml:space="preserve">
+    <value>寻芳阁展示中</value>
+  </data>
+  <data name="OperatingDataGuaranteeUnlock" xml:space="preserve">
+    <value>寻芳阁解锁次数</value>
+  </data>
+  <data name="OperatingDataGuaranteeUnlockEarnings" xml:space="preserve">
+    <value>寻芳阁解锁收益</value>
+  </data>
+  <data name="OperatingDataOfficialAudit" xml:space="preserve">
+    <value>官方审核中</value>
+  </data>
+  <data name="OperatingDataOfficialNotPass" xml:space="preserve">
+    <value>官方未通过</value>
+  </data>
+  <data name="OperatingDataOfficialPlatformEarnings" xml:space="preserve">
+    <value>官方平台收益</value>
+  </data>
+  <data name="OperatingDataOfficialRefund" xml:space="preserve">
+    <value>官方退款金额</value>
+  </data>
+  <data name="OperatingDataOfficialReserve" xml:space="preserve">
+    <value>官方被预约次数</value>
+  </data>
+  <data name="OperatingDataOfficialShow" xml:space="preserve">
+    <value>官方展示中</value>
+  </data>
+  <data name="OperatingDataShowPostTotalCount" xml:space="preserve">
+    <value>展示中帖子总数</value>
+  </data>
+  <data name="OperatingDataSquareAudit" xml:space="preserve">
+    <value>广场审核中</value>
+  </data>
+  <data name="OperatingDataSquareNotPass" xml:space="preserve">
+    <value>广场未通过</value>
+  </data>
+  <data name="OperatingDataSquareRefund" xml:space="preserve">
+    <value>广场退款金额</value>
+  </data>
+  <data name="OperatingDataSquareShow" xml:space="preserve">
+    <value>广场展示中</value>
+  </data>
+  <data name="OperatingDataSquareUnlock" xml:space="preserve">
+    <value>广场被解锁次数</value>
+  </data>
+  <data name="OperatingDataSquareUnlockEarnings" xml:space="preserve">
+    <value>广场解锁收益</value>
+  </data>
+  <data name="OperatingDataTotalRefund" xml:space="preserve">
+    <value>总退款</value>
+  </data>
+  <data name="OfficialReserveCancelCount" xml:space="preserve">
+    <value>官方被预约取消次数</value>
+  </data>
+  <data name="AdminIncomeDistributeStatusText" xml:space="preserve">
+    <value>入账审核</value>
+  </data>
+  <data name="OperatingDataMonthTimeText" xml:space="preserve">
+    <value>月份</value>
+  </data>
+  <data name="GameCategory" xml:space="preserve">
+    <value>所属游戏类别</value>
+  </data>
+  <data name="GameID" xml:space="preserve">
+    <value>GameID</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="Duration" xml:space="preserve">
+    <value>时长</value>
+  </data>
+  <data name="FrameRatio" xml:space="preserve">
+    <value>对话框高度比例</value>
+  </data>
+  <data name="Style" xml:space="preserve">
+    <value>样式</value>
+  </data>
+</root>

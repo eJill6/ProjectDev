@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AG" xml:space="preserve">
+    <value>AG真人</value>
+  </data>
+  <data name="IM" xml:space="preserve">
+    <value>IM电竞</value>
+  </data>
+  <data name="IMBG" xml:space="preserve">
+    <value>IM棋牌</value>
+  </data>
+  <data name="IMeBET" xml:space="preserve">
+    <value>eBET真人</value>
+  </data>
+  <data name="IMPP" xml:space="preserve">
+    <value>PP电子</value>
+  </data>
+  <data name="IMPT" xml:space="preserve">
+    <value>PT电游</value>
+  </data>
+  <data name="IMSport" xml:space="preserve">
+    <value>IM体育</value>
+  </data>
+  <data name="LC" xml:space="preserve">
+    <value>龙城棋牌</value>
+  </data>
+  <data name="PT" xml:space="preserve">
+    <value>老虎机</value>
+  </data>
+  <data name="RG" xml:space="preserve">
+    <value>RG电竞</value>
+  </data>
+  <data name="Sport" xml:space="preserve">
+    <value>沙巴体育</value>
+  </data>
+  <data name="TPGameGroup_BoardGame" xml:space="preserve">
+    <value>BoardGame棋牌</value>
+    <comment>分紅計算：LC、IMBG</comment>
+  </data>
+  <data name="TPGameGroup_ESport" xml:space="preserve">
+    <value>体育电竞</value>
+    <comment>分紅計算：Sport、IM、RG、IMSport、BTI体育</comment>
+  </data>
+  <data name="TPGameGroup_LIVE" xml:space="preserve">
+    <value>LIVE真人</value>
+    <comment>分紅計算：AG真人、IMeBET真人</comment>
+  </data>
+  <data name="TPGameGroup_Slot" xml:space="preserve">
+    <value>老虎机电游</value>
+    <comment>分紅計算：IMPT、JXPT、IMPP</comment>
+  </data>
+  <data name="Lottery" xml:space="preserve">
+    <value>MS彩票</value>
+  </data>
+  <data name="IMSG" xml:space="preserve">
+    <value>双赢彩票</value>
+  </data>
+  <data name="IMVR" xml:space="preserve">
+    <value>VR彩票</value>
+  </data>
+  <data name="ABEB" xml:space="preserve">
+    <value>欧博真人</value>
+  </data>
+  <data name="PGSL" xml:space="preserve">
+    <value>PG电子</value>
+  </data>
+  <data name="OBFI" xml:space="preserve">
+    <value>PM捕鱼王</value>
+  </data>
+  <data name="EVEB" xml:space="preserve">
+    <value>EVO真人</value>
+  </data>
+  <data name="BTIS" xml:space="preserve">
+    <value>BTI体育</value>
+  </data>
+  <data name="OBSP" xml:space="preserve">
+    <value>PM体育</value>
+  </data>
+  <data name="LotteryByCTS" xml:space="preserve">
+    <value>顶盛彩票</value>
+  </data>
+  <data name="OBSPByCTS" xml:space="preserve">
+    <value>顶盛体育</value>
+  </data>
+  <data name="OBEB" xml:space="preserve">
+    <value>PM真人</value>
+  </data>
+  <data name="IMKY" xml:space="preserve">
+    <value>开元棋牌</value>
+  </data>
+  <data name="JDBFI" xml:space="preserve">
+    <value>JDB捕鱼</value>
+  </data>
+  <data name="WLBG" xml:space="preserve">
+    <value>瓦力游戏</value>
+  </data>
+  <data name="AGFishing" xml:space="preserve">
+    <value>AG捕鱼</value>
+  </data>
+  <data name="AGXin" xml:space="preserve">
+    <value>AG电子</value>
+  </data>
+  <data name="AGYoPlay" xml:space="preserve">
+    <value>AG街机</value>
+  </data>
+  <data name="IMSE" xml:space="preserve">
+    <value>SE电子</value>
+  </data>
+  <data name="OMKS" xml:space="preserve">
+    <value>一分快三</value>
+  </data>
+  <data name="OMPK10" xml:space="preserve">
+    <value>一分快车</value>
+  </data>
+  <data name="IMJDB" xml:space="preserve">
+    <value>JDB电子</value>
+  </data>
+  <data name="FYES" xml:space="preserve">
+    <value>开心电竞</value>
+  </data>
+  <data name="OMSSC" xml:space="preserve">
+    <value>一分时时彩</value>
+  </data>
+  <data name="IMPTLIVE" xml:space="preserve">
+    <value>PT真人</value>
+  </data>
+  <data name="WLFishing" xml:space="preserve">
+    <value>瓦力捕鱼</value>
+  </data>
+  <data name="PMBG" xml:space="preserve">
+    <value>PM棋牌</value>
+  </data>
+  <data name="PMSL" xml:space="preserve">
+    <value>PM电子</value>
+  </data>
+  <data name="AWCHB" xml:space="preserve">
+    <value>HRB赛马</value>
+  </data>
+  <data name="AWCSP" xml:space="preserve">
+    <value>AWC体育</value>
+  </data>
+  <data name="AWCSV" xml:space="preserve">
+    <value>SV388斗鸡</value>
+  </data>
+  <data name="OMLHC" xml:space="preserve">
+    <value>一分六合彩</value>
+  </data>
+  <data name="AGWallet" xml:space="preserve">
+    <value>AG</value>
+    <comment>AG共用錢包（AG真人、AG捕鱼王、AG电子、AG街机）</comment>
+  </data>
+  <data name="IMPPWallet" xml:space="preserve">
+    <value>JDB/PP/SE</value>
+    <comment>IMPP共用錢包（IMJDB、IMPP、IMSE）</comment>
+  </data>
+  <data name="IMPTWallet" xml:space="preserve">
+    <value>PT</value>
+    <comment>IMPT共用錢包(PT電遊、PT真人)</comment>
+  </data>
+  <data name="Lottery_OMKS" xml:space="preserve">
+    <value>一分快三</value>
+  </data>
+  <data name="Lottery_OMLHC" xml:space="preserve">
+    <value>一分六合彩</value>
+  </data>
+  <data name="Lottery_OMPK10" xml:space="preserve">
+    <value>一分快车</value>
+  </data>
+  <data name="Lottery_OMSSC" xml:space="preserve">
+    <value>一分时时彩</value>
+  </data>
+  <data name="Lottery_NUINUI" xml:space="preserve">
+    <value>百人牛牛</value>
+  </data>
+  <data name="Lottery_JSBaccarat" xml:space="preserve">
+    <value>极速百家乐</value>
+  </data>
+  <data name="Lottery_JSLP" xml:space="preserve">
+    <value>极速轮盘</value>
+  </data>
+  <data name="Lottery_JSYXX" xml:space="preserve">
+    <value>极速鱼虾蟹</value>
+  </data>
+  <data name="CQ9SL" xml:space="preserve">
+    <value>CQ9电子</value>
+  </data>
+  <data name="CQ9Fish" xml:space="preserve">
+    <value>CQ9捕鱼</value>
+  </data>
+  <data name="CQ9Slot" xml:space="preserve">
+    <value>CQ9电子</value>
+  </data>
+  <data name="CQ9Table" xml:space="preserve">
+    <value>CQ9棋牌</value>
+  </data>
+  <data name="Lottery_JSSG" xml:space="preserve">
+    <value>极速三公</value>
+  </data>
+  <data name="Lottery_JSLH" xml:space="preserve">
+    <value>极速龙虎</value>
+  </data>
+</root>
