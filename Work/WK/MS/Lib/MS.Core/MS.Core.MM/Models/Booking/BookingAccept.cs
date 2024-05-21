@@ -1,0 +1,29 @@
+﻿using MS.Core.MM.Models.Booking.Enums;
+
+namespace MS.Core.MM.Models.Booking
+{
+    public class BookingAccept
+    {
+        /// <summary>
+        /// 更新狀態
+        /// </summary>
+        public BookingStatus Status { get; set; }
+        /// <summary>
+        /// 原始狀態
+        /// </summary>
+        public BookingStatus OriginalStatus { get; set; }
+        /// <summary>
+        /// 預約單號
+        /// </summary>
+        public string BookingId { get; set; }
+        /// <summary>
+        /// 接單時間
+        /// </summary>
+        public DateTime AcceptTime { get; set; }
+
+        /// <summary>
+        /// 排程時間
+        /// </summary>
+        public DateTime ScheduledTime { get; set; }
+    }
+}
