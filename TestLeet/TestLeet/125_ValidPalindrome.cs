@@ -43,7 +43,7 @@ namespace TestLeet
                 string pattern = "[a-zA-Z]+";
                 var stringBuilder = new StringBuilder();
 
-                MatchCollection matches = Regex.Matches(s, pattern);
+                MatchCollection matches = Regex.Matches(s.ToLower(), pattern);
 
                 foreach (Match match in matches)
                 {
@@ -57,11 +57,7 @@ namespace TestLeet
                     return true;
                 }
 
-                while (true)
-                {
-                }
-
-                return false;
+                return new string(word.Reverse().ToArray()) == word;
             }
         }
     }
