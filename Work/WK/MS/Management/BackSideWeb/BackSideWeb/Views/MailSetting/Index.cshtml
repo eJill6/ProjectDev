@@ -1,0 +1,33 @@
+﻿
+<a href="javascript:;" class="jqSearchBtn" style="display:none">查询</a>
+
+<div id="jqContentRoot" style="display:none">
+    <div class="bg gap">
+        <div class="member_center_report agent_report table_overflow_x">
+            <table>
+                <thead>
+                    <tr>
+                        <th>项目</th>
+                        <th>内文</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="jqGridContent">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="footer_function_content space_between">
+        <div class="jqPagination pagination"></div>
+    </div>
+</div>
+<script src="/lib/clipboard/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.clickCopy');
+    clipboard.on('success', function (e) {
+        alert('复制成功');
+    })
+    clipboard.on('error',function(){
+        alert('复制失败,请手动复制吧!');
+    })
+</script>

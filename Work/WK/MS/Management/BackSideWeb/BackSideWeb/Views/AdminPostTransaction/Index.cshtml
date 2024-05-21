@@ -1,0 +1,145 @@
+﻿@using BackSideWeb.Models.ViewModel
+@model AdminPostTransactionViewModel
+@{
+    var postId = ViewBag.PostId;
+    var userId = ViewBag.UserId;
+    string startDatedefault;
+    if (string.IsNullOrWhiteSpace(postId) && string.IsNullOrWhiteSpace(userId))
+    {
+        startDatedefault = DateTime.Today.AddDays(-1).ToString("yyyy-MM-dd");
+    }
+    else
+    {
+        startDatedefault = "2023-01-01";
+    }
+    var endDatedefault = DateTime.Today.ToString("yyyy-MM-dd");
+}
+
+<div class="bg spacing gap system_filter" id="jqMemberFilter">
+    <br />
+    <div class="col">
+        <div class="item">
+            <div class="label_input column_layout">
+                <label for="">
+                    <p>解锁单ID</p>
+                </label>
+                <div class="form_set">
+                    <input class="jqFilter" type="text" name="" id="jqId" placeholder="" value="" maxlength="16">
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="label_input column_layout">
+                <label for="">
+                    <p>解锁方式</p>
+                </label>
+                @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting
+                {
+                SettingId = "jqUnlockType",
+                Items =Model.UnlockMethodItems,
+                })
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="item">
+            <div class="label_input column_layout">
+                <label for="">
+                    <p>帖子ID</p>
+                </label>
+                <div class="form_set">
+                    <input class="jqFilter" type="text" name="" id="jqPostId" placeholder="" value="@postId" maxlength="16">
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="btns">
+                <a href="javascript:;" class="btn_default main_color jqSearchBtn">查询</a>
+                <a href="javascript:;" class="btn_default main_color_line jqResetBtn">清空</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="item">
+            <div class="label_input column_layout">
+                <label for="">
+                    <p>会员ID</p>
+                </label>
+                <div class="form_set">
+                    <input class="jqFilter" type="text" name="" id="jqUserId" placeholder="" value="@userId" maxlength="16">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="item">
+            <div class="col_p_1">
+                <div class="label_input column_layout">
+                    <label for="" class="m_hide">
+                        <p>解锁时间</p>
+                    </label>
+                    <div class="form_set datepicker_text">
+                        @Html.TextBox("jqBeginDate", startDatedefault, new { id = "jqBeginDate", @class = "width_set jqFilter" })
+                        <span>至</span>
+                        @Html.TextBox("jqEndDate", endDatedefault, new { id = "jqEndDate", @class = "width_set jqFilter" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="item">
+            <div class="label_input column_layout">
+                <label for="">
+                    <p>帖子区域</p>
+                </label>
+                @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting
+                {
+                SettingId = "jqPostType",
+                Items = Model.PostTypeItems,
+                })
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="jqContentRoot" style="display:none">
+    <div class="bg gap">
+        <div class="member_center_report agent_report table_overflow_x">
+            <table>
+                <thead>
+                    <tr>
+                        <th>解锁单ID</th>
+                        <th>帖子ID</th>
+                        <th>帖子区域</th>
+                        <th>解锁会员ID</th>
+                        <th>解锁时间</th>
+                        <th>解锁钻石</th>
+                        <th>解锁方式</th>
+                        <th>折扣</th>
+                        <th>实际解锁钻石</th>
+                        <th>收益单ID</th>
+                        <th>投诉退款</th>
+                    </tr>
+                </thead>
+                <tbody id="jqGridContent">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="footer_function_content space_between">
+        <div class="jqPagination pagination"></div>
+    </div>
+</div>
+<style>
+    
+    .hrefcss a {
+        color: blue; /* 使用父元素的颜色 */
+    }
+
+        .hrefcss a:hover,
+        .hrefcss a:active,
+        .hrefcss a:focus {
+            color: blue; /* 鼠标悬停、激活和焦点时保持颜色不变 */
+        }
+</style>

@@ -1,0 +1,18 @@
+﻿@using JxBackendService.Model.Paging
+@using JxBackendService.Model.ViewModel.Game
+@model List<GameCenterManageModel>
+<div>
+    <table>
+        <tbody class="jqBody">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.MenuName</td>
+                    <td>
+                        <input type="text" class="edit_cell_in_grid jqSort" value="@item.Sort" data-key="@item.No" maxlength="3" oninput="onlyAllowInputInteger(this)">
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,34 @@
+﻿@using BackSideWeb.Models.ViewModel.PlayBetRecord
+@using BackSideWeb.Models.ViewModel.PublishRecord;
+@using JxBackendService.Model.Entity.Game.Lottery
+@using JxBackendService.Model.Paging
+@using JxBackendService.Model.ViewModel.Game
+@using MS.Core.MMModel.Models.AdminPost;
+@model PagedResultModel<LotteryHistoryViewModel>
+@{
+    string clientServiceName = ViewBag.ClientServiceName.ToString();
+}
+<div>
+    <table>
+        <tbody class="jqBody">
+            @foreach (var item in Model.ResultList)
+            {
+                <tr>
+                    <td>@item.IssueNo</td>
+                    <td>@item.LotteryType</td>
+                    <td>@Html.Raw(@item.CurrentLotteryNumText)</td>
+                    <td>@item.CurrentLotteryTimeText</td>
+                    <td>@item.UpdateTimeText</td>
+                    <td>@item.LotteryProcessingTime</td>
+                    <td>@item.IsLotteryText</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="jqPagination">
+        @await Html.PartialAsync("Partial/_PaginationByPagerInfo", Model)
+    </div>
+</div>
+
+

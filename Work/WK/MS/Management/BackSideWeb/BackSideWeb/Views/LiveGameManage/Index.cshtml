@@ -1,0 +1,92 @@
+﻿@using JxBackendService.Model.Common
+@using JxBackendService.Model.Param.Game
+@using JxBackendService.Model.ViewModel.Game
+@using JxBackendService.Resource.Element;
+@model LiveGameManageModel
+@{
+    var isActiveSelectListItems = ViewBag.IsActiveSelectListItems as List<JxBackendSelectListItem>;
+    var liveGameTabTypesSelectListItems = ViewBag.LiveGameTabTypesSelectListItems as List<JxBackendSelectListItem>;
+}
+<form id="jqSearchFilterForm" onsubmit="event.preventDefault();">
+    <div class="bg spacing gap system_filter">
+        <br />
+        <div class="col">
+            <div class="item">
+                <div class="label_input column_layout">
+                    <label for="">
+                        <p>游戏分类</p>
+                    </label>
+                    @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting(liveGameTabTypesSelectListItems)
+                    {
+                        SettingId = "TabType",
+                    })
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="item">
+                <div class="label_input column_layout">
+                    <label for="">
+                        <p>@DisplayElement.Name</p>
+                    </label>
+                    <div class="form_set">
+                        <input class="jqFilter" type="text" asp-for="LotteryType" id="jqGameName">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+        <div class="item">
+            <div class="label_input column_layout">
+                <label for="">
+                    <p>状态</p>
+                </label>
+                @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting(isActiveSelectListItems)
+                {
+                    SettingId = "SearchStatus",
+                })
+            </div>
+        </div>
+    </div>
+        <div class="col">
+            <div class="item">
+                <div class="btns">
+                    <a href="javascript:;" class="btn_default main_color jqSearchBtn">查询</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div id="jqContentRoot" style="display:none">
+    <div class="bg gap">
+        <div class="member_center_report agent_report table_overflow_x">
+            <table>
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>@DisplayElement.Name</th>
+                        <th>类型</th>
+                        <th style="min-width: 115px">游戏图</th>
+                        <th>URL</th>
+                        <th>API URL</th>
+                        <th>对话框高度比例</th>
+                        <th>样式</th>
+                        <th>倒计时</th>
+                        <th>时长</th>
+                        <th>保持状态H5用</th>
+                        <th>跟投</th>
+                        <th>排序</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="jqGridContent">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="footer_function_content space_between">
+        <div class="jqPagination pagination"></div>
+    </div>
+</div>

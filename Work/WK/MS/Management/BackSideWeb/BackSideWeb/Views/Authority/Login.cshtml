@@ -1,0 +1,59 @@
+@model LoginParam
+@using JxBackendService.Model.Param.Security
+@{
+    Layout = BackSideWeb.Models.Enums.LayoutType.Base.Value;
+}
+
+<div class="container_full_browser main_bg_darker">
+    <link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+    <div class="main fixed_header login_container bg min_height">
+        <div class="container">
+            <div class="content">
+                <div class="right_content">
+                    <div class="logo">
+                        <img alt="" src="~/images/MS_LOGO.png">                        
+                    </div>
+                    <p class="description_text">秘觅与游戏产品后台管理</p>
+                    <div class="form_row">
+                        <form method="post" id="jqLoginForm">
+                            <div class="label_input">
+                                <div class="form_set">
+                                    <div class="icon_form_set before_icon">
+                                        <i class="icon_label icon_user"></i>
+                                        <input type="text" autocomplete="off" asp-for="EncryptLoginString" placeholder="验证码" onkeydown="handleKeyPress(event);">
+                                        <span asp-validation-for="EncryptLoginString"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="javascript:;" class="btn_default main_color signinup" onclick="login()">登 录</a>
+                            <span class="field-validation-error">@ViewBag.ErrorMessage</span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/business/authenticator/verifyExpiredNoticeService.min.js" asp-append-version="true"></script>
+
+<script>
+    function login() {
+        new verifyExpiredNoticeService().resetCheckAuthenticatedKey();
+        $('#jqLoginForm').submit();
+    }
+
+    function handleKeyPress(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            login();
+        }
+    }
+
+    if (window.self !== window.top) {
+        window.parent.location.href = location.origin + location.pathname;
+    }
+
+    $('#EncryptLoginString').on('focus', function () {
+        $(this).select();
+    });
+</script>

@@ -1,0 +1,90 @@
+﻿@using BackSideWeb.Models.ViewModel;
+@using JxBackendService.Model.Paging
+@using JxBackendService.Model.ViewModel.Game
+@using MS.Core.MMModel.Models.AdminIncomeExpense;
+@using MS.Core.MMModel.Models.IncomeExpense;
+
+@model PagedResultModel<AdminIncomeList>
+@{
+    string clientServiceName = ViewBag.ClientServiceName.ToString();
+}
+<div>
+    <table>
+        <tbody class="jqBody">
+            @foreach (var item in Model.ResultList)
+            {
+
+                <tr>
+                    <td>@item.Id</td>
+                    <td class="hrefcss">
+                        <a href="/AdminIncome/Index?postid=@(item.PostId)" target="_blank">
+                            @item.PostId
+                        </a>
+                    </td>
+                    <td>@item.CategoryText</td>
+                    <td class="hrefcss">
+                        <a href="/AdminIncome/Index?userId=@(item.UserId)" target="_blank">
+                            @item.UserId
+                        </a>
+                    </td>
+                    <td>@item.UserIdentityText</td>
+                    <td>@item.SourceId</td>
+                    <td>@item.CreateTimeText</td>
+                    <td>@item.StatusText</td>
+                    <td>@item.UnusualMemo</td>
+                    <td>@item.AmountText</td>
+                    <td>@item.IncomeAmountText</td>
+                    <td>@item.DistributeTimeText</td>
+                    <td>
+                        <div class="flex_content">
+
+                            @if (item.Status == IncomeExpenseStatusEnum.UnDispatched || item.Status == IncomeExpenseStatusEnum.ReportUnDispatched)
+                            {
+                                <p>-</p>
+                            }
+                            @if (item.Status == IncomeExpenseStatusEnum.Unusual)
+                            {
+                                if ((bool)ViewBag.HasEditPermission)
+                                {
+                                    <a href="javascript:void(0)" data-url='@Url.Action("UpdateView", "AdminIncome")' class="fa fa-edit"
+                                       onclick="@string.Format("{0}.openUpdateView2(this, '{1}')", clientServiceName,  item.Id)">
+                                    </a>
+                                }
+                            }
+                            @if (item.Status == IncomeExpenseStatusEnum.Approved  || item.Status == IncomeExpenseStatusEnum.Reject)
+                            {
+                                <p>已审核</p>
+                            }
+                            @if (item.Status == IncomeExpenseStatusEnum.Dispatched)
+                            {
+                                <p>已派发</p>
+                            }
+
+                        </div>
+                    </td>
+                    <td>
+                        <div class="flex_content">
+                            @if (item.Category == IncomeExpenseCategoryEnum.Official)
+                            {
+                                <a href="javascript:void(0)" data-url='@Url.Action("BookingDetail", "AdminIncome")' class="btn_default main_color icon_style text_btn"
+                                   onclick="@string.Format("{0}.openDetail(this, '{1}', '{2}')", clientServiceName, item.Id, "预约单详情&" + item.Id)">
+                                    详细
+                                </a>
+                            }
+                            else
+                            {
+                                <a href="javascript:void(0)" data-url='@Url.Action("Detail", "AdminIncome")' class="btn_default main_color icon_style text_btn"
+                                   onclick="@string.Format("{0}.openDetail(this, '{1}', '{2}')", clientServiceName, item.Id, "解锁单详情&" + item.Id)">
+                                    详细
+                                </a>
+                            }
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="jqPagination">
+        @await Html.PartialAsync("Partial/_PaginationByPagerInfo", Model)
+    </div>
+</div>

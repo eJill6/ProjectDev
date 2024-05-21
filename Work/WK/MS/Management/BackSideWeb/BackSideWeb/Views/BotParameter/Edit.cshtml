@@ -1,0 +1,130 @@
+﻿@using BackSideWeb.Model.Entity.MM
+@using BackSideWeb.Models.ViewModel
+@using JxBackendService.Model.Enums
+@using JxBackendService.Model.Enums.BackSideWeb.BotBet
+@model BotParameterViewModel
+@{
+    var actType = (ActTypes)ViewBag.ActType;
+}
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="OriginalLotteryPatchType" />
+    <div class="label_input">
+        <label for="show">彩種時間區間類型</label>
+        <div class="form_set">
+            <select id="lotteryPatchTypeSelect" class="dropdown_toggle" asp-for="LotteryPatchType" asp-items="@Model.LotteryPatchTypeItems"></select>
+        </div>
+    </div>
+
+    <div class="label_input">
+        <label for="show">组别</label>
+        <div class="form_set">
+            <select id="botGroupSelect" class="dropdown_toggle" asp-for="GroupId" asp-items="@Model.BotGroupItems"></select>
+        </div>
+    </div>
+
+    <div class="label_input">
+        <label for="show">时间区段</label>
+        <div class="form_set">
+            <select id="timeTypeSelect" class="dropdown_toggle" asp-for="TimeType" asp-items="@Model.TimeTypeItems"></select>
+        </div>
+    </div>
+
+    <div class="label_input">
+        <label for="show">投注分类</label>
+        <div class="form_set">
+            <select id="settingGroupDropdown" class="dropdown_toggle" asp-for="SettingGroupId" asp-items="@Model.SettingGroupItems"></select>
+        </div>
+    </div>
+
+
+<div class="label_input">
+    <label>
+        值
+    </label>
+    <div class="form_set">
+        <input type="number" asp-for="Amount"/>
+    </div>
+</div>
+
+<div class="label_input">
+    <label>
+        权重
+    </label>
+    <div class="form_set">
+        <input type="number" asp-for="Rate"/>
+    </div>
+</div>
+
+<div class="label_input">
+    <label>
+        设置提醒
+    </label>
+    <div class="form_set">
+        @SettingGroup.SmallCount.GetEnumDescription() (值：>= 0　权重：> 0)
+        <br />
+        @SettingGroup.SmallAmount.GetEnumDescription() (值：>= 2　权重：> 0)
+        <br />
+        @SettingGroup.BigCount.GetEnumDescription() (值：>= 0　权重：> 0)
+        <br />
+        @SettingGroup.BigAmount.GetEnumDescription() (值：>= 2550　权重：> 0)
+    </div>
+</div>
+
+<script>
+    var lotteryPatchTypeSelect = document.getElementById("lotteryPatchTypeSelect");
+    var botGroupSelect = document.getElementById("botGroupSelect");
+    var timeTypeSelect = document.getElementById("timeTypeSelect");
+
+    botGroupSelect.addEventListener("change", function() {
+        updateTimeTypeOptions();
+    });
+
+    lotteryPatchTypeSelect.addEventListener("change", function() {
+        updateTimeTypeOptions();
+    });
+
+    function updateTimeTypeOptions() {
+        var lotteryPatchTypeSelectValue = lotteryPatchTypeSelect.value;
+        var botGroupSelectValue = botGroupSelect.value;
+
+        // 清空舊的選項
+        timeTypeSelect.innerHTML = '';
+
+        // 基於不同的條件塞入新的選項
+        if (lotteryPatchTypeSelectValue === '1') {
+            if (botGroupSelectValue === '2') {
+                addOption(timeTypeSelect, 'T1', '0');
+                addOption(timeTypeSelect, 'T2', '1');
+            }
+            else{
+                addOption(timeTypeSelect, 'T1', '0');
+                addOption(timeTypeSelect, 'T2', '1');
+                addOption(timeTypeSelect, 'T3', '2');
+                addOption(timeTypeSelect, 'T4', '3');
+            }
+        } else if (lotteryPatchTypeSelectValue === '0') {
+            if (botGroupSelectValue === '0') {
+                addOption(timeTypeSelect, 'T1', '0');
+                addOption(timeTypeSelect, 'T2', '1');
+                addOption(timeTypeSelect, 'T3', '2');
+                addOption(timeTypeSelect, 'T4', '3');
+            } else if (botGroupSelectValue === '1') {
+                addOption(timeTypeSelect, 'T1', '0');
+                addOption(timeTypeSelect, 'T2', '1');
+                addOption(timeTypeSelect, 'T3', '2');
+            } else if (botGroupSelectValue === '2') {
+                addOption(timeTypeSelect, 'T1', '0');
+                addOption(timeTypeSelect, 'T2', '1');
+            }
+        }
+    }
+
+    // Helper function to add options to a select element
+    function addOption(selectElement, text, value) {
+        var option = document.createElement('option');
+        option.text = text;
+        option.value = value;
+        selectElement.add(option);
+    }
+
+</script>

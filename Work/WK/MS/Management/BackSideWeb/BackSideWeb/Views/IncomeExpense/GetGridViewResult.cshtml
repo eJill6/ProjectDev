@@ -1,0 +1,30 @@
+﻿@using BackSideWeb.Models.ViewModel;
+@using JxBackendService.Model.Paging;
+@using MS.Core.MMModel.Models.AdminUserManager
+@model PagedResultModel<AdminUserManagerOfficialIncomeExpensesList>
+@{
+    string clientServiceName = ViewBag.ClientServiceName.ToString();
+}
+<div>
+    <table>
+        <tbody class="jqBody">
+            @for (int i = 0; i < Model.ResultList.Count; i++)
+            {
+                AdminUserManagerOfficialIncomeExpensesList item = Model.ResultList[i];
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.CreateTimeText</td>
+                    <td>@item.CategoryText</td>
+                    <td>@item.PostType</td>
+                    <td>@item.UserId</td>
+                    <td>@item.AmountText</td>
+                    <td>@item.PointText</td>
+                    <td>@item.Memo</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="jqPagination">
+        @await Html.PartialAsync("Partial/_PaginationByPagerInfo", Model)
+    </div>
+</div>

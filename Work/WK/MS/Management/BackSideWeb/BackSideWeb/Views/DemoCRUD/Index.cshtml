@@ -1,0 +1,127 @@
+﻿@using JxBackendService.Model.Param.Game;
+@model QueryFrontsideMenuParam
+@{
+    var typeSelectListItems = ViewBag.TypeSelectListItems as List<SelectListItem>;
+
+    SelectListItem? defaultSelectItem = null;
+
+    if (typeSelectListItems != null)
+    {
+        defaultSelectItem = typeSelectListItems.FirstOrDefault();
+    }
+
+    string? defaultSelectItemText = defaultSelectItem?.Text;
+    string? defaultSelectItemValue = defaultSelectItem?.Value;
+
+    var startDatedefault = DateTime.Now.ToString("yyyy-MM-dd");
+    var endDatedefault = DateTime.Now.ToString("yyyy-MM-dd");
+}
+
+<form id="jqSearchFilterForm" onsubmit="event.preventDefault();">
+    <div class="bg spacing gap system_filter" id="jqMemberFilter">
+        <br />
+        <div class="col">
+            <div class="item">
+                <div class="label_input column_layout">
+                    <label for="">
+                        <p>游戏名称</p>
+                    </label>
+                    <div class="form_set">
+                        <input class="jqFilter" asp-for="MenuName" type="text" placeholder="" value="" maxlength="16">
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="label_input column_layout">
+                    <label for="">
+                        <p>排序</p>
+                    </label>
+                    <div class="form_set column_layout">
+                        <input class="jqFilter" type="text" asp-for="MinSort" placeholder="最小排序" maxlength="3">
+                        <span asp-validation-for="MinSort"></span>
+                        <span>-</span>
+                        <input class="jqFilter" type="text" asp-for="MaxSort" placeholder="最大排序" maxlength="3">
+                        <span asp-validation-for="MaxSort"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="item">
+                <div class="col_p_1">
+                    <div class="label_input column_layout">
+                        <label for="" class="m_hide">
+                            <p>更新时间</p>
+                        </label>
+                        <div class="form_set datepicker_text">
+                            <input type="text" asp-for="StartDate" value="@startDatedefault" class="width_set jqFilter jqStartDate" endDateId="EndDate" />
+                            <span>至</span>
+                            <input type="text" asp-for="EndDate" value="@endDatedefault" class="width_set jqFilter" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="label_input column_layout">
+                    <label for="">
+                        <p>游戏类型</p>
+                    </label>
+                    @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting
+                    {
+                    SettingId = nameof(Model.TypeValue),
+                    Items = typeSelectListItems,
+                    })
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="item">
+                <partial name="Partial/_DateRangeTabs" />
+            </div>
+            <div class="item">
+                <div class="btns">
+                    <a href="javascript:;" class="btn_default main_color jqSearchBtn">查询</a>
+                    <a href="javascript:;" class="btn_default main_color_line jqResetBtn">清空</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<div id="jqContentRoot" style="display:none">
+    <div class="bg gap">
+        <div class="member_center_report agent_report table_overflow_x">
+            <table>
+                <thead>
+                    <tr>
+                        <th>游戏名称</th>
+                        <th>类型</th>
+                        <th>所属第三方</th>
+                        <th>状态</th>
+                        <th>排序</th>
+                        <th>更新时间</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="jqGridContent">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="footer_function_content space_between">
+        <div class="jqPagination pagination"></div>
+    </div>
+</div>
+
+<script>
+    var $jqSearchBtn = $(".jqSearchBtn");
+    var $startDate = $("#StartDate");
+    var $endDate = $("#EndDate");
+
+    var dateTabService = new dateRangeTabService(".jqDateRangeTab", function (startDate, endDate) {
+        $startDate.val(startDate);
+        $endDate.val(endDate);
+        $jqSearchBtn.click();
+    });
+
+    $("#MinSort,#MaxSort").onlyNumber();
+</script>

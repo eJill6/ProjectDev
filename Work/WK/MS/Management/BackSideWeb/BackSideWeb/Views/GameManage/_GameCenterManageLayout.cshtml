@@ -1,0 +1,39 @@
+﻿@{
+    Layout = BackSideWeb.Models.Enums.LayoutType.SearchGrid.Value;
+}
+
+<a href="javascript:;" class="jqSearchBtn" style="display:none">查询</a>
+
+<div class="pageTab max_width_limited">
+    <ul><a id="jqGameTab" href="@ViewBag.GameManagePageUrl">游戏管理</a></ul>
+    <ul><a id="jqGameTypeTab" href="@ViewBag.GameTypeManagePageUrl">分类管理</a></ul>
+</div>
+
+@RenderSection("Filter", required: false)
+
+<div id="jqContentRoot" style="display:none">
+    <div class="bg gap">
+        <div class="member_center_report agent_report table_overflow_x">
+            <table>
+                <thead>
+                    @RenderBody()
+                </thead>
+                <tbody id="jqGridContent">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@if (ViewBag.HasEditPermission)
+{
+    <a href="javascript:void(0)" class="jqBtn_submit btn_default main_color icon_style" style="display:none">
+        送出
+    </a>
+}
+
+<script>
+    function onlyAllowInputInteger(e) {
+        e.value = e.value.replace(/[^\d]/g, '');
+    }
+</script>

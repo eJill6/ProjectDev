@@ -1,0 +1,58 @@
+﻿@using BackSideWeb.Models.ViewModel.PlayBetRecord
+@using BackSideWeb.Models.ViewModel.PublishRecord;
+@using JxBackendService.Model.Entity.Game.Lottery
+@using JxBackendService.Model.Paging
+@using JxBackendService.Model.ViewModel.Game
+@using MS.Core.MMModel.Models.AdminPost;
+@model PagedResultModel<BetHistoryViewModel>
+@{
+    string clientServiceName = ViewBag.ClientServiceName.ToString();
+}
+<div>
+    <table>
+        <tbody class="jqBody">
+            @foreach (var item in Model.ResultList)
+            {
+                <tr>
+                    <td>
+                        <a href="javascript:void(0)" data-url='@Url.Action("Detail", "BetHistory")'
+                       onclick="@string.Format("{0}.openGridDetail(this, '{1}')",clientServiceName, @item.PalyID)">@item.PalyCurrentNum</a>
+                    </td>
+                    <td>@item.RoomId</td>
+                    <td>@item.LotteryText</td>
+                    <td>@item.PlayTypeText</td>
+                    <td>
+                        @{
+                            string text = @item.PalyNum;
+                            if (text.Length > 50)
+                            {
+                                text = text.Substring(0, 50) + "...";
+                            }
+                        }
+                        @text
+                    </td>
+                    <td>@item.UserID</td>
+                    <td>@item.NoteNum</td>
+                    <td>@item.SingleMoneyText</td>
+                    <td>@item.NoteMoneyText</td>
+                    <td>@item.NoteTimeText</td>
+                    <td>@item.LotteryTimeText</td>
+                    <td>@item.IsFactionAwardText</td>
+                    <td>@item.IsWinText</td>
+                    <td>@item.WinNumText</td>
+                    <td>@item.PrizeMoneyText</td>
+                    <td>@item.WinMoneyText</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="jqDiv">
+        <p>本页 投注金额：@ViewBag.PageNoteMoney</p>
+        <p>盈亏：@ViewBag.PageWinMoney</p>
+    </div>
+
+    <div class="jqPagination">
+        @await Html.PartialAsync("Partial/_PaginationByPagerInfo", Model)
+    </div>
+</div>

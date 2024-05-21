@@ -1,0 +1,31 @@
+﻿@using JxBackendService.Model.Paging
+@using JxBackendService.Model.ViewModel.Game
+@model PagedResultModel<HotGameManageModel>
+<div>
+    <table>
+        <tbody class="jqBody">
+            @for (int i = 0; i < Model.ResultList.Count; i++)
+            {
+                HotGameManageModel item = Model.ResultList[i];
+                <tr>
+                    <td>@(i+1)</td>
+                    <td>@item.MenuName</td>
+                    <td class="image_in_grid hot_game_image">
+                        <img aes-src="@item.AesFullImageUrl" />
+                    </td>
+                    <td>@item.PlatformProductName</td>
+                    <td>@item.IsActiveText</td>
+                    <td>@item.Sort</td>
+                    <td>
+                        <div class="flex_content">
+                            @await Html.PartialAsync("Partial/_OperationButton", item)
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="jqPagination">
+        @await Html.PartialAsync("Partial/_PaginationByPagerInfo", Model)
+    </div>
+</div>

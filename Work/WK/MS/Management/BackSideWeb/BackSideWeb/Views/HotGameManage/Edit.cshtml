@@ -1,0 +1,127 @@
+﻿@using JxBackendService.Model.ViewModel.Game
+@using JxBackendService.Model.Common
+@using JxBackendService.Resource.Element
+@using JxBackendService.Common.Util
+@using JxBackendService.Model.Param.Game
+@model BaseHotGameManageParam
+@{
+    var tpDropdownMenuCallback = "editSingleRowService.loadSubGameCodesDropdownPartial";
+
+    var productSelectListItems = ViewBag.ProductSelectListItems as List<JxBackendSelectListItem>;
+    var gameCodeSelectListItems = ViewBag.GameCodeSelectListItems as List<JxBackendSelectListItem>;
+    var isActiveSelectListItems = ViewBag.IsActiveSelectListItems as List<JxBackendSelectListItem>;
+
+    string displayGameCodeStyle = gameCodeSelectListItems != null && gameCodeSelectListItems.Count > 0 ? "block" : "none";
+}
+
+<script src="~/js/business/hotGameManage/hotGameEditSingleRowService.min.js" asp-append-version="true"></script>
+<input type="hidden" asp-for="No" />
+<div class="label_input">
+    <label>
+        <p>@DisplayElement.HotGameName</p>
+    </label>
+    <input class="form-control" asp-for="MenuName"/>
+    <span asp-validation-for="MenuName"></span>
+</div>
+<div class="label_input">
+    <label>
+        <p>@DisplayElement.ThirdPartyOwnership</p>
+    </label>
+    @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting(productSelectListItems)
+    {
+    SettingId = nameof(Model.ProductCode), 
+    Callback = @tpDropdownMenuCallback
+    })
+</div>
+
+<div class="label_input" id="jqGameCodeDiv" style="display : @displayGameCodeStyle">
+    <label>
+        <p>@DisplayElement.GameCategory</p>
+    </label>
+    @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting(gameCodeSelectListItems)
+    {
+    SettingId = nameof(Model.GameCode)
+    })
+</div>
+
+<div class="label_input">
+    <label class="label_with_tips">
+        <p>@DisplayElement.GameCode</p>
+        <img title="@MessageElement.GameCodeTips" src="~/images/question_icon.png" alt="Question" class="question-icon jqHoverTips" />
+    </label>
+    <div class="form_set">
+        <input asp-for="RemoteCode" value="@Model.RemoteCode"/>
+        <span asp-validation-for="RemoteCode"></span>
+    </div>
+</div>
+<div class="label_input">
+    <label class="label_with_tips">
+        <p>@DisplayElement.GameImage</p>
+        <img id="jqGameImageTips" src="~/images/question_icon.png" alt="Question" class="question-icon jqHoverTips" />
+    </label>
+    <div class="form_set">
+        @await Html.PartialAsync("Partial/_ImageFileUpload", new ImageFileUploadSetting()
+        {
+            ImageFileUploadModel = Model,
+            DimensionLimits = new Dimension[] { new Dimension { Width = 440, Height = 440 } },
+            SizeLimit = 500 * 1024,
+            AllowedExtensions = new string[] { "jpg", "png" },
+            FieldName = DisplayElement.GameImage,
+        })
+    </div>
+</div>
+<div class="label_input">
+    <label>
+        <p>@DisplayElement.Sort</p>
+    </label>
+    <div class="form_set">
+        <input type="text" asp-for="Sort" value="@Model.Sort" />
+        <span asp-validation-for="Sort"></span>
+    </div>
+</div>
+<div class="label_input">
+    <label>
+        <p>@DisplayElement.IsActiveStatus</p>
+    </label>
+    @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting(isActiveSelectListItems)
+    {
+    SettingId = nameof(Model.IsActive)
+    })
+</div>
+
+<div id="jqGameImageTipsText" style="display: none;">
+    <p>上传图片规格</p>
+    <p style="margin-left: 15px;">◾档案格式: JPG、PNG</p>
+    <p style="margin-left: 15px;">◾图片尺寸: 440X440px 以下等比图</p>
+    <p style="margin-left: 15px;">◾档案大小: 不超过500kb</p>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#jqGameImageTips').hoverTips({
+            content: $($('#jqGameImageTipsText').html())
+        });
+
+        $("input[name='ProductCode']").rules(
+            "add",
+            {
+                required: true,
+                messages: {
+                    required: '@Html.Raw(string.Format(MessageElement.FieldIsNotAllowEmpty, DisplayElement.ThirdPartyOwnership))'
+                }
+            }
+        )
+
+        $("input[name='IsActive']").rules(
+            "add",
+            {
+                required: true,
+                messages: {
+                    required: '@Html.Raw(string.Format(MessageElement.FieldIsNotAllowEmpty, DisplayElement.IsActiveStatus))'
+                }
+            }
+        )        
+    });
+
+    $("#Sort").onlyNumber(3);
+</script>

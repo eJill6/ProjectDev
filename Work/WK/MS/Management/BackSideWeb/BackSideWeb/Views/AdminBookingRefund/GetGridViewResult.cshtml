@@ -1,0 +1,53 @@
+﻿@using JxBackendService.Model.Paging
+@using JxBackendService.Model.ViewModel.Game
+@using BackSideWeb.Model.ViewModel.MM
+@model PagedResultModel<QueryAdminBookingRefundModel>
+@{
+    string clientServiceName = ViewBag.ClientServiceName.ToString();
+}
+<div>
+    <table>
+        <tbody class="jqBody">
+            @foreach (var item in Model.ResultList)
+            {
+                <tr>
+                    <td>@item.BookingId</td>
+                    <td class="hrefcss">
+                        <a href="/AdminBookingRefund/Index?userId=@(item.UserId)" target="_blank">
+                            @item.UserId
+                        </a>
+                    </td>
+                    <td>@item.PostId</td>
+
+                    <td>@item.PaymentTypeText</td>
+
+                    <th>@item.UserIdentityText</th>
+
+                    <td>@item.PaymentMoneyText</td>
+                    <td>@item.ActualPaymentMoneyText</td>
+                    <td>@item.ApplyReasonText</td>
+                    <td>@item.ApplyTimeText</td>
+                    <td>@item.ExamineTimeText</td>
+                    <td>@item.Memo</td>
+                    <td>
+                        @{
+                            if (item.Status == 0)
+                            {
+                                <a href="javascript:void(0)" class="fa fa-edit" data-url='@Url.Action("UpdateView", "AdminBookingRefund")'
+                                   onclick="@string.Format("{0}.openAudit(this, '{1}')", clientServiceName,  item.KeyContent)">
+                                </a>
+                            }
+                            else
+                            {
+                                <p>@item.StatusText</p>
+                            }
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="jqPagination">
+        @await Html.PartialAsync("Partial/_PaginationByPagerInfo", Model)
+    </div>
+</div>

@@ -1,0 +1,98 @@
+﻿@using BackSideWeb.Models.ViewModel.BotBet
+@using JxBackendService.Model.Enums.BackSideWeb.BotBet
+@model SettingInfoContextViewModel
+@{
+   var botDropdownCallback = "botParameterSearchService.loadTimeTypeDropdownPartial";
+}
+
+<div class="pageTab max_width_limited" id="pageTab">
+    <ul><a id="0" href="javascript:void(0)">@LotteryPatchType.OM.GetEnumDescription()</a></ul>
+    <ul><a id="1" href="javascript:void(0)">@LotteryPatchType.JS.GetEnumDescription()</a></ul>
+</div>
+<label id="lotteryPatchType" hidden></label>
+<label id="botGroup" hidden></label>
+
+<div class="bg spacing gap system_filter">
+    <div class="col">
+        <div class="item jqAdvanceFilter">
+            <div class="label_input column_layout">
+                <label>
+                    组别
+                </label>
+                <select id="botGroupSelect" class="dropdown_toggle" asp-items="@Model.BotGroupItems"></select>
+@*                @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting
+                {
+                SettingId = "botGroupSelect",
+                Items = Model.BotGroupItems,
+                })*@
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="item jqAdvanceFilter">
+            <div class="label_input column_layout"  id="jqTimeTypeDiv">
+                <label>
+                    时间区段
+                </label>
+                <select id="timeTypeSelect" class="dropdown_toggle" asp-items="@Model.TimeTypeItems"></select>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="item jqAdvanceFilter">
+            <div class="label_input column_layout">
+                <label>
+                    <p>分組</p>
+                </label>
+                @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting
+                {
+                SettingId = "settingGroupSelect",
+                Items = Model.SettingGroupItems,
+                })
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="item">
+            <div class="btns">
+                <a href="javascript:;" class="btn_default main_color jqSearchBtn">查询</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="jqContentRoot" style="display:none">
+    <div class="bg gap">
+        <div class="member_center_report agent_report table_overflow_x">
+            <table>
+                <thead>
+                    <tr>
+                        <th>组别</th>
+                        <th>时间区段</th>
+                        <th>执行时间</th>
+                        <th>投注分类</th>
+                        <th>值</th>
+                        <th>权重</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="jqGridContent">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="footer_function_content space_between">
+        <div class="jqPagination pagination"></div>
+    </div>
+</div>
+
+<style>
+    .col {
+        margin-top: 10px;
+    }
+
+    .jqFailedBtn {
+        margin-left: 10px;
+        background-color: #ec808d
+    }
+</style>

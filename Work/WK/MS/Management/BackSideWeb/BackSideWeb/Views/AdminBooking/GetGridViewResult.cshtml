@@ -1,0 +1,36 @@
+﻿@using BackSideWeb.Models.Param;
+@using JxBackendService.Model.Paging
+@using JxBackendService.Model.ViewModel.Game
+@using BackSideWeb.Model.ViewModel.MM
+@model PagedResultModel<QueryAdminBookingViewModel>
+
+<div>
+    <table>
+        <tbody class="jqBody">
+            @foreach (var item in Model.ResultList)
+            {
+                <tr>
+                    <td>@item.BookingId</td>
+                    <td class="hrefcss">
+                        <a href="/AdminBooking/Index?userId=@(item.UserId)" target="_blank">
+                            @item.UserId
+                        </a>
+                    </td>
+                   
+                    <td>@item.PostId</td>
+                    <td>@item.BookingTimeText</td>
+                    <td>@item.FinishTimeText</td>
+                    <td>@item.PaymentTypeText</td>
+                    <td>@item.UserIdentityText</td>
+                    <td>@item.PaymentMoneyText</td>
+                    <td>@item.DiscountText</td>
+                    <td>@item.ActualPaymentMoneyText</td>
+                    <td>@item.OrderStatusText</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="jqPagination">
+        @await Html.PartialAsync("Partial/_PaginationByPagerInfo", Model)
+    </div>
+</div>

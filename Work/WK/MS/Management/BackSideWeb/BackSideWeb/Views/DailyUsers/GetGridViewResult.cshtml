@@ -1,0 +1,34 @@
+﻿@using BackSideWeb.Models.ViewModel.OperatingData;
+@using JxBackendService.Model.Paging
+@using JxBackendService.Model.ViewModel.Game
+@model PagedResultModel<DailyUsersViewModel>
+
+<div>
+    <table>
+        <tbody class="jqBody">
+            @foreach (var item in Model.ResultList)
+            {
+                <tr>
+                    <td>@item.DailyUsersTimeText</td>
+                    <td>@item.PVText</td>
+                    <td>@item.DAUText</td>
+                    <td> <a href="javascript:void(0)" data-url='@Url.Action("Detail", "DailyUsers")' 
+                    onclick="@string.Format("window.dailyUsersSearchService.openGridDetail(this, '{0}')", item.DailyUsersTimeText)">@item.PCUText</a></td>
+                    <td>@item.ACUText</td>
+                    <td>@item.DUNText</td>
+@*                    <td>
+                        <div class="flex_content">
+                            <a href="javascript:void(0)" data-url='@Url.Action("Detail", "DailyUsers")' class="btn_default main_color icon_style text_btn"
+                               onclick="@string.Format("window.dailyUsersSearchService.openGridDetail(this, '{0}')", item.DailyUsersTimeText)">
+                                整点人数
+                            </a>
+                        </div>
+                    </td>*@
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="jqPagination">
+        @await Html.PartialAsync("Partial/_PaginationByPagerInfo", Model)
+    </div>
+</div>

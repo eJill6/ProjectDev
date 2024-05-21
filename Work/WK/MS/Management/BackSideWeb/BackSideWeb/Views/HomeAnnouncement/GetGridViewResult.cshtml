@@ -1,0 +1,105 @@
+﻿@using BackSideWeb.Models.ViewModel
+@using BackSideWeb.Models.ViewModel.MM
+@using JxBackendService.Model.Paging
+@using BackSideWeb.Model.ViewModel.MM
+@model PagedResultModel<QueryHomeAnnouncementModel>
+@{
+    string clientServiceName = ViewBag.ClientServiceName.ToString();
+    bool isAnnouncement = ViewBag.isAnnouncement;
+}
+<div>
+    <table>
+        <tbody class="jqBody">
+
+            @{
+                if (isAnnouncement)
+                {
+                    @foreach (var item in Model.ResultList)
+                    {
+                        <tr>
+                            <td>@item.Weight</td>
+                            <td class="jqHoverData" title="@item.Title">
+                                @{
+                                    string title = item.Title;
+                                    if ( title !=null && title.Length > 20)
+                                    {
+                                        title = title.Substring(0, 20) + "...";
+                                    }
+                                }
+                                @title
+                            </td>
+                            <td class="jqHoverData" title="@item.HomeContent">
+                                @{
+                                    string text = item.HomeContent;
+                                    if (text != null && text.Length > 20)
+                                    {
+                                        text = text.Substring(0, 20) + "...";
+                                    }
+                                }
+                                @text
+                            </td>
+                            <td>@item.CreateDateText</td>
+                            <td>@item.StartTimeText</td>
+                            <td>@item.EndTimeText</td>
+                            <td>@item.Operator</td>
+                            <td>@item.IsActiveText</td>
+
+                            <td>
+                                <div class="flex_content">
+                                    <a href="javascript:void(0)" class="fa fa-edit" style="font-size: 20px; color:black;"
+                                       data-url='@Url.Action("HomeAnnouncementEdit", "HomeAnnouncement")'
+                                       onclick="@string.Format("{0}.openHomeAnnouncementEdit(this,'{1}')", clientServiceName, item.KeyContent)">
+                                    </a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="flex_content">
+
+                                    <a href="javascript:void(0)" class="fa fa-trash" style="font-size: 20px; color:black;"
+                                       onclick="@string.Format("{0}.delete('{1}')", clientServiceName, item.KeyContent)"></a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    @foreach (var item in Model.ResultList)
+                    {
+                        <tr>
+                            <td>@item.ModifyDateText</td>
+                            <td class="jqHoverData" title="@item.HomeContent">
+                                @{
+                                    string text = @item.HomeContent;
+                                    if (text.Length > 20)
+                                    {
+                                        text = text.Substring(0, 20) + "...";
+                                    }
+                                }
+                                @text
+                            </td>
+                            <td>@item.Operator</td>
+                            <td>@item.IsActiveText</td>
+
+                            <td>
+                                <div class="flex_content">
+                                    <a href="javascript:void(0)" class="fa fa-edit" style="font-size: 20px; color:black;"
+                                       onclick="@string.Format("{0}.openUpdateView('{1}')", clientServiceName, item.KeyContent)">
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                
+                }
+            }
+  
+
+
+
+        </tbody>
+    </table>
+    <div class="jqPagination">
+        @await Html.PartialAsync("Partial/_PaginationByPagerInfo", Model)
+    </div>
+</div>

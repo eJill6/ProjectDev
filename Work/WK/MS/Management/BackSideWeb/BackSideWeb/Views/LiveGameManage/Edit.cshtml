@@ -1,0 +1,274 @@
+﻿@using JxBackendService.Model.ViewModel.Game
+@using JxBackendService.Model.Common
+@using JxBackendService.Resource.Element
+@using JxBackendService.Common.Util
+@using JxBackendService.Model.Param.Game
+@using JxBackendService.Model.Enums;
+@model BaseLiveGameManageParam
+@{
+    var isH5SelectListItems = ViewBag.IsH5SelectListItems as List<JxBackendSelectListItem>;
+    var isFollowSelectListItems = ViewBag.IsFollowSelectListItems as List<JxBackendSelectListItem>;
+    var isCountdownSelectListItems = ViewBag.IsCountdownSelectListItems as List<JxBackendSelectListItem>;
+    var isActiveSelectListItems = ViewBag.IsActiveSelectListItems as List<JxBackendSelectListItem>;
+    var liveGameManageDataTypeListItems = ViewBag.LiveGameManageDataTypeListItems as List<JxBackendSelectListItem>;
+    var liveGameTabTypesSelectListItems = ViewBag.LiveGameTabTypesSelectListItems as List<JxBackendSelectListItem>;
+
+    ActTypes actType = (ActTypes)ViewBag.ActType;
+}
+
+<script src="~/js/business/liveGameManage/liveGameEditSingleRowService.min.js" asp-append-version="true"></script>
+<script src="~/js/utils/dropDownService.min.js" asp-append-version="true"></script>
+
+<input type="hidden" asp-for="No" />
+
+<div class="label_input">
+    <label>
+        <p>@DisplayElement.Name</p>
+    </label>
+    <input type="text" asp-for="LotteryType" value="@Model.LotteryType" />
+    <span asp-validation-for="LotteryType"></span>
+</div>
+
+<div class="label_input">
+    <label>
+        <p>游戏分类</p>
+    </label>
+    @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting(liveGameTabTypesSelectListItems)
+{
+    SettingId = nameof(Model.TabType),
+})
+</div>
+
+<div class="label_input">
+    <label>
+        <p>类型</p>
+    </label>
+    @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting(liveGameManageDataTypeListItems)
+{
+    SettingId = nameof(Model.LiveGameManageDataTypeValue),
+    Callback = "window.editSingleRowService.dataTypeChange"
+})
+</div>
+
+<div class="jqDataTypePanel" datatype_1="on" datatype_2="on" style="display: none">
+
+    <div class="label_input">
+        <label>
+            <p>@DisplayElement.ThirdPartyOwnership</p>
+        </label>
+        @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting()
+   {
+       SettingId = nameof(Model.ProductCode),
+   })
+    </div>
+
+    <div class="label_input" id="jqGameCodeDiv">
+        <label>
+            <p>@DisplayElement.GameCategory</p>
+        </label>
+        @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting()
+   {
+       SettingId = nameof(Model.GameCode),
+   })
+    </div>
+
+    <div class="label_input jqDataTypePanel" datatype_2="on" style="display:none">
+        <label class="label_with_tips">
+            <p>@DisplayElement.GameCode</p>
+            <img title="@MessageElement.GameCodeTips" src="~/images/question_icon.png" alt="Question" class="question-icon jqHoverTips" />
+        </label>
+        <div class="form_set">
+            <input asp-for="RemoteCode" value="@Model.RemoteCode" />
+            <span asp-validation-for="RemoteCode"></span>
+        </div>
+    </div>
+
+</div>
+<div class="jqDataTypePanel" dataType_3="on" style="display: none">
+    <div class="label_input">
+        <label>
+            <p>@DisplayElement.GameID</p>
+        </label>
+        <input class="form-control" asp-for="LotteryId" type="text" />
+        <span asp-validation-for="LotteryId"></span>
+    </div>
+</div>
+
+<div class="label_input">
+    <label class="label_with_tips">
+        <p>@DisplayElement.GameImage</p>
+        <img id="jqGameImageTips" src="~/images/question_icon.png" alt="Question" class="question-icon jqHoverTips" />
+    </label>
+    <div class="form_set">
+        @{
+            // 直接呼叫 GetDimensions 方法並將結果賦值給 DimensionLimits
+            var dimensions = GetDimensions();
+        }
+        @await Html.PartialAsync("Partial/_ImageFileUpload", new ImageFileUploadSetting()
+        {
+            ImageFileUploadModel = Model,
+            DimensionLimits = dimensions,
+            SizeLimit = 1 * 1024 * 1024,
+            AllowedExtensions = new string[] { "png" },
+            FieldName = DisplayElement.GameImage,
+            CustomizedDimensionLimitsMessage = string.Format(MessageElement.LiveGameImageSizeLimit, DisplayElement.GameImage)
+        })
+
+    </div>
+</div>
+<div class="jqDataTypePanel" datatype_3="on" style="display: none">
+    <div class="label_input">
+        <label>
+            <p>URL</p>
+        </label>
+        <div class="form_set">
+            <input type="text" asp-for="Url" value="@Model.Url" />
+            <span asp-validation-for="Url"></span>
+        </div>
+    </div>
+
+    <div class="label_input">
+        <label>
+            <p>API URL</p>
+        </label>
+        <div class="form_set">
+            <input type="text" asp-for="ApiUrl" value="@Model.ApiUrl" />
+            <span asp-validation-for="ApiUrl"></span>
+        </div>
+    </div>
+
+    <div class="label_input">
+        <label class="label_with_tips">
+            <p>对话框高度比例</p>
+            <img title="@MessageElement.FrameRatioTips" src="~/images/question_icon.png" alt="Question" class="question-icon jqHoverTips" />
+        </label>
+        <div class="form_set">
+            <input type="text" asp-for="FrameRatio" value="@Model.FrameRatio" />
+            <span asp-validation-for="FrameRatio"></span>
+        </div>
+    </div>
+
+    <div class="label_input">
+        <label class="label_with_tips">
+            <p>样式</p>
+            <img title="@MessageElement.StyleTips" src="~/images/question_icon.png" alt="Question" class="question-icon jqHoverTips" />
+        </label>
+        <div class="form_set">
+            <input asp-for="Style" value="@Model.Style" maxlength="4" />
+            <span asp-validation-for="Style"></span>
+        </div>
+    </div>
+
+    <div class="label_input">
+        <label>
+            <p>倒计时</p>
+        </label>
+        @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting(isCountdownSelectListItems)
+   {
+       SettingId = nameof(Model.IsCountdown)
+   })
+    </div>
+
+    <div class="label_input">
+        <label>
+            <p>时长</p>
+        </label>
+        <input class="form-control" asp-for="Duration" value="@Model.Duration" maxlength="4" />
+        <span asp-validation-for="Duration"></span>
+    </div>
+
+    <div class="label_input">
+        <label class="label_with_tips">
+            <p>保持状态 H5用</p>
+            <img title="设定H5游戏，再次点击游戏ICON时，不重新加载，打开之前的页面接口。" src="~/images/question_icon.png" alt="Question" class="question-icon jqHoverTips" />
+        </label>
+        @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting(isH5SelectListItems)
+   {
+       SettingId = nameof(Model.IsH5)
+   })
+    </div>
+
+    <div class="label_input">
+        <label>
+            <p>跟投</p>
+        </label>
+        @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting(isFollowSelectListItems)
+   {
+       SettingId = nameof(Model.IsFollow)
+   })
+    </div>
+</div>
+
+<div class="label_input">
+    <label>
+        <p>@DisplayElement.Sort</p>
+    </label>
+    <div class="form_set">
+        <input type="text" asp-for="Sort" value="@Model.Sort" />
+        <span asp-validation-for="Sort"></span>
+    </div>
+</div>
+
+<div class="label_input">
+    <label>
+        <p>@DisplayElement.IsActiveStatus</p>
+    </label>
+    @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting(isActiveSelectListItems)
+{
+    SettingId = nameof(Model.IsActive)
+})
+</div>
+
+<div id="jqGameImageTipsText" style="display: none;">
+    <p>※避免图片变型，建议使用210 x 210以上相同比例，且档案小于1mb、格式为PNG的图片。</p>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#jqGameImageTips').hoverTips({
+            content: $($('#jqGameImageTipsText').html())
+        });
+
+        $("input[name='IsActive']").rules(
+            "add",
+            {
+                required: true,
+                messages: {
+                    required: '@Html.Raw(string.Format(MessageElement.FieldIsNotAllowEmpty, DisplayElement.IsActiveStatus))'
+                }
+            }
+        )
+    });
+
+    $("#Style").onlyNumber(4);
+    $("#Duration").onlyNumber(4);
+    $("#Sort").onlyNumber(3);
+</script>
+
+@if (actType == ActTypes.Update)
+{
+    <script>
+        window.dataModel = @Html.Raw(@Model.ToJsonString())
+    </script>
+}
+
+@functions
+{
+    Dimension[] GetDimensions()
+    {
+        var count = 1024;
+        var valueStart = 210;
+        var end = count - valueStart + 1;
+        var dimensions = new Dimension[end];
+
+        for (int i = 0; i < end; i++)
+        {
+            dimensions[i] = new Dimension
+                {
+                    Width = i + 210,
+                    Height = i + 210
+                };
+        }
+        return dimensions;
+    }
+}

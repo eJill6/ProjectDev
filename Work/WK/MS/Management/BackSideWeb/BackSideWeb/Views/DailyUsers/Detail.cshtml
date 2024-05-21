@@ -1,0 +1,25 @@
+﻿@using BackSideWeb.Models.ViewModel.OperatingData
+@model List<HourUsersViewModel>
+
+<div id="jqContentRoot">
+    <div class="bg gap">
+        <div class="member_center_report agent_report table_overflow_x">
+            <table>
+                <thead>
+                    <tr>
+                        <th>时间</th>
+                        <th>访问人数</th>
+                    </tr>
+                </thead>
+                <tbody id="jqGridContent">
+                    @foreach (var item in Model){
+                        <tr>
+                            <td>@item.Date.ToString("HH:mm:ss")</td>
+                            <td>@item.VisitorsNumber</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

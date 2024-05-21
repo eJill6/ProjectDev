@@ -1,0 +1,517 @@
+﻿@model BannerInputModel
+@using BackSideWeb.Models.ViewModel
+@using JxBackendService.Model.Entity
+@using JxBackendService.Model.Enums
+@{
+    var actType = (ActTypes)ViewBag.ActType;
+}
+<script src="~/js/business/publicitySettings/bannerEditSingleRowService.min.js" asp-append-version="true"></script>
+@if (actType == ActTypes.Update)
+{
+    <input type="hidden" asp-for="MMBannerBs.Id">
+}
+<input type="hidden" asp-for="MMBannerBs.CreateUser">
+<input type="hidden" asp-for="MMBannerBs.CreateDate">
+<input type="hidden" asp-for="MMBannerBs.Media.Id">
+<input type="hidden" asp-for="MMBannerBs.Media.FileUrl">
+<input type="hidden" asp-for="MMBannerBs.Media.FullMediaUrl">
+<input type="hidden" asp-for="MMBannerBs.Media.RefId">
+<input type="hidden" asp-for="MMBannerBs.Media.FileName">
+<input type="hidden" asp-for="ShowFileName">
+<input type="hidden" asp-for="MMBannerBs.LocationType">
+<input type="hidden" asp-for="MMBannerBs.LinkType">
+
+<div class="label_input">
+    <label>
+        <p>选择前台位置</p>
+    </label>
+    <div class="form_set">
+        <select class="dropdown_toggle" asp-for="MMBannerBs.LocationType" asp-items="Model.LocationTypeItem" id="locationSelect"></select>
+    </div>
+</div>
+
+<div class="label_input">
+    <label>
+        <p>标题</p>
+    </label>
+    <div class="form_set">
+        <input type="text" asp-for="MMBannerBs.Title" />
+    </div>
+    <p class="tipsMessage">※前台位置为首页主选单时，请输入5字以内做为选单文字，第6字以上不显示在前台。</p>
+</div>
+
+<div class="label_input">
+    <label>
+        <p>开始时间</p>
+    </label>
+    <div class="form_set">
+        <input type="date" asp-for="MMBannerBs.StartDate" />
+    </div>
+</div>
+<div class="label_input">
+    <label>
+        <p>结束时间</p>
+    </label>
+    <div class="form_set">
+        <input type="date" asp-for="MMBannerBs.EndDate" />
+    </div>
+    <p class="tipsMessage">※未填入结束时间即常驻于前台。可透过显示控制前台显示于否。</p>
+</div>
+
+
+@*@if (actType == ActTypes.Insert)*@
+@*{*@
+<div class="label_input">
+    <label>
+        <p>档案</p>
+    </label>
+    <div class="form_set">
+        <input type="file" asp-for="File" />
+    </div>
+</div>
+
+@*}*@
+@if (actType == ActTypes.Update)
+{
+    <div class="label_input">
+        <label style="color:red">当前档案名称：@Model.ShowFileName</label>
+    </div>
+}
+
+<div class="label_input">
+    <label>
+        <p>前台位置资讯</p>
+    </label>
+    <p class="LocationInfo1 tipsMessage" style="display:none">※首页主选单：避免变型，请制作 68*60 固定 2倍或以上比例的图片。档案格式仅允许 png。档案大小1MB以下。</p>
+    <p class="LocationInfo2 tipsMessage" style="display:none">※首页轮播Banner：避免变型，请制作 355*112 或同比例的图片。档案格式允许 jpg 或 png。档案大小1MB以下。</p>
+    <p class="LocationInfo3 tipsMessage" style="display:none">※店铺轮播Banner：避免变型，请制作 355*150 或同比例的图片。档案格式允许 jpg 或 png。档案大小1MB以下。</p>
+</div>
+
+<div class="label_input">
+    <label>
+        <p>选择转导方式</p>
+    </label>
+    <div class="form_set">
+        <select class="dropdown_toggle" asp-for="LinkTypeSelected" asp-items="Model.LinkTypeItem" id="linkSelect"></select>
+    </div>
+
+    <div class="form_set" hidden id="divAreaSelect">
+        <select class="dropdown_toggle" asp-items="Model.AreaTypeItem" id="areaSelect"></select>
+    </div>
+
+    <div class="form_set" hidden id="divInsideSelect">
+        <select class="dropdown_toggle" asp-items="Model.InsideTypeItem" id="insideSelect"></select>
+    </div>
+
+    <div class="form_set" hidden id="divParamText">
+        <input type="text" id="paramText" />
+    </div>
+
+    <div class="form_set" hidden id="divGameTypeSelect">
+        <select class="dropdown_toggle" asp-items="Model.GameTypeItem" id="gameSelect"></select>
+    </div>
+</div>
+
+<div class="label_input">
+    <div class="form_set">
+        <input type="text" asp-for="MMBannerBs.RedirectUrl" id="redirectUrl" readonly style="color: gray;" />
+    </div>
+</div>
+
+
+<div class="label_input">
+    <label class="label_with_tips">
+        <p>排序</p>
+        <img title="填入1 ~ 9999，可重复，递增排序，数字小靠前" src="~/images/question_icon.png" alt="Question" class="question-icon jqHoverTips" />
+    </label>
+    <div class="form_set">
+        <div style="display: flex; align-items: center;">
+            <input asp-for="MMBannerBs.Sort" type="number" step="1" />
+        </div>
+    </div>
+</div>
+
+
+<div class="label_input">
+    <label for="show">显示</label>
+    <div class="form_set">
+        <select class="dropdown_toggle" asp-for="IsActiveSelected" asp-items="Model.IsActiveListItem"></select>
+    </div>
+</div>
+
+<script>
+    // 获取元素
+    var linkSelect = document.getElementById("linkSelect");
+    var areaSelect = document.getElementById("areaSelect");
+    var insideSelect = document.getElementById("insideSelect");
+    var paramText = document.getElementById("paramText");
+    var divParamText = document.getElementById("divParamText");
+    var divAreaSelect = document.getElementById("divAreaSelect");
+    var divGameTypeSelect = document.getElementById("divGameTypeSelect");
+    var divInsideSelect = document.getElementById("divInsideSelect");
+    var gameSelect = document.getElementById("gameSelect");
+    var redirectUrl = document.getElementById("redirectUrl");
+    var locationSelect = document.getElementById("locationSelect");
+
+    var rankUrl = "seal://home/rank";
+    var roomUrl = "seal://home/room?roomNum=";
+    var withdrawUrl = "seal://common/webview?type=withdraw";
+    var exchangeUrl = "seal://common/webview?type=exchange";
+    var actionListUrl = "seal://common/webview?type=actionList&category=1";
+    var actionDetaiUrl = "seal://common/webview?type=actionDetail&id=";
+    var OBUrl = "seal://common/webview?type=lobbyGame&gameId=obsp&title=OB 体育&fullScreen=false&subGameId=";
+    var imkyUrl = "seal://common/webview?type=lobbyGame&gameId=imky&title=斗地主&fullScreen=true&subGameId=";
+    var NNUrl = "seal://common/webview?type=lobbyGame&gameId=wlbg&title=抢庄牛牛&fullScreen=true&subGameId=5";
+    var DDListUrl = "seal://common/webview?type=lobbyGame&gameId=wlbg&title=斗地主&fullScreen=true&subGameId=2";
+    var fishUrl = "seal://common/webview?type=lobbyGame&gameId=jdbfi&title=财神捕鱼&fullScreen=true&subGameId=7003";
+    // 显示指定的元素并设置占位符
+    function showElement(element, placeholder = "") {
+        element.style.display = "block";
+        paramText.placeholder = placeholder;
+    }
+
+    // 隐藏指定的元素
+    function hideElement(element) {
+        element.style.display = "none";
+    }
+
+    // 清空参数文本框的值
+    function clearParamText() {
+        paramText.value = "";
+    }
+
+    // 将选择框的选项重置为默认选项
+    function resetSelect(select) {
+        select.selectedIndex = 0;
+    }
+
+    // 初始设置函数
+    function initialSetup() {
+
+        var linkTypeValue = document.getElementById("MMBannerBs_LinkType").value;
+        if (linkTypeValue == 1) {
+
+        }
+
+        var selectedValue = linkSelect.value;
+
+        var locationValue = document.getElementById("MMBannerBs_LocationType").value;
+
+        if (locationValue !== "0" && locationValue !== "") {
+            locationSelect.value = locationValue;
+        } else {
+            //结束时间默认为空
+            document.getElementById("MMBannerBs_EndDate").value = "";
+        }
+
+        if (selectedValue === "1") {
+            redirectUrl.placeholder = "填入外部网址";
+            // 移除 readonly 和样式 color: gray;
+            redirectUrl.removeAttribute("readonly");
+            redirectUrl.style.color = "";
+        }
+        else if (selectedValue === "2") {
+            redirectUrl.placeholder = "填入內部网址";
+            redirectUrl.setAttribute("readonly", "readonly");
+            redirectUrl.style.color = "gray";
+            showElement(divInsideSelect);
+        }
+        else if (selectedValue === "3") {
+            redirectUrl.placeholder = "导航地址";
+            // 添加 readonly 和样式 color: gray;
+            redirectUrl.setAttribute("readonly", "readonly");
+            redirectUrl.style.color = "gray";
+        }
+    }
+
+    // 页面加载完成时调用初始设置函数
+    document.addEventListener("DOMContentLoaded", function () {
+        initialSetup();
+
+        var linkSelectValue = linkSelect.value;
+        var redirectUrlValue = redirectUrl.value;
+
+        if (linkSelectValue === "2") {
+
+            switch (redirectUrlValue) {
+                case "Deposit":
+                    insideSelect.value = 1;
+                    break;
+                case "Member":
+                    insideSelect.value = 2;
+                    break;
+                case "Official":
+                    insideSelect.value = 3;
+                    break;
+                case "Agency":
+                    insideSelect.value = 4;
+                    break;
+                case "Square":
+                    insideSelect.value = 5;
+                    break;
+                case "Bossapply":
+                    insideSelect.value = 6;
+                    break;
+                case "Agentapply":
+                    insideSelect.value = 7;
+                    break;
+                case "Prevent":
+                    insideSelect.value = 8;
+                    break;
+                case "Private":
+                    insideSelect.value = 9;
+                    break;
+                default:
+                    insideSelect.value = 0;
+            }
+        }
+
+        if (linkSelectValue === "3") {
+            showElement(divAreaSelect);
+            if (redirectUrlValue === "seal://home/rank") {
+                areaSelect.value = 1;
+            } else if (redirectUrlValue.startsWith("seal://home/room")) {
+                areaSelect.value = 2;
+                showElement(divParamText, "房间号");
+                var matches = redirectUrlValue.match(/=[^=&]+$/);
+                if (matches) {
+                    var lastNumber = matches[0].substring(1);
+                    paramText.value = lastNumber;
+                }
+            } else if (redirectUrlValue === "seal://common/webview?type=withdraw") {
+                areaSelect.value = 3;
+            } else if (redirectUrlValue === "seal://common/webview?type=exchange") {
+                areaSelect.value = 4;
+            } else if (redirectUrlValue === "seal://common/webview?type=actionList&category=1") {
+                areaSelect.value = 5;
+            } else if (redirectUrlValue.startsWith("seal://common/webview?type=actionDetail")) {
+                areaSelect.value = 6;
+                showElement(divParamText, "活动ID");
+                var matches = redirectUrlValue.match(/=[^=&]+$/);
+                if (matches) {
+                    var lastNumber = matches[0].substring(1);
+                    paramText.value = lastNumber;
+                }
+              
+            } else if (redirectUrlValue.startsWith("seal://common/webview?type=lobbyGame")) {
+                areaSelect.value = 7;
+        
+                showElement(divGameTypeSelect);
+                if (redirectUrlValue.startsWith("seal://common/webview?type=lobbyGame&gameId=obsp")) {
+                    gameSelect.value = 1;
+                } else if (redirectUrlValue.startsWith("seal://common/webview?type=lobbyGame&gameId=imky&title=斗地主")) {
+                    gameSelect.value = 2;
+                } else if (redirectUrlValue.startsWith("seal://common/webview?type=lobbyGame&gameId=wlbg&title=抢庄牛牛")) {
+                    gameSelect.value = 3;
+                } else if (redirectUrlValue.startsWith("seal://common/webview?type=lobbyGame&gameId=wlbg&title=斗地主")) {
+                    gameSelect.value = 4;
+                } else if (redirectUrlValue.startsWith("seal://common/webview?type=lobbyGame&gameId=jdbfi&title=财神捕鱼")) {
+                    gameSelect.value = 5;
+                } else {
+                    gameSelect.value = 0;
+                }
+
+            } else {
+                areaSelect.value = 0;
+            }
+
+        }
+    });
+
+    // linkSelect 的事件监听器
+    linkSelect.addEventListener("change", function () {
+        var selectedValue = linkSelect.value;
+        clearParamText();
+
+        if (selectedValue === "1") {
+            redirectUrl.placeholder = "填入外部网址";
+            redirectUrl.removeAttribute("readonly");
+            redirectUrl.style.color = "";
+            hideElement(divAreaSelect);
+            hideElement(divGameTypeSelect);
+            hideElement(divParamText);
+            resetSelect(areaSelect);
+            resetSelect(gameSelect);
+            hideElement(divInsideSelect);
+            resetSelect(insideSelect);
+            redirectUrl.value = "";
+        } else if (selectedValue === "2") {
+            redirectUrl.placeholder = "填入內部网址";
+            redirectUrl.setAttribute("readonly", "readonly");
+            redirectUrl.style.color = "gray";
+            hideElement(divAreaSelect);
+            hideElement(divGameTypeSelect);
+            hideElement(divParamText);
+            resetSelect(areaSelect);
+            resetSelect(gameSelect);
+            showElement(divInsideSelect);
+            redirectUrl.value = "";
+        } else if (selectedValue === "3") {
+            redirectUrl.placeholder = "导航地址";
+            redirectUrl.setAttribute("readonly", "readonly");
+            redirectUrl.style.color = "gray";
+            hideElement(divParamText);
+            showElement(divAreaSelect);
+            hideElement(divInsideSelect);
+            resetSelect(insideSelect);
+            redirectUrl.value = "";
+        }
+    });
+
+    // insideSelect 的事件监听器
+    insideSelect.addEventListener("change", function () {
+        var selectedValue = insideSelect.value;
+        clearParamText();
+
+        if (selectedValue === "0") {
+            redirectUrl.value = "";
+        } else if (selectedValue === "1") {
+            redirectUrl.value = "Deposit";
+        } else if (selectedValue === "2") {
+            redirectUrl.value = "Member";
+        }
+        else if (selectedValue === "3") {
+            redirectUrl.value = "Official";
+        }
+        else if (selectedValue === "4") {
+            redirectUrl.value = "Agency";
+        }
+        else if (selectedValue === "5") {
+            redirectUrl.value = "Square";
+        }
+        else if (selectedValue === "6") {
+            redirectUrl.value = "Bossapply";
+        }
+        else if (selectedValue === "7") {
+            redirectUrl.value = "Agentapply";
+        }
+        else if (selectedValue === "8") {
+            redirectUrl.value = "Prevent";
+        }
+        else if (selectedValue === "9") {
+            redirectUrl.value = "Private";
+        }
+    });
+
+    // areaSelect 的事件监听器
+    areaSelect.addEventListener("change", function () {
+        var selectedValue = areaSelect.value;
+        clearParamText();
+        if (selectedValue === "1") {
+            hideElement(divParamText);
+            redirectUrl.value = rankUrl;
+            hideElement(divGameTypeSelect);
+            resetSelect(gameSelect);
+        }
+        else if (selectedValue === "2") {
+            showElement(divParamText, "房间号");
+            redirectUrl.value = "";
+            hideElement(divGameTypeSelect);
+            resetSelect(gameSelect);
+            // 监听 paramText 输入事件
+            paramText.addEventListener("input", function () {
+                var inputValue = paramText.value;
+                var baseURL = roomUrl;
+
+                // 更新 redirectUrl 的值
+                redirectUrl.value = baseURL + inputValue;
+            });
+        }
+        else if (selectedValue === "3") {
+            hideElement(divParamText);
+            redirectUrl.value = withdrawUrl;
+            hideElement(divGameTypeSelect);
+            resetSelect(gameSelect);
+        }
+        else if (selectedValue === "4") {
+            hideElement(divParamText);
+            redirectUrl.value = exchangeUrl;
+            hideElement(divGameTypeSelect);
+            resetSelect(gameSelect);
+        }
+        else if (selectedValue === "5") {
+            hideElement(divParamText);
+            redirectUrl.value = actionListUrl;
+            hideElement(divGameTypeSelect);
+            resetSelect(gameSelect);
+        }
+        else if (selectedValue === "6") {
+            showElement(divParamText, "活动ID");
+            redirectUrl.value = "";
+            hideElement(divGameTypeSelect);
+            resetSelect(gameSelect);
+            // 监听 paramText 输入事件
+            paramText.addEventListener("input", function () {
+                var inputValue = paramText.value;
+                var baseURL = actionDetaiUrl;
+
+                // 更新 redirectUrl 的值
+                redirectUrl.value = baseURL + inputValue;
+            });
+        } else if (selectedValue === "7") {
+            redirectUrl.value = "";
+            hideElement(divParamText);
+            resetSelect(gameSelect);
+            showElement(divGameTypeSelect);
+        } else {
+            redirectUrl.value = "";
+            resetSelect(gameSelect);
+            hideElement(divParamText);
+            hideElement(divGameTypeSelect);
+        }
+    });
+
+    // gameSelect 的事件监听器
+    gameSelect.addEventListener("change", function () {
+        var selectedValue = gameSelect.value;
+        clearParamText();
+        if (selectedValue === "1") {
+            redirectUrl.value = OBUrl;
+        }
+        else if (selectedValue === "2") {
+            redirectUrl.value = imkyUrl;
+        }
+        else if (selectedValue === "3") {
+            redirectUrl.value = NNUrl;
+        }
+        else if (selectedValue === "4") {
+            redirectUrl.value = DDListUrl;
+        }
+        else if (selectedValue === "5") {
+            redirectUrl.value = fishUrl;
+        }
+        else {
+            redirectUrl.value = "";
+        }
+    });
+
+    // locationSelect 的事件监听器
+    locationSelect.addEventListener("change", function () {
+        var selectedValue = locationSelect.value;
+        clearParamText();
+
+        // 隐藏所有 LocationInfo 类
+        $(".LocationInfo1").hide();
+        $(".LocationInfo2").hide();
+        $(".LocationInfo3").hide();
+
+        // 根据选中的值，显示相应的 LocationInfo 类
+        if (selectedValue === "1") {
+            $(".LocationInfo1").show();
+        }
+        else if (selectedValue === "2") {
+            $(".LocationInfo2").show();
+        }
+        else if (selectedValue === "3") {
+            $(".LocationInfo3").show();
+        }
+    });
+
+</script>
+<style>
+    .tipsMessage {
+        color: red;
+        display: flex;
+    }
+
+</style>

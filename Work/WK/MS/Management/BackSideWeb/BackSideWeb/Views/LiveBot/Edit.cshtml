@@ -1,0 +1,39 @@
+﻿@using BackSideWeb.Model.Entity.MM
+@using BackSideWeb.Models.ViewModel
+@using JxBackendService.Model.Enums
+@using JxBackendService.Model.Enums.BackSideWeb.BotBet
+@model AnchorInfoContextViewModel
+@{
+    var actType = (ActTypes)ViewBag.ActType;
+}
+
+@if (actType == ActTypes.Update)
+{
+    <input type="hidden" asp-for="OriginalId" />
+    <div class="label_input">
+        <label>
+            直播间ID
+        </label>
+        <div class="form_set">
+            <input asp-for="Id" type="text" readonly />
+        </div>
+    </div>
+
+}
+else
+{
+    <div class="label_input">
+        <label>
+            直播间ID
+        </label>
+        <div class="form_set">
+            <input asp-for="Id" type="text" value=""/>
+        </div>
+    </div>
+}
+   <div class="label_input">
+        <label for="show">组别</label>
+        <div class="form_set">
+            <select id="botGroupSelect" class="dropdown_toggle" asp-for="GroupId" asp-items="@Model.BotGroupItems"></select>
+        </div>
+    </div>

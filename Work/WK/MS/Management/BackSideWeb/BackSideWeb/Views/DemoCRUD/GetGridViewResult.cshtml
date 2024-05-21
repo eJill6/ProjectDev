@@ -1,0 +1,39 @@
+﻿@using JxBackendService.Model.Paging
+@using JxBackendService.Model.ViewModel.Game
+@model PagedResultModel<QueryFrontsideMenuModel>
+@{
+    string clientServiceName = ViewBag.ClientServiceName.ToString();
+}
+<div>
+    <table>
+        <tbody class="jqBody">
+            @foreach (var item in Model.ResultList)
+            {
+                <tr>
+                    <td>@item.MenuName</td>
+                    <td>@item.TypeText</td>
+                    <td>@item.ThirdPartyName</td>
+                    <td>@item.IsActiveText</td>
+                    <td>@item.Sort</td>
+                    <td>@item.UpdateDateText</td>
+                    <td>
+                        <div class="flex_content">
+                            
+                            @if ((bool)ViewBag.HasEditPermission)
+                            {
+                                <a href="javascript:void(0)" data-url='@Url.Action("EditStyle2", "DemoCRUD")' class="btn_default main_color icon_style text_btn"
+                                    onclick="@string.Format("{0}.openUpdateView2(this, '{1}')", clientServiceName, item.KeyContent)">
+                                    双栏修改
+                                </a>
+                            }
+                            @await Html.PartialAsync("Partial/_OperationButton", item)
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="jqPagination">
+        @await Html.PartialAsync("Partial/_PaginationByPagerInfo", Model)
+    </div>
+</div>

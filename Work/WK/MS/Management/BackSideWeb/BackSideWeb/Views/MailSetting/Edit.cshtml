@@ -1,0 +1,17 @@
+﻿@model QueryAdvertisingContentModel
+@using BackSideWeb.Model.ViewModel.Game
+@using BackSideWeb.Models.ViewModel
+@using JxBackendService.Model.Entity
+@using BackSideWeb.Model.Entity.MM
+@using JxBackendService.Model.Enums
+
+<input type="hidden" asp-for="Id">
+<input type="hidden" asp-for="AdvertisingType">
+<input type="hidden" asp-for="ContentType">
+
+<div class="label_input">
+    <label for="content">@Model.AdvertisingText</label>
+    <div class="form_set">
+        <textarea asp-for="AdvertisingContent" rows="10"></textarea> 
+    </div>
+</div>

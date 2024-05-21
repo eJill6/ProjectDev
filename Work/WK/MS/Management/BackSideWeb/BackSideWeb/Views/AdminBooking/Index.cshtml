@@ -1,0 +1,163 @@
+﻿@using BackSideWeb.Models.ViewModel
+@model AdminBookingViewModel
+@{
+    var postId = ViewBag.PostId;
+    var userId = ViewBag.UserId;
+    string startDatedefault;
+    if (string.IsNullOrWhiteSpace(postId) && string.IsNullOrWhiteSpace(userId))
+    {
+        startDatedefault = DateTime.Today.AddDays(-1).ToString("yyyy-MM-dd");
+    }
+    else
+    {
+        startDatedefault = "2023-01-01";
+    }
+    var endDatedefault = DateTime.Today.ToString("yyyy-MM-dd");
+}
+<div class="bg spacing gap system_filter" id="jqMemberFilter">
+    <br />
+    <div class="col" style="padding: 8px;">
+        <div class="item">
+            <div class="label_input column_layout">
+                <label for="">
+                    <p>预约单ID</p>
+                </label>
+                <div class="form_set">
+                    <input class="jqFilter" type="text" name="" id="jqBookingId" placeholder="" value="" maxlength="16">
+                </div>
+            </div>
+        </div>
+       
+    </div>
+    <div class="col" style="padding: 8px;">
+        <div class="item">
+            <div class="label_input column_layout">
+                <label for="">
+                    <p>预约会员ID</p>
+                </label>
+                <div class="form_set">
+                    <input class="jqFilter" type="text" name="" id="jqUserId" placeholder="" value="@userId" maxlength="16">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col" style="padding: 8px;">
+        <div class="item">
+            <div class="label_input column_layout">
+                <label for="">
+                    <p>支付类型</p>
+                </label>
+                @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting
+                {
+                    SettingId = "jqPaymentTypeItems",
+                    Items = Model.PaymentTypeItems,
+                })
+            </div>
+        </div>
+       
+    </div>
+    <div class="col" style="padding: 8px;">
+        <div class="item">
+            <div class="label_input column_layout">
+                <label for="">
+                    <p>订单状态</p>
+                </label>
+                @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting
+                {
+                    SettingId = "jqOrderStatusItems",
+                    Items = Model.OrderStatusItems,
+                })
+            </div>
+        </div>
+    </div>
+    <div class="col" style="padding: 8px;">
+        <div class="item">
+            <div class="label_input column_layout">
+                <label for="">
+                    <p>发帖者身份</p>
+                </label>
+                @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting
+                {
+                    SettingId = "jqUserIdentitySelectList",
+                    Items = Model.IdentityTypeItems,
+                })
+            </div>
+        </div>
+    </div>
+    <div class="col" style="padding: 8px;">
+        <div class="item" >
+            <div class="label_input column_layout">
+                <label for="">
+                    <p>时间</p>
+                </label>
+                @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting
+                {
+                    SettingId = "jqDateTimeTypeItems",
+                    Items = Model.TimeTypeItems,
+                })
+            </div>
+
+        </div>
+    </div>
+    <div class="col" style="padding: 8px;">
+        <div class="item">
+            <div class="label_input column_layout">
+                <div class="form_set datepicker_text">
+                    @Html.TextBox("jqStartDate", startDatedefault, new { id = "jqStartDate", @class = "width_set jqFilter" })
+                    <span>至</span>
+                    @Html.TextBox("jqEndDate", endDatedefault, new { id = "jqEndDate", @class = "width_set jqFilter" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col" style="padding:8px;">
+        <div class="item">
+            <div class="btns">
+                <a href="javascript:;" class="btn_default main_color jqSearchBtn">查询</a>
+                <a href="javascript:;" class="btn_default main_color_line jqResetBtn">清空</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="jqContentRoot" style="display:none">
+    <div class="bg gap">
+        <div class="member_center_report agent_report table_overflow_x">
+            <table>
+                <thead>
+                    <tr>
+                        <th>预约单ID</th>
+                        <th>预约会员ID</th>
+                        
+                        <th>帖子ID</th>
+                        <th>下单时间</th>
+                        <th>确认完成时间</th>
+                        <th>支付类型</th>
+                        <td>发帖者身份</td>
+                        <th>支付钻石</th>
+                        <th>折扣</th>
+                        <th>实际支付钻石</th>
+                        <th>订单状态</th>
+                    </tr>
+                </thead>
+                <tbody id="jqGridContent">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="footer_function_content space_between">
+        <div class="jqPagination pagination"></div>
+    </div>
+</div>
+<style>
+    
+    .hrefcss a {
+        color: blue; /* 使用父元素的颜色 */
+    }
+
+        .hrefcss a:hover,
+        .hrefcss a:active,
+        .hrefcss a:focus {
+            color: blue; /* 鼠标悬停、激活和焦点时保持颜色不变 */
+        }
+</style>

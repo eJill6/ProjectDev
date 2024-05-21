@@ -1,0 +1,40 @@
+﻿@using BackSideWeb.Models.ViewModel;
+@using JxBackendService.Model.Paging
+@using JxBackendService.Model.ViewModel.Game
+@using BackSideWeb.Model.ViewModel.MM
+@model PagedResultModel<QueryAdminPostTransactionViewModel>
+
+<div>
+    <table>
+        <tbody class="jqBody">
+            @foreach (var item in Model.ResultList)
+            {
+                <tr>
+                    <td>@item.Id</td>
+
+                    <td class="hrefcss">
+                        <a href="/AdminPostTransaction/Index?postid=@(item.PostId)" target="_blank">
+                            @item.PostId
+                        </a>
+                    </td>
+                    <td>@item.CategoryText</td>
+                    <td class="hrefcss">
+                        <a href="/AdminPostTransaction/Index?userId=@(item.UserId)" target="_blank">
+                            @item.UserId
+                        </a>
+                    </td>
+                    <td>@item.CreateTimeText</td>
+                    <td>@item.AmountText</td>
+                    <td>@item.UnlockType</td>
+                    <td>@item.DiscountType</td>
+                    <td>@item.RealExpenseAmount</td>
+                    <td>@item.IncomeExpenseId</td>
+                    <td>@item.RefundMemo</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="jqPagination">
+        @await Html.PartialAsync("Partial/_PaginationByPagerInfo", Model)
+    </div>
+</div>

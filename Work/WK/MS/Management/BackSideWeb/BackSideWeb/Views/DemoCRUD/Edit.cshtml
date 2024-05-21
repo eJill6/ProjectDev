@@ -1,0 +1,36 @@
+﻿@model DemoEditParam
+@using JxBackendService.Model.ViewModel.Demo
+@using JxBackendService.Model.Enums
+@{
+    var actType = (ActTypes)ViewBag.ActType;    
+}
+
+<script src="~/js/business/demo/demoCrudEditSingleRowService.min.js" asp-append-version="true"></script>
+<div class="label_input">
+    <label for="Sort">
+        <p>排序</p>
+    </label>
+    <div class="form_set">
+        <input type="text" asp-for="Sort" />
+        <span asp-validation-for="Sort"></span>
+    </div>
+</div>
+<div class="label_input">
+    <label>
+        <p>檔案上傳</p>
+    </label>
+    <div class="form_set">
+        <input type="file" asp-for="DemoFile" />
+    </div>
+</div>
+@if (actType == ActTypes.Update)
+{
+    <div class="label_input">
+        <label>
+            <p>欄位 for update</p>
+        </label>
+        <div class="form_set">
+            <input type="text" />
+        </div>
+    </div>
+}

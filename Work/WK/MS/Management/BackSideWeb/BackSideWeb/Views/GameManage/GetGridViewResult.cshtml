@@ -1,0 +1,24 @@
+﻿@using JxBackendService.Model.Paging
+@using JxBackendService.Model.ViewModel.Game
+@model List<GameCenterManageModel>
+<div>
+    <table>
+        <tbody class="jqBody">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.MenuName</td>
+                    <td class="radiobutton_in_grid">
+                        <input type="radio" name="@item.No" value="True" data-key="@item.No" style="-webkit-appearance: radio;" class="jqStatus" @(item.IsActive? "checked" : "")>
+                        <label>开启</label>
+                        <input type="radio" name="@item.No" value="False" data-key="@item.No" style="-webkit-appearance: radio;" class="jqStatus" @(!item.IsActive? "checked" : "")>
+                        <label>关闭</label>
+                    </td>
+                    <td>
+                        <input type="text" class="edit_cell_in_grid jqSort" value="@item.Sort" data-key="@item.No" maxlength="3" oninput="onlyAllowInputInteger(this)">
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

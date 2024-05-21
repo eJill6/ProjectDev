@@ -1,0 +1,37 @@
+﻿@using BackSideWeb.Models.ViewModel
+@using JxBackendService.Model.Paging
+@model PagedResultModel<BotParameterViewModel>
+@{
+    string clientServiceName = ViewBag.ClientServiceName.ToString();
+    string lotteryPatchType = ViewBag.LotteryPatchType.ToString();
+}
+<div>
+    <table>
+        <tbody class="jqBody">
+            @foreach (var item in Model.ResultList)
+            {
+                <tr>                    
+                    <td>@item.GroupIdText</td>
+                    <td>@item.TimeTypeText</td>
+                    <td>@item.TimerValueText</td>
+                    <td>@item.SettingGroupText</td>
+                    <td>@item.Amount</td>
+                    <td>@item.Rate</td>
+                    <td>
+                        <div class="flex_content">
+                            <a href="javascript:void(0)" class="fa fa-edit" style="font-size: 20px; color:black;"
+                           onclick="@string.Format("{0}.openUpdateView('{1}')", clientServiceName, item.KeyContent+","+lotteryPatchType)">
+                            </a>
+                           <a href="javascript:void(0)" class="fa fa-trash" style="font-size: 20px; color:black;"
+                           onclick="@string.Format("{0}.delete('{1}')", clientServiceName, item.KeyContent+","+lotteryPatchType)">
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="jqPagination">
+        @await Html.PartialAsync("Partial/_PaginationByPagerInfo", Model)
+    </div>
+</div>

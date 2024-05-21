@@ -1,0 +1,126 @@
+﻿@model HomeAnnouncementViewModel
+@using BackSideWeb.Models.ViewModel
+@using JxBackendService.Model.Entity
+@using BackSideWeb.Model.Entity.MM
+@using JxBackendService.Model.Enums
+
+<input type="hidden" asp-for="Data.Id">
+<input type="hidden" asp-for="Data.HomeContent"/>
+<script src="~/lib/ckeditor5/build/ckeditor.js"></script>
+<script src="~/js/business/publicitySettings/homeAnnouncementEditSingleRowService.min.js" asp-append-version="true"></script>
+
+<input type="hidden" asp-for="Data.Type"  value="1" />
+<div class="label_input">
+    <label>
+        <p>
+            排序
+        </p>
+    </label>
+    <div class="form_set">
+        <input type="text" asp-for="Data.Weight" />
+    </div>
+</div>
+
+<div class="label_input">
+    <label>
+        <p>标题</p>
+    </label>
+    <div class="form_set">
+        <input type="text" asp-for="Data.Title" maxlength="21" />
+    </div>
+</div>
+
+<div class="label_input">
+    <label>
+        <p>
+            开始时间
+        </p>
+    </label>
+    <div class="form_set">
+        <input type="date" asp-for="Data.StartTime" />
+    </div>
+</div>
+<div class="label_input">
+    <label>
+        <p>
+            结束时间
+        </p>
+    </label>
+    <div class="form_set">
+        <input type="date" asp-for="Data.EndTime" />
+    </div>
+</div>
+<div class="label_input">
+    <label for="content">内文</label>
+    <div class="form_set">
+        <div id="toolbar-container"></div>       
+        <div id="editor">
+            @Html.Raw(@ViewBag.HomeContent)      
+        </div>
+    </div>
+    <div>
+        <label style="color: red;">※首页公告内容上限500字</label>
+    </div>
+</div>
+
+<div class="label_input">
+    <label for="show">显示</label>
+    <div class="form_set">
+        <select class="dropdown_toggle" asp-for="SelectOption" asp-items="Model.Items"></select>
+    </div>
+</div>
+
+<script>
+    DecoupledDocumentEditor.create( document.querySelector( '#editor' ) , {	
+                list: {
+            properties: {
+                //關閉bulletedList下拉選單樣式
+                styles: false,
+                startIndex: true,
+                reversed: true
+            }
+        },
+                fontSize: {
+            options: [
+                'default',
+                13,
+                17,
+                19,
+                21,
+                23,
+                25,
+                27,
+                30
+            ]
+        },
+            toolbar: {
+                    //items: [
+                    //    'bulletedList','|','fontSize','fontColor',
+                    //    '|','undo','redo'
+                    //]
+                    items: [
+                        'fontSize','fontColor',
+                        '|','undo','redo'
+                    ]
+                },
+                } )
+            .then( editor => {
+                const toolbarContainer = document.querySelector( '#toolbar-container' );
+                toolbarContainer.appendChild( editor.ui.view.toolbar.element );
+                        // 添加失去焦点事件监听器
+                 editor.editing.view.document.on('blur', () => {
+                     var content = editor.getData(); 
+                    $("#Data_HomeContent").val(content);
+            });
+            } )
+            .catch( error => {
+                console.error( error );
+            } );
+
+</script>
+<style>
+    #editor {
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+</style>

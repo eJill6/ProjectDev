@@ -1,0 +1,31 @@
+﻿@model AdminIncomeBookingDetail
+@using BackSideWeb.Models.ViewModel
+@using JxBackendService.Model.Entity
+@using BackSideWeb.Model.Entity.MM
+@using JxBackendService.Model.Enums
+@using MS.Core.MMModel.Models.AdminIncomeExpense;
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="~/css/user.css" rel="stylesheet" />
+<div class="wrapper">
+    <div class="info">
+        <div><span class="title">收益单ID</span> @Model.Id</div>
+        <div><span class="title">帖子ID</span> @Model.PostId</div>
+        <div><span class="title">帖子区域</span> @Model.CategoryText</div>
+        <div><span class="title">收益会员ID</span> @Model.UserId</div>
+        <div><span class="title">收益单状态</span> @Model.StatusText</div>
+        <div><span class="title">预约单ID</span> @Model.BookingId</div>
+        <div><span class="title">预约会员ID</span> @Model.BookingUserId</div>
+        <div><span class="title">预约时间</span> @Model.BookingTimeText</div>
+        <div><span class="title">预约支付方式</span> @Model.PaymentTypeText</div>
+        <div><span class="title">预约单状态</span> @Model.BookingStatusText</div>
+        <div><span class="title">套餐费用￥</span> @Model.ComboPriceText</div>
+        <div><span class="title">消费钻石</span> @Model.PaymentMoneyText</div>
+        <div><span class="title">平台拆帐</span> @Model.ChargeMoney</div>
+        <div><span class="title">暂锁/未入账收益￥</span> @Model.LockedRebatText</div>
+        <div><span class="title">商户入账收益</span> @Model.RebateText</div>
+        <div><span class="title">入账时间</span> @Model.DistributeTimeText</div>
+        <div><span class="title">注解</span> <span style="color:red;">@Model.UnusualMemo</span></div>
+        <div><span class="title">投诉单ID</span><span style="color:blue;">@Model.ReportId</span></div>
+    </div>
+</div>

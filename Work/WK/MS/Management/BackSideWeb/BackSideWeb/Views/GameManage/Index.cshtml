@@ -1,0 +1,34 @@
+@model List<SelectListItem>?
+@{
+    string clientServiceName = ViewBag.ClientServiceName.ToString();
+    string dropdownSelectCallback = $"function(){{{clientServiceName}.search();}}";
+}
+
+@section Filter{
+    <form id="jqSearchFilterForm" onsubmit="event.preventDefault();">
+        <div class="bg spacing gap system_filter">
+            <br />
+            <div class="col">
+                <div class="item">
+                    <div class="label_input column_layout">
+                        <label for="">
+                            <p>游戏分类</p>
+                        </label>
+                        @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting
+                    {
+                    SettingId = "jqTypeSelectList",
+                    Items = Model,
+                    Callback = dropdownSelectCallback
+                    })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    }
+
+    <tr>
+        <th style="width: 40%">游戏名称</th>
+        <th style="width: 30%">状态</th>
+        <th style="width: 30%">排序</th>
+    </tr>

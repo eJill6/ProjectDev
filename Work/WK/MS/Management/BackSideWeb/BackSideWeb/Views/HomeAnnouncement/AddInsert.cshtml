@@ -1,0 +1,136 @@
+﻿@model HomeAnnouncementInputModel
+@using BackSideWeb.Models.ViewModel
+@using JxBackendService.Model.Entity
+@using BackSideWeb.Model.Entity.MM
+@using JxBackendService.Model.Enums
+
+@{
+    var actType = (ActTypes)ViewBag.ActType;
+}
+
+<script src="~/lib/ckeditor5/build/ckeditor.js"></script>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        排序
+    </div>
+    <div class="detail_modal_col_right form_set" style="width: 70%;">
+        <input type="text" asp-for="@Model.MMHomeAnnouncementBs.Weight" placeholder="填入0 ~ 9999进行排序" maxlength="4" oninput="validatePositiveIntegerInput(this)" />
+
+    </div>
+</div>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        标题
+    </div>
+    <div class="detail_modal_col_right form_set" style="width: 70%;">
+        <input type="text" asp-for="@Model.MMHomeAnnouncementBs.Title" placeholder="上限21字" minlemgth="1" maxlength="21" />
+
+    </div>
+</div>
+
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        开始时间
+    </div>
+    <div class="detail_modal_col_right form_set" style="width: 70%;">
+        <input type="date" asp-for="@Model.MMHomeAnnouncementBs.StartTime" />
+    </div>
+</div>
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        结束时间
+    </div>
+    <div class="detail_modal_col_right form_set" style="width: 70%;">
+        <input type="date" asp-for="@Model.MMHomeAnnouncementBs.EndTime" />
+    </div>
+</div>
+
+<div class="detail_modal_row label_input" style="height:325px;">
+    <div class="detail_modal_col_left">
+        内文
+    </div>
+    <div class="detail_modal_col_right form_set" style="width:70%">
+        <div id="toolbar-container"></div>
+        <div id="editor">
+        </div>
+    </div>
+</div>
+<p style="color: red;
+    display: flex;
+    padding: 5px 120px;">※首页公告内容上限500字</p>
+<input type="hidden" asp-for="@Model.MMHomeAnnouncementBs.HomeContent" />
+<input type="hidden" asp-for="@Model.MMHomeAnnouncementBs.Type" value="1" />
+<div class="detail_modal_row label_input">
+    <div class="detail_modal_col_left">
+        显示
+    </div>
+    <div class="detail_modal_col_right form_set" style="width: 70%;">
+        <select class="dropdown_toggle" asp-for="@Model.MMHomeAnnouncementBs.IsActive" asp-items="Model.Items"></select>
+    </div>
+</div>
+
+<script>
+
+
+    function validatePositiveIntegerInput(inputElement) {
+        var inputValue = inputElement.value;
+        if (!/^(0|[1-9]\d*)$/.test(inputValue)) {
+            inputElement.value = "";
+        }
+    }
+    DecoupledDocumentEditor.create(document.querySelector('#editor'), {
+        list: {
+            properties: {
+                //關閉bulletedList下拉選單樣式
+                styles: false,
+                startIndex: true,
+                reversed: true
+            }
+        },
+        fontSize: {
+            options: [
+                'default',
+                13,
+                17,
+                19,
+                21,
+                23,
+                25,
+                27,
+                30
+            ]
+        },
+        toolbar: {
+            //items: [
+            //    'bulletedList','|','fontSize','fontColor',
+            //    '|','undo','redo'
+            //]
+            items: [
+                'fontSize', 'fontColor',
+                '|', 'undo', 'redo'
+            ]
+        },
+    })
+        .then(editor => {
+            const toolbarContainer = document.querySelector('#toolbar-container');
+            toolbarContainer.appendChild(editor.ui.view.toolbar.element);
+            // 添加失去焦点事件监听器
+            editor.editing.view.document.on('blur', () => {
+                var content = editor.getData();
+                $("#MMHomeAnnouncementBs_HomeContent").val(content);
+            });
+        })
+        .catch(error => {
+            console.error(error);
+        });
+
+</script>
+<style>
+    #editor {
+        border: 1px solid #ccc;
+        padding: 10px;
+        height: 300px;
+    }
+</style>

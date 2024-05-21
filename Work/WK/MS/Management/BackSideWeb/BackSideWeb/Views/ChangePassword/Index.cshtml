@@ -1,0 +1,39 @@
+﻿@using JxBackendService.Resource.Element
+<script src="~/js/business/changePassword/changePasswordEditSingleRowService.min.js" asp-append-version="true"></script>
+
+@section Header
+{
+    @await Html.PartialAsync("Partial/_Header")
+}
+
+<div class="FilterForm_title">
+    <h1 class="display-4">@ViewBag.Title</h1>
+</div>
+
+<div class="change_password_content">
+    <div class="bg gap spacing">
+        <div class="line_title">您的密码已过期，请重新设置密码</div>
+        <div class="amount">
+            <div class="column">
+                @await Html.PartialAsync("Edit")
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    #editSingleRowForm {
+        position: absolute;
+        top: calc(50% - 2px);
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 20px 40px 0 rgba(22, 66, 72, 0.31);
+        width: 600px;
+    }
+</style>
+
+@section CustomFooterButtons {
+    <div class="modal_btn_content fixed_width modal_btn_without_border">
+        <a href="javascript:;" class="btn_default brighter_color jqSubmitBtn ">@CommonElement.Submit</a>
+    </div>
+}

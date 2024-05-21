@@ -1,0 +1,183 @@
+﻿@using BackSideWeb.Models.ViewModel;
+@using BackSideWeb.Models.ViewModel.PlayBetRecord
+@model BetHistoryViewModel
+@{
+    ViewData["Title"] = "秘色彩票投注";
+    var startDatedefault = DateTime.Now.ToString("yyyy-MM-dd");
+    var endDatedefault = DateTime.Now.ToString("yyyy-MM-dd");
+}
+
+<div class="bg spacing gap system_filter" id="jqMemberFilter">
+    <br />
+    <div class="col">
+        <div class="item">
+            <div class="label_input column_layout">
+                <label for="">
+                    <p>房间ID</p>
+                </label>
+                <div class="form_set">
+                    <input class="jqFilter" type="text" name="" id="roomId" placeholder="" value="" maxlength="10">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="item">
+            <div class="label_input column_layout">
+                <label for="">
+                    <p>彩种</p>
+                </label>
+                @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting
+                {
+                SettingId = "jqLotteryTypeSelectList",
+                Items = Model.LotteryIdSelectList,
+                })
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="item">
+            <div class="label_input column_layout">
+                <label for="">
+                    <p>开奖期号</p>
+                </label>
+                <div class="form_set">
+                    <input class="jqFilter" type="text" name="" id="palyCurrentNum" placeholder="" value="" maxlength="50">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="item">
+            <div class="label_input column_layout">
+                <label for="">
+                    <p>会员ID</p>
+                </label>
+                <div class="form_set">
+                    <input class="jqFilter" type="text" name="" id="userId" placeholder="" value="" maxlength="50">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="item">
+            <div class="label_input column_layout">
+                <label for="">
+                    <p>注单状态</p>
+                </label>
+                @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting
+                {
+                SettingId = "jqIsFactionAwardSelectList",
+                Items = Model.IsFactionAwardSelectList,
+                })
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="item">
+            <div class="label_input column_layout">
+                <label for="">
+                    <p>输赢</p>
+                </label>
+                @await Html.PartialAsync("Partial/_DropdownMenu", new DropdownMenuSetting
+                {
+                SettingId = "jqIsWinSelectList",
+                Items = Model.IsWinSelectList,
+                })
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col">
+        <div class="item">
+            <div class="col_p_1">
+                <div class="label_input column_layout">
+                    <label for="">
+                        <p>時間</p>
+                    </label>
+                    <div class="form_set datepicker_text">
+                        @Html.TextBox("jqStartDate", startDatedefault, new { id = "jqStartDate", @class = "width_set jqFilter" })
+                        <span>至</span>
+                        @Html.TextBox("jqEndDate", endDatedefault, new { id = "jqEndDate", @class = "width_set jqFilter" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="item">
+            <div class="btns">
+                <a href="javascript:;" class="btn_default main_color jqSearchBtn">查询</a>
+                <a href="javascript:;" class="btn_default main_color_line jqResetBtn">清空</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="myDiv"></div>
+
+<div id="jqContentRoot" style="display:block">
+    <div class="bg gap">
+        <div class="member_center_report agent_report table_overflow_x">
+            <table>
+                <thead>
+                    <tr>
+                        <th>期号</th>
+                        <th>房间ID</th>
+                        <th>彩种</th>
+                        <th>玩法</th>
+                        <th>投注项</th>
+                        <th>会员ID</th>
+                        <th>投注数</th>
+                        <th>单注金额(元)</th>
+                        <th>投注金额(元)</th>
+                        <th>投注时间</th>
+                        <th>开奖时间</th>
+                        <th>注单状态</th>
+                        <th>输赢</th>
+                        <th>中奖注数</th>
+                        <th>中奖金额</th>
+                        <th>盈亏</th>
+                    </tr>
+                </thead>
+                <tbody id="jqGridContent">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="footer_function_content space_between">
+        <div class="jqPagination pagination"></div>
+    </div>
+</div>
+<style>
+    .col {
+        margin-top: 10px;
+    }
+
+    .jqDisplayBtn {
+        background-color: #02a7f0
+    }
+
+    .jqFailedBtn {
+        margin-left: 10px;
+        background-color: #ec808d
+    }
+    /* 使用 flex 布局使 <p> 元素水平排列 */
+    #myDiv {
+        display: flex;
+        flex-direction: row;
+    }
+
+        /* 设置文字颜色为红色 */
+        #myDiv p {
+            color: red;
+            margin: 0; /* 去除默认的段落边距 */
+            margin-left: 10px;
+        }
+</style>

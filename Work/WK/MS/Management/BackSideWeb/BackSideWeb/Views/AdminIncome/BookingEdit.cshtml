@@ -1,0 +1,100 @@
+﻿@model AdminIncomeDetail
+@using BackSideWeb.Models.ViewModel
+@using JxBackendService.Model.Entity
+@using BackSideWeb.Model.Entity.MM
+@using JxBackendService.Model.Enums
+@using MS.Core.MMModel.Models.AdminIncomeExpense;
+
+@if (Model == null)
+{
+    <p>获取数据失败</p>
+}
+else
+{
+
+    <input type="hidden" id="IncomeId" name="IncomeId" value="@Model.Id">
+    <input type="hidden" id="Id" name="Id" value="@Model.Id">
+
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+    </style>
+    <table>
+        <tr>
+            <td>收益单ID</td>
+            <td>@Model.Id</td>
+        </tr>
+        <tr>
+            <td>帖子ID</td>
+            <td>@Model.PostId</td>
+        </tr>
+        <tr>
+            <td>帖子区域</td>
+            <td>@Model.CategoryText</td>
+        </tr>
+        <tr>
+            <td>收益会员ID</td>
+            <td>@Model.UserId</td>
+        </tr>
+        <tr></tr>
+        <tr>
+            <td>预约单ID</td>
+            <td>@Model.SourceId</td>
+        </tr>
+        <tr>
+            <td>预约会员ID</td>
+            <td>@Model.UnlockUserId</td>
+        </tr>
+        <tr>
+            <td>预约时间</td>
+            <td>@Model.CreateTimeText</td>
+        </tr>
+        <tr></tr>
+        <tr>
+            <td>预约支付方式</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>消费钻石</td>
+            <td>@Model.PointText</td>
+        </tr>
+        <tr>
+            <td>暂锁/未入账收益￥</td>
+            <td>@Model.AmountText</td>
+        </tr>
+        <tr>
+            <td>收益单状态</td>
+            <td style="color:#d9001b">@Model.StatusText</td>
+        </tr>
+        <tr>
+            <td>注解</td>
+            <td style="color:#d9001b">@Model.UnusualMemo</td>
+        </tr>
+        <tr>
+            <td>投诉单ID</td>
+            <td style="color:#0000FF">@Model.ReportId</td>
+        </tr>
+
+        <tr>
+            <td>审核</td>
+            <td>
+                <input type="radio" id="audit_pending" name="Status" value="99" style="-webkit-appearance: radio;" checked="checked">
+                <label for="audit_pending">审核中</label>
+                <br>
+                <input type="radio" id="audit_approved" name="Status" value="1" style="-webkit-appearance: radio;">
+                <label for="audit_approved">入账</label>
+                <br>
+                <input type="radio" id="audit_rejected" name="Status" value="11" style="-webkit-appearance: radio;">
+                <label for="audit_rejected">不入账</label>
+                <p style="color:#d9001b">※入账会将暂锁收益移至商户入账收益￥，不入账则移入收益审核不入账￥</p>
+            </td>
+        </tr>
+        <tr>
+            <td>审核原因</td>
+            <td>
+                <textarea rows="3" rows="10" cols="30" style="border: 1px solid black;" id="Memo" name="Memo"></textarea>
+            </td>
+        </tr>
+    </table>
+}

@@ -1,0 +1,77 @@
+﻿@model BetHistoryViewModel
+
+@using BackSideWeb.Models.ViewModel.PlayBetRecord
+@using JxBackendService.Common.Util;
+
+<style>
+    .wrapper {
+        font-size: 15px; /* 调整字体大小 */
+    }
+
+    .title {
+        font-weight: bold; /* 设置标题文本为粗体 */
+        display: inline-block;
+    }
+
+    .title,
+    div {
+        margin-left: 3px; /* 左边留一些空间 */
+        margin-right: 10px;
+    }
+
+    .note-num {
+        display: block;
+    }
+</style>
+
+<div class="wrapper">
+    <div>
+        <span class="title">期号</span> @Model.PalyCurrentNum
+    </div>
+    <div>
+        <span class="title">房间ID</span> @Model.RoomId
+    </div>
+    <div>
+        <span class="title">彩种</span> @Model.LotteryText
+    </div>
+    <div>
+        <span class="title">玩法</span> @Model.PlayTypeText
+    </div>
+    <div>
+        <span class="title">投注项</span>
+        <span class="note-num">@Model.PalyNum</span>
+    </div>
+    <div>
+        <span class="title">会员ID</span> @Model.UserID
+    </div>
+    <div>
+        <span class="title">投注数</span> @Model.NoteNum
+    </div>
+    <div>
+        <span class="title">单注金额(元)</span> @Model.SingleMoneyText
+    </div>
+    <div>
+        <span class="title">投注金额(元)</span> @Model.NoteMoneyText
+    </div>
+    <div>
+        <span class="title">投注时间</span> @Model.NoteTimeText
+    </div>
+    <div>
+        <span class="title">开奖时间</span> @Model.LotteryTimeText
+    </div>
+    <div>
+        <span class="title">注单状态</span> @Model.IsFactionAwardText
+    </div>
+    <div>
+        <span class="title">输赢</span> @Model.IsWinText
+    </div>
+    <div>
+        <span class="title">中奖注数</span> @Model.WinNumText
+    </div>
+    <div>
+        <span class="title">中奖金额</span> @Model.PrizeMoneyText
+    </div>
+    <div>
+        <span class="title">盈亏</span> @Model.WinMoneyText
+    </div>
+</div>
