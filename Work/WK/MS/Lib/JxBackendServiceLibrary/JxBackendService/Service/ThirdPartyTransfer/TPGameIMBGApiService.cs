@@ -1,0 +1,265 @@
+﻿using JxBackendService.Common;
+using JxBackendService.Common.Util;
+using JxBackendService.DependencyInjection;
+using JxBackendService.Interface.Service;
+using JxBackendService.Interface.Service.Net;
+using JxBackendService.Model.Common;
+using JxBackendService.Model.Enums;
+using JxBackendService.Model.Param.ThirdParty;
+using JxBackendService.Model.ReturnModel;
+using JxBackendService.Model.ThirdParty.IM;
+using JxBackendService.Model.ViewModel;
+using JxBackendService.Model.ViewModel.ThirdParty;
+using JxBackendService.Service.ThirdPartyTransfer.Base;
+using System;
+using System.Net;
+using System.Web;
+
+namespace JxBackendService.Service.ThirdPartyTransfer
+{
+    public abstract class TPGameIMBGApiService : BaseTPGameApiService
+    {
+        private static readonly string _apiAgentHandle = "agentHandle";
+
+        //private static readonly string _apiLogHandle = "logHandle";
+        private static readonly string _language = "ZH-CN";
+
+        private static readonly int _userNotExistsCode = 1012;
+
+        /// <summary> 用户还在游戏中，下分失败 </summary>
+        private static readonly int s_noWithdrawalInGame = 1013;
+
+        private readonly IGameAppSettingService _gameAppSettingService;
+
+        public TPGameIMBGApiService(EnvironmentUser envLoginUser, DbConnectionTypes dbConnectionType) : base(envLoginUser, dbConnectionType)
+        {
+            _gameAppSettingService = DependencyUtil.ResolveKeyed<IGameAppSettingService>(envLoginUser.Application, SharedAppSettings.PlatformMerchant);
+        }
+
+        public override PlatformProduct Product => PlatformProduct.IMBG;
+
+        protected override bool IsAllowTransferCompensation => true;
+
+        public override BaseReturnModel GetQueryOrderReturnModel(string apiResult)
+        {
+            if (apiResult.IsNullOrEmpty())
+            {
+                LogUtil.ForcedDebug($"GetQueryOrderReturnModel fail, apiResult is null");
+
+                return null;
+            }
+
+            IMBGResponse<IMBGOrderInfoData> orderInfoResponse = apiResult.Deserialize<IMBGResponse<IMBGOrderInfoData>>();
+
+            if (!orderInfoResponse.Data.IsSuccess)
+            {
+                return new BaseReturnModel(orderInfoResponse.Data.ErrorLog);
+            }
+
+            return new BaseReturnModel(ReturnCode.Success);
+        }
+
+        protected override DetailRequestAndResponse GetRemoteOrderApiResult(string tpGameAccount, BaseTPGameMoneyInfo tpGameMoneyInfo)
+        {
+            IIMBGAppSetting imbgAppSetting = _gameAppSettingService.GetIMBGAppSetting();
+            string param = DESEncode(imbgAppSetting.DESKey, $"ac={(int)IMBGActionCodes.QueryOrder}&userCode={tpGameAccount}&orderId={tpGameMoneyInfo.OrderID}");
+
+            DoRequest(imbgAppSetting, param, _apiAgentHandle, out DetailRequestAndResponse detail);
+
+            return detail;
+        }
+
+        protected override DetailRequestAndResponse GetRemoteTransferApiResult(bool isMoneyIn, string tpGameAccount, BaseTPGameMoneyInfo tpGameMoneyInfo)
+        {
+            IIMBGAppSetting imbgAppSetting = _gameAppSettingService.GetIMBGAppSetting();
+            IMBGActionCodes actionCode;
+
+            if (isMoneyIn)
+            {
+                actionCode = IMBGActionCodes.Recharge;
+            }
+            else
+            {
+                actionCode = IMBGActionCodes.Withdraw;
+            }
+
+            string param = DESEncode(imbgAppSetting.DESKey, $"ac={(int)actionCode}&userCode={tpGameAccount}&money={tpGameMoneyInfo.Amount}&orderId={tpGameMoneyInfo.OrderID}");
+            DoRequest(imbgAppSetting, param, _apiAgentHandle, out DetailRequestAndResponse detail);
+
+            return detail;
+        }
+
+        protected override string GetRemoteUserScoreApiResult(string tpGameAccount)
+        {
+            BaseReturnDataModel<string> returnDataModel = GetBalanceApiResult(tpGameAccount);
+
+            return returnDataModel.DataModel;
+        }
+
+        public override BaseReturnDataModel<UserScore> GetTransferReturnModel(string apiResult)
+        {
+            IMBGResponse<IMBGTransferData> tranferResponse = apiResult.Deserialize<IMBGResponse<IMBGTransferData>>();
+
+            if (!tranferResponse.Data.IsSuccess)
+            {
+                return new BaseReturnDataModel<UserScore>(tranferResponse.Data.ErrorLog);
+            }
+
+            return new BaseReturnDataModel<UserScore>(ReturnCode.Success, new UserScore() { AvailableScores = tranferResponse.Data.FreeMoney });
+        }
+
+        public override BaseReturnDataModel<UserScore> GetUserScoreReturnModel(string apiResult)
+        {
+            IMBGResponse<IMBGBalanceData> balanceResponse = apiResult.Deserialize<IMBGResponse<IMBGBalanceData>>();
+
+            if (!balanceResponse.Data.IsSuccess)
+            {
+                return new BaseReturnDataModel<UserScore>(balanceResponse.Data.ErrorLog, null);
+            }
+
+            return new BaseReturnDataModel<UserScore>(
+                ReturnCode.Success,
+                new UserScore()
+                {
+                    AvailableScores = balanceResponse.Data.FreeMoney
+                });
+        }
+
+        protected override BaseReturnModel CheckOrCreateRemoteAccount(CreateRemoteAccountParam param)
+        {
+            BaseReturnDataModel<string> returnModel = GetRemoteCheckAccountExistApiResult(param.TPGameAccount);
+
+            if (!returnModel.IsSuccess)
+            {
+                return new BaseReturnModel(returnModel.Message);
+            }
+
+            IMBGResponse<IMBGBalanceData> balanceResponse = returnModel.DataModel.Deserialize<IMBGResponse<IMBGBalanceData>>();
+
+            if (balanceResponse.Data.IsSuccess)
+            {
+                return new BaseReturnModel(ReturnCode.Success);
+            }
+
+            //以GetBalance來判斷用戶是否存在, 若Code回傳1012表示用戶不存在
+            if (balanceResponse.Data.Code != _userNotExistsCode)
+            {
+                return new BaseReturnModel(balanceResponse.Data.ErrorLog);
+            }
+
+            BaseReturnDataModel<string> createAccountResult = GetRemoteCreateAccountApiResult(param);
+
+            if (!createAccountResult.IsSuccess)
+            {
+                return new BaseReturnModel(createAccountResult.Message);
+            }
+
+            return new BaseReturnModel(ReturnCode.Success);
+        }
+
+        protected override BaseReturnDataModel<string> GetRemoteForwardGameUrl(string tpGameAccount, string ip, bool isMobile, LoginInfo loginInfo)
+        {
+            BaseReturnDataModel<string> returnModel = GetRemoteLoginApiResult(tpGameAccount, ip, isMobile, loginInfo);
+
+            if (!returnModel.IsSuccess)
+            {
+                return new BaseReturnDataModel<string>(returnModel.Message, string.Empty);
+            }
+
+            IMBGResponse<IMBGLoginData> launchGameModel = returnModel.DataModel.Deserialize<IMBGResponse<IMBGLoginData>>();
+
+            if (!launchGameModel.Data.IsSuccess)
+            {
+                return new BaseReturnDataModel<string>(launchGameModel.Data.ErrorLog, null);
+            }
+
+            return new BaseReturnDataModel<string>(ReturnCode.Success, launchGameModel.Data.FullUrl);
+        }
+
+        protected override BaseReturnDataModel<RequestAndResponse> GetRemoteBetLogApiResult(string lastSearchToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override BaseReturnDataModel<string> GetRemoteCheckAccountExistApiResult(string tpGameAccount)
+            => GetBalanceApiResult(tpGameAccount);
+
+        protected override BaseReturnDataModel<string> GetRemoteCreateAccountApiResult(CreateRemoteAccountParam param)
+        {
+            var ipUtilService = DependencyUtil.ResolveService<IIpUtilService>();
+
+            //以GetForwardGameUrl來建立用戶, 若用戶不存在, 取得遊戲Url時會同步建立
+
+            BaseReturnDataModel<string> gameUrlResult = GetRemoteForwardGameUrl(
+                param.TPGameAccount,
+                ipUtilService.GetIPAddress(),
+                isMobile: true,
+                loginInfo: null);
+
+            return gameUrlResult;
+        }
+
+        protected override BaseReturnDataModel<string> GetRemoteLoginApiResult(string tpGameAccount, string ipAddress, bool isMobile, LoginInfo loginInfo)
+        {
+            IIMBGAppSetting imbgAppSetting = _gameAppSettingService.GetIMBGAppSetting();
+            string queryString = $"ac={(int)IMBGActionCodes.Login}&userCode={tpGameAccount}&ip={ipAddress}&gameId=0&lang={_language}";
+            string param = DESEncode(imbgAppSetting.DESKey, queryString);
+            BaseReturnDataModel<string> returnModel = DoRequest(imbgAppSetting, param, _apiAgentHandle, out DetailRequestAndResponse detail);
+
+            return returnModel;
+        }
+
+        protected override bool IsDoTransferCompensation(string apiResult)
+        {
+            IMBGResponse<IMBGTransferData> tranferResponse = apiResult.Deserialize<IMBGResponse<IMBGTransferData>>();
+
+            // 用户还在游戏中，下分失败
+            if (!tranferResponse.Data.IsSuccess && tranferResponse.Data.Code == s_noWithdrawalInGame)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        private BaseReturnDataModel<string> DoRequest(IIMBGAppSetting imbgAppSetting, string param, string apiHandle,
+            out DetailRequestAndResponse detail)
+        {
+            long timestamp = DateTime.UtcNow.ToChinaDateTime().ToUnixOfTime();
+            string sign = MD5Tool.MD5EncodingForIMBGGameProvider($"{imbgAppSetting.MerchantCode}{timestamp}{imbgAppSetting.MD5Key}");
+            string url = $"{imbgAppSetting.ServiceUrl}{apiHandle}?agentId={imbgAppSetting.MerchantCode}&timestamp={timestamp}&param={param}&sign={sign}";
+
+            var webRequestParam = new WebRequestParam()
+            {
+                Purpose = $"TPGService.{Product.Value}請求",
+                Method = HttpMethod.Get,
+                ContentType = HttpWebRequestContentType.WwwFormUrlencoded,
+                Url = url,
+                TimeOut = 20 * 1000,
+                IsResponseValidJson = true
+            };
+
+            string apiResult = HttpWebRequestUtilService.GetResponse(webRequestParam, out HttpStatusCode httpStatusCode);
+            detail = new DetailRequestAndResponse(webRequestParam, apiResult);
+
+            return ConverToApiReturnDataModel(httpStatusCode, apiResult);
+        }
+
+        private string DESEncode(string desKey, string content)
+        {
+            var desTool = new DESTool(desKey);
+
+            return HttpUtility.UrlEncode(desTool.DESEnCode(content,
+                System.Security.Cryptography.CipherMode.ECB,
+                isReturnBase64String: true));
+        }
+
+        private BaseReturnDataModel<string> GetBalanceApiResult(string tpGameAccount)
+        {
+            IIMBGAppSetting imbgAppSetting = _gameAppSettingService.GetIMBGAppSetting();
+            string param = DESEncode(imbgAppSetting.DESKey, $"ac={(int)IMBGActionCodes.Balance}&userCode={tpGameAccount}");
+
+            return DoRequest(imbgAppSetting, param, _apiAgentHandle, out DetailRequestAndResponse detail);
+        }
+    }
+}
