@@ -1,0 +1,53 @@
+{
+  "LuoznzUrl": {
+    "activity": [
+      "https://h5.luoznz.com/#/actionList"
+    ],
+    "atmh5": [
+      "http://atmh5.luoznz.com"
+    ],
+    "cdn": [
+      "https://static.luoznz.com"
+    ],
+    "chat": [
+      "https://signalr.luoznz.com"
+    ],
+    "cloud": [
+      "https://app.luoznz.com"
+    ],
+    "commGroup": [
+      "https://www.baidu.com"
+    ],
+    "customer": [
+      "https://www.baidu.com"
+    ],
+    "gameCenter": [
+      "https://ms-lottory-web.ioiskp.com"
+    ],
+    "h5": [
+      "https://h5.luoznz.com"
+    ],
+    "mediaConvert": [
+      "https://media.luoznz.com"
+    ],
+    "playStream": [
+      "rtmp://v.cv781.com/shark/{roomNum}",
+      "http://v.cv781.com/shark/{roomNum}.flv"
+    ],
+    "pushStream": [
+      "rtmp://p.cv781.com/shark"
+    ],
+    "s3Image": [
+      "https://video.luoznz.com"
+    ],
+    "service": [
+      "https://api.luoznz.com"
+    ],
+    "video": [
+      "https://video.luoznz.com"
+    ],
+    "videoPro": [
+      "https://video.luoznz.com"
+    ]
+  }
+}

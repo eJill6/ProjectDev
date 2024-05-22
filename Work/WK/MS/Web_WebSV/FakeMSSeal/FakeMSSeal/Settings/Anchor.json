@@ -1,0 +1,78 @@
+﻿{
+  "AnchorResult": {
+    "data": [
+      {
+        "anchorId": 1907,
+        "anchorType": 0,
+        "roomNum": 10001,
+        "gameId": 66,
+        "gameName": "amd2"
+      },
+      {
+        "anchorId": 1910,
+        "anchorType": 0,
+        "roomNum": 10002,
+        "gameId": 1,
+        "gameName": "爱登堡"
+      },
+      {
+        "anchorId": 1912,
+        "anchorType": 0,
+        "roomNum": 10004,
+        "gameId": 65,
+        "gameName": "AMD"
+      },
+      {
+        "anchorId": 1913,
+        "anchorType": 0,
+        "roomNum": 10005,
+        "gameId": 1,
+        "gameName": "爱登堡"
+      },
+      {
+        "anchorId": 1914,
+        "anchorType": 0,
+        "roomNum": 10006,
+        "gameId": 1,
+        "gameName": "爱登堡"
+      },
+      {
+        "anchorId": 1915,
+        "anchorType": 0,
+        "roomNum": 10007,
+        "gameId": 1,
+        "gameName": "爱登堡"
+      },
+      {
+        "anchorId": 1916,
+        "anchorType": 0,
+        "roomNum": 10008,
+        "gameId": 1,
+        "gameName": "爱登堡"
+      },
+      {
+        "anchorId": 1917,
+        "anchorType": 0,
+        "roomNum": 10009,
+        "gameId": 1,
+        "gameName": "爱登堡"
+      },
+      {
+        "anchorId": 1918,
+        "anchorType": 0,
+        "roomNum": 10010,
+        "gameId": 1,
+        "gameName": "爱登堡"
+      },
+      {
+        "anchorId": 1919,
+        "anchorType": 0,
+        "roomNum": 10011,
+        "gameId": 1,
+        "gameName": "爱登堡"
+      }
+    ],
+    "error": null,
+    "success": true
+  }
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "outputFileName": "wwwroot/js/jquery/jquery.extensions.min.js",
+    "inputFiles": [
+      "wwwroot/js/jquery/jquery.extensions.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/third-party-game-hall.min.js",
+    "inputFiles": [
+      "wwwroot/js/third-party-game-hall.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/jquery/jquery.counterup.min.js",
+    "inputFiles": [
+      "wwwroot/js/jquery/jquery.counterup.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/cryptoJS/aes.min.js",
+    "inputFiles": [
+      "wwwroot/js/cryptoJS/aes.js"
+    ]
+  }, 
+  {
+    "outputFileName": "wwwroot/js/utils/platformAESService.min.js",
+    "inputFiles": [
+      "wwwroot/js/utils/platformAESService.js"
+    ]
+  }
+]

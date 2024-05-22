@@ -1,0 +1,237 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>M.Core</name>
+    </assembly>
+    <members>
+        <member name="M:M.Core.Controllers.AccountController.LogOn(ControllerShareLib.Models.Account.MobileApiLogonParam)">
+            <summary> 登入 </summary>
+        </member>
+        <member name="M:M.Core.Controllers.EntranceController.Info">
+            <summary>
+            App 全域資訊入口
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:M.Core.Controllers.GameCenterController.GetForwardGameUrl(JxBackendService.Model.Param.ThirdParty.BaseGameCenterLogin)">
+            <summary> 取得第三方登入網址 </summary>
+        </member>
+        <member name="M:M.Core.Controllers.GameCenterController.EnterThirdPartyGame(ControllerShareLib.Models.Game.EnterThirdPartyGameParam)">
+            <summary> 直播間直接取得第三方遊戲網址 </summary>
+        </member>
+        <member name="M:M.Core.Controllers.GameLobbyController.GetGameLobbyInfo(System.String)">
+            <summary>取得電子大廳資訊</summary>
+        </member>
+        <member name="M:M.Core.Controllers.GameLobbyController.GetGameList(ControllerShareLib.Models.Game.GameLobby.GameLobbySubGameRequest)">
+            <summary>電子大廳遊戲列表</summary>
+        </member>
+        <member name="M:M.Core.Controllers.GameLobbyController.LoginGameLobbyGame(ControllerShareLib.Models.Game.GameLobby.LoginGameLobbyGameParam)">
+            <summary>登入子遊戲</summary>
+        </member>
+        <member name="M:M.Core.Controllers.HomeController.HomeTopMenu">
+            <summary> 遊戲大廳首頁Menu </summary>
+        </member>
+        <member name="M:M.Core.Controllers.HomeController.GetMenuInnerInfos">
+            <summary> 遊戲內頁Menu </summary>
+        </member>
+        <member name="M:M.Core.Controllers.HomeController.GetLiveGameTypeAndMenus">
+            <summary> 直播遊戲Menu </summary>
+        </member>
+        <member name="M:M.Core.Controllers.HomeController.GetRefreshBalanceInfo">
+            <summary>
+            取得最新餘額
+            </summary>
+        </member>
+        <member name="M:M.Core.Controllers.LotterySpaController.GetRebatePro(System.Int32,System.Int32,System.Int32,System.Nullable{System.Boolean})">
+            <summary>
+            取得返點、賠率資料
+            </summary>
+            <returns>結果</returns>
+        </member>
+        <member name="M:M.Core.Controllers.LotterySpaController.GetRebatePros(System.String)">
+            <summary>
+            取得賠率資料
+            </summary>
+            <returns>結果</returns>
+        </member>
+        <member name="M:M.Core.Controllers.LotterySpaController.GetAllLotteryInfo">
+            <summary>
+            取得彩種列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:M.Core.Controllers.LotterySpaController.GetNextIssueNo(System.Int32)">
+            <summary>
+            取得下期期號
+            </summary>
+            <param name="lotteryId">LotteryId</param>
+            <returns>下期期號</returns>
+        </member>
+        <member name="M:M.Core.Controllers.LotterySpaController.GetNextIssueNos">
+            <summary>
+            下期期號
+            </summary>
+            <returns>下期期號</returns>
+        </member>
+        <member name="M:M.Core.Controllers.LotterySpaController.GetRankList(System.Int32)">
+            <summary>
+            排行榜清單(HTML)
+            </summary>
+            <param name="days">天數</param>
+            <returns>排行榜清單</returns>
+        </member>
+        <member name="M:M.Core.Controllers.LotterySpaController.GetRankListItems(System.Int32)">
+            <summary>
+            排行榜清單(JSON)
+            </summary>
+            <param name="days">天數</param>
+            <returns>排行榜清單</returns>
+        </member>
+        <member name="M:M.Core.Controllers.LotterySpaController.GetTodaySummary(System.Int32)">
+            <summary>
+            今日清單
+            </summary>
+            <returns>今日清單</returns>
+        </member>
+        <member name="M:M.Core.Controllers.LotterySpaController.PlaceOrder(ControllerShareLib.Models.Api.PlayInfoPostApiModel)">
+            <summary>
+            下票
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:M.Core.Controllers.LotterySpaController.IssueHistory(System.Int32,System.Int32,System.String)">
+            <summary>
+            期號開獎歷史
+            </summary>
+            <param name="lotteryId"></param>
+            <param name="count"></param>
+            <param name="nextCursor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:M.Core.Controllers.LotterySpaController.GetSpecifyOrderList(System.Nullable{System.Int32},System.Nullable{System.DateTime},System.Int32,System.String,System.String,System.String)">
+            <summary>
+            取得投注紀錄資料
+            </summary>
+            <param name="lotteryId"></param>
+            <param name="status">全部就不需傳入。
+            待開獎：Unawarded、已中獎：Won、未中獎：Lost、和局：SystemCancel、系統撤單：SystemRefund</param>
+            <param name="searchDate">e.g. 2023-11-10</param>
+            <param name="cursor"></param>
+            <param name="pageSize"></param>
+            <param name="roomId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:M.Core.Controllers.LotterySpaController.GetLongData(System.Int32)">
+            <summary>
+            取得長龍列表(單一彩種)
+            </summary>
+            <param name="lotteryId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:M.Core.Controllers.LotterySpaController.GetLongDatas">
+            <summary>
+            取得長龍列表(所有彩種)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:M.Core.Controllers.LotterySpaController.GetLotteryPlanData(System.Int32,System.Int32)">
+            <summary>
+            取得跟單計畫列表(單一彩種)
+            </summary>
+            <param name="lotteryId"></param>
+            <param name="planType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:M.Core.Controllers.LotterySpaController.GetLotteryPlanDatas">
+            <summary>
+            取得跟單計畫列表(所有彩種)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:M.Core.Controllers.LotterySpaController.GetLongDataV2(System.Int32)">
+            <summary>
+            取得長龍列表(單一彩種)
+            </summary>
+            <param name="lotteryId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:M.Core.Controllers.LotterySpaController.GetLongDatasV2">
+            <summary>
+            取得長龍列表(所有彩種)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:M.Core.Controllers.LotterySpaController.GetLotteryPlanDataV2(System.Int32,System.Int32)">
+            <summary>
+            取得跟單計畫列表(單一彩種)
+            </summary>
+            <param name="lotteryId"></param>
+            <param name="planType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:M.Core.Controllers.LotterySpaController.GetLotteryPlanDatasV2">
+            <summary>
+            取得跟單計畫列表(所有彩種)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:M.Core.Controllers.LotterySpaController.GetPlayTypes(System.Int32)">
+            <summary>
+            取得彩種玩法資訊
+            </summary>
+            <param name="lotteryId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:M.Core.Controllers.LotterySpaController.GetLotteryMenus">
+            <summary>
+            取得彩種選單
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:M.Core.Controllers.LotterySpaController.GetUnawardedSummary(System.Int32,System.String,System.String)">
+            <summary>
+            取得該彩種當期期號未開獎注單摘要
+            </summary>
+            <param name="lotteryId"></param>
+            <param name="currentIssueNo"></param>
+            <param name="roomId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:M.Core.Controllers.PublicController.GetCoordinate">
+            <summary>取得公鑰，座標用,隔開</summary>
+        </member>
+        <member name="M:M.Core.Controllers.TransferController.TransferOutAllTPGameBalance">
+            <summary>轉回所有第三方遊戲餘額</summary>
+        </member>
+        <member name="M:M.Core.Controllers.TransferController.TransferOutLastTPGameBalance">
+            <summary>轉回上一次進入的第三方遊戲餘額</summary>
+        </member>
+        <member name="T:M.Core.Filters.CreateSignAttribute">
+            <summary> 產生簽名方便測試 </summary>
+        </member>
+        <member name="P:M.Core.Models.LiveGameMenuViewModel.MenuSource">
+            <summary>直播遊戲選單類型 1:原生彩票, 2: 遊戲大廳選單</summary>
+        </member>
+        <member name="P:M.Core.Models.RebateProResponse.LotteryID">
+            <summary>
+            彩種編號
+            </summary>
+        </member>
+        <member name="P:M.Core.Models.RebateProResponse.PlayTypeID">
+            <summary>
+            玩法編號
+            </summary>
+        </member>
+        <member name="P:M.Core.Models.RebateProResponse.PlayTypeRadioID">
+            <summary>
+            子玩法編號
+            </summary>
+        </member>
+        <member name="P:M.Core.Models.RebateProResponse.NumberOdds">
+            <summary>
+            投注項已及賠率
+            </summary>
+        </member>
+    </members>
+</doc>

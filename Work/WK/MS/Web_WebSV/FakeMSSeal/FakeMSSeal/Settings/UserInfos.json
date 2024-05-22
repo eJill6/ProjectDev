@@ -1,0 +1,14 @@
+{
+  "UserInfos": [
+    {
+      "userId": 2834,
+      "nickName": "測試五",
+      "point": 83.0000,
+      "amount": 9657.7600,
+      "avatar": "/media/avatar/2023_05/c2c2a3fd3878aee4ea3e93ae3c783822.jpg",
+      "createTime": "2023-04-21 09:59:34",
+      "status": 1,
+      "hasPhone": true
+    }
+  ]
+}
