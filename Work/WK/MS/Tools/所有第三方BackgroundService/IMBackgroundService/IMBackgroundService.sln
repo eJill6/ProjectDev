@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductTransferService.IM", "ProductTransferService\ProductTransferService.IM.csproj", "{B50667E8-0511-40BB-8964-43631E1947C9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Lib", "1-Lib", "{94531150-A532-4F85-9A63-6DEE12783426}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-BackgroundService", "2-BackgroundService", "{93CBED5E-965B-472A-9887-AD95E0BC1AE0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-UnitTest", "3-UnitTest", "{56871E7B-9616-4DEF-AE72-E989C20B8B42}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JxBackendServiceN6", "..\..\..\Lib\JxBackendServiceLibrary\JxBackendServiceN6\JxBackendServiceN6.csproj", "{AA71C3D5-1090-45D7-B7A5-CCCE7455FFEA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JxBackendServiceStd", "..\..\..\Lib\JxBackendServiceLibrary\JxBackendServiceStd\JxBackendServiceStd.csproj", "{C8916CA1-D205-464A-BA0C-7D98CB3A9789}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestN6", "..\..\..\Lib\JxBackendServiceLibrary\UnitTestN6\UnitTestN6.csproj", "{533CC16F-044E-48C1-BF92-415D783BBEA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{FB86B054-3AEF-4CA1-A554-197EDE48F0BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B50667E8-0511-40BB-8964-43631E1947C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B50667E8-0511-40BB-8964-43631E1947C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B50667E8-0511-40BB-8964-43631E1947C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B50667E8-0511-40BB-8964-43631E1947C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA71C3D5-1090-45D7-B7A5-CCCE7455FFEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA71C3D5-1090-45D7-B7A5-CCCE7455FFEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA71C3D5-1090-45D7-B7A5-CCCE7455FFEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA71C3D5-1090-45D7-B7A5-CCCE7455FFEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8916CA1-D205-464A-BA0C-7D98CB3A9789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8916CA1-D205-464A-BA0C-7D98CB3A9789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8916CA1-D205-464A-BA0C-7D98CB3A9789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8916CA1-D205-464A-BA0C-7D98CB3A9789}.Release|Any CPU.Build.0 = Release|Any CPU
+		{533CC16F-044E-48C1-BF92-415D783BBEA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{533CC16F-044E-48C1-BF92-415D783BBEA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{533CC16F-044E-48C1-BF92-415D783BBEA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{533CC16F-044E-48C1-BF92-415D783BBEA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB86B054-3AEF-4CA1-A554-197EDE48F0BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB86B054-3AEF-4CA1-A554-197EDE48F0BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB86B054-3AEF-4CA1-A554-197EDE48F0BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB86B054-3AEF-4CA1-A554-197EDE48F0BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B50667E8-0511-40BB-8964-43631E1947C9} = {93CBED5E-965B-472A-9887-AD95E0BC1AE0}
+		{AA71C3D5-1090-45D7-B7A5-CCCE7455FFEA} = {94531150-A532-4F85-9A63-6DEE12783426}
+		{C8916CA1-D205-464A-BA0C-7D98CB3A9789} = {94531150-A532-4F85-9A63-6DEE12783426}
+		{533CC16F-044E-48C1-BF92-415D783BBEA3} = {56871E7B-9616-4DEF-AE72-E989C20B8B42}
+		{FB86B054-3AEF-4CA1-A554-197EDE48F0BD} = {56871E7B-9616-4DEF-AE72-E989C20B8B42}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {59E35950-E3FF-42F5-BD79-87F52F34BED4}
+	EndGlobalSection
+EndGlobal

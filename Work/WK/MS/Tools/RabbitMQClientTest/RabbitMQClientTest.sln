@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34601.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMQClientTest", "RabbitMQClientTest\RabbitMQClientTest.csproj", "{0B0D79A6-7BDA-4875-84C1-0C9B33BE86B2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JxBackendServiceN6", "..\..\Lib\JxBackendServiceLibrary\JxBackendServiceN6\JxBackendServiceN6.csproj", "{EB6E44D5-C617-49E0-9DF4-494CCCE1439F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JxBackendServiceStd", "..\..\Lib\JxBackendServiceLibrary\JxBackendServiceStd\JxBackendServiceStd.csproj", "{6ECB6180-85BA-4AB9-B3C2-9FAB58758ED0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B0D79A6-7BDA-4875-84C1-0C9B33BE86B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B0D79A6-7BDA-4875-84C1-0C9B33BE86B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B0D79A6-7BDA-4875-84C1-0C9B33BE86B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B0D79A6-7BDA-4875-84C1-0C9B33BE86B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB6E44D5-C617-49E0-9DF4-494CCCE1439F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB6E44D5-C617-49E0-9DF4-494CCCE1439F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB6E44D5-C617-49E0-9DF4-494CCCE1439F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB6E44D5-C617-49E0-9DF4-494CCCE1439F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6ECB6180-85BA-4AB9-B3C2-9FAB58758ED0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6ECB6180-85BA-4AB9-B3C2-9FAB58758ED0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6ECB6180-85BA-4AB9-B3C2-9FAB58758ED0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6ECB6180-85BA-4AB9-B3C2-9FAB58758ED0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1CB4B4F1-5722-4335-B6A5-53277A4125E0}
+	EndGlobalSection
+EndGlobal

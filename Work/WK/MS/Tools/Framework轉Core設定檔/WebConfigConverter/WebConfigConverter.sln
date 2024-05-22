@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebConfigConverter", "WebConfigConverter.csproj", "{E147CFF2-D991-4249-9093-A7B75B3E2468}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E147CFF2-D991-4249-9093-A7B75B3E2468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E147CFF2-D991-4249-9093-A7B75B3E2468}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E147CFF2-D991-4249-9093-A7B75B3E2468}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E147CFF2-D991-4249-9093-A7B75B3E2468}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6CA68C70-8DC8-4884-AFB6-D6EFD40941AA}
+	EndGlobalSection
+EndGlobal
