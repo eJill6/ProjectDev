@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMPPTransferService", "IMPPTransferService\IMPPTransferService.csproj", "{0ACC904A-F2FA-43D6-97FE-CAC506B53CF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMPPDataBase", "IMPPDataBase\IMPPDataBase.csproj", "{8C1A0235-4AB6-450A-AFB1-9023A3B84445}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{50273EFB-22F7-42ED-A9E4-DE059F30A6EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JxBackendServiceNF", "..\..\..\Lib\JxBackendServiceLibrary\JxBackendServiceNF\JxBackendServiceNF.csproj", "{94711936-F1D0-43E6-900E-8C413C9A7A88}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JxBackendServiceStd", "..\..\..\Lib\JxBackendServiceLibrary\JxBackendServiceStd\JxBackendServiceStd.csproj", "{E570CD31-315F-48DC-92A0-0E65FD64C34D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0ACC904A-F2FA-43D6-97FE-CAC506B53CF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ACC904A-F2FA-43D6-97FE-CAC506B53CF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ACC904A-F2FA-43D6-97FE-CAC506B53CF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ACC904A-F2FA-43D6-97FE-CAC506B53CF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C1A0235-4AB6-450A-AFB1-9023A3B84445}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C1A0235-4AB6-450A-AFB1-9023A3B84445}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C1A0235-4AB6-450A-AFB1-9023A3B84445}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C1A0235-4AB6-450A-AFB1-9023A3B84445}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50273EFB-22F7-42ED-A9E4-DE059F30A6EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50273EFB-22F7-42ED-A9E4-DE059F30A6EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50273EFB-22F7-42ED-A9E4-DE059F30A6EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50273EFB-22F7-42ED-A9E4-DE059F30A6EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94711936-F1D0-43E6-900E-8C413C9A7A88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94711936-F1D0-43E6-900E-8C413C9A7A88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94711936-F1D0-43E6-900E-8C413C9A7A88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94711936-F1D0-43E6-900E-8C413C9A7A88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E570CD31-315F-48DC-92A0-0E65FD64C34D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E570CD31-315F-48DC-92A0-0E65FD64C34D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E570CD31-315F-48DC-92A0-0E65FD64C34D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E570CD31-315F-48DC-92A0-0E65FD64C34D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C112874C-2352-4F62-B0B3-074DD2E1473C}
+	EndGlobalSection
+EndGlobal
