@@ -1,0 +1,9 @@
+﻿{
+  "profiles": {
+    "UnitTestProject": {
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
