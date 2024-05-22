@@ -1,0 +1,44 @@
+﻿@using JxBackendService.Common.Util;
+@using JxBackendService.Common.Util.Route;
+@using JxBackendService.Model.MessageQueue;
+@using Web.Controllers;
+@using Web.Extensions;
+@using Web.Helpers;
+@{
+    var rabbitMQWebSocketSetting = ViewBag.EndUserRabbitMQWebSocketSettings as List<RabbitMQWebSocketSetting>;
+    string reconnectTipsUrl = Url.Action(nameof(PublicController.ReconnectTips), nameof(PublicController).RemoveControllerNameSuffix());
+    string enterGameLoadingUrl = Url.Action(nameof(PublicController.EnterGameLoading), nameof(PublicController).RemoveControllerNameSuffix());
+}
+<script>
+    (function () {
+        let endUserRabbitMQWebSocketSettings = @Html.Raw(rabbitMQWebSocketSetting.ToJsonString(isCamelCaseNaming: true));
+        let webRoot = "/";
+        let enterGameLoadingWindow;
+        let reconnectTipsUrl = "@reconnectTipsUrl";
+
+        function getUrl(url) {
+            return webRoot + url.replace(/^\//, "");
+        }
+
+        function openEnterGameLoadingWindow() {
+            enterGameLoadingWindow = window.open('@enterGameLoadingUrl');
+
+            return enterGameLoadingWindow;
+        }
+
+        function getEnterGameLoadingWindow() {
+            return enterGameLoadingWindow;
+        }
+
+        window.globalVariables = {
+            endUserRabbitMQWebSocketSettings: endUserRabbitMQWebSocketSettings,
+            WebRoot: webRoot,
+            GetUrl: getUrl,
+            OpenEnterGameLoadingWindow: openEnterGameLoadingWindow,
+            GetEnterGameLoadingWindow: getEnterGameLoadingWindow,
+            GetReconnectTipsUrl: reconnectTipsUrl
+        };
+
+    })();
+</script>
+<script src="~/CTS/dist/js/heartBeat.min.js"></script>

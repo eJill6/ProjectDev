@@ -1,0 +1,21 @@
+﻿@using ControllerShareLib.Helpers;
+@using Web.Helpers;
+<head>
+    <link type="text/css" rel="icon" href="@WebResourceHelper.Content("~/favicon.ico")" />
+</head>
+
+<div class="content">
+    <div class="error_content">
+        <div class="error_text">
+            <img aes-src="~/images/error/reconnect.aes" />
+            <h2>请退出游戏并重新进入</h2>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/cryptoJS/aes.js"></script>
+<script src="~/js/utils/platformAESService.js"></script>
+<script>
+    var aesService = new platformAESService();
+    aesService.fetchAllAESImage();
+</script>

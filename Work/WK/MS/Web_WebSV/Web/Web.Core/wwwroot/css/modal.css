@@ -1,0 +1,3045 @@
+@charset "UTF-8";
+
+/********************************* 燈箱 modal start *********************************/
+/** 燈箱
+form:表單類燈箱 
+prompt:提示類燈箱 
+auto_disppear:自動消失的提示燈箱
+step:步驟類燈箱
+financial:充值提現燈箱
+order_detail:訂單明細燈箱：該層級比其他燈箱更高
+order_check:確認訂單燈箱
+my_contract:我的契約燈箱
+continuously_bet:追號燈箱
+bouns_contract：契約分紅燈箱
+report:記錄表單類燈箱：報表類
+chat:站內信燈箱
+service:客服燈箱
+announcement:公告燈箱
+註：預設樣式為form表單類燈箱
+**/
+.modal{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+.modal.order_detail{
+  z-index: 4;
+}
+.modal.auto_disppear{
+  background: none;
+  z-index: 5;
+  width: auto;
+  height: auto;
+  transform: translate(-50%,-50%)!important;
+  left: 50%!important;
+  top: 50%!important;
+}
+.modal .flex_frame{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal .content_frame{
+  width: 350px;
+  position: relative;
+  border-radius: 3px;
+  background: #151419;
+}
+
+.modal.auto_disppear .content_frame{
+  width: 100%;
+  background: none;
+  display: flex;
+  justify-content: center;
+}
+.modal.prompt .content_frame{
+  width: 340px;
+}
+.modal.app_install .content_frame{
+  width: 300px;
+}
+.modal.order_check .content_frame{
+  width: 380px;
+}
+.modal.my_contract .content_frame{
+  width: 380px;
+}
+.modal.step .content_frame{
+  width: 480px;
+}
+.modal.financial .content_frame{
+  width: 640px;
+}
+.modal.order_detail .content_frame{
+  width: 640px;
+}
+.modal.continuously_bet .content_frame{
+  width: 700px;
+}
+.modal.bouns_contract .content_frame{
+  width: 710px;
+}
+.modal.report .content_frame{
+  width: 900px;
+}
+.modal.report_w001 .content_frame{
+  width: 1024px;
+}
+.modal.report_w002 .content_frame{
+  width: 500px;
+}
+.modal.report_w002 .content_frame{
+  width: 500px;
+}
+.modal.chat .content_frame{
+  width: 800px;
+}
+.modal.service .content_frame{
+  width: 730px;
+}
+.modal.announcement .content_frame{
+  width: 890px;
+}
+/* 燈箱 標題 */
+.modal .modal_title{
+  width: 100%;
+  color: #E8E8E8;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px 15px;
+  background: #151419;
+  border-bottom: 1px solid #26252B;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+/* 燈箱 主內容框架 */
+.modal .modal_main_content{
+  width: 100%;
+  padding: 15px 15px 15px 15px;
+  background: #151419;
+  position: relative;
+}
+
+.modal.prompt .content_frame .modal_main_content{
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  background: #151419;
+  padding: 15px;
+}
+.modal.auto_disppear .modal_main_content{
+  background: rgba(0,0,0, .8);
+  border-radius: 5px;
+  width: auto;
+  max-width: 300px;
+  padding: 10px 15px;
+}
+.modal.chat .modal_main_content,
+.modal.announcement .modal_main_content{
+  padding: 0;
+}
+
+.modal .modal_close{
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  z-index: 2;
+}
+.modal .modal_close .close_icon_flex{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal .modal_btn_content{
+  width: 100%;
+  display: flex;
+  padding: 10px 15px 10px 15px;
+  justify-content: center;
+  background: #151419;
+  border-top: 1px solid #26252B;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+.modal .modal_btn_content.no_line{
+  padding: 0 15px 15px 15px;
+  background: none;
+  border: none;
+}
+.modal .modal_btn_content.flex_end_always{
+  justify-content: flex-end;
+}
+.modal .modal_btn_content.space_between{
+  justify-content: space-between;
+}
+.modal .modal_btn_content.padding_width a{
+  padding-left: 40px; 
+  padding-right: 40px; 
+}
+.modal .modal_btn_content.padding_width_narrow a{
+  padding-left: 15px; 
+  padding-right: 15px; 
+}
+.modal .modal_btn_content.fixed_width a{
+  padding-left: 0; 
+  padding-right: 0;
+  min-width: 110px;
+}
+.modal .modal_btn_content a:first-child{
+  margin-right: 10px;
+}
+.modal .modal_btn_content a:last-child{
+  margin-right: 0px;
+}
+.modal .modal_btn_content .pagination a:first-child{
+  margin-right: 0px;
+}
+@media only screen and (max-width: 768px) {
+  .modal .content_frame{
+    margin: 0 15px ;
+  }
+  .modal.auto_disppear .content_frame{
+    margin: 0 ;
+  }
+  .modal.auto_height .modal_title{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  .modal.auto_height .modal_close{
+    left: calc( 100% - 38px);
+    top: 9px;
+  }
+  .modal.auto_height{
+    overflow-y: hidden;
+    /*-webkit-overflow-scrolling: touch;*/
+  }
+  .modal.auto_height .modal_title{
+    padding: 10px 20px 10px 20px;
+  }
+  .modal .modal_main_content{
+    max-height: auto;
+    overflow-y: inherit;
+  }
+  .modal.auto_height .modal_main_content{
+    overflow-y: auto;
+    flex: 1;
+    margin-bottom: 53px;
+    padding: 15px 20px 15px 20px;
+    -webkit-overflow-scrolling: touch;
+    max-height: inherit;
+  }
+  .modal.auto_height.report .modal_main_content{
+    margin-bottom: 51px;
+  }
+  .modal.auto_height.report.full_h .modal_main_content{
+    margin-bottom: 0;
+  }
+  .modal.auto_height .flex_frame{
+    display: inline-block;
+  }
+  .modal.auto_height .content_frame{
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+  .modal.auto_height .modal_btn_content{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    position: absolute;
+    bottom: 0;
+    padding: 8px 20px 8px 20px;
+  }
+  .modal.chat .modal_main_content,
+  .modal.announcement .modal_main_content{
+    padding: 0;
+  }
+  .modal.prompt .modal_btn_content{
+    position: inherit;
+  }
+  .modal.auto_height .modal_btn_content.fixed_width a,
+  .modal.auto_height .modal_btn_content.padding_width a{
+    line-height: 36px;
+    height: 36px;
+    min-width: auto;
+    flex: 1;
+    padding: 0;
+  }
+  .modal .modal_title.title_with_tab .title_tab{
+    display: none;
+  }
+  .modal .modal_title.title_with_tab{
+    padding: 10px 20px;
+    border-bottom: 1px solid #26252B;
+  }
+  .modal .modal_main_content .tab_m{
+    display: block;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .modal .modal_title{
+    padding: 10px 15px 10px 15px;
+  }
+  .modal .modal_main_content{
+    padding: 15px 15px 15px 15px;
+  }
+  .modal .modal_btn_content{
+    padding: 10px 15px 10px 15px;
+  }
+  .modal .modal_btn_content.flex_end{
+    justify-content: center;
+  }
+  .modal .modal_btn_content.flex_end a{
+    padding: 0;
+    width: 120px;
+  }
+  .modal.auto_height .modal_title{
+    padding: 10px 12px 10px 12px;
+  }
+  .modal.auto_height .modal_main_content{
+    padding: 12px 12px 12px 12px;
+  }
+  .modal.auto_height .modal_btn_content{
+    padding: 8px 12px 8px 12px;
+  }
+}
+
+/********************** 設定桌機寬度時，auto height燈箱高度若高於螢幕 內容可捲動 start **********************/
+  .modal.over_device_height .content_frame{
+      overflow-y: auto;
+      height: 100%;
+      background: none;
+  }
+
+
+
+
+
+/********************** form表單類 燈箱內容 start **********************/
+.modal.form h1{
+  color: #666;
+  font-size: 14px;
+  line-height: 1.3;
+  margin-bottom: 18px;
+  font-weight: bold;
+}
+.modal.form h2{
+  color: #008ca1;
+  font-size: 14px;
+  line-height: 1.3;
+  margin-bottom: 18px;
+  font-weight: bold;
+}
+
+.modal.form .g_code{
+  display: flex;
+  margin-bottom: 20px;
+}
+.modal.form .g_code h1{
+  text-align: center;
+  margin-bottom: 5px;
+}
+.modal.form .g_code .g_col:first-child{
+  padding-right: 15px;
+  margin-right: 10px;
+  border-right: 1px dashed #e0e0e0;
+}
+.modal.form .g_code .g_col:last-child{
+  flex: 1;
+}
+.modal.form .g_code .qrcode{
+  
+}
+.modal.form .g_code .qrcode > div{
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #e5e5e5; 
+}
+.modal.form .g_code .key{
+  width: 100%;
+  padding-top: 26px;
+
+}
+.modal.form .g_code .key p,
+.modal.form .g_code .key .tips_style_b p{
+  text-align: center;
+}
+.modal.form .g_code .key .code{
+  font-size: 15px;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 768px){
+  .modal.form .g_code .g_col{
+    flex: 1;
+  }
+}
+
+@media only screen and (max-width: 420px){
+  .modal.form .g_code .g_col:first-child{
+    flex: inherit;
+  }
+  .modal.form .g_code .g_col:first-child{
+    padding-right: 20px;
+    margin-right: 0;
+  }
+}
+
+
+/********************** prompt提示類 燈箱內容 start **********************/
+.modal.prompt .default_style{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+}
+.modal.prompt .text{
+  display: block;
+  flex: 1;
+}
+.modal.prompt .icon_prompt{
+  margin-right: 12px;
+  width: 32px;
+}
+.modal.prompt .icon_prompt img{
+  width: 32px;
+}
+.modal.prompt h1{
+  text-align: left;
+  color: #F68F0A;
+  font-size: 15px;
+  margin-bottom: 3px;
+}
+.modal.prompt p{
+  text-align: left;
+  color: #E8E8E8;
+  font-size: 14px;
+  flex: 1;
+  margin-bottom: 8px;
+}
+.modal.prompt p span.light_color{
+  color: #888888;
+}
+.modal.prompt p span.strong_color{
+  color: #DD8707;
+}
+.modal.prompt p span.strong_huge_text{
+  color: #DD8707;
+  font-size: 17px;
+}
+/* 註冊完成歡迎燈箱客制 start */
+.modal.prompt.welcome .content_frame{
+  background: #FFF url("../images/modal/bg_pattern_welcome.png") center center no-repeat;
+  background-size: cover;
+}
+.modal.prompt.welcome .modal_main_content{
+  background: none;
+}
+.modal.prompt.welcome .modal_btn_content{
+  background: none;
+  border: none;
+  margin-bottom: 15px;
+}
+.modal.prompt.welcome .modal_btn_content a{
+  font-size: 15px;
+  width: 80%;
+  height: 36px;
+  line-height: 36px;
+}
+
+
+
+/********************** app安裝燈箱客制 start **********************/
+.modal.app_install .content_frame{
+  background: #FFF url("../images/modal/bg_pattern_welcome.png") center center no-repeat;
+  background-size: cover;
+}
+.modal.app_install .modal_main_content{
+  background: none;
+  padding-top: 40px;
+  padding-bottom: 10px;
+}
+.modal.app_install .modal_btn_content{
+  background: none;
+  border: none;
+  margin-bottom: 15px;
+  padding-top: 0;
+  flex-wrap: wrap;
+}
+.modal.app_install .modal_btn_content a{
+  font-size: 15px;
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+  margin-right: 0;
+}
+.modal.app_install .modal_btn_content p.help{
+  font-size: 12px;
+  line-height: 1;
+  margin-top: 12px;
+
+}
+.modal.app_install .modal_btn_content p.help a{
+  color: #0095B2;
+  font-size: 12px;
+  line-height: 1;
+  height: auto;
+}
+.modal.app_install .title_text{
+  text-align: left;
+  color: #222;
+  font-size: 14px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  line-height: 20px;
+}
+.modal.app_install .title_text p.list_num{
+  width: 20px;
+  text-align: center;
+  background: #0095B2;
+  border-radius: 50%;
+  color: #FFF;
+  margin-right: 5px;
+}
+.modal.app_install .title_text p a{
+  color: #0095B2;
+}
+.modal.app_install .modal_main_content img{
+  margin-bottom: 10px;
+}
+
+
+
+
+/********************** auto_disppear自動消失提示類 燈箱內容 start **********************/
+.modal.auto_disppear .icon_prompt{
+  width: 100%;
+}
+.modal.auto_disppear .icon_prompt img{
+  margin: 0 auto;
+  margin-bottom: 5px;
+}
+.modal.auto_disppear h1{
+  text-align: center;
+  color: #FFF;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1.2;
+  word-break: keep-all;
+}
+.modal.auto_disppear p{
+  text-align: center;
+  color: #FFF;
+  font-size: 12px;
+  word-break: break-all;
+  line-height: 1.2;
+  margin-top: 5px;
+}
+
+
+
+
+
+/********************** step步驟類 燈箱內容 start **********************/
+.modal.step .center_content{
+  height: 262px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  position: relative;
+}
+.modal.step .step_center_wrap{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 20px 0 20px 0;
+  min-height: 150px;
+}
+.modal.step .step_title {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+.modal.step .step_title p{
+  color: #E8E8E8;
+  font-size: 12px;
+}
+.modal.step .step_title span{
+  color: #f7b63e;
+}
+.modal.step .step_title img{
+  width: 20px;
+  margin-right: 3px;
+}
+.modal.step .modal_main_content form .label_input{
+  width: 310px;
+}
+.modal.step .list_box {
+  z-index: 1;
+  display: flex;
+  margin: 0 0 20px 0;
+  width: 100%;
+}
+.modal.step .list_box li {
+  flex:  1;
+  padding: 10px 0;
+  border: 1px solid #313038;
+  cursor: pointer;
+  transition: all .2s;
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px rgba(0,0,0,.1);
+  background: #151419;
+  margin-right: 14px;
+}
+.modal.step .list_box li:last-child {
+  margin-right: 0;
+}
+.modal.step .list_box li.active,
+.modal.step .list_box li:hover {
+  background: #472800;
+  border: 1px solid #F68F0A;
+}
+.modal.step .list_box li .icon_prompt{
+  width: 100%;
+  margin-bottom: 10px;
+}
+.modal.step .list_box li .icon_prompt img{
+  margin: 5px auto 5px auto;
+  width: 50px;
+  height: 50px;
+}
+.modal.step .list_box li h1 {
+  text-align: center;
+  color: #E8E8E8;
+  font-size: 14px;
+}
+.modal.step .list_box li p {
+  font-size: 12px;
+  color: #8E8D8D;
+  line-height: 18px;
+  margin-top: 3px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.modal.step .reset_down{
+  display: flex;
+  align-items: center;
+  padding-bottom: 15px;
+}
+.modal.step .reset_down img{
+  margin-right: 10px;
+}
+.modal.step .reset_down p{
+  font-size: 16px;
+  color: #E8E8E8;
+}
+@media only screen and (max-width: 768px) {
+  .modal.step .step_number_content {
+    margin-top: 10px;
+  }
+  .modal.step .center_content{
+    height: calc(100% - 60px);
+    padding-top: 30px;
+    display: inherit;
+  }
+  .modal.step .step_center_wrap{
+    height: auto;
+    display: inherit;
+  }
+  .modal.step .modal_main_content form .label_input{
+    width: 100%;
+  }
+  .modal.step .reset_down{
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 0;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .modal.step .list_box {
+    display: inherit;
+  }
+  .modal.step .list_box li {
+    flex: 0;
+    padding:  10px;
+    border-right: none;
+    border-bottom: 1px solid #E1E1E1;
+    display: flex;
+    align-items: center;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .modal.step .list_box li .icon_prompt{
+    width: 50px;
+    margin-right: 10px;
+    margin-bottom: 0;
+  }
+  .modal.step .list_box li .icon_prompt img{
+    margin: 0;
+  }
+  .modal.step .list_box li .text_description {
+    flex: 1;
+  }
+  .modal.step .list_box li h1,
+  .modal.step .list_box li p{
+    text-align: left;
+  }
+}
+
+
+
+
+
+
+
+
+/********************** 提現 燈箱內容 start **********************/
+.modal.financial .modal_main_content.col_2_wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.modal.financial .withdrawal_col_2 {
+  width: 50%;
+}
+.modal.financial .withdrawal_col_2:first-child {
+  padding-right: 4px;
+}
+.modal.financial .withdrawal_col_2:nth-child(2) {
+  padding-left: 5px;
+}
+
+.modal.financial .title_function {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 7px;
+}
+.modal.financial .title_function h1 {
+  font-size: 13px;
+  color: #E8E8E8;
+  line-height: 1;
+}
+.modal.financial .title_function .count_down {
+  display: flex;
+  align-items: center;
+}
+.modal.financial .title_function p {
+  font-size: 13px;
+  color: #E8E8E8;
+  padding-right: 5px;
+  line-height: 1;
+}
+.modal.financial .title_function p.clock{
+  color: #F68F0A;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 1;
+}
+
+.modal.financial .bank_card{
+  max-height: 280px;
+  min-height: 260px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-right: 1px;
+}
+.modal.financial .bank_card li {
+  border-radius: 5px;
+  color: #FFF;
+  padding: 21px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: all .2s;
+  margin-top: 8px;
+}
+.modal.financial .bank_card li:first-child {
+  margin-top: 0;
+}
+.modal.financial .bank_card li.bg_01 {
+  background: url("../images/financial/bg_bank_card_01.jpg") center center no-repeat;
+  background-size: cover;
+}
+.modal.financial .bank_card li.bg_02 {
+  background: url("../images/financial/bg_bank_card_02.jpg") center center no-repeat;
+  background-size: cover;
+}
+.modal.financial .bank_card li.bg_03 {
+  background: url("../images/financial/bg_bank_card_03.jpg") center center no-repeat;
+  background-size: cover;
+}
+.modal.financial .bank_card li .bank_name {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 19px;
+  align-items: center;
+}
+.modal.financial .bank_card li .bank_name .name {
+  display: flex;
+  font-size: 15px;
+  line-height: 15px;
+  align-items: center;
+}
+.modal.financial .bank_card li .bank_name .name img {
+  margin-right: 5px;
+  flex-shrink: 0;
+}
+.modal.financial .bank_card li .bank_name img.checked {
+  visibility: hidden;
+}
+.modal.financial .bank_card li .bank_number {
+  font-size: 16px;
+  margin-bottom: 19px;
+}
+.modal.financial .bank_card li .user_number {
+  font-size: 14px;
+  line-height: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal.financial .bank_card li .user_number p.opacity_text {
+    font-size: 13px;
+    color: rgba(255, 255, 255, .5);
+}
+
+.modal.financial .bank_card li:hover,
+.modal.financial .bank_card li.active{
+  opacity: 1.0;
+}
+.modal.financial .bank_card li.active .bank_name img.checked{
+  visibility: visible;
+}
+.modal.financial .add_new_bank_card {
+  font-size: 13px;
+  line-height: 13px;
+  color: #000;
+  border-radius: 5px;
+  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 0;
+  margin-top: 10px;
+  opacity: .5;
+  transition: all .2s;
+  cursor: pointer;
+}
+.modal.financial .add_new_bank_card img {
+  margin-right: 5px;
+  flex-shrink: 0;
+}
+.modal.financial .add_new_bank_card:hover {
+  opacity: 1;
+}
+@media only screen and (max-width: 768px) {
+  .modal.financial .modal_main_content.col_2_wrap {
+    display: block;
+  }
+  .modal.financial .withdrawal_col_2 {
+    width: 100%;
+  }
+  .modal.financial .withdrawal_col_2:first-child {
+    padding-right: 0;
+  }
+  .modal.financial .withdrawal_col_2:nth-child(2) {
+    padding-left: 0;
+  }
+  .modal.financial .bank_card{
+    overflow-y: hidden;
+    overflow-x: auto;
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    min-height: auto;
+    padding-right: 0;
+  }
+  .modal.financial .bank_card li {
+    margin-right: 10px;
+    margin-top: 0;
+    min-width: 60%;
+    padding: 20px;
+  }
+  .modal.financial .bank_card li .bank_name {
+    margin-bottom: 26px;
+  }
+  .modal.financial .bank_card li .bank_name .name {
+    font-size: 16px;
+  }
+  .modal.financial .bank_card li .bank_number {
+    margin-bottom: 26px;
+    font-size: 16px;
+  }
+  .modal.financial .add_new_bank_card {
+    min-width: 60%;
+    margin: 0;
+    font-size: 15px;
+    background: #FFF;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .modal.financial .bank_card li {
+    min-width: 80%;
+  }
+  .modal.financial .add_new_bank_card {
+    min-width: 80%;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .modal.financial .bank_card li {
+    min-width: 90%;
+  }
+  .modal.financial .add_new_bank_card {
+    min-width: 90%;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .modal.financial .bank_card li {
+    min-width: 80%;
+  }
+  .modal.financial .add_new_bank_card {
+    min-width: 80%;
+  }
+  .modal.financial .bank_card li {
+    padding: 15px;
+  }
+  .modal.financial .bank_card li .bank_name {
+    margin-bottom: 16px;
+  }
+  .modal.financial .bank_card li .bank_name .name {
+    font-size: 13px;
+  }
+  .modal.financial .bank_card li .bank_number {
+    margin-bottom: 16px;
+    font-size: 13px;
+  }
+}
+
+
+/********************** 充值 燈箱內容 start **********************/
+.modal.financial .modal_main_content.recharge {
+  padding: 0 0 0 0;
+}
+.modal.financial .recharge_method_wrap {
+  background: linear-gradient(to bottom, #214284, #0E3F6D);
+  width: 100%;
+}
+.modal.financial .recharge_method_wrap h1 {
+  font-size: 13px;
+  color: #FFF;
+  margin-bottom: 4px;
+  padding: 15px 20px 0 20px;
+  width: 100%;
+  margin-bottom: 0
+}
+.modal.financial .recharge_method {
+  width: 100%;
+  padding: 10px 20px 20px 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.modal.financial .recharge_method li {
+  display: flex;
+  align-items: center;
+  padding: 2px 5px;
+  font-size: 12px;
+  color: #FFF;
+  border-radius: 5px;
+  border: 1px solid #6E88A0;
+  margin: 4px 1% 4px 1%;
+  cursor: pointer;
+  transition: all .2s;
+}
+.modal.financial .recharge_method li img {
+  flex-shrink: 0;
+  margin-right: 4px;
+}
+.modal.financial .recharge_method.col_4 li {
+  width: 23%;
+}
+.modal.financial .recharge_method li:hover,
+.modal.financial .recharge_method li.active {
+  color: #222;
+  background: #FFF;
+  border: 1px solid #FFF; 
+}
+.modal.financial .recharge_form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px 20px 20px 20px;
+}
+.modal.financial .recharge_col_2 {
+  width: 50%;
+}
+.modal.financial .recharge_col_2:first-child {
+  padding-right: 5px;
+}
+.modal.financial .recharge_col_2:nth-child(2) {
+  padding-left: 5px;
+}
+.modal.financial .recharge_col_2 .sub{
+  color: #FD9700;
+  line-height: 1;
+}
+.modal.financial .recharge_col_2 .tip{
+  color: #222;
+  line-height: 38px;
+  background: #ffd7d7;
+  border-radius: 4px;
+  padding: 0 15px; 
+  margin-top: 20px;
+}
+.modal.financial .recharge_col_2 .tip span{
+  color: #FF4B4B;
+}
+@media only screen and (max-width: 768px) {
+  .modal.financial .recharge_method{
+    padding: 8px 15px 20px 15px;
+  }
+  .modal.financial .recharge_form {
+    padding: 15px 15px 20px 15px;
+  }
+}
+@media only screen and (max-width: 680px) {
+  .modal.financial .recharge_method.col_2 li {
+    width: 48%;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .modal.financial .recharge_col_2 {
+    width: 100%;
+  }
+  .modal.financial .recharge_col_2:first-child {
+    padding-right: 0;
+  }
+  .modal.financial .recharge_col_2:nth-child(2) {
+    padding-left: 0;
+  }
+  .modal.financial .recharge_col_2 .tip{
+    margin-top: 0;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .modal.financial .recharge_method li img {
+    width: 19%;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .modal.financial .recharge_method li img {
+    width: 26%;
+  }
+}
+
+
+
+/********************** 轉賬 燈箱內容 start **********************/
+.modal.step .center_content.transfer_content{
+  margin-top: 60px;
+}
+.transfer_content a.transfer_switch{
+  display: flex;
+  color: #DD8707;
+  align-items: center;
+  line-height: 1;
+}
+.transfer_content a.transfer_switch img{
+  margin-right: 3px;
+}
+.transfer_content a.transfer_switch:hover{
+  color: #fd9600;
+}
+.transfer_content .fast_amount_pick{
+  
+}
+.transfer_content .fast_amount_pick ul{
+  display: flex;
+  margin-top: 5px;
+}
+.transfer_content .fast_amount_pick li{
+  border: 1px solid #9B9B9B;
+  color: #222;
+  padding: 5px 0; 
+  flex: 1; 
+  text-align: center;
+  margin-right: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 1;
+  transition: all .2s;
+}
+.transfer_content .fast_amount_pick li:last-child{
+  margin-right: 0;
+}
+.transfer_content .fast_amount_pick li:hover{
+  border: 1px solid #0094B2;
+  color: #0094B2;
+  background: #FFF;
+}
+.transfer_total_refresh{
+  position: absolute;
+  top: 9px;
+  right: 16px;
+  line-height: 1;
+  padding: 6px 7px;
+  border-radius: 4px;
+  z-index: 1;
+  color: #0094B2;
+  border: 1px solid #FFF;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+}
+.transfer_total_refresh img{
+  margin-right: 5px;
+}
+.transfer_total_refresh:hover{
+  background: #EDFCFF;
+  border: 1px solid #0094B2;
+}
+.transfer_total_board{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: url("../images/financial/bg_transfer.jpg") center center no-repeat;
+  background-size: cover;
+  padding: 15px 0; 
+}
+.transfer_total_info{
+  display: flex;
+}
+.transfer_total_info li{
+  text-align: center;
+  color: #FFF;
+  flex: 1;
+  border-right: 1px solid rgba(255,255,255,.1);
+}
+.transfer_total_info li:last-child{
+  border-right: 0;
+}
+.transfer_total_info p{
+  font-size: 14px;
+  color: rgba(255,255,255,.6);
+}
+.transfer_total_info p.amount{
+  font-size: 13px;
+  color: #FFF;
+}
+@media only screen and (max-width: 768px) {
+  .transfer_total_refresh{
+    right: 45px;
+  }
+  .modal.step .center_content.transfer_content{
+    margin-top: 80px;
+    padding-top: 0;
+  }
+  .transfer_content .fast_amount_pick li{
+    padding: 10px 0; 
+  }
+}
+@media only screen and (max-width: 580px) {
+  .transfer_total_info p{
+    font-size: 13px;
+  }
+  .transfer_total_info p.amount{
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .modal.step .center_content.transfer_content{
+    margin-top: 130px;
+    height: calc(100% - 130px);
+  }
+  .transfer_total_board{
+    padding: 0;
+    background-size: 120% 100%;
+  }
+  .transfer_total_info{
+    flex-wrap: wrap;
+  }
+  .transfer_total_info li:first-child{
+    flex: 1 1 100%;
+    border-right: 0;
+    padding: 12px 0 10px 0; 
+    background: rgba(255,255,255,.08);
+  }
+  .transfer_total_info li p:first-child{
+    font-size: 13px;
+    color: rgba(255,255,255,.6);
+  }
+  .transfer_total_info li:first-child p.amount{
+    font-size: 15px;
+  }
+  .transfer_total_info li:not(:first-child){
+    padding: 10px 0;
+    flex: 1 1 33%;
+  }
+}
+
+
+/************* 充值與提現的錯誤訊息預設位置在input下方 *************/
+.modal.financial .input_error{
+  position: inherit;
+  color: #222;
+  background: none;
+  max-width: 100%;
+  left: 0;
+  top: 0;
+  padding: 6px 0 0 0;
+}
+.modal.financial .input_error::before{
+  display: none;
+}
+.modal.financial .input_error .icon_input_error{
+  margin-top: -8px;
+  left: 11px;
+}
+
+
+
+
+
+/********************** 追號 燈箱內容 start **********************/
+.modal.continuously_bet .tab{
+  margin-bottom: 15px;
+}
+.modal.continuously_bet .tab li{
+  font-size: 14px;
+  line-height: 28px;
+}
+.modal.continuously_bet .description{
+  color: #8E8D8D;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.modal.continuously_bet .description span{
+  color: #E8E8E8;
+  font-weight: bold;
+}
+.modal.continuously_bet .description span.brighter_color{
+  color: #dc8f00;
+}
+.modal.continuously_bet .form_combo{
+  flex: 1; 
+  display: flex; 
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.modal.continuously_bet .form_combo .amount_controller,
+.modal.continuously_bet .form_combo .label_input {
+  margin-right: 15px;
+}
+.modal.continuously_bet .form_combo .label_input{
+  width: auto;
+  margin-bottom: 0;
+}
+.modal.continuously_bet .form_combo .label_input p.last_text{
+  margin-left: 5px;
+  margin-right: 0;
+}
+.modal.continuously_bet .form_combo .label_input label{
+  color: #000;
+}
+.modal.continuously_bet .form_combo .label_input input{
+  width: 60px;
+  text-align: center;
+  border: 1px solid #25242C;
+}
+.modal.continuously_bet .form_combo .label_input input:focus{
+    border: 1px solid #F68F0A;
+}
+.modal.continuously_bet .form_combo .amount_controller p{
+     color: #E8E8E8;
+}
+.modal.continuously_bet .form_combo .amount_controller .number input{
+  width: 60px;
+}
+.modal.continuously_bet .modal_btn_content .checkbox{
+  margin-right: 10px;
+}
+.modal.continuously_bet .modal_btn_content .btns{
+  display: flex;
+}
+@media only screen and (max-width: 768px) {
+  .modal.continuously_bet .modal_btn_content .btns .btn_reset{
+    padding: 0 16px; 
+  }
+  .modal.continuously_bet .modal_btn_content .btns .btn_create{
+    padding: 0 32px; 
+  }
+  .modal.continuously_bet .modal_btn_content .checkbox,
+  .modal.continuously_bet .modal_btn_content .btns a{
+    margin-right: 6px;
+    flex: inherit;
+  }
+  .modal.continuously_bet .modal_btn_content .btns a:last-child{
+    margin-right: 0;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .modal.continuously_bet .form_combo{
+    margin-bottom: 15px;
+  }
+  .modal.continuously_bet .form_combo .amount_controller{
+    width: 62%;
+    margin-bottom: 5px;
+    margin-right: 0;
+  }
+  .modal.continuously_bet .form_combo .label_input{
+    width: 62%;
+    margin-bottom: 5px;
+    margin-right: 0;
+  }
+  .modal.continuously_bet .form_combo .amount_controller .amount_controller_combo{
+    flex: 1;
+  }
+  .modal.continuously_bet .form_combo .amount_controller .number{
+    flex: 1;
+  }
+  .modal.continuously_bet .form_combo .amount_controller .number input{
+    width: 100%;
+    height: 26px;
+    line-height: 26px;
+  }
+  .modal.continuously_bet .form_combo .label_input .input_content{
+    flex: 1;
+  }
+  .modal.continuously_bet .form_combo .label_input input{
+    width: 100%;
+    padding: 0; 
+  }
+  
+  .modal.continuously_bet .form_combo .label_input label,
+  .modal.continuously_bet .form_combo .amount_controller p{
+    width: 76px;
+  }
+  .modal.continuously_bet .form_combo .amount_controller p{
+     margin-right: 5px;
+  }
+  .modal.continuously_bet .form_combo .label_input label{
+    margin-right: 5px;
+  }
+  .modal.continuously_bet .form_combo .label_input label p{
+    margin-right: 0;
+    width: 76px;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .modal.continuously_bet .form_combo .amount_controller{
+    width: 70%;
+  }
+  .modal.continuously_bet .form_combo .label_input{
+    width: 70%;
+  }
+}
+
+
+/********************** 燈箱 filter start **********************/
+.modal.report .filter {
+  display: flex;
+  padding-bottom: 15px;
+  position: relative;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+.modal.report .filter .col_p_1{
+    display: flex;
+    align-items: center;
+}
+.modal.report .filter .label_input input.width_set.w001 {
+    width: 150px;
+}
+
+.modal.report .filter .label_input input.width_set.w002 {
+    width: 210px;
+}
+
+.modal.report .filter .label_input input.width_set.w003 {
+    width: 280px;
+}
+
+.modal.report .filter .label_input input.width_set.w004 {
+    width: 310px;
+}
+
+.modal.report .filter .label_input input.width_set.w005 {
+    width: 160px;
+}
+.modal.report .filter .dropdown{
+    min-width: 160px; 
+}
+.modal.report .filter .label_input{
+    margin-right: 8px;
+}
+.modal.report .filter .flex_layout{
+    flex: 1;
+}
+.modal.report .filter .flex_layout input{
+    width: 100%;
+}
+.modal.report .filter .no_gap{
+    margin-right: 0;
+}
+.modal.report .filter .mix_type_layout .dropdown button{
+    border-right: 0; 
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.modal.report .filter .mix_type_layout input{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.modal.report .filter a.search_btn{
+    padding: 0 12px;
+}
+.modal.report .modal_main_content{
+    background: #F8F8F8;
+}
+.modal.report .modal_btn_content{
+    background: #F0F0F0;
+}
+.modal.report .modal_btn_content a.data_download{
+    padding: 0 15px;
+    white-space: nowrap;
+}
+.modal.report .filter .filter_tab{
+  margin-right: 8px;
+}
+.modal.report .filter .filter_tab a{
+  min-width: 64px;
+}
+
+@media only screen and (max-width: 768px) {
+  .modal.report .calendar{
+    display: none;
+  }
+  .modal.report .filter .customized_dropdown .dropdown_item:last-child{
+        display: none;
+  }
+  .modal.report .modal_btn_content a.data_download{
+    display: none;
+  }
+  .modal.report .filter{
+      padding-bottom: 10px;
+  }
+  .modal.report .filter .col_p_1{
+      width: 100%;
+      margin-bottom: 6px;
+  }
+  .modal.report .filter .col_p_1 > div{
+      margin-right: 6px;
+      flex: 1;
+  }
+  .modal.report .filter .col_p_1 > div:last-child{
+        margin-right: 0;
+  }
+  .modal.report .filter .col_p_1 .mix_type_layout{
+    margin-right: 0;
+  }
+  .modal.report .filter .col_p_1.flex_layout{
+    flex: inherit;
+  }
+  .modal.report .filter .dropdown{
+    flex: 1;
+  }
+  .modal.report .filter .label_input.column_layout .form_set{
+    flex: 1;
+  }
+  .modal.report .filter .dropdown .dropdown_toggle{
+      height: 32px;
+  }
+  .modal.report .filter .label_input.column_layout .form_set input{
+    width: 100%;
+    height: 32px;
+  }
+  .modal.report .filter .filter_tab a{
+    line-height: 31px;
+    height: 32px;
+  }
+}
+
+
+
+/********************** 收入支出顏色 **********************/
+.modal .win{
+  color: #008ca1;
+}
+.modal .lose{
+  color: #e76868;
+}
+
+
+/********************** 詳細報表內特殊元件樣式 start **********************/
+.modal.report .status{
+    display: flex;
+    align-items: center;
+}
+
+.modal.report .status .status_icon {
+    width: 14px;
+    height: 14px;
+    display: block;
+    margin-right: 4px;
+}
+
+.modal.report .status p {
+    color: #333;
+}
+
+
+
+
+
+/********************** 詳細報表 上部文字 start **********************/
+.modal.report .username{
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.modal.report .username p{
+  font-size: 15px;
+  line-height: 1;
+  font-weight: bold;
+}
+.modal.report .username .vip_lv{
+  margin-right: 5px;
+}
+.modal.report .username .vip_lv img{
+  width: 46px;
+  height: 20px;
+}
+
+
+.modal.report .data_list{
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 10px;
+}
+.modal.report .data_list ul{
+  width: 33.333333%;
+  display: flex;
+  padding: 0 25px;
+  border-right: 1px solid #dfdfdf; 
+}
+.modal.report .data_list ul:nth-child(3n+1){
+  padding: 0 25px 0 0;
+}
+.modal.report .data_list ul:nth-child(3n+3){
+  border-right: 0;
+  padding: 0 0 0 25px;
+}
+.modal.report .data_list li{
+  font-size: 13px;
+  line-height: 24px;
+}
+.modal.report .data_list li.title{
+  width: 30%;
+  color: #888;
+}
+.modal.report .data_list li.text{
+  width: 70%;
+  text-align: right;
+  padding-left: 5px;
+}
+@media only screen and (max-width: 768px) {
+  .modal.report .data_list ul{
+    width: 50%;
+  }
+  .modal.report .data_list ul,
+  .modal.report .data_list ul:nth-child(3n+1),
+  .modal.report .data_list ul:nth-child(3n+3){
+    padding: 0;
+    border-right: 0;
+  }
+  .modal.report .data_list ul:nth-child(odd){
+    padding: 0 25px 0 0;
+    border-right: 1px solid #dfdfdf; 
+  }
+  .modal.report .data_list ul:nth-child(even){
+    padding: 0 0 0 25px;
+    border-right: 0; 
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .modal.report .data_list ul{
+    width: 100%;
+  }
+  .modal.report .data_list ul:nth-child(odd),
+  .modal.report .data_list ul:nth-child(even){
+    padding: 0;
+    border-right: 0;
+  }
+  .modal.report .data_list li{
+    font-size: 13px;
+    line-height: 24px;
+  }
+  .modal.report .data_list li.text{
+    text-align: right;
+  }
+}
+
+
+.modal.report .data_total{
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 15px;
+}
+.modal.report .data_total ul{
+  display: flex;
+  padding: 0 25px 0 0;
+  border-right: 1px solid #dfdfdf;
+  margin-right: 25px;
+}
+.modal.report .data_total ul:last-child{
+  border-right: none;
+}
+.modal.report .data_total li{
+    font-size: 14px;
+    line-height: 1.5;
+}
+.modal.report .data_total li.title{
+  color: #888;
+}
+.modal.report .data_total li.text{
+  padding-left: 5px;
+}
+@media only screen and (max-width: 580px) {
+  .modal.report .data_total ul{
+    width: 100%;
+    border-right: none;
+    padding: 0 ;
+    margin-right: 0;
+  }
+  .modal.report .data_total li{
+      line-height: 1.8;
+  }
+  .modal.report .data_total li.title{
+    width: 20%;
+  }
+  .modal.report .data_total li.text{
+    width: 80%;
+  }
+}
+
+
+
+
+
+/********************** VIP 積分明細 上部概覽 start **********************/
+.modal.report .points_overview {
+  display: flex;
+  padding-bottom: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.modal.report .points_overview .badge img{
+  width: 138px;
+  height: 120px;
+}
+.modal.report .points_overview .overview{
+  padding-left: 10px;
+  width: calc(100% - 138px);
+}
+.modal.report .points_overview .overview .process .text{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.modal.report .points_overview .overview .process .text p{
+  font-size: 14px;
+  line-height: 1.4;
+  color: #324254;
+}
+.modal.report .points_overview .overview .process .text p:last-child{
+  font-size: 12px;
+}
+
+.modal.report .points_overview .overview .process .text p span{
+  color: #008ca1;
+  font-weight: bold;
+}
+
+.modal.report .points_overview .overview .process .line{
+  width: 100%;
+  height: 10px;
+  border-radius: 10px;
+  background: #e8e8e8;
+  position: relative;
+  margin: 8px 0 10px 0;
+}
+.modal.report .points_overview .overview .process .line .bar{
+  width: 50%;
+  height: 10px;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #00dace 0%, #0091be 100%);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+@media only screen and (max-width: 768px) {
+  .modal.report .points_overview .badge{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .modal.report .points_overview .badge img{
+    width: 104px;
+    height: 90px;
+    margin: 0 auto;
+  }
+  .modal.report .points_overview .overview{
+    padding-left: 0px;
+    width: 100%;
+  }
+  .modal.report .points_overview .overview .process .text p{
+    width: 100%;
+  }
+  .modal.report .points_overview .overview .process .text p:last-child{
+    margin-top: 5px;
+  }
+}
+
+
+/************************** 公告 燈箱內容 start **************************/
+.modal.announcement .modal_main_content{
+  border-radius: 6px;
+}
+.modal.announcement .announce_content{
+  display: flex;
+  height: 500px;
+  z-index: 1;
+}
+.announce_content .announce_menu{
+  border-right: 1px solid #E2E2E2;
+  width: 380px;
+  background: #f8f8f8;
+}
+.announce_content .announce_menu .announce_tab{
+  display: flex;
+  align-items: center;
+  background: #FFF;
+  cursor: pointer;
+  border-bottom: 1px solid #d3d7dc;
+}
+.announce_content .announce_menu .announce_tab > div{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+}
+.announce_content .announce_menu .announce_tab > div.active{
+  background: #008ca1;
+}
+.announce_content .announce_menu .announce_tab > div .text{
+  position: relative;
+}
+.announce_content .announce_menu .announce_tab > div .text p{
+  color: #333;
+  text-align: center;
+  font-size: 13px;
+}
+.announce_content .announce_menu .announce_tab > div.active .text p{
+  color: #FFF;
+}
+.announce_content .announce_menu .announce_tab > div .text .amount{
+  position: absolute;
+  left: calc(100% + 5px);
+  top: -4px;
+  font-size: 12px;
+  line-height: 1;
+  padding: 2px 4px;
+  background: #f04040;
+  color: #FFF;
+  border-radius: 20px;
+}
+.announce_content .announce_menu .announce_list{
+  background: #F8F8F8;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.announce_content .announce_list .modal_title{
+  background: none;
+  color: #FFF;
+  border-bottom: 1px solid #3f5d79;
+}
+.announce_list ul{
+  width: 100%;
+  height: calc(100% - 56px);
+}
+.announce_list ul li{
+  transition: all .2s;
+  border-bottom: 1px solid #E8E8E8; 
+}
+.announce_list ul li ol{
+  display: flex;
+  align-items: center;
+  padding: 13px 14px;
+}
+.announce_list ul li ol.list_button{
+  cursor: pointer;
+  transition: all .2s;
+  position: relative;
+}
+.announce_list ul li ol.list_button.unread::before{
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #f04040;
+    content: "";
+    left: 15px;
+    top: calc(50% - 3px)
+}
+.announce_list ul li ol.m_article{
+  background: #FFF;
+  display: none;
+  border-top: 1px solid #E8E8E8; 
+}
+.announce_list ul li ol .list_title{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 12px;
+}
+.announce_list ul li ol .list_title .title_text{
+  color: #333;
+  font-size: 13px;
+  line-height: 1;
+  overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  flex: 1;
+  padding-right: 10px;
+}
+.announce_list ul li ol .list_title .time_text{
+  color: #bbbbbb;
+  font-size: 13px;
+  line-height: 1;
+}
+.announce_list ul li ol.list_button:hover{
+  background: #fbf7e8;
+}
+.announce_list ul li ol.list_button.active{
+  background: #FFF;
+}
+.announce_menu .pagination_content{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 11px 12px;
+}
+.announce_menu .pagination_content input{
+  width: 40px;
+}
+.announce_content .announce_article{
+  flex: 1;
+}
+.announce_content .announce_article_text{
+  overflow-y: auto;
+  padding: 15px 20px;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+.announce_content .announce_article_text h1{
+  color: #008CA1;
+  font-size: 16px;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+.announce_content .announce_article_text p{
+  color: #222;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+.announce_content .announce_article_text p.article{
+  text-indent: 2em;
+  text-align: justify;
+}
+.announce_content .announce_article_text p.sign_name{
+  text-align: right;
+  margin-bottom: 0;
+}
+.announce_content .announce_article_text p.time{
+  text-align: right;
+  color: #9B9B9B;
+  font-size: 13px;
+}
+.announce_list ul li ol.m_article .announce_article_text{
+  padding: 0;
+}
+.announce_list ul li ol.m_article .announce_article_text h1{
+  margin-bottom: 5px;
+}
+.announce_list ul li ol.m_article .announce_article_text p{
+  margin-bottom: 5px;
+}
+.announce_list ul li ol.m_article .announce_article_text p.sign_name{
+  margin-bottom: 0;
+}
+@media only screen and (max-width: 1024px) {
+  .modal.announcement .m_sub_page_header{ 
+      display: none;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .modal.announcement .content_frame{
+    background: #F8F8F8;
+    border-radius: 0;
+  }
+  .modal.announcement .modal_close,
+  .modal.announcement .modal_title{
+      display: none;
+  }
+  .modal.announcement .m_sub_page_header{ 
+      display: flex;
+  }
+  .modal.announcement.auto_height .modal_main_content{
+    padding: 87px 0 0 0;
+    margin-bottom: 0;
+  }
+  .modal.announcement .modal_main_content{
+    border-radius: 0;
+    background: none;
+  }
+  .modal.announcement .announce_content{
+    height: auto;
+  }
+  .announce_content .announce_menu{
+    width: 100%;
+  }
+  .announce_content .announce_menu .announce_tab > div .text p{
+    font-size: 15px;
+  }
+  .announce_content .announce_menu .announce_tab{
+    position: fixed;
+    width: 100%;
+    top: 44px;
+    z-index: 1;
+  }
+  .announce_content .announce_list .modal_title{
+    display: none;
+  }
+  .announce_content .announce_article{
+    display: none;
+  }
+  .announce_menu .pagination_content{
+    padding: 10px 10px 30px 10px;
+  }
+  .announce_menu .pagination_content .go_page{
+    display: flex;
+  }
+  .announce_list ul{
+    height: auto;
+  }
+  .announce_list ul li ol.m_article.show{
+    display: block;
+  }
+  .announce_list ul li ol.list_button.unread::before{
+    display: none;
+  }
+  .announce_list ul li ol.list_button.unread::after{
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #f04040;
+    content: "";
+    right: 12px;
+    top: calc(50% - 4px);
+  }
+  .announce_list ul li ol,
+  .announce_list ul li ol .list_title{
+    display: inherit;
+  }
+  .announce_list ul li ol .list_title{
+    padding-left: 0;
+  }
+  .announce_list ul li ol .list_title .title_text{
+    font-size: 15px;
+    padding-right: 30px;
+  }
+  .announce_list ul li ol .list_title .time_text{
+    margin-top: 5px;
+  }
+  
+}
+@media only screen and (max-width: 520px) {
+  .announce_list ul li ol{
+    padding: 11px 12px;
+  }
+}
+
+
+
+/************************** 站內信 燈箱內容 start **************************/
+/*站內信 搜尋聯絡人*/
+.modal.chat .member_search .label_input{
+  position: relative;
+  z-index: 0;
+  margin-bottom: 0;
+  background: #F8F8F8;
+}
+.modal.chat .member_search .btn_chat_search{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.modal.chat .member_search a{
+  width: 26px;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0
+}
+.modal.chat .member_search_no_data{
+  position: absolute;
+  z-index: 0;
+  text-align: center;
+  width: 100%;
+  color: #9A9A9A;
+  font-size: 13px;
+  top: 170px;
+}
+.modal.chat .member_search .search_no_data_state img{
+    margin: 0 auto;
+}
+.modal.chat .member_search .search_no_data_state p{
+    text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .modal.chat .member_search a{
+    width: 32px;
+    height: 32px;
+  }
+  .modal.chat .member_search .label_input{
+    font-size: 14px;
+  }
+  .modal.chat .member_search .label_input.lower input{
+    height: 32px;
+  }
+}
+/*站內信 搜尋聯絡人 無資料*/
+.modal.chat .search_no_data_state{
+    position: absolute;
+    top: 80px;
+    width: 100%;
+}
+.modal.chat .search_no_data_state img{
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+.modal.chat .search_no_data_state p{
+    text-align: center;
+    color: #999999;
+}
+
+
+
+.modal.chat .modal_main_content{
+  border-radius: 6px;
+}
+.modal.chat .chat_content{
+  display: flex;
+  height: 486px;
+  position: relative;
+}
+.chat_content .member_content{
+  width: 250px;
+  background: #F8F8F8;
+  border-right: 1px solid #D3D7DB;
+  border-bottom-left-radius: 5px;
+  position: relative;
+}
+.member_content .member_search{
+  padding: 7px 10px;
+  border-bottom: 1px solid #E2E2E2;
+}
+.member_content .member_btns{
+  padding: 7px 10px;
+}
+.member_content .member_btns a{
+  background: #647282;
+  font-size: 12px;
+}
+.member_content .member_btns a:hover{
+  background: #576574;
+}
+.member_content .member_list{
+  height: calc(100% - 87px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  z-index: 2;
+  position: relative;
+}
+.member_content .member_list ul li{
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all .2s;
+  border-bottom: 1px solid #E8E8E8;
+  background: #FFF;
+}
+.member_content .member_list ul li .member_info{
+  display: flex;
+  align-items: center;
+}
+.member_content .member_list ul li .member_info p{
+  font-size: 13px;
+  margin-left: 10px;
+  color: #333;
+}
+.member_content .member_list ul li .circle_amount {
+    border-radius: 50px;
+    height: 18px;
+    line-height: 17px;
+    padding: 0 5px;
+    background: #F04040;
+    color: #FFF;
+    font-size: 12px;
+}
+.member_content .member_list ul li:hover{
+  background: #E5EDF1;
+}
+.member_content .member_list ul li.active{
+  background: #E5EDF1;
+}
+.chat_content .chat_dialog{
+  flex: 1;
+  background: #FFFFFF;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  position: relative;
+}
+/*當前無訊息*/
+.chat_content .chat_dialog .no_message{
+  height: calc(100% - 41px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chat_content .chat_dialog .no_message.start{
+  height: 100%;
+}
+.chat_content .chat_dialog .no_message .empty_state{
+  padding-bottom: 25px;
+}
+.chat_content .chat_dialog .no_message .empty_state img{
+  margin: 0 auto;
+}
+.chat_content .chat_dialog .no_message .empty_state p{
+  text-align: center;
+  padding-top: 5px;
+  color: #999999;
+}
+/*當前對話對象標題*/
+.chat_dialog .dialog_title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 13px;
+  background: #FFF;
+  border-bottom: 1px solid #E2E2E2;
+  position: relative;
+  z-index: 2;
+}
+.chat_dialog .dialog_title p{
+  color: #222;
+  font-size: 15px;
+  flex: 1;
+  padding-right: 10px;
+}
+.chat_dialog .dialog_title .btn{
+  cursor: pointer;
+  position: relative;
+}
+.chat_dialog_setting_menu{
+  position: absolute;
+  border-radius: 3px;
+  box-shadow: 0 0 15px 0 rgba(55, 78, 103, 0.3);
+  background: #FFF;
+  right: 0;
+  top: 36px;
+  right: 5px;
+  min-width: 150px;
+}
+.chat_dialog_setting_menu.mobile_style{
+  position: fixed;
+  z-index: 2;
+  top: 40px;
+  min-width: 160px;
+  display: none;
+}
+.chat_dialog_setting_menu li a{
+  padding: 12px 14px;
+  display: block;
+  color: #404040;
+  border-bottom: 1px solid #E8E8E8;
+  font-size: 13px;
+  line-height: 1;
+}
+.chat_dialog_setting_menu.mobile_style li a{
+  font-size: 15px;
+}
+.chat_dialog_setting_menu li:first-child a{
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.chat_dialog_setting_menu li:last-child a{
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.chat_dialog_setting_menu li a:hover{
+  background: #E5F7F6;
+}
+/*對話框開始*/
+.chat_dialog .dialog_outer{
+  position: relative;
+  height: calc(100% - 142px);
+}
+.chat_dialog .dialog_content{
+  padding: 10px;
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  z-index: 1;
+}
+.chat_dialog.hide_typing .dialog_outer{/*隱藏輸入框後 對話框可視高度變動*/
+  height: calc(100% - 45px);
+}
+.chat_dialog .dialog_content ul{
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 6px;
+}
+.chat_dialog .dialog_content ul img{
+  margin-top: 3px;
+}
+.chat_dialog .dialog_content ul .dialog_set{
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+.chat_dialog .dialog_content ul.from_self .dialog_set{
+  justify-content: flex-end;
+}
+.chat_dialog .dialog_content ul .dialog_frame{
+  padding: 8px 12px;
+  position: relative;
+  border-radius: 4px;
+  font-size: 13px;
+  max-width: 78%;
+}
+.chat_dialog .dialog_content ul.unread{
+  align-items: center;
+  display: flex;
+  padding: 10px 0;
+}
+.chat_dialog .dialog_content ul.unread .line{
+  background: url("../images/chat/chat_divider.svg") center center no-repeat;
+  height: 10px;
+  flex: 1;
+}
+.chat_dialog .dialog_content ul.unread p{
+  text-align: center;
+  font-size: 12px;
+  line-height: 1;
+  color: #999;
+  padding: 0 10px;
+}
+.chat_dialog .dialog_content ul.from_member .dialog_frame{
+  background: #F0F0F0;
+  color: #222;
+  margin-left: 12px;
+}
+.chat_dialog .dialog_content ul.from_self .dialog_frame{
+  background: #E5F7F6;
+  color: #222;
+  margin-right: 14px;
+}
+.chat_dialog .dialog_content ul .dialog_frame:before{
+    content: "";
+    display: block;
+    height: 0;
+    top: 12px;
+    position: absolute;
+    width: 0;
+    border-style: solid;
+}
+.chat_dialog .dialog_content ul.from_member .dialog_frame:before{
+    left: -8px;
+    border-width: 6px 8px 6px 0;
+    border-color: transparent #F0F0F0 transparent  transparent;
+}
+.chat_dialog .dialog_content ul.from_self .dialog_frame:before{
+    right: -8px;
+    border-width: 6px 0 6px 8px;
+    border-color: transparent transparent transparent #E5F7F6;
+}
+.chat_dialog .dialog_content ul p.dialog_time{
+  color: #B7B7B7;
+  font-size: 12px;
+  width: 100%;
+}
+.chat_dialog .dialog_content ul p.dialog_time span{
+  color: #1B96A9;
+}
+.chat_dialog .dialog_content ul.from_member p.dialog_time{
+  padding-left: 14px;
+}
+.chat_dialog .dialog_content ul.from_self p.dialog_time{
+  padding-right: 14px;
+  text-align: right;
+}
+/*有新訊息提示*/
+.chat_dialog .dialog_outer .new_message_prompt{
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 2;
+}
+.dialog_outer .new_message_prompt .prompt_content{
+  display: flex;
+  cursor: pointer;
+}
+.dialog_outer .new_message_prompt .prompt_content .text{
+  background: #F04040;
+  color: #FFF;
+  border-radius: 2px;
+  padding: 0 8px;
+}
+.dialog_outer .new_message_prompt .prompt_content .btn{
+  background: #647282;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+  margin-left: 5px;
+}
+/*訊息輸入框*/
+.chat_dialog .type_textarea{
+    background: #FFF;
+    border-bottom-right-radius: 5px;
+    border-top: 1px solid #D6D6D6;
+    position: relative;
+    z-index: 0;
+}
+.chat_dialog.hide_typing .type_textarea{/*hide_typing為隱藏輸入框class*/
+    display: none;
+}
+.chat_dialog .type_textarea textarea{
+    width: calc(100% - 80px);
+    height: 100px;
+    background: #FFF;
+    font-size: 13px;
+    padding: 13px 20px;
+    color:#222;
+}
+.chat_dialog .type_textarea textarea:focus{
+    background: #FFF;
+}
+.chat_dialog .type_textarea textarea::-webkit-input-placeholder{
+    color: #8E8D8D;
+}
+.chat_dialog .type_textarea textarea::-moz-placeholder{
+    color: #8E8D8D;
+}
+.chat_dialog .type_textarea textarea::-ms-input-placeholder{
+    color: #8E8D8D;
+}
+.chat_dialog .type_textarea textarea::-moz-placeholder{
+    color: #8E8D8D;
+}
+.chat_dialog .type_textarea a{
+    position: absolute;
+    width: 60px;
+    bottom: 10px;
+    right: 10px; 
+}
+@media only screen and (max-width: 1024px) {
+  .modal.chat .m_sub_page_header{ 
+      display: none;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .modal.chat .m_sub_page_header{ 
+      display: flex;
+  }
+  .modal.chat .member_content .m_sub_page_header{ 
+    z-index: 2;
+  }
+  .modal.chat .chat_dialog .m_sub_page_header{ 
+    z-index: 1;
+  }
+  .modal.chat.auto_height .modal_main_content{
+    padding: 0;
+    margin-bottom: 0;
+    overflow-y: hidden;
+    border-radius: 0;
+  }
+  .chat_content .member_content{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    height: 100%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding-top: 44px;
+  }
+  .chat_content .member_content.show{
+    display: block;
+  }
+  .modal.chat .modal_title{
+    display: none;
+  }
+  .modal.chat .modal_close{
+    display: none;
+  }
+
+  .member_content .member_btns a{
+    font-size: 14px;
+  }
+  .member_content .member_list{
+    height: calc(100% - 93px);
+  }
+  .member_content .member_list ul li .circle_amount {
+    border-radius: 50px;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 6px;
+    font-size: 13px;
+  }
+  .member_content .member_list ul li.active{
+    background: #FFF;
+  }
+  .member_content .member_list ul li.active:hover{
+    background: #FFF;
+  }
+  .chat_dialog{
+    padding-top: 44px;
+  }
+  .chat_dialog_setting_menu.mobile_style{
+    display: block;
+  }
+  .chat_dialog.hide_typing .dialog_outer{
+    height: 100%;
+  }
+  .chat_dialog .dialog_outer{
+    height: calc(100% - 101px);
+  }
+  .chat_dialog .dialog_title{
+    display: none;
+  }
+  .chat_dialog.hide_typing .dialog_content{/*隱藏輸入框後 對話框可視高度變動*/
+    height: calc(100% - 44px);
+  }
+  .chat_dialog .dialog_content ul .dialog_frame{
+    font-size: 15px;
+    line-height: 1.4;
+  }
+  .chat_dialog .dialog_content ul .dialog_frame{
+    max-width: 67%;
+  }
+  .chat_dialog .type_textarea textarea{
+    font-size: 15px;
+    line-height: 1.4;
+  }
+  .modal.chat .member_content .search_no_data_state{
+      top: 120px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .chat_dialog .dialog_content ul .dialog_frame{
+    max-width: 70%;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .chat_dialog .dialog_content ul .dialog_frame{
+    max-width: 78%;
+  }
+}
+
+
+
+
+
+
+
+
+/*站內信 新增群組*/
+.chat_content .chat_function_manage{
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background: rgba(0,0,0,.25);
+}
+.chat_function_manage .function_position{
+  width: calc(100% - 200px);
+  height: 100%;
+  background: #F8F8F8;
+  margin-left: auto;
+}
+.chat_function_manage .function_position.narrow{
+  width: calc(100% - 480px);
+}
+.chat_function_manage .function_header{
+  width: 100%;
+  background: #FFF;
+  border-bottom: 1px solid #D3D7DC;
+  display: flex;
+  align-items: center;
+  height: 41px;
+  padding: 0 12px;
+}
+.chat_function_manage .function_header .btn{
+  width: 60px;
+}
+.chat_function_manage .function_header .btn:last-child a{
+  margin-left: auto;
+}
+.chat_function_manage .function_header a.btn_back{
+  display: flex;
+  align-items: center;
+  height: 30px;
+}
+.chat_function_manage .function_header a.btn_back p{
+  color: #333;
+  font-size: 13px;
+}
+.chat_function_manage .function_header .btn_back img{
+  margin-right: 5px;
+}
+.chat_function_manage .function_header .title{
+  flex: 1;
+  color: #222;
+  font-size: 14px;
+  text-align: center;
+}
+.chat_function_manage .function_header a.btn_default{
+  line-height: 30px;
+  height: 30px;
+  width: 100%;
+}
+.chat_function_manage .function_header a.btn_default{
+  line-height: 30px;
+  height: 30px;
+  width: 100%;
+}
+.chat_function_manage .function_content{
+  padding: 12px;
+  height: calc(100% - 41px);
+}
+.chat_function_manage .function_content .label_input{
+  margin-bottom: 10px;
+}
+.chat_function_manage .function_content .label_input.error input{
+  border: 1px solid #F04040;
+}
+@media only screen and (max-width: 768px) {
+  .chat_function_manage .function_position,
+  .chat_function_manage .function_position.narrow{
+    width: 100%;
+  }
+  .chat_function_manage .function_header{
+    height: 44px;
+  }
+}
+
+
+.chat_function_manage .function_content .member_manage_content{
+  background: #FFF;
+  border: 1px solid #D3D7DC;
+  height: calc(100% - 44px);
+  display: flex;
+}
+.chat_function_manage .function_content .member_manage_content.height_full{
+  height: 100%;
+}
+.member_manage_content .col_1,
+.member_manage_content .col_2{
+  height: 100%;
+  overflow-y: auto;
+  position: relative;
+}
+.member_manage_content .col_1{
+  width: 100%;
+}
+.member_manage_content .col_2{
+  width: 50%;
+}
+.member_manage_content .col_2:first-child{
+  border-right: 1px solid #D3D7DC;
+}
+.member_manage_content .member_search{
+  padding: 12px 12px 0 12px;
+}
+.member_manage_content .member_list_filter{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 12px 0 12px;
+  font-size: 13px;
+}
+.member_manage_content .member_list_filter .radiobutton li {
+    margin-right: 8px;
+}
+.member_manage_content .member_list_filter .radiobutton li:last-child {
+    margin-right: 0;
+}
+.member_manage_content .member_manage_list {
+    padding-top: 8px;
+}
+.member_manage_content .member_manage_list .checkbox {
+    display: inherit;
+}
+.member_manage_content .member_manage_list .checkbox li{
+    margin-right: 0;
+}
+.member_manage_content .member_manage_list .checkbox li:hover{
+    background: #F8F8F8;
+}
+.member_manage_content .member_manage_list .checkbox li label{
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+}
+.member_manage_content p.tips{
+  font-size: 13px;
+  padding: 12px 12px 12px 12px;
+}
+.member_manage_content p.tips span{
+  color: #E99800;
+}
+.member_manage_content .member_manage_list_check{
+    font-size: 13px;
+}
+.member_manage_content .member_manage_list_check ul{
+    
+}
+.member_manage_content .member_manage_list_check ul.title{
+    display: flex;
+    background: #E9ECEF;
+    padding: 5px 0 5px 12px;
+    padding-top: 5px;
+    padding-right: 12px;
+    padding-bottom: 5px;
+    padding-left: 12px;  
+}
+.member_manage_content .member_manage_list_check ul li{
+    display: flex;
+    align-items: center;
+    padding-top: 8px;
+    padding-right: 12px;
+    padding-bottom: 8px;
+    padding-left: 12px;  
+}
+.member_manage_content .member_manage_list_check ul.title.narrow,
+.member_manage_content .member_manage_list_check ul.narrow li{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.member_manage_content .member_manage_list_check ul li:hover{
+    background: #F8F8F8;
+}
+.member_manage_content .member_manage_list_check .username{
+    flex: 1;
+}
+.member_manage_content .member_manage_list_check ul li .username{
+    line-height: 1;
+}
+.member_manage_content .member_manage_list_check .btn{
+    width: 40px;
+    display: flex;
+    justify-content: center;
+}
+.member_manage_content .member_manage_list_check .btn.fit_width{
+    width: 16px;
+    margin-right: 15px;
+}
+.member_manage_content .member_manage_list_check .btn .mute{
+    width: 18px;
+    height: 18px;
+    background: url("../images/chat/ic_mute_default.svg") center center no-repeat;
+    cursor: pointer;
+}
+.member_manage_content .member_manage_list_check .btn .mute.check{
+    background: url("../images/chat/ic_mute.svg") center center no-repeat;
+}
+.member_manage_content .member_manage_list_check .btn .delet{
+    cursor: pointer;
+}
+
+
+
+
+
+
+/************************** 契約分紅 燈箱內容 **************************/
+/* 契約種類tab */
+.modal.bouns_contract .tab_bar {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-bottom: 1px solid #F5F5F5;
+}
+
+.modal.bouns_contract .tab_bar ul {
+    display: block;
+}
+
+.modal.bouns_contract .tab_bar li {
+    display: flex;
+    align-items: center;
+}
+
+.modal.bouns_contract .tab_bar li a {
+    color: #999;
+    font-size: 15px;
+    padding: 3px 15px 12px 15px;
+    white-space: nowrap;
+    display: block;
+    line-height: 1;
+}
+
+.modal.bouns_contract .tab_bar li a:hover {
+    color: #008CA1;
+}
+
+.modal.bouns_contract .tab_bar li a.active {
+    color: #008CA1;
+    border-bottom: 2px solid #008CA1;
+}
+/* user與契約狀態 */
+.modal.bouns_contract .user_status {
+    display: flex;
+    align-items: center;
+    margin: 15px 0 10px 0;
+}
+.modal.bouns_contract .user_status .username{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+.modal.bouns_contract .user_status .username img{
+    margin-right: 8px;
+}
+.modal.bouns_contract .user_status .username p{
+    font-size: 13px;
+}
+.modal.bouns_contract .user_status .status{
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    padding: 3px 8px 3px 3px;
+}
+.modal.bouns_contract .user_status .status p{
+    margin-left: 4px;
+    color: #FFF;
+    font-size: 12px;
+    line-height: 1;
+}
+.modal.bouns_contract .user_status .status.link{
+    background: #008CA1;
+}
+.modal.bouns_contract .user_status .status.unlink{
+    background: #999999;
+}
+@media only screen and (max-width: 768px) {
+  .modal.bouns_contract .user_status {
+    justify-content: space-between;
+  }
+}
+/* 契約圖表 */
+.modal.bouns_contract .chart{
+  margin-bottom: 10px;
+}
+.modal.bouns_contract .chart .interval{
+    width: 100%;
+}
+.modal.bouns_contract .chart .interval ul{
+    display: flex; 
+}
+.modal.bouns_contract .chart .interval ul li{
+    display: flex;
+    flex: 1;
+    height: 100%;
+}
+.modal.bouns_contract .chart .interval ul.line_chart{
+    height: 36px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    background-image: linear-gradient(to right, #535AA6 0%, #18F2DF 90%);
+}
+.modal.bouns_contract .chart .interval ul.line_chart li{
+    border-right: 1px solid #FFF;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+}
+.modal.bouns_contract .chart .interval ul.line_chart li:last-child{
+    border-right: none;
+}
+
+.modal.bouns_contract .chart .interval ul.dot_line{
+    position: relative;
+    border-top: 3px solid #F3F3F3;
+    margin-top: 7px;
+}
+.modal.bouns_contract .chart .interval ul.dot_line li{
+    
+}
+.modal.bouns_contract .chart .interval ul.dot_line li .content{
+    position: relative;
+    left: -5px;
+    top: -6px;
+}
+.modal.bouns_contract .chart .interval ul.dot_line li .content .dot{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid #9D9D9D;
+    background: #FFF;
+}
+.modal.bouns_contract .chart .interval ul.dot_line li .content p{
+    font-size: 12px;
+    color: #333;
+}
+.modal.bouns_contract .chart .interval ul.dot_line li:last-child{
+    display: inherit;
+    position: absolute;
+    right: 0;
+    flex: inherit;
+}
+.modal.bouns_contract .chart .interval ul.dot_line li:last-child .content{
+   left: auto;
+   right: 0;
+}
+.modal.bouns_contract .chart .interval ul.dot_line li:last-child .content .dot{
+   margin-left: auto;
+}
+.modal.bouns_contract .chart .interval ul.dot_line li:last-child .content p{
+   text-align: right;
+}
+@media only screen and (max-width: 768px) {
+  .modal.bouns_contract .chart{
+    display: none;
+  }
+}
+/* 契約設定內容框架 */
+.modal.bouns_contract .setting_wrap{
+   display: flex;
+   min-height: 300px;
+}
+.modal.bouns_contract .setting_wrap .left_content{
+   flex: 1;
+   padding-right: 20px;
+}
+.modal.bouns_contract .setting_wrap .right_content{
+   background: #F2F9F9;
+   padding: 10px 15px 10px 15px;
+   width: 256px;
+}
+.modal.bouns_contract .setting_wrap .right_content.full_width{
+   background: #F2F9F9;
+   padding: 10px 15px 10px 15px;
+   width: 100%;
+}
+@media only screen and (max-width: 768px) {
+  .modal.bouns_contract .setting_wrap{
+     flex-wrap: wrap;
+     min-height: auto;
+  }
+  .modal.bouns_contract .setting_wrap .left_content,
+  .modal.bouns_contract .setting_wrap .right_content{
+     flex: inherit;
+     width: 100%;
+  }
+  .modal.bouns_contract .setting_wrap .left_content{
+    order: 2;
+    padding-right: 0;
+    margin-top: 10px;
+  }
+  .modal.bouns_contract .setting_wrap .right_content{
+     order: 1;
+
+  }
+}
+/* 我的契約 */
+.modal.bouns_contract .setting_wrap .right_content .my_contract_title{
+   cursor: pointer;
+   display: flex;
+   justify-content: space-between;
+   color: #008CA1;
+   font-size: 15px;
+   line-height: 32px;
+}
+.modal.bouns_contract .my_contract_title.collapse_open{
+   background: url("../images/modal/ic_collapse_hide.svg") right center no-repeat;
+}
+.modal.bouns_contract .my_contract_title.collapse_hide{
+   background: url("../images/modal/ic_collapse_open.svg") right center no-repeat;
+}
+.modal.bouns_contract .my_contract_list{
+   font-size: 13px;
+   line-height: 22px;
+   color: #333;
+}
+/* 契約編輯 */
+.modal.bouns_contract .label_input{
+   margin-bottom: 0;
+}
+.modal.bouns_contract .setting_wrap .left_content .option_a{
+   margin-bottom: 15px;
+}
+.modal.bouns_contract .setting_wrap .left_content .tips{
+   color: #FF2435;
+   font-size: 13px;
+   line-height: 20px;
+   margin-bottom: 15px;
+}
+.modal.bouns_contract .setting_wrap .left_content .option_a{
+   display: flex;
+}
+/*控制固定分红比例 input*/
+.modal.bouns_contract .setting_wrap .left_content .option_a .label_input input{
+   width: 100px;
+   margin: 0 5px;
+}
+/*控制所有input 文字置中*/
+.modal.bouns_contract .setting_wrap .left_content .label_input input{
+   text-align: center;
+}
+.modal.bouns_contract .setting_wrap .left_content .radiobutton span{
+   color: #008CA1;
+   font-size: 15px;
+}
+.modal.bouns_contract .option_b .option_b_list{
+   margin-top: 15px;
+}
+.modal.bouns_contract .option_b .option_b_list ul{
+   display: flex;
+   margin-bottom: 10px;
+   position: relative;
+}
+.modal.bouns_contract .option_b .option_b_list ul .interval_fixed_text{
+   display: flex;
+   align-items: center;
+   font-size: 13px;
+}
+.modal.bouns_contract .option_b .option_b_list ul .interval_fixed_text p:first-child{
+   min-width: 52px;
+   text-align: center;
+}
+/*控制自行设定分红比例 RWD input*/
+.modal.bouns_contract .option_b .option_b_list ul .label_input{
+   flex: 1;
+}
+.modal.bouns_contract .option_b .option_b_list ul .label_input .input_content{
+   flex: 1;
+   padding: 0 5px;
+}
+/*控制自行设定分红比例 RWD input 結束*/
+.modal.bouns_contract .option_b .option_b_list .btn_delet{
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   padding: 0 5px;
+}
+.modal.bouns_contract .option_b .option_b_list .error_msg{
+   position: absolute;
+   bottom: calc(100% + 10px);
+   right: 10%;
+   background: linear-gradient(#FFFFFF, #E4E4E4);
+   border-radius: 2px;
+   padding: 4px 8px;
+   box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.3);
+   border-bottom: 2px solid #008CA1;
+}
+.modal.bouns_contract .option_b .option_b_list .error_msg:before {
+    content:"";
+    border-style: solid;
+    border-width: 8px 6px 0 6px;
+    border-color: #008CA1 transparent transparent transparent;
+    position: absolute;
+    left: calc(50% - 4px);
+    bottom: -8px;
+}
+.modal.bouns_contract .option_b .btn_add_list{
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 5px 0;
+   border: 1px solid #62AEB9;
+   background: #F2F9F9;
+   font-size: 12px;
+   color: #008CA1;
+   border-radius: 3px;
+}
+.modal.bouns_contract .option_b .btn_add_list:hover{
+   background: #e0f3f3;
+}
+.modal.bouns_contract .option_b .btn_add_list img{
+   margin-right: 5px;
+}
+@media only screen and (max-width: 768px) {
+
+}
+
+
+
+
+
+
+
+/************************** 燈箱 modal 提示說明 **************************/
+.modal .tips_mgt{
+  margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+

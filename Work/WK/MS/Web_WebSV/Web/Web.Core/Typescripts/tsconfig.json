@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": true,
+    "sourceMap": false,
+    "lib": [ "ES2020", "DOM" ],
+    "target": "es5",
+    "rootDir": "../Typescripts",
+    "outDir": "../wwwroot/js",
+    "typeRoots": [
+      "../Typescripts/types/"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "wwwroot"
+  ]
+}

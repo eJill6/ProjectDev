@@ -1,0 +1,264 @@
+@charset "UTF-8";
+
+/* 開獎記錄 */
+
+.lotteryrecord_content {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0.3rem;
+}
+
+.lotteryrecord_content .lotteryrecord_item {
+    border-radius: 0.187rem;
+    background: linear-gradient(40deg, rgba(68,68,68,1) 0%,rgba(98,98,98,1) 50%,rgba(68,68,68,1) 100%);
+    height: 1.4rem;
+    padding: 0.03rem;
+    margin-bottom: 0.14rem;
+}
+
+.lotteryrecord_content .lotteryrecord_item:last-child {
+    margin-bottom: 0;
+}
+
+.lotteryrecord_content .lotteryrecord_item .lotteryrecord_row {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.177rem;
+    background: linear-gradient(to top, #1b1f24 0%,#2e2e2e 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0.28rem;
+}
+
+.lotteryrecord_content .lotteryrecord_item .lotteryrecord_row.spacing_shrinks {
+    padding: 0 1.2rem;
+}
+
+.lotteryrecord_row .kuaisan_item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lotteryrecord_row .kuaisan_item.column_1 {
+    width: 1.7rem;
+}
+
+.lotteryrecord_row .kuaisan_item.column_2 {
+    width: 0.8rem;
+}
+
+.lotteryrecord_row .kuaisan_item.column_3 {
+    width: 1.7rem;
+    justify-content: flex-end;
+}
+
+.lotteryrecord_row .kuaisan_item.column_4 {
+    max-width: 1.587rem;
+    width: 1.587rem;
+    justify-content: flex-start;
+}
+
+.lotteryrecord_row .kuaisan_item .kuaisan_text {
+    font-size: 0.333rem;
+    color: #d9d9d9;
+}
+
+.lotteryrecord_row .kuaisan_item .kuaisan_text.sm {
+    font-size: 0.293rem;
+}
+
+.lotteryrecord_row .kuaisan_item .kuaisan_text.win_type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #c2e4ff 0%,#ffffff 100%);
+    width: 0.467rem;
+    height: 0.467rem;
+    color: #1c6cbd;
+    font-weight: 500;
+    border-radius: 0.053rem;
+    margin-right: 0.093rem;
+}
+
+.lotteryrecord_row .kuaisan_item .kuaisan_text.win_type.sm {
+    width: 0.4rem;
+    height: 0.4rem;
+    margin-right: 0.047rem;
+}
+
+.lotteryrecord_row .kuaisan_item .kuaisan_text.win_type:last-child {
+    margin-right: 0;
+}
+
+.lotteryrecord_row .kuaisan_item .kuaisan_text.win_type.orange {
+    background: linear-gradient(to bottom, #d43800 0%,#e46018 100%);
+    color: #fff;
+}
+
+.lotteryrecord_row .kuaisan_item .kuaisan_text.win_type.red {
+    background: linear-gradient(to bottom, #DA1A10 0%,#FF553A 100%);
+    color: #fff;
+}
+
+.lotteryrecord_row .kuaisan_item .kuaisan_text.win_type.blue {
+    background: linear-gradient(to bottom, #0064b1 0%,#188ee7 100%);
+    color: #fff;
+}
+
+.lotteryrecord_row .kuaisan_item .kuaisan_text.win_type.green {
+    background: linear-gradient(to bottom,  #2f790b 0%,#5ca72b 100%);
+    color: #fff;
+}
+
+.lotteryrecord_row .kuaisan_item .kuaisan_text.win_type.black {
+    background: linear-gradient(to bottom, #232323 0%,#535353 100%);
+    color: #fff;
+}
+
+.lotteryrecord_row .kuaisan_item .fullrange_type img {
+    height: 0.467rem;
+}
+
+.lotteryrecord_row .kuaisan_item .kuaisan_dice {
+    width: 0.693rem;
+    height: 0.693rem;
+    -webkit-filter: drop-shadow(0 0.113rem 0.2rem rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(0 0.113rem 0.2rem rgba(0, 0, 0, 0.3));
+    margin-right: 0.16rem;
+}
+
+.lotteryrecord_row .kuaisan_item .kuaisan_dice img {
+    width: 0.693rem;
+    height: 0.693rem;
+}
+
+.lotteryrecord_row .kuaisan_item .kuaisan_dice:last-child {
+    margin-right: 0;
+}
+
+.lotteryrecord_row .kuaisan_item .kuaisan_dice.jsyxx,.lotteryrecord_row .kuaisan_item .kuaisan_dice.jsyxx img {
+    width: 0.733rem;
+    height: 0.78rem;
+}
+
+.lotteryrecord_row .kuaisan_item .kuaisan_dice img {
+    width: 0.693rem;
+    height: 0.693rem;
+}
+
+.lotteryrecord_row .kuaisan_item .pk10_num {
+    width: 0.4797rem;
+    height: 0.6354rem;
+}
+
+.lotteryrecord_row .kuaisan_item .pk10_num img {
+    width: 0.4797rem;
+    height: 0.6354rem;
+}
+
+.lotteryrecord_row .kuaisan_item .omssc_num {
+    width: 0.72rem;
+    height: 0.72rem;
+    margin-right: 0.113rem;
+}
+
+.lotteryrecord_row .kuaisan_item .omssc_num img {
+    width: 0.72rem;
+    height: 0.72rem;
+}
+
+.lotteryrecord_row .kuaisan_item .omssc_num:last-child {
+    margin-right: 0;
+}
+
+.lotteryrecord_row .kuaisan_item .omlhc_sm_ball {
+    width: 0.54rem;
+    height: 0.54rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.05rem;
+}
+
+.lotteryrecord_row .kuaisan_item .omlhc_sm_ball:last-child {
+    margin-right: 0;
+}
+
+.lotteryrecord_row .kuaisan_item .omlhc_sm_ball.green {
+    background: url(../images/game/omlhc_ball_lg_green.png);
+    background-size: 100% 100%;
+}
+
+.lotteryrecord_row .kuaisan_item .omlhc_sm_ball.blue {
+    background: url(../images/game/omlhc_ball_lg_blue.png);
+    background-size: 100% 100%;
+}
+
+.lotteryrecord_row .kuaisan_item .omlhc_sm_ball.red {
+    background: url(../images/game/omlhc_ball_lg_red.png);
+    background-size: 100% 100%;
+}
+
+.lotteryrecord_row .kuaisan_item .omlhc_sm_ball .num {
+    font-family: Impact;
+    font-size: 0.3rem;
+    color: #010101;
+}
+
+.lotteryrecord_row .kuaisan_item .omlhc_sm_plus {
+    width: 0.2rem;
+    height: 0.2rem;
+    margin-right: 0.05rem;
+}
+
+.lotteryrecord_row .kuaisan_item .omlhc_sm_plus img {
+    width: 0.2rem;
+    height: 0.2rem;
+}
+
+.lotteryrecord_row .kuaisan_item .type_h {
+    width: 1rem;
+    height: 0.7333rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.lotteryrecord_row .kuaisan_item .type_h.black {
+    background: url(../images/game/type_jslp_sm_black.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.lotteryrecord_row .kuaisan_item .type_h.red {
+    background: url(../images/game/type_jslp_sm_red.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.lotteryrecord_row .kuaisan_item .type_h.green {
+    background: url(../images/game/type_jslp_sm_green.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.lotteryrecord_row .kuaisan_item .type_h .type_text {
+    font-family: 'YesevaOne';
+    font-size: 0.533rem;
+    font-weight: bold;
+    color: transparent;
+    background: #ffffff;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.lotteryrecord_row .kuaisan_item .type_h .type_text::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.03rem #000000;
+    z-index: -1;
+}

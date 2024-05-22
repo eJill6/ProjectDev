@@ -1,0 +1,29 @@
+﻿@using Web.Extensions;
+@using Web.Helpers;
+@using ControllerShareLib.Helpers;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link type="text/css" rel="stylesheet" href="~/css/element.css" />
+<link type="text/css" rel="stylesheet" href="~/css/ball.css" />
+<link type="text/css" rel="stylesheet" href="~/css/modal.css" />
+<link type="text/css" rel="stylesheet" href="~/css/table.css" />
+<link type="text/css" rel="stylesheet" href="~/css/signinup.css" />
+<link type="text/css" rel="stylesheet" href="~/css/index.css" />
+<link type="text/css" rel="stylesheet" href="~/css/game_lottery.css" />
+<link type="text/css" rel="stylesheet" href="~/css/game_sport.css" />
+<link type="text/css" rel="stylesheet" href="~/css/member_center.css" />
+<link type="text/css" rel="stylesheet" href="~/css/page_customized.css" />
+<link type="text/css" rel="stylesheet" href="~/css/agent.css" />
+<link type="text/css" rel="stylesheet" href="~/css/fullpage.css" />
+<link type="text/css" rel="stylesheet" href="~/css/zebra_datepicker.min.css" />
+<link type="text/css" rel="stylesheet" href="@GlobalCacheHelper.RazorShareContentPath/css/third_party.css" />
+
+
+        
+<a class="game_back jqBackLink" onclick="layer.closeAll(); $(this).hide();" style="display:none; z-index:99999999">
+    <img src="@GlobalCacheHelper.RazorShareContentPath/images/third_party/ic_header_back_gray.svg" />
+    <p>返回</p>
+</a>
+@RenderBody()

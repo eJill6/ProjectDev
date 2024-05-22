@@ -1,0 +1,81 @@
+﻿@using Web.Infrastructure
+
+@model PaginationSetting
+@* 因為有載用圖片的關係, 如果瀏覽器使用disable cache在切換頁面會閃爍 *@
+@if (Model.PageCount == 0)
+{
+    return;
+}
+@{
+    string goBtnClickAttribute = string.Format("gotoPage($('#pageNumber_{0}').val(), {1}, {2})", Model.SettingId, Model.PageCount, Model.Callback);
+}
+
+<div class="@Model.CssClass" id="pagination">
+    <div class="pagination">
+        <span>共 <em>@Model.PageCount</em> 页</span>
+        <div class="control border">
+            <a href="javascript:void(0)"
+               class="@(Model.PageNumber <= 1 ? "disable" : "")"
+               onclick="gotoPage(@Model.PageNumber - 1, @Model.PageCount, @Model.Callback)">
+                <span>
+                    <img src="~/images/element/ic_page_pre_light.svg" alt="">
+                </span>
+            </a>
+            <a href="javascript:void(0)"
+               class="@(Model.PageNumber >= Model.PageCount ? "disable" : "")"
+               onclick="gotoPage(@Model.PageNumber + 1, @Model.PageCount, @Model.Callback)">
+                <span>
+                    <img src="~/images/element/ic_page_next_light.svg" alt="">
+                </span>
+            </a>
+        </div>
+        <div class="control border">
+            @{
+                int startPageNumber = 1;
+                int endPageNumber = Model.PageCount;
+                if (Model.PageCount > 5)
+                {
+                    endPageNumber = Model.PageNumber < 4 ? 5 : Model.PageNumber + 2 >= Model.PageCount ? Model.PageCount : Model.PageNumber + 2;
+                    startPageNumber = endPageNumber - 4 < 1 ? 1 : endPageNumber - 4;
+                }
+
+                for (int i = startPageNumber; i <= endPageNumber; i++)
+                {
+                    <a href="javascript:void(0)"
+                       class="@(i == Model.PageNumber ? "active" : "")"
+                       onclick="gotoPage(@i, @Model.PageCount, @Model.Callback)">
+                        <span>@i</span>
+                    </a>
+                }
+            }
+        </div>
+        @if (Model.PageCount > 5 && Model.PageNumber + 2 < Model.PageCount)
+        {
+            <img class="ic_more" src="~/images/element/ic_page_more.svg" alt="">
+            <div class="control border">
+                <a href="javascript:void(0)" onclick="gotoPage(@Model.PageCount, @Model.PageCount, @Model.Callback)">
+                    <span>@Model.PageCount</span>
+                </a>
+            </div>
+        }
+
+        <div class="control">
+            <span>
+                第<input id="pageNumber_@Model.SettingId" type="text" class="group_pagination_input">页
+            </span>
+            <div class="btn">
+                <a class="btn_default main_color quots_btn" 
+                    href="javascript:void(0);"
+                    onclick="@goBtnClickAttribute">GO</a>                
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function gotoPage(pageNumber, pageCount, callback) {
+        if (pageNumber >= 1 && pageNumber <= pageCount && typeof callback === "function") {
+            callback(pageNumber);
+        }
+    }
+</script>

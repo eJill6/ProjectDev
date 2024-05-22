@@ -1,0 +1,47 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta content="email=no" name="format-detection" />
+    <title></title>
+    <!-- Favicons -->
+    <link href="~/images/favicon/favicon.png" rel="icon" />
+    <link href="~/images/favicon/apple-touch-icon.png" rel="apple-touch-icon" />
+    <!-- CSS link -->
+    <link rel="stylesheet" href="~/artcss/reset.css" />
+    <link rel="stylesheet" href="~/artcss/public.css" />
+    <link rel="stylesheet" href="~/artcss/modal.css" />
+    <link rel="stylesheet" href="~/artcss/element.css" />
+    <link rel="stylesheet" href="~/artcss/game.css" />
+    <link rel="stylesheet" href="~/artcss/record.css" />
+    <!-- JS link -->
+    <script src="~/CTS/dist/js/jquery/jquery-3.6.0.min.js"></script>
+    <script src="~/CTS/dist/js/amfe-flexible.min.js"></script>
+
+</head>
+<body>
+    <div class="main_container bg_second">
+        <div class="interneterror">
+            <div class="error"><img aes-src="~/images/public/img_interneterror.aes" /></div>
+            <div class="errortext"><img src="~/images/public/img_interneterror_text.png" /></div>
+            <div class="text">请点击圆点关闭重试<br />或者联系在线客服，谢谢</div>
+        </div>
+    </div>
+</body>
+    <script src="~/js/cryptoJS/aes.js"></script>
+    <script src="~/js/utils/platformAESService.js"></script>
+    <script>
+    var aesService = new platformAESService();
+    aesService.fetchAllAESImage();    
+    </script>
+</html>

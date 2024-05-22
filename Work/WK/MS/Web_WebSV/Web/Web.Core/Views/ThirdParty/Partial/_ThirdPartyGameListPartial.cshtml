@@ -1,0 +1,64 @@
+﻿@using JxBackendService.Common.Util
+@using Web.Infrastructure
+@using Web.Models
+@using JxBackendService.Model.ViewModel.ThirdParty
+@using Web.Helpers;
+@using ControllerShareLib.Models.Game.GameLobby;
+@model WebThirdPartyGamesViewModel
+@{
+    string message = "没有找到符合条件的结果";
+    string img = "~/images/third_party/ic_search_no_result.svg";
+
+    if (Model.GameTabType == GameTabTypeValue.Favorite && string.IsNullOrEmpty(Model.SearchGameName))
+    {
+        message = "目前没有收藏的游戏";
+        img = "~/images/third_party/ic_favorite_no_result.svg";
+    }
+
+    string isSelfOpenPage = Model.IsSelfOpenPage.ToJsonString();
+}
+<div>
+    @if (!string.IsNullOrEmpty(Model.SearchGameName))
+    {
+        <div class="pt_search_total">共搜索到<span>@Model.GameLobbyInfos.Count</span>条关于"@Model.SearchGameName"的结果</div>
+    }
+
+    <div class="pt_game_list_wrap @(Model.IsSquareGameImage ? "cover_square" : string.Empty)">
+        @if (!Model.GameLobbyInfos.Any())
+        {
+            <div class="no_result jqNoResult">
+                <div class="row">
+                    <img src="@img" alt="" />
+                </div>
+                <div class="row">
+                    <p>@message</p>
+                </div>
+            </div>
+        }
+        else
+        {
+            <ul>
+                @foreach (GameLobbyInfo game in Model.GameLobbyInfos)
+                {
+                    <li>
+                        <div class="item_outter jqGamePanel" data-id="@game.No">
+                            <a href="javascript:void(0)" onclick="gameHall.gotoGame('@game.MobileGameCode', @isSelfOpenPage)">
+                                <div class="game_pic">
+                                    <div class="hover_cover">
+                                        <div>立即游玩</div>
+                                    </div>
+                                    <img src="@game.FullImageUrl" alt="" />
+                                </div>
+                            </a>
+                            <div class="game_text">
+                                <p>@game.ChineseName</p>
+                                <div class="btn_favorite" onclick="gameHall.clickFavorite(@game.No)"></div>
+                            </div>
+                        </div>
+                    </li>
+                }
+            </ul>
+        }
+    </div>
+</div>
+

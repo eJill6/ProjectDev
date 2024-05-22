@@ -1,0 +1,329 @@
+@charset "UTF-8";
+
+/**************** Overflow ******************/
+
+ .record_filter{
+    display: flex;
+    justify-content: space-around;
+    height: 0.933rem;
+  
+}
+.record_filter .type_filter{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.record_filter .type_filter img{
+    width: 0.37rem;
+    height: 0.37rem;
+}
+
+.record_filter .type_filter p{
+  font-size: 0.36rem;
+  padding-left: 0.173rem;
+  color: #ebe8ce;
+ 
+}
+.record_content{
+    padding-bottom: 2rem;
+}
+
+ .record_content .waiting_bg{
+    background: url(../images/record/bg_waiting.png) no-repeat;
+    background-size: 100% auto;
+  
+ }
+ .record_content .win_bg{
+    background: url(../images/record/bg_win.png) no-repeat;
+    background-size: 100% auto;
+  
+ }
+
+ .record_content .lose_bg{
+    background: url(../images/record/bg_lose.png) no-repeat;
+    background-size: 100% auto;
+  
+ }
+
+ .record_content .record_item{
+    height: 2.72rem;
+    width: 9.2rem;
+    margin-bottom: 0.26rem;
+    position: relative;
+    padding: 0.35rem 0.4rem;
+ }
+ .record_content .record_item .wait_status_bg{
+    background: url(../images/record/lose_status.png) no-repeat;
+    background-size: 100% auto;
+    height: 0.72rem;
+    width: 2.81rem;
+ }
+ .record_content .record_item .win_status_bg{
+    background: url(../images/record/win_status.png) no-repeat;
+    background-size: 100% auto;
+    height: 0.72rem;
+    width: 2.81rem;
+ }
+ .record_content .record_item .lose_status_bg{
+    background: url(../images/record/lose_status.png) no-repeat;
+    background-size: 100% auto;
+    height: 0.72rem;
+    width: 2.81rem;
+ }
+
+ .record_content .record_item .back_status_bg{
+    background: url(../images/record/back_status.png) no-repeat;
+    background-size: 100% auto;
+    height: 0.72rem;
+    width: 3.3rem;
+ }
+
+ .record_content .record_item .record_status{
+ 
+    position: absolute;
+    bottom: 0.02rem;
+    right: 0.02rem;
+    display: flex;
+    justify-content: flex-end;
+   
+}
+ .record_item .record_status img{
+    width: 0.94rem;
+    height: 1.04rem;
+    margin-bottom: 0.24rem;
+}
+.record_item .status_content{
+    display: flex;
+    align-items: center;
+    padding-right: 0.4rem;
+    position: relative;
+    z-index: 1;
+}
+.record_item .wait_status_bg p{
+    font-size: 0.36rem;
+    font-family: FZZhengHeiS;
+    color: transparent;
+    background: linear-gradient(to bottom, #ffffff 0%, #fcfaea 50%,#a9a9a9 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    
+}
+
+.record_item .wait_status_bg p::before{
+    content: attr(text);
+    position: absolute;
+    z-index: -1;
+    text-shadow: 0 0.113rem 0.507rem rgba(0,0,0,1);
+}
+
+.record_item .win_status_bg p{
+    font-size: 0.36rem;
+    font-family: FZZhengHeiS;
+    color: transparent;
+    background: linear-gradient(to bottom, #fcfaea 0%,#d3bf7b 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+ 
+}
+
+.record_item .win_status_bg p::before{
+    content: attr(text);
+    position: absolute;
+    z-index: -1;
+    text-shadow: 0 0.113rem 0.507rem rgba(0,0,0,1);
+}
+
+.record_item .lose_status_bg p,
+.record_item .back_status_bg p{
+    font-size: 0.36rem;
+    font-family: FZZhengHeiS;
+    color: transparent;
+    background: linear-gradient(to bottom, #ffffff 0%, #fcfaea 50%,#a9a9a9 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    
+}
+
+.record_item .lose_status_bg p::before,
+.record_item .back_status_bg p::before{
+    content: attr(text);
+    position: absolute;
+    z-index: -1;
+    text-shadow: 0 0.113rem 0.507rem rgba(0,0,0,1);
+}
+
+.record_item .game_title {
+    font-family: FZZhengHeiS;
+    font-size: 0.42rem;
+    color: transparent;
+    background: linear-gradient(to bottom,#FFFFFF 0%, #ffdb3c 50%,#ffa800 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-style: italic;
+}
+
+.record_item.waiting_bg .game_title {
+    background: linear-gradient(to bottom, #efefef 0%,#dadada 50%,#939393 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.record_item.lose_bg .game_title {
+    background: linear-gradient(to bottom, #efefef 0%,#dadada 50%,#939393 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.record_item .game_info {
+    display: flex;
+    align-items: center;
+    font-size: 0.3rem;
+    line-height: 1.6;
+}
+
+
+
+.record_item .game_info img{
+    width: 0.15rem;
+    height: 0.26rem;
+}
+
+.record_item .game_info .item{
+    color: #8e8e8e;
+    padding-left: 0.16rem;
+}
+
+.record_item .game_info .white_text{
+    color: #ffffff;
+    padding-left: 0.16rem;
+}
+
+.record_item .game_info .yellow_text{
+    color: #ffda44;
+    padding-left: 0.16rem;
+}
+.record_item .game_info .blue_text{
+    color: #7dd5e0;
+    padding-left: 0.16rem;
+}
+.record_item .game_info_group {
+    padding-top: 0.1rem;
+}
+
+.record_item .game_Win{
+    color: #ff3c3c;
+    font-size: 0.48rem;
+    position: absolute;
+    right: 0.4rem;
+    top: 0.4rem;
+    font-family: 'din_alternatebold';
+}
+.record_item .game_bet{
+    color: #67d840;
+    font-size: 0.36rem;
+    position: absolute;
+    right: 0.4rem;
+    top: 1.02rem;
+    font-family: 'din_alternatebold';
+}
+.record_total{
+    background: url(../images/record/bg_total.png) no-repeat;
+    background-size: cover;
+    position: absolute;
+    bottom: 0rem;
+    z-index: 111;
+    width: 10rem;
+    height: 1.30666rem;
+}
+
+.record_total.android{
+    bottom: 1.333rem;
+}
+
+/* .record_total.android{
+    bottom: 1.333rem;
+} */
+
+.record_total .total_content{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.record_total .bet_total{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 33.3%;
+}
+
+.record_total .bet_total img{
+    position: absolute;
+    width: 0.76rem;
+    height: 0.78rem;
+    top: -0.4rem;
+    filter: drop-shadow(2px 3px 6px #0a0a0aaa);
+}
+
+.record_total .total_content .bet_total .item{
+    font-size: 0.3rem;
+    color: #b8b8b8;
+    padding-top: 0.23rem;
+    padding-bottom: 0.07rem;
+    line-height: 1;
+}
+
+.record_total .bet_total .content{
+    font-size: 0.29rem;
+   
+    display: flex;
+    font-size: 0.4rem;
+    font-family: 'din_alternatebold';
+}
+.record_total .bet_total .bet_text{
+   
+    color: #ffffff;
+  
+}
+
+.record_total .bet_total .win_text{
+   
+    color: #ff3c3c;
+  
+}
+.record_total .bet_total .profit_text{
+   
+    color: #ffda44;
+  
+}
+.record_total .bet_total .deficit_text{
+   
+    color: #67d840;
+  
+}
+
+
+.record_total .bet_total .content :nth-child(2){
+    font-family: Arial;
+    font-size: 0.33rem;
+    padding-left: 0.09rem;
+}
+/**************** 空狀態 ******************/
+.record_empty{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1.46rem;
+}
+
+.record_empty img{
+ height: 2.146rem;
+ width: 2.78rem;
+}
+.record_empty p{
+  font-size: 0.37rem;
+  color: #d8cca2;
+  padding-top: 0.18rem;
+   }

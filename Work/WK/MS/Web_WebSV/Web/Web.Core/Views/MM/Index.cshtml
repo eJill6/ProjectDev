@@ -1,0 +1,96 @@
+﻿@using ControllerShareLib.Helpers;
+@using Web.Extensions;
+@using Web.Helpers;
+@using Newtonsoft.Json;
+@using Newtonsoft.Json.Serialization;
+
+@model object
+
+@{ Layout = null; }
+
+@{
+
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <link type="text/css" rel="icon" href="@WebResourceHelper.Content("~/favicon.ico")" />
+    <title>秘觅</title>
+</head>
+<body>
+    <div id="client-app-lottery"></div>
+    <script type="text/javascript">
+         (function(){
+            window.toTokenPath = function (path) {
+                let token = '@Html.Raw(ViewBag.Token)';
+                return `/mwt/${token}${path}`;
+             };
+             window.xorKey = '@JxBackendService.Common.XorEncryptTool.Key';
+             window.openUrl = function (logonMode, url, win, encPath) {
+                 if (logonMode == LogonMode.Native) {
+                     $.openUrl(logonMode,url,win);
+                 }
+                 else if (logonMode == LogonMode.Lite) {
+                     window.top.postMessage(url, '@ViewBag.originUrl');
+                 }
+             };
+             window.mm = {};
+             window.mm.logonMode = '@ViewBag.logonMode';
+             window.mm.ossCdnDomain = '@ViewBag.ossCdnDomain';
+             window.mm.pageParamInfo = '@ViewBag.pageParamInfo';
+             window.mm.pageRedirectInfo = {};
+             window.mm.pageRedirectInfo.redrectType = @ViewBag.pageRedirectInfo.redrectType;
+             window.mm.pageRedirectInfo.refId = '@ViewBag.pageRedirectInfo.refId';
+
+             window.mm.zeroOneSetting = {};
+             // 提現
+             window.mm.zeroOneSetting.withdrawUrl = '@ViewBag.withdrawUrl';
+             // 兌換
+             window.mm.zeroOneSetting.exchangeUrl = '@ViewBag.exchangeUrl';
+             window.mm.zeroOneSetting.depositUrl = '@ViewBag.depositUrl';
+             // 兌換紀錄
+             window.mm.zeroOneSetting.exchangerecordUrl = '@ViewBag.exchangerecordUrl';
+
+             // 充提紀錄
+             window.mm.zeroOneSetting.dwReportUrl = '@ViewBag.dwReportUrl';
+
+             // 充提紀錄
+             window.mm.zeroOneSetting.bindPhoneUrl = '@ViewBag.bindPhoneUrl';
+
+             // 購買會員卡
+             window.mm.zeroOneSetting.vipCenter = '@ViewBag.vipCenter';
+
+             // cdn的位址
+             window.mm.cdnUrl = '@ViewBag.cdnUrl';
+
+             //谷歌统计标识code
+             window.mm.googleStatisticsCode='@ViewBag.googleStatisticsCode';
+        })();
+        var userId = '@ViewBag.UserId';
+    </script>
+    <style>
+        @{
+            /*MQ預設的通知框，此頁面隱藏起來*/
+         }
+        .notification {
+            display:none;
+        }
+    </style>
+    <partial name="~/Views/Shared/_GlobalVariables.cshtml" />
+    <partial name="~/Views/Shared/_JavaScriptJquery.cshtml" />   
+        
+    <script src="~/CTS/dist/js/network/sockjs-0.3.min.js"></script>
+    <script src="~/CTS/dist/js/network/stomp.min.js"></script>
+    <script src="~/CTS/dist/js/message-queue.js"></script>
+    <script src="~/CTS/ClientApp/dist/mimi-dating/js/app.js"></script>
+    <script src="~/CTS/ClientApp/dist/mimi-dating/js/chunk-vendors.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="~/CTS/ClientApp/dist/mimi-dating/css/app.css" />
+    <link type="text/css" rel="stylesheet" href="~/CTS/ClientApp/dist/mimi-dating/css/chunk-vendors.css" />
+</body>
+</html>

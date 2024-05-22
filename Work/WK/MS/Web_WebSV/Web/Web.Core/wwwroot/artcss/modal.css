@@ -1,0 +1,2067 @@
+@charset "UTF-8";
+
+/**************** Lottery Tabs ******************/
+
+.lottery_main .lottery_section {
+    display: flex;
+    padding: 0.2rem 0.467rem 0;
+}
+
+.lottery_section .lottery_tabs {
+    display: flex;
+    align-items: center;
+}
+
+.lottery_section .lottery_tabs .lottery_tab {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 2.513rem;
+    height: 0.573rem;
+    background: url("../images/game/sheet_tab_default.png") no-repeat;
+    background-size: 100% auto;
+    padding-left: 0.25rem;
+    cursor: pointer;
+}
+
+.lottery_section .lottery_tabs .lottery_tab.active {
+    background: url("../images/game/sheet_tab_active.png") no-repeat;
+    background-size: 100% auto;
+    z-index: 1;
+}
+
+.lottery_section .lottery_tabs .lottery_tab.tab_position {
+    position: relative;
+    left: -0.16rem;
+}
+
+.lottery_section .lottery_tabs .lottery_tab .lottery_tab_img {
+    width: 0.433rem;
+    height: 0.433rem;
+    margin-right: 0.146rem;
+}
+
+.lottery_section .lottery_tabs .lottery_tab .lottery_tab_img img {
+    width: 0.433rem;
+    height: 0.433rem;
+}
+
+.lottery_section .lottery_tabs .lottery_tab .lottery_tab_text {
+    font-size: 0.293rem;
+    font-weight: bold;
+    color: #c1a77b;
+}
+
+.lottery_section .lottery_tabs .lottery_tab.active .lottery_tab_text {
+    color: #fff1cb;
+}
+
+/**************** History ******************/
+
+.lottery_main .history_list {
+    height: 2.95rem;
+    border-top: 0.02rem solid #7f4d16;
+    border-bottom: 0.02rem solid #7f4d16;
+}
+
+.lottery_main .flex_empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.lottery_main .flex_empty .emptydata {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.lottery_main .flex_empty .emptydata .emptydata_img {
+    width: 2.306rem;
+    height: 1.78rem;
+    margin-bottom: 0.133rem;
+}
+
+.lottery_main .flex_empty .emptydata .emptydata_img img {
+    width: 2.306rem;
+    height: 1.78rem;
+}
+
+.lottery_main .flex_empty .emptydata .emptydata_text {
+    color: #c1a77b;
+    font-size: 0.293rem;
+    font-weight: 500;
+}
+
+.lottery_main .history_list.history_height {
+    height: 3.05rem;
+}
+
+.history_list .history_row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.1rem 0.533rem;
+}
+
+.history_list .history_row.spacing {
+    padding-top: 0.087rem;
+    padding-bottom: 0.087rem;
+}
+
+.history_list .history_row.spacing_shrinks {
+    padding: 0.065rem 1.33rem;
+}
+
+.history_list .history_row:nth-child(odd) {
+    background: linear-gradient(to right,rgba(0,0,0,0.09) 0%,rgba(0,0,0,0.3) 50%,rgba(0,0,0,0.08) 100%)
+}
+
+.history_list .history_row:nth-child(even) {
+    background: linear-gradient(to right,  rgba(85,71,45,0.2) 0%,rgba(108,79,22,0.5) 50%,rgba(85,71,45,0.2) 100%);
+}
+
+.history_list .history_row .kuaisan_item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.8rem;
+}
+
+.history_list .history_row .kuaisan_item:first-child {
+    justify-content: flex-start;
+    width: 2.6rem;
+}
+
+.history_list .history_row .kuaisan_item.column_1 {
+    width: 2rem;
+}
+
+.history_list .history_row .kuaisan_item.column_2 {
+    width: 0.7rem;
+    justify-content: center;
+}
+
+.history_list .history_row .kuaisan_item.column_3 {
+    justify-content: flex-end;
+}
+
+.history_list .history_row .kuaisan_item.column_4 {
+    justify-content: flex-start;
+    width: 1.5rem;
+}
+
+.history_list .history_row .kuaisan_item.column_fit {
+    width: fit-content;
+}
+
+.history_list .history_row .kuaisan_item .kuaisan_text {
+    font-size: 0.267rem;
+    color: #fff;
+    margin-right: 0.093rem;
+}
+
+.history_list .history_row .kuaisan_item .kuaisan_text:last-child {
+    margin-right: 0;
+}
+
+.history_list .history_row .kuaisan_item .kuaisan_text.cornsilk {
+    color: #fff6d8;
+}
+
+.history_list .history_row .kuaisan_item .kuaisan_text.kiwigreen {
+    color: #67e042;
+}
+
+.history_list .history_row .kuaisan_item .kuaisan_text.goldenyellow {
+    color: #ffde00;
+}
+
+.history_list .history_row .kuaisan_item .kuaisan_text.win_type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom,  #c2e4ff 0%,#ffffff 100%);
+    width: .4rem;
+    height: .4rem;
+    color: #1c6cbd;
+    font-weight: 500;
+    border-radius: 0.053rem;
+}
+
+.history_list .history_row .kuaisan_item .kuaisan_text.win_type.orange {
+    background: linear-gradient(to bottom,  #d43800 0%,#e46018 100%);
+    color: #fff;
+}
+
+/* .history_list .history_row .kuaisan_item .kuaisan_text.win_type.tartorange {
+    background: linear-gradient(to bottom,  #c51910 0%,#f54444 100%);
+    color: #fff;
+} */
+
+.history_list .history_row .kuaisan_item .kuaisan_text.win_type.red {
+    background: linear-gradient(to bottom,  #DA1A10 0%,#FF553A 100%);
+    color: #fff;
+}
+
+.history_list .history_row .kuaisan_item .kuaisan_text.win_type.blue {
+    background: linear-gradient(to bottom,  #0064b1 0%,#188ee7 100%);
+    color: #fff;
+}
+
+.history_list .history_row .kuaisan_item .kuaisan_text.win_type.green {
+    background: linear-gradient(to bottom,  #2f790b 0%,#5ca72b 100%);
+    color: #fff;
+}
+
+.history_list .history_row .kuaisan_item .kuaisan_text.win_type.black {
+    background: linear-gradient(to bottom,  #232323 0%,#535353 100%);
+    color: #fff;
+}
+
+.history_list .history_row .kuaisan_item .fullrange_type img {
+    height: .4rem;
+}
+
+.history_list .history_row .kuaisan_item .kuaisan_dice {
+    width: .4rem;
+    height: .4rem;
+    margin-right: 0.093rem;
+}
+
+.history_list .history_row .kuaisan_item .kuaisan_dice:last-child {
+    margin-right: 0;
+}
+
+.history_list .history_row .kuaisan_item.gesture {
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.history_list .history_row .kuaisan_item .kuaisan_continue {
+    font-family: FZZhengHeiS;
+    font-size: 0.3rem;
+    color: transparent;
+    background: linear-gradient(to bottom,  #fffdf8 0%,#ffffba 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    margin-right: 0.05rem;
+}
+
+.history_list .history_row .kuaisan_item .btn_continue {
+    width: 0.4rem;
+}
+
+/* 一分快車號碼1-10 */
+
+.history_list .history_row .kuaisan_item .pk10_num {
+    width: 0.373rem;
+    height: 0.4rem;
+    margin-right: 0.08rem;
+}
+
+.history_list .history_row .kuaisan_item .pk10_num img {
+    width: 0.373rem;
+    height: 0.4rem;
+}
+
+.history_list .history_row .kuaisan_item .pk10_num:last-child {
+    margin-right: 0rem;
+}
+
+/* 極速魚蝦蟹 */
+
+.history_list .history_row .kuaisan_item .jsyxx_dice {
+    width: 0.4rem;
+    height: 0.4rem;
+    margin-right: 0.093rem;
+}
+
+.history_list .history_row .kuaisan_item .jsyxx_dice img {
+    width: 0.4rem;
+    height: 0.4rem;
+}
+
+.history_list .history_row .kuaisan_item .jsyxx_dice:last-child {
+    margin-right: 0;
+}
+
+/* 一分時時彩0-9 */
+
+.history_list .history_row .kuaisan_item .omssc_num {
+    width: 0.426rem;
+    height: 0.426rem;
+    margin-right: 0.08rem;
+}
+
+.history_list .history_row .kuaisan_item .omssc_num img {
+    width: 0.426rem;
+    height: 0.426rem;
+}
+
+.history_list .history_row .kuaisan_item .omssc_num:last-child {
+    margin-right: 0rem;
+}
+
+/* 一分六合彩 開獎紀錄號碼 */
+
+.history_list .history_row .kuaisan_item .omlhc_num {
+    width: 0.426rem;
+    height: 0.426rem;
+    margin-right: 0.053rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.history_list .history_row .kuaisan_item .omlhc_num:last-child {
+    margin-right: 0;
+}
+
+.history_list .history_row .kuaisan_item .omlhc_num img {
+    width: 0.426rem;
+    height: 0.426rem;
+}
+
+.history_list .history_row .kuaisan_item .omlhc_num.green {
+    background: url(../images/game/omlhc_ball_sm_green.png);
+    background-size: 100% 100%;
+}
+
+.history_list .history_row .kuaisan_item .omlhc_num.blue {
+    background: url(../images/game/omlhc_ball_sm_blue.png);
+    background-size: 100% 100%;
+}
+
+.history_list .history_row .kuaisan_item .omlhc_num.red {
+    background: url(../images/game/omlhc_ball_sm_red.png);
+    background-size: 100% 100%;
+}
+
+.history_list .history_row .kuaisan_item .omlhc_plus {
+    width: 0.187rem;
+    height: 0.187rem;
+    margin: 0 0.113rem 0 0.06rem;
+}
+
+.history_list .history_row .kuaisan_item .omlhc_num .omlhc_text {
+    font-family: Impact;
+    font-size: 0.293rem;
+}
+
+.history_list .history_row .kuaisan_item .omlhc_num .omlhc_text.green {
+    color: #1f4415;
+}
+
+.history_list .history_row .kuaisan_item .omlhc_num .omlhc_text.blue {
+    color: #0a3f6c;
+}
+
+.history_list .history_row .kuaisan_item .omlhc_num .omlhc_text.red {
+    color: #5f0909;
+}
+
+.history_list .history_row .kuaisan_item .type_h {
+    width: 0.667rem;
+    height: 0.467rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.history_list .history_row .kuaisan_item .type_h.black {
+    background: url(../images/game/type_jslp_sm_black.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.history_list .history_row .kuaisan_item .type_h.green {
+    background: url(../images/game/type_jslp_sm_green.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.history_list .history_row .kuaisan_item .type_h.red {
+    background: url(../images/game/type_jslp_sm_red.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.history_list .history_row .kuaisan_item .type_h .type_text {
+    font-family: 'YesevaOne';
+    font-size: 0.3733rem;
+    font-weight: bold;
+    color: transparent;
+    background: #ffffff;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.history_list .history_row .kuaisan_item .type_h .type_text::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.03rem #000000;
+    z-index: -1;
+}
+
+.nuinui_row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.nuinui_row .issue,.jslh_row .issue {
+    font-size: 0.267rem;
+    font-weight: bold;
+    color: #e9deca;
+    background: url(../images/game/bg_record_issue.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 3.207rem;
+    height: 0.4267rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nuinui_row .issue.md {
+    font-size: 0.28rem;
+    background: url(../images/game/bg_record_md_issue.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 3.487rem;
+    height: 0.467rem;
+}
+
+.nuinui_row .versus {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1.1rem;
+    height: 1.207rem;
+    padding-top: 0.15rem;
+}
+
+.nuinui_row .versus img {
+    width: 1.1rem;
+    height: 1.207rem;
+}
+
+.nuinui_row .versus.spacing {
+    padding-top: 0.22rem;
+}
+
+.nuinui_row .blue {
+    background: url(../images/game/bg_sm_blue_nuinui.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 4.74rem;
+    height: 1.475rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.18rem;
+    padding-right: 0.6rem;
+}
+
+.nuinui_row .red {
+    background: url(../images/game/bg_sm_red_nuinui.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 4.74rem;
+    height: 1.475rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.18rem;
+    padding-left: 0.6rem;
+}
+
+.nuinui_row .blue.baccarat {
+    background: url(../images/game/bg_sm_blue_baccarat.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    justify-content: flex-start;
+    padding-top: 0.28rem;
+}
+
+.nuinui_row .red.baccarat {
+    background: url(../images/game/bg_sm_red_baccarat.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    justify-content: flex-end;
+    padding-top: 0.28rem;
+}
+
+.nuinui_row .blue.baccarat.md {
+    background: url(../images/game/bg_md_blue_baccarat.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    justify-content: flex-start;
+    padding-top: 0.28rem;
+}
+
+.nuinui_row .red.baccarat.md {
+    background: url(../images/game/bg_md_red_baccarat.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    justify-content: flex-end;
+    padding-top: 0.28rem;
+}
+
+.nuinui_row .blue.md {
+    background: url(../images/game/bg_md_blue_nuinui.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 4.8rem;
+    height: 1.867rem;
+    padding-top: 0.4rem;
+}
+
+.nuinui_row .red.md {
+    background: url(../images/game/bg_md_red_nuinui.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 4.8rem;
+    height: 1.867rem;
+    padding-top: 0.4rem;
+}
+
+.nuinui_row .blue .blue_inner,.nuinui_row .red .red_inner {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    z-index: 1;
+}
+
+.nuinui_row .blue .blue_inner .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-right: -0.4rem;
+    z-index: 2;
+}
+
+.nuinui_row .red .red_inner .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-left: -0.4rem;
+    z-index: 2;
+}
+
+
+.nuinui_row .blue .blue_inner .item .title {
+    font-family: 'FZZhengHeiS';
+    font-size: 0.346rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #f2f8ff 0%,#4196ff 60%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-bottom: 0.1rem;
+}
+
+.nuinui_row .blue .blue_inner .item .title::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.06rem #121a39;
+    z-index: -1;
+}
+
+.nuinui_row .red .red_inner .item .title {
+    font-family: 'FZZhengHeiS';
+    font-size: 0.346rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #ffffff 0%,#ff6c6c 60%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-bottom: 0.1rem;
+}
+
+.nuinui_row .red .red_inner .item .title::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.06rem #3a0f0f;
+    z-index: -1;
+}
+
+.nuinui_row .blue .blue_inner .item .title.md,.nuinui_row .red .red_inner .item .title.md {
+    font-size: 0.453rem;
+}
+
+.nuinui_row .blue .blue_inner .item .bg_result,.nuinui_row .red .red_inner .item .bg_result {
+    background: url(../images/game/bg_porker_sm_frame.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 2.493rem;
+    height: 0.467rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.nuinui_row .blue .blue_inner .item .bg_result.md,.nuinui_row .red .red_inner .item .bg_result.md {
+    background: url(../images/game/bg_porker_md_frame.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 2.333rem;
+    height: 0.6133rem;
+}
+
+.nuinui_row .blue .blue_inner .item .bg_result .win,.nuinui_row .red .red_inner .item .bg_result .win {
+    font-size: 0.293rem;
+    font-weight: bold;
+    color: rgba(0,0,0,0.01);
+    background: linear-gradient(to bottom, #fffe8b 0%,#ffa900 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-right: 0.15rem;
+}
+
+.nuinui_row .blue .blue_inner .item .bg_result .win:last-child,.nuinui_row .red .red_inner .item .bg_result .win:last-child {
+    padding-right: 0;
+}
+
+.nuinui_row .blue .blue_inner .item .bg_result .win::before,.nuinui_row .red .red_inner .item .bg_result .win::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.03rem #4c3520;
+    z-index: -1;
+}
+
+.nuinui_row .blue .blue_inner .item .bg_result .lose,.nuinui_row .red .red_inner .item .bg_result .lose {
+    font-size: 0.293rem;
+    font-weight: bold;
+    color: rgba(0,0,0,0.01);
+    background: linear-gradient(to bottom, #fefefe 0%,#acacac 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.nuinui_row .blue .blue_inner .item .bg_result .lose::before,.nuinui_row .red .red_inner .item .bg_result .lose::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.03rem #2b2b2b;
+    z-index: -1;
+}
+.nuinui_row .blue .blue_inner .item .bg_result .win.md,
+.nuinui_row .red .red_inner .item .bg_result .win.md,
+.nuinui_row .blue .blue_inner .item .bg_result .lose.md,
+.nuinui_row .red .red_inner .item .bg_result .lose.md {
+    font-size: 0.346rem;
+}
+
+.nuinui_row .blue .blue_inner .item .bg_result .result,
+.nuinui_row .blue .blue_inner .item .bg_result .result img,
+.nuinui_row .red .red_inner .item .bg_result .result,
+.nuinui_row .red .red_inner .item .bg_result .result img {
+    width: auto;
+    height: 0.333rem;
+}
+
+.nuinui_row .blue .blue_inner .item .bg_result .result.md,
+.nuinui_row .blue .blue_inner .item .bg_result .result.md img,
+.nuinui_row .red .red_inner .item .bg_result .result.md,
+.nuinui_row .red .red_inner .item .bg_result .result.md img {
+    width: auto;
+    height: 0.407rem;
+}
+
+.nuinui_row .blue .blue_inner .poker{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.22rem;
+}
+
+.nuinui_row .red .red_inner .poker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.22rem;
+}
+
+.nuinui_row .blue .blue_inner .poker .piece {
+    width: 0.68rem;
+    height: 0.767rem;
+    margin-left: -0.32rem;
+    /* filter: drop-shadow(0 0 0.067rem rgba(0,0,0,0.7)); */
+}
+
+.nuinui_row .red .red_inner .poker .piece {
+    width: 0.68rem;
+    height: 0.767rem;
+    margin-right: -0.32rem;
+    /* filter: drop-shadow(0 0 0.067rem rgba(0,0,0,0.7)); */
+}
+
+.nuinui_row .blue .blue_inner .poker .piece.md {
+    width: 0.78rem;
+    height: 0.8733rem;
+    margin-left: -0.36rem;
+    /* filter: drop-shadow(0 0 0.067rem rgba(0,0,0,0.7)); */
+}
+
+.nuinui_row .red .red_inner .poker .piece.md {
+    width: 0.78rem;
+    height: 0.8733rem;
+    margin-right: -0.36rem;
+    /* filter: drop-shadow(0 0 0.067rem rgba(0,0,0,0.7)); */
+}
+
+.nuinui_row .blue.baccarat .blue_inner .poker_baccarat {
+    position: absolute;
+    left: 2.25rem;
+    top:  0.175rem;
+    display: flex;
+}
+
+.nuinui_row .red.baccarat .red_inner .poker_baccarat {
+    position: absolute;
+    right: 2.25rem;
+    top:  0.175rem;
+    display: flex;
+}
+
+.nuinui_row .blue.baccarat .blue_inner .poker_baccarat.md {
+    top: 0.3rem;
+    left: 1.85rem;
+}
+
+.nuinui_row .red.baccarat .red_inner .poker_baccarat.md {
+    top: 0.3rem;
+    right: 1.85rem;
+}
+
+.nuinui_row .blue.baccarat .blue_inner .poker_baccarat .piece {
+    width: 0.567rem;
+    height: 0.793rem;
+    margin-right: 0.08rem;
+}
+
+.nuinui_row .blue.baccarat .blue_inner .poker_baccarat .piece:last-child {
+    margin-right: 0;
+}
+
+.nuinui_row .blue.baccarat .blue_inner .poker_baccarat .piece.left {
+    transform: rotate(90deg);
+    margin-right: 0.2rem;
+    margin-top: 0.11rem;
+}
+
+.nuinui_row .red.baccarat .red_inner .poker_baccarat .piece {
+    width: 0.567rem;
+    height: 0.793rem;
+    margin-left: 0.08rem;
+}
+
+.nuinui_row .red.baccarat .red_inner .poker_baccarat .piece:first-child {
+    margin-left: 0;
+}
+
+.nuinui_row .red.baccarat .red_inner .poker_baccarat .piece.right {
+    transform: rotate(90deg);
+    margin-left: 0.2rem;
+    margin-top: 0.11rem;
+}
+
+.nuinui_row .blue.baccarat .blue_inner .poker_baccarat .piece.md,.nuinui_row .red.baccarat .red_inner .poker_baccarat .piece.md {
+    width: 0.6467rem;
+    height: 0.9067rem;
+}
+
+/* 極速龍虎 開獎記錄 */
+
+.jslh_row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 1.48rem;
+}
+
+.jslh_row.height {
+    height: 1.867rem;
+}
+
+.jslh_row .dragon {
+    background: url(../images/game/bg_record_dragon.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 4.86rem;
+    height: 1.48rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.jslh_row .dragon.md {
+    width: 5rem;
+    height: 1.867rem;
+}
+
+.jslh_row .dragon .item {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.jslh_row .dragon .item .bg {
+    background: url(../images/game/img_frame_record_dragon.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 1.013rem;
+    height: 1.32rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jslh_row .dragon.md .item .bg {
+    width: 1.193rem;
+    height: 1.58rem;
+}
+
+.jslh_row .dragon .item .bg .poker {
+    width: 0.765rem;
+    height: 1.055rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jslh_row .dragon.md .item .bg .poker {
+    width: 0.933rem;
+    height: 1.295rem;
+}
+
+.jslh_row .dragon .item .box .win,.jslh_row .dragon .item .box .lose,.jslh_row .dragon .item .box .tie {
+    width: 0.96rem;
+    height: 0.687rem;
+}
+
+.jslh_row .dragon .item .text {
+    width: 0.813rem;
+    height: 0.68rem;
+}
+
+.jslh_row .dragon .item .battle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.4rem 0.15rem 0.5rem;
+}
+
+.jslh_row .dragon.md .item .battle {
+    padding-bottom: 0.3rem;
+}
+
+.jslh_row .tiger {
+    background: url(../images/game/bg_record_tiger.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 4.86rem;
+    height: 1.48rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.jslh_row .tiger.md {
+    width: 5rem;
+    height: 1.867rem;
+}
+
+.jslh_row .tiger .item {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.jslh_row .tiger .item .bg {
+    background: url(../images/game/img_frame_record_tiger.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 1.013rem;
+    height: 1.32rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jslh_row .tiger.md .item .bg {
+    width: 1.193rem;
+    height: 1.58rem;
+}
+
+.jslh_row .tiger .item .bg .poker {
+    width: 0.765rem;
+    height: 1.055rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jslh_row .tiger.md .item .bg .poker {
+    width: 0.933rem;
+    height: 1.295rem;
+}
+
+.jslh_row .tiger .item .box .win,.jslh_row .tiger .item .box .lose,.jslh_row .tiger .item .box .tie {
+    width: 0.96rem;
+    height: 0.687rem;
+}
+
+.jslh_row .tiger .item .text {
+    width: 0.813rem;
+    height: 0.68rem;
+}
+
+.jslh_row .tiger .item .battle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.5rem 0.15rem 0.4rem;
+}
+
+.jslh_row .tiger.md .item .battle {
+    padding-bottom: 0.3rem;
+}
+
+.jslh_row .versus {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0.7467rem;
+    height: 0.62rem;
+    padding-top: 0.2rem;
+}
+
+.jslh_row .versus img {
+    width: 0.7467rem;
+    height: 0.62rem;
+}
+
+.history_line {
+    width: 100%;
+    height: 0.0333rem;
+    background: linear-gradient(to right, rgba(134,122,87,0) 0%,#b5a76c 50%,rgba(134,122,87,0) 100%);
+}
+
+.history_line.spacing {
+    margin-bottom: 0.2rem;
+}
+
+/* popup */
+
+.popup_main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toast_main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    width: -moz-fit-content;
+    width: fit-content;
+    transition: opacity .2s linear;
+    z-index: 9999;
+    opacity: 1;
+}
+
+.toast_main.top_spacing {
+    padding-top: 1.4rem;
+}
+
+/* 投注成功 */
+
+.toast_main .popup_successful_wrapper {
+    width: 7.713rem;
+    height: auto;
+}
+
+/* 前往充值 */
+
+/* 製作邊框漸層 start */
+
+.popup_main .popup_wrapper {
+    padding: 0.03rem; 
+    border-radius: 0.247rem; 
+    background: linear-gradient(45deg,  rgba(134,122,87,1) 0%,rgba(222,207,126,1) 50%,rgba(134,122,87,1) 100%);
+    box-shadow: 0 0.133rem 0.307rem rgba(0,0,0,.5);
+    flex: 1;
+    margin: 0 0.667rem;
+    position: relative;
+    z-index: 999;
+}
+
+.popup_wrapper .popup_outter {
+    width: 100%; 
+    height: 100%; 
+    border-radius: 0.247rem; 
+    background: url(../images/modal/bg_goldlight.png) no-repeat, url(../images/modal/bg_plaid.png) no-repeat, linear-gradient(to top,  #1b1f24 0%,#2e2e2e 100%);
+    background-size: 100% auto;
+    padding: 0.467rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* 製作邊框漸層 end */
+
+.popup_wrapper .popup_outter .popup_headerimg {
+    width: 2.333rem;
+    height: 1.927rem;
+    position: absolute;
+    top: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.popup_wrapper .popup_outter .popup_headerimg img {
+    width: 2.333rem;
+    height: 1.927rem;
+}
+
+.popup_wrapper .popup_outter .close {
+    width: 0.4rem;
+    height: auto;
+    position: absolute;
+    right: 0.433rem;
+    top: 0.333rem;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.popup_wrapper .popup_outter .close img{
+    width: 0.4rem;
+    height: auto;
+}
+
+.popup_wrapper .popup_outter .popup_inner {
+    padding-top: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.popup_wrapper .popup_outter .popup_inner .popup_title {
+    font-size: 0.44rem;
+    font-weight: bold;
+    color: transparent;
+    text-shadow: 0 0 0.333rem rgba(0, 0, 0, .3);
+    background: linear-gradient(to bottom,  #fffdde 50%,#ffdd68 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.popup_wrapper .popup_outter .popup_inner .popup_text {
+    font-size: 0.4rem;
+    font-weight: bold;
+    color: #ffea97;
+    margin-bottom: 0.5rem;
+}
+
+.popup_wrapper .popup_outter .popup_btns {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.popup_wrapper .popup_outter .popup_btns .btn_default {
+    font-size: 0.4rem;
+    font-weight: 500;
+    color: #fff;
+    height: 1.07rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 0 0.333rem rgba(0, 0, 0, .5);
+    box-shadow: inset 0 0 0.12rem rgba(255, 255, 255, .16);
+    background: linear-gradient(to right,  rgba(70,70,70,1) 0%,rgba(62,62,62,1) 50%,rgba(70,70,70,1) 100%);
+    border-radius: 0.133rem;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    cursor: pointer;
+    margin-right: 0.3rem;
+}
+
+.popup_wrapper .popup_outter .popup_btns .btn_default:last-child {
+    margin-right: 0;
+}
+
+.popup_wrapper .popup_outter .popup_btns .btn_default::before {
+    content: "";
+    width: 100%;
+    height: 0.535rem;
+    background: rgba(255,255,255,.1);
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+}
+
+.popup_wrapper .popup_outter .popup_btns .btn_default.basis_50 {
+    flex-basis: 50%;
+}
+
+.popup_wrapper .popup_outter .popup_btns .btn_default.confirm {
+    background: linear-gradient(to right,  rgba(255,209,67,1) 0%,rgba(193,135,24,1) 50%,rgba(255,209,67,1) 100%);
+}
+
+.popup_wrapper .popup_outter .popup_btns .btn_default.confirm.basis_50 {
+    flex-basis: 50%;
+}
+
+.popup_wrapper .popup_outter .popup_btns .btn_default.confirm::before {
+    content: "";
+    background: rgba(255,255,255,.17);
+}
+
+
+.confirm_wrapper .confirm_outter .setting_btns {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding-bottom: 0.667rem;
+}
+
+.confirm_wrapper .confirm_outter .setting_btns .btn_default {
+    font-size: 0.4rem;
+    font-weight: 500;
+    color: #fff;
+    height: 1.07rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 0 0.333rem rgba(0, 0, 0, .5);
+    box-shadow: inset 0 0 0.12rem rgba(255, 255, 255, .16);
+    background: linear-gradient(to right,  rgba(70,70,70,1) 0%,rgba(62,62,62,1) 50%,rgba(70,70,70,1) 100%);
+    border-radius: 0.133rem;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.confirm_wrapper .confirm_outter .setting_btns .btn_default.confirm.basis_40 {
+    flex-basis: 40%;
+}
+
+.confirm_wrapper .confirm_outter .setting_btns .btn_default.confirm {
+    background: linear-gradient(to right,  rgba(255,209,67,1) 0%,rgba(193,135,24,1) 50%,rgba(255,209,67,1) 100%);
+}
+
+.confirm_wrapper .confirm_outter .setting_btns .btn_default::before {
+    content: "";
+    width: 100%;
+    height: 0.535rem;
+    background: rgba(255,255,255,.1);
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+}
+
+.confirm_wrapper .confirm_outter .setting_btns .btn_default.confirm::before {
+    content: "";
+    background: rgba(255,255,255,.17);
+}
+
+/* 恭喜中獎 */
+
+.toast_main .congrats_wrapper {
+    padding: 0.03rem;
+    border-radius: 0.247rem;
+    background: linear-gradient(45deg, rgba(134,122,87,1) 0%,rgba(222,207,126,1) 50%,rgba(134,122,87,1) 100%);
+    box-shadow: 0 0.133rem 0.307rem rgba(0,0,0,.5);
+}
+
+.congrats_wrapper .congrats_outter {
+    width: 100%;
+    height: 1.813rem;
+    border-radius: 0.247rem;
+    background: url(../images/modal/bg_goldlight.png) no-repeat, url(../images/modal/bg_sm_plaid.png) no-repeat, linear-gradient(to top, #1b1f24 0%,#2e2e2e 100%);
+    background-size: auto 1.813rem;
+    min-width: 5.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.congrats_wrapper .congrats_outter .popup_headerimg.congrats {
+    display: flex;
+    width: 6.193rem;
+    height: 3.1rem;
+    position: absolute;
+    top: -2.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.congrats_wrapper .congrats_outter .congrats_item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.congrats_wrapper .congrats_outter .congrats_item .congrats_icon {
+    width: 0.727rem;
+    height: 0.727rem;
+    margin-right: 0.167rem;
+}
+
+.congrats_wrapper .congrats_outter .congrats_item .congrats_icon img {
+    width: 0.727rem;
+    height: 0.727rem;
+}
+
+.congrats_wrapper .congrats_outter .congrats_item .congrats_text {
+    font-family: 'din_alternatebold';
+    font-size: 0.533rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #ffedbd 0%,#ffdb3c 50%, #ffa800 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+/* 確認投注 */
+
+.confirm_main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 製作邊框漸層 start */
+
+.confirm_main .confirm_wrapper {
+    width: 100%;
+    padding: 0.03rem 0.03rem 0; 
+    border-radius: 0.247rem 0.247rem 0 0; 
+    background: linear-gradient(45deg,  rgba(134,122,87,1) 0%,rgba(222,207,126,1) 50%,rgba(134,122,87,1) 100%);
+    flex: 1;
+    position: fixed;
+    bottom: 0;
+}
+
+.confirm_main .confirm_wrapper.iphone {
+    bottom: 0.8rem;
+}
+
+.confirm_main .confirm_outter {
+    width: 100%; 
+    height: 100%; 
+    border-radius: 0.247rem 0.247rem 0 0; 
+    background: url(../images/modal/bg_goldlight.png) no-repeat, url(../images/modal/bg_plaid.png) no-repeat, linear-gradient(to top,  #1b1f24 0%,#302e27 100%);
+    background-size: 100% auto;
+    box-shadow: 0 0.133rem 0.307rem rgba(0,0,0,.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.confirm_main .confirm_outter.bg_consecutive {
+    background: url(../images/modal/bg_plaid.png) no-repeat, linear-gradient(to top,  #1b1f24 0%,#302e27 100%);
+    background-size: 100% auto;
+}
+
+/* 製作邊框漸層 end */
+
+.confirm_main .confirm_outter .confirm_close {
+    width: 0.933rem;
+    height: 0.933rem;
+    position: absolute;
+    right: 0.167rem;
+    top: -1.167rem;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.confirm_main .confirm_outter .confirm_close img {
+    width: 0.933rem;
+    height: 0.933rem;
+}
+
+.confirm_main .confirm_outter .confirm_header {
+    background: url("../images/modal/bg_confirm_betting_header.png") no-repeat;
+    background-size: 100% auto;
+    width: 100%;
+    height: 1.087rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirm_main .confirm_outter .confirm_header .confirm_header_title {
+    font-family: FZZhengHeiS;
+    font-size: 0.467rem;
+    color: transparent;
+    background: linear-gradient(to bottom,  #fffdde 50%,#ffdd68 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.confirm_main .confirm_outter .confirm_up {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0.44rem;
+    width: 100%;
+    height: 1.5rem;
+}
+
+.confirm_main .confirm_outter .confirm_up .confirm_infos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirm_main .confirm_outter .confirm_up .confirm_infos .confirm_gameimg {
+    width: 0.94rem;
+    height: 0.94rem;
+    margin-right: 0.22rem;
+}
+
+/* .confirm_main .confirm_outter .confirm_up .confirm_infos .confirm_gameimg img {
+    width: 0.94rem;
+    height: 0.94rem;
+} */
+
+.confirm_main .confirm_outter .confirm_up .confirm_infos .confirm_gameimg.pk10_car {
+    width: 1.773rem;
+    display: flex;
+    align-items: center;
+}
+
+.confirm_main .confirm_outter .confirm_up .confirm_infos .confirm_gameimg.omssc {
+    width: 0.886rem;
+    display: flex;
+    align-items: center;
+}
+
+.confirm_main .confirm_outter .confirm_up .confirm_infos .confirm_info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.confirm_main .confirm_outter .confirm_up .confirm_infos .confirm_info .confirm_title {
+    font-family: FZZhengHeiS;
+    font-size: 0.453rem;
+    font-style: italic;
+    color: transparent;
+    background: linear-gradient(to bottom, #FFFFFF 0%, #ffdb3c 50%,#ffa800 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.confirm_main .confirm_outter .confirm_up .confirm_infos .confirm_info .confirm_num {
+    font-size: 0.267rem;
+    font-weight: 500;
+    color: #ffea97;
+}
+
+.confirm_main .confirm_outter .confirm_up .confirm_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirm_main .confirm_outter .confirm_up .confirm_content .confirm_digits {
+    background: url(../images/game/img_sm_digits.png) no-repeat;
+    background-size: 100% 100%;
+    width: 0.68rem;
+    height: 0.93rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.067rem;
+}
+
+.confirm_main .confirm_outter .confirm_up .confirm_content .confirm_digits:last-child {
+    margin-right: 0;
+}
+
+.confirm_main .confirm_outter .confirm_up .confirm_content .confirm_digits .digits_text {
+    font-family: 'din_alternatebold';
+    font-size: 0.76rem;
+    color: rgba(0,0,0,0.01);
+    background: linear-gradient(to bottom, #ffffff 25%,#ffe5b7 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-bottom: 0.04rem;
+}
+
+.confirm_main .confirm_outter .confirm_middle {
+    width: 100%;
+    border-radius: 0.267rem;
+    padding: 0 0.2667rem;
+}
+
+.confirm_main .confirm_outter .confirm_middle .list_outter {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.267rem 0.267rem 0 0;
+    background: #1c1c1d;
+    position: relative;
+}
+
+.confirm_main .confirm_outter .confirm_middle .list_outter .list_inner{
+    width: 100%;
+    padding: 0.03rem;
+    border-radius: 0.267rem 0.267rem 0 0;
+    background: linear-gradient(120deg,  rgba(144,103,39,0.2) 0%,rgba(239,181,124,0.4) 50%,rgba(144,103,39,0.2) 100%);
+    flex: 1;
+}
+
+.confirm_main .confirm_outter .confirm_middle .list_outter .list_inner .list_header_outter {
+    background: linear-gradient(to bottom,  rgba(30,28,25,1) 54%,rgba(72,61,41,1) 100%);
+    border-radius: 0.267rem 0.267rem 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 0.887rem;
+}
+
+.confirm_main .confirm_outter .confirm_middle .list_outter .list_inner .list_header_outter .list_header_title {
+    font-size: 0.32rem;
+    font-weight: 500;
+    color: #ffea97;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.confirm_main .confirm_outter .confirm_middle .list_outter .list_inner .list_header_outter .list_header_title:first-child {
+    flex: none;
+    width: 50%;
+}
+
+.confirm_main .confirm_outter .confirm_middle .list_outter .list_inner .list_header_outter .list_header_title:last-child {
+    flex: none;
+    width: 15%;
+}
+
+.confirm_main .confirm_outter .confirm_middle .confirm_list_outter {
+    width: 100%;
+    padding: 0 0.03rem 0.03rem;
+    border-radius: 0 0 0.267rem 0.267rem;
+    background: linear-gradient(to bottom,  rgba(97,76,43,0.4) 0%,rgba(239,211,124,1) 50%,rgba(97,76,43,0.2) 100%);
+}
+
+.confirm_main .confirm_outter .confirm_middle .confirm_list_outter .confirm_list_inner {
+    height: 5.3rem;
+    padding: 0.03rem;
+    border-radius: 0 0 0.267rem 0.267rem;
+    background: #1c1c1d;
+}
+
+.confirm_main .confirm_outter .confirm_middle .confirm_list_outter .confirm_list_inner .confirm_row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 0.8rem;
+}
+
+.confirm_main .confirm_outter .confirm_middle .confirm_list_outter .confirm_list_inner .confirm_row:nth-child(odd) {
+    background: linear-gradient(to right,  rgba(88,71,53,0.1) 0%,rgba(88,71,53,0.3) 50%,rgba(88,71,53,0.1) 100%);
+}
+
+.confirm_main .confirm_outter .confirm_middle .confirm_list_outter .confirm_list_inner .confirm_row:nth-child(even) {
+    background: linear-gradient(to right,  rgba(88,71,53,0.03) 0%,rgba(88,71,53,0.08) 50%,rgba(88,71,53,0.03) 100%);
+}
+
+.confirm_main .confirm_outter .confirm_middle .confirm_list_outter .confirm_list_inner .confirm_row .confirm_item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.confirm_main .confirm_outter .confirm_middle .confirm_list_outter .confirm_list_inner .confirm_row .confirm_item:first-child {
+    flex: none;
+    width: 50%;
+}
+
+.confirm_main .confirm_outter .confirm_middle .confirm_list_outter .confirm_list_inner .confirm_row .confirm_item:last-child {
+    flex: none;
+    width: 15%;
+}
+
+.confirm_main .confirm_outter .confirm_middle .confirm_list_outter .confirm_list_inner .confirm_row .confirm_item .confirm_text {
+    font-size: 0.347rem;
+    color: #fff1cb;
+}
+
+.confirm_main .confirm_outter .confirm_middle .confirm_list_outter .confirm_list_inner .confirm_row .confirm_item .confirm_text span {
+    color: #ffaf07;
+}
+
+.confirm_main .confirm_outter .confirm_middle .confirm_list_outter .confirm_list_inner .confirm_row .confirm_item .confirm_text.white {
+    color: #fff;
+}
+
+.confirm_main .confirm_outter .confirm_middle .confirm_list_outter .confirm_list_inner .confirm_row .confirm_item .confirm_icon {
+    width: 0.5rem;
+    height: 0.5rem;
+    cursor: pointer;
+}
+
+.confirm_main .confirm_outter .confirm_middle .confirm_list_outter .confirm_list_inner .confirm_row .confirm_item .confirm_icon img {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.confirm_main .confirm_outter .confirm_bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.267rem 0.2667rem 1.733rem;
+    width: 100%;
+}
+
+.confirm_main .confirm_outter .confirm_bottom .multiple_item {
+    font-size: 0.32rem;
+    font-weight: 500;
+    color: #8a8a8a;
+    text-shadow: 0 0.027rem 0.467rem #000;
+    background: url(../images/modal/img_btn_multiple_default.png) no-repeat;
+    background-size: 100% auto;
+    width: 1.753rem;
+    height: 0.82rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.confirm_main .confirm_outter .confirm_bottom .multiple_item.active {
+    color: #f5d680;
+    text-shadow: 0 0.027rem 0.467rem #000;
+    background: url(../images/modal/img_btn_multiple_active.png) no-repeat;
+    background-size: 100% auto;
+}
+
+/* 設置籌碼 */
+
+.confirm_main .confirm_outter .setting_wrapper.flex_setting {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0.4rem 0.467rem;
+}
+
+.confirm_main .confirm_outter .setting_wrapper .setting_chips {
+    max-width: 2.1rem;
+    width: 2.1rem;
+    height: 2.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.2rem;
+    cursor: pointer;
+}
+
+.confirm_main .confirm_outter .setting_wrapper .setting_chips:nth-child(4) {
+    margin-right: 0;
+}
+
+.confirm_main .confirm_outter .setting_wrapper .setting_chips:nth-child(8) {
+    margin-right: 0;
+}
+
+.confirm_main .confirm_outter .setting_wrapper .setting_chips.active {
+    background: url(../images/modal/img_chips_setting_active.png) no-repeat;
+    background-size: 100% auto;
+}
+
+.confirm_main .confirm_outter .setting_wrapper .setting_chips .setting_num {
+    -webkit-filter: drop-shadow(0 0.113rem 0.2rem rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(0 0.113rem 0.2rem rgba(0, 0, 0, 0.4));
+    width: 1.64rem;
+    height: 1.74rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 0.08rem;
+}
+
+.confirm_main .confirm_outter .setting_wrapper .setting_chips .setting_num .setting_option {
+    font-family: Arial;
+    font-size: 0.373rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.confirm_main .confirm_outter .setting_wrapper .setting_chips .setting_num.yellow {
+    background: url(../images/game/img_chip_yellow.png) no-repeat;
+    background-size: 100% auto;
+}
+
+.confirm_main .confirm_outter .setting_wrapper .setting_chips .setting_num.blue {
+    background: url(../images/game/img_chip_blue.png) no-repeat;
+    background-size: 100% auto;
+}
+
+.confirm_main .confirm_outter .setting_wrapper .setting_chips .setting_num.pink {
+    background: url(../images/game/img_chip_pink.png) no-repeat;
+    background-size: 100% auto;
+}
+
+.confirm_main .confirm_outter .setting_wrapper .setting_chips .setting_num.red {
+    background: url(../images/game/img_chip_red.png) no-repeat;
+    background-size: 100% auto;
+}
+
+.confirm_main .confirm_outter .setting_wrapper .setting_chips .setting_num.bluepurple {
+    background: url(../images/game/img_chip_bluepurple.png) no-repeat;
+    background-size: 100% auto;
+}
+
+.confirm_main .confirm_outter .setting_wrapper .setting_chips .setting_num.green {
+    background: url(../images/game/img_chip_green.png) no-repeat;
+    background-size: 100% auto;
+}
+
+.confirm_main .confirm_outter .setting_wrapper .setting_chips .setting_num.orange {
+    background: url(../images/game/img_chip_orange.png) no-repeat;
+    background-size: 100% auto;
+}
+
+.confirm_main .confirm_outter .setting_wrapper .setting_chips .setting_num.black {
+    background: url(../images/game/img_chip_black.png) no-repeat;
+    background-size: 100% auto;
+}
+
+/* 設置籌碼 自定義 */
+
+.popup_wrapper .popup_outter.custom {
+    width: 100%; 
+    height: 100%; 
+    border-radius: 0.247rem; 
+    background: linear-gradient(to top,  #1b1f24 0%,#2e2e2e 100%);
+    background-size: 100% auto;
+    padding: 0 0.467rem 0.467rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.popup_wrapper .popup_outter.custom .popup_header {
+    background: url(../images/modal/img_custom_header.png) no-repeat;
+    background-size: 100% auto;
+    width: 100%;
+    height: 1.2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup_header .popup_header_title {
+    font-size: 0.4rem;
+    font-weight: 500;
+    color: transparent;
+    background: linear-gradient(to bottom, #fffdde 50%,#ffdd68 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-bottom: 0.16rem;
+}
+
+.popup_wrapper .popup_outter.custom .popup_inner.spacing {
+    padding-top: 1.6rem;
+    margin-bottom: 0.5rem;
+}
+
+.popup_wrapper .popup_outter.custom .popup_inner.spacing .form_custom {
+    font-size: 0.4rem;
+    font-weight: 500;
+    color: #ffea97;
+    background: #363636;
+    width: 7.33rem;
+    height: 1.067rem;
+    padding: 0 0.447rem;
+    border-radius: 0.133rem;
+}
+
+.popup_wrapper .popup_outter.custom .popup_inner.spacing .form_custom_text {
+    font-size: 0.32rem;
+    color: #8e8e8e;
+    margin-bottom: 0.2rem;
+}
+
+/* 選擇器選單 */
+
+.setting_wrapper {
+    width: 100%;
+    padding: 0.2rem 0;
+}
+
+.setting_wrapper.max_h {
+    width: fit-content;
+    max-height: 11.893rem;
+    height: 11.893rem;
+}
+
+.setting_wrapper.pd_0 {
+    padding: 0;
+}
+
+.confirm_outter .setting_wrapper .setting_item {
+    width: 100%;
+    height: 1.04rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.confirm_outter .setting_wrapper .setting_item.active {
+    background: url(../images/modal/bg_consecutive_active.png) no-repeat;
+    background-size: 100% auto;
+}
+
+.confirm_outter .setting_wrapper .setting_item .consecutive_title {
+    display: flex;
+    align-items: center;
+    font-size: 0.373rem;
+    font-weight: bold;
+    color: #fff5d8;
+    margin-right: 0.187rem;
+}
+
+.confirm_outter .setting_wrapper .setting_item .consecutive_title .consecutive_text {
+    color: #ffcd40;
+    font-size: 0.373rem;
+    font-weight: bold;
+    margin: 0 0.12rem;
+}
+
+.confirm_outter .setting_wrapper .setting_item .consecutive_arrow {
+    width: 0.4rem;
+}
+
+.confirm_outter .setting_wrapper .consecutive_line {
+    width: 7.46rem;
+    height: 0.0266rem;
+    margin: 0 auto;
+}
+
+.confirm_outter .setting_wrapper .setting_item .setting_select {
+    font-size: 0.373rem;
+    font-weight: 500;
+    color: #fff5d8;
+}
+
+.confirm_outter .setting_wrapper .setting_item .setting_date {
+    font-size: 0.427rem;
+    font-weight: 500;
+    color: #8e8e8e;
+    width: 2.5rem;
+    text-align: center;
+}
+
+.confirm_outter .setting_wrapper .setting_item .setting_date.active {
+    color: #fff5d8;
+}
+
+/* 切換彩種 */
+
+.confirm_outter .setting_wrapper .switch_inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 0.2rem;
+}
+
+/* .confirm_outter .setting_wrapper .switch_inner:first-child {
+    padding-bottom: 0.2rem;
+} */
+
+.confirm_outter .setting_wrapper .switch_inner .switch_item {
+    width: 4.267rem;
+    height: 4.16rem;
+    margin-right: 0.4rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.confirm_outter .setting_wrapper .switch_inner .switch_item:last-child {
+    margin-right: 0;
+}
+
+.confirm_outter .setting_wrapper .switch_inner .switch_item.OMKS {
+    background: url(../images/modal/switch_kuaisan_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.confirm_outter .setting_wrapper .switch_inner .switch_item.OMPK10 {
+    background: url(../images/modal/switch_pk10_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.confirm_outter .setting_wrapper .switch_inner .switch_item.OMSSC {
+    background: url(../images/modal/switch_omssc_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.confirm_outter .setting_wrapper .switch_inner .switch_item.OMLHC {
+    background: url(../images/modal/switch_omlhc_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.confirm_outter .setting_wrapper .switch_inner .switch_item.NUINUI {
+    background: url(../images/modal/switch_nuinui_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.confirm_outter .setting_wrapper .switch_inner .switch_item.JSBaccarat {
+    background: url(../images/modal/switch_baccarat_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.confirm_outter .setting_wrapper .switch_inner .switch_item.JSLP {
+    background: url(../images/modal/switch_roulette_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.confirm_outter .setting_wrapper .switch_inner .switch_item.JSYXX {
+    background: url(../images/modal/switch_yusiasieh_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.confirm_outter .setting_wrapper .switch_inner .switch_item.JSSG {
+    background: url(../images/modal/switch_jssg_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.confirm_outter .setting_wrapper .switch_inner .switch_item.JSLH {
+    background: url(../images/modal/switch_jslh_default.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.confirm_outter .setting_wrapper .switch_inner .switch_item.OMKS.focus {
+    background: url(../images/modal/switch_kuaisan_focus.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.confirm_outter .setting_wrapper .switch_inner .switch_item.OMPK10.focus {
+    background: url(../images/modal/switch_pk10_focus.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.confirm_outter .setting_wrapper .switch_inner .switch_item.OMSSC.focus {
+    background: url(../images/modal/switch_omssc_focus.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.confirm_outter .setting_wrapper .switch_inner .switch_item.OMLHC.focus {
+    background: url(../images/modal/switch_omlhc_focus.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.confirm_outter .setting_wrapper .switch_inner .switch_item.NUINUI.focus {
+    background: url(../images/modal/switch_nuinui_focus.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.confirm_outter .setting_wrapper .switch_inner .switch_item.JSBaccarat.focus {
+    background: url(../images/modal/switch_baccarat_focus.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.confirm_outter .setting_wrapper .switch_inner .switch_item.JSLP.focus {
+    background: url(../images/modal/switch_roulette_focus.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.confirm_outter .setting_wrapper .switch_inner .switch_item.JSYXX.focus {
+    background: url(../images/modal/switch_yusiasieh_focus.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.confirm_outter .setting_wrapper .switch_inner .switch_item.JSSG.focus {
+    background: url(../images/modal/switch_jssg_focus.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.confirm_outter .setting_wrapper .switch_inner .switch_item.JSLH.focus {
+    background: url(../images/modal/switch_jslh_focus.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.confirm_outter .setting_wrapper .switch_inner .switch_item.OMKS.disable {
+    background: url(../images/modal/switch_kuaisan_disable.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.confirm_outter .setting_wrapper .switch_inner .switch_item.OMPK10.disable {
+    background: url(../images/modal/switch_pk10_disable.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.confirm_outter .setting_wrapper .switch_inner .switch_item.OMSSC.disable {
+    background: url(../images/modal/switch_omssc_disable.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.confirm_outter .setting_wrapper .switch_inner .switch_item.OMLHC.disable {
+    background: url(../images/modal/switch_omlhc_disable.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.confirm_outter .setting_wrapper .switch_inner .switch_item.NUINUI.disable {
+    background: url(../images/modal/switch_nuinui_disable.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.confirm_outter .setting_wrapper .switch_inner .switch_item.JSBaccarat.disable {
+    background: url(../images/modal/switch_baccarat_disable.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.confirm_outter .setting_wrapper .switch_inner .switch_item.JSLP.disable {
+    background: url(../images/modal/switch_roulette_disable.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.confirm_outter .setting_wrapper .switch_inner .switch_item.JSYXX.disable {
+    background: url(../images/modal/switch_yusiasieh_disable.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.confirm_outter .setting_wrapper .switch_inner .switch_item.JSSG.disable {
+    background: url(../images/modal/switch_jssg_disable.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.confirm_outter .setting_wrapper .switch_inner .switch_item.JSLH.disable {
+    background: url(../images/modal/switch_jslh_disable.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+
+.confirm_outter .setting_wrapper .switch_inner .switch_item.disable::before{
+    content: "";
+    background: url(../images/modal/img_maintain.png);
+    background-size: 100% 100%;
+    width: 2.967rem;
+    height: 1.747rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* Toast */
+
+.toast {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    width: -moz-fit-content;
+    width: fit-content;
+    -webkit-transition: opacity .2s linear;
+    transition: opacity .2s linear;
+    z-index: 9999;
+    background: rgba(16, 16, 16, .7);
+    border-radius: 0.133rem;
+    opacity: 1;
+}
+
+.toast .toast_text {
+    font-family: FZZhengHeiS;
+    font-size: 0.29rem;
+    font-weight: 500;
+    color: transparent;
+    background: linear-gradient(to bottom ,#fffdde 50%,#ffdd68 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-align: center;
+    visibility: visible;
+    padding: 0.2rem 0.24rem;
+}
+
+/* 僅 iPhone 使用，為了解決底部高度不足問題，Android 不使用 */
+
+.menu_block {
+    width: 100%;
+    height: 0.8rem;
+}
+
+/* 僅 iPhone 使用，為了解決底部高度不足問題，Android 不使用 */
+
+.confirm_block {
+    width: 100%;
+    height: 0.8rem;
+    position: absolute;
+    bottom: 0;
+    background: #1d2124;
+}

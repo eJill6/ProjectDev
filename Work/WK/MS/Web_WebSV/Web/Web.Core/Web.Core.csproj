@@ -1,0 +1,172 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>Web.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>8618;8602;8603;8625;8629;8601;1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>8618;8602;8603;8625;8629;8601;1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Attributes\**" />
+    <Compile Remove="Views\AdminIncome\**" />
+    <Compile Remove="Views\AdminPostTransaction\**" />
+    <Compile Remove="Views\Public\**" />
+    <Compile Remove="wwwroot\CTS\ClientApp\dist\mimi-dating\**" />
+    <Compile Remove="wwwroot\CTS\ClientApp\dist\yinsiang-lottery\**" />
+	  <Compile Remove="wwwroot\CTS\ClientApp\dist\yinsiang-lottery-fullscreen\**" />
+    <Compile Remove="wwwroot\CTS\ClientApp\dist\yinsiang-lottery-new\**" />
+    <Compile Remove="wwwroot\CTS\ClientApp\mimi-dating\**" />
+    <Compile Remove="wwwroot\CTS\ClientApp\yinsiang-lottery\**" />
+	  <Compile Remove="wwwroot\CTS\ClientApp\yinsiang-lottery-fullscreen\**" />
+    <Compile Remove="wwwroot\CTS\ClientApp\yinsiang-lottery-new\**" />
+    <Compile Remove="wwwroot\images\form\**" />
+    <Compile Remove="wwwroot\images\grid\**" />
+    <Compile Remove="wwwroot\images\login\**" />
+    <Compile Remove="wwwroot\images\pagination\**" />
+    <Compile Remove="wwwroot\js\business\**" />
+    <Compile Remove="wwwroot\js\layui\**" />
+    <Compile Remove="wwwroot\lib\**" />
+    <Content Remove="Attributes\**" />
+    <Content Remove="Views\AdminIncome\**" />
+    <Content Remove="Views\AdminPostTransaction\**" />
+    <Content Remove="Views\Public\**" />
+    <Content Remove="wwwroot\CTS\ClientApp\dist\mimi-dating\**" />
+    <Content Remove="wwwroot\CTS\ClientApp\dist\yinsiang-lottery\**" />
+	  <Content Remove="wwwroot\CTS\ClientApp\dist\yinsiang-lottery-fullscreen\**" />
+    <Content Remove="wwwroot\CTS\ClientApp\dist\yinsiang-lottery-new\**" />
+    <Content Remove="wwwroot\CTS\ClientApp\mimi-dating\**" />
+    <Content Remove="wwwroot\CTS\ClientApp\yinsiang-lottery\**" />
+	  <Content Remove="wwwroot\CTS\ClientApp\yinsiang-lottery-fullscreen\**" />
+    <Content Remove="wwwroot\CTS\ClientApp\yinsiang-lottery-new\**" />
+    <Content Remove="wwwroot\images\form\**" />
+    <Content Remove="wwwroot\images\grid\**" />
+    <Content Remove="wwwroot\images\login\**" />
+    <Content Remove="wwwroot\images\pagination\**" />
+    <Content Remove="wwwroot\js\business\**" />
+    <Content Remove="wwwroot\js\layui\**" />
+    <Content Remove="wwwroot\lib\**" />
+    <EmbeddedResource Remove="Attributes\**" />
+    <EmbeddedResource Remove="Views\AdminIncome\**" />
+    <EmbeddedResource Remove="Views\AdminPostTransaction\**" />
+    <EmbeddedResource Remove="Views\Public\**" />
+    <EmbeddedResource Remove="wwwroot\CTS\ClientApp\dist\mimi-dating\**" />
+    <EmbeddedResource Remove="wwwroot\CTS\ClientApp\dist\yinsiang-lottery\**" />
+	  <EmbeddedResource Remove="wwwroot\CTS\ClientApp\dist\yinsiang-lottery-fullscreen\**" />
+    <EmbeddedResource Remove="wwwroot\CTS\ClientApp\dist\yinsiang-lottery-new\**" />
+    <EmbeddedResource Remove="wwwroot\CTS\ClientApp\mimi-dating\**" />
+    <EmbeddedResource Remove="wwwroot\CTS\ClientApp\yinsiang-lottery\**" />
+	<EmbeddedResource Remove="wwwroot\CTS\ClientApp\yinsiang-lottery-fullscreen\**" />
+    <EmbeddedResource Remove="wwwroot\CTS\ClientApp\yinsiang-lottery-new\**" />
+    <EmbeddedResource Remove="wwwroot\images\form\**" />
+    <EmbeddedResource Remove="wwwroot\images\grid\**" />
+    <EmbeddedResource Remove="wwwroot\images\login\**" />
+    <EmbeddedResource Remove="wwwroot\images\pagination\**" />
+    <EmbeddedResource Remove="wwwroot\js\business\**" />
+    <EmbeddedResource Remove="wwwroot\js\layui\**" />
+    <EmbeddedResource Remove="wwwroot\lib\**" />
+    <None Remove="Attributes\**" />
+    <None Remove="Views\AdminIncome\**" />
+    <None Remove="Views\AdminPostTransaction\**" />
+    <None Remove="Views\Public\**" />
+    <None Remove="wwwroot\CTS\ClientApp\dist\mimi-dating\**" />
+    <None Remove="wwwroot\CTS\ClientApp\dist\yinsiang-lottery\**" />
+	  <None Remove="wwwroot\CTS\ClientApp\dist\yinsiang-lottery-fullscreen\**" />
+    <None Remove="wwwroot\CTS\ClientApp\dist\yinsiang-lottery-new\**" />
+    <None Remove="wwwroot\CTS\ClientApp\mimi-dating\**" />
+    <None Remove="wwwroot\CTS\ClientApp\yinsiang-lottery\**" />
+	  <None Remove="wwwroot\CTS\ClientApp\yinsiang-lottery-fullscreen\**" />
+    <None Remove="wwwroot\CTS\ClientApp\yinsiang-lottery-new\**" />
+    <None Remove="wwwroot\images\form\**" />
+    <None Remove="wwwroot\images\grid\**" />
+    <None Remove="wwwroot\images\login\**" />
+    <None Remove="wwwroot\images\pagination\**" />
+    <None Remove="wwwroot\js\business\**" />
+    <None Remove="wwwroot\js\layui\**" />
+    <None Remove="wwwroot\lib\**" />
+    <TypeScriptCompile Remove="Attributes\**" />
+    <TypeScriptCompile Remove="Views\AdminIncome\**" />
+    <TypeScriptCompile Remove="Views\AdminPostTransaction\**" />
+    <TypeScriptCompile Remove="Views\Public\**" />
+    <TypeScriptCompile Remove="wwwroot\CTS\ClientApp\dist\mimi-dating\**" />
+    <TypeScriptCompile Remove="wwwroot\CTS\ClientApp\dist\yinsiang-lottery\**" />
+	<TypeScriptCompile Remove="wwwroot\CTS\ClientApp\dist\yinsiang-lottery-fullscreen\**" />
+    <TypeScriptCompile Remove="wwwroot\CTS\ClientApp\dist\yinsiang-lottery-new\**" />
+    <TypeScriptCompile Remove="wwwroot\CTS\ClientApp\mimi-dating\**" />
+    <TypeScriptCompile Remove="wwwroot\CTS\ClientApp\yinsiang-lottery\**" />
+	<TypeScriptCompile Remove="wwwroot\CTS\ClientApp\yinsiang-lottery-fullscreen\**" />
+    <TypeScriptCompile Remove="wwwroot\CTS\ClientApp\yinsiang-lottery-new\**" />
+    <TypeScriptCompile Remove="wwwroot\images\form\**" />
+    <TypeScriptCompile Remove="wwwroot\images\grid\**" />
+    <TypeScriptCompile Remove="wwwroot\images\login\**" />
+    <TypeScriptCompile Remove="wwwroot\images\pagination\**" />
+    <TypeScriptCompile Remove="wwwroot\js\business\**" />
+    <TypeScriptCompile Remove="wwwroot\js\layui\**" />
+    <TypeScriptCompile Remove="wwwroot\lib\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\Gruntfile.js" />
+    <Content Remove="wwwroot\package.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="5.3.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="NLog.Extensions.Logging" Version="5.3.0" />
+    <PackageReference Include="Quartz.AspNetCore" Version="3.7.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Lib\JxBackendServiceLibrary\JxBackendServiceN6\JxBackendServiceN6.csproj" />
+    <ProjectReference Include="..\..\..\Lib\JxBackendServiceLibrary\JxBackendServiceStd\JxBackendServiceStd.csproj" />
+    <ProjectReference Include="..\..\..\Lib\MS.Core\MS.Core.MMClient\MS.Core.MMClient.csproj" />
+    <ProjectReference Include="..\..\..\Lib\MS.Core\MS.Core.MMModel\MS.Core.MMModel.csproj" />
+    <ProjectReference Include="..\..\..\Lib\MS.Core\MS.Core.Models\MS.Core.Models.csproj" />
+    <ProjectReference Include="..\..\WebShare\ControllerShareLib\ControllerShareLib.csproj" />
+    <ProjectReference Include="..\..\WebShare\RazorShareLib\RazorShareLib.csproj" />
+    <ProjectReference Include="..\..\WebShare\WebShareLib\WebShareLib.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.UAT.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="appsettings.SIT.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\images\c.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
+    <Folder Include="wwwroot\artcss\" />
+    <Folder Include="wwwroot\CTS\ClientApp\dist\" />
+    <Folder Include="wwwroot\js\utils\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\favicon.ico" />
+    <None Include="wwwroot\js\cryptoJS\aes.js" />
+  </ItemGroup>
+
+</Project>

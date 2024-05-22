@@ -1,0 +1,14 @@
+﻿@using JxBackendService.Model.Enums
+@using Web.Extensions
+@{
+    ViewBag.PageTitle = "PM电子";
+    Layout = "~/Views/Shared/_GameLobbyLayout.cshtml";
+}
+
+<script src="~/js/third-party-game-hall.js"></script>
+
+<script type="text/javascript">
+    var gameHall = new ThirdPartyGameHall("@GameLobbyType.PMSL.Value", "pm_bg");
+</script>
+
+<partial name="~/Views/ThirdParty/Partial/_SlotGameListPartial.cshtml" />

@@ -1,0 +1,101 @@
+﻿@using ControllerShareLib.Helpers;
+@using Web.Extensions;
+@using Web.Helpers;
+@using Newtonsoft.Json;
+@using Newtonsoft.Json.Serialization;
+
+@model object
+
+@{ Layout = null; }
+
+@{
+
+    var appDataJson = Html.Raw(JsonConvert.SerializeObject(
+    Model,
+    Formatting.None,
+    new JsonSerializerSettings
+    { ContractResolver = new CamelCasePropertyNamesContractResolver() }));
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <link type="text/css" rel="icon" href="@WebResourceHelper.Content("~/favicon.ico")" />
+    <title>投注</title>
+</head>
+<body>
+    <div id="client-app-lottery"></div>
+    <script type="text/javascript">
+        (function(){
+            window.lotterySpa = window.lotterySpa || {};
+
+            window.lotterySpa.appData = @appDataJson;
+
+            window.lotterySpa.userId = '@ViewBag.UserId';
+
+            window.toTokenPath = function (path) {
+                let token = '@ViewBag.Token';
+                return `/mwt/${token}${path}`;
+            };
+            window.xorKey = '@JxBackendService.Common.XorEncryptTool.Key';
+          
+            window.openUrl=function(logonMode,url,win){
+                 if (logonMode == LogonMode.Native) {
+                     $.openUrl(logonMode,url,win);
+                 }
+                 else if (logonMode == LogonMode.Lite) {
+                     window.top.postMessage('deposit', '@ViewBag.originUrl');
+                 }
+            }
+        })();
+
+        var userId = '@ViewBag.UserId';
+    </script>
+    <style>
+        @{
+            /*MQ預設的通知框，此頁面隱藏起來*/
+         }
+        .notification {
+            display:none;
+        }
+    </style>
+    <partial name="~/Views/Shared/_GlobalVariables.cshtml" />
+    <partial name="~/Views/Shared/_JavaScriptJquery.cshtml" />
+    
+    <script src="~/CTS/dist/js/network/sockjs-0.3.min.js"></script>
+    <script src="~/CTS/dist/js/network/stomp.min.js"></script>
+    <script src="~/CTS/dist/js/message-queue.js"></script>
+    
+    @{
+        var isNewStyle = false;
+        if (Int32.TryParse(ViewBag.lotteryID, out int id))
+        {
+            isNewStyle = id >= 70;
+        }
+    }
+    @if(ViewBag.isFullScreen)
+    {
+       <script src="~/CTS/dist/js/amfe-flexible.min.js"></script>
+       <script src="~/CTS/ClientApp/dist/yinsiang-lottery-fullscreen/js/app.js"></script>
+       <script src="~/CTS/ClientApp/dist/yinsiang-lottery-fullscreen/js/chunk-vendors.js"></script>
+        <link type="text/css" rel="stylesheet" href="~/CTS/ClientApp/dist/yinsiang-lottery-fullscreen/css/app.css" />
+    }
+    else if(isNewStyle)
+    {
+       <script src="~/CTS/dist/js/amfe-flexible.min.js"></script>
+       <script src="~/CTS/ClientApp/dist/yinsiang-lottery-new/js/app.js"></script>
+       <script src="~/CTS/ClientApp/dist/yinsiang-lottery-new/js/chunk-vendors.js"></script>
+        <link type="text/css" rel="stylesheet" href="~/CTS/ClientApp/dist/yinsiang-lottery-new/css/app.css" />
+    }
+    else
+    {
+        <script src="~/CTS/ClientApp/dist/yinsiang-lottery/js/app.js"></script>
+        <script src="~/CTS/ClientApp/dist/yinsiang-lottery/js/chunk-vendors.js"></script>
+        <link type="text/css" rel="stylesheet" href="~/CTS/ClientApp/dist/yinsiang-lottery/css/app.css" />
+    }
+</body>
+</html>

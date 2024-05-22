@@ -1,0 +1,1056 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Web.Core</name>
+    </assembly>
+    <members>
+        <member name="M:Web.Controllers.AccountController.LogOn(ControllerShareLib.Models.Account.LogonParam)">
+            <summary>
+            Logon view post.
+            </summary>
+        </member>
+        <member name="T:Web.Controllers.GameCenterController">
+            <summary>第三方遊戲controller</summary>
+        </member>
+        <member name="M:Web.Controllers.GameCenterController.#ctor">
+            <summary></summary>
+        </member>
+        <member name="M:Web.Controllers.GameCenterController.Index(JxBackendService.Model.Param.ThirdParty.WebGameCenterLogin)">
+            <summary>轉導第三方遊戲入口</summary>
+        </member>
+        <member name="M:Web.Controllers.HomeController.GetRefreshBalanceInfo">
+            <summary>
+            取得最新餘額json
+            </summary>
+        </member>
+        <member name="M:Web.Controllers.HomeController.HomeTopMenu">
+            <summary>
+            遊戲大廳首頁Menu
+            </summary>
+        </member>
+        <member name="F:Web.Controllers.LotterySpaController._adapters">
+            <summary>
+            User service.
+            </summary>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.Index(System.String,System.String)">
+            <summary>
+            銀像投注頁
+            </summary>
+            <returns>投注頁</returns>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.GetBetViewModel(System.String,System.Int32@,System.String,System.Boolean)">
+            <summary>
+            取得彩種資訊
+            </summary>
+            <param name="id">彩種編號</param>
+            <param name="orderNo">跟單編號</param>
+            <returns>彩種資訊</returns>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.SetViewBag">
+            <summary>
+            設定ViewBag
+            </summary>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.Trend(System.String,System.Nullable{System.Int32},System.Int32,System.String)">
+            <summary>
+            走勢圖
+            </summary>
+            <param name="id">LotteryCode(路由名稱叫Id)</param>
+            <returns>走勢圖</returns>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.GetRebatePro(System.Int32,System.Int32,System.Int32,System.Nullable{System.Boolean})">
+            <summary>
+            取得返點
+            </summary>
+            <returns>結果</returns>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.GetRebatePros">
+            <summary>
+            取得賠率資料
+            </summary>
+            <returns>結果</returns>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.GetExtIssueData(System.String,System.String)">
+            <summary>
+            取得該期額外資訊
+            </summary>
+            <param name="id">彩種代碼</param>
+            <param name="issueNo">期號</param>
+            <returns>該期的額外資訊</returns>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.GetViewModel(System.String,System.Boolean)">
+            <summary>
+            取得彩種設定
+            </summary>
+            <param name="id">彩種編號</param>
+            <returns>彩種設定</returns>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.OrderDetails(System.String)">
+            <summary>
+            Get lottery order details.
+            </summary>
+            <param name="orderId">Lottery order id.</param>
+            <returns>Lottery order details</returns>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.GetAllLotteryInfo">
+            <summary>
+            取得遊戲玩法列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.GetNextIssueNo(System.Int32)">
+            <summary>
+            下期期號
+            </summary>
+            <param name="lotteryId">LotteryId</param>
+            <returns>下期期號</returns>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.GetNextIssueNos">
+            <summary>
+            下期期號
+            </summary>
+            <returns>下期期號</returns>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.GetRankList(System.Int32)">
+            <summary>
+            排行榜清單(HTML)
+            </summary>
+            <param name="days">天數</param>
+            <returns>排行榜清單</returns>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.GetRankListItems(System.Int32)">
+            <summary>
+            排行榜清單(JSON)
+            </summary>
+            <param name="days">天數</param>
+            <returns>排行榜清單</returns>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.GetTodaySummary(System.Int32)">
+            <summary>
+            今日清單
+            </summary>
+            <returns>今日清單</returns>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.IssueHistory(System.Int32,System.Int32,System.String)">
+            <summary>
+            期號開獎歷史
+            </summary>
+            <param name="lotteryId"></param>
+            <param name="count"></param>
+            <param name="nextCursor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.LotterySpaController.GetUnawardedSummary(System.Int32,System.String,System.String)">
+            <summary>
+            取得該彩種當期期號未開獎注單摘要
+            </summary>
+            <param name="lotteryId"></param>
+            <param name="currentIssueNo"></param>
+            <param name="roomId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.Index(System.String)">
+            <summary>
+            銀像投注頁
+            </summary>
+            <returns>投注頁</returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.GetBanner">
+            <summary>
+            取得Banner
+            </summary>
+            <returns>Banner</returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.CreateMedia(MS.Core.MMModel.Models.SaveMediaToOssParamForClient)">
+            <summary>
+            上傳媒體檔
+            </summary>
+            <returns>媒體檔資料</returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.CreateMedias(MS.Core.MMModel.Models.SaveBossApplyMedia)">
+            <summary>
+            批量上
+            </summary>
+            <returns>媒體檔資料</returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.SplitUpload(MS.Core.MMModel.Models.SaveMediaToOssParamForClient)">
+            <summary>
+            分批上傳媒體檔
+            </summary>
+            <returns>媒體檔資料</returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.MergeUpload(MS.Core.MMModel.Models.MergeUpload)">
+            <summary>
+            合併上傳媒體檔
+            </summary>
+            <returns>媒體檔資料</returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.GetUploadVideoUrl">
+            <summary>
+            取得上傳網址及資料
+            </summary>
+            <returns>上傳網址及資料</returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.GetHomeAnnouncement">
+            <summary>
+            取得首頁公告
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.GetFrontsideAnnouncement">
+            <summary>
+            取得首頁公告
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.OptionsByPostType(System.Int32)">
+            <summary>
+            取得發帖頁面的所有選項設定
+            </summary>
+            <param name="postType">發帖類型</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.PriceOptions(System.Int32)">
+            <summary>
+            取得價格設定
+            </summary>
+            <param name="postType">發帖類型</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.MessageTypeOptions(System.Int32)">
+            <summary>
+            取得訊息種類設定
+            </summary>
+            <param name="postType">發帖類型</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.ServiceOptions(System.Int32)">
+            <summary>
+            取得服務項目設定
+            </summary>
+            <param name="postType">發帖類型</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.AgeOptions">
+            <summary>
+            取得年齡項目設定
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.BodyHeightOptions">
+            <summary>
+            取得身高項目設定
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.CupOptions">
+            <summary>
+            取得cup項目設定
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.AdminContact">
+            <summary>
+            取得管理員聯繫方式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.GetCSLink">
+            <summary>
+            取得24h客服链接地址
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.PostFilterOptions(System.Nullable{System.Int32})">
+            <summary>
+            取得篩選條件
+            </summary>
+            <param name="postType">發帖類型</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.BaseUnlockAmountByType(MS.Core.MMModel.Models.Post.Enums.PostType)">
+            <summary>
+            取得预设解锁价格，从 PostType
+            </summary>
+            <param name="postType">帖的类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.AllBaseUnlockAmount">
+            <summary>
+            取得所有的预设解锁价格
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.ShortcutList">
+            <summary>
+            首页快捷入口列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.OfficialBanner">
+            <summary>
+            官方店铺banner
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.WhatIs(MS.Core.MMModel.Models.Post.Enums.PostType,MS.Core.MMModel.Models.Post.Enums.AdvertisingContentType)">
+            <summary>
+            發帖說明
+            </summary>
+            <param name="postType">發帖類型</param>
+            <param name="contentType">宣傳類型</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.AddPost(MS.Core.MMModel.Models.Post.PostDataForClient)">
+            <summary>
+            新增發佈帖
+            </summary>
+            <param name="param">發佈資訊</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.GetPostEditData(System.String)">
+            <summary>
+            取得編輯帖子資料
+            </summary>
+            <param name="postId">帖 Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.EditPost(Web.Core.Models.MM.EditPostData)">
+            <summary>
+            編輯發佈帖子
+            </summary>
+            <param name="param">發佈資訊</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.Report(MS.Core.MMModel.Models.Post.ReportDataForClient)">
+            <summary>
+            舉報/投訴
+            </summary>
+            <param name="param">投訴資訊</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.AddComment(MS.Core.MMModel.Models.Post.CommentDataForClient)">
+            <summary>
+            評論帖子
+            </summary>
+            <param name="param">評論資訊</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.GetCommentEditData(System.String)">
+            <summary>
+            取得編輯評論資訊
+            </summary>
+            <param name="commentId">評論Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.EditComment(Web.Core.Models.MM.EditCommentData)">
+            <summary>
+            編輯評論
+            </summary>
+            <param name="param">評論資訊</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.CommentList(System.String,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            評論清單
+            </summary>
+            <param name="postId">評論的帖子id</param>
+            <param name="page">目前頁數</param>
+            <param name="pageNo">目前頁數</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.PostSearch(MS.Core.MMModel.Models.Post.PostSearchParamForClient)">
+            <summary>
+            查找帖子。適用首頁、廣場
+            </summary>
+            <param name="param">查詢條件</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.PostDetail(System.String)">
+            <summary>
+            查找帖子。適用首頁、廣場
+            </summary>
+            <param name="postId">帖子Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.UnlockPost(MS.Core.MMModel.Models.Post.UnlockPostDataForClient)">
+            <summary>
+            解鎖帖子
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.RecommendPostList">
+            <summary>
+            首页广场帖子推荐列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.SetFavorite(MS.Core.MMModel.Models.Post.PostSetFavoriteDataForClient)">
+            <summary>
+            覓贴收藏
+            </summary>
+            <param name="param">贴子Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.AddOfficialPost(MS.Core.MMModel.Models.Post.OfficialPostDataForClient)">
+            <summary>
+            新增發佈帖
+            </summary>
+            <param name="param">發佈資訊</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.GetOfficialPostEditData(System.String)">
+            <summary>
+            取得編輯帖子資料
+            </summary>
+            <param name="postId">帖 Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.EditOfficialPost(Web.Core.Models.MM.EditOfficialPostData)">
+            <summary>
+            編輯發佈帖子
+            </summary>
+            <param name="param">發佈資訊</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.AddOfficialComment(MS.Core.MMModel.Models.Post.OfficialCommentDataForClient)">
+            <summary>
+            評論帖子
+            </summary>
+            <param name="param">評論資訊</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.GetOfficialCommentEditData(System.String)">
+            <summary>
+            取得編輯評論資訊
+            </summary>
+            <param name="commentId">評論Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.EditOfficialComment(Web.Core.Models.MM.EditOfficialCommentData)">
+            <summary>
+            編輯評論
+            </summary>
+            <param name="param">評論資訊</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.OfficialCommentList(System.String,System.Nullable{System.Int32})">
+            <summary>
+            評論清單
+            </summary>
+            <param name="postId">評論的帖子id</param>
+            <param name="page">目前頁數</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.OfficialPostSearch(MS.Core.MMModel.Models.Post.OfficialPostSearchParamForClient)">
+            <summary>
+            查找帖子。適用首頁、廣場
+            </summary>
+            <param name="param">查詢條件</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.OfficialPostDetail(System.String)">
+            <summary>
+            查找帖子。適用首頁、廣場
+            </summary>
+            <param name="postId">帖子Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.OfficialRecommendShopList">
+            <summary>
+            首页官方店铺推荐列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.OfficialGoldenShopList">
+            <summary>
+            金牌店铺（官方首页）
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.OfficialShopList(MS.Core.MMModel.Models.Post.OfficialShopParamForClient)">
+            <summary>
+            店铺与帖子列表
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.OfficialShopDetail(System.String)">
+            <summary>
+            官方店铺详情
+            </summary>
+            <param name="applyId">审核id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.GetMyOfficialShopDetail">
+            <summary>
+            官方店铺详情
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.OfficialPostList(MS.Core.MMModel.Models.Post.OfficialPostListParamForClient)">
+            <summary>
+            官方店铺帖子列表
+            </summary>
+            <param name="param">查詢條件</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.GetMyOfficialPostList(MS.Core.MMModel.Models.Post.MyOfficialPostListParamForClient)">
+            <summary>
+            获取我的官方店铺帖子列表
+            </summary>
+            <param name="param">查詢條件</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.OfficialShopFollow(MS.Core.MMModel.Models.Post.OfficialShopFollowForClient)">
+            <summary>
+            店铺收藏
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.Booking(MS.Core.MMModel.Models.Booking.BookingOfficialDataForClient)">
+            <summary>
+            預約
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.MyBooking(MS.Core.MMModel.Models.Booking.MyBookingDataForClient)">
+            <summary>
+            我的預約
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.ManageBooking(MS.Core.MMModel.Models.Booking.ManageBookingDataForClient)">
+            <summary>
+            預約管理
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.Accept(System.String)">
+            <summary>
+            預約-商戶接單
+            </summary>
+            <param name="bookingId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.Done(System.String)">
+            <summary>
+            預約-確認完成
+            </summary>
+            <param name="bookingId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.Cancel(System.String)">
+            <summary>
+            預約-取消
+            </summary>
+            <param name="bookingId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.Refund(System.String)">
+            <summary>
+            預約-接單前退款
+            </summary>
+            <param name="bookingId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.MyBookingDetail(System.String)">
+            <summary>
+            我的預約-詳細
+            </summary>
+            <param name="bookingId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.Delete(System.String)">
+            <summary>
+            刪除預約
+            </summary>
+            <param name="bookingId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.ApplyRefund(MS.Core.MMModel.Models.Booking.ApplyRefundDataForClient)">
+            <summary>
+            申請退費
+            </summary>
+            <param name="model">申請資料</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.Center">
+            <summary>
+            個人中心
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.GetUserIdIsApplyBoss">
+            <summary>
+            用户是否申请过觅老板
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.Overview">
+            <summary>
+            總覽
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.ManagePost(MS.Core.MMModel.Models.My.MyPostQueryParamForClient)">
+            <summary>
+            發帖管理
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.GetMyFavoritePost(MS.Core.MMModel.Models.My.MyFavoritePostQueryParam)">
+            <summary>
+            获取收藏帖子
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.GetMyFavoriteBossShop(MS.Core.MMModel.Models.My.MyFavoriteBossShopQueryParam)">
+            <summary>
+            获取收藏店铺
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.OfficialBossManagePost(MS.Core.MMModel.Models.My.MyOfficialPostQueryParamForClient)">
+            <summary>
+            發帖管理
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.UnlockPostList(MS.Core.MMModel.Models.My.MyUnlockQueryParamForClient)">
+            <summary>
+            發帖管理
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.ShopOpen">
+            <summary>
+            商店營業開關
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.DeleteOfficialPost(MS.Core.MMModel.Models.Post.OfficialPostDeleteForClient)">
+            <summary>
+            刪除官方帖
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.MyMessage(MS.Core.MMModel.Models.My.MyMessageQueryParamForClient)">
+            <summary>
+            获取我的消息
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.UserToMessageOperation(MS.Core.MMModel.Models.My.MessageOperationParamForClient)">
+            <summary>
+            用户
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.GetAnnouncementById(System.String)">
+            <summary>
+            根据ID获取公告详情
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.GetReportDetailById(System.String)">
+            <summary>
+            根据ID获取投诉详情
+            </summary>
+            <param name="reportId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.BuyVip(MS.Core.MMModel.Models.Vip.BuyVipData)">
+            <summary>
+            購買會員卡
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.GetVips">
+            <summary>
+            會員卡列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.GetUserVipTransLogs">
+            <summary>
+            購買紀錄
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.GetWalletInfo(System.Nullable{System.TimeSpan})">
+            <summary>
+            覓錢包
+            </summary>
+            <param name="timeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.GetExpenseInfo(MS.Core.MMModel.Models.Wallet.ExpenseInfoData)">
+            <summary>
+            消費明細
+            </summary>
+            <param name="timeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.GetIncomeInfo(MS.Core.MMModel.Models.Wallet.IncomeInfoData,System.Nullable{System.TimeSpan})">
+            <summary>
+            收益明細
+            </summary>
+            <param name="timeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.CertificationInfo">
+            <summary>
+            取得認證資訊
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.AgentIdentityApply(MS.Core.MMModel.Models.Post.AgentContactInfoForClient)">
+            <summary>
+            覓經紀申請
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.BossIdentityApply(MS.Core.MM.Models.Auth.BossIdentityApplyDataForClient)">
+            <summary>
+            覓老闆申請
+            </summary>
+            <param name="model">申請資料</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.BossIdentityApplyOrUpdate(MS.Core.MMModel.Models.Post.OfficialShopDetailForclient)">
+            <summary>
+            觅老板申请或者更新
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.GirlIdentityApply">
+            <summary>
+            覓女郎申請
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.MMController.GetToken(MS.Core.MMModel.Models.Auth.Enums.VisitType)">
+            <summary>
+            取得access token
+            </summary>
+            <param name="visitType">訪問類型。只有在進到畫面第一次為登入行為，其餘為更換token的心跳行為</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.PublicController.ReconnectTips">
+            <summary> 請退出遊戲並重新進入頁面 </summary>
+        </member>
+        <member name="M:Web.Controllers.PublicController.Error">
+            <summary> 錯誤訊息頁面 </summary>
+        </member>
+        <member name="M:Web.Controllers.PublicController.EnterGameLoading">
+            <summary> 遊戲進入中頁面 </summary>
+        </member>
+        <member name="M:Web.Controllers.PublicController.HeartBeat">
+            <summary>監控是否還活著,並且在View中提供特定文字給sre做比對</summary>
+        </member>
+        <member name="T:Web.Core.Controllers.Api.ChatController">
+            <summary>聊天控制器</summary>
+        </member>
+        <member name="M:Web.Core.Controllers.Api.ChatController.#ctor">
+            <summary>聊天控制器 ctor</summary>
+        </member>
+        <member name="M:Web.Core.Controllers.Api.ChatController.SendMessage(JxBackendService.Model.Param.Chat.SendMessageParam)">
+            <summary>傳送聊天訊息</summary>
+        </member>
+        <member name="M:Web.Core.Controllers.Api.ChatController.GetRoomMessages(JxBackendService.Model.Param.Chat.QueryRoomMessageParam)">
+            <summary>取得房間內訊息</summary>
+        </member>
+        <member name="M:Web.Core.Controllers.Api.ChatController.GetLastMessageInfos(JxBackendService.Model.Param.Chat.BaseQueryLastMessagesParam)">
+            <summary> 聊天最後訊息列表,可查詢特定RoomID或全部列表 </summary>
+        </member>
+        <member name="M:Web.Core.Controllers.Api.ChatController.ClearUnreadCount(JxBackendService.Model.Param.Chat.RoomParam)">
+            <summary> 清除未讀數量 </summary>
+        </member>
+        <member name="M:Web.Core.Controllers.Api.ChatController.HasUnreadMessage">
+            <summary> 是否還有未讀訊息 </summary>
+        </member>
+        <member name="T:Web.Core.Models.MM.EditCommentData">
+            <summary>
+            編輯評論
+            </summary>
+        </member>
+        <member name="P:Web.Core.Models.MM.EditCommentData.CommentId">
+            <summary>
+            評論id
+            </summary>
+        </member>
+        <member name="T:Web.Core.Models.MM.EditOfficialCommentData">
+            <summary>
+            編輯官方評論
+            </summary>
+        </member>
+        <member name="P:Web.Core.Models.MM.EditOfficialCommentData.CommentId">
+            <summary>
+            評論id
+            </summary>
+        </member>
+        <member name="P:Web.Core.Models.MM.EditOfficialPostData.PostId">
+            <summary>
+            帖子id
+            </summary>
+        </member>
+        <member name="T:Web.Core.Models.MM.EditPostData">
+            <summary>
+            編輯帖子
+            </summary>
+        </member>
+        <member name="P:Web.Core.Models.MM.EditPostData.PostId">
+            <summary>
+            帖子id
+            </summary>
+        </member>
+        <member name="M:Web.Core.Services.ByteArrayApiService.ProcessRequestBodyJson(System.String)">
+            <summary>
+            Web's javascript method: btoa() can't support Chinese
+            so use url encode body before send request
+            </summary>
+            <param name="json"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Web.Helpers.CommonHelper">
+            <summary>
+            Lottery helper class.
+            </summary>
+        </member>
+        <member name="F:Web.Helpers.CommonHelper.SuccessFlag">
+            <summary>
+            Bet success flag.
+            </summary>
+        </member>
+        <member name="M:Web.Helpers.CommonHelper.CalculatePageCount(System.Int32,System.Int64)">
+            <summary>
+            Calculate page count.
+            </summary>
+            <param name="pageSize">Page size.</param>
+            <param name="totalCount">Total count.</param>
+            <returns>Page count.</returns>
+        </member>
+        <member name="M:Web.Helpers.Security.TokenProvider.GetToken(System.String)">
+            <summary>
+            取得Token
+            </summary>
+            <param name="value">Token值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Helpers.Security.TokenProvider.GenerateTokenString(System.String,System.String)">
+            <summary>
+            產生Token
+            </summary>
+            <param name="key">Key</param>
+            <param name="userName">userName</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Helpers.Security.TokenProvider.IsTokenExpired(System.DateTime)">
+            <summary>
+            檢查token是否過期
+            </summary>
+            <param name="expiryTime">過期時間</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Helpers.Security.TokenProvider.GenerateJWTTokenWithHS256(System.Collections.Generic.Dictionary{System.String,System.Object},System.String)">
+            <summary>
+            建立Jwt Token (sha256)
+            </summary>
+            <param name="claimList">claim list</param>
+            <param name="secretSalt">加解密鑰</param>
+            <returns>
+            jwt token
+            </returns>
+        </member>
+        <member name="M:Web.Helpers.Security.TokenProvider.DecryptJWTTokenWithHS256(System.String,System.String)">
+            <summary>
+            解 Jwt Token (sha256)
+            </summary>
+        </member>
+        <member name="T:Web.Infrastructure.Filters.LogDebugUserActionExecutingTimeAttribute">
+            <summary>
+            針對debugUser做的action耗時紀錄
+            </summary>
+        </member>
+        <member name="T:Web.Infrastructure.Filters.LogMvcActionExecutingTimeAttribute">
+            <summary>
+            繼承BaseController的Action可使用的Attribute
+            </summary>
+        </member>
+        <member name="P:Web.Infrastructure.PaginationSetting.Callback">
+            <summary>
+            執行傳入參數pageNumber的js函式名稱
+            </summary>
+        </member>
+        <member name="P:Web.Infrastructure.PaginationSetting.SettingId">
+            <summary>
+            用於在同個頁面裡有複數分頁區塊時以此ID做區分
+            </summary>
+        </member>
+        <member name="T:Web.Models.Base.SysSettings">
+            <summary>
+            SysSettings:实体类(属性说明自动提取数据库字段的描述信息)
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.SysSettings.SettingsID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.SysSettings.MaxBetCount">
+            <summary>
+            每次下单最大注数
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.SysSettings.MaxOneBetMoney">
+            <summary>
+            单注下单分数最大值
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.SysSettings.MinOneBetMoney">
+            <summary>
+            单注下单分数最小值
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.SysSettings.MaxBonusMoney">
+            <summary>
+            最大中奖金额
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.SysSettings.MinMoneyOut">
+            <summary>
+            最小提现金额
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.SysSettings.MaxMoneyOutCount">
+            <summary>
+            每天最多提现次数
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.SysSettings.MaxMoneyOut">
+            <summary>
+            最大提现金额
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.SysSettings.MinMoneyIn">
+            <summary>
+            最小充值金额
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.SysSettings.MaxUserRebatePro">
+            <summary>
+            最高配额值，总号使用
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.SysSettings.MinUsdtMoneyOut">
+            <summary>
+            最小提现金额
+            </summary>
+        </member>
+        <member name="P:Web.Models.Base.SysSettings.MaxUsdtMoneyOut">
+            <summary>
+            最大提现金额
+            </summary>
+        </member>
+        <member name="T:Web.Models.GamePlatformModel">
+            <summary>
+            游戏平台
+            </summary>
+        </member>
+        <member name="P:Web.Models.GamePlatformModel.Id">
+            <summary>
+            游戏平台ID
+            </summary>
+        </member>
+        <member name="P:Web.Models.GamePlatformModel.PlatformName">
+            <summary>
+            平台名称
+            </summary>
+        </member>
+        <member name="P:Web.Models.GamePlatformModel.GameId">
+            <summary>
+            游戏ID
+            </summary>
+        </member>
+        <member name="P:Web.Models.GamePlatformModel.GameName">
+            <summary>
+            游戏名称
+            </summary>
+        </member>
+        <member name="P:Web.Models.GamePlatformModel.GameType">
+            <summary>
+            游戏类型
+            </summary>
+        </member>
+        <member name="P:Web.Models.GamePlatformModel.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:Web.Models.GamePlatformModel.Satus">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:Web.Models.GamePlatformModel.MenuImg">
+            <summary>
+            菜单logo
+            </summary>
+        </member>
+        <member name="P:Web.Models.GamePlatformModel.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Web.Models.GamePlatformModel.CreateUser">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:Web.Models.GamePlatformModel.UpdateDate">
+            <summary>
+            修改人
+            </summary>
+        </member>
+        <member name="P:Web.Models.GamePlatformModel.UpdateUser">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="T:Web.Models.GameType">
+            <summary>
+            游戏类型
+            </summary>
+        </member>
+        <member name="F:Web.Models.GameType.Trueman">
+            <summary>
+            1真人
+            </summary>
+        </member>
+        <member name="F:Web.Models.GameType.Lottery">
+            <summary>
+            2彩票
+            </summary>
+        </member>
+        <member name="F:Web.Models.GameType.Sport">
+            <summary>
+            3体育
+            </summary>
+        </member>
+        <member name="F:Web.Models.GameType.Electron">
+            <summary>
+            4电子
+            </summary>
+        </member>
+    </members>
+</doc>

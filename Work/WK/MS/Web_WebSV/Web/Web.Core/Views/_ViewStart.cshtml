@@ -1,0 +1,10 @@
+﻿@{
+    Layout = "_Layout";
+
+    string defaultLayout = ViewContext.ViewBag.DefaultLayout;
+
+    if (defaultLayout != null)
+    {
+        Layout = defaultLayout;
+    }
+}

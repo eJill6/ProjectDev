@@ -1,0 +1,1168 @@
+@charset "UTF-8";
+
+/**************** Game betting ******************/
+
+.game_container {
+    position: relative;
+    flex: 1;
+}
+
+.game_main {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0.2rem;
+    position: relative;
+}
+
+/* 本期倒數 */
+
+.game_wrapper .reciprocal_outter {
+    background: url(../images/game/bg_dashboard.png) no-repeat;
+    background-size: 100% 100%;
+    height: 5.713rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 0.2rem;
+}
+
+.game_wrapper .reciprocal_outter.bg_car {
+    background: url(../images/game/bg_dashboard_car.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.game_wrapper .reciprocal_outter.bg_omssc {
+    background: url(../images/game/bg_dashboard_omssc.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.game_wrapper .reciprocal_outter.bg_omlhc {
+    background: url(../images/game/bg_dashboard_omlhc.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.game_wrapper .reciprocal_outter.bg_nuinui {
+    background: url(../images/game/bg_dashboard_nuinui.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.game_wrapper .reciprocal_outter.bg_baccarat {
+    background: url(../images/game/bg_dashboard_baccarat.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.game_wrapper .reciprocal_outter.bg_jslp {
+    background: url(../images/game/bg_dashboard_jslp.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.game_wrapper .reciprocal_outter.bg_jsyxx {
+    background: url(../images/game/bg_dashboard_jsyxx.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.game_wrapper .reciprocal_outter.bg_jssg {
+    background: url(../images/game/bg_dashboard_jssg.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.game_wrapper .reciprocal_outter.bg_jslh {
+    background: url(../images/game/bg_dashboard_jslh.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.reciprocal_outter .reciprocal_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 3.5rem;
+}
+
+.reciprocal_wrapper .reciprocal_inner {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    height: 1.6rem;
+}
+
+.reciprocal_wrapper .reciprocal_inner .reciprocal_title {
+    font-size: 0.373rem;
+    font-weight: 500;
+    color: transparent;
+    background: linear-gradient(to bottom, #fffbc8 0%,#ffce22 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-right: 0.233rem;
+}
+
+.reciprocal_wrapper .reciprocal_inner .reciprocal_title:last-child {
+    padding-right: 0;
+    padding-left: 0.233rem;
+}
+
+
+.reciprocal_wrapper .reciprocal_inner .digits_content {
+    display: flex;
+    align-items: center;
+}
+
+.reciprocal_wrapper .reciprocal_inner .digits_content .digits_tendigits {
+    background: url(../images/game/img_tendigits.png) no-repeat;
+    background-size: 100% auto;
+    width: 1.153rem;
+    height: 1.58rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.05rem;
+}
+
+.reciprocal_wrapper .reciprocal_inner .digits_content .digits_digits {
+    background: url(../images/game/img_digits.png) no-repeat;
+    background-size: 100% auto;
+    width: 1.153rem;
+    height: 1.58rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reciprocal_wrapper .reciprocal_inner .digits_content .digits_tendigits .digits_text, .reciprocal_outter .reciprocal_inner .digits_content .digits_digits .digits_text {
+    font-family: 'din_alternatebold';
+    font-size: 1.28rem;
+    color: rgba(0,0,0,0.01);
+    background: linear-gradient(to bottom, #ffffff 25%,#ffe5b7 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.reciprocal_wrapper .reciprocal_inner .digits_content .digits_tendigits .digits_text.warning, .reciprocal_outter .reciprocal_inner .digits_content .digits_digits .digits_text.warning {
+    background: linear-gradient(to bottom, #ff7a7a 0%,#ff3c3c 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.reciprocal_wrapper .mainnum_inner {
+    background: url(../images/game/num_platform.png) no-repeat;
+    background-size: 100% auto;
+    width: 8.4rem;
+    height: 1.393rem;
+    margin-top: -0.22rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reciprocal_wrapper .mainnum_inner .mainnum_item {
+    padding-top: 0.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.reciprocal_wrapper .mainnum_inner .mainnum_item .mainnum_arrow {
+    width: 0.513rem;
+    margin-right: 0.15rem;
+}
+
+.reciprocal_wrapper .mainnum_inner .mainnum_item .mainnum_arrow:last-child{
+    margin-right: 0;
+    margin-left: 0.15rem;
+}
+
+.reciprocal_wrapper .mainnum_inner .mainnum_item .mainnum_text {
+    font-size: 0.32rem;
+    font-weight: 500;
+    color: #fffbeb;
+}
+
+.reciprocal_wrapper .kuaisan_num_inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.2rem;
+    margin-top: -0.22rem;
+    position: relative;
+    z-index: 2;
+}
+
+.reciprocal_wrapper .kuaisan_num_inner .kuaisan_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.reciprocal_wrapper .kuaisan_num_inner .kuaisan_content.limit_w {
+    justify-content: flex-start;
+    width: 1.707rem;
+}
+
+.reciprocal_wrapper .kuaisan_num_inner .kuaisan_content.limit_w .jsyxx_fullrange {
+    width: 1.067rem;
+    height: 0.5rem;
+}
+
+.reciprocal_wrapper .kuaisan_num_inner .kuaisan_content .kuaisan_text_lg {
+    font-size: 0.347rem;
+    margin-right: 0.093rem;
+}
+
+.reciprocal_wrapper .kuaisan_num_inner .kuaisan_content .kuaisan_text_lg:last-child {
+    margin-right: 0;
+}
+
+.reciprocal_wrapper .kuaisan_num_inner .kuaisan_content .kuaisan_text_lg.win_type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #c2e4ff 0%,#ffffff 100%);
+    width: 0.507rem;
+    height: 0.507rem;
+    color: #1c6cbd;
+    font-weight: 500;
+    border-radius: 0.053rem;
+}
+
+.reciprocal_wrapper .kuaisan_num_inner .kuaisan_content .kuaisan_text_lg.win_type.orange {
+    background: linear-gradient(to bottom, #d43800 0%,#e46018 100%);
+    color: #fff;
+}
+
+.reciprocal_wrapper .kuaisan_num_inner .kuaisan_content .kuaisan_text_lg.win_type.red {
+    background: linear-gradient(to bottom, #DA1A10 0%,#FF553A 100%);
+    color: #fff;
+}
+
+.reciprocal_wrapper .kuaisan_num_inner .kuaisan_content .kuaisan_text_lg.win_type.blue {
+    background: linear-gradient(to bottom, #0064b1 0%,#188ee7 100%);
+    color: #fff;
+}
+
+.reciprocal_wrapper .kuaisan_num_inner .kuaisan_content .kuaisan_text_lg.win_type.green {
+    background: linear-gradient(to bottom,  #2f790b 0%,#5ca72b 100%);
+    color: #fff;
+}
+
+.reciprocal_outter .kuaisan_inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: -0.22rem;
+    position: relative;
+    z-index: 2;
+    height: 1.97rem;
+}
+
+.reciprocal_outter .kuaisan_inner.height {
+    height: 2.26rem;
+}
+
+.reciprocal_outter .kuaisan_inner .kuaisan_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.kuaisan_inner .kuaisan_content .kuaisan_dice_lg {
+    width: 1.2rem;
+    height: 1.33rem;
+    margin-right: 0.5rem;
+}
+
+.kuaisan_inner .kuaisan_content .kuaisan_dice_lg:last-child {
+    margin-right: 0;
+}
+
+/* 一分快車 */
+
+.reciprocal_outter .kuaisan_inner .pk10_content {
+    background: url(../images/game/bg_car_container.png) no-repeat;
+    background-size: 100% 100%;
+    width: 8.447rem;
+    height: 1.56rem;
+}
+
+.reciprocal_outter .kuaisan_inner .pk10_content .pk10_corner {
+    position: absolute;
+    background: url(../images/game/bg_car_corner.png) no-repeat;
+    background-size: 100% 100%;
+    width: 8.447rem;
+    height: 1.56rem;
+    z-index: 1;
+}
+
+.reciprocal_outter .kuaisan_inner .pk10_content .pk10_section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.reciprocal_outter .kuaisan_inner .pk10_content .pk10_section .pk10_item {
+    width: 0.76rem;
+    height: 1.3rem;
+    margin-right: 0.05rem;
+}
+
+.reciprocal_outter .kuaisan_inner .pk10_content .pk10_section .pk10_item img{
+    width: 100%;
+    height: 100%;
+}
+
+.reciprocal_outter .kuaisan_inner .pk10_content .pk10_section .pk10_item:last-child {
+    margin-right: 0;
+}
+
+/* 一分時時彩 */
+
+.reciprocal_outter .kuaisan_inner .omssc_content {
+    background: url(../images/game/bg_omssc_container.png) no-repeat;
+    background-size: 100% 100%;
+    width: 7.659rem;
+    height: 1.462rem;
+}
+
+.reciprocal_outter .kuaisan_inner .omssc_content .omssc_section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.reciprocal_outter .kuaisan_inner .omssc_content .omssc_section .omssc_item {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: 0.12rem;
+}
+
+.reciprocal_outter .kuaisan_inner .omssc_content .omssc_section .omssc_item img {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.reciprocal_outter .kuaisan_inner .omssc_content .omssc_section .omssc_item:last-child {
+    margin-right: 0;
+}
+
+/* 一分六合彩 */
+
+.reciprocal_outter .kuaisan_inner .omlhc_light {
+    background: url(../images/animation/omlhc_ani_light.png);
+    background-size: 100% 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10rem;
+    height: 1.5rem;
+}
+
+.reciprocal_outter .kuaisan_inner .omlhc_content {
+    display: flex;
+}
+
+.reciprocal_outter .kuaisan_inner .omlhc_content .omlhc_section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reciprocal_outter .kuaisan_inner .omlhc_content .omlhc_section .omlhc_item {
+    background: url(../images/game/omlhc_ball_lg_frame.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 1.1475rem;
+    height: 1.33rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reciprocal_outter .kuaisan_inner .omlhc_content .omlhc_section .omlhc_item:last-child {
+    margin-right: 0;
+}
+
+.reciprocal_outter .kuaisan_inner .omlhc_content .omlhc_section .omlhc_item .omlhc_lg_ball {
+    width: 0.88rem;
+    height: 0.88rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reciprocal_outter .kuaisan_inner .omlhc_content .omlhc_section .omlhc_item .omlhc_lg_ball.green {
+    background: url(../images/game/omlhc_ball_lg_green.png);
+    background-size: 100% 100%;
+}
+
+.reciprocal_outter .kuaisan_inner .omlhc_content .omlhc_section .omlhc_item .omlhc_lg_ball.blue {
+    background: url(../images/game/omlhc_ball_lg_blue.png);
+    background-size: 100% 100%;
+}
+
+.reciprocal_outter .kuaisan_inner .omlhc_content .omlhc_section .omlhc_item .omlhc_lg_ball.red {
+    background: url(../images/game/omlhc_ball_lg_red.png);
+    background-size: 100% 100%;
+}
+
+.reciprocal_outter .kuaisan_inner .omlhc_content .omlhc_section .omlhc_item .omlhc_lg_ball .num {
+    font-family: Impact;
+    font-size: 0.453rem;
+    color: #010101;
+}
+
+.reciprocal_outter .kuaisan_inner .omlhc_content .omlhc_section .omlhc_lg_plus {
+    width: 0.56rem;
+    height: 1.12rem;
+}
+
+/* 百人牛牛 */
+
+.nuinui_content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.3rem;
+    position: relative;
+}
+
+.nuinui_content.mb0 {
+    margin-bottom: 0;
+}
+
+.nuinui_content .flag_blue {
+    background: url(../images/game/ic_blue_flag.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -0.0267rem;
+    left: 0.067rem;
+    width: 1.213rem;
+    height: 0.613rem;
+    z-index: 1;
+}
+
+.nuinui_content .flag_red {
+    background: url(../images/game/ic_red_flag.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -0.0267rem;
+    right: 0.067rem;
+    width: 1.213rem;
+    height: 0.613rem;
+    z-index: 1;
+}
+
+.nuinui_content .flag_blue.spacing {
+    left: 0.4rem;
+}
+
+.nuinui_content .flag_red.spacing {
+    right: 0.4rem;
+}
+
+.nuinui_content .blue {
+    background: url(../images/game/bg_lg_blue_nuinui.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 4.46rem;
+    height: 2.153rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.nuinui_content .red {
+    background: url(../images/game/bg_lg_red_nuinui.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 4.46rem;
+    height: 2.153rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.nuinui_content .blue.baccarat {
+    background: url(../images/game/bg_lg_blue_baccarat.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.nuinui_content .red.baccarat {
+    background: url(../images/game/bg_lg_red_baccarat.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.nuinui_content .blue.baccarat.plan {
+    background: url(../images/plan/bg_md_plan_blue_baccarat.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.nuinui_content .red.baccarat.plan {
+    background: url(../images/plan/bg_md_plan_red_baccarat.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.nuinui_content .blue.plan {
+    background: url(../images/plan/bg_md_plan_blue_nuinui.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 5rem;
+    height: 2.153rem;
+}
+
+.nuinui_content .red.plan {
+    background: url(../images/plan/bg_md_plan_red_nuinui.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 5rem;
+    height: 2.153rem;
+}
+
+.nuinui_content .blue .blue_inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 0.167rem;
+}
+
+.nuinui_content .blue .blue_inner.center {
+    padding-top: 0.18rem;
+    align-items: center;
+}
+
+.nuinui_content .red .red_inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 0.167rem;
+}
+
+.nuinui_content .red .red_inner.center {
+    padding-top: 0.18rem;
+    align-items: center;
+}
+
+.nuinui_content .blue .blue_inner.ani {
+    width: 4.46rem;
+    height: 2.153rem;
+}
+
+.nuinui_content .red .red_inner.ani {
+    width: 4.46rem;
+    height: 2.153rem;
+}
+
+.nuinui_content .blue .blue_inner.spacing {
+    margin-right: -0.3rem;
+}
+
+.nuinui_content .red .red_inner.spacing {
+    margin-left: -0.3rem;
+}
+
+.nuinui_content .blue .blue_inner .bg_result {
+    background: url(../images/game/bg_porker_lg_frame.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 3.53rem;
+    height: 0.693rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+}
+
+.nuinui_content .red .red_inner .bg_result {
+    background: url(../images/game/bg_porker_lg_frame.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 3.53rem;
+    height: 0.693rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+}
+
+.nuinui_content .blue .blue_inner .bg_result.bottom,.nuinui_content .red .red_inner .bg_result.bottom {
+    bottom: 0.18rem;
+}
+
+.nuinui_content .blue .blue_inner .bg_result .result,
+.nuinui_content .blue .blue_inner .bg_result .result img,
+.nuinui_content .red .red_inner .bg_result .result,
+.nuinui_content .red .red_inner .bg_result .result img {
+    width: auto;
+    height: 0.473rem;
+}
+
+.nuinui_content .blue .blue_inner .title {
+    font-family: 'FZZhengHeiS';
+    font-size: 0.373rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #f2f8ff 0%,#71bbff 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-bottom: 0.1rem;
+}
+
+.nuinui_content .blue .blue_inner .title::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.06rem #121a39;
+    z-index: -1;
+}
+
+.nuinui_content .red .red_inner .title {
+    font-family: 'FZZhengHeiS';
+    font-size: 0.373rem;
+    color: transparent;
+    background: linear-gradient(to bottom, #ffffff 0%,#ffa4a4 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-bottom: 0.1rem;
+}
+
+.nuinui_content .blue .blue_inner .title.lg {
+    font-size: 0.433rem;
+    position: absolute;
+    top: 0.18rem;
+    right: 0.78rem;
+}
+
+.nuinui_content .blue .blue_inner .title.lg.unset {
+    position: unset;
+}
+
+.nuinui_content .red .red_inner .title.lg {
+    font-size: 0.433rem;
+    position: absolute;
+    top: 0.18rem;
+    left: 0.78rem;
+}
+
+.nuinui_content .red .red_inner .title.lg.unset {
+    position: unset;
+}
+
+.nuinui_content .blue .blue_inner .title.ani {
+    position: absolute;
+    top: 0.18rem;
+    right: 0.712rem;
+}
+
+.nuinui_content .red .red_inner .title.ani {
+    position: absolute;
+    top: 0.18rem;
+    left: 0.712rem;
+}
+
+.nuinui_content .red .red_inner .title::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.06rem #3a0f0f;
+    z-index: -1;
+}
+
+.nuinui_content .blue .blue_inner .poker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.1rem;
+}
+
+.nuinui_content .red .red_inner .poker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.1rem;
+}
+
+.nuinui_content .blue.plan .blue_inner .poker {
+    margin-right: 0.35rem;
+}
+
+.nuinui_content .red.plan .red_inner .poker {
+    margin-left: 0.35rem;
+}
+
+.nuinui_content .blue .blue_inner .poker.ani {
+    position: absolute;
+    top: 0.72rem;
+    right: 50%;
+    transform: translateX(50%);
+    z-index: 1;
+    width: 3.035rem;
+    height: 1.073rem;
+  }
+  
+  .nuinui_content .red .red_inner .poker.ani {
+    position: absolute;
+    top: 0.72rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    width: 3.035rem;
+    height: 1.073rem;
+  }
+
+.nuinui_content .blue .blue_inner .poker .piece{
+    width: 1.067rem;
+    /* height: 1.073rem; */
+    margin-right: -0.2rem;
+    /* filter: drop-shadow(0 0 0.067rem rgba(0,0,0,0.7)); */
+}
+
+.nuinui_content .red .red_inner .poker .piece {
+    width: 1.067rem;
+    /* height: 1.073rem; */
+    margin-left: -0.2rem;
+    /* filter: drop-shadow(0 0 0.067rem rgba(0,0,0,0.7)); */
+}
+
+.nuinui_content .blue.plan .blue_inner .poker .piece{
+    width: 0.987rem;
+    margin-right: -0.42rem;
+}
+
+.nuinui_content .red.plan .red_inner .poker .piece {
+    width: 0.987rem;
+    margin-left: -0.42rem;
+}
+
+.nuinui_content .versus {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1.84rem;
+    height: 2.0267rem;
+}
+
+/* 百家樂 */
+
+.nuinui_content .blue.baccarat .blue_inner .bg_result.baccarat,.nuinui_content .red.baccarat .red_inner .bg_result.baccarat {
+    bottom: 0.15rem;
+}
+
+.nuinui_content .blue.baccarat .blue_inner .poker_baccarat,.nuinui_content .red.baccarat .red_inner .poker_baccarat {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0.72rem;
+    display: flex;
+}
+
+.nuinui_content .blue.baccarat .blue_inner .poker_baccarat .piece {
+    width: 0.8133rem;
+    height: 1.1467rem;
+    margin-right: 0.12rem;
+}
+
+.nuinui_content .blue.baccarat .blue_inner .poker_baccarat .piece.left {
+    transform: rotate(90deg);
+    margin-right: 0.29rem;
+    margin-top: 0.168rem;
+}
+
+.nuinui_content .blue.baccarat .blue_inner .poker_baccarat .piece:last-child {
+    margin-right: 0;
+}
+
+.nuinui_content .red.baccarat .red_inner .poker_baccarat .piece {
+    width: 0.8133rem;
+    height: 1.1467rem;
+    margin-left: 0.12rem;
+}
+
+.nuinui_content .red.baccarat .red_inner .poker_baccarat .piece.right {
+    transform: rotate(90deg);
+    margin-left: 0.29rem;
+    margin-top: 0.168rem;
+}
+
+.nuinui_content .red.baccarat .red_inner .poker_baccarat .piece:first-child {
+    margin-left: 0;
+}
+
+.nuinui_content .blue.baccarat .blue_inner .bg_result .win,.nuinui_content .red.baccarat .red_inner .bg_result .win {
+    font-size: 0.346rem;
+    font-weight: bold;
+    color: rgba(0,0,0,0.01);
+    background: linear-gradient(to bottom, #fffe8b 0%,#ffa900 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-right: 0.15rem;
+}
+
+.nuinui_content .blue.baccarat .blue_inner .bg_result .win::before,.nuinui_content .red.baccarat .red_inner .bg_result .win::before {
+    padding-right: 0;
+}
+
+.nuinui_content .blue.baccarat .blue_inner .bg_result .win::before,.nuinui_content .red.baccarat .red_inner .bg_result .win::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.03rem #4c3520;
+    z-index: -1;
+}
+
+.nuinui_content .blue.baccarat .blue_inner .bg_result .lose,.nuinui_content .red.baccarat .red_inner .bg_result .lose {
+    font-size: 0.346rem;
+    font-weight: bold;
+    color: rgba(0,0,0,0.01);
+    background: linear-gradient(to bottom, #fefefe 0%,#acacac 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.nuinui_content .blue.baccarat .blue_inner .bg_result .lose::before,.nuinui_content .red.baccarat .red_inner .bg_result .lose::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 0.03rem #2b2b2b;
+    z-index: -1;
+}
+
+/* 輪盤 */
+
+.jslp_content {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0.4rem;
+}
+
+.jslp_content.mb0 {
+    background: url(../images/plan/bg_plan_jslp.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin-bottom: 0;
+}
+
+.needle {
+    position: absolute;
+    top: -0.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 11;
+    width: 0.8rem;
+    height: 1.1933rem;
+}
+
+.needle img {
+    width: 0.8rem;
+    height: 1.1933rem;
+}
+
+.accurate_outer {
+    position: absolute;
+    height: 3.26rem;
+    overflow: hidden;
+    z-index: 4;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.accurate_outer .accurate {
+    width: 1.9467rem;
+    height: 3.133rem;
+    margin-top: 0.6rem;
+}
+
+.accurate_outer .accurate img {
+    width: 1.9467rem;
+    height: 3.133rem;
+}
+
+.accurate_outer .accurate.default {
+    margin-top: 0.89rem;
+}
+
+.accurate_shadow_outer {
+    position: absolute;
+    height: 2.26rem;
+    overflow: hidden;
+    z-index: 3;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.accurate_shadow_outer .accurate_shadow {
+    width: 1.9467rem;
+    height: 2.826rem;
+    margin-top: 0.2rem;
+}
+
+
+.roulette_wrapper {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 2.26rem;
+    z-index: 1;
+}
+
+.roulette_wrapper .outer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    height: 2.26rem;
+    overflow: hidden;
+}
+
+.roulette_wrapper .outer .frame_outer {
+    position: absolute;
+    width: 9.64rem;
+    height: 2.26rem;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.roulette_wrapper .outer .frame_outer .frame {
+    margin-top: 0.18rem;
+}
+
+.roulette_wrapper .outer .frame_outer .frame img {
+    width: 9.64rem;
+    height: 9.64rem;
+}
+
+.roulette_wrapper .outer .roulette_outer {
+    margin-top: 0.54rem;
+}
+
+/* 極速魚蝦蟹 */
+
+.kuaisan_inner .kuaisan_content .jsyxx_dice_lg {
+    width: 1.733rem;
+    height: 1.813rem;
+}
+
+/* 極速龍虎 */
+
+.jslh_content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.3rem;
+    position: relative;
+}
+
+.jslh_content.mb0 {
+    margin-bottom: 0;
+}
+
+.jslh_content .versus {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1.106rem;
+    height: 0.8733rem;
+}
+
+.jslh_content .dragon {
+    background: url(../images/game/bg_dragon.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 4.46rem;
+    height: 2.153rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.jslh_content .dragon.plan {
+    background: url(../images/plan/bg_plan_dragon.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 5rem;
+    height: 2.153rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.jslh_content .dragon .dragon_img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 2.153rem;
+    height: 2.153rem;
+    z-index: 10;
+}
+
+.jslh_content .dragon .battle {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 4.46rem;
+    height: 2.153rem;
+    z-index: 9;
+}
+
+.jslh_content .dragon .battle .win,.jslh_content .dragon .battle .lose,.jslh_content .dragon .battle .tie {
+    position: absolute;
+    bottom: 0.15rem;
+    left: 1.2rem;
+    width: 2.353rem;
+    height: 0.58rem;
+    z-index: 9;
+}
+
+.jslh_content .dragon .item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 4.46rem;
+    height: 2.153rem;
+    padding-right: 0.5rem;
+}
+
+.jslh_content .dragon .item .text {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 1.2rem;
+    height: 1rem;
+    padding-bottom: 0.2rem;
+}
+
+.jslh_content .dragon .item .text.spacing {
+    margin-right: 0.25rem;
+}
+
+.jslh_content .dragon .item .bg {
+    background: url(../images/game/img_frame_dragon.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 1.4rem;
+    height: 1.867rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jslh_content .dragon .item .bg .poker {
+    width: 1.1467rem;
+    height: 1.6rem;
+}
+
+.jslh_content .tiger {
+    background: url(../images/game/bg_tiger.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 4.46rem;
+    height: 2.153rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.jslh_content .tiger.plan {
+    background: url(../images/plan/bg_plan_tiger.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 5rem;
+    height: 2.153rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.jslh_content .tiger .tiger_img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 2.153rem;
+    height: 2.153rem;
+    z-index: 10;
+}
+
+.jslh_content .tiger .battle {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 4.46rem;
+    height: 2.153rem;
+    z-index: 9;
+}
+
+.jslh_content .tiger .battle .win,.jslh_content .tiger .battle .lose,.jslh_content .tiger .battle .tie {
+    position: absolute;
+    bottom: 0.15rem;
+    right: 1.2rem;
+    width: 2.353rem;
+    height: 0.58rem;
+    z-index: 9;
+}
+
+.jslh_content .tiger .item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 4.46rem;
+    height: 2.153rem;
+    padding-left: 0.5rem;
+}
+
+.jslh_content .tiger .item .text {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 1.2rem;
+    height: 1rem;
+    padding-bottom: 0.2rem;
+}
+
+.jslh_content .tiger .item .text.spacing {
+    margin-left: 0.25rem;
+}
+
+.jslh_content .tiger .item .bg {
+    background: url(../images/game/img_frame_tiger.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 1.4rem;
+    height: 1.867rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jslh_content .tiger .item .bg .poker {
+    width: 1.1467rem;
+    height: 1.6rem;
+}

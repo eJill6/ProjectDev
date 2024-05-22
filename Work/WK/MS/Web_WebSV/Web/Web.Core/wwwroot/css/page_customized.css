@@ -1,0 +1,602 @@
+﻿@charset "UTF-8";
+
+/*各單元客製化css*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/********************************* 使用教學 start *********************************/
+.tutorial_content {
+    padding-bottom: 40px;
+}
+.tutorial_content .title {
+    font-size: 26px;
+    color: #008ca1;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px 0 10px 0; 
+}
+.tutorial_content .tutorial {
+    border-radius: 2px;
+  border: solid 1px #e5e5e5;
+  background-color: #fdfeff;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 30px 0;
+}
+
+.tutorial_content .tutorial_topay {
+  border-radius: 2px;
+  background-color: #fdfeff;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+.tutorial_content .tutorial li {
+    padding: 0 10px;
+}
+
+.tutorial_content .tutorial_topay li {
+  padding: 0 10px;
+}
+
+.tutorial_content .tutorial li .step_number {
+    font-size: 15px;
+    color: #008ca1;
+    line-height: 1;
+    text-align: center;
+    font-weight: bold;
+}
+
+.tutorial_content .tutorial_topay li .step_number {
+  font-size: 15px;
+  color: #008ca1;
+  line-height: 1;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+.tutorial_content .tutorial li .text {
+    font-size: 14px;
+    text-align: center;
+    color: #333;
+    margin: 8px 0 12px 0;
+}
+
+.tutorial_content .tutorial_topay li .text {
+  font-size: 14px;
+  text-align: center;
+  color: #333;
+  margin: 8px 0 12px 0;
+}
+
+
+.tutorial_content .tutorial li .text span {
+    color: #008ca1;
+}
+
+.tutorial_content .tutorial_topay li .text span {
+  color: #008ca1;
+}
+
+
+.tutorial_content .tutorial li .pic {
+    width: 300px;
+}
+
+.tutorial_content .tutorial_topay li .pic {
+  width: 300px;
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .tutorial_content .title {
+        font-size: 24px;
+    }
+    .tutorial_content .tutorial {
+        flex-wrap: wrap;
+    }
+
+    .tutorial_content .tutorial li {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .tutorial_content .tutorial li .step_number {
+        font-size: 17px;
+    }
+
+    .tutorial_content .tutorial li .text {
+        font-size: 16px;
+        padding: 0 15px;
+    }
+
+    .tutorial_content .tutorial li .pic {
+        width: auto;
+    }
+
+    .tutorial_content .tutorial li .pic img {
+        margin: 0 auto;
+    }
+    
+}
+
+@media only screen and (max-width: 1024px) {
+
+  .tutorial_content .tutorial_topay {
+      flex-wrap: wrap;
+  }
+
+  .tutorial_content .tutorial_topay li {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+
+  .tutorial_content .tutorial_topay li .step_number {
+      font-size: 17px;
+  }
+
+  .tutorial_content .tutorial_topay li .text {
+      font-size: 16px;
+      padding: 0 15px;
+  }
+
+  .tutorial_content .tutorial_topay li .pic {
+      width: auto;
+  }
+
+  .tutorial_content .tutorial_topay li .pic img {
+      margin: 0 auto;
+  }
+  
+}
+
+
+
+
+
+
+/*********************************  app安裝教學(公版、無logo、僅移動端顯示) start *********************************/
+
+.app_install_tutorial {
+    max-width: 900px;
+}
+.app_install_tutorial .title {
+    margin: 15px auto;
+    font-size: 20px;
+    color: #FFF;
+    text-align: center;
+    letter-spacing: 3px;
+}
+.app_install_tutorial .tutorial {
+    background: rgba(23, 45, 69, .5);
+    display: flex;
+    padding: 20px 0;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+.app_install_tutorial .tutorial li {
+    width: 100%;
+}
+.app_install_tutorial .tutorial li.arrow {
+    padding: 0 10px;
+}
+.app_install_tutorial .tutorial li.arrow img{
+    margin: 0 auto;
+}
+.app_install_tutorial .tutorial li .step_number {
+    margin-top: 10px;
+}
+.app_install_tutorial .tutorial li .step_number>div {
+    margin: 0 auto;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    color: #FFF;
+    line-height: 39px;
+    background: #1C4062;
+    border: 1px solid #2E4F6E;
+    text-align: center;
+    border-radius: 50%;
+}
+.app_install_tutorial .tutorial li .pic {
+    width: auto;
+}
+.app_install_tutorial .tutorial li .pic img{
+    margin: 0 auto;
+}
+.app_install_tutorial .tutorial li .text {
+    font-size: 16px;
+    text-align: center;
+    color: #FFF;
+    margin: 12px 0 0 0;
+}
+.app_install_tutorial .tutorial li .text span {
+    color: #00BAD3;
+}
+
+@media only screen and (max-width: 420px) {
+    .app_install_tutorial .tutorial li .text {
+        font-size: 15px;
+        padding: 0 15px;
+    }
+}
+
+/*********************************  TOPAY買幣賣幣教學 *********************************/
+
+
+.tutorial_topay_menu_content {
+  display: flex;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom: 2px solid #008CA1;
+}
+
+.tutorial_topay_menu_content ul {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  
+}
+
+.tutorial_topay_menu_content.tutorial_topay_max_width_limited ul {
+  flex: inherit;
+  width: 16.666666%;
+}
+
+.tutorial_topay_menu_content ul>a {
+  width: 100%;
+  text-align: center;
+  line-height: 38px;
+  height: 38px;
+  color: #333;
+  font-size: 14px;
+  display: block;
+  background: #F7F7F7;
+  border-top: 1px solid #E0E0E0;
+  border-right: 1px solid #E0E0E0;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  position: relative;
+}
+
+.tutorial_topay_menu_content ul:hover>a {
+  background: #FFF;
+  color: #333;
+}
+
+.tutorial_topay_menu_content ul:hover .tutorial_topay_sub_menu {
+  display: block;
+}
+
+.tutorial_topay_menu_content ul a.active {
+  background: #008CA1;
+  color: #FFF;
+  border-top: 1px solid #008CA1;
+  border-right: 1px solid #008CA1;
+  border-left: 1px solid #008CA1;
+}
+
+.tutorial_topay_menu_content ul>a .amount{
+position: absolute;
+left: calc(50% + 20px);
+top: 5px;
+font-size: 12px;
+line-height: 16px;
+padding: 0 4px;
+background: #f04040;
+color: #FFF;
+border-radius: 20px;
+min-width: 16px;
+height: 16px;
+text-align: center;
+}
+
+
+
+
+@media only screen and (max-width: 1024px) {
+  .tutorial_topay_menu_content.tutorial_topay_max_width_limited ul{
+    display: flex;
+    width: 50%;
+  }
+}
+
+
+
+
+
+
+
+/*********************************  系統通知  start *********************************/
+
+.notification {
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  right: inherit;
+  bottom: 10px;
+  padding: 0px 10px;
+}
+
+.notification .list {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  background: #1C1B22;
+  border-radius: 3px;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+.notification .list .close {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 1;
+  right: 3px;
+  top: 3px;
+  opacity: .6;
+  cursor: pointer;
+}
+
+.notification .close:hover {
+  opacity: 1;
+}
+
+
+.notification .list .notify_icon {
+  width: 96px;
+}
+
+/*.notification .list .notify_icon img{
+  width: 96px;
+  height: 70px;
+}*/
+
+.notification .list .notify_icon .name{
+  color: #E8E8E8;
+  font-size: 13px;
+  text-align: center;
+  line-height: 1.2;
+  width: 100%;
+  padding: 2px 0; 
+}
+.notification .list .notify_icon .name.transfer{
+  background: #326eb2;
+}
+.notification .list .notify_icon .name.news{
+  background: #2a8597;
+}
+.notification .list .notify_icon .name.bet{
+  background: #3aa65a;
+}
+
+.notification .list .notify_text {
+  padding: 12px 25px 12px 12px;
+  width: calc(100% - 96px);
+}
+
+
+.notification .list .notify_text p {
+  color: #E8E8E8;
+  font-size: 14px;
+  line-height: 1.5;
+
+}
+
+.notification .list .notify_text span {
+  color: #F68F0A;
+  font-size: 13px;
+}
+
+.notification .list .notify_text a {
+  color: #F68F0A;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.notification .list .notify_text a:hover {
+  color: #1d9db0;
+}
+
+
+
+
+
+
+/*******************錯誤頁面*******************/
+.main.error_public{
+    height: calc(100% - 158px);
+}
+.main.error_public .container{
+    height: 100%;
+}
+.error_content .error_text{
+  width: 45%;
+  padding-bottom: 80px;
+}
+.error_content .error_text h1{
+  font-size: 90px;
+  line-height: 1;
+  padding-bottom: 5px;
+  color: #182437;
+  font-family: 'din_alternatebold', Microsoft YaHei, Arial, sans-serif;
+}
+.error_content .error_text h2{
+  font-size: 40px;
+  line-height: 1.2;
+  padding-bottom: 10px;
+  color: #182437;
+  font-weight: bold;
+}
+.error_content .error_text p{
+  font-size: 15px;
+  line-height: 1.6;
+  color: #182437;
+  padding-bottom: 20px;
+}
+.error_content .btns{
+  display: flex;
+  align-items: center;
+}
+.error_content .btns a{
+  min-width: 150px;
+}
+.error_content .btns a:first-child{
+  margin-right: 10px;
+}
+@media only screen and (max-width: 1024px) {
+    .main.error_public{
+        height: 100%;
+    }
+    .error_content .error_text{
+    width: 100%;
+      text-align: center;
+    }
+    .error_content .error_text h1{
+      font-size: 66px;
+    }
+    .error_content .error_text h2{
+      font-size: 28px;
+    }
+    .error_content .error_text p{
+      font-size: 14px;
+      line-height: 1.4;
+      padding-bottom: 15px;
+    }
+    .error_content .btns a{
+      flex: 1;
+      min-width: inherit;
+    }
+}
+@media only screen and (max-width: 580px) {
+    
+    
+}
+
+
+
+
+
+/*******************第三方跳轉頁錯誤頁面*******************/
+.main.error {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background: #efdfac; /* Old browsers */
+  background: -moz-linear-gradient(top, #efdfac 0%, #efdfac 25%, #f7eec5 50%, #f2e6b6 75%, #efdfac 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #efdfac 0%, #efdfac 25%, #f7eec5 50%, #f2e6b6 75%, #efdfac 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #efdfac 0%, #efdfac 25%, #f7eec5 50%, #f2e6b6 75%, #efdfac 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#efdfac', endColorstr='#efdfac', GradientType=0); /* IE6-9 */
+}
+.error_page {
+  text-align: center;
+  height: auto;
+  padding: 0 20px 30px 20px;
+  flex: 1;
+}
+.error_page .error_page_content{
+  max-width: 600px;
+  margin: 0 auto;
+}
+.error_page .error_page_content > div{
+  width: 100%;
+}
+.error_forward_img {
+  margin-bottom: 15px;
+}
+.error_forward_img img {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+.error_page p {
+  display: block;
+  width: 100%;
+}
+.error_page p.error_forward_title {
+  color: #80160c;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 36px;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+.error_page p.error_forward_en_title {
+  color: #a36e10;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 22px;
+  margin-bottom: 14px;
+  line-height: 1;
+}
+.error_page p.error_forward_txt {
+  color: #370302;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.error_page .error_divider {
+  height: 1px;
+  width: 100%;
+  background-color: #370302;
+  margin: 15px 0;
+  border: 0;
+}
+.error_page p.error_forward_en {
+  color: #370302;
+  line-height: 1.4;
+}
+@media only screen and (max-width: 1024px) {
+  .error_page {
+    flex-wrap: wrap;
+    align-content: center;
+  }
+  .error_forward_img img{
+    width: 140px;
+    height: 140px;
+  }
+  .error_page p.error_forward_txt {
+      font-size: 14px;
+    }
+  .error_page .error_divider {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+
+
+
+
+
+
+
+

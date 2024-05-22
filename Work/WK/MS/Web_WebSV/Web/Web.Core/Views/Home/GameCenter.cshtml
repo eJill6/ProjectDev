@@ -1,0 +1,379 @@
+﻿@using ControllerShareLib.Helpers;
+@using Web.Extensions;
+@using Web.Helpers;
+@using JxBackendService.Common.Util.Route;
+
+<link type="text/css" rel="stylesheet" href="@GlobalCacheHelper.RazorShareContentPath/css/gamelobby.css" />
+
+<div class="gamelobby outer">
+    <div class="menu_outer" id="jqMenu">
+    </div>
+
+    <div class="list_outer">
+        <div class="overflow_y_auto list hide_scorllbar" id="jqGameList"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var logonMode = @ViewBag.TicketUserData.LogonMode;
+    var timeoutId;
+
+    function gameCardClick(element) {
+        if ($.isLoading()) {
+            return;
+        }
+
+        const unlockSeconds = 10;
+        $.showLoading();
+
+        if (timeoutId) {
+            clearTimeout(timeoutId);
+        }
+
+        timeoutId = setTimeout(
+            function () {
+                $.hideLoading();
+            },
+            unlockSeconds * 1000);
+
+        let $this = $(element);
+        let gameLobbyTypeValue = $this.attr('gameLobbyTypeValue');
+
+        if (gameLobbyTypeValue) {
+            let gameLobbyUrl = $this.attr('gameLobbyUrl');
+
+            if (!gameLobbyUrl) {
+                return;
+            }
+
+            doLocalRedirect(gameLobbyUrl);
+            $.hideLoading();
+
+            return;
+        }
+
+        let productCode = $this.attr('productCode');
+        let gameCode = $this.attr('gameCode');
+        let remoteCode = $this.attr('remoteCode');
+        let title = $this.attr('title');
+        let win = undefined;
+
+        if (!productCode && !gameCode && !remoteCode && !title) {
+            $.hideLoading();
+
+            return;
+        }
+
+        if (logonMode === LogonMode.Lite) {
+            if (win) {
+                win.close();
+            }
+
+            win = globalVariables.OpenEnterGameLoadingWindow();
+        }
+
+        $.ajax2({
+            url: '@Url.GetMiseWebTokenUrl("GetForwardGameUrl","GameCenter")',
+            type: "POST",
+            data: {
+                productCode: productCode,
+                gameCode: gameCode,
+                remoteCode: remoteCode,
+                title: title
+            },
+            success: function (result) {
+
+                if (result.IsSuccess) {
+                    let url = result.DataModel;
+                    $.openUrl(logonMode, url, win);
+                }
+                else {
+                    if (win) {
+                        win.close();
+                    }
+
+                    alert(result.Message)
+                }
+            }
+        });
+    }
+
+    function doLocalRedirect(url) {
+        if (url.startsWith("/")) { //relative url
+            $.openUrl(logonMode, $.toTokenPath(url));
+
+            return;
+        }
+
+        let sealUrl = new URL(url);
+        let initUrl = sealUrl.searchParams.get("initUrl");
+        initUrl = $.toTokenPath(initUrl);
+        initUrl = location.origin + initUrl; //convert to fullurl
+        sealUrl.searchParams.set("initUrl", initUrl);
+        location.href = sealUrl.href;
+    }
+
+    function initTouchEvents($jqMenu, $jqGameList) {
+
+        // 定义左右滑动的阈值
+        const threshold = 30;
+
+        // 定义滑动开始和结束的坐标和时间
+        var startX, endX, startY, endY, startTime, endTime;
+
+        // 添加滑动事件监听器
+        $jqGameList.on("touchstart", function (event) {
+            // 记录滑动开始的坐标和时间
+            startX = event.changedTouches[0].pageX;
+            startY = event.changedTouches[0].pageY;
+            startTime = new Date().getTime();
+        });
+
+        $jqGameList.on("touchend", function (event) {
+            // 记录滑动结束的坐标和时间
+            endX = event.changedTouches[0].pageX;
+            endY = event.changedTouches[0].pageY;
+            endTime = new Date().getTime();
+
+            // 计算滑动的距离和时间
+            var distanceX = endX - startX;
+            var distanceY = endY - startY;
+            var deltaTime = endTime - startTime;
+
+            // 判断滑动的方向和距离是否符合条件
+            if (Math.abs(distanceX) > threshold && Math.abs(distanceY) < threshold && deltaTime < 500) {
+
+                // 获取当前激活的菜单项的索引
+                let activeIndex = parseInt($jqMenu.find(".active").attr("index"));
+
+                if (distanceX > 0) {
+                    activeIndex--;
+                }
+                else if (distanceX < 0) {
+                    activeIndex++;
+                }
+                else {
+                    return;
+                }
+
+                let $jqMenuPanel = $jqMenu.find(".jqMenuPanel");
+                let menuPanelCount = $jqMenuPanel.length;
+
+                if (activeIndex < 0 || activeIndex >= menuPanelCount) {
+                    return;
+                }
+
+                $jqMenuPanel.eq(activeIndex).click();
+            }
+        });
+    }
+
+    $.ajax({
+        url: "HomeTopMenu",
+        type: "GET",
+        success: function (result) {
+            const fadeDuration = 100;
+            let $jqGamePageTmpl = $("#jqGamePageTmpl");
+            let $jqGamePanelTmpl = $('#jqGamePanelTmpl');
+            let $totalPage = $("<div></div>"); //暫存資料
+            window.$jqMenu = $("#jqMenu");
+            let menuTypeMap = {};
+
+            let batchMenuCount = 4; //4個一排
+            let allBatchWebMenuTypeViewModels = [];
+            let batchFrontsideMenuTypes = [];
+
+            $.each(result.WebMenuTypeViewModels, function (i, webMenuTypeViewModel) {
+                const menuTypeValue = webMenuTypeViewModel.MenuTypeValue;
+                const colsInRow = webMenuTypeViewModel.ColsInRow;
+                const cardOutCssClass = webMenuTypeViewModel.CardOutCssClass;
+                const maintainanceCssClass = webMenuTypeViewModel.MaintainanceCssClass;
+                const menuLength = webMenuTypeViewModel.FrontsideProductMenus.length;
+
+                menuTypeMap[`${menuTypeValue}`] = webMenuTypeViewModel;
+                webMenuTypeViewModel.index = i;
+                batchFrontsideMenuTypes.push(webMenuTypeViewModel);
+
+                if (batchFrontsideMenuTypes.length == batchMenuCount) {
+                    allBatchWebMenuTypeViewModels.push(batchFrontsideMenuTypes);
+                    batchFrontsideMenuTypes = [];
+                }
+
+                //要補滿個數否則會破版
+                const remainder = menuLength % colsInRow;
+
+                if (remainder !== 0) {
+
+                    let emptyMenu = {};
+
+                    for (let i = 1; i <= colsInRow - remainder; i++) {
+                        webMenuTypeViewModel.FrontsideProductMenus.push(emptyMenu);
+                    }
+                }
+
+                let batchMenus = [];
+                let $totalGamePanel = $("<div></div>"); //暫存資料
+
+                $.each(webMenuTypeViewModel.FrontsideProductMenus, function (i, productMenu) {
+                    batchMenus.push(productMenu);
+
+                    if (batchMenus.length == colsInRow) {
+                        let data = {
+                            batchMenus: batchMenus
+                        };
+
+                        let $gamePanel = $jqGamePanelTmpl.tmpl(data);
+                        $gamePanel.find(".jqGameCard").addClass(cardOutCssClass);
+                        $gamePanel.find(".jqMaintainance").addClass(maintainanceCssClass);
+                        $totalGamePanel.append($gamePanel);
+                        batchMenus = [];
+                    }
+                });
+
+                let $page = $jqGamePageTmpl.tmpl({ menuTypeValue: menuTypeValue });
+                $page.find(".jqPageList").html($totalGamePanel.html());
+                $totalPage.append($page);
+            });
+
+            if (batchFrontsideMenuTypes.length > 0) {
+                allBatchWebMenuTypeViewModels.push(batchFrontsideMenuTypes);
+            }
+
+            $.each(allBatchWebMenuTypeViewModels, function (i, batchFrontsideMenuTypes) {
+                $('#jqMenuTmpl').tmpl({ batchFrontsideMenuTypes }).appendTo($jqMenu);
+            });
+
+            let $jqGameList = $("#jqGameList");
+            $jqGameList.html($totalPage.html());
+
+            window.$jqMenuPanel = $(".jqMenuPanel");
+            window.$jqGamePage = $(".jqGamePage");
+
+            window.$jqMenuPanel.click(function () {
+                let $self = $(this);
+
+                if ($self.hasClass("active")) {
+                    return;
+                }
+
+                let $prevMenuBtn = window.$jqMenu.find(".jqMenuPanel.active");
+                let menuTypeValue = $self.attr("menuTypeValue");
+                $prevMenuBtn.removeClass("active");
+                $self.addClass("active");
+
+                window.$jqGamePage.filter(":visible").fadeOut(fadeDuration);
+                window.$jqGamePage.filter(`[menuTypeValue=${menuTypeValue}]`).fadeIn(fadeDuration);
+
+                //微調menu scroll位置
+                let prevIndex = $prevMenuBtn.parent().attr("index");
+                let currentIndex = $self.attr("index");
+                let direction = "right";
+
+                if (currentIndex - prevIndex > 0) {
+                    direction = "left";
+                }
+
+                if (direction == "left") {
+                    let $next1Menu = $self.next();
+                    let $next2Menu = $next1Menu.next();
+
+                    if ($next1Menu.length === 0 && $next2Menu.length === 0) {
+                        return;
+                    }
+
+                    let $targetMenu = $next1Menu;
+
+                    if ($next2Menu.length == 1) {
+                        $targetMenu = $next2Menu;
+                    }
+
+                    let containerWidth = $jqMenu.width();
+                    let targetMenuWidth = $targetMenu.width();
+                    let targetMenuLeft = $targetMenu.position().left;
+
+                    if (targetMenuLeft + targetMenuWidth > containerWidth) {
+                        let originScrollLeft = $jqMenu.scrollLeft();
+                        let addScrollLeft = targetMenuLeft + targetMenuWidth - containerWidth;
+                        $jqMenu.scrollLeft(originScrollLeft + addScrollLeft);
+                    }
+                }
+                else {
+                    let $prev1Menu = $self.prev();
+                    let $prev2Menu = $prev1Menu.prev();
+
+                    if ($prev1Menu.length === 0 && $prev2Menu.length === 0) {
+                        return;
+                    }
+
+                    let $targetMenu = $prev1Menu;
+
+                    if ($prev2Menu.length == 1) {
+                        $targetMenu = $prev2Menu;
+                    }
+
+                    let targetMenuLeft = $targetMenu.position().left;
+
+                    if (targetMenuLeft < 0) {
+                        let originScrollLeft = $jqMenu.scrollLeft();
+                        $jqMenu.scrollLeft(originScrollLeft + targetMenuLeft);
+                    }
+                }
+            });
+
+            initTouchEvents($jqMenu, $jqGameList);
+            $jqMenuPanel.first().click();
+        }
+    });
+</script>
+
+<script id="jqMenuTmpl" type="text/x-jquery-tmpl">
+    <div class="menu">
+        {{each batchFrontsideMenuTypes}}
+        <div class="btn jqMenuPanel" menuTypeValue="${MenuTypeValue}" index="${index}">
+            <div class="content">
+                <div class="icon"><img src="${IconUrl}" alt=""></div>
+                <div class="text">${MenuTypeName}</div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</script>
+
+<script id="jqGamePageTmpl" type="text/x-jquery-tmpl">
+    <div class="game_page jqGamePage" menuTypeValue="${menuTypeValue}" style="display:none">
+        <div class="game_page_list jqPageList">
+        </div>
+    </div>
+</script>
+
+<script id="jqGamePanelTmpl" type="text/x-jquery-tmpl">
+    <div class="hot_game">
+        {{each batchMenus}}
+        <div class="jqGameCard">
+            <div class="card ${CardCssClass}"
+                 onclick=gameCardClick(this);
+                 gameLobbyUrl="${GameLobbyUrl}"
+                 gameLobbyTypeValue="${GameLobbyTypeValue}"
+                 productCode="${ProductCode}"
+                 gameCode="${GameCode}"
+                 remoteCode="${RemoteCode}"
+                 title="${Title}">
+                {{if FullImageUrl}}
+                <image src="${FullImageUrl}" />
+                {{/if}}
+            </div>
+            {{if IsMaintaining}}
+            <div class="jqMaintainance">
+                <div class="maintain_content">
+                    <img src="@WebResourceHelper.Content($"{GlobalCacheHelper.RazorShareContentPath}/images/gamelobby/ic_maintain.svg")">
+                    <p>维护中</p>
+                </div>
+            </div>
+            {{/if}}
+            <div class="cover_gamename">
+                <p>${Title}</p>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</script>

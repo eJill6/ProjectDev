@@ -1,0 +1,2764 @@
+﻿@charset "UTF-8";
+
+
+
+/******************************* gap *******************************/
+.gap_for_phone {
+    height: 100px;
+    display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+    .gap_for_phone {
+        display: block;
+    }
+}
+
+/********************************* 投注頁 *********************************/
+.bg_lottery{
+    background: #151419 ;
+    background-size: cover;
+}
+@media only screen and (max-width: 1024px) {
+    .bg_lottery{
+        background: none;
+        padding: 0;
+    }
+    body.lottery{
+        background: #151419;
+    }
+} 
+.bet_content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bet_content .bet_left_content {
+    flex: auto;
+    width: 100%;
+    order: 2;
+    position: relative;
+}
+
+.bet_content .bet_right_content {
+    width: 100%;
+    order: 1;
+    position: relative;
+    margin-left: 0;
+    z-index: 0;
+}
+
+@media only screen and (max-width: 1024px) {
+
+    .bet_content .bet_left_content {
+        flex: auto;
+        width: 100%;
+        order: 2;
+    }
+
+    .bet_content .bet_right_content {
+        order: 1;
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+/*投注頁遊戲標題*/
+.bet_header_set {
+    display: none;
+    background: #F5F5F5;
+    position: relative;
+    z-index: 1;
+    border-bottom: 1px solid #d8dae0;
+}
+
+.bet_header_set.racing {
+    background: #0C1B2E url(../images/bet/bg_bet_racing.svg) right 10px center no-repeat;
+}
+
+.bet_header_set .btn_video {
+    position: absolute;
+    right: 16px;
+    top: 13px;
+    z-index: 1;
+}
+
+.bet_header_set .btn_video a {
+    width: 94px;
+    padding: 0 7px;
+    line-height: 26px;
+    height: 26px;
+    border-radius: 3px;
+    justify-content: space-between;
+}
+
+.bet_header_set .btn_video a::before {
+    display: none;
+}
+
+.bet_header_set .btn_video a span {
+    margin-left: 0;
+    text-align: right;
+}
+
+.bet_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 15px 10px 15px;
+    min-height: 51px;
+}
+
+.bet_header .bet_header_left {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+}
+
+.bet_header_left p.bet_game_name {
+    color: #333;
+    font-size: 18px;
+    line-height: 1;
+    font-weight: bold;
+}
+
+.bet_header_left .tip_detail.customize_a {
+    width: 280px;
+}
+
+.bet_header_left p.bet_game_period {
+    color: #333;
+    margin: 0 10px 0 10px;
+}
+
+.bet_header_left p.bet_game_period span {
+    color: #008ca1;
+}
+
+.bet_header_left p.bet_game_count {
+    color: #333;
+    margin-right: 5px;
+}
+
+.bet_header_left p.bet_game_count span {
+    color: #DC8F00;
+}
+
+.bet_header .bet_header_right .tab {
+    width: auto;
+}
+
+@media only screen and (max-width: 1024px) {
+    .bet_header {
+        padding: 12px 15px 15px 15px;
+        height: auto;
+    }
+
+    .bet_header_set .btn_video {
+        top: calc(50% - 13px);
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .bet_header_set {
+        display: none;
+    }
+}
+
+
+
+/*投注頁玩法主選單*/
+.bet_nav_wrap {
+    position: relative;
+    z-index: 0;
+}
+
+.bet_nav_wrap.no_scroll .bet_nav_slider_control,
+.bet_nav_wrap.no_scroll .bet_nav_silder_cover {
+    display: none;
+}
+
+.bet_overflow_x {
+    width: 770px;
+    overflow-x: hidden;
+    white-space: nowrap;
+}
+
+.bet_nav_slider_control {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(to right, rgba(245,245,245,0) 0%, rgba(245,245,245,100) 25%, rgba(245,245,245,100) 100% );
+    padding-left: 8px;
+}
+
+.bet_nav_slider_control>div {
+    padding: 6px 4px 6px 10px;
+    cursor: pointer;
+    border-left: 1px solid #666;
+    margin: 7px 15px 9px 12px;
+}
+
+/*.bet_nav_slider_control .bet_nav_silder_pre {
+    display: none;
+}*//*RD remove*/
+
+.bet_nav_silder_cover {
+    position: absolute;
+    width: 38px;
+    height: 41px;
+    left: 0;
+    bottom: 1px;
+    background: url("../images/bet/nav_slider_cover.png");
+    z-index: 1;
+    display: none;
+}
+
+.bet_nav {
+    display: table-cell;
+    padding: 0 15px 0 15px;
+}
+
+.bet_nav .bet_menu_item_set {
+    cursor: pointer;
+    display: inline-flex;
+}
+
+.bet_nav .bet_menu_item_set a.bet_menu_item {
+    color: #333;
+    font-size: 13px;
+    text-align: center;
+    border-bottom: 2px solid #F5F5F5;
+    display: block;
+    padding: 8px 12px 14px 12px;
+}
+
+.bet_nav .bet_menu_item_set:hover a.bet_menu_item,
+.bet_nav .bet_menu_item_set.active a.bet_menu_item {
+    color: #008ca1;
+    border-bottom: 2px solid #008ca1;
+    font-weight: bold;
+}
+
+.bet_nav .bet_menu_item_set:hover .bet_sub_menu_content {
+    display: block;
+}
+
+@media only screen and (max-width: 1024px) {
+    .bet_nav_wrap {
+        display: none;
+    }
+}
+
+/*投注頁玩法次選單*/
+.bet_sub_menu_content {
+    position: absolute;
+    width: 100%;
+    background: #FFF;
+    box-shadow: 0 0 15px 0 rgba(55, 78, 103, 0.3);
+    border-radius: 5px;
+    z-index: 1;
+    top: calc(100% - 4px);
+    right: 0;
+    display: none;
+}
+
+.bet_sub_menu {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0 15px;
+}
+
+.bet_sub_menu ul {
+    font-size: 13px;
+    display: flex;
+    align-items: flex-start;
+    padding: 8px 0;
+    border-bottom: 1px solid #DDD;
+    width: 100%;
+}
+.bet_sub_menu ul:last-child {
+    border-bottom: none;
+}
+.bet_sub_menu ul .bet_sub_item_title {
+    padding: 2px 0;
+    min-width: 95px;
+    color: #FFF;
+    background: #374e67;
+    border-radius: 3px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.bet_sub_menu ul .bet_sub_menu_list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bet_sub_menu ul li {
+    color: #F4F4F4;
+}
+
+.bet_sub_menu ul li a {
+    padding: 2px 8px;
+    border-radius: 3px;
+    color: #333;
+    display: block;
+}
+
+.bet_sub_menu ul li a:hover {
+    color: #000;
+}
+
+.bet_sub_menu ul li.active a {
+    color: #008ca1;
+}
+
+/*投注頁投注區*/
+.bet_game_table_content {
+    min-height: inherit;
+    display: flex;
+    background: none;
+}
+
+.bet_game_content {
+    width: 100%;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+}
+
+.bet_game_content.higher {
+    padding-top: 19px;
+    padding-bottom: 15px;
+}
+
+.bet_game_content.higher_mid {
+    padding-top: 26px;
+    padding-bottom: 26px;
+}
+
+.bet_game_content.wider {
+    padding-top: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+}
+
+.bet_game_content.no_gap {
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+}
+
+.bet_game_content .lottery_set {
+    width: 100%;
+    padding: 15px 15px 12px 15px;
+    background: #1C1B22;
+}
+
+.bet_game_content .lottery_set.no_gap {
+    height: 100%;
+}
+
+
+.bet_game_content .lottery_set.lottery_set_selector {
+    margin-bottom: 10px;
+}
+
+.bet_game_content .lottery_set.lottery_set_selector.mgb_higher {
+    margin-bottom: 20px;
+}
+
+.bet_game_content .lottery_set.lottery_set_selector.no_padding {
+    padding: 0;
+    background: 0;
+    border-radius: 0;
+}
+
+.bet_game_content .lottery_set.col_half {
+    width: 50%;
+}
+
+.bet_game_content .selector_group_title {
+    color: #E8E8E8;
+    font-size: 14px;
+    width: 65px;
+    margin-right: 15px;
+    text-align: center;
+    line-height: 1;
+}
+
+.bet_game_content .checkbox {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+}
+
+.bet_game_content .checkbox li {
+    margin-right: 0;
+    width: 10%;
+}
+
+.bet_game_content .checkbox.col_6 li {
+    width: 16.666666%;
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .bet_game_table_content {
+        min-height: inherit;
+        background: none;
+    }
+
+    .bet_game_table_content.lottery,
+    .bet_game_table_content.racing {
+        background: none;
+    }
+
+    .bet_game_content,
+    .bet_game_content.higher,
+    .bet_game_content.higher_mid,
+    .bet_game_content.wider {
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .bet_game_content .lottery_set.lottery_set_selector {
+        padding: 15px;
+    }
+    .bet_game_content .lottery_set.lottery_set_selector.mgb_higher {
+        margin-bottom: 10px;
+    }
+    .bet_game_content .lottery_set.no_gap {
+        height: auto;
+        padding: 0;
+        background: none;
+    }
+
+    .bet_game_content .lottery_set.no_padding {
+        width: 100%;
+        padding: 0;
+        background: none;
+    }
+
+    .bet_game_content .lottery_set.col_half {
+        width: 100%;
+    }
+
+    .bet_game_content .checkbox li {
+        width: 20%;
+        margin-bottom: 5px;
+        margin-right: 0;
+    }
+
+    .bet_game_content .checkbox.col_6 li {
+        width: 33.333333%;
+    }
+
+    .bet_game_content .checkbox li:nth-last-child(-n+5) {
+        margin-bottom: 0;
+    }
+
+    .bet_game_content .checkbox label {
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .bet_game_content .selector_group_title {
+        width: auto;
+        margin-right: 10px;
+    }
+
+    .bet_game_content .checkbox {
+        justify-content: space-between;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .bet_game_content .selector_group_title {
+        margin-bottom: 10px;
+    }
+
+    .bet_game_content .checkbox {
+        flex: inherit;
+        width: 100%;
+    }
+}
+
+/*投注頁下單區*/
+.bet_order_content {
+    display: none;
+    padding: 12px 15px;
+    border-top: 1px solid #d8dae0;
+    background: #F5F5F5;
+}
+
+.bet_order_content .bet_order_function_row {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0px;
+    background-color: #070708;
+}
+
+.bet_order_content .bet_order_function_row.flex_start {
+    align-items: flex-start;
+}
+
+.bet_order_content .bet_order_function_row:last-child {
+    margin-bottom: 0;
+}
+
+.bet_order_content .bet_order_function_left {
+    display: flex;
+    align-items: center;
+}
+
+.bet_order_content .bet_order_function_right {
+    display: flex;
+    align-items: center;
+}
+
+.bet_order_content .bet_order_function_right a {
+    padding: 0 30px;
+    margin-left: 5px;
+    line-height: 28px;
+    height: 28px;
+}
+
+.bet_order_content .bet_order_function_right a.icon_style {
+    padding: 0 7px;
+    height: 28px;
+    background: #DDDDDD;
+}
+
+.bet_order_content .bet_order_function_right a.icon_style:hover {
+    background: #FFF;
+}
+
+.bet_order_content .bet_order_function_right a.order_now {
+    padding: 0 50px;
+    margin-left: 10px;
+    line-height: 32px;
+    height: 32px;
+}
+
+.order_now{
+    width: 100%;
+    height: 50px;
+    flex: 1;
+
+}
+
+
+.bet_order_content p.bet_total_sum {
+    color: #333;
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+.bet_order_content p.bet_total_sum span {
+    color: #dc8f00;
+    font-weight: bold;
+}
+
+.bet_order_content .label_input.column_layout label p {
+    font-size: 13px;
+    color: #333;
+    margin-right: 10px;
+}
+
+.bet_order_function_row .mode_tab_content {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    width: 100%;
+}
+
+.bet_order_function_row .mode_tab_content p {
+    margin-right: 10px;
+    font-size: 13px;
+    line-height: 1;
+    color: #333;
+    white-space: nowrap;
+}
+
+.bet_order_function_row .label_input.center span:last-child {
+    padding-left: 10px;
+    padding-right: 0;
+}
+
+.bet_order_function_row .label_input.center input {
+    max-width: inherit;
+}
+
+.bet_order_function_row .currency_btn {
+    padding-right: 6px;
+    margin-right: 0px;
+    border-right: 0px;
+}
+
+.bet_order_function_row .amount_controller input {
+    width: 50px;
+}
+
+
+.bet_order_function_row .label_input.free_mode input{
+    height: 26px;
+    text-align: center;
+    min-width: 100px;
+    width: 100px;
+    border: 1px solid #999;
+    margin: 0 5px; 
+}
+.bet_order_function_row .label_input.free_mode input:focus{
+    border: 1px solid #008ca1;
+}
+
+
+.bet_order_function_row .bet_cart_box {
+    flex: 1;
+    overflow-y: auto;
+    height: 70px;
+    background: #DDD;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+}
+
+.bet_cart_box::-webkit-scrollbar {
+    width: 5px;
+}
+
+.bet_cart_box::-webkit-scrollbar-thumb {
+    background: #808994;
+}
+
+.bet_cart_box::-webkit-scrollbar-track {
+    background: #c7c7c7;
+}
+
+.bet_order_function_row .bet_cart_box .bet_cart_list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.bet_order_function_row .bet_cart_box .bet_cart_list li {
+    padding: 5px 7px;
+    font-size: 13px;
+    border-radius: 3px;
+    line-height: 1;
+    color: #FFF;
+    background: #374e67;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.bet_order_function_row .bet_cart_sum {
+    font-size: 15px;
+    padding: 12px 16px 0 16px;
+    height: 70px;
+    background: #e9e9e9;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 195px;
+}
+
+.bet_order_function_row .bet_cart_sum p {
+    color: #666;
+    line-height: 1.4;
+}
+
+.bet_order_function_row .bet_cart_sum p span {
+    color: #dc8f00;
+}
+
+.m_bet_order_content {
+    padding: 0;
+    border-top: 0;
+    background: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: block;
+    z-index: 1;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+.bet_order_content.m_bet_order_content .bet_order_function_row p.bet_total {
+    color: #E8E8E8;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.bet_order_content.m_bet_order_content .bet_order_function_row p.bet_total span {
+    color: #F68F0A;
+    font-weight: bold;
+}
+
+.bet_order_content.m_bet_order_content .m_order_sub_row .m_order_sub_row_right {
+    display: flex;
+}
+
+.bet_order_content.m_bet_order_content .m_order_sub_row .m_order_sub_row_right a {
+    line-height: 26px;
+    height: 26px;
+    padding: 0 5px;
+    background: none;
+    margin-right: 8px;
+    color: #E8E8E8;
+}
+
+.bet_order_content.m_bet_order_content .m_rebate {
+    display: flex; 
+    margin:0 8px 0 10px; 
+    align-items: center;
+    flex: 1;
+}
+
+.bet_order_content.m_bet_order_content .m_rebate p{
+    color: #E8E8E8; 
+    font-size: 13px; 
+    margin-right: 4px;
+    line-height: 1;
+}
+
+.bet_order_content.m_bet_order_content .m_function_rebate,
+.bet_order_content.m_bet_order_content .m_function_unit{
+    color: #E8E8E8;
+    border-radius: 4px;
+    text-align: center;
+    height: 32px;
+    line-height: 32px;
+    background: #25242C;
+    padding: 0 8px;
+    cursor: pointer;
+    font-size: 13px;
+    flex: 1;
+    white-space: nowrap; 
+}
+
+.bet_order_content.m_bet_order_content .bet_order_function_row.m_order_sub_row {
+    background: #070708;
+    border-bottom: 1px solid #313038;
+    padding: 6px 10px;
+    position: absolute;
+    bottom: 100%;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+
+}
+
+.bet_order_content.m_bet_order_content .bet_order_function_row.m_action_sheet_content {
+    background: #070708;
+    padding: 12px 10px;
+}
+
+.bet_order_content.m_bet_order_content .m_action_sheet_list {
+    background: #151419;
+}
+.bet_order_content.m_bet_order_content .m_action_sheet_list li{
+    padding: 15px 10px 15px 40px;
+    color: #F68F0A;
+    font-size: 14px;
+    border-bottom: 1px solid #26252B;
+    line-height: 1;
+    cursor: pointer;
+}
+.bet_order_content.m_bet_order_content .m_action_sheet_list li:hover{
+    background: #151419;
+    color: #F68F0A;
+}
+.bet_order_content.m_bet_order_content .m_action_sheet_list li.active{
+    background: #070708;
+    color: #F68F0A;
+    background: url('../images/element/ic_action_sheet_check.svg') 15px center no-repeat;
+}
+.bet_order_content.m_bet_order_content .m_action_sheet_list li.active:hover{
+    pointer-events: none;
+}
+
+.bet_order_content.m_bet_action_sheet {
+    display: block;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+}
+
+.bet_order_content.m_bet_action_sheet .function_box{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.bet_order_content.m_bet_action_sheet .overlay{
+    background: rgba(0,0,0,.5);
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (max-width: 1024px) {
+    .bet_order_content {
+        display: none;
+    }
+
+    .m_bet_order_content {
+        display: block;
+    }
+
+    .bet_order_content.m_bet_order_content .bet_order_function_row {
+        margin-bottom: 0;
+    }
+
+    .bet_order_content.m_bet_order_content .bet_order_function_row.m_order_main_row {
+        background: #070708;
+        position: relative;
+    }
+
+    .bet_order_content.m_bet_order_content .bet_order_function_row.m_order_sub_row {
+        background: #070708;
+        border-bottom: 1px solid #26252B;
+        padding: 6px 10px;
+        position: absolute;
+        bottom: 100%;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+
+    }
+    .bet_order_content.m_bet_order_content .m_order_sub_row .m_order_sub_row_right {
+        display: flex;
+    }
+
+    .bet_order_content.m_bet_order_content .m_order_sub_row .m_order_sub_row_right a {
+        line-height: 26px;
+        height: 26px;
+        padding: 0 5px;
+        background: none;
+        margin-right: 8px;
+        color: #E8E8E8;
+    }
+
+    .bet_order_content.m_bet_order_content .m_order_sub_row .checkbox.dark .icon {
+        background: #16273c;
+    }
+
+    .bet_order_content.m_bet_order_content .m_order_sub_row .checkbox input:checked+.icon {
+        background: #F68F0A;
+        border: 1px solid #F68F0A;
+    }
+
+    .bet_order_content.m_bet_order_content .m_order_sub_row .m_order_sub_row_right a span {
+        margin-left: 3px;
+        font-size: 14px;
+    }
+
+    .bet_order_content.m_bet_order_content .m_order_sub_row .m_order_sub_row_right span.text {
+        font-size: 14px;
+    }
+
+    .bet_order_content.m_bet_order_content .bet_order_function_row p.bet_total {
+        color: #E8E8E8;
+        font-size: 14px;
+        line-height: 1;
+    }
+
+    .bet_order_content.m_bet_order_content .bet_order_function_row p.bet_total span {
+        color: #F68F0A;
+        font-weight: bold;
+    }
+    .bet_order_content.m_bet_action_sheet {
+        display: block;
+        z-index: 5;
+        width: 100%;
+        height: 100%;
+    }
+    .bet_order_content.m_bet_action_sheet .function_box{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+    .bet_order_content.m_bet_action_sheet .overlay{
+        background: rgba(0,0,0,.5);
+        width: 100%;
+        height: 100%;
+    }
+    .bet_order_content.m_bet_order_content .bet_order_function_row.m_action_sheet_content {
+        background: #070708;
+        padding: 12px 10px;
+    }
+    .bet_order_content.m_bet_order_content .m_action_sheet_list {
+        background: #151419;
+    }
+    .bet_order_content.m_bet_order_content .m_action_sheet_list li{
+        padding: 15px 10px 15px 40px;
+        color: #F68F0A;
+        font-size: 14px;
+        border-bottom: 1px solid #313038;
+        line-height: 1;
+        cursor: pointer;
+    }
+    .bet_order_content.m_bet_order_content .m_action_sheet_list li:hover{
+        background: #151419;
+        color: #F68F0A;
+    }
+    .bet_order_content.m_bet_order_content .m_action_sheet_list li.active{
+        background: #151419;
+        color: #F68F0A;
+        background: url('../images/element/ic_action_sheet_check.svg') 15px center no-repeat;
+    }
+    .bet_order_content.m_bet_order_content .m_action_sheet_list li.active:hover{
+        pointer-events: none;
+    }
+    
+    .bet_order_content.m_bet_order_content .mode_tab_content {
+        margin-right: 8px;
+        width: 50%;
+    }
+
+    .bet_order_content.m_bet_order_content .mode_tab_content .tab li {
+        padding: 0 30px;
+    }
+
+    .bet_order_content.m_bet_order_content .mode_tab_content p {
+        margin-right: 4px;
+    }
+
+    .bet_order_content.m_bet_order_content .currency_btn {
+        margin-right: 6px;
+        padding-right: 0;
+        border-right: 0;
+    }
+
+    .bet_order_content.m_bet_order_content .currency_btn li {
+        margin-right: 0;
+        padding: 0 9px; 
+    }
+
+    .bet_order_content.m_bet_order_content .label_input {
+        margin-left: 10px;
+        margin-right: 8px;
+        flex: 1;
+        position: static;
+    }
+
+    .bet_order_content.m_bet_order_content .label_input.column_layout p {
+        margin-right: 4px;
+    }
+
+    .bet_order_content.m_bet_order_content .label_input.center span:last-child {
+        padding-left: 6px;
+    }
+
+    .bet_order_content.m_bet_order_content .label_input.center {
+        justify-content: flex-end;
+        margin: 0;
+    }
+
+    .bet_order_content.m_bet_order_content .label_input.center .input_content {
+        flex: 1;
+    }
+
+    .bet_order_content.m_bet_order_content .label_input.center .input_content input {
+        border: 1px solid #25242C;
+        background-color: #25242C;
+        width: 100%;
+        max-width: inherit;
+    }
+
+    .bet_order_content.m_bet_order_content .m_rebate {
+        display: flex; 
+        margin:0 8px 0 10px; 
+        align-items: center;
+        flex: 1;
+    }
+
+    .bet_order_content.m_bet_order_content .m_rebate p{
+        color: #E8E8E8; 
+        font-size: 13px; 
+        margin-right: 4px;
+        line-height: 1;
+    }
+
+    .bet_order_content.m_bet_order_content .m_function_rebate,
+    .bet_order_content.m_bet_order_content .m_function_unit{
+        color: #E8E8E8;
+        border-radius: 4px;
+        text-align: center;
+        height: 32px;
+        line-height: 32px;
+        background: #25242C;
+        padding: 0 8px;
+        cursor: pointer;
+        font-size: 13px;
+        flex: 1;
+        white-space: nowrap; 
+    }
+
+    .bet_order_content.m_bet_order_content .m_function_rebate::before,
+    .bet_order_content.m_bet_order_content .m_function_unit::before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        width: 0;
+        height: 100%;
+        margin-top: 1px;
+    }
+
+    .bet_order_content.m_bet_order_content .bet_order_function_row a.order_now {
+        border-radius: 0;
+        font-size: 17px;
+        font-weight: bold;
+        height: 50px;
+        line-height: 50px;
+        width: 100px;
+        margin-left: 8px;
+    }
+
+    .bet_order_content.m_bet_order_content .bet_order_function_row a.disable.order_now {
+        opacity: .6;
+        background: #dc8f00;
+        color: rgba(21, 20, 25, .3);
+    }
+}
+
+@media only screen and (max-width: 540px) {
+
+    .bet_order_content.m_bet_order_content .mode_tab_content .tab li {
+        padding: 0 15px;
+    }
+    .bet_order_content.m_bet_order_content .m_function_rebate,
+    .bet_order_content.m_bet_order_content .m_function_unit{
+        overflow-x: auto;
+    }
+    .bet_order_content.m_bet_order_content .m_function_rebate,
+    .bet_order_content.m_bet_order_content .m_function_unit {
+        scrollbar-width: none;/*firefox hide scrollbar*/
+        -ms-overflow-style: none;/*ie hide scrollbar*/
+    }
+    .bet_order_content.m_bet_order_content .m_function_rebate::-webkit-scrollbar,
+    .bet_order_content.m_bet_order_content .m_function_unit::-webkit-scrollbar {
+        display: none;/*webkit browser hide scrollbar*/
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .bet_order_content.m_bet_order_content .mode_tab_content {
+        width: auto;
+    }
+    .bet_order_content.m_bet_order_content .mode_tab_content .tab li {
+        padding: 0 10px;
+    }
+    .bet_order_content.m_bet_order_content .bet_order_function_row a.order_now {
+        width: 80px;
+    }
+}
+@media only screen and (max-width: 374px) {
+    .bet_order_content.m_bet_order_content .bet_order_function_row a.order_now {
+        width: 75px;
+    }
+    .bet_order_content.m_bet_order_content .bet_order_function_row p.bet_total {
+        font-size: 13px;
+    }
+}
+@media only screen and (max-width: 359px) {
+    .bet_order_content.m_bet_order_content .bet_order_function_row a.order_now {
+        width: 60px;
+    }
+    .bet_order_content.m_bet_order_content .bet_order_function_row p.bet_total {
+        font-size: 12px;
+    }
+
+    .bet_order_content.m_bet_order_content .m_rebate p {
+        font-size: 12px;
+    }
+
+    .bet_order_content.m_bet_order_content .m_function_rebate,
+    .bet_order_content.m_bet_order_content .m_function_unit {
+        height: 28px;
+        line-height: 28px;
+        font-size: 12px;
+        padding: 0 6px; 
+    }
+    .bet_order_content.m_bet_order_content .bet_order_function_row a.order_now {
+        font-size: 16px;
+        font-weight: normal;
+        height: 40px;
+        line-height: 40px;
+    }
+
+    .bet_order_content.m_bet_order_content .mode_tab_content .tab li {
+        font-size: 12px;
+        padding: 0 8px;
+    }
+
+    .bet_order_content.m_bet_order_content .mode_tab_content p {
+        font-size: 12px;
+    }
+
+    .bet_order_content.m_bet_order_content .amount_controller li input {
+        font-size: 12px;
+    }
+
+    .bet_order_content.m_bet_order_content .amount_controller.dark p {
+        font-size: 12px;
+    }
+
+    .bet_order_content.m_bet_order_content .currency_btn li {
+        font-size: 12px;
+    }
+
+    .bet_order_content.m_bet_order_content .m_order_sub_row .m_order_sub_row_right a {
+        margin-right: 5px;
+    }
+
+    .bet_order_content.m_bet_order_content .m_order_sub_row .m_order_sub_row_right a span {
+        font-size: 12px;
+    }
+
+    .bet_order_content.m_bet_order_content .m_order_sub_row .m_order_sub_row_right span.text {
+        font-size: 12px;
+    }
+}
+
+/*投注頁開獎號*/
+.bet_win {
+    width: 100%;
+    background: #1C1B22 url("../images/bet/bg_bet_win.jpg") top center no-repeat;
+    background-size: 100% 100%;
+    padding: 20px 15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    position: relative;
+    z-index: 0;
+}
+
+.bet_win .bet_win_game_title {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.bet_win .bet_win_game_title p.game_title {
+    font-size: 18px;
+    color: #E8E8E8;
+    line-height: 1;
+    font-weight: bold;
+}
+
+.bet_win .bet_win_game_title p.game_period {
+    font-size: 13px;
+    color: #E8E8E8;
+    line-height: 1;
+}
+
+.bet_win .bet_win_game_title p.game_period span {
+    color: #F68F0A;
+    padding: 0 3px;
+}
+
+.bet_win .bet_win_game_title p.game_period span.text {
+    padding-left: 3px;
+    padding-right: 0;
+}
+
+.bet_win .bet_win_game_title p.game_period span.count {
+    color: #F68F0A;
+}
+
+.bet_win .bet_win_game_title p.game_period.m_for_now {
+    display: none;
+}
+
+
+
+/*開獎樣式 一般球類*/
+.bet_win .bet_win_game_num {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 13px;
+    padding: 0 15px;
+}
+
+.bet_win .bet_win_game_num li {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, #BAB8C1, #BAB8C1 51%, #9B999F 53%, #9B999F);
+    border: 3px solid #2C2B30;
+    color: #2C2B30;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    font-family: 'din_alternatebold', Microsoft YaHei, Arial, sans-serif;
+}
+
+.bet_win .bet_win_game_num li.color_blue {
+    background: linear-gradient(to bottom, #3A7AF0, #234D99);
+    border: 3px solid #3A7AF0;
+    color: #E8E8E8;
+}
+.bet_win .bet_win_game_num li.color_red {
+    background: linear-gradient(to bottom, #DC4E47, #8F342F);
+    border: 3px solid #DC4E47;
+    color: #E8E8E8;
+}
+.bet_win .bet_win_game_num li.color_green {
+    background: linear-gradient(to bottom, #3AAA3E, #206122);
+    border: 3px solid #3AAA3E;
+    color: #E8E8E8;
+}
+
+/*開獎樣式 PK10*/
+.bet_win .bet_win_game_num.racing {
+    padding: 5px 0;
+}
+
+.bet_win .bet_win_game_num.racing li {
+    flex: 1;
+    height: 36px;
+    border-radius: 2px;
+    font-size: 19px;
+    margin-right: 5px;
+    border: 0;
+
+}
+
+.bet_win .bet_win_game_num.racing li:last-child {
+    margin-right: 0;
+}
+
+.bet_win .bet_win_game_num.racing li.no_1_color {
+    background: #E6D800;
+    color: black;
+}
+
+.bet_win .bet_win_game_num.racing li.no_2_color {
+    background: #008DF2;
+    color: #FFFFFF;
+}
+
+.bet_win .bet_win_game_num.racing li.no_3_color {
+    background: #474743;
+    color: #FFFFFF;
+}
+
+.bet_win .bet_win_game_num.racing li.no_4_color {
+    background: #EA7F20;
+    color: #FFFFFF;
+}
+
+.bet_win .bet_win_game_num.racing li.no_5_color {
+    background: #39EAF3;
+    color: black;
+}
+
+.bet_win .bet_win_game_num.racing li.no_6_color {
+    background: #5D40E9;
+    color: #FFFFFF;
+}
+
+.bet_win .bet_win_game_num.racing li.no_7_color {
+    background: #C9CED5;
+    color: black;
+}
+
+.bet_win .bet_win_game_num.racing li.no_8_color {
+    background: #E63828;
+    color: #FFFFFF;
+}
+
+.bet_win .bet_win_game_num.racing li.no_9_color {
+    background: #A12628;
+    color: #FFFFFF;
+}
+
+.bet_win .bet_win_game_num.racing li.no_10_color {
+    background: #28BD28;
+    color: #FFFFFF;
+}
+
+
+/*控制僅三位數*/
+.bet_win .bet_win_game_num.triple {
+    padding: 0 60px;
+}
+
+/*控制幸運28*/
+.bet_win .bet_win_game_num.lucky28 {
+    padding: 0 40px;
+}
+
+/*開獎號中有icon*/
+.bet_win .bet_win_game_num li.icon {
+    background: none;
+    border: none;
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+
+/*開獎樣式 快三*/
+.bet_win .bet_win_game_num.dice li {
+    background: url('../images/bet/bet_dice_1to6.svg') no-repeat;
+    border-radius: inherit;
+    background-size: 276px 46px;
+    border: 0;
+    width: 46px;
+    height: 46px;
+}
+.bet_win .bet_win_game_num.dice li.dice1 {
+    background-position: 0px 0px;
+}
+.bet_win .bet_win_game_num.dice li.dice2 {
+    background-position: -46px 0px;
+}
+.bet_win .bet_win_game_num.dice li.dice3 {
+    background-position: -92px 0px;
+}
+.bet_win .bet_win_game_num.dice li.dice4 {
+    background-position: -138px 0px;
+}
+.bet_win .bet_win_game_num.dice li.dice5 {
+    background-position: -184px 0px;
+}
+.bet_win .bet_win_game_num.dice li.dice6 {
+    background-position: -230px 0px;
+}
+
+
+
+/*開獎樣式 六合彩*/
+.bet_win .bet_win_game_num.six {
+    padding: 0 5px;
+    margin-bottom: 10px;
+}
+
+.bet_win .bet_win_game_num.six li {
+    display: block;
+    border: none;
+    background: none;
+    width: auto;
+    height: auto;
+}
+
+.bet_win .bet_win_game_num.six li .ball {
+    width: 34px;
+    height: 34px;
+    color: #FFF;
+    font-size: 17px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bet_win .bet_win_game_num.six li p {
+    color: #E8E8E8;
+    text-align: center;
+    font-weight: normal;
+    font-size: 12px;
+    margin-top: 3px;
+    line-height: 1;
+
+}
+.bet_win .bet_win_game_num.six li .color_blue {
+    background: linear-gradient(to bottom, #62AAE9, #448EC6);
+    border: 1.25px solid #86BAE1;
+}
+.bet_win .bet_win_game_num.six li .color_red {
+    background: linear-gradient(to bottom, #E3635E, #B84B47);
+    border: 1.25px solid #F27A75;
+}
+.bet_win .bet_win_game_num.six li .color_green {
+    background: linear-gradient(to bottom, #6EC971, #50A353);
+    border: 1.25px solid #93CF95;
+}
+
+.bet_win .bet_win_game_num.six li.icon img {
+    margin-top: 12px;
+}
+
+
+
+/*開獎樣式 秒秒彩*/
+.bet_win .bet_win_game_num.sec {
+    display: block;
+    position: relative;
+    margin-bottom: 5px;
+    padding: 0;
+}
+
+.bet_win .bet_win_game_num.sec .bg{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    z-index: 0;
+}
+
+.bet_win .bet_win_game_num.sec .bg .bg01,
+.bet_win .bet_win_game_num.sec .bg .bg02,
+.bet_win .bet_win_game_num.sec .bg .bg03{
+    height: 70px;
+}
+
+.bet_win .bet_win_game_num.sec .bg .bg01{
+    width: 16px;
+    background: url('../images/bet/sec_lottery_bg_left.png') left center no-repeat;
+    background-size: 100%;
+}
+
+.bet_win .bet_win_game_num.sec .bg .bg02{
+    width: calc(100% - 106px);
+    background: url('../images/bet/sec_lottery_bg_center.png') center center repeat-x;
+    background-size: 6px 70px;
+}
+
+.bet_win .bet_win_game_num.sec .bg .bg03{
+    width: 90px;
+    background: url('../images/bet/sec_lottery_bg_right.png') right center no-repeat;
+    background-size: 100%;
+}
+
+.bet_win .bet_win_game_num.sec .num_position{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    padding: 3px;
+}
+.bet_win .bet_win_game_num.sec .sec_num{
+    display: flex;
+    width: calc(100% - 73px)
+}
+
+.bet_win .bet_win_game_num.sec .sec_num .item{
+    width: 45px;
+    height: 64px;
+    position: relative;
+}
+.bet_win .bet_win_game_num.sec .sec_num.pk10 .item{
+    width: 23px;
+}
+.bet_win .bet_win_game_num.sec .sec_num .item .overlay{
+    position: absolute;
+    z-index: 1;
+    width: 45px;
+    height: 64px;
+    background: url('../images/bet/sec_lottery_overlay.png') center center no-repeat;
+    background-size: 100% 100%;
+}
+.bet_win .bet_win_game_num.sec .sec_num.pk10 .item .overlay{
+    width: 23px;
+    height: 64px;
+    background: url('../images/bet/sec_pk10_overlay.png') center center no-repeat;
+    background-size: 100% 100%;
+}
+.bet_win .bet_win_game_num.sec .sec_num .item .num_overflow{
+    width: 45px;
+    height: 56px;
+    overflow-y: hidden;
+    position: relative;
+    margin-top: 4px;
+}
+.bet_win .bet_win_game_num.sec .sec_num.pk10 .item .num_overflow{
+    width: 23px;
+}
+.bet_win .bet_win_game_num.sec .sec_num .item .num_overflow .num_pic{
+    width: 45px;
+    height: 9999px;
+    position: absolute;
+    top: -287px;
+    left: 0;
+    background: url('../images/bet/sec_lottery_num.png') repeat-y;
+    background-size: 100% auto;
+}
+.bet_win .bet_win_game_num.sec .sec_num.pk10 .item .num_overflow .num_pic{
+    width: 23px;
+    background: url('../images/bet/sec_pk10_num.png') repeat-y;
+    background-size: 100% auto;
+}
+.bet_win .bet_win_game_num.sec .sec_num .gap{
+    /*width: 5px;*/
+    flex: 1;
+    height: 64px;
+    background: url('../images/bet/sec_lottery_overlay_gap.png') center center no-repeat;
+    background-size: 100% 100%;
+}
+
+.bet_win .bet_win_game_num.sec .sec_num .start,
+.bet_win .bet_win_game_num.sec .sec_num .end{
+    width: 8px;
+    height: 64px;
+}
+
+.bet_win .bet_win_game_num.sec .btn{
+    position: absolute;
+    z-index: 1;
+    width: 56px;
+    height: 56px;
+    right: 0;
+    top: 6px;
+    cursor: pointer;
+    z-index: 2;    
+}
+.bet_win .bet_win_game_num.sec .btn p{
+    font-size: 14px;
+    color: #FFF;
+    margin-top: 17px;
+    text-align: center;
+}
+.bet_win .bet_win_game_num.sec .btn.first{
+    background: url('../images/bet/sec_btn_default.png') center center no-repeat;
+    background-size: 46px 46px;
+}
+.bet_win .bet_win_game_num.sec .btn.first:hover{
+    background: url('../images/bet/sec_btn_hover.png') center center no-repeat;
+    background-size: 46px 46px;
+}
+.bet_win .bet_win_game_num.sec .btn.first:active{
+    background: url('../images/bet/sec_btn_click.png') center center no-repeat;
+    background-size: 46px 46px;
+}
+
+.bet_win .bet_win_game_num.sec .btn.again{
+    background: url('../images/bet/sec_btn_again_default.png') center center no-repeat;
+    background-size: 46px 46px;
+}
+.bet_win .bet_win_game_num.sec .btn.again:hover{
+    background: url('../images/bet/sec_btn_again_hover.png') center center no-repeat;
+    background-size: 46px 46px;
+}
+.bet_win .bet_win_game_num.sec .btn.again:active{
+    background: url('../images/bet/sec_btn_again_click.png') center center no-repeat;
+    background-size: 46px 46px;
+}
+
+
+.bet_win .bet_function_sec {
+    display: flex;
+    align-items: center;
+    margin-bottom: 13px;
+}
+
+.bet_win .bet_function_sec .amount_controller input{
+    width: 50px;
+}
+
+.bet_win .bet_function_sec .total{
+    margin-left: 10px;
+    font-size: 13px;
+}
+
+.bet_win .bet_function_sec .total span{
+    color: #dc8f00;
+    font-weight: bold;
+}
+
+
+.bet_win .bet_win_btn {
+    display: none;
+    justify-content: space-between;
+}
+
+.bet_win .bet_win_btn a {
+    flex: 1;
+    line-height: 24px;
+    height: inherit;
+    font-size: 12px;
+    margin-right: 5px;
+}
+.bet_win .bet_win_btn a:last-child {
+    margin-right: 0;
+}
+
+
+.bet_win .m_bet_history_controller {
+    width: 100%;
+    height: 30px;
+    cursor: pointer;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    z-index: 0;
+    background: url("../images/bet/mobile/ic_bet_slide_down.svg") center 15px no-repeat;
+
+}
+
+.bet_win .m_bet_history_controller.ic_slide_up {
+    background: url("../images/bet/mobile/ic_bet_slide_up.svg") center 15px no-repeat;
+}
+
+.bet_win .m_bet_win_btn {
+    position: absolute;
+    top: 13px;
+    right: 15px;
+    z-index: 0;
+    display: block;
+}
+
+.bet_win .m_bet_win_btn a {
+    padding: 0 10px;
+    line-height: 1;
+    height: 26px;
+    margin-bottom: 6px;
+    border-radius: 3px;
+}
+
+.bet_win .m_bet_win_btn a span {
+    margin-left: 4px;
+}
+
+.bet_win .m_bet_win_btn a:last-child {
+    margin-bottom: 0;
+}
+
+@media only screen and (max-width: 1024px) {
+    .bet_win {
+        padding: 15px 0 24px 0;
+    }
+
+    .bet_win .bet_win_btn {
+        display: none;
+    }
+
+    .bet_win .bet_win_game_title {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        margin-bottom: 6px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .bet_win .bet_win_game_title p.game_title {
+        font-size: 16px;
+        margin-right: 5px;
+    }
+
+    .bet_win .bet_win_game_title p.game_period {
+        font-size: 13px;
+    }
+
+    .bet_win .bet_win_game_title p.game_period.for_history {
+        display: none;
+    }
+    .bet_win .bet_win_game_title p.game_period.m_for_now {
+        display: block;
+    }
+
+
+    .bet_win .bet_win_game_num {
+        margin-bottom: 0;
+        width: 65%;
+        margin-left: 15px;
+        margin-right: 15px;
+        padding: 0;
+    }
+    .bet_win .bet_win_game_num.six{
+        padding: 0;
+        margin-bottom: 0;
+        width: 70%;
+    }
+
+    .bet_win .bet_win_game_num.sec {
+        width: calc(100% - 30px);
+    }
+
+    .bet_win .bet_win_game_num.sec .sec_num .gap{
+        flex: 1;
+    }
+
+    .bet_win .bet_function_sec{
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-bottom: 3px;
+    }
+
+    .bet_win .bet_win_game_num li {
+        width: 34px;
+        height: 34px;
+        font-size: 16px;
+        border: 2px solid #2C2B30;
+    }
+
+    .bet_win .bet_win_game_num li.color_blue {
+        border: 2px solid #86BAE1;
+    }
+    .bet_win .bet_win_game_num li.color_red {
+        border: 2px solid #F27A75;
+    }
+    .bet_win .bet_win_game_num li.color_green {
+        border: 2px solid #93CF95;
+    }
+
+    .bet_win .bet_win_game_num.six li .ball{
+        width: 28px;
+        height: 28px;
+        font-size: 15px;
+    }
+
+    .bet_win .bet_win_game_num.six li.icon img {
+        margin-top: 9px;
+        width: 10px;
+        height: 10px;
+    }
+
+    .bet_win .bet_win_game_num.racing {
+        padding: 1px 0 2px 0;
+    }
+
+    .bet_win .bet_win_game_num.racing li {
+        height: 29px;
+        font-size: 16px;
+    }
+
+    .bet_win .bet_win_game_num.triple {
+        padding: 0;
+        width: 30%;
+    }
+
+    .bet_win .bet_win_game_num.lucky28 {
+        padding: 0;
+    }
+
+    .bet_win .bet_win_game_num.dice li {
+        background-size: 192px 32px;
+        width: 32px;
+        height: 32px;
+    }
+    .bet_win .bet_win_game_num.dice li.dice1 {
+        background-position: 0px 0px;
+    }
+    .bet_win .bet_win_game_num.dice li.dice2 {
+        background-position: -32px 0px;
+    }
+    .bet_win .bet_win_game_num.dice li.dice3 {
+        background-position: -64px 0px;
+    }
+    .bet_win .bet_win_game_num.dice li.dice4 {
+        background-position: -96px 0px;
+    }
+    .bet_win .bet_win_game_num.dice li.dice5 {
+        background-position: -128px 0px;
+    }
+    .bet_win .bet_win_game_num.dice li.dice6 {
+        background-position: -160px 0px;
+    }
+
+    .bet_win .m_bet_win_btn {
+        display: block;
+    }
+    .bet_win .m_bet_win_btn a {
+        padding: 0 7px;
+    }
+
+    .bet_win .m_bet_history_controller {
+        display: block;
+    }
+    .bet_header_set .btn_video {
+        display: none;
+    }
+}
+@media only screen and (max-width: 1024px) {
+    .bet_win {
+        margin-top: 10px;
+        background: #151419 url("../images/bet/mobile/m_bg_bet_win.jpg") center center no-repeat;
+        background-size: cover;
+    }
+}
+@media only screen and (max-width: 580px) {
+    .bet_win .bet_win_game_num.triple {
+        width: 40%;
+    }
+    .bet_win .bet_win_game_title p.game_title {
+        width: 100%;
+        margin-bottom: 4px;
+    }
+    .bet_win .bet_win_game_title p.game_period {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .bet_win .bet_win_game_num {
+        width: 70%;
+    }
+}
+@media only screen and (max-width: 375px) {
+    .bet_win .bet_win_game_num.sec .sec_num .gap{
+            flex: 1;
+            width: 0;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .bet_win {
+        padding: 12px 0 25px 0;
+    }
+
+    .bet_win .bet_win_game_title {
+        margin-bottom: 4px;
+        margin-left: 12px;
+    }
+
+    
+
+    .bet_win .bet_win_game_num {
+        margin-left: 12px;
+        width: 68%;
+    }
+
+    .bet_win .bet_win_game_num li {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+
+    .bet_win .bet_win_game_num.racing li {
+        height: 23px;
+        font-size: 14px;
+        margin-right: 3px;
+    }
+
+
+
+    .bet_win .m_bet_win_btn {
+        top: 13px;
+        right: 10px;
+    }
+}
+
+/*投注頁近期開獎*/
+.bet_win_recent_history {
+    position: absolute;
+    width: 100%;
+    /* height: 619px; */
+    height: auto;
+    overflow-y: hidden;
+    background: #1C1B22;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    display: table-cell;
+}
+
+.bet_win_recent_history .bet_win_recent_history_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px 10px 15px;
+    border-bottom: 1px solid #26252B;
+}
+
+.bet_win_recent_history .bet_win_recent_history_title p {
+    font-size: 18px;
+    color: #E8E8E8;
+    line-height: 1;
+    font-weight: bold;
+}
+
+.bet_win_recent_history .bet_win_recent_history_title a {
+    display: flex;
+    width: 28px;
+    height: 28px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.bet_win_recent_history table .bet_win_recent_history_title a:hover {
+    background: #1E3552;
+}
+
+.bet_win_recent_history table tr {
+    color: #E8E8E8;
+    border-bottom: 1px solid #26252B;
+    text-align: center;
+}
+
+.bet_win_recent_history table tr:hover td {
+    background: #26252B;
+}
+
+.bet_win_recent_history table tr th {
+    color: #E8E8E8;
+}
+
+.bet_win_recent_history table tr th,
+.bet_win_recent_history table tr td {
+    vertical-align: middle;
+}
+
+.bet_win_recent_history table tr th,
+.bet_win_recent_history table tr td {
+    line-height: 34px;
+}
+
+.bet_win_recent_history table tr th:first-child,
+.bet_win_recent_history table tr td:first-child {
+    padding-left: 8px;
+}
+.bet_win_recent_history table tr th:last-child,
+.bet_win_recent_history table tr td:last-child {
+    padding-right: 8px;
+}
+
+
+
+.bet_win_recent_history table .waiting_drawing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bet_win_recent_history table .waiting_drawing img {
+    margin-right: 5px;
+}
+
+.bet_win_recent_history table ol:last-child img {
+    margin-right: 0;
+}
+
+.bet_win_recent_history table .list_group {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.bet_win_recent_history table .list_group.ball ol {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #151419;
+    background-color: #B1ADB8;
+}
+
+.bet_win_recent_history table .list_group.gap ol {
+    margin: 0 2px;
+}
+
+.bet_win_recent_history table .list_group ol.color_red {
+    background-color: #DC4E47;
+    color: #E8E8E8;
+}
+
+.bet_win_recent_history table .list_group ol.color_blue {
+    background-color: #4C96CF;
+}
+
+.bet_win_recent_history table .list_group ol.color_green {
+    background-color: #5FB662;
+}
+
+.bet_win_recent_history table .list_group.ball ol.icon {
+    background: none;
+    width: auto;
+}
+.bet_win_recent_history table .list_group.ball ol.icon img{
+    width: 8px;
+    height: 8px;
+}
+
+.bet_win_recent_history table .strong_text {
+    background-color: #BD0C22;
+    color: #FFF;
+    border-radius: 3px;
+    margin-left: 3px;
+    width: 18px;
+    height: 19px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bet_win_recent_history table .list_group.racing ol {
+    /*width: 16px;*/
+    min-width: 16px;
+    height: 20px;
+    border-radius: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #008ca1;
+    color: #FFF;
+    margin: 0 3px 0 0;
+}
+
+.bet_win_recent_history table .list_group.racing ol:last-child {
+    margin: 0;
+}
+
+.bet_win_recent_history table .list_group.racing ol.no_1_color {
+    background-color: #E6D800;
+    color: #000;
+}
+
+.bet_win_recent_history table .list_group.racing ol.no_2_color {
+    background-color: #008DF2;
+}
+
+.bet_win_recent_history table .list_group.racing ol.no_3_color {
+    background-color: #474743;
+}
+
+.bet_win_recent_history table .list_group.racing ol.no_4_color {
+    background-color: #EA7F20;
+}
+
+.bet_win_recent_history table .list_group.racing ol.no_5_color {
+    background-color: #39EAF3;
+    color: #000;
+}
+
+.bet_win_recent_history table .list_group.racing ol.no_6_color {
+    background-color: #5D40E9;
+}
+
+.bet_win_recent_history table .list_group.racing ol.no_7_color {
+    background-color: #C9CED5;
+    color: #000;
+}
+
+.bet_win_recent_history table .list_group.racing ol.no_8_color {
+    background-color: #E63828;
+}
+
+.bet_win_recent_history table .list_group.racing ol.no_9_color {
+    background-color: #A12628;
+}
+
+.bet_win_recent_history table .list_group.racing ol.no_10_color {
+    background-color: #28BD28;
+}
+
+
+
+
+.m_bet_win_recent_history {
+    /* display: none; */
+}
+
+@media only screen and (max-width: 1024px) {
+    .bet_win_recent_history {
+        display: none;
+    }
+
+    .m_bet_win_recent_history {
+        position: inherit;
+        height: auto;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        display: block;
+        margin-top: 10px;
+        border-radius: 0;
+    }
+
+    .m_bet_win_recent_history table tr th {
+        background: #151419;
+        color: #E8E8E8;
+        line-height: 24px;
+    }
+
+    .m_bet_win_recent_history table tr td {
+        line-height: 26px;
+        background: #1C1B22;
+        border-bottom: 1px solid #26252B;
+    }
+
+    .m_bet_win_recent_history table tr th,
+    .m_bet_win_recent_history table tr td {
+        font-size: 12px;
+    }
+
+    .m_bet_win_recent_history table .list_group.ball ol {
+        width: 18px;
+        height: 18px;
+    }
+
+
+}
+
+@media only screen and (max-width: 1024px) {
+    .m_bet_win_recent_history table tr th {
+        background: #151419;
+    }
+
+    .m_bet_win_recent_history table tr {
+        border-bottom: 1px solid #26252B;
+    }
+}
+
+
+
+
+
+/** 投注頁排行榜**/
+.bet_rank {
+    display: none;
+    background: #f5f5f5;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.bet_rank ul {
+    width: 100%;
+    color: #333;
+    font-size: 12px;
+    line-height: 1;
+}
+
+.bet_rank ul.bet_rank_title {
+    width: 100%;
+    padding: 8px 12px;
+    border-bottom: 1px solid #DDD;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bet_rank ul .tab {
+    width: 120px;
+}
+
+.bet_rank ul .tab li {
+    line-height: 1.8;
+    font-size: 12px;
+}
+.bet_rank .bet_rank_overflow_content {
+    height: 174px;
+    overflow-y: hidden;
+}
+.bet_rank ul.bet_rank_list {
+    height: 175px;
+    overflow-y: hidden;
+}
+.bet_rank ul.bet_rank_list::-webkit-scrollbar {
+    display:none
+}
+/*特殊樣式：秒秒彩中奖排行高度較低*/
+.bet_rank ul.bet_rank_list.lottery_sec {
+    height: 122px;
+}
+.bet_rank ul.bet_rank_list li {
+    display: flex;
+    align-items: center;
+    padding: 5px 12px;
+    border-bottom: 1px solid #DDD;
+}
+
+/*.bet_rank ul.bet_rank_list li:last-child {
+    border-bottom: none;
+}*/
+.bet_rank ul.bet_rank_list li .top_num_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 24px;
+}
+
+.bet_rank ul.bet_rank_list li .top_num_content .top_num {
+    width: 18px;
+    line-height: 18px;
+    background: #374e67;
+    color: #FFF;
+    text-align: center;
+    border-radius: 2px;
+}
+
+.bet_rank ul.bet_rank_list li p {
+    margin-left: 5px;
+    white-space: nowrap;
+}
+
+.bet_rank ul.bet_rank_list li p.rank_user_name {
+    width: 29%;
+    margin-left: 10px;
+    color: #008ca1;
+}
+
+.bet_rank ul.bet_rank_list li p.rank_game_name {
+    width: 28%;
+}
+
+.bet_rank ul.bet_rank_list li p.rank_amount {
+    flex: 1;
+    text-align: right;
+}
+
+@media only screen and (max-width: 1024px) {
+    .bet_rank {
+        display: none;
+    }
+}
+
+/*投注頁今日投注*/
+.bet_order_info {
+    display: none;
+    background: #f5f5f5;
+    width: 100%;
+}
+
+.bet_order_info .order_info_tab_content {
+    padding: 10px 12px;
+    border-bottom: 1px solid #DDD;
+}
+
+.bet_order_info .order_info_tab_content .tab li {
+    font-size: 12px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .bet_order_info {
+        display: none;
+    }
+}
+
+/*投注頁今日投注table*/
+.bet_order_info_table {
+    width: 100%;
+    height: 183px;
+    overflow-y: auto;
+}
+
+.bet_order_info_table::-webkit-scrollbar {
+    width: 5px;
+}
+
+.bet_order_info_table::-webkit-scrollbar-thumb {
+    background: #808994;
+}
+
+.bet_order_info_table::-webkit-scrollbar-track {
+    background: #c7c7c7;
+}
+
+.bet_order_info_table table {
+    color: #333;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.bet_order_info_table table tr {
+    border-bottom: 1px solid #DDD;
+    width: 100%;
+}
+
+.bet_order_info_table table thead th {
+    width: 100%;
+}
+
+.bet_order_info_table table th {
+    padding: 8px 1px;
+    line-height: 1;
+}
+
+.bet_order_info_table table td {
+    padding: 8px 1px;
+    white-space: nowrap;
+    position: relative;
+}
+
+.bet_order_info_table table th,
+.bet_order_info_table table td.unimportant {
+    color: #666;
+}
+
+.bet_order_info_table table td.win {
+    color: #008ca1;
+}
+
+.bet_order_info_table table td.lose {
+    color: #f16163;
+}
+
+.bet_order_info_table table th,
+.bet_order_info_table table td {
+    padding: 8px 0 8px 4px;
+}
+
+.bet_order_info_table table th:nth-child(1),
+.bet_order_info_table table td:nth-child(1) {
+    padding: 8px 0 8px 10px;
+}
+
+.bet_order_info_table table th:nth-child(4),
+.bet_order_info_table table td:nth-child(4) {
+    padding: 8px 10px 8px 0;
+}
+
+/*今日投注表格*/
+.bet_order_info_table.bet_today_table table th:nth-child(1),
+.bet_order_info_table.bet_today_table table td:nth-child(1) {
+    width: 29%;
+    text-align: center;
+}
+
+.bet_order_info_table.bet_today_table table th:nth-child(2),
+.bet_order_info_table.bet_today_table table td:nth-child(2) {
+    width: 22%;
+    text-align: right;
+}
+
+.bet_order_info_table.bet_today_table table th:nth-child(3),
+.bet_order_info_table.bet_today_table table td:nth-child(3) {
+    width: 17%;
+    text-align: center;
+}
+
+.bet_order_info_table.bet_today_table table th:nth-child(4),
+.bet_order_info_table.bet_today_table table td:nth-child(4) {
+    width: 32%;
+    text-align: right;
+}
+
+/*兩面長龍表格*/
+.bet_order_info_table.bet_twoside_table table th:nth-child(1),
+.bet_order_info_table.bet_twoside_table table td:nth-child(1) {
+    width: 50%;
+    text-align: center;
+}
+
+.bet_order_info_table.bet_twoside_table table th:nth-child(2),
+.bet_order_info_table.bet_twoside_table table td:nth-child(2) {
+    width: 50%;
+    text-align: center;
+}
+
+/*盈虧總覽表格*/
+.bet_order_info_table.bet_profit_table table th:nth-child(1),
+.bet_order_info_table.bet_profit_table table td:nth-child(1) {
+    width: 22%;
+    text-align: center;
+}
+
+.bet_order_info_table.bet_profit_table table th:nth-child(2),
+.bet_order_info_table.bet_profit_table table td:nth-child(2) {
+    width: 22%;
+    text-align: right;
+}
+
+.bet_order_info_table.bet_profit_table table th:nth-child(3),
+.bet_order_info_table.bet_profit_table table td:nth-child(3) {
+    width: 22%;
+    text-align: right;
+}
+
+.bet_order_info_table.bet_profit_table table th:nth-child(4),
+.bet_order_info_table.bet_profit_table table td:nth-child(4) {
+    width: 34%;
+    text-align: right;
+}
+
+.bet_order_info_table .tip_detail {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    color: #FFF;
+    position: absolute;
+    display: none;
+    top: 30px;
+    right: calc(100% + 80px);
+}
+
+.bet_order_info_table table tbody tr:nth-last-child(-n+3) td:nth-child(5) .tip_detail {
+    top: calc(100% - 80px);
+}
+
+.bet_order_info_table table tbody tr:nth-child(-n+2) td:nth-child(5) .tip_detail {
+    top: 30px;
+}
+
+.bet_order_info_table .tip_detail li {
+    display: flex;
+    border-bottom: 0;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.bet_order_info_table .tip_detail li p.sub_title {
+    margin-right: 5px;
+}
+
+.bet_order_info_table table tbody tr a {
+    color: #333;
+}
+
+.bet_order_info_table table tbody tr a:hover {
+    color: #008ca1;
+}
+
+.bet_order_info_table table tbody tr:hover {
+    background: #FFF;
+}
+
+.bet_order_info_table table tbody tr:hover td .tip_detail {
+    display: block;
+    z-index: 1;
+}
+
+.bet_order_info_table table tbody tr:hover a {
+    text-decoration: underline;
+}
+
+/*投注頁PK10開獎*/
+.bet_racing_video_content {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: calc(100% - 83px);
+    bottom: 0;
+    background: #0C1B2E url("../images/bet/bg_racing_video.png") center center no-repeat;
+}
+.bet_racing_video_close{
+    position: absolute;
+    cursor: pointer;
+    z-index: 2;
+    width: 28px;  
+    height: 28px;
+    border-radius: 14px;
+    right: 50%;
+    top: 40px;
+    margin-right: -331px;
+    background: #0095B2 url("../images/bet/ic_bet_video_close_big.svg") center no-repeat; 
+}
+.bet_racing_video_close:hover{
+    background: #00bad3 url("../images/bet/ic_bet_video_close_big.svg") center no-repeat; 
+}
+.bet_racing_video_content .video {
+    margin: 63px auto 0 auto;
+    width: 552px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .bet_racing_video_content {
+        height: calc(100% - 48px);
+    }
+    .bet_racing_video_content {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+/****************************** 走勢 共用 UI Element ******************************/
+.trend_content {
+    background: #151419;
+    min-height: 650px;
+}
+
+.trend_content .filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /*padding: 12px 10px;*/
+    padding: 18px 20px;
+}
+
+.trend_content .filter .col_content {
+    display: flex;
+    align-items: center;
+}
+
+.trend_content .filter .col_content.filter_function {
+    width: 460px;
+}
+
+.trend_content .filter .label_input.trend_game .dropdown {
+    min-width: 145px;
+    margin-right: 10px;
+}
+
+.trend_content .filter .label_input.trend_period .dropdown {
+    min-width: 120px;
+}
+.trend_content .filter .label_input .dropdown .dropdown_toggle{
+    height: 32px;
+}
+.trend_content .filter .filter_function .tab li {
+    padding: 0 20px;
+    line-height: 30px;
+}
+
+.trend_content .filter .checkbox {
+    margin-left: 20px;
+}
+
+.trend_content .filter a.btn_back {
+    padding: 0 25px;
+    border: 1px solid #4A5E73;
+    color: #4A5E73;
+    border-radius: 100px;
+    height: inherit;
+    line-height: 30px;
+}
+
+
+.trend_content .display_web{
+    display: none;
+}
+
+
+
+    .trend_content {
+        min-height: auto;
+    }
+    .trend_content .filter {
+       
+        padding: 12px 10px 5px 12px;
+    }
+    
+    .trend_content .m_show{
+        display: block;
+    }
+
+    .trend_header_fixed{
+        position: fixed;
+        top: 44px;
+        padding-right: 0;
+       
+        width: 100%;
+        background-color: #151419;
+        z-index: 2;
+    }
+
+    .m_pk10Higher td
+    .line_hour_mix td{
+        height: 41px;
+        font-size: 13px;
+        padding: 0 7px;
+       
+    }
+
+    
+
+    .m_pk10Higher th.sort,
+    .line_dice3_basic th.sort,
+    .line_hour_mix th.sort,
+    .line_11pick5_mix th.sort,
+    .line_lucky3d th.sort,
+    .line_lucky28 th.sort
+    {
+        height: 48px;
+       
+    }
+    
+    
+    
+    .m_pk10Higher td
+     {
+        height: 36px;
+        padding: 0 7px;
+    }
+
+    
+  
+    .line_dice3_basic td,
+    .line_hour_mix td,
+    .line_11pick5_mix td,
+    .line_lucky3d td,
+    .line_lucky28 td
+    {
+     height: 27px;
+     padding: 0px;
+   }
+   
+   .line_hour_mix th  .winBall,
+   .line_11pick5_mix th .winBall,
+   .line_lucky3d th .winBall {
+    margin: 0 7px;
+   }
+  
+   .line_dice3_basic tbody tr td:nth-child(8)  {
+       border-right: 0px;
+   }
+  
+
+    .line_dice3_basic td .winBall
+     {
+       margin: 0 2px;
+        
+    }
+    .trend_content .m_toppadding{
+        padding-top: 127px;
+
+    }
+    @media only screen and (max-width: 1024px) {
+        .trend_content .m_toppadding{
+            padding-top: 83px;
+    
+        }
+    }
+
+
+
+    .trend_content .pk10Higher ,.dataTable{
+        display: none;
+    }
+    
+    .trend_content .filter .label_input.trend_game {
+        display: none;
+    }
+
+    .trend_content .filter .label_input label {
+        display: none;
+    }
+
+    .trend_content .filter .col_content.filter_back {
+        display: none;
+    }
+
+    .trend_content .filter .checkbox {
+        display: none;
+    }
+
+    .trend_content .filter form,
+    .trend_content .filter .label_input,
+    .trend_content .filter .label_input .dropdown {
+        width: 100%;
+    }
+
+    .trend_content .filter .label_input.trend_period .dropdown {
+        min-width: inherit;
+    }
+
+    .trend_content .filter .col_content.filter_select {
+        width: 40%;
+    }
+
+    .trend_content .filter .col_content.filter_function {
+        width: 60%;
+        padding-left: 10px;
+    }
+
+    .trend_content .filter .col_content .tab {
+        width: 100%;
+    }
+    .m_trend_tab {
+
+        display:flex;
+        background: #151419;
+        border-bottom: 1px solid #26252B;
+        
+
+    }
+    
+    .m_trend_tab .m_tab {
+        place-content: center;
+        display: flex;
+        flex-wrap: nowrap;
+        padding:0 10px 0 10px;
+        font-size: 14px;
+       
+    }
+    
+  
+    
+
+    
+    .m_trend_tab .btn_col {
+        line-height: 30px; 
+        display: flex;
+        justify-content: center;
+        flex: 1;
+        color: #8E8D8D;
+    }
+
+    
+    
+    .m_trend_tab .btn_col .btn:hover,
+    .m_trend_tab .btn_col .btn.active {
+        color: #F68F0A;
+        border-bottom: 2px solid #F68F0A;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+       
+
+    }
+
+
+
+    .trend_content .filter .label_input .dropdown .dropdown_toggle{
+        height: 34px;
+    }
+    .trend_content .filter .col_content.filter_select.function_full_width {
+        padding-right: 0;
+        flex: 1;
+       
+    }
+
+    .trend_content .filter .col_content.filter_function_hide {
+        display: none;
+    }
+
+ 
+    .trend_table table{
+        min-width: auto;
+    }
+
+
+
+
+
+
+    @media only screen and (max-width: 360px) {
+        .m_pk10Higher .winPk10{
+        width: 15px;
+        height: 20px;
+       margin: 0px;
+        }
+        .m_pk10Higher th
+        , .m_pk10Higher td {
+            padding: 0px;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

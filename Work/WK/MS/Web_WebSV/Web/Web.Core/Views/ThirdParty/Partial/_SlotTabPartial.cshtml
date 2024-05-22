@@ -1,0 +1,20 @@
+﻿<div class="pt_game_title">
+    <div class="pt_tab">
+        <li class="active" onclick="gameHall.switchGameTabType(GameTabType.All)">
+            <div class="tab_icon all"></div>
+            <p>全部</p>
+        </li>
+        <li onclick="gameHall.switchGameTabType(GameTabType.Hot)">
+            <div class="tab_icon recommend"></div>
+            <p>推荐</p>
+        </li>
+        <li onclick="gameHall.switchGameTabType(GameTabType.Favorite)">
+            <div class="tab_icon favorite"></div>
+            <p>收藏</p>
+        </li>
+    </div>
+    <div class="pt_game_search">
+        <input id="SearchGameName" class="input_min_width" type="text" name="" placeholder="输入游戏名称">
+        <div id="SearchNameButton" class="btn_search"></div>
+    </div>
+</div>

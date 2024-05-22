@@ -1,0 +1,131 @@
+﻿@using ControllerShareLib.Helpers;
+@using Web.Extensions;
+@using Web.Helpers;
+
+@{
+    Layout = null;
+
+    decimal? redirectAfterSeconds = (decimal?)ViewBag.RedirectAfterSeconds;
+
+    if (!redirectAfterSeconds.HasValue)
+    {
+        redirectAfterSeconds = 0.3m;
+    }
+}
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=9">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>秘色</title>
+    <!--CSS link-->
+    <link type="text/css" rel="stylesheet" href="~/css/reset.css" />
+    <link type="text/css" rel="stylesheet" href="@GlobalCacheHelper.RazorShareContentPath/css/gamelobby.css" />
+    <link type="text/css" rel="icon" href="@WebResourceHelper.Content("~/favicon.ico")" />
+
+    <script>
+        let timeout = @redirectAfterSeconds * 1000;
+        
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    // 请求成功
+                    var response = XOR.decrypt(xhr.responseText, XOR.Key);
+                    // 处理响应，更新页面
+                    document.open();
+                    document.write(response);
+                    document.close();
+                } else {
+                    // 请求失败，处理错误
+                    console.error('请求失败: ' + xhr.status);
+                }
+            }
+        };
+        window.onload = function () {
+            let url = '@Html.Raw(ViewBag.RedirectUrl)';
+
+            let encPath = '@Html.Raw(ViewBag.EncPath)';
+            if (url !== '') {
+                setTimeout(function () {
+                    location.replace(url);
+                }, timeout);
+            }
+            else{
+                setTimeout(function () {
+                    xhr.open('GET', '/');
+                    xhr.setRequestHeader('enc-bytes', 'true');
+                    xhr.setRequestHeader('enc-path', encPath);
+                    xhr.send();
+                }, timeout);
+            }
+        }
+        const XOR =
+        {
+            Key: '@JxBackendService.Common.XorEncryptTool.Key',
+            encrypt: function (input, key) {
+                const inputBytes = this.stringToUtf8Bytes(input);
+                const keyBytes = this.stringToUtf8Bytes(key);
+                const encryptedBytes = new Uint8Array(inputBytes.length);
+
+                for (let i = 0; i < inputBytes.length; i++) {
+                    encryptedBytes[i] = inputBytes[i] ^ keyBytes[i % keyBytes.length];
+                }
+
+                return this.bytesToBase64(encryptedBytes);
+            },
+
+            decrypt: function (input, key) {
+                key = typeof key === 'object' ? JSON.stringify(key) : key.toString();
+                var decodedText = atob(input);
+                var plainText = '';
+                var length = decodedText.length;
+
+                var textArray = [];
+                for (var i = 0; i < length; i++) {
+                    textArray.push(decodedText.charCodeAt(i) ^ key.charCodeAt(Math.floor(i % key.length)));
+                }
+
+                var decoder = new TextDecoder("utf-8");
+                plainText = decoder.decode(new Uint8Array(textArray));
+                return plainText;
+            },
+
+            stringToUtf8Bytes: function (str) {
+                const encoder = new TextEncoder();
+                return encoder.encode(str);
+            },
+
+            // 將 UTF-8 字節表示形式轉換為 Base64 字符串
+            bytesToBase64: function (bytes) {
+                const binaryString = bytes.reduce((str, byte) => str + String.fromCharCode(byte), '');
+                return btoa(binaryString);
+            }
+        };
+    </script>
+</head>
+
+<body ontouchstart="">
+    <div class="loading height_100_percent retro_loading_content loading__bg">
+        <div class="img_box">
+            <img aes-src="~/images/retro_loading.aes" />
+            <p class="shared_loading_title">正在进入中...</p>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script src="~/js/cryptoJS/aes.js"></script>
+<script src="~/js/utils/platformAESService.js"></script>
+<script>
+    var aesService = new platformAESService();
+    aesService.fetchAllAESImage();    
+</script>
