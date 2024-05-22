@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Lib", "1-Lib", "{F0DC56C8-36BA-4087-80F4-1E517C257284}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-BackgroundService", "2-BackgroundService", "{555F817A-904C-4A02-87DA-76E20F7FAAF0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-UnitTest", "3-UnitTest", "{D3519610-D893-44BC-BC3C-E883CCF4B217}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JxBackendServiceN6", "..\..\..\Lib\JxBackendServiceLibrary\JxBackendServiceN6\JxBackendServiceN6.csproj", "{8FB8F378-9153-4B90-832B-A26659916878}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JxBackendServiceStd", "..\..\..\Lib\JxBackendServiceLibrary\JxBackendServiceStd\JxBackendServiceStd.csproj", "{EAD97D28-9130-4385-92BE-6B297AEB0C9D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestN6", "..\..\..\Lib\JxBackendServiceLibrary\UnitTestN6\UnitTestN6.csproj", "{4C23647F-86F7-4A9E-8BA9-08DAA3E0334A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{189BA63A-2B6E-4B8E-918D-67CD124175E9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductTransferService.IMSport", "ProductTransferService\ProductTransferService.IMSport.csproj", "{C764F570-C92F-45E0-BEE6-ABDCDD49A618}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FB8F378-9153-4B90-832B-A26659916878}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FB8F378-9153-4B90-832B-A26659916878}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FB8F378-9153-4B90-832B-A26659916878}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FB8F378-9153-4B90-832B-A26659916878}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAD97D28-9130-4385-92BE-6B297AEB0C9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAD97D28-9130-4385-92BE-6B297AEB0C9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAD97D28-9130-4385-92BE-6B297AEB0C9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAD97D28-9130-4385-92BE-6B297AEB0C9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C23647F-86F7-4A9E-8BA9-08DAA3E0334A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C23647F-86F7-4A9E-8BA9-08DAA3E0334A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C23647F-86F7-4A9E-8BA9-08DAA3E0334A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C23647F-86F7-4A9E-8BA9-08DAA3E0334A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{189BA63A-2B6E-4B8E-918D-67CD124175E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{189BA63A-2B6E-4B8E-918D-67CD124175E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{189BA63A-2B6E-4B8E-918D-67CD124175E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{189BA63A-2B6E-4B8E-918D-67CD124175E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C764F570-C92F-45E0-BEE6-ABDCDD49A618}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C764F570-C92F-45E0-BEE6-ABDCDD49A618}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C764F570-C92F-45E0-BEE6-ABDCDD49A618}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C764F570-C92F-45E0-BEE6-ABDCDD49A618}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8FB8F378-9153-4B90-832B-A26659916878} = {F0DC56C8-36BA-4087-80F4-1E517C257284}
+		{EAD97D28-9130-4385-92BE-6B297AEB0C9D} = {F0DC56C8-36BA-4087-80F4-1E517C257284}
+		{4C23647F-86F7-4A9E-8BA9-08DAA3E0334A} = {D3519610-D893-44BC-BC3C-E883CCF4B217}
+		{189BA63A-2B6E-4B8E-918D-67CD124175E9} = {D3519610-D893-44BC-BC3C-E883CCF4B217}
+		{C764F570-C92F-45E0-BEE6-ABDCDD49A618} = {555F817A-904C-4A02-87DA-76E20F7FAAF0}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BF26C89F-3DF6-4764-BC99-F783AC6FD6DC}
+	EndGlobalSection
+EndGlobal
