@@ -1,0 +1,9 @@
+{
+  "RedisConnections": {
+    "MasterSlave": {
+      "Master": "192.168.104.69:6379,password=123456",
+      "Slaves": [
+      ]
+    }
+  }
+}

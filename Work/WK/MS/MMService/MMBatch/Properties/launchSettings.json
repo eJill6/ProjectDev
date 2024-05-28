@@ -1,0 +1,17 @@
+{
+  "profiles": {
+    "MMBatch": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "MMBatch-SIT": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "DEVELOPMENT_ENVIRONMENT": "SIT"
+      }
+    }
+  }
+}

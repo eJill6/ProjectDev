@@ -1,0 +1,11 @@
+{
+  "ZeroOne": {
+    "Domain": "http://localhost:8787",
+    "Salt": "456ERTY",
+    "UrlDomain": "http://192.168.104.71:8787/url",
+    "xid": "Seal20kdwU29p20K",
+    "MediaSalt": "Rw6oR*CJ#HTFL2ay",
+    "M3U8Key": "FrJPPeprKytSWcpQ",
+    "RabbitMqConnection": "host=192.168.104.70;port=5672;virtualHost=/;username=hjmqu1;password=qwertyuiop"
+  }
+}
