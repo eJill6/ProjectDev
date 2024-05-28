@@ -1,8 +1,0 @@
-{
-  "MQConnections": {
-    "Host": "192.168.104.70",
-    "Port": "5672",
-    "UserName": "hjmqu1",
-    "Password": "qwertyuiop"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "MsSqlConnections": {
-    "Connections": {
-      "InloDb_Read": "tr1kpq2d6qw8M4pgcxxvn9y6O3ZY6e1yGvYVBNEPDXK4A8SAzeMk9db0pEFVH9rTNJkPrbSULkxooUuzB0I2EAnx2wFm7rUYvqiAOKsNP3tJptTYdpFwE9d3BtEJSxQhCJ0yALOws84luKbk3DfaDiKCTwrti/yZY4SjpKZs6AweG8IgTkyvSQ==",
-      "InloDb_Write": "tr1kpq2d6qw8M4pgcxxvn9y6O3ZY6e1yGvYVBNEPDXK4A8SAzeMk9db0pEFVH9rTNJkPrbSULkxooUuzB0I2EAnx2wFm7rUYvqiAOKsNP3tJptTYdpFwE9d3BtEJSxQhCJ0yALOws84luKbk3DfaDiKCTwrti/yZY4SjpKZs6AweG8IgTkyvSQ=="
-    }
-  }
-}

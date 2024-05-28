@@ -1,9 +1,0 @@
-{
-  "OssSettings": {
-    "AccessKeyId": "AKIATHVS2B3RSGSZCBNE",
-    "AccessKeySecret": "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",
-    "BucketName": "mmchoco.core.uat",
-    "SystemName": "ap-northeast-1",
-    "BucketCdnDomain": "https://mm-aws-uat.alkuan.com/"
-  }
-}
